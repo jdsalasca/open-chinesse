@@ -21,17 +21,17 @@ export const STORIES: Story[] = [
   {
     id: 'mi-dia',
     title: '我的一天 · Mi día',
-    level: 1,
+    level: 2,
     kind: 'historia',
     minutes: 2,
-    note: 'Rutina diaria con vocabulario de HSK 1.',
+    note: 'Rutina diaria: repasa HSK 1 con palabras de HSK 2.',
     lines: [
       say(
         '我早上七点起床。',
         'Wǒ zǎoshang qī diǎn qǐchuáng.',
         'Me levanto a las siete de la mañana.',
       ),
-      say('我喝茶，吃面包。', 'Wǒ hē chá, chī miànbāo.', 'Bebo té y como pan.'),
+      say('我喝茶，吃米饭。', 'Wǒ hē chá, chī mǐfàn.', 'Bebo té y como arroz.'),
       say('我去学校。', 'Wǒ qù xuéxiào.', 'Voy a la escuela.'),
       say('学校很大。', 'Xuéxiào hěn dà.', 'La escuela es grande.'),
       say(

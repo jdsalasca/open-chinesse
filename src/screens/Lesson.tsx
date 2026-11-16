@@ -11,6 +11,8 @@ import { starsForScore, xpForLesson } from '../gamification/xp';
 import { makeQuiz } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
 import { playComplete, playCorrect, playWrong } from '../lib/sfx';
+import { SessionNext } from '../components/SessionNext';
+import { useDailySession } from '../store/daily-session';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
@@ -41,6 +43,7 @@ export function Lesson({ unitId }: { unitId: string }) {
     if (phase !== 'done') return;
     const correct = answers.filter(Boolean).length;
     if (starsForScore(correct, Math.max(answers.length, 1)) === 3) playComplete();
+    useDailySession.getState().finish('lesson');
   }, [phase, answers]);
 
   if (!unit) {
@@ -277,6 +280,7 @@ export function Lesson({ unitId }: { unitId: string }) {
             : 'El error es parte del proceso: esas palabras volverán antes.'}
         </p>
         <div className="summary__actions">
+          <SessionNext from="lesson" />
           <button
             type="button"
             className="button button--primary"

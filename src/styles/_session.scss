@@ -156,3 +156,43 @@
     transition: none;
   }
 }
+
+.session-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+  margin-bottom: $space-4;
+  padding: $space-2 $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+  box-shadow: $shadow-sm;
+}
+
+.session-bar__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.session-bar__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-bar__step {
+  font-size: 0.82rem;
+  color: $muted;
+}
+
+.session-bar__step.is-done {
+  color: $mint-dark;
+  font-weight: 700;
+}

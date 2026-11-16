@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
+import { SessionNext } from '../components/SessionNext';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
@@ -105,6 +106,7 @@ export function Review() {
         </p>
         {when && <p className="empty__when">Próximo repaso en {when}.</p>}
         <div className="empty__actions">
+          <SessionNext from="review" />
           {nextUnit && (
             <button
               type="button"
@@ -136,6 +138,7 @@ export function Review() {
             : 'El calendario ya está actualizado. Nada más por hoy.'}
         </p>
         <div className="empty__actions">
+          <SessionNext from="review" />
           <button
             type="button"
             className="button button--primary"

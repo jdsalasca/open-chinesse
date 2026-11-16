@@ -6,6 +6,7 @@ import { audioUrl } from '../lib/audio';
 import { navigate } from '../lib/router';
 import { playCorrect, playWrong } from '../lib/sfx';
 import { makeToneQuiz, type ToneQuestion } from '../lib/tone-quiz';
+import { SessionNext } from '../components/SessionNext';
 
 function Summary({ score, total, onRetry }: { score: number; total: number; onRetry: () => void }) {
   return (
@@ -20,7 +21,8 @@ function Summary({ score, total, onRetry }: { score: number; total: number; onRe
           : 'Los tonos se entrenan: repite y verás cómo mejora la discriminación.'}
       </p>
       <div className="tones__actions">
-        <button type="button" className="button button--primary" onClick={onRetry}>
+        <SessionNext from="tones" />
+        <button type="button" className="button button--ghost" onClick={onRetry}>
           Otra tanda
         </button>
         <button

@@ -4,6 +4,7 @@ import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
 import { BottomNav } from './components/BottomNav';
 import { CharacterDrawer } from './components/CharacterDrawer';
+import { SessionBar } from './components/SessionBar';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
@@ -98,6 +99,7 @@ export default function App() {
       </a>
       <Header route={route} />
       <main className="main" id="contenido">
+        <SessionBar />
         <RouteView route={route} />
       </main>
       {section && <BottomNav current={section} />}

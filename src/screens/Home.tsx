@@ -16,6 +16,7 @@ import {
 import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
 import { HomePath } from './HomePath';
 import { Onboarding } from '../components/Onboarding';
+import { useDailySession } from '../store/daily-session';
 import { navigate } from '../lib/router';
 import { buildQueue } from '../srs/queue';
 import { masteredCount, streakDays } from '../store/metrics';
@@ -43,7 +44,8 @@ export function Home() {
   const levelUnits = unitsForLevel(level);
   const nextUnit = levelUnits.find((u) => !done.includes(u.id));
   const started = Object.keys(cards).length > 0;
-  const learnedTotal = Object.keys(cards).length;
+  const reviewed = new Set(log.map((entry) => entry.wordId));
+  const learnedTotal = reviewed.size;
   const allDone = done.length === UNITS.length;
   const progress = levelProgress(xp);
   const levelNumber = levelFromXp(xp);
@@ -55,6 +57,7 @@ export function Home() {
   }
 
   const startSession = () => {
+    useDailySession.getState().start();
     if (queue.total > 0) return navigate('/review');
     if (nextUnit) return navigate(`/lesson/${nextUnit.id}`);
     navigate('/tonos');
@@ -119,7 +122,7 @@ export function Home() {
             <dd>{masteredCount(cards)}</dd>
           </div>
           <div>
-            <dt>Aprendidas</dt>
+            <dt>Estudiadas</dt>
             <dd>
               {learnedTotal}
               <small> / {TOTAL_WORDS}</small>
@@ -240,7 +243,7 @@ export function Home() {
               const total = wordsForLevel(item);
               const learned = unitsForLevel(item)
                 .flatMap((unit) => unit.words)
-                .filter((word) => cards[word.id]).length;
+                .filter((word) => reviewed.has(word.id)).length;
               return (
                 <button
                   key={item}
