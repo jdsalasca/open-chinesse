@@ -14,8 +14,8 @@ ver qué queda siete días después, no para inflar el progreso.
 | Toca                     | Hasta diez preguntas de cuatro opciones (las palabras repasadas)   |
 | Terminada                | Marcador y una frase explícita: **no cambia tu calendario**        |
 
-El enlace está en **Practicar → Prueba de retención**, con el texto «Diez
-palabras sin pistas, siete días después».
+El enlace está en **Practicar → Prueba de retención**, con el texto «Hasta
+diez palabras sin pistas, siete días después».
 
 ## Reglas que la prueba respeta
 

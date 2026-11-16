@@ -16,7 +16,8 @@ export function Practice() {
       <a className="practice__card" href="#/prueba">
         <h2>Prueba de retención</h2>
         <p>
-          Diez palabras sin pistas, siete días después. Mide lo que recuerdas, no lo que repites.
+          Hasta diez palabras sin pistas, siete días después. Mide lo que recuerdas, no lo que
+          repites.
         </p>
         <span className="practice__cta">Ver la prueba →</span>
       </a>
