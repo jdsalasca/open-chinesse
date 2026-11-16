@@ -4,16 +4,18 @@ Orden acordado. Cada ronda termina con tests verdes, despliegue y push.
 
 ## R1 — HSK 3 completo (300 palabras)
 
+Estado: hecho en `fa83fd8` (20 unidades de 15 palabras).
+
 - 15 unidades de 20 palabras o 20 de 15 (decidir por tema, no por número).
 - Fuente del vocabulario: lista oficial HSK 3 de `clem109/hsk-vocabulary`
   (`hsk-level-3.json`), igual que se hizo con HSK 1 y 2.
 - Cada palabra: `id`, `hanzi`, `pinyin` con tonos, `meaning` en español,
   `example` (4-12 caracteres) + `pinyin` + `translation`.
 - Validaciones a extender en `src/data/curriculum.test.ts`:
-  - total 601 palabras, 45 unidades;
+  - total 601 palabras, 50 unidades (15 + 15 + 20);
   - ids únicos, sin frases repetidas;
   - pinyin solo con marcas válidas;
-  - quiz de 4 opciones para las 45 unidades.
+  - quiz de 4 opciones para las 50 unidades.
 - Criterio de aceptación: `pnpm test` verde, build < 200 kB gzip, lección de una
   unidad HSK 3 completada en navegador con captura.
 
