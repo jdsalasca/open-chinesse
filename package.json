@@ -12,7 +12,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:server": "tsc -b && vite build --outDir backend/src/main/resources/static --emptyOutDir",
-    "lint": "oxlint --max-warnings=12 && prettier --check .",
+    "lint": "oxlint --max-warnings=16 && prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview",

@@ -122,3 +122,34 @@ export const PROVIDER_LABELS: Record<string, string> = {
   google: 'Google',
   github: 'GitHub',
 };
+
+async function postCredentials(path: string, body: unknown): Promise<SessionUser> {
+  const token = await csrfToken();
+  const response = await fetch(path, {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      ...(token ? { 'X-XSRF-TOKEN': token } : {}),
+    },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) {
+    const data = (await response.json().catch(() => ({}))) as { error?: string };
+    throw new ApiError(response.status, data.error ?? 'No se pudo completar la operación');
+  }
+  return (await response.json()) as SessionUser;
+}
+
+export function login(email: string, password: string): Promise<SessionUser> {
+  return postCredentials('/api/auth/login', { email, password });
+}
+
+export function register(
+  email: string,
+  password: string,
+  displayName: string,
+): Promise<SessionUser> {
+  return postCredentials('/api/auth/register', { email, password, displayName });
+}

@@ -27,7 +27,12 @@ public class SecurityConfig {
       throws Exception {
     http.authorizeHttpRequests(
             auth ->
-                auth.requestMatchers("/api/auth/providers", "/api/csrf", "/actuator/health")
+                auth.requestMatchers(
+                        "/api/auth/providers",
+                        "/api/auth/register",
+                        "/api/auth/login",
+                        "/api/csrf",
+                        "/actuator/health")
                     .permitAll()
                     .requestMatchers("/api/**")
                     .authenticated()

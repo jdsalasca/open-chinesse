@@ -9,6 +9,7 @@ type SessionState = {
   user: SessionUser | null;
   providers: string[];
   init: () => Promise<void>;
+  setUser: (user: SessionUser) => void;
   signOutUser: () => Promise<void>;
 };
 
@@ -30,6 +31,10 @@ export const useSession = create<SessionState>()((set, get) => ({
       // Servidor caído: se sigue en modo invitado.
     }
     set({ status: 'anonymous', user: null, providers });
+  },
+  setUser: (user) => {
+    set({ status: 'authenticated', user });
+    void startSync();
   },
   signOutUser: async () => {
     stopSync();
