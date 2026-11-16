@@ -15,8 +15,12 @@ function expectValidQuiz(unit: (typeof UNITS)[number]): void {
   const quiz = makeQuiz(unit);
   expect(quiz).toHaveLength(6);
   for (const question of quiz) {
+    expect(new Set(question.options).size).toBe(question.options.length);
+    if (question.mode === 'order') {
+      expect(question.options.length).toBeGreaterThanOrEqual(3);
+      continue;
+    }
     expect(question.options).toHaveLength(4);
-    expect(new Set(question.options).size).toBe(4);
   }
 }
 

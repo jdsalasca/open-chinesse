@@ -195,3 +195,79 @@
   font-size: 1.6rem;
   color: $line-strong;
 }
+
+// Ordenar la frase ----------------------------------------------------------
+.order {
+  display: grid;
+  justify-items: center;
+  gap: $space-4;
+  width: 100%;
+}
+
+.order__hint {
+  margin: 0;
+  font-size: 0.95rem;
+  color: $muted;
+}
+
+.order__answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  width: 100%;
+  min-height: 3.6rem;
+  padding: $space-2;
+  border-bottom: 2px dashed $line-strong;
+}
+
+.order__placeholder {
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.order__pool {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-2;
+}
+
+.order__piece {
+  @include hanzi(1.15rem);
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $surface;
+  color: $ink;
+  box-shadow: $shadow-sm;
+  cursor: pointer;
+  @include focus-ring;
+}
+
+.order__piece:hover {
+  border-color: $mint;
+  color: $mint-dark;
+}
+
+.order__sentence {
+  @include hanzi(1.7rem);
+  margin: 0;
+  text-align: center;
+}
+
+.order__translation {
+  margin: 0;
+  color: $muted;
+}
+
+.order__result {
+  margin: 0;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.order__result.is-wrong {
+  color: $danger;
+}

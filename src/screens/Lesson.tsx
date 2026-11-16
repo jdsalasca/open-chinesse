@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
+import { OrderExercise } from '../components/OrderExercise';
 import { Pinyin } from '../components/Pinyin';
 import { Confetti } from '../components/ui/Confetti';
 import { Icon } from '../components/ui/Icon';
@@ -47,6 +48,13 @@ export function Lesson({ unitId }: { unitId: string }) {
   const question = quiz[index];
   const questionWord = question ? ALL_WORDS.find((w) => w.id === question.wordId) : undefined;
 
+  const finish = (correct: boolean) => {
+    setAnswers((prev) => [...prev, correct]);
+    setSelected(null);
+    if (index + 1 < quiz.length) return setIndex(index + 1);
+    setPhase('done');
+  };
+
   const next = () => {
     if (phase === 'learn') {
       if (index + 1 < unit.words.length) return setIndex(index + 1);
@@ -55,11 +63,7 @@ export function Lesson({ unitId }: { unitId: string }) {
     }
     if (phase === 'quiz') {
       if (selected === null) return;
-      const isCorrect = selected === questionWord?.meaning;
-      setAnswers((prev) => [...prev, isCorrect]);
-      setSelected(null);
-      if (index + 1 < quiz.length) return setIndex(index + 1);
-      return setPhase('done');
+      finish(selected === questionWord?.meaning);
     }
   };
 
@@ -134,62 +138,82 @@ export function Lesson({ unitId }: { unitId: string }) {
         </div>
 
         <section className="quiz" aria-live="polite">
-          <div className="quiz__prompt">
-            <span className="quiz__prompt-label">
-              {question.mode === 'listen' ? 'Escucha y elige' : '¿Qué significa?'}
-            </span>
-            {question.mode === 'listen' ? (
-              <div className="quiz__prompt-audio">
-                <AudioButton text={questionWord.hanzi} label="la palabra" />
-                <span className="quiz__dots" aria-hidden="true">
-                  ••••
-                </span>
+          {question.mode === 'order' ? (
+            <>
+              <div className="quiz__prompt">
+                <span className="quiz__prompt-label">Ordena la frase</span>
               </div>
-            ) : (
-              <>
-                <div className="quiz__hanzi" lang="zh-Hans">
-                  {questionWord.hanzi}
+              <OrderExercise
+                key={question.wordId}
+                chunks={question.options}
+                sentence={questionWord.example.hanzi}
+                translation={questionWord.example.translation}
+                last={index + 1 === quiz.length}
+                onNext={finish}
+              />
+            </>
+          ) : (
+            <>
+              <div className="quiz__prompt">
+                <span className="quiz__prompt-label">
+                  {question.mode === 'listen' ? 'Escucha y elige' : '¿Qué significa?'}
+                </span>
+                {question.mode === 'listen' ? (
+                  <div className="quiz__prompt-audio">
+                    <AudioButton text={questionWord.hanzi} label="la palabra" />
+                    <span className="quiz__dots" aria-hidden="true">
+                      ••••
+                    </span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="quiz__hanzi" lang="zh-Hans">
+                      {questionWord.hanzi}
+                    </div>
+                    <div className="quiz__audio">
+                      <AudioButton text={questionWord.hanzi} label={questionWord.hanzi} />
+                      <Pinyin pinyin={questionWord.pinyin} />
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="quiz__options" role="group" aria-label="Opciones">
+                {question.options.map((option) => {
+                  const isRight = option === questionWord.meaning;
+                  const state =
+                    selected === null
+                      ? ''
+                      : isRight
+                        ? ' is-correct'
+                        : option === selected
+                          ? ' is-wrong'
+                          : ' is-muted';
+                  return (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`option${state}`}
+                      onClick={() => choose(option)}
+                      disabled={selected !== null}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+              {selected !== null && (
+                <div className="quiz__feedback">
+                  <p>
+                    {selected === questionWord.meaning
+                      ? 'Correcto.'
+                      : `Era: ${questionWord.meaning}.`}
+                  </p>
+                  <button type="button" className="button button--primary" onClick={next} autoFocus>
+                    {index + 1 === quiz.length ? 'Terminar' : 'Siguiente'}
+                  </button>
                 </div>
-                <div className="quiz__audio">
-                  <AudioButton text={questionWord.hanzi} label={questionWord.hanzi} />
-                  <Pinyin pinyin={questionWord.pinyin} />
-                </div>
-              </>
-            )}
-          </div>
-          <div className="quiz__options" role="group" aria-label="Opciones">
-            {question.options.map((option) => {
-              const isRight = option === questionWord.meaning;
-              const state =
-                selected === null
-                  ? ''
-                  : isRight
-                    ? ' is-correct'
-                    : option === selected
-                      ? ' is-wrong'
-                      : ' is-muted';
-              return (
-                <button
-                  key={option}
-                  type="button"
-                  className={`option${state}`}
-                  onClick={() => choose(option)}
-                  disabled={selected !== null}
-                >
-                  {option}
-                </button>
-              );
-            })}
-          </div>
-          {selected !== null && (
-            <div className="quiz__feedback">
-              <p>
-                {selected === questionWord.meaning ? 'Correcto.' : `Era: ${questionWord.meaning}.`}
-              </p>
-              <button type="button" className="button button--primary" onClick={next} autoFocus>
-                {index + 1 === quiz.length ? 'Terminar' : 'Siguiente'}
-              </button>
-            </div>
+              )}
+            </>
           )}
         </section>
       </div>

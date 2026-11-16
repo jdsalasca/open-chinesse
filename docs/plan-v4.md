@@ -34,7 +34,9 @@ glosas de piezas y menú contextual.
 - Criterio: los 301 caracteres actuales tienen descomposición o se marcan como
   «sin datos» sin romper la ficha.
 
-## R3 — Ordenar frases
+## R3 - Ordenar frases
+
+Estado: hecho (ver `docs/evidence/2026-11-16-ordenar.md`).
 
 - Nuevo `mode: 'order'` en `src/lib/quiz.ts`: dividir `example.hanzi` en chunks
   (palabras, no caracteres sueltos), barajar y validar el orden.
