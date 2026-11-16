@@ -27,7 +27,8 @@ export function Lesson({ unitId }: { unitId: string }) {
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
 
-  const quiz = useMemo(() => (unit ? makeQuiz(unit) : []), [unit]);
+  const [variant] = useState(() => Math.floor(Date.now() / 86400000));
+  const quiz = useMemo(() => (unit ? makeQuiz(unit, variant) : []), [unit, variant]);
 
   useEffect(() => {
     if (unit) introduceUnit(unit.id);

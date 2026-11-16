@@ -27,6 +27,7 @@ export function Review() {
   const cards = useLearner((s) => s.cards);
   const gradeWord = useLearner((s) => s.gradeWord);
   const misses = useLearner((s) => s.misses);
+  const noteMiss = useLearner((s) => s.noteMiss);
 
   const [queue, setQueue] = useState<string[]>(
     () => buildQueue(useLearner.getState().cards, Date.now()).due,
@@ -187,7 +188,7 @@ export function Review() {
           <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
         </div>
 
-        {!revealed && production && (
+        {!revealed && (
           <form
             className="typed"
             onSubmit={(event) => {
@@ -264,13 +265,15 @@ export function Review() {
         <div className="review__actions">
           <button
             type="button"
-            className="button button--primary"
-            onClick={reveal}
-            autoFocus={!production}
+            className="button button--ghost"
+            onClick={() => {
+              if (wordId) noteMiss(wordId, 'unknown', now);
+              reveal();
+            }}
           >
-            Mostrar respuesta
+            No lo sé
           </button>
-          <span className="hint">Espacio para revelar · P para oír</span>
+          <span className="hint">Escribe el pinyin o usa «No lo sé» · P para oír</span>
         </div>
       ) : (
         <div className="review__grades">

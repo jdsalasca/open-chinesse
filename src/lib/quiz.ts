@@ -75,8 +75,8 @@ function canOrder(sentence: string): string[] | undefined {
 }
 
 /** Seis preguntas por unidad: reconocer, escuchar y ordenar la frase. */
-export function makeQuiz(unit: Unit): Question[] {
-  const random = lcg(unit.index * 7919);
+export function makeQuiz(unit: Unit, variant = 0): Question[] {
+  const random = lcg(unit.index * 7919 + variant * 104729);
   const shuffled = shuffle(unit.words, random);
   const orderable = shuffled.filter((word) => canOrder(word.example.hanzi)).slice(0, 2);
   const picked = [...orderable, ...shuffled.filter((word) => !orderable.includes(word))].slice(
