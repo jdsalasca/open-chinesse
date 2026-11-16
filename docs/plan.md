@@ -229,5 +229,18 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [ ] Dividir `Scenarios.tsx` (564 líneas) y `_home.scss` (728 líneas).
 - [ ] Extraer el ancho dinámico de las barras a una variable CSS sin `style`.
 
+### C6 — Producto: situaciones y biblioteca
+
+- [x] Situaciones con barra de progreso, resumen con intentos fallidos y
+      anuncio accesible del paso actual.
+- [x] Teclado 1–3 bloqueado mientras hay un diálogo abierto.
+- [x] Lista de situaciones con contador de completadas; Practicar muestra el
+      mismo dato en vez de una cifra fija.
+- [x] Inmersión con la cabecera común, filtros con recuento y color estable por
+      nivel (sin depender de la posición).
+- [x] Progreso con la cabecera común y estado vacío del pronóstico semanal.
+- [x] Opciones de tonos más grandes: las marcas de tono dejan de perderse.
+- [x] Audio verificado en las 23 líneas de las cuatro situaciones.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

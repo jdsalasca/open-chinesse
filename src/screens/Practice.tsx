@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { Icon, type IconName } from '../components/ui/Icon';
+import { SCENARIOS } from '../data/scenarios';
 import { buildQueue } from '../srs/queue';
 import { useLearner } from '../store/useLearner';
 
@@ -46,14 +47,14 @@ const BASE_ACTIONS: Action[] = [
     href: '#/situaciones',
     tone: 'sky',
     icon: 'chat',
-    meta: 'Cuatro escenas',
+    meta: `${SCENARIOS.length} escenas`,
     title: 'Situaciones',
     text: 'Pide, compra y pregunta cómo llegar en diálogos con una decisión en cada paso.',
     cta: 'Entrar',
   },
 ];
 
-function actions(pending: number): Action[] {
+function actions(pending: number, scenesDone: number): Action[] {
   return [
     {
       href: '#/review',
@@ -64,12 +65,17 @@ function actions(pending: number): Action[] {
       text: 'Las tarjetas que tocan hoy, con notas de 1 a 4.',
       cta: 'Empezar',
     },
-    ...BASE_ACTIONS,
+    ...BASE_ACTIONS.map((action) =>
+      action.href === '#/situaciones'
+        ? { ...action, meta: `${scenesDone} de ${SCENARIOS.length} hechas` }
+        : action,
+    ),
   ];
 }
 
 export function Practice() {
   const cards = useLearner((s) => s.cards);
+  const scenes = useLearner((s) => s.scenarios);
   const [now] = useState(Date.now);
   const pending = buildQueue(cards, now).total;
 
@@ -81,7 +87,7 @@ export function Practice() {
         lead="Cinco formas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
       />
       <div className="practice__grid">
-        {actions(pending).map((action) => (
+        {actions(pending, scenes.length).map((action) => (
           <a
             key={action.href}
             className={`practice__card practice__card--${action.tone}`}

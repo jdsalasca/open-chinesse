@@ -6,15 +6,6 @@
   gap: $space-6;
 }
 
-.stats__head {
-  max-width: 60ch;
-
-  h1 {
-    margin-top: $space-2;
-    font-size: clamp(1.9rem, 5vw, 2.6rem);
-  }
-}
-
 .stats__lead {
   margin-top: $space-3;
   color: $muted;

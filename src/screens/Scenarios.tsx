@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { PageHeader } from '../components/PageHeader';
 import { SessionHeader } from '../components/SessionHeader';
+import { Badge } from '../components/ui/Badge';
 import { Icon } from '../components/ui/Icon';
 import {
   SCENARIOS,
@@ -13,6 +14,7 @@ import {
 import { audioUrl } from '../lib/audio';
 import { navigate } from '../lib/router';
 import { useEnterKey } from '../lib/hooks';
+import { scenarioResult } from '../lib/scenario';
 import { useLearner } from '../store/useLearner';
 
 type ChoiceStep = Extract<ScenarioStep, { kind: 'choice' }>;
@@ -58,7 +60,15 @@ function Bubble({
   );
 }
 
-function Summary({ scenario, onRetry }: { scenario: Scenario; onRetry: () => void }) {
+function Summary({
+  scenario,
+  mistakes,
+  onRetry,
+}: {
+  scenario: Scenario;
+  mistakes: number;
+  onRetry: () => void;
+}) {
   return (
     <section className="scenario-done">
       <span className="scenario-done__icon" aria-hidden="true">
@@ -70,6 +80,7 @@ function Summary({ scenario, onRetry }: { scenario: Scenario; onRetry: () => voi
         Has practicado: {scenario.goal.toLowerCase()}. Vuelve cuando quieras: la conversación no se
         agota en una pasada.
       </p>
+      <p className="scenario-done__result">{scenarioResult(mistakes)}</p>
       <div className="scenario-done__actions">
         <button type="button" className="button button--primary" onClick={onRetry}>
           Repetir la escena
@@ -299,6 +310,7 @@ function useChoiceKeys(
     if (!step || step.kind !== 'choice' || picked !== null) return;
     const onKey = (event: KeyboardEvent) => {
       if (!/^[1-3]$/.test(event.key)) return;
+      if (document.querySelector('[aria-modal="true"]')) return;
       const optionIndex = Number(event.key) - 1;
       const option = step.options[optionIndex];
       if (!option || wrong.includes(optionIndex)) return;
@@ -316,12 +328,17 @@ function useScenarioPlay(scenario: Scenario) {
   const [answers, setAnswers] = useState<number[]>([]);
   const [picked, setPicked] = useState<number | null>(null);
   const [wrong, setWrong] = useState<number[]>([]);
+  const [mistakes, setMistakes] = useState(0);
   const endRef = useRef<HTMLDivElement | null>(null);
   const step = scenario.steps[index];
 
   const pick = (optionIndex: number, correct: boolean) => {
     if (picked !== null) return;
-    if (!correct) return setWrong([...wrong, optionIndex]);
+    if (!correct) {
+      setWrong([...wrong, optionIndex]);
+      setMistakes(mistakes + 1);
+      return;
+    }
     setPicked(optionIndex);
     setAnswers((previous) => {
       const copy = [...previous];
@@ -344,9 +361,10 @@ function useScenarioPlay(scenario: Scenario) {
     setAnswers([]);
     setPicked(null);
     setWrong([]);
+    setMistakes(0);
   };
 
-  return { index, answers, picked, wrong, endRef, step, pick, next, reset };
+  return { index, answers, picked, wrong, mistakes, endRef, step, pick, next, reset };
 }
 
 function AidsBar({ aids, onToggle }: { aids: Aids; onToggle: (key: keyof Aids) => void }) {
@@ -386,28 +404,29 @@ type StepProps = {
 
 function CurrentStep({ scenario, index, step, picked, wrong, aids, onPick, onNext }: StepProps) {
   const last = index + 1 === scenario.steps.length;
-  if (step.kind === 'line') {
-    return (
-      <LineStep
-        line={step.line}
-        audioId={`${scenario.id}-${step.line.id}`}
-        last={last}
-        onNext={onNext}
-        aids={aids}
-      />
-    );
-  }
   return (
-    <Choice
-      step={step}
-      audioId={`${scenario.id}-${step.prompt.id}`}
-      picked={picked}
-      wrong={wrong}
-      last={last}
-      onPick={onPick}
-      onNext={onNext}
-      aids={aids}
-    />
+    <div className="chat__current" aria-live="polite">
+      {step.kind === 'line' ? (
+        <LineStep
+          line={step.line}
+          audioId={`${scenario.id}-${step.line.id}`}
+          last={last}
+          onNext={onNext}
+          aids={aids}
+        />
+      ) : (
+        <Choice
+          step={step}
+          audioId={`${scenario.id}-${step.prompt.id}`}
+          picked={picked}
+          wrong={wrong}
+          last={last}
+          onPick={onPick}
+          onNext={onNext}
+          aids={aids}
+        />
+      )}
+    </div>
   );
 }
 
@@ -453,7 +472,7 @@ function ScenarioChat({
 }
 
 function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
-  const { index, answers, picked, wrong, endRef, step, pick, next, reset } =
+  const { index, answers, picked, wrong, mistakes, endRef, step, pick, next, reset } =
     useScenarioPlay(scenario);
   const [aids, setAids] = useState<Aids>({ pinyin: true, translation: true });
 
@@ -461,7 +480,7 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [index, picked, wrong.length, endRef]);
 
-  if (!step) return <Summary scenario={scenario} onRetry={reset} />;
+  if (!step) return <Summary scenario={scenario} mistakes={mistakes} onRetry={reset} />;
 
   return (
     <div className="scenario">
@@ -470,6 +489,9 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
         count={`${index + 1} / ${scenario.steps.length}`}
         onExit={() => navigate('/situaciones')}
       />
+      <div className="progress" aria-hidden="true">
+        <span style={{ width: `${((index + 1) / scenario.steps.length) * 100}%` }} />
+      </div>
       <div className="scenario__meta">
         <p className="scenario__goal">{scenario.goal}</p>
         <AidsBar aids={aids} onToggle={(key) => setAids({ ...aids, [key]: !aids[key] })} />
@@ -528,6 +550,14 @@ export function Scenarios() {
         eyebrow="Situaciones"
         title="Habla antes de sentirte listo"
         lead="Diálogos cortos con una decisión en cada paso. Elige tu respuesta, escucha la reacción y vuelve a intentarlo sin castigo."
+        aside={
+          <Badge
+            tone={done.length === SCENARIOS.length ? 'mint' : 'amber'}
+            icon={<Icon name="check" size={14} />}
+          >
+            {done.length} de {SCENARIOS.length}
+          </Badge>
+        }
       />
       <div className="scenario-grid">
         {SCENARIOS.map((scenario) => (

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PageHeader } from '../components/PageHeader';
 import { navigate } from '../lib/router';
 import { reasonLabel } from '../lib/miss';
 import {
@@ -22,13 +23,11 @@ const dayLabel = (key: string): string => {
 
 function StatsHeader() {
   return (
-    <header className="stats__head">
-      <p className="eyebrow">Progreso</p>
-      <h1>Tu memoria, en números</h1>
-      <p className="stats__lead">
-        Datos calculados solo con tu historial local. Nada se envía a ningún servidor.
-      </p>
-    </header>
+    <PageHeader
+      eyebrow="Progreso"
+      title="Tu memoria, en números"
+      lead="Datos calculados solo con tu historial local. Nada se envía a ningún servidor."
+    />
   );
 }
 
@@ -70,24 +69,33 @@ function StatGrid({
 }
 
 function Forecast({ days, peak }: { days: ReturnType<typeof forecast>; peak: number }) {
+  const empty = days.every((day) => day.count === 0);
   return (
     <section className="forecast" aria-labelledby="forecast-title">
       <h2 id="forecast-title">Próximos siete días</h2>
-      <div className="forecast__chart" role="img" aria-label="Repasos programados por día">
-        {days.map((day, index) => (
-          <div key={day.key} className="forecast__col">
-            <span className="forecast__value">{day.count}</span>
-            <span
-              className={`forecast__bar${index === 0 ? ' is-today' : ''}`}
-              style={{ height: `${Math.max(4, (day.count / peak) * 100)}%` }}
-            />
-            <span className="forecast__day">{index === 0 ? 'hoy' : dayLabel(day.key)}</span>
-          </div>
-        ))}
-      </div>
-      <p className="forecast__note">
-        Cada barra son las tarjetas que FSRS prevé que estén a punto de olvidarse ese día.
-      </p>
+      {empty ? (
+        <p className="forecast__note">
+          Todavía no hay repasos programados: termina una unidad para llenar el calendario.
+        </p>
+      ) : (
+        <div className="forecast__chart" role="img" aria-label="Repasos programados por día">
+          {days.map((day, index) => (
+            <div key={day.key} className="forecast__col">
+              <span className="forecast__value">{day.count}</span>
+              <span
+                className={`forecast__bar${index === 0 ? ' is-today' : ''}`}
+                style={{ height: `${Math.max(4, (day.count / peak) * 100)}%` }}
+              />
+              <span className="forecast__day">{index === 0 ? 'hoy' : dayLabel(day.key)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+      {!empty && (
+        <p className="forecast__note">
+          Cada barra son las tarjetas que FSRS prevé que estén a punto de olvidarse ese día.
+        </p>
+      )}
     </section>
   );
 }
