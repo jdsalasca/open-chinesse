@@ -53,7 +53,29 @@ export function toStored(card: Card): StoredCard {
   };
 }
 
+const VALID_STATES = new Set([State.New, State.Learning, State.Review, State.Relearning]);
+
+/**
+ * Una tarjeta persistida puede venir corrupta o de un esquema viejo. FSRS lanza
+ * `FSRSValidationError` con un estado imposible, así que se valida antes de usarla.
+ */
+export function isUsableCard(stored: StoredCard): boolean {
+  if (!Number.isFinite(Date.parse(stored.due))) return false;
+  if (!VALID_STATES.has(stored.state as State)) return false;
+  if (stored.state === State.New) return true;
+  return (
+    Number.isFinite(stored.stability) &&
+    stored.stability > 0 &&
+    Number.isFinite(stored.difficulty) &&
+    stored.difficulty >= 1 &&
+    stored.difficulty <= 10
+  );
+}
+
 export function toCard(stored: StoredCard): Card {
+  // Si el estado es imposible se reinicia la tarjeta: mejor perder el calendario
+  // de una palabra que romper la sesión de repaso.
+  if (!isUsableCard(stored)) return createEmptyCard(new Date());
   return {
     ...stored,
     due: new Date(stored.due),

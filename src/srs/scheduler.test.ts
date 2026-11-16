@@ -6,6 +6,7 @@ import {
   formatInterval,
   isDue,
   isMature,
+  isUsableCard,
   needsProduction,
   newCard,
   preview,
@@ -93,8 +94,36 @@ describe('estados', () => {
   });
 });
 
-describe('formatInterval', () => {
-  it('usa unidades legibles', () => {
+describe('tarjetas corruptas', () => {
+  const corrupt: StoredCard = {
+    due: new Date(NOW - 1000).toISOString(),
+    stability: 6,
+    difficulty: 0,
+    scheduled_days: 3,
+    learning_steps: 0,
+    reps: 4,
+    lapses: 1,
+    state: State.Review,
+  };
+
+  it('detecta un estado imposible', () => {
+    expect(isUsableCard(corrupt)).toBe(false);
+    expect(isUsableCard(newCard(NOW))).toBe(true);
+  });
+
+  it('no rompe la previsualización', () => {
+    expect(() => preview(corrupt, NOW)).not.toThrow();
+    expect(preview(corrupt, NOW)[Rating.Good].label).toMatch(/\d/);
+  });
+
+  it('calificar repara la tarjeta', () => {
+    const repaired = review(corrupt, Rating.Good, NOW);
+    expect(isUsableCard(repaired)).toBe(true);
+    expect(repaired.due).toBeTruthy();
+  });
+});
+
+describe('formatInterval', () => {  it('usa unidades legibles', () => {
     expect(formatInterval(60_000)).toBe('1 min');
     expect(formatInterval(3 * 60 * 60_000)).toBe('3 h');
     expect(formatInterval(3 * 86_400_000)).toBe('3 d');
