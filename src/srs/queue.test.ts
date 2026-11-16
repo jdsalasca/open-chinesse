@@ -5,30 +5,35 @@ import { newCard, review, type StoredCard } from './scheduler';
 import { buildQueue, firstUnitWithContent, interleave, missingWords } from './queue';
 
 const NOW = new Date('2026-11-15T10:00:00Z').getTime();
+const UNIT = UNITS[0];
+const OTHER = UNITS[1];
+const THIRD = UNITS[2];
 
 const cardsFor = (ids: string[], now = NOW): Record<string, StoredCard> =>
   Object.fromEntries(ids.map((id) => [id, newCard(now)]));
 
 describe('buildQueue', () => {
   it('incluye solo las tarjetas vencidas', () => {
-    const cards = cardsFor(['u1-01', 'u1-02']);
-    const future = review(cards['u1-02'], Rating.Easy, NOW);
-    const queue = buildQueue({ ...cards, 'u1-02': future }, NOW);
-    expect(queue.due).toContain('u1-01');
-    expect(queue.due).not.toContain('u1-02');
+    const [first, second] = UNIT.words.map((w) => w.id);
+    const cards = cardsFor([first, second]);
+    const future = review(cards[second], Rating.Easy, NOW);
+    const queue = buildQueue({ ...cards, [second]: future }, NOW);
+    expect(queue.due).toContain(first);
+    expect(queue.due).not.toContain(second);
   });
 
   it('mezcla unidades en lugar de agruparlas', () => {
-    const cards = cardsFor(['u1-01', 'u1-02', 'u2-01', 'u2-02']);
-    const queue = buildQueue(cards, NOW);
-    expect(queue.due).toEqual(['u1-01', 'u2-01', 'u1-02', 'u2-02']);
+    const ids = [UNIT.words[0].id, UNIT.words[1].id, OTHER.words[0].id, OTHER.words[1].id];
+    const queue = buildQueue(cardsFor(ids), NOW);
+    expect(queue.due).toEqual([ids[0], ids[2], ids[1], ids[3]]);
   });
 
   it('respeta el orden de vencimiento dentro de una unidad', () => {
-    const cards = cardsFor(['u1-01', 'u1-02']);
-    cards['u1-02'].due = new Date(NOW - 1000).toISOString();
-    cards['u1-01'].due = new Date(NOW - 5000).toISOString();
-    expect(buildQueue(cards, NOW).due.slice(0, 2)).toEqual(['u1-01', 'u1-02']);
+    const [first, second] = UNIT.words.map((w) => w.id);
+    const cards = cardsFor([first, second]);
+    cards[second].due = new Date(NOW - 1000).toISOString();
+    cards[first].due = new Date(NOW - 5000).toISOString();
+    expect(buildQueue(cards, NOW).due.slice(0, 2)).toEqual([first, second]);
   });
 
   it('devuelve vacío sin tarjetas', () => {
@@ -38,22 +43,32 @@ describe('buildQueue', () => {
 
 describe('interleave', () => {
   it('mantiene todos los elementos y alterna unidades', () => {
-    const out = interleave(['u1-01', 'u1-02', 'u1-03', 'u2-01', 'u3-01']);
+    const ids = [
+      UNIT.words[0].id,
+      UNIT.words[1].id,
+      UNIT.words[2].id,
+      OTHER.words[0].id,
+      THIRD.words[0].id,
+    ];
+    const out = interleave(ids);
     expect(out).toHaveLength(5);
     expect(new Set(out).size).toBe(5);
-    expect(out[0]).toBe('u1-01');
-    expect(out[1]).toBe('u2-01');
-    expect(out[2]).toBe('u3-01');
+    expect(out[0]).toBe(UNIT.words[0].id);
+    expect(out[1]).toBe(OTHER.words[0].id);
+    expect(out[2]).toBe(THIRD.words[0].id);
+  });
+
+  it('ignora palabras desconocidas sin perderlas', () => {
+    expect(interleave(['fantasma'])).toEqual(['fantasma']);
   });
 });
 
 describe('missingWords', () => {
   it('devuelve solo las palabras sin tarjeta', () => {
-    const unit = UNITS[0];
-    const cards = cardsFor([unit.words[0].id]);
-    const missing = missingWords(cards, unit.id);
-    expect(missing).toHaveLength(unit.words.length - 1);
-    expect(missing).not.toContain(unit.words[0].id);
+    const cards = cardsFor([UNIT.words[0].id]);
+    const missing = missingWords(cards, UNIT.id);
+    expect(missing).toHaveLength(UNIT.words.length - 1);
+    expect(missing).not.toContain(UNIT.words[0].id);
   });
 
   it('devuelve vacío para unidad inexistente', () => {
