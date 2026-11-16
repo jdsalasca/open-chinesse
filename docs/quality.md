@@ -39,7 +39,7 @@ pnpm format   # aplica prettier
 
 ## Estado actual
 
-- `oxlint`: 0 errores, 12 advertencias (todas en pantallas).
+- `oxlint`: 0 errores, 19 advertencias (todas en pantallas).
 - `prettier --check`: limpio.
 - `tsc -b`: limpio.
 - 71 pruebas de frontend y 13 de backend.
