@@ -17,6 +17,7 @@ describe('rutas', () => {
     expect(parseHash('#/practicar')).toEqual({ name: 'practice' });
     expect(parseHash('#/historias')).toEqual({ name: 'stories' });
     expect(parseHash('#/inmersion')).toEqual({ name: 'immersion' });
+    expect(parseHash('#/tonos')).toEqual({ name: 'tones' });
   });
 
   it('no se rompe con una ruta de carácter vacía', () => {

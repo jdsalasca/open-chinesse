@@ -8,6 +8,7 @@ import { Home } from './screens/Home';
 import { Character } from './screens/Character';
 import { ComingSoon } from './screens/ComingSoon';
 import { Immersion } from './screens/Immersion';
+import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
 import { Login } from './screens/Login';
 import { Practice } from './screens/Practice';
@@ -39,6 +40,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
     />
   ),
   immersion: () => <Immersion />,
+  tones: () => <Tones />,
 };
 
 function Header({ route }: { route: Route }) {

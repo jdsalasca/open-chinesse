@@ -4,10 +4,10 @@ import { CharacterLinks } from '../components/CharacterLinks';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
+import { checkPinyin, type PinyinCheck } from '../lib/tone';
 import { reasonLabel } from '../lib/miss';
 import { navigate } from '../lib/router';
 import { speak } from '../lib/speech';
-import { matchesPinyin } from '../lib/tone';
 import { buildQueue } from '../srs/queue';
 import {
   GRADE_LABELS,
@@ -33,7 +33,7 @@ export function Review() {
   const [cursor, setCursor] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [typed, setTyped] = useState('');
-  const [typedState, setTypedState] = useState<'ok' | 'bad' | null>(null);
+  const [typedState, setTypedState] = useState<PinyinCheck | null>(null);
   const [graded, setGraded] = useState(0);
 
   const wordId = queue[cursor];
@@ -52,7 +52,7 @@ export function Review() {
 
   const submitTyped = () => {
     if (!word || !typed.trim()) return;
-    setTypedState(matchesPinyin(typed, word.pinyin) ? 'ok' : 'bad');
+    setTypedState(checkPinyin(typed, word.pinyin));
     setRevealed(true);
   };
 
@@ -217,8 +217,14 @@ export function Review() {
         {revealed && (
           <div className="answer">
             {typedState && (
-              <p className={`typed__result typed__result--${typedState}`}>
-                {typedState === 'ok' ? 'Pinyin correcto.' : `Tú escribiste “${typed}”.`}
+              <p
+                className={`typed__result typed__result--${typedState === 'ok' ? 'ok' : typedState === 'mal' ? 'bad' : 'warn'}`}
+              >
+                {typedState === 'ok' && 'Pinyin y tonos correctos.'}
+                {typedState === 'sin-tonos' &&
+                  'Sílabas correctas. Añade los tonos para practicarlos.'}
+                {typedState === 'tonos' && `Sílabas bien, pero el tono es «${word.pinyin}».`}
+                {typedState === 'mal' && `Tú escribiste “${typed}”.`}
               </p>
             )}
             <p className="flashcard__meaning">{word.meaning}</p>

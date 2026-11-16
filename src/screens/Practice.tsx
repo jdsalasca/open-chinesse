@@ -13,10 +13,10 @@ export function Practice() {
         <p>Dentro de cada unidad, la práctica te hace reconocer la palabra solo de oído.</p>
         <span className="practice__cta">Ver unidades →</span>
       </a>
-      <a className="practice__card" href="#/review">
+      <a className="practice__card" href="#/tonos">
         <h2>Tonos</h2>
-        <p>En el repaso escribes el pinyin sin tonos; la app comprueba las sílabas.</p>
-        <span className="practice__cta">Cómo funciona →</span>
+        <p>Escucha la palabra y elige el pinyin con sus tonos. Diez por tanda.</p>
+        <span className="practice__cta">Entrenar el oído →</span>
       </a>
     </section>
   );

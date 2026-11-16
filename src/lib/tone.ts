@@ -61,3 +61,63 @@ export function stripTones(pinyin: string): string {
 export function matchesPinyin(typed: string, expected: string): boolean {
   return stripTones(typed) === stripTones(expected);
 }
+
+const VOWELS = 'aeiouü' as const;
+type Vowel = (typeof VOWELS)[number];
+
+const MARKS: Record<Vowel, Record<Exclude<Tone, 5>, string>> = {
+  a: { 1: 'ā', 2: 'á', 3: 'ǎ', 4: 'à' },
+  e: { 1: 'ē', 2: 'é', 3: 'ě', 4: 'è' },
+  i: { 1: 'ī', 2: 'í', 3: 'ǐ', 4: 'ì' },
+  o: { 1: 'ō', 2: 'ó', 3: 'ǒ', 4: 'ò' },
+  u: { 1: 'ū', 2: 'ú', 3: 'ǔ', 4: 'ù' },
+  ü: { 1: 'ǖ', 2: 'ǘ', 3: 'ǚ', 4: 'ǜ' },
+};
+
+function mainVowel(base: string): Vowel | undefined {
+  if (base.includes('a')) return 'a';
+  if (base.includes('e')) return 'e';
+  if (base.includes('ou')) return 'o';
+  const found = [...base].filter((char): char is Vowel => VOWELS.includes(char as Vowel));
+  return found.at(-1);
+}
+
+/** Escribe una sílaba sin tonos con la marca del tono pedido. */
+export function withTone(syllable: string, tone: Tone): string {
+  const base = syllable.toLowerCase().replace(/v/g, 'ü');
+  if (tone === 5) return base;
+  const vowel = mainVowel(base);
+  if (!vowel) return base;
+  return base.replace(vowel, MARKS[vowel][tone]);
+}
+
+/** Tonos declarados por el usuario: números (ni3) o marcas (nǐ). */
+export function typedTones(typed: string): Tone[] | null {
+  const digits = typed.match(/[1-5]/g);
+  if (digits) return digits.map((digit) => Number(digit) as Tone);
+  const tones = typed
+    .trim()
+    .split(/[\s’']+/)
+    .filter(Boolean)
+    .map((token) => toneOf(token));
+  return tones.length > 0 && tones.some((tone) => tone !== 5) ? tones : null;
+}
+
+/** Secuencia de tonos de un pinyin de referencia. */
+export function toneSequence(pinyin: string): Tone[] {
+  return pinyin
+    .trim()
+    .split(/[\s’']+/)
+    .filter(Boolean)
+    .map((token) => toneOf(token));
+}
+
+export type PinyinCheck = 'ok' | 'sin-tonos' | 'tonos' | 'mal';
+
+/** Distingue «sílabas mal», «bien sin tonos», «tono equivocado» y «todo bien». */
+export function checkPinyin(typed: string, expected: string): PinyinCheck {
+  if (stripTones(typed) !== stripTones(expected)) return 'mal';
+  const typedSeq = typedTones(typed);
+  if (!typedSeq) return 'sin-tonos';
+  return typedSeq.join('-') === toneSequence(expected).join('-') ? 'ok' : 'tonos';
+}

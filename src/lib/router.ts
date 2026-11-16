@@ -10,6 +10,7 @@ export type Route =
   | { name: 'practice' }
   | { name: 'stories' }
   | { name: 'immersion' }
+  | { name: 'tones' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -29,6 +30,7 @@ const SIMPLE: Record<string, Route> = {
   practicar: { name: 'practice' },
   historias: { name: 'stories' },
   inmersion: { name: 'immersion' },
+  tonos: { name: 'tones' },
 };
 
 export function parseHash(hash: string): Route {
