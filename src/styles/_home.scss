@@ -5,6 +5,17 @@
   display: grid;
   gap: $space-6;
   align-items: center;
+  padding: $space-5;
+  border-radius: 28px;
+  border: 1px solid rgb(0 168 107 / 14%);
+  background:
+    radial-gradient(420px 220px at 90% 0%, rgb(0 169 157 / 16%), transparent 70%),
+    linear-gradient(135deg, #eafff5 0%, #eef8ff 100%);
+  box-shadow: $shadow-md;
+
+  @include from($bp-sm) {
+    padding: $space-6;
+  }
 
   @include from($bp-md) {
     grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
@@ -22,7 +33,7 @@
 
   [lang='zh-Hans'] {
     @include hanzi(clamp(3.4rem, 8vw, 5rem));
-    color: $accent;
+    color: $mint-dark;
   }
 }
 
@@ -69,11 +80,11 @@
 
   > div {
     padding: $space-4;
-    background: $surface;
+    background: rgb(255 255 255 / 88%);
   }
 
   dt {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -83,7 +94,7 @@
   dd {
     margin: $space-1 0 0;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
   }
@@ -95,9 +106,114 @@
   }
 }
 
+// Panel de gamificación ------------------------------------------------------
+.panel-grid {
+  display: grid;
+  gap: $space-4;
+  margin-top: $space-5;
+
+  @include from($bp-md) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+.daily {
+  display: grid;
+  gap: $space-4;
+}
+
+.daily__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.daily__goal {
+  margin-top: $space-1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $ink;
+}
+
+.daily__body {
+  display: flex;
+  align-items: center;
+  gap: $space-5;
+  flex-wrap: wrap;
+}
+
+.daily__level {
+  flex: 1;
+  min-width: 150px;
+  display: grid;
+  gap: $space-2;
+}
+
+.daily__level-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $ink;
+}
+
+.daily__level-meta {
+  font-size: 0.82rem;
+  color: $muted;
+}
+
+.daily__total {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $mint-dark;
+}
+
+.mini-bar {
+  height: 8px;
+  border-radius: $radius-pill;
+  background: rgb(255 255 255 / 70%);
+  overflow: hidden;
+  border: 1px solid rgb(0 168 107 / 14%);
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $mint, $teal);
+    transition: width $motion $ease;
+  }
+}
+
+.achievements {
+  display: grid;
+  gap: $space-3;
+  align-content: start;
+
+  h2 {
+    font-size: 1.1rem;
+  }
+}
+
+.achievements__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-2;
+}
+
+.achievements__count {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  color: $muted;
+}
+
+.achievements__hint {
+  font-size: 0.78rem;
+  color: $muted;
+}
+
 // Ruta ----------------------------------------------------------------------
 .units {
-  margin-top: $space-8;
+  margin-top: $space-7;
 }
 
 .section-head {
@@ -180,9 +296,25 @@
   padding: $space-4;
   @include surface($radius);
   border-left: 3px solid transparent;
+  transition:
+    box-shadow $motion $ease,
+    transform $motion $ease;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+  }
 
   &.is-complete {
-    border-left-color: $jade;
+    border-left-color: $teal;
+  }
+
+  @include reduced-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
@@ -199,9 +331,9 @@
   color: $muted;
 
   .is-complete & {
-    background: rgb(47 107 90 / 10%);
-    border-color: rgb(47 107 90 / 35%);
-    color: $jade;
+    background: $teal-soft;
+    border-color: rgb(0 169 157 / 35%);
+    color: #0a6b5f;
   }
 }
 
@@ -220,7 +352,7 @@
 }
 
 .unit__progress {
-  height: 4px;
+  height: 5px;
   margin-top: $space-3;
   border-radius: $radius-pill;
   background: $paper-deep;
@@ -229,7 +361,8 @@
   span {
     display: block;
     height: 100%;
-    background: $accent;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $mint, $teal);
   }
 }
 
@@ -239,6 +372,18 @@
   color: $muted;
 }
 
+.unit__side {
+  display: grid;
+  gap: $space-2;
+  justify-items: end;
+}
+
+.unit__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: $amber;
+}
+
 .unit__cta {
   padding: $space-2 $space-4;
   font-size: 0.92rem;
@@ -246,7 +391,7 @@
 
 // Método --------------------------------------------------------------------
 .method {
-  margin-top: $space-8;
+  margin-top: $space-7;
   padding: $space-5;
   background: $surface;
   border: 1px solid $line;
@@ -265,7 +410,7 @@
   color: $ink-soft;
 
   li::marker {
-    color: $accent;
+    color: $mint;
   }
 
   strong {
@@ -278,8 +423,12 @@
     grid-template-columns: auto minmax(0, 1fr);
   }
 
-  .unit__cta {
+  .unit__side {
     grid-column: 1 / -1;
-    justify-self: start;
+    justify-items: start;
+  }
+
+  .daily__body {
+    justify-content: center;
   }
 }

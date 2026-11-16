@@ -26,7 +26,9 @@ export function interleave(wordIds: string[]): string[] {
     else buckets.set(key, [id]);
   }
   const keys = [...buckets.keys()].sort(
-    (a, b) => (UNIT_ORDER.get(a) ?? Number.MAX_SAFE_INTEGER) - (UNIT_ORDER.get(b) ?? Number.MAX_SAFE_INTEGER),
+    (a, b) =>
+      (UNIT_ORDER.get(a) ?? Number.MAX_SAFE_INTEGER) -
+      (UNIT_ORDER.get(b) ?? Number.MAX_SAFE_INTEGER),
   );
   const out: string[] = [];
   let pending = keys.length;

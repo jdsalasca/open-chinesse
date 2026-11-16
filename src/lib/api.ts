@@ -48,13 +48,21 @@ async function csrfToken(): Promise<string | null> {
   }
 }
 
-async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
+async function buildHeaders(init: RequestInit): Promise<Headers> {
   const headers = new Headers(init.headers);
   headers.set('Accept', 'application/json');
   if (init.body) headers.set('Content-Type', 'application/json');
   const token = readCookie('XSRF-TOKEN') ?? csrfFallback;
   if (token && init.method && init.method !== 'GET') headers.set('X-XSRF-TOKEN', token);
-  const response = await fetch(path, { credentials: 'same-origin', ...init, headers });
+  return headers;
+}
+
+async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const response = await fetch(path, {
+    credentials: 'same-origin',
+    ...init,
+    headers: await buildHeaders(init),
+  });
   if (!response.ok) {
     throw new ApiError(response.status, `${init.method ?? 'GET'} ${path} → ${response.status}`);
   }

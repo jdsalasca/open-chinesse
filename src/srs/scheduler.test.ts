@@ -67,7 +67,9 @@ describe('review', () => {
   it('"Fácil" separa más que "Difícil"', () => {
     const base = review(newCard(NOW), Rating.Good, NOW);
     const at = dueAt(base);
-    expect(dueAt(review(base, Rating.Easy, at))).toBeGreaterThan(dueAt(review(base, Rating.Hard, at)));
+    expect(dueAt(review(base, Rating.Easy, at))).toBeGreaterThan(
+      dueAt(review(base, Rating.Hard, at)),
+    );
   });
 });
 
@@ -123,7 +125,8 @@ describe('tarjetas corruptas', () => {
   });
 });
 
-describe('formatInterval', () => {  it('usa unidades legibles', () => {
+describe('formatInterval', () => {
+  it('usa unidades legibles', () => {
     expect(formatInterval(60_000)).toBe('1 min');
     expect(formatInterval(3 * 60 * 60_000)).toBe('3 h');
     expect(formatInterval(3 * 86_400_000)).toBe('3 d');

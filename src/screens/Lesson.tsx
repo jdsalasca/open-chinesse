@@ -1,7 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
+import { Confetti } from '../components/ui/Confetti';
+import { Icon } from '../components/ui/Icon';
 import { ALL_WORDS, LEVEL_LABELS, UNITS } from '../data/curriculum';
+import { starsForScore, xpForLesson } from '../gamification/xp';
 import { makeQuiz } from '../lib/quiz';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
@@ -9,6 +12,8 @@ import { useLearner } from '../store/useLearner';
 export function Lesson({ unitId }: { unitId: string }) {
   const unit = UNITS.find((u) => u.id === unitId);
   const introduceUnit = useLearner((s) => s.introduceUnit);
+  const recordLesson = useLearner((s) => s.recordLesson);
+  const recorded = useRef(false);
   const [phase, setPhase] = useState<'learn' | 'quiz' | 'done'>('learn');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
@@ -19,6 +24,12 @@ export function Lesson({ unitId }: { unitId: string }) {
   useEffect(() => {
     if (unit) introduceUnit(unit.id);
   }, [unit, introduceUnit]);
+
+  useEffect(() => {
+    if (phase !== 'done' || !unit || recorded.current) return;
+    recorded.current = true;
+    recordLesson(unit.id, answers.filter(Boolean).length, Math.max(answers.length, 1));
+  }, [phase, unit, answers, recordLesson]);
 
   if (!unit) {
     return (
@@ -60,7 +71,9 @@ export function Lesson({ unitId }: { unitId: string }) {
     return (
       <div className="lesson">
         <div className="lesson__bar">
-          <span className="lesson__label">{LEVEL_LABELS[unit.level]} · {unit.title}</span>
+          <span className="lesson__label">
+            {LEVEL_LABELS[unit.level]} · {unit.title}
+          </span>
           <span className="lesson__count">
             {index + 1} / {unit.words.length}
           </span>
@@ -153,7 +166,9 @@ export function Lesson({ unitId }: { unitId: string }) {
           </div>
           {selected !== null && (
             <div className="quiz__feedback">
-              <p>{selected === questionWord.meaning ? 'Correcto.' : `Era: ${questionWord.meaning}.`}</p>
+              <p>
+                {selected === questionWord.meaning ? 'Correcto.' : `Era: ${questionWord.meaning}.`}
+              </p>
               <button type="button" className="button button--primary" onClick={next} autoFocus>
                 {index + 1 === quiz.length ? 'Terminar' : 'Siguiente'}
               </button>
@@ -165,20 +180,35 @@ export function Lesson({ unitId }: { unitId: string }) {
   }
 
   const correct = answers.filter(Boolean).length;
+  const stars = starsForScore(correct, Math.max(answers.length, 1));
+  const earnedXp = xpForLesson(correct);
   return (
     <div className="lesson">
       <section className="summary" aria-live="polite">
-        <p className="eyebrow">{LEVEL_LABELS[unit.level]} · {unit.title}</p>
+        {stars === 3 && <Confetti />}
+        <p className="eyebrow">
+          {LEVEL_LABELS[unit.level]} · {unit.title}
+        </p>
+        <div className="summary__stars" aria-label={`${stars} de 3 estrellas`}>
+          {[1, 2, 3].map((star) => (
+            <Icon key={star} name="star" size={30} filled={star <= stars} />
+          ))}
+        </div>
         <h1 className="summary__title">
           {correct} de {answers.length} correctas
         </h1>
+        <p className="summary__xp">+{earnedXp} XP</p>
         <p className="summary__text">
           {correct === answers.length
             ? 'Reconociste todas. Ahora el repaso espaciado hará el resto.'
             : 'El error es parte del proceso: esas palabras volverán antes.'}
         </p>
         <div className="summary__actions">
-          <button type="button" className="button button--primary" onClick={() => navigate('/review')}>
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={() => navigate('/review')}
+          >
             Repasar las {unit.words.length} palabras
           </button>
           <button type="button" className="button button--ghost" onClick={() => navigate('/')}>

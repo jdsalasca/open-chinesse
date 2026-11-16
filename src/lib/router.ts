@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export type Route =
-  | { name: 'home' }
-  | { name: 'lesson'; unitId: string }
-  | { name: 'review' }
-  | { name: 'stats' };
+  { name: 'home' } | { name: 'lesson'; unitId: string } | { name: 'review' } | { name: 'stats' };
 
 export function parseHash(hash: string): Route {
   const path = hash.replace(/^#\/?/, '').split('?')[0];

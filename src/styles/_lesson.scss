@@ -106,8 +106,8 @@
 
   &.is-correct {
     border-color: $jade;
-    background: rgb(47 107 90 / 12%);
-    color: #255647;
+    background: rgb(0 169 157 / 12%);
+    color: #0a6b5f;
     font-weight: 600;
   }
 
@@ -137,11 +137,32 @@
 // Resumen -------------------------------------------------------------------
 .summary {
   @include surface($radius-lg, $shadow-lg);
+  position: relative;
+  overflow: hidden;
   padding: $space-7 $space-5;
   display: grid;
   gap: $space-3;
   justify-items: center;
   text-align: center;
+}
+
+.summary__stars {
+  display: inline-flex;
+  gap: $space-2;
+  color: $amber;
+
+  svg {
+    filter: drop-shadow(0 4px 10px rgb(232 160 8 / 35%));
+  }
+}
+
+.summary__xp {
+  padding: $space-1 $space-3;
+  border-radius: $radius-pill;
+  background: $mint-soft;
+  color: $mint-dark;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .summary__title {

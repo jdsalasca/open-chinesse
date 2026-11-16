@@ -89,7 +89,8 @@ describe('sincronización', () => {
   });
 });
 
-describe('requeuesSoon', () => {  it('re-encola pasos de aprendizaje cortos', () => {
+describe('requeuesSoon', () => {
+  it('re-encola pasos de aprendizaje cortos', () => {
     expect(requeuesSoon(newCard(NOW), NOW)).toBe(true);
   });
 

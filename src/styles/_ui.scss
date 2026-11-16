@@ -1,0 +1,274 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Tarjetas ------------------------------------------------------------------
+.card {
+  @include surface($radius-lg, $shadow-md);
+  padding: $space-5;
+}
+
+.card--flat {
+  box-shadow: none;
+}
+
+.card--mint {
+  background: $mint-soft;
+  border-color: rgb(0 168 107 / 18%);
+}
+
+.card--cream {
+  background: $amber-soft;
+  border-color: rgb(232 160 8 / 20%);
+}
+
+.card--lilac {
+  background: $violet-soft;
+  border-color: rgb(107 91 255 / 16%);
+}
+
+.card--pink {
+  background: $pink-soft;
+  border-color: rgb(255 92 122 / 18%);
+}
+
+.card--sky {
+  background: $sky-soft;
+  border-color: rgb(46 155 255 / 18%);
+}
+
+// Badges --------------------------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: 2px $space-2;
+  border-radius: $radius-pill;
+  border: 1px solid $line;
+  background: $surface;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: $ink-soft;
+  white-space: nowrap;
+}
+
+.badge--mint {
+  background: $mint-soft;
+  border-color: rgb(0 168 107 / 22%);
+  color: $mint-dark;
+}
+
+.badge--amber {
+  background: $amber-soft;
+  border-color: rgb(232 160 8 / 26%);
+  color: #8a6100;
+}
+
+.badge--violet {
+  background: $violet-soft;
+  border-color: rgb(107 91 255 / 22%);
+  color: #4b3fd6;
+}
+
+.badge--pink {
+  background: $pink-soft;
+  border-color: rgb(255 92 122 / 24%);
+  color: #c02a44;
+}
+
+// Anillo de progreso --------------------------------------------------------
+.ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.ring__svg {
+  transform: rotate(-90deg);
+}
+
+.ring__track {
+  stroke: $paper-deep;
+}
+
+.ring__value {
+  stroke: $mint;
+  stroke-linecap: round;
+  transition: stroke-dashoffset $motion $ease;
+}
+
+.ring__label {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  line-height: 1.05;
+}
+
+.ring__number {
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: $ink;
+}
+
+.ring__caption {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+// Stat tile -----------------------------------------------------------------
+.stat-tile {
+  padding: $space-4;
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  display: grid;
+  gap: 2px;
+
+  dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    color: $ink;
+  }
+
+  small {
+    font-size: 0.78rem;
+    color: $muted;
+  }
+}
+
+// Botones: tamaños y utilidades ----------------------------------------------
+.button--sm {
+  padding: $space-2 $space-3;
+  font-size: 0.86rem;
+}
+
+.button--lg {
+  padding: $space-4 $space-6;
+  font-size: 1.05rem;
+}
+
+.button.is-block {
+  width: 100%;
+}
+
+.button--soft {
+  background: $mint-soft;
+  color: $mint-dark;
+  border-color: transparent;
+
+  &:hover {
+    background: #d3f3e3;
+  }
+}
+
+// Confeti -------------------------------------------------------------------
+.confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti__piece {
+  position: absolute;
+  top: -12px;
+  left: var(--x);
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--color);
+  opacity: 0;
+  animation: confetti-fall 1400ms $ease forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift), 240px, 0) rotate(var(--rot));
+  }
+}
+
+@include reduced-motion {
+  .confetti {
+    display: none;
+  }
+
+  .ring__value {
+    transition: none;
+  }
+}
+
+// Chips de progreso ---------------------------------------------------------
+.level-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-1 $space-3 $space-1 $space-1;
+  border-radius: $radius-pill;
+  border: 1px solid $line;
+  background: $surface;
+  box-shadow: $shadow-sm;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $ink-soft;
+}
+
+.level-chip__disc {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $mint, $teal);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.achievement-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.achievement {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: 4px $space-2;
+  border-radius: $radius-pill;
+  background: $paper;
+  border: 1px dashed $line-strong;
+  font-size: 0.76rem;
+  color: $muted;
+
+  &.is-earned {
+    background: $amber-soft;
+    border-style: solid;
+    border-color: rgb(232 160 8 / 35%);
+    color: #8a6100;
+    font-weight: 600;
+  }
+}

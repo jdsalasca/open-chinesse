@@ -131,7 +131,11 @@ export function Review() {
             : 'El calendario ya está actualizado. Nada más por hoy.'}
         </p>
         <div className="empty__actions">
-          <button type="button" className="button button--primary" onClick={() => navigate('/stats')}>
+          <button
+            type="button"
+            className="button button--primary"
+            onClick={() => navigate('/stats')}
+          >
             Ver progreso
           </button>
           <button type="button" className="button button--ghost" onClick={() => navigate('/')}>

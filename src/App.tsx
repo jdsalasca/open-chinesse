@@ -38,11 +38,7 @@ function Account() {
   return (
     <div className="account">
       {providers.map((provider) => (
-        <a
-          key={provider}
-          className="button button--ghost account__login"
-          href={loginUrl(provider)}
-        >
+        <a key={provider} className="button button--ghost account__login" href={loginUrl(provider)}>
           Entrar con {PROVIDER_LABELS[provider] ?? provider}
         </a>
       ))}
@@ -115,8 +111,8 @@ export default function App() {
       </main>
       <footer className="foot">
         <p>
-          Progreso guardado en este navegador y, si entras con tu cuenta, sincronizado.
-          Sin notificaciones ni rachas punitivas.
+          Progreso guardado en este navegador y, si entras con tu cuenta, sincronizado. Sin
+          notificaciones ni rachas punitivas.
         </p>
         <button type="button" className="link" onClick={() => navigate('/stats')}>
           Ver progreso

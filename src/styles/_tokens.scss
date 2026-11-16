@@ -1,30 +1,45 @@
-// Paleta y escala. Nada de valores sueltos en los parciales.
-$ink: #1b1a17;
-$ink-soft: #3d3932;
-$muted: #6f6860;
-$paper: #faf7f2;
-$paper-deep: #f1e9dd;
-$surface: #fffdf9;
-$line: #e4dbcd;
-$line-strong: #cfc3b1;
+// Paleta inspirada en HelloChinese (verde menta + pasteles), ajustada a contraste AA.
+$mint: #00b86b;
+$mint-dark: #007d4f;
+$mint-soft: #e6f8ef;
+$teal: #00a99d;
+$teal-soft: #e0f7f4;
+$pink: #ff5c7a;
+$pink-soft: #ffeff4;
+$violet: #6b5bff;
+$violet-soft: #f3f2ff;
+$amber: #e8a008;
+$amber-soft: #fff9e5;
+$sky: #2e9bff;
+$sky-soft: #e3f9ff;
 
-$accent: #c33f2c;
-$accent-dark: #9d2c1c;
-$accent-soft: #f6e2dd;
-$jade: #2f6b5a;
-$gold: #b7791f;
-$blue: #2b5d8a;
-$danger: #a4271d;
+$ink: #1f2430;
+$ink-soft: #3d4452;
+$muted: #6b7280;
+$paper: #f6f9fb;
+$paper-deep: #eef3f8;
+$surface: #ffffff;
+$line: #e3e9f0;
+$line-strong: #cfd8e3;
+$danger: #d93a4a;
 
-$tone-1: #c33f2c;
-$tone-2: #8f5a0c;
-$tone-3: #2f6b5a;
-$tone-4: #2b5d8a;
-$tone-5: #6f675e;
+// Alias de compatibilidad: el resto de parciales sigue compilando con la paleta nueva.
+$accent: $mint-dark;
+$accent-dark: $mint-dark;
+$accent-soft: $mint-soft;
+$jade: $teal;
+$gold: $amber;
+$blue: $sky;
+
+$tone-1: #e0455c;
+$tone-2: #b5730a;
+$tone-3: #0f8f7f;
+$tone-4: #2f5fe0;
+$tone-5: #6b7280;
 
 $radius-sm: 8px;
 $radius: 14px;
-$radius-lg: 24px;
+$radius-lg: 20px;
 $radius-pill: 999px;
 
 $space-1: 0.25rem;
@@ -36,13 +51,27 @@ $space-6: 2rem;
 $space-7: 3rem;
 $space-8: 4rem;
 
-$font-ui: 'Source Sans 3', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-ui:
+  'Poppins',
+  'Source Sans 3',
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  sans-serif;
 $font-hanzi: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
 $font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
 
-$shadow-sm: 0 1px 2px rgb(27 26 23 / 6%);
-$shadow-md: 0 1px 2px rgb(27 26 23 / 5%), 0 12px 32px -18px rgb(27 26 23 / 35%);
-$shadow-lg: 0 2px 4px rgb(27 26 23 / 4%), 0 24px 60px -32px rgb(27 26 23 / 40%);
+$shadow-sm: 0 1px 2px rgb(31 36 48 / 6%);
+$shadow-md:
+  0 1px 2px rgb(31 36 48 / 5%),
+  0 12px 28px -16px rgb(31 36 48 / 28%);
+$shadow-lg:
+  0 2px 6px rgb(31 36 48 / 6%),
+  0 28px 60px -30px rgb(31 36 48 / 35%);
+
+$ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+$motion: 160ms;
 
 $bp-sm: 640px;
 $bp-md: 900px;

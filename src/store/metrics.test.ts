@@ -112,7 +112,8 @@ describe('nextDueAt', () => {
   });
 });
 
-describe('forecast', () => {  it('agrupa vencimientos en 7 días desde hoy', () => {
+describe('forecast', () => {
+  it('agrupa vencimientos en 7 días desde hoy', () => {
     const base = newCard(NOW);
     const cards: Record<string, StoredCard> = {
       a: { ...base, due: new Date(NOW).toISOString() },

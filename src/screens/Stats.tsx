@@ -85,7 +85,9 @@ export function Stats() {
           <li>FSRS-6 con retención objetivo del 90%.</li>
           <li>Cuatro calificaciones con intervalo visible antes de elegir.</li>
           <li>Práctica de recuperación: primero el intento, después la respuesta.</li>
-          <li>Investigación completa en <code>resources/investigation-education/</code>.</li>
+          <li>
+            Investigación completa en <code>resources/investigation-education/</code>.
+          </li>
         </ul>
       </section>
 
@@ -105,12 +107,20 @@ export function Stats() {
             >
               Sí, borrar todo
             </button>
-            <button type="button" className="button button--ghost" onClick={() => setConfirming(false)}>
+            <button
+              type="button"
+              className="button button--ghost"
+              onClick={() => setConfirming(false)}
+            >
               Cancelar
             </button>
           </div>
         ) : (
-          <button type="button" className="button button--ghost" onClick={() => setConfirming(true)}>
+          <button
+            type="button"
+            className="button button--ghost"
+            onClick={() => setConfirming(true)}
+          >
             Borrar progreso
           </button>
         )}

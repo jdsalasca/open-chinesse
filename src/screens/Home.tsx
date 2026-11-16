@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { Badge } from '../components/ui/Badge';
+import { Card } from '../components/ui/Card';
+import { Icon } from '../components/ui/Icon';
+import { ProgressRing } from '../components/ui/ProgressRing';
 import {
   LEVELS,
   LEVEL_LABELS,
@@ -9,6 +13,7 @@ import {
   wordsForLevel,
   type Level,
 } from '../data/curriculum';
+import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
 import { navigate } from '../lib/router';
 import { buildQueue } from '../srs/queue';
 import { masteredCount, streakDays } from '../store/metrics';
@@ -17,6 +22,11 @@ import { completedUnits, useLearner } from '../store/useLearner';
 export function Home() {
   const cards = useLearner((s) => s.cards);
   const log = useLearner((s) => s.log);
+  const xp = useLearner((s) => s.xp);
+  const todayXp = useLearner((s) => s.todayXp);
+  const dailyGoal = useLearner((s) => s.dailyGoal);
+  const stars = useLearner((s) => s.stars);
+  const achievements = useLearner((s) => s.achievements);
   const now = Date.now();
 
   const done = completedUnits(cards);
@@ -34,6 +44,8 @@ export function Home() {
     (total, unit) => total + unit.words.length,
     0,
   );
+  const progress = levelProgress(xp);
+  const levelNumber = levelFromXp(xp);
 
   return (
     <div className="home">
@@ -51,7 +63,11 @@ export function Home() {
           </p>
           <div className="hero__actions">
             {queue.total > 0 && (
-              <button type="button" className="button button--primary" onClick={() => navigate('/review')}>
+              <button
+                type="button"
+                className="button button--primary"
+                onClick={() => navigate('/review')}
+              >
                 Repasar {queue.total} {queue.total === 1 ? 'palabra' : 'palabras'}
               </button>
             )}
@@ -99,13 +115,75 @@ export function Home() {
         </dl>
       </section>
 
+      <section className="panel-grid" aria-label="Tu progreso de hoy">
+        <Card tone="mint" className="daily">
+          <div className="daily__head">
+            <div>
+              <p className="eyebrow">Meta de hoy</p>
+              <p className="daily__goal">
+                {todayXp} de {dailyGoal} XP
+              </p>
+            </div>
+            <Badge
+              tone={todayXp >= dailyGoal ? 'mint' : 'amber'}
+              icon={<Icon name="flame" size={14} />}
+            >
+              {todayXp >= dailyGoal ? 'Meta cumplida' : `${streak} días`}
+            </Badge>
+          </div>
+          <div className="daily__body">
+            <ProgressRing
+              value={todayXp}
+              max={Math.max(dailyGoal, todayXp)}
+              label="XP de hoy"
+              caption="XP hoy"
+            />
+            <div className="daily__level">
+              <p className="daily__level-name">Nivel {levelNumber}</p>
+              <div className="mini-bar" aria-hidden="true">
+                <span style={{ width: `${Math.round(progress.ratio * 100)}%` }} />
+              </div>
+              <p className="daily__level-meta">
+                {progress.current} / {progress.needed} XP para el nivel {levelNumber + 1}
+              </p>
+              <p className="daily__total">{xp} XP en total</p>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="achievements">
+          <div className="achievements__head">
+            <h2>Logros</h2>
+            <span className="achievements__count">
+              {achievements.length} / {ACHIEVEMENTS.length}
+            </span>
+          </div>
+          <ul className="achievement-row">
+            {ACHIEVEMENTS.map((achievement) => {
+              const earned = achievements.includes(achievement.id);
+              return (
+                <li
+                  key={achievement.id}
+                  className={`achievement${earned ? ' is-earned' : ''}`}
+                  title={achievement.description}
+                >
+                  <Icon name={earned ? achievement.icon : 'target'} size={14} />
+                  {achievement.title}
+                </li>
+              );
+            })}
+          </ul>
+          <p className="achievements__hint">Sin comparaciones ni ligas: cada logro es tuyo.</p>
+        </Card>
+      </section>
+
       <section className="units" aria-labelledby="units-title">
         <div className="section-head">
           <div>
             <h2 id="units-title">Tu ruta</h2>
             <p>
-              {unitsForLevel(1).length} unidades de HSK 1 y {unitsForLevel(2).length} de HSK 2.
-              Sin orden obligatorio.
+              {unitsForLevel(1).length} unidades de HSK 1 y {unitsForLevel(2).length} de HSK 2. Sin
+              orden obligatorio.
             </p>
           </div>
           <div className="level-switch" role="tablist" aria-label="Nivel">
@@ -137,6 +215,7 @@ export function Home() {
           {levelUnits.map((unit) => {
             const learned = unit.words.filter((w) => cards[w.id]).length;
             const complete = learned === unit.words.length;
+            const earned = stars[unit.id] ?? 0;
             return (
               <li key={unit.id} className={`unit${complete ? ' is-complete' : ''}`}>
                 <span className="unit__index" aria-hidden="true">
@@ -153,13 +232,22 @@ export function Home() {
                     {complete ? ' · completada' : ''}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  className="button button--ghost unit__cta"
-                  onClick={() => navigate(`/lesson/${unit.id}`)}
-                >
-                  {complete ? 'Repetir' : learned > 0 ? 'Continuar' : 'Estudiar'}
-                </button>
+                <div className="unit__side">
+                  {earned > 0 && (
+                    <span className="unit__stars" aria-label={`${earned} de 3 estrellas`}>
+                      {[1, 2, 3].map((star) => (
+                        <Icon key={star} name="star" size={14} filled={star <= earned} />
+                      ))}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className="button button--ghost unit__cta"
+                    onClick={() => navigate(`/lesson/${unit.id}`)}
+                  >
+                    {complete ? 'Repetir' : learned > 0 ? 'Continuar' : 'Estudiar'}
+                  </button>
+                </div>
               </li>
             );
           })}
@@ -170,12 +258,12 @@ export function Home() {
         <h2 id="method-title">Cómo está diseñado</h2>
         <ul className="method__list">
           <li>
-            <strong>Recuperación activa.</strong> Primero intentas recordar; la respuesta
-            aparece después.
+            <strong>Recuperación activa.</strong> Primero intentas recordar; la respuesta aparece
+            después.
           </li>
           <li>
-            <strong>Repaso espaciado FSRS.</strong> Cada palabra vuelve justo antes de que
-            la olvides.
+            <strong>Repaso espaciado FSRS.</strong> Cada palabra vuelve justo antes de que la
+            olvides.
           </li>
           <li>
             <strong>Audio en todo.</strong> El tono es parte de la palabra, no un adorno.
