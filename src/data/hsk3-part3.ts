@@ -34,7 +34,7 @@ export const HSK3_PART3: Unit[] = [
         id: 'h3-11-w03',
         hanzi: '了解',
         pinyin: 'liǎojiě',
-        meaning: 'conocer bien',
+        meaning: 'conocer',
         example: {
           hanzi: '我很了解他。',
           pinyin: 'Wǒ hěn liǎojiě tā.',
@@ -126,7 +126,7 @@ export const HSK3_PART3: Unit[] = [
         example: {
           hanzi: '这个房间有十米长。',
           pinyin: 'Zhège fángjiān yǒu shí mǐ cháng.',
-          translation: 'Esta habitación mide diez metros.',
+          translation: 'Esta habitación mide diez metros de largo.',
         },
       },
       {

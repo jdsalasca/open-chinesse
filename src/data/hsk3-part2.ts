@@ -818,7 +818,7 @@ export const HSK3_PART2: Unit[] = [
         id: 'h3-10-w11',
         hanzi: '老',
         pinyin: 'lǎo',
-        meaning: 'anciano',
+        meaning: 'viejo',
         example: {
           hanzi: '那位老人是我爷爷。',
           pinyin: 'Nà wèi lǎorén shì wǒ yéye.',

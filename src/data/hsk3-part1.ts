@@ -208,11 +208,11 @@ export const HSK3_PART1: Unit[] = [
         id: 'h3-02-w03',
         hanzi: '比较',
         pinyin: 'bǐjiào',
-        meaning: 'bastante',
+        meaning: 'relativamente',
         example: {
           hanzi: '今天比较冷。',
           pinyin: 'Jīntiān bǐjiào lěng.',
-          translation: 'Hoy hace bastante frío.',
+          translation: 'Hoy hace relativamente frío.',
         },
       },
       {

@@ -208,7 +208,7 @@ export const HSK3_PART4: Unit[] = [
         id: 'h3-17-w03',
         hanzi: '校长',
         pinyin: 'xiàozhǎng',
-        meaning: 'director',
+        meaning: 'director de escuela',
         example: {
           hanzi: '校长在办公室等你。',
           pinyin: 'Xiàozhǎng zài bàngōngshì děng nǐ.',
