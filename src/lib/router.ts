@@ -14,6 +14,7 @@ export type Route =
   | { name: 'immersion' }
   | { name: 'tones' }
   | { name: 'check' }
+  | { name: 'cloze' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -36,6 +37,7 @@ const SIMPLE: Record<string, Route> = {
   inmersion: { name: 'immersion' },
   tonos: { name: 'tones' },
   prueba: { name: 'check' },
+  contexto: { name: 'cloze' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {

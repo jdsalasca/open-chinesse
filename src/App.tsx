@@ -11,6 +11,7 @@ import { Character } from './screens/Character';
 import { Stories } from './screens/Stories';
 import { Scenarios, ScenarioView } from './screens/Scenarios';
 import { Check } from './screens/Check';
+import { Cloze } from './screens/Cloze';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -31,7 +32,7 @@ const SECTION: Partial<Record<Route['name'], string>> = {
   stats: 'progreso',
 };
 
-const FOCUS = new Set<Route['name']>(['lesson', 'review', 'tones', 'scenario']);
+const FOCUS = new Set<Route['name']>(['lesson', 'review', 'tones', 'scenario', 'cloze']);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   review: () => <Review />,
@@ -43,6 +44,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   immersion: () => <Immersion />,
   tones: () => <Tones />,
   check: () => <Check />,
+  cloze: () => <Cloze />,
 };
 
 function Header({ route }: { route: Route }) {

@@ -184,5 +184,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Ayudas conmutables de pinyin y traducción en las situaciones.
 - [ ] Recuperación inversa y dictado (propuestas de terra).
 
+### C3 — Producción en contexto
+
+- [x] Huecos sobre los ejemplos existentes: 425 de 601 palabras tienen una
+      aparición única y completa, verificada por test.
+- [x] Respuesta escrita en hanzi o pinyin, con o sin tonos; sin opciones ni
+      distractores ambiguos.
+- [x] Pista opcional, «No lo sé», frase completa con pinyin y audio al resolver.
+- [x] Solo palabras ya estudiadas; no altera FSRS.
+- [ ] Dictado, recuperación inversa y producción oral.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

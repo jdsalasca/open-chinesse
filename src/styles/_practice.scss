@@ -16,6 +16,10 @@
   @include from(720px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  @include from(1000px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .practice__card {
@@ -142,5 +146,20 @@
 
   .practice__cta {
     color: #1f6fb8;
+  }
+}
+
+.practice__card--teal {
+  &::before {
+    background: $teal;
+  }
+
+  .practice__icon {
+    background: $teal-soft;
+    color: #0a6b5f;
+  }
+
+  .practice__cta {
+    color: #0a6b5f;
   }
 }

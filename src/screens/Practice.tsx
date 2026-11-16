@@ -6,13 +6,52 @@ import { useLearner } from '../store/useLearner';
 
 type Action = {
   href: string;
-  tone: 'mint' | 'violet' | 'amber' | 'sky';
+  tone: 'mint' | 'violet' | 'amber' | 'sky' | 'teal';
   icon: IconName;
   meta: string;
   title: string;
   text: string;
   cta: string;
 };
+
+const BASE_ACTIONS: Action[] = [
+  {
+    href: '#/tonos',
+    tone: 'violet',
+    icon: 'speaker',
+    meta: 'Diez por tanda',
+    title: 'Tonos',
+    text: 'Escucha la palabra y elige el pinyin con sus tonos. La diferencia está en la marca.',
+    cta: 'Entrenar el oído',
+  },
+  {
+    href: '#/contexto',
+    tone: 'teal',
+    icon: 'book',
+    meta: 'Seis frases',
+    title: 'En contexto',
+    text: 'Completa frases reales con la palabra que falta. Vale pinyin con tonos o el carácter.',
+    cta: 'Practicar',
+  },
+  {
+    href: '#/prueba',
+    tone: 'amber',
+    icon: 'clock',
+    meta: 'A siete días',
+    title: 'Prueba de retención',
+    text: 'Hasta diez palabras sin pistas. Mide lo que recuerdas, no lo que repites.',
+    cta: 'Ver la prueba',
+  },
+  {
+    href: '#/situaciones',
+    tone: 'sky',
+    icon: 'chat',
+    meta: 'Cuatro escenas',
+    title: 'Situaciones',
+    text: 'Pide, compra y pregunta cómo llegar en diálogos con una decisión en cada paso.',
+    cta: 'Entrar',
+  },
+];
 
 function actions(pending: number): Action[] {
   return [
@@ -25,33 +64,7 @@ function actions(pending: number): Action[] {
       text: 'Las tarjetas que tocan hoy, con notas de 1 a 4.',
       cta: 'Empezar',
     },
-    {
-      href: '#/tonos',
-      tone: 'violet',
-      icon: 'speaker',
-      meta: 'Diez por tanda',
-      title: 'Tonos',
-      text: 'Escucha la palabra y elige el pinyin con sus tonos. La diferencia está en la marca.',
-      cta: 'Entrenar el oído',
-    },
-    {
-      href: '#/prueba',
-      tone: 'amber',
-      icon: 'clock',
-      meta: 'A siete días',
-      title: 'Prueba de retención',
-      text: 'Hasta diez palabras sin pistas. Mide lo que recuerdas, no lo que repites.',
-      cta: 'Ver la prueba',
-    },
-    {
-      href: '#/situaciones',
-      tone: 'sky',
-      icon: 'chat',
-      meta: 'Cuatro escenas',
-      title: 'Situaciones',
-      text: 'Pide, compra y pregunta cómo llegar en diálogos con una decisión en cada paso.',
-      cta: 'Entrar',
-    },
+    ...BASE_ACTIONS,
   ];
 }
 
@@ -65,7 +78,7 @@ export function Practice() {
       <PageHeader
         eyebrow="Practicar"
         title="Entrena lo que ya viste"
-        lead="Cuatro formas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
+        lead="Cinco formas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
       />
       <div className="practice__grid">
         {actions(pending).map((action) => (

@@ -1,0 +1,102 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.cloze {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cloze__card {
+  display: grid;
+  gap: $space-4;
+}
+
+.cloze__translation {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $ink-soft;
+}
+
+.cloze__sentence {
+  margin: 0;
+  @include hanzi(2rem);
+  line-height: 1.7;
+  color: $ink;
+}
+
+.cloze__blank {
+  display: inline-block;
+  width: 2.2em;
+  height: 1em;
+  margin: 0 0.15em;
+  vertical-align: -0.15em;
+  border: 1px dashed $mint;
+  border-radius: 6px;
+  background: $mint-soft;
+  color: transparent;
+}
+
+.cloze__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.cloze__hint {
+  margin: 0;
+  padding: $space-2 $space-3;
+  border-radius: $radius-sm;
+  background: $amber-soft;
+  color: #8a6100;
+  font-size: 0.86rem;
+}
+
+.cloze__result {
+  display: grid;
+  gap: 4px;
+  padding: $space-3 $space-4;
+  border: 1px solid rgb(0 168 107 / 22%);
+  border-radius: $radius;
+  background: $mint-soft;
+
+  &.is-bad {
+    border-color: rgb(217 58 74 / 25%);
+    background: $pink-soft;
+  }
+}
+
+.cloze__verdict {
+  margin: 0;
+  font-weight: 600;
+  color: $ink;
+}
+
+.cloze__typed {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.cloze__answer {
+  margin: 0;
+  @include hanzi(1.6rem);
+  color: $ink;
+
+  span {
+    margin-left: $space-2;
+    font-family: $font-ui;
+    font-size: 0.9rem;
+    color: $teal;
+  }
+}
+
+.cloze__meaning {
+  margin: 0;
+  font-size: 0.88rem;
+  color: $muted;
+}

@@ -1,4 +1,5 @@
 import { ALL_WORDS, type Unit, type Word } from '../data/curriculum';
+import { lcg, shuffle } from './random';
 
 export type Question = {
   wordId: string;
@@ -35,24 +36,6 @@ function longestWord(chars: string[], from: number): string {
     if (size === 1 || DICTIONARY.has(candidate)) return candidate;
   }
   return chars[from];
-}
-
-function lcg(seed: number) {
-  let state = seed % 2147483647;
-  if (state <= 0) state += 2147483646;
-  return () => {
-    state = (state * 16807) % 2147483647;
-    return state / 2147483647;
-  };
-}
-
-function shuffle<T>(items: T[], random: () => number): T[] {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
 }
 
 function meaningOptions(word: Word, random: () => number): string[] {
