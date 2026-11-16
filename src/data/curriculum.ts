@@ -1,13 +1,14 @@
 import { HSK1_UNITS } from './hsk1';
 import { HSK2_UNITS } from './hsk2';
+import { HSK3_UNITS } from './hsk3';
 import type { Unit, Word } from './types';
 
 export type { Example, Unit, Word } from './types';
 
-export const LEVELS = [1, 2] as const;
+export const LEVELS = [1, 2, 3] as const;
 export type Level = (typeof LEVELS)[number];
 
-export const UNITS: Unit[] = [...HSK1_UNITS, ...HSK2_UNITS];
+export const UNITS: Unit[] = [...HSK1_UNITS, ...HSK2_UNITS, ...HSK3_UNITS];
 
 export const ALL_WORDS: Word[] = UNITS.flatMap((unit) => unit.words);
 
@@ -18,11 +19,13 @@ export const TOTAL_WORDS = ALL_WORDS.length;
 export const LEVEL_LABELS: Record<Level, string> = {
   1: 'HSK 1',
   2: 'HSK 2',
+  3: 'HSK 3',
 };
 
 export const LEVEL_TITLES: Record<Level, string> = {
   1: 'Fundamentos',
   2: 'Vida diaria',
+  3: 'Intermedio',
 };
 
 export function unitsForLevel(level: Level): Unit[] {

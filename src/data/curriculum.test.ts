@@ -6,7 +6,7 @@ function expectStudiable(word: (typeof ALL_WORDS)[number]): void {
   expect(word.hanzi.trim()).not.toBe('');
   expect(word.meaning.trim()).not.toBe('');
   expect(word.pinyin).toMatch(/^[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü’' ]+$/i);
-  expect(word.example.hanzi).toContain(word.hanzi[0]);
+  expect(word.example.hanzi).toContain(word.hanzi);
   expect(word.example.pinyin.trim()).not.toBe('');
   expect(word.example.translation.trim()).not.toBe('');
 }
@@ -21,12 +21,14 @@ function expectValidQuiz(unit: (typeof UNITS)[number]): void {
 }
 
 describe('currículo', () => {
-  it('cubre HSK 1 y HSK 2 completos', () => {
-    expect(TOTAL_WORDS).toBe(301);
+  it('cubre HSK 1, HSK 2 y HSK 3 completos', () => {
+    expect(TOTAL_WORDS).toBe(601);
     expect(wordsForLevel(1)).toBe(151);
     expect(wordsForLevel(2)).toBe(150);
+    expect(wordsForLevel(3)).toBe(300);
     expect(unitsForLevel(1)).toHaveLength(15);
     expect(unitsForLevel(2)).toHaveLength(15);
+    expect(unitsForLevel(3)).toHaveLength(20);
   });
 
   it('no repite identificadores', () => {
@@ -53,7 +55,7 @@ describe('contenido de cada palabra', () => {
     expect(examples.filter((h, i) => examples.indexOf(h) !== i)).toEqual([]);
   });
 
-  it('genera un quiz válido para las treinta unidades', () => {
+  it('genera un quiz válido para las cuarenta y cinco unidades', () => {
     for (const unit of UNITS) expectValidQuiz(unit);
   });
 });

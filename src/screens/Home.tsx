@@ -33,7 +33,7 @@ export function Home() {
   const done = completedUnits(cards);
   const [level, setLevel] = useState<Level>(() => {
     const pending = UNITS.find((u) => !done.includes(u.id));
-    return pending?.level ?? 2;
+    return pending?.level ?? LEVELS[LEVELS.length - 1];
   });
 
   const queue = buildQueue(cards, now);
@@ -47,12 +47,14 @@ export function Home() {
   );
   const progress = levelProgress(xp);
   const levelNumber = levelFromXp(xp);
+  const lastLevel = LEVELS[LEVELS.length - 1];
+  const courseRange = `${LEVEL_LABELS[LEVELS[0]]}–${LEVEL_LABELS[lastLevel]}`;
 
   return (
     <div className="home">
       <section className="hero">
         <div className="hero__text">
-          <p className="eyebrow">Chino mandarín · HSK 1 y HSK 2</p>
+          <p className="eyebrow">Chino mandarín · {courseRange}</p>
           <h1 className="hero__title">
             <span lang="zh-Hans">你好</span>
             <span className="hero__title-note">hola</span>
@@ -83,8 +85,8 @@ export function Home() {
             )}
             {!nextUnit && queue.total === 0 && (
               <p className="hero__calm">
-                {level === 2
-                  ? 'Terminaste HSK 1 y HSK 2 sin repasos pendientes. Vuelve mañana.'
+                {level === lastLevel
+                  ? `Terminaste ${courseRange} sin repasos pendientes. Vuelve mañana.`
                   : 'Esta parte está al día. Cambia de nivel para seguir avanzando.'}
               </p>
             )}
@@ -183,8 +185,8 @@ export function Home() {
           <div>
             <h2 id="units-title">Tu ruta</h2>
             <p>
-              {unitsForLevel(1).length} unidades de HSK 1 y {unitsForLevel(2).length} de HSK 2. Sin
-              orden obligatorio.
+              {TOTAL_WORDS} palabras en {UNITS.length} unidades: de {LEVEL_LABELS[LEVELS[0]]} a{' '}
+              {LEVEL_LABELS[lastLevel]}. Sin orden obligatorio.
             </p>
           </div>
           <div className="level-switch" role="tablist" aria-label="Nivel">

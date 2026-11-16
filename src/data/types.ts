@@ -14,7 +14,7 @@ export type Word = {
 
 export type Unit = {
   id: string;
-  level: 1 | 2;
+  level: 1 | 2 | 3;
   index: number;
   title: string;
   subtitle: string;
