@@ -1,0 +1,8 @@
+{
+  "corpus": "OpenSubtitles 2018 zh_cn (FrequencyWords)",
+  "tokens": 74675845,
+  "words": 1000,
+  "tokenCoverage": 0.732,
+  "highestCount": 3957141,
+  "lowestCount": 6118
+}

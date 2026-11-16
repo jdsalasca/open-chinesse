@@ -1,0 +1,7012 @@
+{
+  "coverage": {
+    "corpus": "OpenSubtitles 2018 zh_cn (FrequencyWords)",
+    "tokens": 74675845,
+    "words": 1000,
+    "tokenCoverage": 0.732,
+    "highestCount": 3957141,
+    "lowestCount": 6118
+  },
+  "words": [
+    {
+      "rank": 1,
+      "hanzi": "的",
+      "pinyin": "de",
+      "gloss": "of; ~'s (possessive particle); (used after an attribute when it modifies a noun)",
+      "count": 3957141
+    },
+    {
+      "rank": 2,
+      "hanzi": "我",
+      "pinyin": "wǒ",
+      "gloss": "I; me; my",
+      "count": 3669472
+    },
+    {
+      "rank": 3,
+      "hanzi": "你",
+      "pinyin": "nǐ",
+      "gloss": "you (informal, as opposed to courteous 您[nin2])",
+      "count": 3282942
+    },
+    {
+      "rank": 4,
+      "hanzi": "了",
+      "pinyin": "le",
+      "gloss": "(completed action marker); (modal particle indicating change of state, situation now)",
+      "count": 2141739
+    },
+    {
+      "rank": 5,
+      "hanzi": "是",
+      "pinyin": "shì",
+      "gloss": "to be (followed by substantives only); correct; right; true",
+      "count": 1670639
+    },
+    {
+      "rank": 6,
+      "hanzi": "在",
+      "pinyin": "zài",
+      "gloss": "to exist; to be alive; (of sb or sth) to be (located) at",
+      "count": 1023023
+    },
+    {
+      "rank": 7,
+      "hanzi": "他",
+      "pinyin": "tā",
+      "gloss": "(third-person singular) (since the early 20th century, usu. male) he; him; his; (bound form) other; another; some other (as in 他日[ta1 ri4] and 他人[ta1 ren2])",
+      "count": 904210
+    },
+    {
+      "rank": 8,
+      "hanzi": "我们",
+      "pinyin": "wǒ men",
+      "gloss": "we; us; ourselves",
+      "count": 827393
+    },
+    {
+      "rank": 9,
+      "hanzi": "不",
+      "pinyin": "bù",
+      "gloss": "no; not so; (bound form) not; un-",
+      "count": 725410
+    },
+    {
+      "rank": 10,
+      "hanzi": "吗",
+      "pinyin": "má",
+      "gloss": "(coll.) what?",
+      "count": 652753
+    },
+    {
+      "rank": 11,
+      "hanzi": "好",
+      "pinyin": "hǎo",
+      "gloss": "good; appropriate; proper",
+      "count": 558010
+    },
+    {
+      "rank": 12,
+      "hanzi": "什么",
+      "pinyin": "shén me",
+      "gloss": "what?; something; anything",
+      "count": 534934
+    },
+    {
+      "rank": 13,
+      "hanzi": "有",
+      "pinyin": "yǒu",
+      "gloss": "to have; there is; (bound form) having; with; -ful; -ed; -al (as in 有意[you3 yi4] intentional)",
+      "count": 511680
+    },
+    {
+      "rank": 14,
+      "hanzi": "就",
+      "pinyin": "jìu",
+      "gloss": "(after a suppositional clause) in that case; then; (after a clause of action) as soon as; immediately after",
+      "count": 504482
+    },
+    {
+      "rank": 15,
+      "hanzi": "吧",
+      "pinyin": "bā",
+      "gloss": "bar (loanword) (serving drinks, or providing Internet access etc); to puff (on a pipe etc)",
+      "count": 502836
+    },
+    {
+      "rank": 16,
+      "hanzi": "她",
+      "pinyin": "tā",
+      "gloss": "she",
+      "count": 488294
+    },
+    {
+      "rank": 17,
+      "hanzi": "这",
+      "pinyin": "zhè",
+      "gloss": "(pronoun) this; these; (bound form) this; the (followed by a noun)",
+      "count": 440271
+    },
+    {
+      "rank": 18,
+      "hanzi": "知道",
+      "pinyin": "zhī dào",
+      "gloss": "to know; to become aware of; also pr. [zhi1dao5]",
+      "count": 437631
+    },
+    {
+      "rank": 19,
+      "hanzi": "说",
+      "pinyin": "shùi",
+      "gloss": "to persuade",
+      "count": 413852
+    },
+    {
+      "rank": 20,
+      "hanzi": "都",
+      "pinyin": "Dū",
+      "gloss": "surname Du",
+      "count": 413654
+    },
+    {
+      "rank": 21,
+      "hanzi": "去",
+      "pinyin": "qù",
+      "gloss": "to go; to go to (a place)",
+      "count": 370927
+    },
+    {
+      "rank": 22,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "gloss": "very; quite; (also, often used before an adjective without intensifying its meaning, i.e. as a meaningless syntactic element)",
+      "count": 365403
+    },
+    {
+      "rank": 23,
+      "hanzi": "啊",
+      "pinyin": "ā",
+      "gloss": "interjection of surprise; Ah!",
+      "count": 358257
+    },
+    {
+      "rank": 24,
+      "hanzi": "要",
+      "pinyin": "yāo",
+      "gloss": "(bound form) to demand; to coerce",
+      "count": 352653
+    },
+    {
+      "rank": 25,
+      "hanzi": "也",
+      "pinyin": "Yě",
+      "gloss": "surname Ye",
+      "count": 336670
+    },
+    {
+      "rank": 26,
+      "hanzi": "他们",
+      "pinyin": "tā men",
+      "gloss": "they; them",
+      "count": 330294
+    },
+    {
+      "rank": 27,
+      "hanzi": "和",
+      "pinyin": "hé",
+      "gloss": "old variant of 和[he2]",
+      "count": 323973
+    },
+    {
+      "rank": 28,
+      "hanzi": "那",
+      "pinyin": "Nā",
+      "gloss": "surname Na",
+      "count": 323364
+    },
+    {
+      "rank": 29,
+      "hanzi": "想",
+      "pinyin": "xǐang",
+      "gloss": "to think (about); to think of; to devise",
+      "count": 317123
+    },
+    {
+      "rank": 30,
+      "hanzi": "人",
+      "pinyin": "rén",
+      "gloss": "person; people; CL:個|个[ge4],位[wei4],名[ming2]",
+      "count": 315856
+    },
+    {
+      "rank": 31,
+      "hanzi": "会",
+      "pinyin": "hùi",
+      "gloss": "can; to have the skill; to know how to; to be likely to; to be sure to",
+      "count": 312399
+    },
+    {
+      "rank": 32,
+      "hanzi": "一个",
+      "pinyin": "yī ge",
+      "gloss": "a; an; one; the whole (afternoon, summer vacation etc)",
+      "count": 286202
+    },
+    {
+      "rank": 33,
+      "hanzi": "来",
+      "pinyin": "lái",
+      "gloss": "to come; (used as a substitute for a more specific verb)",
+      "count": 279006
+    },
+    {
+      "rank": 34,
+      "hanzi": "把",
+      "pinyin": "bǎ",
+      "gloss": "to hold; to grasp; to hold a baby in position to help it urinate or defecate",
+      "count": 259336
+    },
+    {
+      "rank": 35,
+      "hanzi": "对",
+      "pinyin": "dùi",
+      "gloss": "right; correct; towards; at; for",
+      "count": 257560
+    },
+    {
+      "rank": 36,
+      "hanzi": "没有",
+      "pinyin": "méi yǒu",
+      "gloss": "haven't; hasn't",
+      "count": 257229
+    },
+    {
+      "rank": 37,
+      "hanzi": "做",
+      "pinyin": "zùo",
+      "gloss": "to make; to produce; to write; to compose",
+      "count": 256927
+    },
+    {
+      "rank": 38,
+      "hanzi": "不是",
+      "pinyin": "bù shì",
+      "gloss": "no; is not",
+      "count": 253201
+    },
+    {
+      "rank": 39,
+      "hanzi": "让",
+      "pinyin": "ràng",
+      "gloss": "to yield; to permit",
+      "count": 235971
+    },
+    {
+      "rank": 40,
+      "hanzi": "给",
+      "pinyin": "gěi",
+      "gloss": "to; for",
+      "count": 232587
+    },
+    {
+      "rank": 41,
+      "hanzi": "可以",
+      "pinyin": "kě yǐ",
+      "gloss": "can; may; to be able to; possible; permissible",
+      "count": 213363
+    },
+    {
+      "rank": 42,
+      "hanzi": "你们",
+      "pinyin": "nǐ men",
+      "gloss": "you (plural)",
+      "count": 207368
+    },
+    {
+      "rank": 43,
+      "hanzi": "呢",
+      "pinyin": "ne",
+      "gloss": "(sentence-final particle) used in questions to link back to prior discourse or context (\"what about...?\", \"and...?\"); (sentence-final particle) indicating that a state or situation still holds",
+      "count": 203137
+    },
+    {
+      "rank": 44,
+      "hanzi": "但",
+      "pinyin": "dàn",
+      "gloss": "but; yet; however; still; merely; only; just",
+      "count": 200270
+    },
+    {
+      "rank": 45,
+      "hanzi": "到",
+      "pinyin": "dào",
+      "gloss": "to reach; to arrive; to leave for; to go to",
+      "count": 195057
+    },
+    {
+      "rank": 46,
+      "hanzi": "还",
+      "pinyin": "Húan",
+      "gloss": "surname Huan",
+      "count": 192818
+    },
+    {
+      "rank": 47,
+      "hanzi": "现在",
+      "pinyin": "xìan zài",
+      "gloss": "now; at present; currently",
+      "count": 191204
+    },
+    {
+      "rank": 48,
+      "hanzi": "这个",
+      "pinyin": "zhè ge",
+      "gloss": "(pronoun) this; (adjective) this",
+      "count": 184608
+    },
+    {
+      "rank": 49,
+      "hanzi": "能",
+      "pinyin": "Néng",
+      "gloss": "surname Neng",
+      "count": 183817
+    },
+    {
+      "rank": 50,
+      "hanzi": "怎么",
+      "pinyin": "zěn me",
+      "gloss": "how?; what?",
+      "count": 174335
+    },
+    {
+      "rank": 51,
+      "hanzi": "就是",
+      "pinyin": "jìu shì",
+      "gloss": "exactly; precisely; only; simply; just",
+      "count": 174001
+    },
+    {
+      "rank": 52,
+      "hanzi": "跟",
+      "pinyin": "gēn",
+      "gloss": "heel; to follow closely",
+      "count": 172998
+    },
+    {
+      "rank": 53,
+      "hanzi": "如果",
+      "pinyin": "rú gǔo",
+      "gloss": "if; in case; in the event that",
+      "count": 171340
+    },
+    {
+      "rank": 54,
+      "hanzi": "没",
+      "pinyin": "méi",
+      "gloss": "(negative prefix for verbs) have not; not",
+      "count": 171205
+    },
+    {
+      "rank": 55,
+      "hanzi": "它",
+      "pinyin": "tā",
+      "gloss": "it",
+      "count": 170019
+    },
+    {
+      "rank": 56,
+      "hanzi": "走",
+      "pinyin": "zǒu",
+      "gloss": "to walk; to go",
+      "count": 169161
+    },
+    {
+      "rank": 57,
+      "hanzi": "上",
+      "pinyin": "shǎng",
+      "gloss": "used in 上聲|上声[shang3 sheng1]",
+      "count": 163659
+    },
+    {
+      "rank": 58,
+      "hanzi": "得",
+      "pinyin": "dé",
+      "gloss": "to obtain; to get",
+      "count": 157393
+    },
+    {
+      "rank": 59,
+      "hanzi": "被",
+      "pinyin": "bèi",
+      "gloss": "quilt; to cover (with)",
+      "count": 156912
+    },
+    {
+      "rank": 60,
+      "hanzi": "这里",
+      "pinyin": "zhè lǐ",
+      "gloss": "variant of 這裡|这里[zhe4 li3]",
+      "count": 155860
+    },
+    {
+      "rank": 61,
+      "hanzi": "这样",
+      "pinyin": "zhè yàng",
+      "gloss": "this way; like this; so; (before a noun) this kind of; such",
+      "count": 154329
+    },
+    {
+      "rank": 62,
+      "hanzi": "个",
+      "pinyin": "gě",
+      "gloss": "used in 自個兒|自个儿[zi4 ge3 r5]",
+      "count": 148111
+    },
+    {
+      "rank": 63,
+      "hanzi": "看",
+      "pinyin": "kān",
+      "gloss": "to look after; to take care of",
+      "count": 142855
+    },
+    {
+      "rank": 64,
+      "hanzi": "事",
+      "pinyin": "shì",
+      "gloss": "matter; thing",
+      "count": 136748
+    },
+    {
+      "rank": 65,
+      "hanzi": "自己",
+      "pinyin": "zì jǐ",
+      "gloss": "oneself; (attributive) one's own",
+      "count": 134251
+    },
+    {
+      "rank": 66,
+      "hanzi": "着",
+      "pinyin": "zhāo",
+      "gloss": "variant of 著|着[zhao1]",
+      "count": 133440
+    },
+    {
+      "rank": 67,
+      "hanzi": "谁",
+      "pinyin": "shéi",
+      "gloss": "who; also pr. [shui2]",
+      "count": 127180
+    },
+    {
+      "rank": 68,
+      "hanzi": "过",
+      "pinyin": "Gūo",
+      "gloss": "surname Guo",
+      "count": 126905
+    },
+    {
+      "rank": 69,
+      "hanzi": "不会",
+      "pinyin": "bù hùi",
+      "gloss": "improbable; unlikely",
+      "count": 126661
+    },
+    {
+      "rank": 70,
+      "hanzi": "告诉",
+      "pinyin": "gào sù",
+      "gloss": "to press charges; to file a complaint",
+      "count": 121954
+    },
+    {
+      "rank": 71,
+      "hanzi": "为什么",
+      "pinyin": "wèi shén me",
+      "gloss": "why?; for what reason?",
+      "count": 119165
+    },
+    {
+      "rank": 72,
+      "hanzi": "不能",
+      "pinyin": "bù néng",
+      "gloss": "cannot; must not",
+      "count": 118579
+    },
+    {
+      "rank": 73,
+      "hanzi": "真的",
+      "pinyin": "zhēn de",
+      "gloss": "really; truly; indeed; real; true; genuine",
+      "count": 117819
+    },
+    {
+      "rank": 74,
+      "hanzi": "先生",
+      "pinyin": "xīan sheng",
+      "gloss": "teacher; gentleman; sir; mister (Mr.)",
+      "count": 115604
+    },
+    {
+      "rank": 75,
+      "hanzi": "只是",
+      "pinyin": "zhǐ shì",
+      "gloss": "merely; only; just; nothing but; simply",
+      "count": 115329
+    },
+    {
+      "rank": 76,
+      "hanzi": "不要",
+      "pinyin": "bù yào",
+      "gloss": "don't!; must not",
+      "count": 114532
+    },
+    {
+      "rank": 77,
+      "hanzi": "已经",
+      "pinyin": "yǐ jīng",
+      "gloss": "already",
+      "count": 111924
+    },
+    {
+      "rank": 78,
+      "hanzi": "再",
+      "pinyin": "zài",
+      "gloss": "again; once more; re-; further; beyond this point of time",
+      "count": 108389
+    },
+    {
+      "rank": 79,
+      "hanzi": "哦",
+      "pinyin": "é",
+      "gloss": "to chant",
+      "count": 107476
+    },
+    {
+      "rank": 80,
+      "hanzi": "需要",
+      "pinyin": "xū yào",
+      "gloss": "to need; to want; to demand; to require; needs",
+      "count": 104694
+    },
+    {
+      "rank": 81,
+      "hanzi": "因为",
+      "pinyin": "yīn wèi",
+      "gloss": "because; owing to; on account of",
+      "count": 103803
+    },
+    {
+      "rank": 82,
+      "hanzi": "谢谢",
+      "pinyin": "xìe xie",
+      "gloss": "to thank; thanks",
+      "count": 103359
+    },
+    {
+      "rank": 83,
+      "hanzi": "像",
+      "pinyin": "xìang",
+      "gloss": "to resemble; to be like",
+      "count": 102722
+    },
+    {
+      "rank": 84,
+      "hanzi": "这么",
+      "pinyin": "zhè me",
+      "gloss": "so much; this much",
+      "count": 100276
+    },
+    {
+      "rank": 85,
+      "hanzi": "可能",
+      "pinyin": "kě néng",
+      "gloss": "might (happen); possible",
+      "count": 98736
+    },
+    {
+      "rank": 86,
+      "hanzi": "但是",
+      "pinyin": "dàn shì",
+      "gloss": "but; however",
+      "count": 97940
+    },
+    {
+      "rank": 87,
+      "hanzi": "那个",
+      "pinyin": "nà ge",
+      "gloss": "that one; that thing",
+      "count": 97172
+    },
+    {
+      "rank": 88,
+      "hanzi": "所以",
+      "pinyin": "sǔo yǐ",
+      "gloss": "therefore; as a result",
+      "count": 95494
+    },
+    {
+      "rank": 89,
+      "hanzi": "喜欢",
+      "pinyin": "xǐ huan",
+      "gloss": "to like; to be fond of; to be happy; to be pleased",
+      "count": 94248
+    },
+    {
+      "rank": 90,
+      "hanzi": "又",
+      "pinyin": "yòu",
+      "gloss": "(once) again; also",
+      "count": 92798
+    },
+    {
+      "rank": 91,
+      "hanzi": "叫",
+      "pinyin": "jìao",
+      "gloss": "to shout; to call",
+      "count": 92723
+    },
+    {
+      "rank": 92,
+      "hanzi": "快",
+      "pinyin": "kùai",
+      "gloss": "rapid; quick",
+      "count": 92473
+    },
+    {
+      "rank": 93,
+      "hanzi": "觉得",
+      "pinyin": "júe de",
+      "gloss": "to think that ...; to feel that ...; to feel (uncomfortable etc)",
+      "count": 90238
+    },
+    {
+      "rank": 94,
+      "hanzi": "别",
+      "pinyin": "Bíe",
+      "gloss": "surname Bie",
+      "count": 89878
+    },
+    {
+      "rank": 95,
+      "hanzi": "听",
+      "pinyin": "yǐn",
+      "gloss": "smile (archaic)",
+      "count": 88997
+    },
+    {
+      "rank": 96,
+      "hanzi": "找",
+      "pinyin": "zhǎo",
+      "gloss": "to try to find; to look for",
+      "count": 88902
+    },
+    {
+      "rank": 97,
+      "hanzi": "里",
+      "pinyin": "lǐ",
+      "gloss": "variant of 裡|里[li3]",
+      "count": 88316
+    },
+    {
+      "rank": 98,
+      "hanzi": "还有",
+      "pinyin": "hái yǒu",
+      "gloss": "there still remain(s); there is (or are) still; in addition",
+      "count": 86154
+    },
+    {
+      "rank": 99,
+      "hanzi": "时候",
+      "pinyin": "shí hou",
+      "gloss": "time; length of time",
+      "count": 85885
+    },
+    {
+      "rank": 100,
+      "hanzi": "东西",
+      "pinyin": "dōng xī",
+      "gloss": "east and west",
+      "count": 85443
+    },
+    {
+      "rank": 101,
+      "hanzi": "等",
+      "pinyin": "děng",
+      "gloss": "to wait for; to await; by the time; when; till",
+      "count": 84043
+    },
+    {
+      "rank": 102,
+      "hanzi": "死",
+      "pinyin": "sǐ",
+      "gloss": "to die; impassable",
+      "count": 83694
+    },
+    {
+      "rank": 103,
+      "hanzi": "多",
+      "pinyin": "dūo",
+      "gloss": "many; much; more; a lot of; too many; in excess",
+      "count": 83326
+    },
+    {
+      "rank": 104,
+      "hanzi": "从",
+      "pinyin": "cóng",
+      "gloss": "variant of 從|从[cong2]",
+      "count": 82805
+    },
+    {
+      "rank": 105,
+      "hanzi": "一起",
+      "pinyin": "yī qǐ",
+      "gloss": "(in) the same place; together; in company (with)",
+      "count": 82570
+    },
+    {
+      "rank": 106,
+      "hanzi": "应该",
+      "pinyin": "yīng gāi",
+      "gloss": "ought to; should; must",
+      "count": 80917
+    },
+    {
+      "rank": 107,
+      "hanzi": "这些",
+      "pinyin": "zhè xīe",
+      "gloss": "these",
+      "count": 80491
+    },
+    {
+      "rank": 108,
+      "hanzi": "请",
+      "pinyin": "qǐng",
+      "gloss": "to ask; to invite",
+      "count": 78036
+    },
+    {
+      "rank": 109,
+      "hanzi": "孩子",
+      "pinyin": "hái zi",
+      "gloss": "child",
+      "count": 77837
+    },
+    {
+      "rank": 110,
+      "hanzi": "看到",
+      "pinyin": "kàn dào",
+      "gloss": "to see",
+      "count": 76397
+    },
+    {
+      "rank": 111,
+      "hanzi": "一下",
+      "pinyin": "yī xìa",
+      "gloss": "(after a verb) a bit; a little (indicating brief duration, or softening the tone, or suggesting giving sth a try); all at once; suddenly",
+      "count": 75952
+    },
+    {
+      "rank": 112,
+      "hanzi": "那么",
+      "pinyin": "nà me",
+      "gloss": "like that; in that way; to that extent; (before a number) ... or so; about ...",
+      "count": 75600
+    },
+    {
+      "rank": 113,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "gloss": "as (in the capacity of); to take sth as",
+      "count": 75445
+    },
+    {
+      "rank": 114,
+      "hanzi": "而",
+      "pinyin": "ér",
+      "gloss": "and; as well as",
+      "count": 73889
+    },
+    {
+      "rank": 115,
+      "hanzi": "您",
+      "pinyin": "nín",
+      "gloss": "you (courteous, as opposed to informal 你[ni3])",
+      "count": 71712
+    },
+    {
+      "rank": 116,
+      "hanzi": "才",
+      "pinyin": "cái",
+      "gloss": "ability; talent; sb of a certain type",
+      "count": 71045
+    },
+    {
+      "rank": 117,
+      "hanzi": "用",
+      "pinyin": "yòng",
+      "gloss": "to use; to make use of; to employ; (coverb) with; using",
+      "count": 70127
+    },
+    {
+      "rank": 118,
+      "hanzi": "还是",
+      "pinyin": "hái shi",
+      "gloss": "still (as before); had better",
+      "count": 69657
+    },
+    {
+      "rank": 119,
+      "hanzi": "嗯",
+      "pinyin": "ēn",
+      "gloss": "(a groaning sound)",
+      "count": 68924
+    },
+    {
+      "rank": 120,
+      "hanzi": "问题",
+      "pinyin": "wèn tí",
+      "gloss": "question; problem",
+      "count": 68808
+    },
+    {
+      "rank": 121,
+      "hanzi": "工作",
+      "pinyin": "gōng zùo",
+      "gloss": "to work; (of a machine) to operate",
+      "count": 68195
+    },
+    {
+      "rank": 122,
+      "hanzi": "一样",
+      "pinyin": "yī yàng",
+      "gloss": "same; like",
+      "count": 67580
+    },
+    {
+      "rank": 123,
+      "hanzi": "呀",
+      "pinyin": "yā",
+      "gloss": "ah (used to express surprise); (onom.) creaking",
+      "count": 66299
+    },
+    {
+      "rank": 124,
+      "hanzi": "开始",
+      "pinyin": "kāi shǐ",
+      "gloss": "to begin; to start; beginning; start",
+      "count": 65701
+    },
+    {
+      "rank": 125,
+      "hanzi": "吃",
+      "pinyin": "chī",
+      "gloss": "to eat; to consume; to eat at (a cafeteria etc)",
+      "count": 65392
+    },
+    {
+      "rank": 126,
+      "hanzi": "嘿",
+      "pinyin": "hēi",
+      "gloss": "hey",
+      "count": 64649
+    },
+    {
+      "rank": 127,
+      "hanzi": "当",
+      "pinyin": "dāng",
+      "gloss": "(onom.) dong; ding dong (bell)",
+      "count": 64152
+    },
+    {
+      "rank": 128,
+      "hanzi": "真",
+      "pinyin": "zhēn",
+      "gloss": "really; truly",
+      "count": 63782
+    },
+    {
+      "rank": 129,
+      "hanzi": "中",
+      "pinyin": "Zhōng",
+      "gloss": "(bound form) China; Chinese; surname Zhong",
+      "count": 62747
+    },
+    {
+      "rank": 130,
+      "hanzi": "然后",
+      "pinyin": "rán hòu",
+      "gloss": "then; after that; afterwards",
+      "count": 62651
+    },
+    {
+      "rank": 131,
+      "hanzi": "看看",
+      "pinyin": "kàn kan",
+      "gloss": "to take a look at; to examine",
+      "count": 62631
+    },
+    {
+      "rank": 132,
+      "hanzi": "地方",
+      "pinyin": "dì fāng",
+      "gloss": "region; regional (away from the central administration)",
+      "count": 61961
+    },
+    {
+      "rank": 133,
+      "hanzi": "一定",
+      "pinyin": "yī dìng",
+      "gloss": "surely; certainly; definitely; fixed; settled",
+      "count": 61403
+    },
+    {
+      "rank": 134,
+      "hanzi": "将",
+      "pinyin": "jīang",
+      "gloss": "will; shall",
+      "count": 61310
+    },
+    {
+      "rank": 135,
+      "hanzi": "希望",
+      "pinyin": "xī wàng",
+      "gloss": "to hope; a hope; a wish",
+      "count": 61212
+    },
+    {
+      "rank": 136,
+      "hanzi": "朋友",
+      "pinyin": "péng you",
+      "gloss": "friend; CL:個|个[ge4],位[wei4]",
+      "count": 61124
+    },
+    {
+      "rank": 137,
+      "hanzi": "今天",
+      "pinyin": "jīn tīan",
+      "gloss": "today; the present time; now",
+      "count": 59831
+    },
+    {
+      "rank": 138,
+      "hanzi": "拿",
+      "pinyin": "ná",
+      "gloss": "old variant of 拿[na2]",
+      "count": 59701
+    },
+    {
+      "rank": 139,
+      "hanzi": "一",
+      "pinyin": "yī",
+      "gloss": "one; single",
+      "count": 59154
+    },
+    {
+      "rank": 140,
+      "hanzi": "啦",
+      "pinyin": "lā",
+      "gloss": "(onom.) sound of singing, cheering etc; (phonetic)",
+      "count": 59038
+    },
+    {
+      "rank": 141,
+      "hanzi": "事情",
+      "pinyin": "shì qing",
+      "gloss": "affair; matter; thing; business; CL:件[jian4],樁|桩[zhuang1]",
+      "count": 58749
+    },
+    {
+      "rank": 142,
+      "hanzi": "一直",
+      "pinyin": "yī zhí",
+      "gloss": "straight (in a straight line); continuously; always; all the way through",
+      "count": 58600
+    },
+    {
+      "rank": 143,
+      "hanzi": "所有",
+      "pinyin": "sǔo yǒu",
+      "gloss": "all; to have; to possess; to own",
+      "count": 58300
+    },
+    {
+      "rank": 144,
+      "hanzi": "找到",
+      "pinyin": "zhǎo dào",
+      "gloss": "to find",
+      "count": 57999
+    },
+    {
+      "rank": 145,
+      "hanzi": "哪",
+      "pinyin": "nǎ",
+      "gloss": "how; which",
+      "count": 57922
+    },
+    {
+      "rank": 146,
+      "hanzi": "当然",
+      "pinyin": "dāng rán",
+      "gloss": "only natural; as it should be",
+      "count": 57824
+    },
+    {
+      "rank": 147,
+      "hanzi": "们",
+      "pinyin": "men",
+      "gloss": "plural marker for pronouns, and nouns referring to individuals",
+      "count": 57747
+    },
+    {
+      "rank": 148,
+      "hanzi": "回来",
+      "pinyin": "húi lai",
+      "gloss": "to return; to come back",
+      "count": 57701
+    },
+    {
+      "rank": 149,
+      "hanzi": "不想",
+      "pinyin": "bù xǐang",
+      "gloss": "unexpectedly; to one's surprise",
+      "count": 57531
+    },
+    {
+      "rank": 150,
+      "hanzi": "更",
+      "pinyin": "gēng",
+      "gloss": "to change or replace; to experience",
+      "count": 56704
+    },
+    {
+      "rank": 151,
+      "hanzi": "最",
+      "pinyin": "zùi",
+      "gloss": "variant of 最[zui4]",
+      "count": 56437
+    },
+    {
+      "rank": 152,
+      "hanzi": "帮",
+      "pinyin": "bāng",
+      "gloss": "old variant of 幫|帮[bang1]",
+      "count": 56384
+    },
+    {
+      "rank": 153,
+      "hanzi": "没事",
+      "pinyin": "méi shì",
+      "gloss": "it's not important; it's nothing",
+      "count": 54978
+    },
+    {
+      "rank": 154,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "variant of 隻|只[zhi1]",
+      "count": 54737
+    },
+    {
+      "rank": 155,
+      "hanzi": "那些",
+      "pinyin": "nà xīe",
+      "gloss": "those",
+      "count": 54687
+    },
+    {
+      "rank": 156,
+      "hanzi": "可",
+      "pinyin": "kě",
+      "gloss": "(prefix) can; may; able to; -able; to approve; to permit",
+      "count": 54677
+    },
+    {
+      "rank": 157,
+      "hanzi": "明白",
+      "pinyin": "míng bai",
+      "gloss": "clear; obvious; unequivocal; sensible; reasonable",
+      "count": 54299
+    },
+    {
+      "rank": 158,
+      "hanzi": "的话",
+      "pinyin": "de hùa",
+      "gloss": "if (coming after a conditional clause)",
+      "count": 54266
+    },
+    {
+      "rank": 159,
+      "hanzi": "爸爸",
+      "pinyin": "bà ba",
+      "gloss": "(coll.) father; dad; CL:位[wei4]",
+      "count": 54140
+    },
+    {
+      "rank": 160,
+      "hanzi": "下",
+      "pinyin": "xìa",
+      "gloss": "down; downwards",
+      "count": 54021
+    },
+    {
+      "rank": 161,
+      "hanzi": "太",
+      "pinyin": "tài",
+      "gloss": "highest; greatest",
+      "count": 53888
+    },
+    {
+      "rank": 162,
+      "hanzi": "离开",
+      "pinyin": "lí kāi",
+      "gloss": "to depart; to leave",
+      "count": 53576
+    },
+    {
+      "rank": 163,
+      "hanzi": "一切",
+      "pinyin": "yī qìe",
+      "gloss": "everything; every",
+      "count": 53550
+    },
+    {
+      "rank": 164,
+      "hanzi": "时间",
+      "pinyin": "shí jīan",
+      "gloss": "(concept of) time; (duration of) time",
+      "count": 53544
+    },
+    {
+      "rank": 165,
+      "hanzi": "相信",
+      "pinyin": "xīang xìn",
+      "gloss": "to believe; to be convinced; to accept as true",
+      "count": 53265
+    },
+    {
+      "rank": 166,
+      "hanzi": "妈妈",
+      "pinyin": "mā ma",
+      "gloss": "mama; mommy",
+      "count": 52775
+    },
+    {
+      "rank": 167,
+      "hanzi": "想要",
+      "pinyin": "xǐang yào",
+      "gloss": "to want to; to feel like",
+      "count": 52767
+    },
+    {
+      "rank": 168,
+      "hanzi": "爱",
+      "pinyin": "ài",
+      "gloss": "to love; to be fond of; to like; affection",
+      "count": 52273
+    },
+    {
+      "rank": 169,
+      "hanzi": "发生",
+      "pinyin": "fā shēng",
+      "gloss": "to happen; to occur; to take place; to arise (e.g. 發生問題|发生问题[fa1 sheng1 wen4 ti2] \"a problem arises\")",
+      "count": 52014
+    },
+    {
+      "rank": 170,
+      "hanzi": "打",
+      "pinyin": "dá",
+      "gloss": "(loanword) dozen; Taiwan pr. [da3]",
+      "count": 51894
+    },
+    {
+      "rank": 171,
+      "hanzi": "点",
+      "pinyin": "dǐan",
+      "gloss": "to touch briefly; to tap; to mark with a dot; to check off (on a list)",
+      "count": 51607
+    },
+    {
+      "rank": 172,
+      "hanzi": "钱",
+      "pinyin": "Qían",
+      "gloss": "surname Qian",
+      "count": 51381
+    },
+    {
+      "rank": 173,
+      "hanzi": "大",
+      "pinyin": "dà",
+      "gloss": "big; large; great; older (than another person)",
+      "count": 51218
+    },
+    {
+      "rank": 174,
+      "hanzi": "起来",
+      "pinyin": "qǐ lai",
+      "gloss": "to stand up; to get up; also pr. [qi3lai2]",
+      "count": 51203
+    },
+    {
+      "rank": 175,
+      "hanzi": "真是",
+      "pinyin": "zhēn shi",
+      "gloss": "indeed; truly; (coll.) (used to express disapproval, annoyance etc)",
+      "count": 50761
+    },
+    {
+      "rank": 176,
+      "hanzi": "你好",
+      "pinyin": "nǐ hǎo",
+      "gloss": "hello; hi",
+      "count": 50640
+    },
+    {
+      "rank": 177,
+      "hanzi": "抱歉",
+      "pinyin": "bào qìan",
+      "gloss": "to be sorry; to feel apologetic",
+      "count": 50333
+    },
+    {
+      "rank": 178,
+      "hanzi": "必须",
+      "pinyin": "bì xū",
+      "gloss": "must; to have to",
+      "count": 50284
+    },
+    {
+      "rank": 179,
+      "hanzi": "认为",
+      "pinyin": "rèn wéi",
+      "gloss": "to believe; to think; to consider; to feel",
+      "count": 50036
+    },
+    {
+      "rank": 180,
+      "hanzi": "一点",
+      "pinyin": "yī dǐan",
+      "gloss": "a bit; a little bit; (used in negative expressions) (not) the least bit",
+      "count": 49989
+    },
+    {
+      "rank": 181,
+      "hanzi": "非常",
+      "pinyin": "fēi cháng",
+      "gloss": "very; really; unusual; extraordinary",
+      "count": 49809
+    },
+    {
+      "rank": 182,
+      "hanzi": "那里",
+      "pinyin": "nà li",
+      "gloss": "there; that place",
+      "count": 48875
+    },
+    {
+      "rank": 183,
+      "hanzi": "对不起",
+      "pinyin": "dùi bu qǐ",
+      "gloss": "I'm sorry; excuse me; I beg your pardon; to let (sb) down; to disappoint",
+      "count": 48834
+    },
+    {
+      "rank": 184,
+      "hanzi": "天",
+      "pinyin": "tīan",
+      "gloss": "day; sky",
+      "count": 48822
+    },
+    {
+      "rank": 185,
+      "hanzi": "也许",
+      "pinyin": "yě xǔ",
+      "gloss": "perhaps; maybe",
+      "count": 48806
+    },
+    {
+      "rank": 186,
+      "hanzi": "大家",
+      "pinyin": "dà jīa",
+      "gloss": "everyone; influential family",
+      "count": 48356
+    },
+    {
+      "rank": 187,
+      "hanzi": "哪里",
+      "pinyin": "nǎ lǐ",
+      "gloss": "where?; somewhere",
+      "count": 48077
+    },
+    {
+      "rank": 188,
+      "hanzi": "有人",
+      "pinyin": "yǒu rén",
+      "gloss": "someone; people",
+      "count": 48030
+    },
+    {
+      "rank": 189,
+      "hanzi": "该",
+      "pinyin": "gāi",
+      "gloss": "should; ought to",
+      "count": 47800
+    },
+    {
+      "rank": 190,
+      "hanzi": "意思",
+      "pinyin": "yì si",
+      "gloss": "idea; opinion",
+      "count": 47296
+    },
+    {
+      "rank": 191,
+      "hanzi": "杀",
+      "pinyin": "shā",
+      "gloss": "to kill; to slay; to murder; to attack; to weaken; to reduce",
+      "count": 45836
+    },
+    {
+      "rank": 192,
+      "hanzi": "准备",
+      "pinyin": "zhǔn bèi",
+      "gloss": "preparation; to prepare",
+      "count": 45490
+    },
+    {
+      "rank": 193,
+      "hanzi": "并",
+      "pinyin": "bìng",
+      "gloss": "and; furthermore",
+      "count": 45252
+    },
+    {
+      "rank": 194,
+      "hanzi": "出来",
+      "pinyin": "chū lái",
+      "gloss": "to come out; to appear",
+      "count": 45071
+    },
+    {
+      "rank": 195,
+      "hanzi": "与",
+      "pinyin": "yú",
+      "gloss": "variant of 歟|欤[yu2]",
+      "count": 43845
+    },
+    {
+      "rank": 196,
+      "hanzi": "时",
+      "pinyin": "shí",
+      "gloss": "old variant of 時|时[shi2]",
+      "count": 43426
+    },
+    {
+      "rank": 197,
+      "hanzi": "不过",
+      "pinyin": "bù gùo",
+      "gloss": "only; merely",
+      "count": 43421
+    },
+    {
+      "rank": 198,
+      "hanzi": "一些",
+      "pinyin": "yī xīe",
+      "gloss": "some; a few; a little; (following an adjective) slightly ...er",
+      "count": 43319
+    },
+    {
+      "rank": 199,
+      "hanzi": "为了",
+      "pinyin": "wèi le",
+      "gloss": "for; for the purpose of; in order to",
+      "count": 42835
+    },
+    {
+      "rank": 200,
+      "hanzi": "带",
+      "pinyin": "dài",
+      "gloss": "band; belt",
+      "count": 42790
+    },
+    {
+      "rank": 201,
+      "hanzi": "女人",
+      "pinyin": "nu:3 rén",
+      "gloss": "woman",
+      "count": 42510
+    },
+    {
+      "rank": 202,
+      "hanzi": "这儿",
+      "pinyin": "zhè r",
+      "gloss": "here",
+      "count": 41851
+    },
+    {
+      "rank": 203,
+      "hanzi": "后",
+      "pinyin": "Hòu",
+      "gloss": "surname Hou",
+      "count": 41251
+    },
+    {
+      "rank": 204,
+      "hanzi": "只有",
+      "pinyin": "zhǐ yǒu",
+      "gloss": "only have ...; there is only ...; (used in combination with 才[cai2]) it is only if ... (that one can ...) (as in 只有通過治療才能痊愈|只有通过治疗才能痊愈[zhi3 you3 tong1 guo4 zhi4 liao2 cai2 neng2 quan2 yu4] \"the only way to cure it is with therapy\")",
+      "count": 41172
+    },
+    {
+      "rank": 205,
+      "hanzi": "过来",
+      "pinyin": "gùo lái",
+      "gloss": "to come over; to manage",
+      "count": 41005
+    },
+    {
+      "rank": 206,
+      "hanzi": "比",
+      "pinyin": "Bǐ",
+      "gloss": "Belgium; Belgian",
+      "count": 40956
+    },
+    {
+      "rank": 207,
+      "hanzi": "一次",
+      "pinyin": "yī cì",
+      "gloss": "first; first time",
+      "count": 40766
+    },
+    {
+      "rank": 208,
+      "hanzi": "得到",
+      "pinyin": "dé dào",
+      "gloss": "to get; to obtain; to receive",
+      "count": 39988
+    },
+    {
+      "rank": 209,
+      "hanzi": "任何",
+      "pinyin": "rèn hé",
+      "gloss": "any; whatever; whichever",
+      "count": 39594
+    },
+    {
+      "rank": 210,
+      "hanzi": "这种",
+      "pinyin": "zhè zhǒng",
+      "gloss": "this kind of",
+      "count": 39590
+    },
+    {
+      "rank": 211,
+      "hanzi": "小",
+      "pinyin": "xǐao",
+      "gloss": "small; tiny",
+      "count": 39473
+    },
+    {
+      "rank": 212,
+      "hanzi": "怎么样",
+      "pinyin": "zěn me yàng",
+      "gloss": "how?; how about?",
+      "count": 39364
+    },
+    {
+      "rank": 213,
+      "hanzi": "感觉",
+      "pinyin": "gǎn júe",
+      "gloss": "feeling; impression; sensation; to feel; to perceive",
+      "count": 38329
+    },
+    {
+      "rank": 214,
+      "hanzi": "年",
+      "pinyin": "Nían",
+      "gloss": "surname Nian",
+      "count": 38181
+    },
+    {
+      "rank": 215,
+      "hanzi": "是不是",
+      "pinyin": "shì bu shì",
+      "gloss": "is or is not (used to form yes-no questions)",
+      "count": 37975
+    },
+    {
+      "rank": 216,
+      "hanzi": "以为",
+      "pinyin": "yǐ wéi",
+      "gloss": "to think; to believe (often with the implication that the belief is mistaken – unless referring to one's own current belief)",
+      "count": 37929
+    },
+    {
+      "rank": 217,
+      "hanzi": "而且",
+      "pinyin": "ér qǐe",
+      "gloss": "(not only ...) but also; moreover; in addition; furthermore",
+      "count": 37779
+    },
+    {
+      "rank": 218,
+      "hanzi": "前",
+      "pinyin": "qían",
+      "gloss": "front; forward",
+      "count": 37674
+    },
+    {
+      "rank": 219,
+      "hanzi": "生活",
+      "pinyin": "shēng húo",
+      "gloss": "to live; life",
+      "count": 37632
+    },
+    {
+      "rank": 220,
+      "hanzi": "男人",
+      "pinyin": "nán rén",
+      "gloss": "a man; a male",
+      "count": 37624
+    },
+    {
+      "rank": 221,
+      "hanzi": "之前",
+      "pinyin": "zhī qían",
+      "gloss": "before; prior to",
+      "count": 37558
+    },
+    {
+      "rank": 222,
+      "hanzi": "喂",
+      "pinyin": "wéi",
+      "gloss": "hello (when answering the phone)",
+      "count": 37491
+    },
+    {
+      "rank": 223,
+      "hanzi": "问",
+      "pinyin": "wèn",
+      "gloss": "to ask; to inquire",
+      "count": 37160
+    },
+    {
+      "rank": 224,
+      "hanzi": "发现",
+      "pinyin": "fā xìan",
+      "gloss": "to notice; to become aware of; to discover; to find; to detect",
+      "count": 37040
+    },
+    {
+      "rank": 225,
+      "hanzi": "噢",
+      "pinyin": "ō",
+      "gloss": "oh; ah (used to indicate realization); also pr. [ou4]",
+      "count": 36705
+    },
+    {
+      "rank": 226,
+      "hanzi": "可是",
+      "pinyin": "kě shì",
+      "gloss": "but; however; (used for emphasis) indeed",
+      "count": 36669
+    },
+    {
+      "rank": 227,
+      "hanzi": "快点",
+      "pinyin": "kùai dǐan",
+      "gloss": "to do sth more quickly; Hurry up!",
+      "count": 36485
+    },
+    {
+      "rank": 228,
+      "hanzi": "嗨",
+      "pinyin": "hāi",
+      "gloss": "oh alas; hey!",
+      "count": 36184
+    },
+    {
+      "rank": 229,
+      "hanzi": "妈",
+      "pinyin": "mā",
+      "gloss": "ma; mom",
+      "count": 36011
+    },
+    {
+      "rank": 230,
+      "hanzi": "不用",
+      "pinyin": "bù yòng",
+      "gloss": "need not",
+      "count": 35781
+    },
+    {
+      "rank": 231,
+      "hanzi": "地",
+      "pinyin": "de",
+      "gloss": "-ly; structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct",
+      "count": 35498
+    },
+    {
+      "rank": 232,
+      "hanzi": "向",
+      "pinyin": "Xìang",
+      "gloss": "surname Xiang",
+      "count": 35398
+    },
+    {
+      "rank": 233,
+      "hanzi": "名字",
+      "pinyin": "míng zi",
+      "gloss": "name (of a person or thing)",
+      "count": 35374
+    },
+    {
+      "rank": 234,
+      "hanzi": "没错",
+      "pinyin": "méi cùo",
+      "gloss": "that's right; sure!",
+      "count": 35015
+    },
+    {
+      "rank": 235,
+      "hanzi": "见",
+      "pinyin": "jìan",
+      "gloss": "to see; to meet",
+      "count": 34008
+    },
+    {
+      "rank": 236,
+      "hanzi": "世界",
+      "pinyin": "shì jìe",
+      "gloss": "world",
+      "count": 33790
+    },
+    {
+      "rank": 237,
+      "hanzi": "记得",
+      "pinyin": "jì de",
+      "gloss": "to remember",
+      "count": 33268
+    },
+    {
+      "rank": 238,
+      "hanzi": "住",
+      "pinyin": "zhù",
+      "gloss": "to live; to reside; to stay; to stop; to cease",
+      "count": 33258
+    },
+    {
+      "rank": 239,
+      "hanzi": "新",
+      "pinyin": "Xīn",
+      "gloss": "abbr. for Xinjiang 新疆[Xin1 jiang1]; abbr. for Singapore 新加坡[Xin1 jia1 po1]",
+      "count": 33132
+    },
+    {
+      "rank": 240,
+      "hanzi": "不错",
+      "pinyin": "bù cùo",
+      "gloss": "correct; right",
+      "count": 33113
+    },
+    {
+      "rank": 241,
+      "hanzi": "肯定",
+      "pinyin": "kěn dìng",
+      "gloss": "to be certain; to be positive; assuredly; definitely",
+      "count": 33061
+    },
+    {
+      "rank": 242,
+      "hanzi": "最好",
+      "pinyin": "zùi hǎo",
+      "gloss": "best; had better ...; it would be best to ...",
+      "count": 33033
+    },
+    {
+      "rank": 243,
+      "hanzi": "不行",
+      "pinyin": "bù xíng",
+      "gloss": "won't do; be out of the question",
+      "count": 32963
+    },
+    {
+      "rank": 244,
+      "hanzi": "等等",
+      "pinyin": "děng děng",
+      "gloss": "et cetera; and so on ...",
+      "count": 32945
+    },
+    {
+      "rank": 245,
+      "hanzi": "嘛",
+      "pinyin": "má",
+      "gloss": "used in 唵嘛呢叭咪吽[an3 ma2 ni2 ba1 mi1 hong1]; (Tw) (coll.) what?",
+      "count": 32723
+    },
+    {
+      "rank": 246,
+      "hanzi": "出去",
+      "pinyin": "chū qù",
+      "gloss": "to go out",
+      "count": 32723
+    },
+    {
+      "rank": 247,
+      "hanzi": "么",
+      "pinyin": "má",
+      "gloss": "exclamatory final particle",
+      "count": 32274
+    },
+    {
+      "rank": 248,
+      "hanzi": "先",
+      "pinyin": "xīan",
+      "gloss": "beforehand; first; earlier; at first; originally",
+      "count": 32196
+    },
+    {
+      "rank": 249,
+      "hanzi": "亲爱",
+      "pinyin": "qīn ài",
+      "gloss": "dear; beloved",
+      "count": 31933
+    },
+    {
+      "rank": 250,
+      "hanzi": "或",
+      "pinyin": "hùo",
+      "gloss": "maybe; perhaps",
+      "count": 31727
+    },
+    {
+      "rank": 251,
+      "hanzi": "担心",
+      "pinyin": "dān xīn",
+      "gloss": "anxious; worried",
+      "count": 31339
+    },
+    {
+      "rank": 252,
+      "hanzi": "如何",
+      "pinyin": "rú hé",
+      "gloss": "how; what way",
+      "count": 31320
+    },
+    {
+      "rank": 253,
+      "hanzi": "到底",
+      "pinyin": "dào dǐ",
+      "gloss": "finally; in the end",
+      "count": 31107
+    },
+    {
+      "rank": 254,
+      "hanzi": "有点",
+      "pinyin": "yǒu dǐan",
+      "gloss": "a little",
+      "count": 30851
+    },
+    {
+      "rank": 255,
+      "hanzi": "最后",
+      "pinyin": "zùi hòu",
+      "gloss": "final; last; ultimate; finally; in the end",
+      "count": 30725
+    },
+    {
+      "rank": 256,
+      "hanzi": "小姐",
+      "pinyin": "xǐao jie",
+      "gloss": "young lady; miss",
+      "count": 30706
+    },
+    {
+      "rank": 257,
+      "hanzi": "上帝",
+      "pinyin": "Shàng dì",
+      "gloss": "God",
+      "count": 30372
+    },
+    {
+      "rank": 258,
+      "hanzi": "认识",
+      "pinyin": "rèn shi",
+      "gloss": "to know; to recognize",
+      "count": 30285
+    },
+    {
+      "rank": 259,
+      "hanzi": "正在",
+      "pinyin": "zhèng zài",
+      "gloss": "to be in the process of (doing sth); to be currently ...-ing",
+      "count": 30153
+    },
+    {
+      "rank": 260,
+      "hanzi": "那样",
+      "pinyin": "nà yàng",
+      "gloss": "that kind; that sort",
+      "count": 29969
+    },
+    {
+      "rank": 261,
+      "hanzi": "父亲",
+      "pinyin": "fù qīn",
+      "gloss": "father; also pr. [fu4 qin5]",
+      "count": 29719
+    },
+    {
+      "rank": 262,
+      "hanzi": "高兴",
+      "pinyin": "gāo xìng",
+      "gloss": "happy; glad",
+      "count": 29700
+    },
+    {
+      "rank": 263,
+      "hanzi": "明天",
+      "pinyin": "míng tīan",
+      "gloss": "tomorrow",
+      "count": 29587
+    },
+    {
+      "rank": 264,
+      "hanzi": "重要",
+      "pinyin": "zhòng yào",
+      "gloss": "important; significant; major",
+      "count": 29507
+    },
+    {
+      "rank": 265,
+      "hanzi": "跑",
+      "pinyin": "páo",
+      "gloss": "(of an animal) to paw (the ground)",
+      "count": 29295
+    },
+    {
+      "rank": 266,
+      "hanzi": "警察",
+      "pinyin": "jǐng chá",
+      "gloss": "police; police officer",
+      "count": 29120
+    },
+    {
+      "rank": 267,
+      "hanzi": "只要",
+      "pinyin": "zhǐ yào",
+      "gloss": "so long as; provided; if",
+      "count": 29107
+    },
+    {
+      "rank": 268,
+      "hanzi": "干什么",
+      "pinyin": "gàn shén me",
+      "gloss": "what are you doing?; what's he up to?",
+      "count": 29067
+    },
+    {
+      "rank": 269,
+      "hanzi": "好像",
+      "pinyin": "hǎo xìang",
+      "gloss": "as if; to seem like",
+      "count": 29033
+    },
+    {
+      "rank": 270,
+      "hanzi": "再见",
+      "pinyin": "zài jìan",
+      "gloss": "goodbye; see you again later",
+      "count": 28825
+    },
+    {
+      "rank": 271,
+      "hanzi": "月",
+      "pinyin": "yùe",
+      "gloss": "moon; month",
+      "count": 28795
+    },
+    {
+      "rank": 272,
+      "hanzi": "继续",
+      "pinyin": "jì xù",
+      "gloss": "to continue; to proceed with; to go on with",
+      "count": 28740
+    },
+    {
+      "rank": 273,
+      "hanzi": "出",
+      "pinyin": "chū",
+      "gloss": "to go out; to come out; to arise; to occur",
+      "count": 28686
+    },
+    {
+      "rank": 274,
+      "hanzi": "今晚",
+      "pinyin": "jīn wǎn",
+      "gloss": "tonight",
+      "count": 28650
+    },
+    {
+      "rank": 275,
+      "hanzi": "他妈的",
+      "pinyin": "tā mā de",
+      "gloss": "(taboo curse) damn it!; fucking",
+      "count": 28590
+    },
+    {
+      "rank": 276,
+      "hanzi": "回家",
+      "pinyin": "húi jīa",
+      "gloss": "to return home",
+      "count": 28350
+    },
+    {
+      "rank": 277,
+      "hanzi": "它们",
+      "pinyin": "tā men",
+      "gloss": "they; them",
+      "count": 28308
+    },
+    {
+      "rank": 278,
+      "hanzi": "多少",
+      "pinyin": "dūo shǎo",
+      "gloss": "number; amount; somewhat",
+      "count": 28247
+    },
+    {
+      "rank": 279,
+      "hanzi": "电话",
+      "pinyin": "dìan hùa",
+      "gloss": "telephone; CL:部[bu4]",
+      "count": 28178
+    },
+    {
+      "rank": 280,
+      "hanzi": "听到",
+      "pinyin": "tīng dào",
+      "gloss": "to hear",
+      "count": 27995
+    },
+    {
+      "rank": 281,
+      "hanzi": "干嘛",
+      "pinyin": "gàn má",
+      "gloss": "what are you doing?; what for?; why? (often expressing surprise or annoyance)",
+      "count": 27736
+    },
+    {
+      "rank": 282,
+      "hanzi": "干",
+      "pinyin": "gān",
+      "gloss": "old variant of 乾|干[gan1]",
+      "count": 27619
+    },
+    {
+      "rank": 283,
+      "hanzi": "医生",
+      "pinyin": "yī shēng",
+      "gloss": "doctor; medical practitioner",
+      "count": 27452
+    },
+    {
+      "rank": 284,
+      "hanzi": "要是",
+      "pinyin": "yào shi",
+      "gloss": "(coll.) if",
+      "count": 27266
+    },
+    {
+      "rank": 285,
+      "hanzi": "女孩",
+      "pinyin": "nu:3 hái",
+      "gloss": "girl; lass",
+      "count": 27105
+    },
+    {
+      "rank": 286,
+      "hanzi": "所",
+      "pinyin": "sǔo",
+      "gloss": "actually; place",
+      "count": 27006
+    },
+    {
+      "rank": 287,
+      "hanzi": "马上",
+      "pinyin": "mǎ shàng",
+      "gloss": "at once; right away",
+      "count": 26720
+    },
+    {
+      "rank": 288,
+      "hanzi": "过去",
+      "pinyin": "gùo qù",
+      "gloss": "(in the) past; former; previous; to go over; to pass by",
+      "count": 26646
+    },
+    {
+      "rank": 289,
+      "hanzi": "以前",
+      "pinyin": "yǐ qían",
+      "gloss": "before; formerly",
+      "count": 26399
+    },
+    {
+      "rank": 290,
+      "hanzi": "儿子",
+      "pinyin": "ér zi",
+      "gloss": "son",
+      "count": 26024
+    },
+    {
+      "rank": 291,
+      "hanzi": "哪儿",
+      "pinyin": "nǎ r",
+      "gloss": "where?; wherever; anywhere; somewhere",
+      "count": 25634
+    },
+    {
+      "rank": 292,
+      "hanzi": "说话",
+      "pinyin": "shūo hùa",
+      "gloss": "to speak; to say",
+      "count": 25586
+    },
+    {
+      "rank": 293,
+      "hanzi": "买",
+      "pinyin": "mǎi",
+      "gloss": "to buy; to purchase",
+      "count": 25518
+    },
+    {
+      "rank": 294,
+      "hanzi": "看起来",
+      "pinyin": "kàn qǐ lai",
+      "gloss": "seemingly; apparently; looks as if; appears to be; gives the impression that; seems on the face of it to be",
+      "count": 25511
+    },
+    {
+      "rank": 295,
+      "hanzi": "完全",
+      "pinyin": "wán qúan",
+      "gloss": "complete; whole; totally; entirely",
+      "count": 25423
+    },
+    {
+      "rank": 296,
+      "hanzi": "该死",
+      "pinyin": "gāi sǐ",
+      "gloss": "Damn it!; damned",
+      "count": 25331
+    },
+    {
+      "rank": 297,
+      "hanzi": "美国",
+      "pinyin": "Měi gúo",
+      "gloss": "United States; USA; US",
+      "count": 25172
+    },
+    {
+      "rank": 298,
+      "hanzi": "怎样",
+      "pinyin": "zěn yàng",
+      "gloss": "how; what kind",
+      "count": 25165
+    },
+    {
+      "rank": 299,
+      "hanzi": "回去",
+      "pinyin": "húi qu",
+      "gloss": "to return; to go back",
+      "count": 25126
+    },
+    {
+      "rank": 300,
+      "hanzi": "以",
+      "pinyin": "yǐ",
+      "gloss": "old variant of 以[yi3]",
+      "count": 24974
+    },
+    {
+      "rank": 301,
+      "hanzi": "却",
+      "pinyin": "qùe",
+      "gloss": "old variant of 卻|却[que4]",
+      "count": 24940
+    },
+    {
+      "rank": 302,
+      "hanzi": "其他",
+      "pinyin": "qí tā",
+      "gloss": "other; (sth or sb) else",
+      "count": 24825
+    },
+    {
+      "rank": 303,
+      "hanzi": "永远",
+      "pinyin": "yǒng yǔan",
+      "gloss": "forever; eternal",
+      "count": 24688
+    },
+    {
+      "rank": 304,
+      "hanzi": "家伙",
+      "pinyin": "jīa huo",
+      "gloss": "variant of 家伙[jia1 huo5]",
+      "count": 24679
+    },
+    {
+      "rank": 305,
+      "hanzi": "之后",
+      "pinyin": "zhī hòu",
+      "gloss": "after; behind; (at the beginning of a sentence) afterwards; since then",
+      "count": 24566
+    },
+    {
+      "rank": 306,
+      "hanzi": "看见",
+      "pinyin": "kàn jìan",
+      "gloss": "to see; to catch sight of",
+      "count": 24365
+    },
+    {
+      "rank": 307,
+      "hanzi": "或者",
+      "pinyin": "hùo zhě",
+      "gloss": "or; possibly; maybe; perhaps",
+      "count": 24021
+    },
+    {
+      "rank": 308,
+      "hanzi": "小心",
+      "pinyin": "xǐao xīn",
+      "gloss": "to be careful; to take care",
+      "count": 23400
+    },
+    {
+      "rank": 309,
+      "hanzi": "行",
+      "pinyin": "háng",
+      "gloss": "(bound form) row; line; (bound form) line of business; trade; profession",
+      "count": 23301
+    },
+    {
+      "rank": 310,
+      "hanzi": "别人",
+      "pinyin": "bíe ren",
+      "gloss": "other people; others; other person",
+      "count": 23278
+    },
+    {
+      "rank": 311,
+      "hanzi": "成为",
+      "pinyin": "chéng wéi",
+      "gloss": "to become; to turn into",
+      "count": 23248
+    },
+    {
+      "rank": 312,
+      "hanzi": "写",
+      "pinyin": "xǐe",
+      "gloss": "to write",
+      "count": 23064
+    },
+    {
+      "rank": 313,
+      "hanzi": "不到",
+      "pinyin": "bù dào",
+      "gloss": "not to arrive; not reaching",
+      "count": 22964
+    },
+    {
+      "rank": 314,
+      "hanzi": "情况",
+      "pinyin": "qíng kùang",
+      "gloss": "circumstances; state of affairs; situation; CL:種|种[zhong3]",
+      "count": 22913
+    },
+    {
+      "rank": 315,
+      "hanzi": "送",
+      "pinyin": "sòng",
+      "gloss": "to send; to deliver; to transmit; to give (as a present)",
+      "count": 22802
+    },
+    {
+      "rank": 316,
+      "hanzi": "伙计",
+      "pinyin": "hǔo ji",
+      "gloss": "partner; fellow",
+      "count": 22702
+    },
+    {
+      "rank": 317,
+      "hanzi": "玩",
+      "pinyin": "wán",
+      "gloss": "to play; to have fun",
+      "count": 22502
+    },
+    {
+      "rank": 318,
+      "hanzi": "见到",
+      "pinyin": "jìan dào",
+      "gloss": "to see",
+      "count": 22417
+    },
+    {
+      "rank": 319,
+      "hanzi": "放",
+      "pinyin": "fàng",
+      "gloss": "to put; to place",
+      "count": 22359
+    },
+    {
+      "rank": 320,
+      "hanzi": "晚上",
+      "pinyin": "wǎn shang",
+      "gloss": "evening; night",
+      "count": 22343
+    },
+    {
+      "rank": 321,
+      "hanzi": "喝",
+      "pinyin": "hē",
+      "gloss": "to drink; variant of 嗬[he1]",
+      "count": 22343
+    },
+    {
+      "rank": 322,
+      "hanzi": "总是",
+      "pinyin": "zǒng shì",
+      "gloss": "always",
+      "count": 22325
+    },
+    {
+      "rank": 323,
+      "hanzi": "好好",
+      "pinyin": "hǎo hǎo",
+      "gloss": "in perfectly good condition; perfectly all right; well; thoroughly; carefully; properly",
+      "count": 22178
+    },
+    {
+      "rank": 324,
+      "hanzi": "号",
+      "pinyin": "háo",
+      "gloss": "(bound form) to wail; to howl",
+      "count": 22150
+    },
+    {
+      "rank": 325,
+      "hanzi": "如此",
+      "pinyin": "rú cǐ",
+      "gloss": "like this; so; such",
+      "count": 22150
+    },
+    {
+      "rank": 326,
+      "hanzi": "家",
+      "pinyin": "jīa",
+      "gloss": "used in 傢伙|家伙[jia1 huo5] and 傢俱|家俱[jia1 ju4]",
+      "count": 22081
+    },
+    {
+      "rank": 327,
+      "hanzi": "坐",
+      "pinyin": "Zùo",
+      "gloss": "surname Zuo",
+      "count": 22044
+    },
+    {
+      "rank": 328,
+      "hanzi": "了解",
+      "pinyin": "lǐao jǐe",
+      "gloss": "to understand; to know about; to learn about; to find out",
+      "count": 21944
+    },
+    {
+      "rank": 329,
+      "hanzi": "有没有",
+      "pinyin": "yǒu méi yǒu",
+      "gloss": "(before a noun) Do (you, they etc) have ...?; Is there a ...?",
+      "count": 21883
+    },
+    {
+      "rank": 330,
+      "hanzi": "兄弟",
+      "pinyin": "xīong dì",
+      "gloss": "brothers; younger brother",
+      "count": 21871
+    },
+    {
+      "rank": 331,
+      "hanzi": "没什么",
+      "pinyin": "méi shén me",
+      "gloss": "it doesn't matter; it's nothing; never mind; think nothing of it; it's my pleasure; you're welcome",
+      "count": 21850
+    },
+    {
+      "rank": 332,
+      "hanzi": "结束",
+      "pinyin": "jíe shù",
+      "gloss": "to end; to finish; to conclude",
+      "count": 21743
+    },
+    {
+      "rank": 333,
+      "hanzi": "机会",
+      "pinyin": "jī hùi",
+      "gloss": "opportunity; chance",
+      "count": 21719
+    },
+    {
+      "rank": 334,
+      "hanzi": "已",
+      "pinyin": "yǐ",
+      "gloss": "already; (bound form) to stop; to cease; to end",
+      "count": 21707
+    },
+    {
+      "rank": 335,
+      "hanzi": "安全",
+      "pinyin": "ān qúan",
+      "gloss": "safe; secure; safety; security",
+      "count": 21662
+    },
+    {
+      "rank": 336,
+      "hanzi": "拜托",
+      "pinyin": "bài tūo",
+      "gloss": "to request sb to do sth; please!",
+      "count": 21530
+    },
+    {
+      "rank": 337,
+      "hanzi": "决定",
+      "pinyin": "júe dìng",
+      "gloss": "to decide; to determine; to make up one's mind; decision (CL:個|个[ge4],項|项[xiang4])",
+      "count": 21480
+    },
+    {
+      "rank": 338,
+      "hanzi": "穿",
+      "pinyin": "chūan",
+      "gloss": "to bore through; to pierce; to perforate; to go through (e.g. a tunnel); to cross (e.g. a street)",
+      "count": 21460
+    },
+    {
+      "rank": 339,
+      "hanzi": "确定",
+      "pinyin": "qùe dìng",
+      "gloss": "definite; certain",
+      "count": 21435
+    },
+    {
+      "rank": 340,
+      "hanzi": "里面",
+      "pinyin": "lǐ mìan",
+      "gloss": "variant of 裡面|里面[li3 mian4]",
+      "count": 21222
+    },
+    {
+      "rank": 341,
+      "hanzi": "呃",
+      "pinyin": "è",
+      "gloss": "(exclamation); to hiccup",
+      "count": 21202
+    },
+    {
+      "rank": 342,
+      "hanzi": "怎么办",
+      "pinyin": "zěn me bàn",
+      "gloss": "what's to be done",
+      "count": 21189
+    },
+    {
+      "rank": 343,
+      "hanzi": "还好",
+      "pinyin": "hái hǎo",
+      "gloss": "not bad; pretty good; fortunately; luckily",
+      "count": 21062
+    },
+    {
+      "rank": 344,
+      "hanzi": "无法",
+      "pinyin": "wú fǎ",
+      "gloss": "unable to; incapable of",
+      "count": 21037
+    },
+    {
+      "rank": 345,
+      "hanzi": "小时",
+      "pinyin": "xǐao shí",
+      "gloss": "hour",
+      "count": 21036
+    },
+    {
+      "rank": 346,
+      "hanzi": "站",
+      "pinyin": "zhàn",
+      "gloss": "station; to stand",
+      "count": 21015
+    },
+    {
+      "rank": 347,
+      "hanzi": "清楚",
+      "pinyin": "qīng chu",
+      "gloss": "clear; distinct",
+      "count": 21001
+    },
+    {
+      "rank": 348,
+      "hanzi": "有些",
+      "pinyin": "yǒu xīe",
+      "gloss": "some; somewhat; rather; a bit",
+      "count": 20997
+    },
+    {
+      "rank": 349,
+      "hanzi": "错",
+      "pinyin": "Cùo",
+      "gloss": "surname Cuo",
+      "count": 20914
+    },
+    {
+      "rank": 350,
+      "hanzi": "帮助",
+      "pinyin": "bāng zhù",
+      "gloss": "assistance; aid; to help; to assist",
+      "count": 20849
+    },
+    {
+      "rank": 351,
+      "hanzi": "长官",
+      "pinyin": "zhǎng gūan",
+      "gloss": "senior official; senior officer",
+      "count": 20785
+    },
+    {
+      "rank": 352,
+      "hanzi": "公司",
+      "pinyin": "gōng sī",
+      "gloss": "company; firm; corporation; CL:家[jia1]",
+      "count": 20745
+    },
+    {
+      "rank": 353,
+      "hanzi": "打电话",
+      "pinyin": "dǎ dìan hùa",
+      "gloss": "to make a telephone call",
+      "count": 20621
+    },
+    {
+      "rank": 354,
+      "hanzi": "房子",
+      "pinyin": "fáng zi",
+      "gloss": "house; building (single- or two-story)",
+      "count": 20426
+    },
+    {
+      "rank": 355,
+      "hanzi": "根本",
+      "pinyin": "gēn běn",
+      "gloss": "fundamental; basic",
+      "count": 20419
+    },
+    {
+      "rank": 356,
+      "hanzi": "懂",
+      "pinyin": "dǒng",
+      "gloss": "to understand; to comprehend",
+      "count": 20399
+    },
+    {
+      "rank": 357,
+      "hanzi": "办法",
+      "pinyin": "bàn fǎ",
+      "gloss": "way of handling sth; means; measure; (practical) solution to a problem; CL:條|条[tiao2]",
+      "count": 20396
+    },
+    {
+      "rank": 358,
+      "hanzi": "不管",
+      "pinyin": "bù gǔan",
+      "gloss": "not to be concerned; regardless of",
+      "count": 20313
+    },
+    {
+      "rank": 359,
+      "hanzi": "混蛋",
+      "pinyin": "hún dàn",
+      "gloss": "scoundrel; bastard",
+      "count": 20306
+    },
+    {
+      "rank": 360,
+      "hanzi": "关于",
+      "pinyin": "gūan yú",
+      "gloss": "pertaining to; concerning",
+      "count": 20217
+    },
+    {
+      "rank": 361,
+      "hanzi": "搞",
+      "pinyin": "gǎo",
+      "gloss": "to do; to make",
+      "count": 20122
+    },
+    {
+      "rank": 362,
+      "hanzi": "计划",
+      "pinyin": "jì hùa",
+      "gloss": "plan; project",
+      "count": 19959
+    },
+    {
+      "rank": 363,
+      "hanzi": "唯一",
+      "pinyin": "wéi yī",
+      "gloss": "only; sole",
+      "count": 19772
+    },
+    {
+      "rank": 364,
+      "hanzi": "女儿",
+      "pinyin": "nu:3 ér",
+      "gloss": "daughter",
+      "count": 19614
+    },
+    {
+      "rank": 365,
+      "hanzi": "宝贝",
+      "pinyin": "bǎo bèi",
+      "gloss": "treasured object; treasure",
+      "count": 19208
+    },
+    {
+      "rank": 366,
+      "hanzi": "每个",
+      "pinyin": "měi ge",
+      "gloss": "each; every",
+      "count": 19176
+    },
+    {
+      "rank": 367,
+      "hanzi": "怎么回事",
+      "pinyin": "zěn me húi shì",
+      "gloss": "what's the matter?; what's going on?",
+      "count": 19113
+    },
+    {
+      "rank": 368,
+      "hanzi": "其实",
+      "pinyin": "qí shí",
+      "gloss": "actually; in fact; really",
+      "count": 19073
+    },
+    {
+      "rank": 369,
+      "hanzi": "漂亮",
+      "pinyin": "pìao liang",
+      "gloss": "pretty; beautiful",
+      "count": 19069
+    },
+    {
+      "rank": 370,
+      "hanzi": "黑体",
+      "pinyin": "hēi tǐ",
+      "gloss": "sans-serif typeface (for Chinese characters); (physics) black body",
+      "count": 19019
+    },
+    {
+      "rank": 371,
+      "hanzi": "车",
+      "pinyin": "Chē",
+      "gloss": "surname Che",
+      "count": 18851
+    },
+    {
+      "rank": 372,
+      "hanzi": "人们",
+      "pinyin": "rén men",
+      "gloss": "people",
+      "count": 18560
+    },
+    {
+      "rank": 373,
+      "hanzi": "真正",
+      "pinyin": "zhēn zhèng",
+      "gloss": "genuine; real; true; really; indeed",
+      "count": 18550
+    },
+    {
+      "rank": 374,
+      "hanzi": "甚至",
+      "pinyin": "shèn zhì",
+      "gloss": "even; so much so that",
+      "count": 18542
+    },
+    {
+      "rank": 375,
+      "hanzi": "那边",
+      "pinyin": "nà bian",
+      "gloss": "over there; yonder",
+      "count": 18527
+    },
+    {
+      "rank": 376,
+      "hanzi": "弄",
+      "pinyin": "lòng",
+      "gloss": "lane; alley",
+      "count": 18497
+    },
+    {
+      "rank": 377,
+      "hanzi": "开",
+      "pinyin": "kāi",
+      "gloss": "to open (transitive or intransitive); (of ships, vehicles, troops etc) to start",
+      "count": 18483
+    },
+    {
+      "rank": 378,
+      "hanzi": "不好",
+      "pinyin": "bù hǎo",
+      "gloss": "no good",
+      "count": 18386
+    },
+    {
+      "rank": 379,
+      "hanzi": "喔",
+      "pinyin": "ō",
+      "gloss": "(interjection) oh; I see (used to indicate realization, understanding)",
+      "count": 18228
+    },
+    {
+      "rank": 380,
+      "hanzi": "回",
+      "pinyin": "Húi",
+      "gloss": "Hui ethnic group (Chinese Muslims)",
+      "count": 18149
+    },
+    {
+      "rank": 381,
+      "hanzi": "进来",
+      "pinyin": "jìn lái",
+      "gloss": "to come in",
+      "count": 18144
+    },
+    {
+      "rank": 382,
+      "hanzi": "夫人",
+      "pinyin": "fū ren",
+      "gloss": "lady; madam",
+      "count": 17915
+    },
+    {
+      "rank": 383,
+      "hanzi": "之",
+      "pinyin": "zhī",
+      "gloss": "(possessive particle, literary equivalent of 的[de5]); him",
+      "count": 17902
+    },
+    {
+      "rank": 384,
+      "hanzi": "愿意",
+      "pinyin": "yùan yì",
+      "gloss": "to wish; to want",
+      "count": 17725
+    },
+    {
+      "rank": 385,
+      "hanzi": "麻烦",
+      "pinyin": "má fan",
+      "gloss": "trouble; inconvenience; inconvenient; troublesome; annoying",
+      "count": 17699
+    },
+    {
+      "rank": 386,
+      "hanzi": "睡",
+      "pinyin": "shùi",
+      "gloss": "to sleep; to lie down",
+      "count": 17644
+    },
+    {
+      "rank": 387,
+      "hanzi": "哇",
+      "pinyin": "wā",
+      "gloss": "Wow!; sound of a child's crying",
+      "count": 17641
+    },
+    {
+      "rank": 388,
+      "hanzi": "就要",
+      "pinyin": "jìu yào",
+      "gloss": "will; shall",
+      "count": 17547
+    },
+    {
+      "rank": 389,
+      "hanzi": "打算",
+      "pinyin": "dǎ sùan",
+      "gloss": "to plan; to intend",
+      "count": 17525
+    },
+    {
+      "rank": 390,
+      "hanzi": "完",
+      "pinyin": "wán",
+      "gloss": "to finish; to be over",
+      "count": 17502
+    },
+    {
+      "rank": 391,
+      "hanzi": "故事",
+      "pinyin": "gù shì",
+      "gloss": "old practice",
+      "count": 17449
+    },
+    {
+      "rank": 392,
+      "hanzi": "一种",
+      "pinyin": "yī zhǒng",
+      "gloss": "one kind of; one type of",
+      "count": 17433
+    },
+    {
+      "rank": 393,
+      "hanzi": "害怕",
+      "pinyin": "hài pà",
+      "gloss": "to be afraid; to be scared",
+      "count": 17332
+    },
+    {
+      "rank": 394,
+      "hanzi": "救",
+      "pinyin": "jìu",
+      "gloss": "variant of 救[jiu4]",
+      "count": 17299
+    },
+    {
+      "rank": 395,
+      "hanzi": "手",
+      "pinyin": "shǒu",
+      "gloss": "hand; (formal) to hold",
+      "count": 17286
+    },
+    {
+      "rank": 396,
+      "hanzi": "房间",
+      "pinyin": "fáng jīan",
+      "gloss": "room; CL:間|间[jian1]",
+      "count": 17234
+    },
+    {
+      "rank": 397,
+      "hanzi": "由",
+      "pinyin": "yóu",
+      "gloss": "to follow; from",
+      "count": 17218
+    },
+    {
+      "rank": 398,
+      "hanzi": "那儿",
+      "pinyin": "nà r",
+      "gloss": "there",
+      "count": 17180
+    },
+    {
+      "rank": 399,
+      "hanzi": "衣服",
+      "pinyin": "yī fu",
+      "gloss": "clothes; CL:件[jian4],套[tao4]",
+      "count": 17176
+    },
+    {
+      "rank": 400,
+      "hanzi": "枪",
+      "pinyin": "Qīang",
+      "gloss": "surname Qiang",
+      "count": 17168
+    },
+    {
+      "rank": 401,
+      "hanzi": "母亲",
+      "pinyin": "mǔ qīn",
+      "gloss": "mother",
+      "count": 17158
+    },
+    {
+      "rank": 402,
+      "hanzi": "另",
+      "pinyin": "lìng",
+      "gloss": "other; another",
+      "count": 17067
+    },
+    {
+      "rank": 403,
+      "hanzi": "下来",
+      "pinyin": "xìa lai",
+      "gloss": "to come down; (completed action marker)",
+      "count": 17025
+    },
+    {
+      "rank": 404,
+      "hanzi": "听说",
+      "pinyin": "tīng shūo",
+      "gloss": "to hear (sth said); one hears (that)",
+      "count": 17007
+    },
+    {
+      "rank": 405,
+      "hanzi": "不了",
+      "pinyin": "bù le",
+      "gloss": "no thanks (used to politely but informally decline)",
+      "count": 16969
+    },
+    {
+      "rank": 406,
+      "hanzi": "注意",
+      "pinyin": "zhù yì",
+      "gloss": "to take note of; to pay attention to",
+      "count": 16962
+    },
+    {
+      "rank": 407,
+      "hanzi": "改变",
+      "pinyin": "gǎi bìan",
+      "gloss": "to change; to alter",
+      "count": 16916
+    },
+    {
+      "rank": 408,
+      "hanzi": "没关系",
+      "pinyin": "méi gūan xi",
+      "gloss": "it doesn't matter",
+      "count": 16619
+    },
+    {
+      "rank": 409,
+      "hanzi": "接受",
+      "pinyin": "jīe shòu",
+      "gloss": "to accept (a suggestion, punishment, bribe etc); to acquiesce",
+      "count": 16528
+    },
+    {
+      "rank": 410,
+      "hanzi": "妻子",
+      "pinyin": "qī zǐ",
+      "gloss": "wife and children",
+      "count": 16483
+    },
+    {
+      "rank": 411,
+      "hanzi": "老",
+      "pinyin": "lǎo",
+      "gloss": "prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity; old (of people)",
+      "count": 16348
+    },
+    {
+      "rank": 412,
+      "hanzi": "失去",
+      "pinyin": "shī qù",
+      "gloss": "to lose",
+      "count": 16298
+    },
+    {
+      "rank": 413,
+      "hanzi": "回到",
+      "pinyin": "húi dào",
+      "gloss": "to return to",
+      "count": 16270
+    },
+    {
+      "rank": 414,
+      "hanzi": "以后",
+      "pinyin": "yǐ hòu",
+      "gloss": "after; later",
+      "count": 16207
+    },
+    {
+      "rank": 415,
+      "hanzi": "话",
+      "pinyin": "hùa",
+      "gloss": "dialect; language",
+      "count": 16044
+    },
+    {
+      "rank": 416,
+      "hanzi": "是否",
+      "pinyin": "shì fǒu",
+      "gloss": "whether (or not); if",
+      "count": 16033
+    },
+    {
+      "rank": 417,
+      "hanzi": "疯",
+      "pinyin": "fēng",
+      "gloss": "insane; mad",
+      "count": 15996
+    },
+    {
+      "rank": 418,
+      "hanzi": "生命",
+      "pinyin": "shēng mìng",
+      "gloss": "life (as the characteristic of living beings); living being; creature (CL:條|条[tiao2])",
+      "count": 15984
+    },
+    {
+      "rank": 419,
+      "hanzi": "她们",
+      "pinyin": "tā men",
+      "gloss": "they; them (females)",
+      "count": 15939
+    },
+    {
+      "rank": 420,
+      "hanzi": "忙",
+      "pinyin": "máng",
+      "gloss": "busy; hurriedly",
+      "count": 15931
+    },
+    {
+      "rank": 421,
+      "hanzi": "进去",
+      "pinyin": "jìn qù",
+      "gloss": "to go in",
+      "count": 15918
+    },
+    {
+      "rank": 422,
+      "hanzi": "抓",
+      "pinyin": "zhūa",
+      "gloss": "to grab; to catch",
+      "count": 15901
+    },
+    {
+      "rank": 423,
+      "hanzi": "女士",
+      "pinyin": "nu:3 shì",
+      "gloss": "lady; madam",
+      "count": 15858
+    },
+    {
+      "rank": 424,
+      "hanzi": "原因",
+      "pinyin": "yúan yīn",
+      "gloss": "cause; origin",
+      "count": 15775
+    },
+    {
+      "rank": 425,
+      "hanzi": "刚才",
+      "pinyin": "gāng cái",
+      "gloss": "just now; a moment ago",
+      "count": 15711
+    },
+    {
+      "rank": 426,
+      "hanzi": "保护",
+      "pinyin": "bǎo hù",
+      "gloss": "to protect; to defend",
+      "count": 15705
+    },
+    {
+      "rank": 427,
+      "hanzi": "选择",
+      "pinyin": "xǔan zé",
+      "gloss": "to select; to pick; choice; option; alternative",
+      "count": 15677
+    },
+    {
+      "rank": 428,
+      "hanzi": "几个",
+      "pinyin": "jǐ ge",
+      "gloss": "a few; several",
+      "count": 15669
+    },
+    {
+      "rank": 429,
+      "hanzi": "笑",
+      "pinyin": "xìao",
+      "gloss": "old variant of 笑[xiao4]",
+      "count": 15664
+    },
+    {
+      "rank": 430,
+      "hanzi": "关系",
+      "pinyin": "gūan xi",
+      "gloss": "relation; relationship; connection; to concern; to involve; to affect",
+      "count": 15628
+    },
+    {
+      "rank": 431,
+      "hanzi": "从来",
+      "pinyin": "cóng lái",
+      "gloss": "always; at all times",
+      "count": 15598
+    },
+    {
+      "rank": 432,
+      "hanzi": "当时",
+      "pinyin": "dāng shí",
+      "gloss": "then; at that time",
+      "count": 15505
+    },
+    {
+      "rank": 433,
+      "hanzi": "出现",
+      "pinyin": "chū xìan",
+      "gloss": "to appear; to arise; to emerge; to show up",
+      "count": 15480
+    },
+    {
+      "rank": 434,
+      "hanzi": "结婚",
+      "pinyin": "jíe hūn",
+      "gloss": "to marry; to get married",
+      "count": 15436
+    },
+    {
+      "rank": 435,
+      "hanzi": "些",
+      "pinyin": "xīe",
+      "gloss": "classifier indicating a small amount or small number greater than 1: some, a few, several",
+      "count": 15416
+    },
+    {
+      "rank": 436,
+      "hanzi": "至少",
+      "pinyin": "zhì shǎo",
+      "gloss": "at least; (to say the) least",
+      "count": 15397
+    },
+    {
+      "rank": 437,
+      "hanzi": "挺",
+      "pinyin": "tǐng",
+      "gloss": "straight; erect",
+      "count": 15305
+    },
+    {
+      "rank": 438,
+      "hanzi": "成功",
+      "pinyin": "chéng gōng",
+      "gloss": "to succeed; success",
+      "count": 15300
+    },
+    {
+      "rank": 439,
+      "hanzi": "奇怪",
+      "pinyin": "qí gùai",
+      "gloss": "strange; odd",
+      "count": 15274
+    },
+    {
+      "rank": 440,
+      "hanzi": "虽然",
+      "pinyin": "sūi rán",
+      "gloss": "although; even though (often used correlatively with 可是[ke3 shi4] or 但是[dan4 shi4] etc)",
+      "count": 15248
+    },
+    {
+      "rank": 441,
+      "hanzi": "忘",
+      "pinyin": "wàng",
+      "gloss": "to forget; to overlook",
+      "count": 15239
+    },
+    {
+      "rank": 442,
+      "hanzi": "太好了",
+      "pinyin": "tài hǎo le",
+      "gloss": "very good",
+      "count": 15230
+    },
+    {
+      "rank": 443,
+      "hanzi": "身上",
+      "pinyin": "shēn shang",
+      "gloss": "on the body; at hand",
+      "count": 15206
+    },
+    {
+      "rank": 444,
+      "hanzi": "或许",
+      "pinyin": "hùo xǔ",
+      "gloss": "perhaps; maybe",
+      "count": 15103
+    },
+    {
+      "rank": 445,
+      "hanzi": "讲",
+      "pinyin": "jǐang",
+      "gloss": "to speak; to explain",
+      "count": 15099
+    },
+    {
+      "rank": 446,
+      "hanzi": "岁",
+      "pinyin": "sùi",
+      "gloss": "variant of 歲|岁[sui4], year; years old",
+      "count": 15080
+    },
+    {
+      "rank": 447,
+      "hanzi": "保证",
+      "pinyin": "bǎo zhèng",
+      "gloss": "guarantee; to guarantee",
+      "count": 14953
+    },
+    {
+      "rank": 448,
+      "hanzi": "外面",
+      "pinyin": "wài mìan",
+      "gloss": "outside (also pr. [wai4 mian5] for this sense); surface",
+      "count": 14930
+    },
+    {
+      "rank": 449,
+      "hanzi": "丈夫",
+      "pinyin": "zhàng fu",
+      "gloss": "husband",
+      "count": 14911
+    },
+    {
+      "rank": 450,
+      "hanzi": "连",
+      "pinyin": "Lían",
+      "gloss": "surname Lian",
+      "count": 14881
+    },
+    {
+      "rank": 451,
+      "hanzi": "国家",
+      "pinyin": "gúo jīa",
+      "gloss": "country; nation; state",
+      "count": 14868
+    },
+    {
+      "rank": 452,
+      "hanzi": "整个",
+      "pinyin": "zhěng gè",
+      "gloss": "whole; entire",
+      "count": 14843
+    },
+    {
+      "rank": 453,
+      "hanzi": "特别",
+      "pinyin": "tè bíe",
+      "gloss": "unusual; special; very; especially; particularly",
+      "count": 14713
+    },
+    {
+      "rank": 454,
+      "hanzi": "那种",
+      "pinyin": "nà zhǒng",
+      "gloss": "that kind of",
+      "count": 14703
+    },
+    {
+      "rank": 455,
+      "hanzi": "不同",
+      "pinyin": "bù tóng",
+      "gloss": "different; distinct",
+      "count": 14680
+    },
+    {
+      "rank": 456,
+      "hanzi": "著",
+      "pinyin": "zhù",
+      "gloss": "to make known; to show",
+      "count": 14630
+    },
+    {
+      "rank": 457,
+      "hanzi": "变成",
+      "pinyin": "bìan chéng",
+      "gloss": "to change into; to turn into",
+      "count": 14586
+    },
+    {
+      "rank": 458,
+      "hanzi": "够",
+      "pinyin": "gòu",
+      "gloss": "enough (sufficient); enough (too much)",
+      "count": 14513
+    },
+    {
+      "rank": 459,
+      "hanzi": "难道",
+      "pinyin": "nán dào",
+      "gloss": "don't tell me ...; could it be that...?",
+      "count": 14486
+    },
+    {
+      "rank": 460,
+      "hanzi": "学校",
+      "pinyin": "xúe xìao",
+      "gloss": "school; CL:所[suo3]",
+      "count": 14485
+    },
+    {
+      "rank": 461,
+      "hanzi": "样子",
+      "pinyin": "yàng zi",
+      "gloss": "appearance; manner",
+      "count": 14382
+    },
+    {
+      "rank": 462,
+      "hanzi": "倒",
+      "pinyin": "dǎo",
+      "gloss": "to fall; to collapse; to lie horizontally; to fail; to go bankrupt",
+      "count": 14318
+    },
+    {
+      "rank": 463,
+      "hanzi": "电影",
+      "pinyin": "dìan yǐng",
+      "gloss": "movie; film; CL:部[bu4]",
+      "count": 14316
+    },
+    {
+      "rank": 464,
+      "hanzi": "谈谈",
+      "pinyin": "tán tán",
+      "gloss": "to discuss; to have a chat",
+      "count": 14278
+    },
+    {
+      "rank": 465,
+      "hanzi": "危险",
+      "pinyin": "wēi xǐan",
+      "gloss": "danger; dangerous",
+      "count": 14214
+    },
+    {
+      "rank": 466,
+      "hanzi": "开心",
+      "pinyin": "kāi xīn",
+      "gloss": "to feel happy; to rejoice",
+      "count": 14205
+    },
+    {
+      "rank": 467,
+      "hanzi": "别的",
+      "pinyin": "bíe de",
+      "gloss": "else; other",
+      "count": 14203
+    },
+    {
+      "rank": 468,
+      "hanzi": "才能",
+      "pinyin": "cái néng",
+      "gloss": "talent; ability",
+      "count": 14189
+    },
+    {
+      "rank": 469,
+      "hanzi": "闭嘴",
+      "pinyin": "bì zǔi",
+      "gloss": "Shut up!; same as 閉上嘴巴|闭上嘴巴",
+      "count": 14116
+    },
+    {
+      "rank": 470,
+      "hanzi": "正",
+      "pinyin": "zhēng",
+      "gloss": "first month of the lunar year",
+      "count": 14078
+    },
+    {
+      "rank": 471,
+      "hanzi": "进行",
+      "pinyin": "jìn xíng",
+      "gloss": "(of a process etc) to proceed; to be in progress; to be underway; (of people) to carry out; to conduct (an investigation or discussion etc)",
+      "count": 14067
+    },
+    {
+      "rank": 472,
+      "hanzi": "照片",
+      "pinyin": "zhào pìan",
+      "gloss": "photograph; CL:張|张[zhang1],幅[fu2]",
+      "count": 14032
+    },
+    {
+      "rank": 473,
+      "hanzi": "刚刚",
+      "pinyin": "gāng gang",
+      "gloss": "just recently; just a moment ago",
+      "count": 14014
+    },
+    {
+      "rank": 474,
+      "hanzi": "而已",
+      "pinyin": "ér yǐ",
+      "gloss": "that's all; nothing more",
+      "count": 13981
+    },
+    {
+      "rank": 475,
+      "hanzi": "完成",
+      "pinyin": "wán chéng",
+      "gloss": "to complete; to accomplish",
+      "count": 13961
+    },
+    {
+      "rank": 476,
+      "hanzi": "方式",
+      "pinyin": "fāng shì",
+      "gloss": "way; method; manner; mode; pattern (of behavior etc); CL:種|种[zhong3]",
+      "count": 13892
+    },
+    {
+      "rank": 477,
+      "hanzi": "做到",
+      "pinyin": "zùo dào",
+      "gloss": "to accomplish; to achieve",
+      "count": 13867
+    },
+    {
+      "rank": 478,
+      "hanzi": "爸",
+      "pinyin": "bà",
+      "gloss": "father; dad",
+      "count": 13851
+    },
+    {
+      "rank": 479,
+      "hanzi": "声音",
+      "pinyin": "shēng yīn",
+      "gloss": "sound; voice",
+      "count": 13764
+    },
+    {
+      "rank": 480,
+      "hanzi": "第一次",
+      "pinyin": "dì yī cì",
+      "gloss": "the first time; for the first time",
+      "count": 13761
+    },
+    {
+      "rank": 481,
+      "hanzi": "看来",
+      "pinyin": "kàn lai",
+      "gloss": "apparently; it seems that",
+      "count": 13757
+    },
+    {
+      "rank": 482,
+      "hanzi": "只能",
+      "pinyin": "zhǐ néng",
+      "gloss": "can only; obliged to do sth",
+      "count": 13753
+    },
+    {
+      "rank": 483,
+      "hanzi": "太太",
+      "pinyin": "tài tai",
+      "gloss": "married woman; Mrs.",
+      "count": 13739
+    },
+    {
+      "rank": 484,
+      "hanzi": "下去",
+      "pinyin": "xìa qù",
+      "gloss": "to go down; to descend",
+      "count": 13701
+    },
+    {
+      "rank": 485,
+      "hanzi": "绝对",
+      "pinyin": "júe dùi",
+      "gloss": "absolute; unconditional",
+      "count": 13694
+    },
+    {
+      "rank": 486,
+      "hanzi": "处理",
+      "pinyin": "chǔ lǐ",
+      "gloss": "to handle; to deal with; to punish",
+      "count": 13648
+    },
+    {
+      "rank": 487,
+      "hanzi": "欢迎",
+      "pinyin": "hūan yíng",
+      "gloss": "to welcome; welcome",
+      "count": 13646
+    },
+    {
+      "rank": 488,
+      "hanzi": "眼睛",
+      "pinyin": "yǎn jing",
+      "gloss": "eye; CL:隻|只[zhi1],雙|双[shuang1]",
+      "count": 13633
+    },
+    {
+      "rank": 489,
+      "hanzi": "通过",
+      "pinyin": "tōng gùo",
+      "gloss": "to pass through; to get through; to adopt (a resolution); to pass (legislation)",
+      "count": 13622
+    },
+    {
+      "rank": 490,
+      "hanzi": "行动",
+      "pinyin": "xíng dòng",
+      "gloss": "operation; action",
+      "count": 13616
+    },
+    {
+      "rank": 491,
+      "hanzi": "啥",
+      "pinyin": "shá",
+      "gloss": "dialectal equivalent of 什麼|什么[shen2 me5]; also pr. [sha4]",
+      "count": 13610
+    },
+    {
+      "rank": 492,
+      "hanzi": "感到",
+      "pinyin": "gǎn dào",
+      "gloss": "to feel; to sense; to perceive",
+      "count": 13585
+    },
+    {
+      "rank": 493,
+      "hanzi": "最近",
+      "pinyin": "zùi jìn",
+      "gloss": "recently; soon",
+      "count": 13574
+    },
+    {
+      "rank": 494,
+      "hanzi": "各位",
+      "pinyin": "gè wèi",
+      "gloss": "everybody; all (guests, colleagues etc)",
+      "count": 13373
+    },
+    {
+      "rank": 495,
+      "hanzi": "这边",
+      "pinyin": "zhè bīan",
+      "gloss": "this side; here",
+      "count": 13334
+    },
+    {
+      "rank": 496,
+      "hanzi": "待",
+      "pinyin": "dāi",
+      "gloss": "to stay; to remain",
+      "count": 13330
+    },
+    {
+      "rank": 497,
+      "hanzi": "掉",
+      "pinyin": "dìao",
+      "gloss": "to fall; to drop",
+      "count": 13302
+    },
+    {
+      "rank": 498,
+      "hanzi": "不好意思",
+      "pinyin": "bù hǎo yì si",
+      "gloss": "to feel embarrassed; to find it embarrassing",
+      "count": 13277
+    },
+    {
+      "rank": 499,
+      "hanzi": "猜",
+      "pinyin": "cāi",
+      "gloss": "to guess",
+      "count": 13205
+    },
+    {
+      "rank": 500,
+      "hanzi": "使",
+      "pinyin": "shǐ",
+      "gloss": "to make; to cause",
+      "count": 13198
+    },
+    {
+      "rank": 501,
+      "hanzi": "作为",
+      "pinyin": "zùo wéi",
+      "gloss": "one's conduct; deed",
+      "count": 13166
+    },
+    {
+      "rank": 502,
+      "hanzi": "于",
+      "pinyin": "Yú",
+      "gloss": "surname Yu",
+      "count": 13164
+    },
+    {
+      "rank": 503,
+      "hanzi": "狗",
+      "pinyin": "gǒu",
+      "gloss": "dog; CL:隻|只[zhi1],條|条[tiao2]",
+      "count": 13101
+    },
+    {
+      "rank": 504,
+      "hanzi": "容易",
+      "pinyin": "róng yì",
+      "gloss": "easy; straightforward; likely; liable to; apt to",
+      "count": 13098
+    },
+    {
+      "rank": 505,
+      "hanzi": "直到",
+      "pinyin": "zhí dào",
+      "gloss": "until",
+      "count": 13072
+    },
+    {
+      "rank": 506,
+      "hanzi": "求",
+      "pinyin": "qíu",
+      "gloss": "to seek; to look for",
+      "count": 13007
+    },
+    {
+      "rank": 507,
+      "hanzi": "比赛",
+      "pinyin": "bǐ sài",
+      "gloss": "competition (sports etc); match",
+      "count": 12978
+    },
+    {
+      "rank": 508,
+      "hanzi": "麽",
+      "pinyin": "mó",
+      "gloss": "tiny; insignificant",
+      "count": 12918
+    },
+    {
+      "rank": 509,
+      "hanzi": "拉",
+      "pinyin": "lā",
+      "gloss": "to pull; to play (a bowed instrument)",
+      "count": 12869
+    },
+    {
+      "rank": 510,
+      "hanzi": "拍",
+      "pinyin": "pāi",
+      "gloss": "to pat; to clap",
+      "count": 12859
+    },
+    {
+      "rank": 511,
+      "hanzi": "曾",
+      "pinyin": "Zēng",
+      "gloss": "surname Zeng",
+      "count": 12776
+    },
+    {
+      "rank": 512,
+      "hanzi": "有趣",
+      "pinyin": "yǒu qù",
+      "gloss": "interesting; fascinating; amusing",
+      "count": 12732
+    },
+    {
+      "rank": 513,
+      "hanzi": "就算",
+      "pinyin": "jìu sùan",
+      "gloss": "(coll.) even if",
+      "count": 12729
+    },
+    {
+      "rank": 514,
+      "hanzi": "活着",
+      "pinyin": "húo zhe",
+      "gloss": "alive",
+      "count": 12644
+    },
+    {
+      "rank": 515,
+      "hanzi": "努力",
+      "pinyin": "nǔ lì",
+      "gloss": "to make an effort; to try hard; to strive; hard-working; conscientious",
+      "count": 12604
+    },
+    {
+      "rank": 516,
+      "hanzi": "帮忙",
+      "pinyin": "bāng máng",
+      "gloss": "to help; to lend a hand",
+      "count": 12603
+    },
+    {
+      "rank": 517,
+      "hanzi": "留下",
+      "pinyin": "líu xìa",
+      "gloss": "to leave behind; to stay behind",
+      "count": 12597
+    },
+    {
+      "rank": 518,
+      "hanzi": "同意",
+      "pinyin": "tóng yì",
+      "gloss": "to agree; to consent",
+      "count": 12596
+    },
+    {
+      "rank": 519,
+      "hanzi": "参加",
+      "pinyin": "cān jīa",
+      "gloss": "to participate; to take part; to join",
+      "count": 12581
+    },
+    {
+      "rank": 520,
+      "hanzi": "赢",
+      "pinyin": "yíng",
+      "gloss": "to beat; to win",
+      "count": 12509
+    },
+    {
+      "rank": 521,
+      "hanzi": "死亡",
+      "pinyin": "sǐ wáng",
+      "gloss": "to die; death",
+      "count": 12478
+    },
+    {
+      "rank": 522,
+      "hanzi": "每",
+      "pinyin": "měi",
+      "gloss": "each; every",
+      "count": 12476
+    },
+    {
+      "rank": 523,
+      "hanzi": "上面",
+      "pinyin": "shàng mìan",
+      "gloss": "on top of; above-mentioned",
+      "count": 12451
+    },
+    {
+      "rank": 524,
+      "hanzi": "结果",
+      "pinyin": "jīe gǔo",
+      "gloss": "to bear fruit",
+      "count": 12437
+    },
+    {
+      "rank": 525,
+      "hanzi": "消息",
+      "pinyin": "xīao xi",
+      "gloss": "(piece of) news; information; message",
+      "count": 12436
+    },
+    {
+      "rank": 526,
+      "hanzi": "要求",
+      "pinyin": "yāo qíu",
+      "gloss": "to request; to require",
+      "count": 12421
+    },
+    {
+      "rank": 527,
+      "hanzi": "理解",
+      "pinyin": "lǐ jǐe",
+      "gloss": "to comprehend; to understand",
+      "count": 12391
+    },
+    {
+      "rank": 528,
+      "hanzi": "曾经",
+      "pinyin": "céng jīng",
+      "gloss": "once; already",
+      "count": 12376
+    },
+    {
+      "rank": 529,
+      "hanzi": "打开",
+      "pinyin": "dǎ kāi",
+      "gloss": "to open; to show (a ticket)",
+      "count": 12358
+    },
+    {
+      "rank": 530,
+      "hanzi": "收到",
+      "pinyin": "shōu dào",
+      "gloss": "to receive",
+      "count": 12303
+    },
+    {
+      "rank": 531,
+      "hanzi": "照顾",
+      "pinyin": "zhào gu",
+      "gloss": "to take care of; to show consideration",
+      "count": 12302
+    },
+    {
+      "rank": 532,
+      "hanzi": "人类",
+      "pinyin": "rén lèi",
+      "gloss": "humanity; human race",
+      "count": 12254
+    },
+    {
+      "rank": 533,
+      "hanzi": "主意",
+      "pinyin": "zhǔ yi",
+      "gloss": "plan; idea",
+      "count": 12249
+    },
+    {
+      "rank": 534,
+      "hanzi": "保持",
+      "pinyin": "bǎo chí",
+      "gloss": "to keep; to maintain",
+      "count": 12228
+    },
+    {
+      "rank": 535,
+      "hanzi": "成",
+      "pinyin": "Chéng",
+      "gloss": "surname Cheng; short name for Chengdu 成都[Cheng2 du1]",
+      "count": 12219
+    },
+    {
+      "rank": 536,
+      "hanzi": "杰克",
+      "pinyin": "Jíe kè",
+      "gloss": "Jack (name)",
+      "count": 12213
+    },
+    {
+      "rank": 537,
+      "hanzi": "存在",
+      "pinyin": "cún zài",
+      "gloss": "to exist; to be",
+      "count": 12210
+    },
+    {
+      "rank": 538,
+      "hanzi": "进",
+      "pinyin": "jìn",
+      "gloss": "to go forward; to advance",
+      "count": 12148
+    },
+    {
+      "rank": 539,
+      "hanzi": "高",
+      "pinyin": "Gāo",
+      "gloss": "surname Gao",
+      "count": 12148
+    },
+    {
+      "rank": 540,
+      "hanzi": "晚安",
+      "pinyin": "wǎn ān",
+      "gloss": "Good night!; Good evening!",
+      "count": 12142
+    },
+    {
+      "rank": 541,
+      "hanzi": "确实",
+      "pinyin": "qùe shí",
+      "gloss": "indeed; really",
+      "count": 12130
+    },
+    {
+      "rank": 542,
+      "hanzi": "全部",
+      "pinyin": "qúan bù",
+      "gloss": "whole; all",
+      "count": 12111
+    },
+    {
+      "rank": 543,
+      "hanzi": "靠",
+      "pinyin": "kào",
+      "gloss": "to lean against or on; to stand by the side of",
+      "count": 12096
+    },
+    {
+      "rank": 544,
+      "hanzi": "呆",
+      "pinyin": "dāi",
+      "gloss": "foolish; stupid; expressionless; blank",
+      "count": 12073
+    },
+    {
+      "rank": 545,
+      "hanzi": "起",
+      "pinyin": "qǐ",
+      "gloss": "to rise; to raise",
+      "count": 12073
+    },
+    {
+      "rank": 546,
+      "hanzi": "讨厌",
+      "pinyin": "tǎo yàn",
+      "gloss": "to dislike; to loathe; annoying; troublesome",
+      "count": 12017
+    },
+    {
+      "rank": 547,
+      "hanzi": "俩",
+      "pinyin": "lǐa",
+      "gloss": "two (colloquial equivalent of 兩個|两个); both",
+      "count": 12012
+    },
+    {
+      "rank": 548,
+      "hanzi": "突然",
+      "pinyin": "tū rán",
+      "gloss": "sudden; abrupt; unexpected",
+      "count": 11978
+    },
+    {
+      "rank": 549,
+      "hanzi": "多久",
+      "pinyin": "dūo jǐu",
+      "gloss": "(of time) how long?; (not) a long time",
+      "count": 11922
+    },
+    {
+      "rank": 550,
+      "hanzi": "老婆",
+      "pinyin": "lǎo pó",
+      "gloss": "(coll.) wife",
+      "count": 11908
+    },
+    {
+      "rank": 551,
+      "hanzi": "不再",
+      "pinyin": "bù zài",
+      "gloss": "no more; no longer",
+      "count": 11907
+    },
+    {
+      "rank": 552,
+      "hanzi": "开玩笑",
+      "pinyin": "kāi wán xìao",
+      "gloss": "to play a joke; to make fun of; to joke",
+      "count": 11833
+    },
+    {
+      "rank": 553,
+      "hanzi": "进入",
+      "pinyin": "jìn rù",
+      "gloss": "to enter; to go into",
+      "count": 11815
+    },
+    {
+      "rank": 554,
+      "hanzi": "父母",
+      "pinyin": "fù mǔ",
+      "gloss": "father and mother; parents",
+      "count": 11806
+    },
+    {
+      "rank": 555,
+      "hanzi": "总统",
+      "pinyin": "zǒng tǒng",
+      "gloss": "president (of a country)",
+      "count": 11765
+    },
+    {
+      "rank": 556,
+      "hanzi": "伤害",
+      "pinyin": "shāng hài",
+      "gloss": "to injure; to harm",
+      "count": 11740
+    },
+    {
+      "rank": 557,
+      "hanzi": "回答",
+      "pinyin": "húi dá",
+      "gloss": "to reply; to answer; reply; answer",
+      "count": 11714
+    },
+    {
+      "rank": 558,
+      "hanzi": "所有人",
+      "pinyin": "sǔo yǒu rén",
+      "gloss": "everyone; owner",
+      "count": 11686
+    },
+    {
+      "rank": 559,
+      "hanzi": "老师",
+      "pinyin": "lǎo shī",
+      "gloss": "teacher",
+      "count": 11647
+    },
+    {
+      "rank": 560,
+      "hanzi": "早",
+      "pinyin": "zǎo",
+      "gloss": "early; morning",
+      "count": 11630
+    },
+    {
+      "rank": 561,
+      "hanzi": "除了",
+      "pinyin": "chú le",
+      "gloss": "apart from; besides; in addition to (used to exclude, as in 除了他，誰也沒來|除了他，谁也没来[chu2 le5 ta1 , shei2 ye3 mei2 lai2] \"apart from him, nobody came\", or to include, as in 除了英語，他也會法語|除了英语，他也会法语[chu2 le5 Ying1 yu3 , ta1 ye3 hui4 Fa3 yu3] \"in addition to English, he also knows French\"); (used to introduce one of two habitual alternatives in the pattern 除了[chu2 le5] + A + 就是[jiu4 shi4] + B, \"either A or B\")",
+      "count": 11587
+    },
+    {
+      "rank": 562,
+      "hanzi": "派",
+      "pinyin": "pā",
+      "gloss": "used in 派司[pa1 si5]",
+      "count": 11563
+    },
+    {
+      "rank": 563,
+      "hanzi": "咱们",
+      "pinyin": "zán men",
+      "gloss": "we or us (including both the speaker and the person(s) spoken to); (dialect) I or me",
+      "count": 11553
+    },
+    {
+      "rank": 564,
+      "hanzi": "自由",
+      "pinyin": "zì yóu",
+      "gloss": "freedom; liberty; free; unrestricted",
+      "count": 11535
+    },
+    {
+      "rank": 565,
+      "hanzi": "可爱",
+      "pinyin": "kě ài",
+      "gloss": "adorable; cute",
+      "count": 11532
+    },
+    {
+      "rank": 566,
+      "hanzi": "日",
+      "pinyin": "rì",
+      "gloss": "(bound form) sun; day",
+      "count": 11520
+    },
+    {
+      "rank": 567,
+      "hanzi": "抓住",
+      "pinyin": "zhūa zhù",
+      "gloss": "to grab hold of; to capture",
+      "count": 11512
+    },
+    {
+      "rank": 568,
+      "hanzi": "路",
+      "pinyin": "Lù",
+      "gloss": "surname Lu",
+      "count": 11493
+    },
+    {
+      "rank": 569,
+      "hanzi": "谈",
+      "pinyin": "Tán",
+      "gloss": "surname Tan",
+      "count": 11480
+    },
+    {
+      "rank": 570,
+      "hanzi": "简单",
+      "pinyin": "jǐan dān",
+      "gloss": "simple; not complicated",
+      "count": 11450
+    },
+    {
+      "rank": 571,
+      "hanzi": "身体",
+      "pinyin": "shēn tǐ",
+      "gloss": "the body; one's health",
+      "count": 11444
+    },
+    {
+      "rank": 572,
+      "hanzi": "想法",
+      "pinyin": "xǐang fǎ",
+      "gloss": "way of thinking; opinion; notion; to think of a way (to do sth)",
+      "count": 11444
+    },
+    {
+      "rank": 573,
+      "hanzi": "早上",
+      "pinyin": "zǎo shang",
+      "gloss": "early morning; CL:個|个[ge4]",
+      "count": 11430
+    },
+    {
+      "rank": 574,
+      "hanzi": "能够",
+      "pinyin": "néng gòu",
+      "gloss": "to be capable of; to be able to",
+      "count": 11408
+    },
+    {
+      "rank": 575,
+      "hanzi": "昨晚",
+      "pinyin": "zúo wǎn",
+      "gloss": "yesterday evening; last night",
+      "count": 11376
+    },
+    {
+      "rank": 576,
+      "hanzi": "哥哥",
+      "pinyin": "gē ge",
+      "gloss": "older brother; CL:個|个[ge4],位[wei4]",
+      "count": 11336
+    },
+    {
+      "rank": 577,
+      "hanzi": "跳",
+      "pinyin": "tìao",
+      "gloss": "to jump; to hop",
+      "count": 11318
+    },
+    {
+      "rank": 578,
+      "hanzi": "秘密",
+      "pinyin": "mì mì",
+      "gloss": "secret; private; confidential; clandestine; a secret",
+      "count": 11306
+    },
+    {
+      "rank": 579,
+      "hanzi": "休息",
+      "pinyin": "xīu xi",
+      "gloss": "rest; to rest",
+      "count": 11286
+    },
+    {
+      "rank": 580,
+      "hanzi": "战争",
+      "pinyin": "zhàn zhēng",
+      "gloss": "war; conflict; CL:場|场[chang2],次[ci4]",
+      "count": 11237
+    },
+    {
+      "rank": 581,
+      "hanzi": "其中",
+      "pinyin": "qí zhōng",
+      "gloss": "among; in",
+      "count": 11221
+    },
+    {
+      "rank": 582,
+      "hanzi": "内",
+      "pinyin": "nèi",
+      "gloss": "inside; inner",
+      "count": 11198
+    },
+    {
+      "rank": 583,
+      "hanzi": "医院",
+      "pinyin": "yī yùan",
+      "gloss": "hospital; CL:所[suo3],家[jia1],座[zuo4]",
+      "count": 11180
+    },
+    {
+      "rank": 584,
+      "hanzi": "每天",
+      "pinyin": "měi tīan",
+      "gloss": "every day",
+      "count": 11167
+    },
+    {
+      "rank": 585,
+      "hanzi": "之间",
+      "pinyin": "zhī jīan",
+      "gloss": "(after a noun) between; among; amid; (used after certain bisyllabic words to form expressions indicating a short period of time, e.g. 彈指之間|弹指之间[tan2 zhi3 zhi1 jian1])",
+      "count": 11133
+    },
+    {
+      "rank": 586,
+      "hanzi": "大概",
+      "pinyin": "dà gài",
+      "gloss": "roughly; probably",
+      "count": 11112
+    },
+    {
+      "rank": 587,
+      "hanzi": "控制",
+      "pinyin": "kòng zhì",
+      "gloss": "to control",
+      "count": 11096
+    },
+    {
+      "rank": 588,
+      "hanzi": "刚",
+      "pinyin": "gāng",
+      "gloss": "(literary) hard; firm; strong; exactly; precisely",
+      "count": 11064
+    },
+    {
+      "rank": 589,
+      "hanzi": "小孩",
+      "pinyin": "xǐao hái",
+      "gloss": "child; CL:個|个[ge4]",
+      "count": 11047
+    },
+    {
+      "rank": 590,
+      "hanzi": "带来",
+      "pinyin": "dài lái",
+      "gloss": "to bring; (fig.) to bring about; to produce",
+      "count": 11037
+    },
+    {
+      "rank": 591,
+      "hanzi": "停止",
+      "pinyin": "tíng zhǐ",
+      "gloss": "to stop; to halt; to cease",
+      "count": 11019
+    },
+    {
+      "rank": 592,
+      "hanzi": "因此",
+      "pinyin": "yīn cǐ",
+      "gloss": "thus; consequently; as a result",
+      "count": 10993
+    },
+    {
+      "rank": 593,
+      "hanzi": "花",
+      "pinyin": "Hūa",
+      "gloss": "surname Hua",
+      "count": 10968
+    },
+    {
+      "rank": 594,
+      "hanzi": "证明",
+      "pinyin": "zhèng míng",
+      "gloss": "proof; certificate",
+      "count": 10965
+    },
+    {
+      "rank": 595,
+      "hanzi": "约翰",
+      "pinyin": "Yūe hàn",
+      "gloss": "John (name); Johan (name)",
+      "count": 10953
+    },
+    {
+      "rank": 596,
+      "hanzi": "飞机",
+      "pinyin": "fēi jī",
+      "gloss": "airplane; CL:架[jia4]",
+      "count": 10927
+    },
+    {
+      "rank": 597,
+      "hanzi": "替",
+      "pinyin": "tì",
+      "gloss": "to substitute for; to take the place of",
+      "count": 10892
+    },
+    {
+      "rank": 598,
+      "hanzi": "解释",
+      "pinyin": "jǐe shì",
+      "gloss": "explanation; to explain",
+      "count": 10884
+    },
+    {
+      "rank": 599,
+      "hanzi": "律师",
+      "pinyin": "lu:4 shī",
+      "gloss": "lawyer",
+      "count": 10850
+    },
+    {
+      "rank": 600,
+      "hanzi": "终于",
+      "pinyin": "zhōng yú",
+      "gloss": "at last; in the end",
+      "count": 10832
+    },
+    {
+      "rank": 601,
+      "hanzi": "耶",
+      "pinyin": "yē",
+      "gloss": "(phonetic ye)",
+      "count": 10824
+    },
+    {
+      "rank": 602,
+      "hanzi": "翻译",
+      "pinyin": "fān yì",
+      "gloss": "to translate; to interpret",
+      "count": 10800
+    },
+    {
+      "rank": 603,
+      "hanzi": "调查",
+      "pinyin": "dìao chá",
+      "gloss": "investigation; inquiry",
+      "count": 10798
+    },
+    {
+      "rank": 604,
+      "hanzi": "为何",
+      "pinyin": "wèi hé",
+      "gloss": "why",
+      "count": 10790
+    },
+    {
+      "rank": 605,
+      "hanzi": "糟糕",
+      "pinyin": "zāo gāo",
+      "gloss": "too bad; how terrible",
+      "count": 10789
+    },
+    {
+      "rank": 606,
+      "hanzi": "任务",
+      "pinyin": "rèn wu",
+      "gloss": "mission; assignment; task; duty; role; CL:項|项[xiang4]",
+      "count": 10784
+    },
+    {
+      "rank": 607,
+      "hanzi": "武器",
+      "pinyin": "wǔ qì",
+      "gloss": "weapon; arms",
+      "count": 10777
+    },
+    {
+      "rank": 608,
+      "hanzi": "家里",
+      "pinyin": "jīa lǐ",
+      "gloss": "home",
+      "count": 10736
+    },
+    {
+      "rank": 609,
+      "hanzi": "头",
+      "pinyin": "tóu",
+      "gloss": "head; hair style",
+      "count": 10733
+    },
+    {
+      "rank": 610,
+      "hanzi": "来自",
+      "pinyin": "lái zì",
+      "gloss": "to come from (a place); From: (in email header)",
+      "count": 10728
+    },
+    {
+      "rank": 611,
+      "hanzi": "后面",
+      "pinyin": "hòu mian",
+      "gloss": "the back; the rear; the last bit; behind; near the end; at the back",
+      "count": 10717
+    },
+    {
+      "rank": 612,
+      "hanzi": "小子",
+      "pinyin": "xǐao zǐ",
+      "gloss": "(literary) youngster; (old) young fellow (term of address used by the older generation)",
+      "count": 10711
+    },
+    {
+      "rank": 613,
+      "hanzi": "来到",
+      "pinyin": "lái dào",
+      "gloss": "to arrive; to come",
+      "count": 10687
+    },
+    {
+      "rank": 614,
+      "hanzi": "解决",
+      "pinyin": "jǐe júe",
+      "gloss": "to solve; to resolve; to settle (a problem); to eliminate; to wipe out (an enemy, bandits etc)",
+      "count": 10671
+    },
+    {
+      "rank": 615,
+      "hanzi": "家人",
+      "pinyin": "jīa rén",
+      "gloss": "family member; (old) servant",
+      "count": 10610
+    },
+    {
+      "rank": 616,
+      "hanzi": "坐下",
+      "pinyin": "zùo xia",
+      "gloss": "to sit down",
+      "count": 10592
+    },
+    {
+      "rank": 617,
+      "hanzi": "怕",
+      "pinyin": "Pà",
+      "gloss": "surname Pa",
+      "count": 10436
+    },
+    {
+      "rank": 618,
+      "hanzi": "直接",
+      "pinyin": "zhí jīe",
+      "gloss": "directly; direct",
+      "count": 10401
+    },
+    {
+      "rank": 619,
+      "hanzi": "办公室",
+      "pinyin": "bàn gōng shì",
+      "gloss": "office; business premises",
+      "count": 10400
+    },
+    {
+      "rank": 620,
+      "hanzi": "停",
+      "pinyin": "tíng",
+      "gloss": "to stop; to halt",
+      "count": 10385
+    },
+    {
+      "rank": 621,
+      "hanzi": "放弃",
+      "pinyin": "fàng qì",
+      "gloss": "to renounce; to abandon; to give up",
+      "count": 10365
+    },
+    {
+      "rank": 622,
+      "hanzi": "鬼",
+      "pinyin": "gǔi",
+      "gloss": "disembodied spirit; ghost; devil; (suffix) person with a certain vice or addiction etc",
+      "count": 10351
+    },
+    {
+      "rank": 623,
+      "hanzi": "加油",
+      "pinyin": "jīa yóu",
+      "gloss": "to add oil; to top up with gas; to refuel; to accelerate; to step on the gas",
+      "count": 10326
+    },
+    {
+      "rank": 624,
+      "hanzi": "方法",
+      "pinyin": "fāng fǎ",
+      "gloss": "method; way; technique; procedure",
+      "count": 10285
+    },
+    {
+      "rank": 625,
+      "hanzi": "游戏",
+      "pinyin": "yóu xì",
+      "gloss": "game (CL:場|场[chang3]); to play",
+      "count": 10271
+    },
+    {
+      "rank": 626,
+      "hanzi": "即使",
+      "pinyin": "jí shǐ",
+      "gloss": "even if; even though",
+      "count": 10244
+    },
+    {
+      "rank": 627,
+      "hanzi": "本",
+      "pinyin": "běn",
+      "gloss": "(bound form) root; stem; (bound form) origin; source",
+      "count": 10179
+    },
+    {
+      "rank": 628,
+      "hanzi": "年轻",
+      "pinyin": "nían qīng",
+      "gloss": "young",
+      "count": 10155
+    },
+    {
+      "rank": 629,
+      "hanzi": "大人",
+      "pinyin": "dà ren",
+      "gloss": "adult; grownup",
+      "count": 10154
+    },
+    {
+      "rank": 630,
+      "hanzi": "使用",
+      "pinyin": "shǐ yòng",
+      "gloss": "to use; to employ",
+      "count": 10152
+    },
+    {
+      "rank": 631,
+      "hanzi": "卖",
+      "pinyin": "mài",
+      "gloss": "to sell; to betray",
+      "count": 10139
+    },
+    {
+      "rank": 632,
+      "hanzi": "老板",
+      "pinyin": "lǎo bǎn",
+      "gloss": "variant of 老闆|老板[lao3 ban3]",
+      "count": 10128
+    },
+    {
+      "rank": 633,
+      "hanzi": "水",
+      "pinyin": "Shǔi",
+      "gloss": "surname Shui; Shui ethnic group",
+      "count": 10119
+    },
+    {
+      "rank": 634,
+      "hanzi": "目标",
+      "pinyin": "mù bīao",
+      "gloss": "target; goal",
+      "count": 10086
+    },
+    {
+      "rank": 635,
+      "hanzi": "变得",
+      "pinyin": "bìan de",
+      "gloss": "to become",
+      "count": 10053
+    },
+    {
+      "rank": 636,
+      "hanzi": "可怕",
+      "pinyin": "kě pà",
+      "gloss": "awful; dreadful",
+      "count": 10049
+    },
+    {
+      "rank": 637,
+      "hanzi": "拿到",
+      "pinyin": "ná dào",
+      "gloss": "to get; to obtain",
+      "count": 10038
+    },
+    {
+      "rank": 638,
+      "hanzi": "考虑",
+      "pinyin": "kǎo lu:4",
+      "gloss": "to think over; to consider",
+      "count": 9989
+    },
+    {
+      "rank": 639,
+      "hanzi": "个人",
+      "pinyin": "gè rén",
+      "gloss": "an individual; oneself; (attributive) personal; one's own",
+      "count": 9988
+    },
+    {
+      "rank": 640,
+      "hanzi": "开枪",
+      "pinyin": "kāi qīang",
+      "gloss": "to open fire; to shoot a gun",
+      "count": 9983
+    },
+    {
+      "rank": 641,
+      "hanzi": "哭",
+      "pinyin": "kū",
+      "gloss": "to cry; to weep",
+      "count": 9962
+    },
+    {
+      "rank": 642,
+      "hanzi": "睡觉",
+      "pinyin": "shùi jìao",
+      "gloss": "to go to bed; to sleep",
+      "count": 9920
+    },
+    {
+      "rank": 643,
+      "hanzi": "分钟",
+      "pinyin": "fēn zhōng",
+      "gloss": "minute",
+      "count": 9914
+    },
+    {
+      "rank": 644,
+      "hanzi": "想到",
+      "pinyin": "xǐang dào",
+      "gloss": "to think of; to call to mind",
+      "count": 9901
+    },
+    {
+      "rank": 645,
+      "hanzi": "等待",
+      "pinyin": "děng dài",
+      "gloss": "to wait; to wait for",
+      "count": 9865
+    },
+    {
+      "rank": 646,
+      "hanzi": "音乐",
+      "pinyin": "yīn yùe",
+      "gloss": "music; CL:張|张[zhang1],曲[qu3],段[duan4]",
+      "count": 9858
+    },
+    {
+      "rank": 647,
+      "hanzi": "再说",
+      "pinyin": "zài shūo",
+      "gloss": "to say again; to put off a discussion until later",
+      "count": 9855
+    },
+    {
+      "rank": 648,
+      "hanzi": "聪明",
+      "pinyin": "cōng ming",
+      "gloss": "intelligent; clever; bright; acute (of sight and hearing)",
+      "count": 9807
+    },
+    {
+      "rank": 649,
+      "hanzi": "姑娘",
+      "pinyin": "gū niang",
+      "gloss": "girl; young woman",
+      "count": 9782
+    },
+    {
+      "rank": 650,
+      "hanzi": "地球",
+      "pinyin": "dì qíu",
+      "gloss": "the earth",
+      "count": 9779
+    },
+    {
+      "rank": 651,
+      "hanzi": "感谢",
+      "pinyin": "gǎn xìe",
+      "gloss": "to thank; to be grateful",
+      "count": 9755
+    },
+    {
+      "rank": 652,
+      "hanzi": "命令",
+      "pinyin": "mìng lìng",
+      "gloss": "order; command",
+      "count": 9746
+    },
+    {
+      "rank": 653,
+      "hanzi": "阻止",
+      "pinyin": "zǔ zhǐ",
+      "gloss": "to prevent; to block",
+      "count": 9718
+    },
+    {
+      "rank": 654,
+      "hanzi": "消失",
+      "pinyin": "xīao shī",
+      "gloss": "to disappear; to fade away",
+      "count": 9695
+    },
+    {
+      "rank": 655,
+      "hanzi": "心",
+      "pinyin": "xīn",
+      "gloss": "heart; mind",
+      "count": 9662
+    },
+    {
+      "rank": 656,
+      "hanzi": "第",
+      "pinyin": "dì",
+      "gloss": "(prefix indicating ordinal number, as in 第六[di4 liu4] \"sixth\"); (literary) grades in which successful candidates in the imperial examinations were placed",
+      "count": 9658
+    },
+    {
+      "rank": 657,
+      "hanzi": "冷静",
+      "pinyin": "lěng jìng",
+      "gloss": "calm; cool-headed; dispassionate; (of a place) deserted; quiet",
+      "count": 9657
+    },
+    {
+      "rank": 658,
+      "hanzi": "似乎",
+      "pinyin": "sì hū",
+      "gloss": "it seems; seemingly; as if",
+      "count": 9654
+    },
+    {
+      "rank": 659,
+      "hanzi": "联系",
+      "pinyin": "lían xì",
+      "gloss": "variant of 聯繫|联系[lian2 xi4]",
+      "count": 9637
+    },
+    {
+      "rank": 660,
+      "hanzi": "家庭",
+      "pinyin": "jīa tíng",
+      "gloss": "family; household; CL:戶|户[hu4]",
+      "count": 9624
+    },
+    {
+      "rank": 661,
+      "hanzi": "痛苦",
+      "pinyin": "tòng kǔ",
+      "gloss": "pain; suffering",
+      "count": 9617
+    },
+    {
+      "rank": 662,
+      "hanzi": "城市",
+      "pinyin": "chéng shì",
+      "gloss": "city; town; CL:座[zuo4]",
+      "count": 9606
+    },
+    {
+      "rank": 663,
+      "hanzi": "力量",
+      "pinyin": "lì liang",
+      "gloss": "power; force; strength",
+      "count": 9584
+    },
+    {
+      "rank": 664,
+      "hanzi": "对于",
+      "pinyin": "dùi yú",
+      "gloss": "regarding; as far as (sth) is concerned; with regard to",
+      "count": 9573
+    },
+    {
+      "rank": 665,
+      "hanzi": "未来",
+      "pinyin": "wèi lái",
+      "gloss": "future; tomorrow",
+      "count": 9572
+    },
+    {
+      "rank": 666,
+      "hanzi": "男孩",
+      "pinyin": "nán hái",
+      "gloss": "boy",
+      "count": 9571
+    },
+    {
+      "rank": 667,
+      "hanzi": "三",
+      "pinyin": "Sān",
+      "gloss": "surname San",
+      "count": 9565
+    },
+    {
+      "rank": 668,
+      "hanzi": "博士",
+      "pinyin": "bó shì",
+      "gloss": "doctor (as an academic degree); (old) person specialized in a skill or trade",
+      "count": 9538
+    },
+    {
+      "rank": 669,
+      "hanzi": "姐姐",
+      "pinyin": "jǐe jie",
+      "gloss": "older sister; CL:個|个[ge4]",
+      "count": 9531
+    },
+    {
+      "rank": 670,
+      "hanzi": "疯狂",
+      "pinyin": "fēng kúang",
+      "gloss": "crazy; frenzied; wild",
+      "count": 9504
+    },
+    {
+      "rank": 671,
+      "hanzi": "报告",
+      "pinyin": "bào gào",
+      "gloss": "to inform; to report",
+      "count": 9496
+    },
+    {
+      "rank": 672,
+      "hanzi": "放下",
+      "pinyin": "fàng xìa",
+      "gloss": "to lay down; to put down; to let go of; to relinquish; to set aside",
+      "count": 9468
+    },
+    {
+      "rank": 673,
+      "hanzi": "昨天",
+      "pinyin": "zúo tīan",
+      "gloss": "yesterday",
+      "count": 9454
+    },
+    {
+      "rank": 674,
+      "hanzi": "那天",
+      "pinyin": "nà tīan",
+      "gloss": "that day; the other day",
+      "count": 9418
+    },
+    {
+      "rank": 675,
+      "hanzi": "完美",
+      "pinyin": "wán měi",
+      "gloss": "perfect",
+      "count": 9385
+    },
+    {
+      "rank": 676,
+      "hanzi": "答应",
+      "pinyin": "dā ying",
+      "gloss": "to answer; to respond; to answer positively; to agree; to accept; to promise",
+      "count": 9366
+    },
+    {
+      "rank": 677,
+      "hanzi": "证据",
+      "pinyin": "zhèng jù",
+      "gloss": "evidence; proof",
+      "count": 9337
+    },
+    {
+      "rank": 678,
+      "hanzi": "本来",
+      "pinyin": "běn lái",
+      "gloss": "original; originally",
+      "count": 9324
+    },
+    {
+      "rank": 679,
+      "hanzi": "负责",
+      "pinyin": "fù zé",
+      "gloss": "to be responsible for; to be in charge of; to bear responsibility for; conscientious",
+      "count": 9319
+    },
+    {
+      "rank": 680,
+      "hanzi": "检查",
+      "pinyin": "jǐan chá",
+      "gloss": "inspection; to examine",
+      "count": 9309
+    },
+    {
+      "rank": 681,
+      "hanzi": "厉害",
+      "pinyin": "lì hai",
+      "gloss": "(used to describe sb or sth that makes a very strong impression, whether favorable or unfavorable) terrible; intense; severe; devastating; amazing; awesome; outstanding; (of a person) stern; strict; harsh; shrewd; tough",
+      "count": 9218
+    },
+    {
+      "rank": 682,
+      "hanzi": "拥有",
+      "pinyin": "yōng yǒu",
+      "gloss": "to have; to possess; to own",
+      "count": 9212
+    },
+    {
+      "rank": 683,
+      "hanzi": "正常",
+      "pinyin": "zhèng cháng",
+      "gloss": "normal; regular",
+      "count": 9210
+    },
+    {
+      "rank": 684,
+      "hanzi": "并且",
+      "pinyin": "bìng qǐe",
+      "gloss": "and; besides; moreover; furthermore; in addition",
+      "count": 9209
+    },
+    {
+      "rank": 685,
+      "hanzi": "否则",
+      "pinyin": "fǒu zé",
+      "gloss": "otherwise; if not; or (else)",
+      "count": 9190
+    },
+    {
+      "rank": 686,
+      "hanzi": "以及",
+      "pinyin": "yǐ jí",
+      "gloss": "and; as well as",
+      "count": 9152
+    },
+    {
+      "rank": 687,
+      "hanzi": "重新",
+      "pinyin": "chóng xīn",
+      "gloss": "again; once more; re-",
+      "count": 9151
+    },
+    {
+      "rank": 688,
+      "hanzi": "忘记",
+      "pinyin": "wàng jì",
+      "gloss": "to forget",
+      "count": 9136
+    },
+    {
+      "rank": 689,
+      "hanzi": "这位",
+      "pinyin": "zhè wèi",
+      "gloss": "this (person)",
+      "count": 9110
+    },
+    {
+      "rank": 690,
+      "hanzi": "研究",
+      "pinyin": "yán jīu",
+      "gloss": "research; a study",
+      "count": 9106
+    },
+    {
+      "rank": 691,
+      "hanzi": "附近",
+      "pinyin": "fù jìn",
+      "gloss": "nearby; neighboring; (in the) vicinity (of); neighborhood",
+      "count": 9088
+    },
+    {
+      "rank": 692,
+      "hanzi": "不然",
+      "pinyin": "bù rán",
+      "gloss": "not so; no",
+      "count": 9080
+    },
+    {
+      "rank": 693,
+      "hanzi": "方正",
+      "pinyin": "Fāng zhèng",
+      "gloss": "see 方正縣|方正县[Fang1 zheng4 Xian4]",
+      "count": 9061
+    },
+    {
+      "rank": 694,
+      "hanzi": "字幕",
+      "pinyin": "zì mù",
+      "gloss": "subtitles; captions (of a movie etc)",
+      "count": 9035
+    },
+    {
+      "rank": 695,
+      "hanzi": "脸",
+      "pinyin": "lǐan",
+      "gloss": "face; CL:張|张[zhang1],個|个[ge4]",
+      "count": 9028
+    },
+    {
+      "rank": 696,
+      "hanzi": "者",
+      "pinyin": "zhě",
+      "gloss": "(after a verb or adjective) one who (is) ...; (after a noun) person involved in ...",
+      "count": 9006
+    },
+    {
+      "rank": 697,
+      "hanzi": "加入",
+      "pinyin": "jīa rù",
+      "gloss": "to become a member; to join",
+      "count": 9001
+    },
+    {
+      "rank": 698,
+      "hanzi": "於",
+      "pinyin": "Yū",
+      "gloss": "surname Yu; Taiwan pr. [Yu2]",
+      "count": 8951
+    },
+    {
+      "rank": 699,
+      "hanzi": "唱",
+      "pinyin": "chàng",
+      "gloss": "to sing; to call loudly",
+      "count": 8934
+    },
+    {
+      "rank": 700,
+      "hanzi": "反正",
+      "pinyin": "fǎn zhèng",
+      "gloss": "anyway; in any case",
+      "count": 8927
+    },
+    {
+      "rank": 701,
+      "hanzi": "不该",
+      "pinyin": "bù gāi",
+      "gloss": "should not",
+      "count": 8927
+    },
+    {
+      "rank": 702,
+      "hanzi": "政府",
+      "pinyin": "zhèng fǔ",
+      "gloss": "government; CL:個|个[ge4]",
+      "count": 8908
+    },
+    {
+      "rank": 703,
+      "hanzi": "快乐",
+      "pinyin": "kùai lè",
+      "gloss": "happy; joyful",
+      "count": 8904
+    },
+    {
+      "rank": 704,
+      "hanzi": "身边",
+      "pinyin": "shēn bīan",
+      "gloss": "at one's side; on hand",
+      "count": 8875
+    },
+    {
+      "rank": 705,
+      "hanzi": "遇到",
+      "pinyin": "yù dào",
+      "gloss": "to meet; to run into; to come across",
+      "count": 8873
+    },
+    {
+      "rank": 706,
+      "hanzi": "伟大",
+      "pinyin": "wěi dà",
+      "gloss": "huge; great; grand; worthy of the greatest admiration; important (contribution etc)",
+      "count": 8835
+    },
+    {
+      "rank": 707,
+      "hanzi": "咖啡",
+      "pinyin": "kā fēi",
+      "gloss": "(loanword) coffee; CL:杯[bei1]",
+      "count": 8831
+    },
+    {
+      "rank": 708,
+      "hanzi": "接",
+      "pinyin": "jīe",
+      "gloss": "to receive; to answer (the phone)",
+      "count": 8760
+    },
+    {
+      "rank": 709,
+      "hanzi": "仍然",
+      "pinyin": "réng rán",
+      "gloss": "still; as before; yet",
+      "count": 8755
+    },
+    {
+      "rank": 710,
+      "hanzi": "门",
+      "pinyin": "Mén",
+      "gloss": "surname Men",
+      "count": 8754
+    },
+    {
+      "rank": 711,
+      "hanzi": "开车",
+      "pinyin": "kāi chē",
+      "gloss": "to drive a car (or train etc); (slang) to post sexual content online; to make a sexual joke",
+      "count": 8746
+    },
+    {
+      "rank": 712,
+      "hanzi": "代表",
+      "pinyin": "dài bǐao",
+      "gloss": "representative; delegate",
+      "count": 8730
+    },
+    {
+      "rank": 713,
+      "hanzi": "陪",
+      "pinyin": "péi",
+      "gloss": "to accompany; to keep sb company",
+      "count": 8720
+    },
+    {
+      "rank": 714,
+      "hanzi": "若",
+      "pinyin": "rě",
+      "gloss": "used in 般若[bo1 re3]; used in 蘭若|兰若[lan2 re3]",
+      "count": 8704
+    },
+    {
+      "rank": 715,
+      "hanzi": "尸体",
+      "pinyin": "shī tǐ",
+      "gloss": "corpse; dead body",
+      "count": 8674
+    },
+    {
+      "rank": 716,
+      "hanzi": "比较",
+      "pinyin": "bǐ jìao",
+      "gloss": "to compare; to contrast",
+      "count": 8668
+    },
+    {
+      "rank": 717,
+      "hanzi": "紧张",
+      "pinyin": "jǐn zhāng",
+      "gloss": "nervous; keyed up",
+      "count": 8619
+    },
+    {
+      "rank": 718,
+      "hanzi": "监狱",
+      "pinyin": "jīan yù",
+      "gloss": "prison",
+      "count": 8605
+    },
+    {
+      "rank": 719,
+      "hanzi": "位置",
+      "pinyin": "wèi zhi",
+      "gloss": "position; location; seat",
+      "count": 8592
+    },
+    {
+      "rank": 720,
+      "hanzi": "随便",
+      "pinyin": "súi bìan",
+      "gloss": "as one wishes; as one pleases",
+      "count": 8571
+    },
+    {
+      "rank": 721,
+      "hanzi": "偷",
+      "pinyin": "tōu",
+      "gloss": "to steal; (bound form) thief",
+      "count": 8570
+    },
+    {
+      "rank": 722,
+      "hanzi": "安排",
+      "pinyin": "ān pái",
+      "gloss": "to arrange; to plan",
+      "count": 8561
+    },
+    {
+      "rank": 723,
+      "hanzi": "表演",
+      "pinyin": "bǐao yǎn",
+      "gloss": "play; show",
+      "count": 8547
+    },
+    {
+      "rank": 724,
+      "hanzi": "从没",
+      "pinyin": "cóng méi",
+      "gloss": "never (in the past); never did",
+      "count": 8544
+    },
+    {
+      "rank": 725,
+      "hanzi": "除非",
+      "pinyin": "chú fēi",
+      "gloss": "only if (..., or otherwise, ...); only when",
+      "count": 8535
+    },
+    {
+      "rank": 726,
+      "hanzi": "屁股",
+      "pinyin": "pì gu",
+      "gloss": "buttocks; bottom",
+      "count": 8502
+    },
+    {
+      "rank": 727,
+      "hanzi": "酒",
+      "pinyin": "jǐu",
+      "gloss": "wine (esp. rice wine); liquor",
+      "count": 8482
+    },
+    {
+      "rank": 728,
+      "hanzi": "恩",
+      "pinyin": "ēn",
+      "gloss": "variant of 恩[en1]",
+      "count": 8482
+    },
+    {
+      "rank": 729,
+      "hanzi": "老兄",
+      "pinyin": "lǎo xīong",
+      "gloss": "elder brother (often used self-referentially); (form of address between male friends) old chap",
+      "count": 8473
+    },
+    {
+      "rank": 730,
+      "hanzi": "支持",
+      "pinyin": "zhī chí",
+      "gloss": "to be in favor of; to support",
+      "count": 8471
+    },
+    {
+      "rank": 731,
+      "hanzi": "必要",
+      "pinyin": "bì yào",
+      "gloss": "necessary; essential",
+      "count": 8467
+    },
+    {
+      "rank": 732,
+      "hanzi": "人生",
+      "pinyin": "rén shēng",
+      "gloss": "life (one's time on earth)",
+      "count": 8458
+    },
+    {
+      "rank": 733,
+      "hanzi": "正确",
+      "pinyin": "zhèng qùe",
+      "gloss": "correct; sound; right; proper",
+      "count": 8454
+    },
+    {
+      "rank": 734,
+      "hanzi": "跟着",
+      "pinyin": "gēn zhe",
+      "gloss": "to follow after; immediately afterwards",
+      "count": 8433
+    },
+    {
+      "rank": 735,
+      "hanzi": "杀死",
+      "pinyin": "shā sǐ",
+      "gloss": "to kill",
+      "count": 8431
+    },
+    {
+      "rank": 736,
+      "hanzi": "交给",
+      "pinyin": "jīao gěi",
+      "gloss": "to give; to deliver; to hand over",
+      "count": 8419
+    },
+    {
+      "rank": 737,
+      "hanzi": "叔叔",
+      "pinyin": "shū shu",
+      "gloss": "father's younger brother; paternal uncle; form of address used by children for a male one generation older",
+      "count": 8418
+    },
+    {
+      "rank": 738,
+      "hanzi": "食物",
+      "pinyin": "shí wù",
+      "gloss": "food",
+      "count": 8401
+    },
+    {
+      "rank": 739,
+      "hanzi": "事实",
+      "pinyin": "shì shí",
+      "gloss": "fact; CL:個|个[ge4]",
+      "count": 8394
+    },
+    {
+      "rank": 740,
+      "hanzi": "简直",
+      "pinyin": "jǐan zhí",
+      "gloss": "simply; really",
+      "count": 8389
+    },
+    {
+      "rank": 741,
+      "hanzi": "安静",
+      "pinyin": "ān jìng",
+      "gloss": "quiet; peaceful",
+      "count": 8375
+    },
+    {
+      "rank": 742,
+      "hanzi": "离",
+      "pinyin": "chī",
+      "gloss": "mythical beast (archaic)",
+      "count": 8371
+    },
+    {
+      "rank": 743,
+      "hanzi": "妹妹",
+      "pinyin": "mèi mei",
+      "gloss": "younger sister; young woman",
+      "count": 8319
+    },
+    {
+      "rank": 744,
+      "hanzi": "斯",
+      "pinyin": "Sī",
+      "gloss": "Slovakia; Slovak",
+      "count": 8299
+    },
+    {
+      "rank": 745,
+      "hanzi": "美丽",
+      "pinyin": "měi lì",
+      "gloss": "beautiful",
+      "count": 8297
+    },
+    {
+      "rank": 746,
+      "hanzi": "再次",
+      "pinyin": "zài cì",
+      "gloss": "once more; once again",
+      "count": 8287
+    },
+    {
+      "rank": 747,
+      "hanzi": "案子",
+      "pinyin": "àn zi",
+      "gloss": "long table; counter; (coll.) case (criminal, medical etc); matter; project; job",
+      "count": 8278
+    },
+    {
+      "rank": 748,
+      "hanzi": "下面",
+      "pinyin": "xìa mìan",
+      "gloss": "below; under",
+      "count": 8278
+    },
+    {
+      "rank": 749,
+      "hanzi": "不够",
+      "pinyin": "bù gòu",
+      "gloss": "not enough; insufficient",
+      "count": 8207
+    },
+    {
+      "rank": 750,
+      "hanzi": "哈",
+      "pinyin": "Hā",
+      "gloss": "abbr. for 哈薩克斯坦|哈萨克斯坦[Ha1 sa4 ke4 si1 tan3], Kazakhstan; abbr. for 哈爾濱|哈尔滨[Ha1 er3 bin1], Harbin",
+      "count": 8196
+    },
+    {
+      "rank": 751,
+      "hanzi": "可怜",
+      "pinyin": "kě lían",
+      "gloss": "pitiful; pathetic",
+      "count": 8177
+    },
+    {
+      "rank": 752,
+      "hanzi": "教",
+      "pinyin": "Jìao",
+      "gloss": "surname Jiao",
+      "count": 8174
+    },
+    {
+      "rank": 753,
+      "hanzi": "首先",
+      "pinyin": "shǒu xīan",
+      "gloss": "first of all; in the first place",
+      "count": 8076
+    },
+    {
+      "rank": 754,
+      "hanzi": "另外",
+      "pinyin": "lìng wài",
+      "gloss": "additional; in addition",
+      "count": 8069
+    },
+    {
+      "rank": 755,
+      "hanzi": "提供",
+      "pinyin": "tí gōng",
+      "gloss": "to offer; to supply",
+      "count": 8065
+    },
+    {
+      "rank": 756,
+      "hanzi": "记住",
+      "pinyin": "jì zhu",
+      "gloss": "to remember; to bear in mind",
+      "count": 8060
+    },
+    {
+      "rank": 757,
+      "hanzi": "听见",
+      "pinyin": "tīng jìan",
+      "gloss": "to hear",
+      "count": 8048
+    },
+    {
+      "rank": 758,
+      "hanzi": "信",
+      "pinyin": "xìn",
+      "gloss": "letter; mail",
+      "count": 8045
+    },
+    {
+      "rank": 759,
+      "hanzi": "国王",
+      "pinyin": "gúo wáng",
+      "gloss": "king",
+      "count": 8039
+    },
+    {
+      "rank": 760,
+      "hanzi": "面前",
+      "pinyin": "mìan qían",
+      "gloss": "in front of; facing",
+      "count": 8026
+    },
+    {
+      "rank": 761,
+      "hanzi": "几乎",
+      "pinyin": "jī hū",
+      "gloss": "almost; nearly; practically",
+      "count": 7999
+    },
+    {
+      "rank": 762,
+      "hanzi": "日子",
+      "pinyin": "rì zi",
+      "gloss": "day; a (calendar) date",
+      "count": 7988
+    },
+    {
+      "rank": 763,
+      "hanzi": "舒服",
+      "pinyin": "shū fu",
+      "gloss": "comfortable; feeling well",
+      "count": 7967
+    },
+    {
+      "rank": 764,
+      "hanzi": "原来",
+      "pinyin": "yúan lái",
+      "gloss": "original; former; originally; formerly; at first",
+      "count": 7963
+    },
+    {
+      "rank": 765,
+      "hanzi": "再也",
+      "pinyin": "zài yě",
+      "gloss": "(not) ever again; (not) any longer",
+      "count": 7959
+    },
+    {
+      "rank": 766,
+      "hanzi": "操",
+      "pinyin": "cāo",
+      "gloss": "old variant of 操[cao1]",
+      "count": 7948
+    },
+    {
+      "rank": 767,
+      "hanzi": "纽约",
+      "pinyin": "Nǐu yūe",
+      "gloss": "New York",
+      "count": 7946
+    },
+    {
+      "rank": 768,
+      "hanzi": "早就",
+      "pinyin": "zǎo jìu",
+      "gloss": "already at an earlier time",
+      "count": 7937
+    },
+    {
+      "rank": 769,
+      "hanzi": "逼",
+      "pinyin": "bī",
+      "gloss": "variant of 逼[bi1]; to compel",
+      "count": 7933
+    },
+    {
+      "rank": 770,
+      "hanzi": "有关",
+      "pinyin": "yǒu gūan",
+      "gloss": "to have sth to do with; to relate to",
+      "count": 7907
+    },
+    {
+      "rank": 771,
+      "hanzi": "放开",
+      "pinyin": "fàng kāi",
+      "gloss": "to let go; to release",
+      "count": 7893
+    },
+    {
+      "rank": 772,
+      "hanzi": "信息",
+      "pinyin": "xìn xī",
+      "gloss": "information; news; message",
+      "count": 7890
+    },
+    {
+      "rank": 773,
+      "hanzi": "星期",
+      "pinyin": "xīng qī",
+      "gloss": "week; CL:個|个[ge4]",
+      "count": 7842
+    },
+    {
+      "rank": 774,
+      "hanzi": "不得不",
+      "pinyin": "bù dé bù",
+      "gloss": "have no choice or option but to; cannot but",
+      "count": 7824
+    },
+    {
+      "rank": 775,
+      "hanzi": "发誓",
+      "pinyin": "fā shì",
+      "gloss": "to vow; to pledge",
+      "count": 7803
+    },
+    {
+      "rank": 776,
+      "hanzi": "钥匙",
+      "pinyin": "yào shi",
+      "gloss": "key; CL:把[ba3]",
+      "count": 7796
+    },
+    {
+      "rank": 777,
+      "hanzi": "错误",
+      "pinyin": "cùo wù",
+      "gloss": "mistaken; false; wrong; error; mistake",
+      "count": 7791
+    },
+    {
+      "rank": 778,
+      "hanzi": "放松",
+      "pinyin": "fàng sōng",
+      "gloss": "to relax; to slacken; to loosen",
+      "count": 7786
+    },
+    {
+      "rank": 779,
+      "hanzi": "约会",
+      "pinyin": "yūe hùi",
+      "gloss": "appointment; engagement",
+      "count": 7785
+    },
+    {
+      "rank": 780,
+      "hanzi": "船",
+      "pinyin": "chúan",
+      "gloss": "variant of 船[chuan2]",
+      "count": 7779
+    },
+    {
+      "rank": 781,
+      "hanzi": "打扰",
+      "pinyin": "dǎ rǎo",
+      "gloss": "to disturb; to bother",
+      "count": 7777
+    },
+    {
+      "rank": 782,
+      "hanzi": "女",
+      "pinyin": "nu:3",
+      "gloss": "female; woman",
+      "count": 7776
+    },
+    {
+      "rank": 783,
+      "hanzi": "手机",
+      "pinyin": "shǒu jī",
+      "gloss": "cell phone; mobile phone; CL:部[bu4],臺|台[tai2]",
+      "count": 7764
+    },
+    {
+      "rank": 784,
+      "hanzi": "二",
+      "pinyin": "èr",
+      "gloss": "two; 2",
+      "count": 7751
+    },
+    {
+      "rank": 785,
+      "hanzi": "到处",
+      "pinyin": "dào chù",
+      "gloss": "everywhere",
+      "count": 7708
+    },
+    {
+      "rank": 786,
+      "hanzi": "攻击",
+      "pinyin": "gōng jī",
+      "gloss": "to attack; to accuse",
+      "count": 7707
+    },
+    {
+      "rank": 787,
+      "hanzi": "第一",
+      "pinyin": "dì yī",
+      "gloss": "first; most important; primary; foremost",
+      "count": 7696
+    },
+    {
+      "rank": 788,
+      "hanzi": "建议",
+      "pinyin": "jìan yì",
+      "gloss": "to propose; to suggest; to recommend; proposal; suggestion; recommendation (CL:點|点[dian3])",
+      "count": 7695
+    },
+    {
+      "rank": 789,
+      "hanzi": "日本",
+      "pinyin": "Rì běn",
+      "gloss": "Japan",
+      "count": 7683
+    },
+    {
+      "rank": 790,
+      "hanzi": "理由",
+      "pinyin": "lǐ yóu",
+      "gloss": "reason; grounds",
+      "count": 7676
+    },
+    {
+      "rank": 791,
+      "hanzi": "事实上",
+      "pinyin": "shì shí shàng",
+      "gloss": "in fact; in reality",
+      "count": 7675
+    },
+    {
+      "rank": 792,
+      "hanzi": "阿",
+      "pinyin": "ā",
+      "gloss": "prefix used before monosyllabic names, kinship terms etc to indicate familiarity; (bound form) abbreviation for country names beginning with 阿, e.g. 阿富汗[A1 fu4 han4] \"Afghanistan\"",
+      "count": 7657
+    },
+    {
+      "rank": 793,
+      "hanzi": "跳舞",
+      "pinyin": "tìao wǔ",
+      "gloss": "to dance",
+      "count": 7654
+    },
+    {
+      "rank": 794,
+      "hanzi": "生气",
+      "pinyin": "shēng qì",
+      "gloss": "to get angry; to be furious; vitality; liveliness",
+      "count": 7653
+    },
+    {
+      "rank": 795,
+      "hanzi": "久",
+      "pinyin": "jǐu",
+      "gloss": "(of a period of time) long",
+      "count": 7642
+    },
+    {
+      "rank": 796,
+      "hanzi": "信任",
+      "pinyin": "xìn rèn",
+      "gloss": "to trust; to have confidence in",
+      "count": 7615
+    },
+    {
+      "rank": 797,
+      "hanzi": "此",
+      "pinyin": "cǐ",
+      "gloss": "this; these",
+      "count": 7594
+    },
+    {
+      "rank": 798,
+      "hanzi": "差不多",
+      "pinyin": "chà bu dūo",
+      "gloss": "almost; nearly",
+      "count": 7577
+    },
+    {
+      "rank": 799,
+      "hanzi": "原谅",
+      "pinyin": "yúan lìang",
+      "gloss": "to excuse; to forgive",
+      "count": 7570
+    },
+    {
+      "rank": 800,
+      "hanzi": "神",
+      "pinyin": "Shén",
+      "gloss": "God",
+      "count": 7564
+    },
+    {
+      "rank": 801,
+      "hanzi": "经常",
+      "pinyin": "jīng cháng",
+      "gloss": "frequently; constantly; regularly; often; day-to-day; everyday; daily",
+      "count": 7562
+    },
+    {
+      "rank": 802,
+      "hanzi": "的确",
+      "pinyin": "dí qùe",
+      "gloss": "really; indeed",
+      "count": 7560
+    },
+    {
+      "rank": 803,
+      "hanzi": "之一",
+      "pinyin": "zhī yī",
+      "gloss": "one of (sth); one out of a multitude",
+      "count": 7549
+    },
+    {
+      "rank": 804,
+      "hanzi": "幸福",
+      "pinyin": "xìng fú",
+      "gloss": "happiness; happy",
+      "count": 7548
+    },
+    {
+      "rank": 805,
+      "hanzi": "哎",
+      "pinyin": "āi",
+      "gloss": "hey!; (interjection used to attract attention or to express surprise or disapprobation)",
+      "count": 7542
+    },
+    {
+      "rank": 806,
+      "hanzi": "便",
+      "pinyin": "bìan",
+      "gloss": "plain; informal",
+      "count": 7514
+    },
+    {
+      "rank": 807,
+      "hanzi": "马",
+      "pinyin": "Mǎ",
+      "gloss": "surname Ma; abbr. for Malaysia 馬來西亞|马来西亚[Ma3 lai2 xi1 ya4]",
+      "count": 7513
+    },
+    {
+      "rank": 808,
+      "hanzi": "算",
+      "pinyin": "sùan",
+      "gloss": "to calculate; to figure out; to include; to count in",
+      "count": 7513
+    },
+    {
+      "rank": 809,
+      "hanzi": "吃饭",
+      "pinyin": "chī fàn",
+      "gloss": "to have a meal; to eat",
+      "count": 7511
+    },
+    {
+      "rank": 810,
+      "hanzi": "正是",
+      "pinyin": "zhèng shì",
+      "gloss": "is precisely",
+      "count": 7507
+    },
+    {
+      "rank": 811,
+      "hanzi": "不必",
+      "pinyin": "bù bì",
+      "gloss": "need not; does not have to",
+      "count": 7506
+    },
+    {
+      "rank": 812,
+      "hanzi": "幸运",
+      "pinyin": "xìng yùn",
+      "gloss": "fortunate; lucky; good fortune; luck",
+      "count": 7481
+    },
+    {
+      "rank": 813,
+      "hanzi": "丢",
+      "pinyin": "dīu",
+      "gloss": "to lose; to put aside",
+      "count": 7479
+    },
+    {
+      "rank": 814,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "gloss": "long; (bound form) length",
+      "count": 7472
+    },
+    {
+      "rank": 815,
+      "hanzi": "而是",
+      "pinyin": "ér shì",
+      "gloss": "rather",
+      "count": 7461
+    },
+    {
+      "rank": 816,
+      "hanzi": "住手",
+      "pinyin": "zhù shǒu",
+      "gloss": "to desist; to stop",
+      "count": 7455
+    },
+    {
+      "rank": 817,
+      "hanzi": "动物",
+      "pinyin": "dòng wù",
+      "gloss": "animal",
+      "count": 7447
+    },
+    {
+      "rank": 818,
+      "hanzi": "弟弟",
+      "pinyin": "dì di",
+      "gloss": "younger brother; CL:個|个[ge4],位[wei4]",
+      "count": 7435
+    },
+    {
+      "rank": 819,
+      "hanzi": "道歉",
+      "pinyin": "dào qìan",
+      "gloss": "to apologize",
+      "count": 7434
+    },
+    {
+      "rank": 820,
+      "hanzi": "严重",
+      "pinyin": "yán zhòng",
+      "gloss": "grave; serious; severe; critical",
+      "count": 7421
+    },
+    {
+      "rank": 821,
+      "hanzi": "人家",
+      "pinyin": "rén jīa",
+      "gloss": "household; dwelling",
+      "count": 7413
+    },
+    {
+      "rank": 822,
+      "hanzi": "坚持",
+      "pinyin": "jīan chí",
+      "gloss": "to persevere with; to persist in",
+      "count": 7412
+    },
+    {
+      "rank": 823,
+      "hanzi": "想象",
+      "pinyin": "xǐang xìang",
+      "gloss": "to imagine; to envision; imagination",
+      "count": 7411
+    },
+    {
+      "rank": 824,
+      "hanzi": "按",
+      "pinyin": "àn",
+      "gloss": "to press; to push",
+      "count": 7396
+    },
+    {
+      "rank": 825,
+      "hanzi": "礼物",
+      "pinyin": "lǐ wù",
+      "gloss": "gift; present; CL:件[jian4],份[fen4]",
+      "count": 7386
+    },
+    {
+      "rank": 826,
+      "hanzi": "每次",
+      "pinyin": "měi cì",
+      "gloss": "each time; every time",
+      "count": 7384
+    },
+    {
+      "rank": 827,
+      "hanzi": "将军",
+      "pinyin": "jīang jūn",
+      "gloss": "general; high-ranking military officer",
+      "count": 7377
+    },
+    {
+      "rank": 828,
+      "hanzi": "剩下",
+      "pinyin": "shèng xìa",
+      "gloss": "to remain; to be left over",
+      "count": 7345
+    },
+    {
+      "rank": 829,
+      "hanzi": "有事",
+      "pinyin": "yǒu shì",
+      "gloss": "to be occupied with sth; to have sth on one's mind",
+      "count": 7343
+    },
+    {
+      "rank": 830,
+      "hanzi": "老爸",
+      "pinyin": "lǎo bà",
+      "gloss": "father; dad",
+      "count": 7336
+    },
+    {
+      "rank": 831,
+      "hanzi": "系统",
+      "pinyin": "xì tǒng",
+      "gloss": "system; CL:個|个[ge4]",
+      "count": 7318
+    },
+    {
+      "rank": 832,
+      "hanzi": "全都",
+      "pinyin": "qúan dōu",
+      "gloss": "all; without exception",
+      "count": 7314
+    },
+    {
+      "rank": 833,
+      "hanzi": "组织",
+      "pinyin": "zǔ zhī",
+      "gloss": "to organize; organization",
+      "count": 7310
+    },
+    {
+      "rank": 834,
+      "hanzi": "敌人",
+      "pinyin": "dí rén",
+      "gloss": "enemy; CL:個|个[ge4]",
+      "count": 7292
+    },
+    {
+      "rank": 835,
+      "hanzi": "看上去",
+      "pinyin": "kàn shang qu",
+      "gloss": "it would appear; it seems (that)",
+      "count": 7290
+    },
+    {
+      "rank": 836,
+      "hanzi": "老天",
+      "pinyin": "lǎo tīan",
+      "gloss": "God; Heavens",
+      "count": 7276
+    },
+    {
+      "rank": 837,
+      "hanzi": "认真",
+      "pinyin": "rèn zhēn",
+      "gloss": "conscientious; earnest",
+      "count": 7265
+    },
+    {
+      "rank": 838,
+      "hanzi": "分",
+      "pinyin": "fēn",
+      "gloss": "to divide; to separate; to distribute; to allocate",
+      "count": 7245
+    },
+    {
+      "rank": 839,
+      "hanzi": "书",
+      "pinyin": "Shū",
+      "gloss": "abbr. for 書經|书经[Shu1 jing1]",
+      "count": 7222
+    },
+    {
+      "rank": 840,
+      "hanzi": "往",
+      "pinyin": "wǎng",
+      "gloss": "to go (in a direction); to",
+      "count": 7217
+    },
+    {
+      "rank": 841,
+      "hanzi": "关心",
+      "pinyin": "gūan xīn",
+      "gloss": "to be concerned about; to care about",
+      "count": 7207
+    },
+    {
+      "rank": 842,
+      "hanzi": "坏",
+      "pinyin": "hùai",
+      "gloss": "bad; spoiled",
+      "count": 7205
+    },
+    {
+      "rank": 843,
+      "hanzi": "骗",
+      "pinyin": "pìan",
+      "gloss": "to cheat; to swindle",
+      "count": 7203
+    },
+    {
+      "rank": 844,
+      "hanzi": "中国",
+      "pinyin": "Zhōng gúo",
+      "gloss": "China",
+      "count": 7199
+    },
+    {
+      "rank": 845,
+      "hanzi": "生意",
+      "pinyin": "shēng yì",
+      "gloss": "life force; vitality",
+      "count": 7187
+    },
+    {
+      "rank": 846,
+      "hanzi": "上去",
+      "pinyin": "shàng qù",
+      "gloss": "to go up",
+      "count": 7173
+    },
+    {
+      "rank": 847,
+      "hanzi": "值得",
+      "pinyin": "zhí de",
+      "gloss": "worth the money; to merit; to deserve; to be worth (doing sth)",
+      "count": 7170
+    },
+    {
+      "rank": 848,
+      "hanzi": "搞定",
+      "pinyin": "gǎo dìng",
+      "gloss": "to fix; to settle",
+      "count": 7170
+    },
+    {
+      "rank": 849,
+      "hanzi": "寻找",
+      "pinyin": "xún zhǎo",
+      "gloss": "to seek; to look for",
+      "count": 7168
+    },
+    {
+      "rank": 850,
+      "hanzi": "派对",
+      "pinyin": "pài dùi",
+      "gloss": "(loanword) party",
+      "count": 7167
+    },
+    {
+      "rank": 851,
+      "hanzi": "许多",
+      "pinyin": "xǔ dūo",
+      "gloss": "many; a lot of",
+      "count": 7161
+    },
+    {
+      "rank": 852,
+      "hanzi": "学生",
+      "pinyin": "xúe sheng",
+      "gloss": "student; schoolchild",
+      "count": 7142
+    },
+    {
+      "rank": 853,
+      "hanzi": "下次",
+      "pinyin": "xìa cì",
+      "gloss": "next time",
+      "count": 7136
+    },
+    {
+      "rank": 854,
+      "hanzi": "通知",
+      "pinyin": "tōng zhī",
+      "gloss": "to notify; to inform",
+      "count": 7134
+    },
+    {
+      "rank": 855,
+      "hanzi": "救命",
+      "pinyin": "jìu mìng",
+      "gloss": "to save sb's life; (interj.) Help!",
+      "count": 7133
+    },
+    {
+      "rank": 856,
+      "hanzi": "表现",
+      "pinyin": "bǐao xìan",
+      "gloss": "to show; to show off",
+      "count": 7130
+    },
+    {
+      "rank": 857,
+      "hanzi": "利用",
+      "pinyin": "lì yòng",
+      "gloss": "to exploit; to make use of",
+      "count": 7129
+    },
+    {
+      "rank": 858,
+      "hanzi": "受伤",
+      "pinyin": "shòu shāng",
+      "gloss": "to sustain injuries; wounded (in an accident etc)",
+      "count": 7120
+    },
+    {
+      "rank": 859,
+      "hanzi": "后来",
+      "pinyin": "hòu lái",
+      "gloss": "afterwards; later; newly arrived",
+      "count": 7115
+    },
+    {
+      "rank": 860,
+      "hanzi": "早上好",
+      "pinyin": "zǎo shang hǎo",
+      "gloss": "Good morning!",
+      "count": 7108
+    },
+    {
+      "rank": 861,
+      "hanzi": "精神",
+      "pinyin": "jīng shén",
+      "gloss": "spirit; mind",
+      "count": 7103
+    },
+    {
+      "rank": 862,
+      "hanzi": "居然",
+      "pinyin": "jū rán",
+      "gloss": "unexpectedly; to one's surprise",
+      "count": 7098
+    },
+    {
+      "rank": 863,
+      "hanzi": "受到",
+      "pinyin": "shòu dào",
+      "gloss": "to receive (praise, an education, punishment etc); to be ...ed (praised, educated, punished etc)",
+      "count": 7098
+    },
+    {
+      "rank": 864,
+      "hanzi": "大学",
+      "pinyin": "Dà xúe",
+      "gloss": "the Great Learning, one of the Four Books 四書|四书[Si4 shu1] in Confucianism",
+      "count": 7085
+    },
+    {
+      "rank": 865,
+      "hanzi": "那时",
+      "pinyin": "nà shí",
+      "gloss": "then; at that time",
+      "count": 7083
+    },
+    {
+      "rank": 866,
+      "hanzi": "既然",
+      "pinyin": "jì rán",
+      "gloss": "since; as; this being the case",
+      "count": 7077
+    },
+    {
+      "rank": 867,
+      "hanzi": "几天",
+      "pinyin": "jǐ tīan",
+      "gloss": "several days",
+      "count": 7076
+    },
+    {
+      "rank": 868,
+      "hanzi": "有时",
+      "pinyin": "yǒu shí",
+      "gloss": "sometimes; now and then",
+      "count": 7075
+    },
+    {
+      "rank": 869,
+      "hanzi": "米",
+      "pinyin": "Mǐ",
+      "gloss": "surname Mi",
+      "count": 7064
+    },
+    {
+      "rank": 870,
+      "hanzi": "总",
+      "pinyin": "zǒng",
+      "gloss": "(bound form) general; overall; to sum up",
+      "count": 7055
+    },
+    {
+      "rank": 871,
+      "hanzi": "真相",
+      "pinyin": "zhēn xìang",
+      "gloss": "the truth about sth; the actual facts",
+      "count": 7043
+    },
+    {
+      "rank": 872,
+      "hanzi": "恨",
+      "pinyin": "hèn",
+      "gloss": "to hate; to regret",
+      "count": 7033
+    },
+    {
+      "rank": 873,
+      "hanzi": "卡",
+      "pinyin": "kǎ",
+      "gloss": "to stop; to block",
+      "count": 7019
+    },
+    {
+      "rank": 874,
+      "hanzi": "不知",
+      "pinyin": "bù zhī",
+      "gloss": "not to know; unaware",
+      "count": 7016
+    },
+    {
+      "rank": 875,
+      "hanzi": "远",
+      "pinyin": "yǔan",
+      "gloss": "far; distant",
+      "count": 7005
+    },
+    {
+      "rank": 876,
+      "hanzi": "警官",
+      "pinyin": "jǐng gūan",
+      "gloss": "constable; police officer",
+      "count": 6998
+    },
+    {
+      "rank": 877,
+      "hanzi": "属于",
+      "pinyin": "shǔ yú",
+      "gloss": "to belong to; to fall under (a category)",
+      "count": 6975
+    },
+    {
+      "rank": 878,
+      "hanzi": "什",
+      "pinyin": "shén",
+      "gloss": "what",
+      "count": 6954
+    },
+    {
+      "rank": 879,
+      "hanzi": "可不是",
+      "pinyin": "kě bu shì",
+      "gloss": "(coll.) exactly!; indeed; that's for sure",
+      "count": 6949
+    },
+    {
+      "rank": 880,
+      "hanzi": "怪",
+      "pinyin": "gùai",
+      "gloss": "odd; strange; uncanny; (bound form) monster; supernatural being",
+      "count": 6947
+    },
+    {
+      "rank": 881,
+      "hanzi": "怀疑",
+      "pinyin": "húai yí",
+      "gloss": "to doubt (sth); to be skeptical of; to have one's doubts; to harbor suspicions; to suspect that",
+      "count": 6934
+    },
+    {
+      "rank": 882,
+      "hanzi": "笨蛋",
+      "pinyin": "bèn dàn",
+      "gloss": "(mild insult) fool; idiot; (playful) silly person",
+      "count": 6930
+    },
+    {
+      "rank": 883,
+      "hanzi": "战斗",
+      "pinyin": "zhàn dòu",
+      "gloss": "to fight; to engage in combat",
+      "count": 6915
+    },
+    {
+      "rank": 884,
+      "hanzi": "承认",
+      "pinyin": "chéng rèn",
+      "gloss": "to admit; to concede",
+      "count": 6914
+    },
+    {
+      "rank": 885,
+      "hanzi": "法律",
+      "pinyin": "fǎ lu:4",
+      "gloss": "law; CL:條|条[tiao2], 套[tao4], 個|个[ge4]",
+      "count": 6910
+    },
+    {
+      "rank": 886,
+      "hanzi": "别说",
+      "pinyin": "bíe shūo",
+      "gloss": "to say nothing of; not to mention; let alone",
+      "count": 6906
+    },
+    {
+      "rank": 887,
+      "hanzi": "简体",
+      "pinyin": "jǐan tǐ",
+      "gloss": "simplified form of Chinese characters, as opposed to traditional form 繁體|繁体[fan2 ti3]",
+      "count": 6900
+    },
+    {
+      "rank": 888,
+      "hanzi": "记录",
+      "pinyin": "jì lù",
+      "gloss": "to record; record (esp. a written account)",
+      "count": 6882
+    },
+    {
+      "rank": 889,
+      "hanzi": "见面",
+      "pinyin": "jìan mìan",
+      "gloss": "to meet; to see each other; CL:次[ci4]",
+      "count": 6881
+    },
+    {
+      "rank": 890,
+      "hanzi": "能力",
+      "pinyin": "néng lì",
+      "gloss": "capability; ability",
+      "count": 6881
+    },
+    {
+      "rank": 891,
+      "hanzi": "足够",
+      "pinyin": "zú gòu",
+      "gloss": "enough; sufficient",
+      "count": 6869
+    },
+    {
+      "rank": 892,
+      "hanzi": "瞧",
+      "pinyin": "qíao",
+      "gloss": "to look at; to see",
+      "count": 6857
+    },
+    {
+      "rank": 893,
+      "hanzi": "同样",
+      "pinyin": "tóng yàng",
+      "gloss": "same; equal; similar; similarly; also; too",
+      "count": 6850
+    },
+    {
+      "rank": 894,
+      "hanzi": "白痴",
+      "pinyin": "bái chī",
+      "gloss": "idiocy; idiot",
+      "count": 6847
+    },
+    {
+      "rank": 895,
+      "hanzi": "拒绝",
+      "pinyin": "jù júe",
+      "gloss": "to refuse; to decline; to reject",
+      "count": 6835
+    },
+    {
+      "rank": 896,
+      "hanzi": "影响",
+      "pinyin": "yǐng xǐang",
+      "gloss": "influence; effect",
+      "count": 6829
+    },
+    {
+      "rank": 897,
+      "hanzi": "画",
+      "pinyin": "hùa",
+      "gloss": "to draw; to paint; picture; painting (CL:幅[fu2],張|张[zhang1])",
+      "count": 6820
+    },
+    {
+      "rank": 898,
+      "hanzi": "其",
+      "pinyin": "qí",
+      "gloss": "his; her",
+      "count": 6817
+    },
+    {
+      "rank": 899,
+      "hanzi": "德",
+      "pinyin": "Dé",
+      "gloss": "Germany; German",
+      "count": 6811
+    },
+    {
+      "rank": 900,
+      "hanzi": "交易",
+      "pinyin": "jīao yì",
+      "gloss": "to deal; to trade; to transact; transaction; deal",
+      "count": 6811
+    },
+    {
+      "rank": 901,
+      "hanzi": "管",
+      "pinyin": "gǔan",
+      "gloss": "variant of 管[guan3]",
+      "count": 6787
+    },
+    {
+      "rank": 902,
+      "hanzi": "开门",
+      "pinyin": "kāi mén",
+      "gloss": "(lit. and fig.) to open a door; to open for business",
+      "count": 6774
+    },
+    {
+      "rank": 903,
+      "hanzi": "意味着",
+      "pinyin": "yì wèi zhe",
+      "gloss": "to signify; to mean",
+      "count": 6770
+    },
+    {
+      "rank": 904,
+      "hanzi": "或是",
+      "pinyin": "hùo shì",
+      "gloss": "or; either one or the other",
+      "count": 6766
+    },
+    {
+      "rank": 905,
+      "hanzi": "美",
+      "pinyin": "Měi",
+      "gloss": "(bound form) the Americas (abbr. for 美洲[Mei3 zhou1]); (bound form) USA (abbr. for 美國|美国[Mei3 guo2])",
+      "count": 6757
+    },
+    {
+      "rank": 906,
+      "hanzi": "教授",
+      "pinyin": "jīao shòu",
+      "gloss": "to teach (a subject)",
+      "count": 6756
+    },
+    {
+      "rank": 907,
+      "hanzi": "享受",
+      "pinyin": "xǐang shòu",
+      "gloss": "to enjoy; to live it up",
+      "count": 6749
+    },
+    {
+      "rank": 908,
+      "hanzi": "喝酒",
+      "pinyin": "hē jǐu",
+      "gloss": "to drink (alcohol)",
+      "count": 6743
+    },
+    {
+      "rank": 909,
+      "hanzi": "好多",
+      "pinyin": "hǎo dūo",
+      "gloss": "many; quite a lot",
+      "count": 6743
+    },
+    {
+      "rank": 910,
+      "hanzi": "接下来",
+      "pinyin": "jīe xìa lái",
+      "gloss": "to accept; to take",
+      "count": 6729
+    },
+    {
+      "rank": 911,
+      "hanzi": "腿",
+      "pinyin": "tǔi",
+      "gloss": "leg; CL:條|条[tiao2]",
+      "count": 6724
+    },
+    {
+      "rank": 912,
+      "hanzi": "走开",
+      "pinyin": "zǒu kāi",
+      "gloss": "to leave; to walk away; to beat it; to move aside",
+      "count": 6703
+    },
+    {
+      "rank": 913,
+      "hanzi": "合作",
+      "pinyin": "hé zùo",
+      "gloss": "to cooperate; to collaborate; to work together",
+      "count": 6701
+    },
+    {
+      "rank": 914,
+      "hanzi": "女朋友",
+      "pinyin": "nu:3 péng you",
+      "gloss": "girlfriend",
+      "count": 6691
+    },
+    {
+      "rank": 915,
+      "hanzi": "好吃",
+      "pinyin": "hǎo chī",
+      "gloss": "tasty; delicious",
+      "count": 6683
+    },
+    {
+      "rank": 916,
+      "hanzi": "事件",
+      "pinyin": "shì jìan",
+      "gloss": "incident; event",
+      "count": 6679
+    },
+    {
+      "rank": 917,
+      "hanzi": "出发",
+      "pinyin": "chū fā",
+      "gloss": "to set off; to start (on a journey); (fig.) to proceed from (a particular standpoint or basis)",
+      "count": 6673
+    },
+    {
+      "rank": 918,
+      "hanzi": "酒吧",
+      "pinyin": "jǐu bā",
+      "gloss": "bar (place to buy drinks); CL:家[jia1]",
+      "count": 6669
+    },
+    {
+      "rank": 919,
+      "hanzi": "多么",
+      "pinyin": "dūo me",
+      "gloss": "how (wonderful etc); what (a great idea etc)",
+      "count": 6668
+    },
+    {
+      "rank": 920,
+      "hanzi": "不如",
+      "pinyin": "bù rú",
+      "gloss": "not equal to; not as good as; inferior to; it would be better to",
+      "count": 6668
+    },
+    {
+      "rank": 921,
+      "hanzi": "指",
+      "pinyin": "zhǐ",
+      "gloss": "finger; to point at or to",
+      "count": 6665
+    },
+    {
+      "rank": 922,
+      "hanzi": "客人",
+      "pinyin": "kè rén",
+      "gloss": "visitor; guest; customer",
+      "count": 6656
+    },
+    {
+      "rank": 923,
+      "hanzi": "换",
+      "pinyin": "hùan",
+      "gloss": "to exchange; to change (clothes etc)",
+      "count": 6654
+    },
+    {
+      "rank": 924,
+      "hanzi": "梦想",
+      "pinyin": "mèng xǐang",
+      "gloss": "(fig.) to dream of; dream",
+      "count": 6654
+    },
+    {
+      "rank": 925,
+      "hanzi": "英雄",
+      "pinyin": "yīng xíong",
+      "gloss": "hero; CL:個|个[ge4]",
+      "count": 6644
+    },
+    {
+      "rank": 926,
+      "hanzi": "傻",
+      "pinyin": "shǎ",
+      "gloss": "foolish",
+      "count": 6604
+    },
+    {
+      "rank": 927,
+      "hanzi": "血",
+      "pinyin": "xùe",
+      "gloss": "blood (CL:滴[di1]); colloquial pr. [xie3] or [xue3]",
+      "count": 6598
+    },
+    {
+      "rank": 928,
+      "hanzi": "扔",
+      "pinyin": "rēng",
+      "gloss": "to throw; to throw away",
+      "count": 6587
+    },
+    {
+      "rank": 929,
+      "hanzi": "藏",
+      "pinyin": "Zàng",
+      "gloss": "Tibetan ethnic group; Tibet Autonomous Region (short name for 西藏自治區|西藏自治区[Xi1 zang4 Zi4 zhi4 qu1])",
+      "count": 6578
+    },
+    {
+      "rank": 930,
+      "hanzi": "杀人",
+      "pinyin": "shā rén",
+      "gloss": "to kill a person; to commit murder",
+      "count": 6563
+    },
+    {
+      "rank": 931,
+      "hanzi": "一会儿",
+      "pinyin": "yī hùi r",
+      "gloss": "a moment; a while",
+      "count": 6563
+    },
+    {
+      "rank": 932,
+      "hanzi": "变",
+      "pinyin": "bìan",
+      "gloss": "to change; to become different",
+      "count": 6540
+    },
+    {
+      "rank": 933,
+      "hanzi": "约",
+      "pinyin": "yāo",
+      "gloss": "to weigh in a balance or on a scale",
+      "count": 6539
+    },
+    {
+      "rank": 934,
+      "hanzi": "行为",
+      "pinyin": "xíng wéi",
+      "gloss": "action; conduct; behavior; activity",
+      "count": 6538
+    },
+    {
+      "rank": 935,
+      "hanzi": "头发",
+      "pinyin": "tóu fa",
+      "gloss": "hair (on the head)",
+      "count": 6523
+    },
+    {
+      "rank": 936,
+      "hanzi": "适合",
+      "pinyin": "shì hé",
+      "gloss": "to fit; to suit",
+      "count": 6510
+    },
+    {
+      "rank": 937,
+      "hanzi": "恭喜",
+      "pinyin": "gōng xǐ",
+      "gloss": "to congratulate; (interj.) congratulations!",
+      "count": 6494
+    },
+    {
+      "rank": 938,
+      "hanzi": "上次",
+      "pinyin": "shàng cì",
+      "gloss": "last time",
+      "count": 6489
+    },
+    {
+      "rank": 939,
+      "hanzi": "地狱",
+      "pinyin": "dì yù",
+      "gloss": "hell; underworld; (Buddhism) Naraka; (coll.) (of humor, jokes, content etc) extremely dark or morally transgressive",
+      "count": 6481
+    },
+    {
+      "rank": 940,
+      "hanzi": "不在乎",
+      "pinyin": "bù zài hu",
+      "gloss": "not to care",
+      "count": 6475
+    },
+    {
+      "rank": 941,
+      "hanzi": "生",
+      "pinyin": "shēng",
+      "gloss": "to grow; to give birth; to produce; to be born; to arise; to occur",
+      "count": 6472
+    },
+    {
+      "rank": 942,
+      "hanzi": "哪个",
+      "pinyin": "nǎ ge",
+      "gloss": "which; who",
+      "count": 6467
+    },
+    {
+      "rank": 943,
+      "hanzi": "实在",
+      "pinyin": "shí zài",
+      "gloss": "really; actually",
+      "count": 6467
+    },
+    {
+      "rank": 944,
+      "hanzi": "路上",
+      "pinyin": "lù shang",
+      "gloss": "on the road; on the way; en route",
+      "count": 6462
+    },
+    {
+      "rank": 945,
+      "hanzi": "接近",
+      "pinyin": "jīe jìn",
+      "gloss": "to approach; to get close to",
+      "count": 6457
+    },
+    {
+      "rank": 946,
+      "hanzi": "不准",
+      "pinyin": "bù zhǔn",
+      "gloss": "not to allow; to forbid",
+      "count": 6456
+    },
+    {
+      "rank": 947,
+      "hanzi": "银行",
+      "pinyin": "yín háng",
+      "gloss": "bank; CL:家[jia1],個|个[ge4]",
+      "count": 6456
+    },
+    {
+      "rank": 948,
+      "hanzi": "碰",
+      "pinyin": "pèng",
+      "gloss": "variant of 碰[peng4]",
+      "count": 6454
+    },
+    {
+      "rank": 949,
+      "hanzi": "介绍",
+      "pinyin": "jìe shào",
+      "gloss": "to introduce (sb to sb); to give a presentation",
+      "count": 6453
+    },
+    {
+      "rank": 950,
+      "hanzi": "一旦",
+      "pinyin": "yī dàn",
+      "gloss": "in case (sth happens); if",
+      "count": 6448
+    },
+    {
+      "rank": 951,
+      "hanzi": "味道",
+      "pinyin": "wèi dao",
+      "gloss": "flavor; taste; (fig.) feeling (of ...); sense (of ...); hint (of ...)",
+      "count": 6448
+    },
+    {
+      "rank": 952,
+      "hanzi": "实际上",
+      "pinyin": "shí jì shàng",
+      "gloss": "in fact; in reality",
+      "count": 6445
+    },
+    {
+      "rank": 953,
+      "hanzi": "感受",
+      "pinyin": "gǎn shòu",
+      "gloss": "to sense; perception",
+      "count": 6437
+    },
+    {
+      "rank": 954,
+      "hanzi": "身份",
+      "pinyin": "shēn fèn",
+      "gloss": "identity; aspect of one's identity (e.g. mayor, father, permanent resident); role; capacity (as in \"in his capacity as ...\" 以[yi3] + ... + 的身份[de5 shen1 fen4]); status (social, legal etc); position; rank",
+      "count": 6432
+    },
+    {
+      "rank": 955,
+      "hanzi": "意外",
+      "pinyin": "yì wài",
+      "gloss": "unexpected; accident",
+      "count": 6416
+    },
+    {
+      "rank": 956,
+      "hanzi": "一般",
+      "pinyin": "yī bān",
+      "gloss": "same; ordinary",
+      "count": 6415
+    },
+    {
+      "rank": 957,
+      "hanzi": "吓",
+      "pinyin": "hè",
+      "gloss": "to scare; to intimidate",
+      "count": 6408
+    },
+    {
+      "rank": 958,
+      "hanzi": "停下",
+      "pinyin": "tíng xìa",
+      "gloss": "to stop",
+      "count": 6399
+    },
+    {
+      "rank": 959,
+      "hanzi": "意义",
+      "pinyin": "yì yì",
+      "gloss": "sense; meaning",
+      "count": 6397
+    },
+    {
+      "rank": 960,
+      "hanzi": "拜",
+      "pinyin": "bài",
+      "gloss": "to bow to; to pay one's respects; (bound form) to extend greetings (on a specific occasion)",
+      "count": 6396
+    },
+    {
+      "rank": 961,
+      "hanzi": "婊子",
+      "pinyin": "bǐao zi",
+      "gloss": "prostitute; whore",
+      "count": 6391
+    },
+    {
+      "rank": 962,
+      "hanzi": "梦",
+      "pinyin": "mèng",
+      "gloss": "dream (CL:場|场[chang2]); (bound form) to dream",
+      "count": 6390
+    },
+    {
+      "rank": 963,
+      "hanzi": "学习",
+      "pinyin": "xúe xí",
+      "gloss": "to learn; to study",
+      "count": 6385
+    },
+    {
+      "rank": 964,
+      "hanzi": "同时",
+      "pinyin": "tóng shí",
+      "gloss": "at the same time; simultaneously",
+      "count": 6383
+    },
+    {
+      "rank": 965,
+      "hanzi": "呼吸",
+      "pinyin": "hū xī",
+      "gloss": "to breathe",
+      "count": 6380
+    },
+    {
+      "rank": 966,
+      "hanzi": "经历",
+      "pinyin": "jīng lì",
+      "gloss": "to experience; to go through; experience (CL:段[duan4],次[ci4])",
+      "count": 6367
+    },
+    {
+      "rank": 967,
+      "hanzi": "凶手",
+      "pinyin": "xīong shǒu",
+      "gloss": "murderer; assassin",
+      "count": 6362
+    },
+    {
+      "rank": 968,
+      "hanzi": "目前",
+      "pinyin": "mù qían",
+      "gloss": "at the present time; currently",
+      "count": 6361
+    },
+    {
+      "rank": 969,
+      "hanzi": "威胁",
+      "pinyin": "wēi xíe",
+      "gloss": "to threaten; to menace",
+      "count": 6359
+    },
+    {
+      "rank": 970,
+      "hanzi": "没法",
+      "pinyin": "méi fǎ",
+      "gloss": "at a loss; unable to do anything about it",
+      "count": 6355
+    },
+    {
+      "rank": 971,
+      "hanzi": "有时候",
+      "pinyin": "yǒu shí hou",
+      "gloss": "sometimes",
+      "count": 6354
+    },
+    {
+      "rank": 972,
+      "hanzi": "英国",
+      "pinyin": "Yīng gúo",
+      "gloss": "United Kingdom (UK); Britain",
+      "count": 6336
+    },
+    {
+      "rank": 973,
+      "hanzi": "男",
+      "pinyin": "nán",
+      "gloss": "(bound form) male; baron, the lowest of the five ranks of nobility 五等爵位[wu3 deng3 jue2 wei4]",
+      "count": 6331
+    },
+    {
+      "rank": 974,
+      "hanzi": "什么样",
+      "pinyin": "shén me yàng",
+      "gloss": "what kind?; what sort?",
+      "count": 6322
+    },
+    {
+      "rank": 975,
+      "hanzi": "老大",
+      "pinyin": "lǎo dà",
+      "gloss": "old age; very",
+      "count": 6320
+    },
+    {
+      "rank": 976,
+      "hanzi": "受",
+      "pinyin": "shòu",
+      "gloss": "to receive; to accept",
+      "count": 6309
+    },
+    {
+      "rank": 977,
+      "hanzi": "愚蠢",
+      "pinyin": "yú chǔn",
+      "gloss": "silly; stupid",
+      "count": 6301
+    },
+    {
+      "rank": 978,
+      "hanzi": "算了",
+      "pinyin": "sùan le",
+      "gloss": "let it be; let it pass",
+      "count": 6295
+    },
+    {
+      "rank": 979,
+      "hanzi": "真实",
+      "pinyin": "zhēn shí",
+      "gloss": "true; real",
+      "count": 6291
+    },
+    {
+      "rank": 980,
+      "hanzi": "婚礼",
+      "pinyin": "hūn lǐ",
+      "gloss": "wedding ceremony; wedding",
+      "count": 6270
+    },
+    {
+      "rank": 981,
+      "hanzi": "在家",
+      "pinyin": "zài jīa",
+      "gloss": "to be at home; (at a workplace) to be in (as opposed to being away on official business 出差[chu1 chai1])",
+      "count": 6268
+    },
+    {
+      "rank": 982,
+      "hanzi": "允许",
+      "pinyin": "yǔn xǔ",
+      "gloss": "to permit; to allow",
+      "count": 6262
+    },
+    {
+      "rank": 983,
+      "hanzi": "军队",
+      "pinyin": "jūn dùi",
+      "gloss": "armed forces; troops; CL:支[zhi1]",
+      "count": 6256
+    },
+    {
+      "rank": 984,
+      "hanzi": "电视",
+      "pinyin": "dìan shì",
+      "gloss": "television; TV; CL:臺|台[tai2],部[bu4]",
+      "count": 6253
+    },
+    {
+      "rank": 985,
+      "hanzi": "一家",
+      "pinyin": "yī jīa",
+      "gloss": "the whole family; the same family",
+      "count": 6236
+    },
+    {
+      "rank": 986,
+      "hanzi": "灵魂",
+      "pinyin": "líng hún",
+      "gloss": "soul; spirit",
+      "count": 6232
+    },
+    {
+      "rank": 987,
+      "hanzi": "谢",
+      "pinyin": "Xìe",
+      "gloss": "surname Xie",
+      "count": 6223
+    },
+    {
+      "rank": 988,
+      "hanzi": "如",
+      "pinyin": "rú",
+      "gloss": "as; as if",
+      "count": 6212
+    },
+    {
+      "rank": 989,
+      "hanzi": "道",
+      "pinyin": "dào",
+      "gloss": "road; path (CL:條|条[tiao2],股[gu3]); (bound form) way; reason; principle",
+      "count": 6206
+    },
+    {
+      "rank": 990,
+      "hanzi": "究竟",
+      "pinyin": "jīu jìng",
+      "gloss": "to go to the bottom of a matter; after all",
+      "count": 6201
+    },
+    {
+      "rank": 991,
+      "hanzi": "戴",
+      "pinyin": "Dài",
+      "gloss": "surname Dai",
+      "count": 6199
+    },
+    {
+      "rank": 992,
+      "hanzi": "无论",
+      "pinyin": "wú lùn",
+      "gloss": "no matter what or how; regardless of whether...",
+      "count": 6182
+    },
+    {
+      "rank": 993,
+      "hanzi": "谋杀",
+      "pinyin": "móu shā",
+      "gloss": "to murder; to assassinate",
+      "count": 6176
+    },
+    {
+      "rank": 994,
+      "hanzi": "立刻",
+      "pinyin": "lì kè",
+      "gloss": "immediately; at once; right away",
+      "count": 6165
+    },
+    {
+      "rank": 995,
+      "hanzi": "特",
+      "pinyin": "tè",
+      "gloss": "special; unique",
+      "count": 6158
+    },
+    {
+      "rank": 996,
+      "hanzi": "躺",
+      "pinyin": "tǎng",
+      "gloss": "to recline; to lie down",
+      "count": 6158
+    },
+    {
+      "rank": 997,
+      "hanzi": "试图",
+      "pinyin": "shì tú",
+      "gloss": "to attempt; to try",
+      "count": 6150
+    },
+    {
+      "rank": 998,
+      "hanzi": "客气",
+      "pinyin": "kè qi",
+      "gloss": "polite; courteous",
+      "count": 6132
+    },
+    {
+      "rank": 999,
+      "hanzi": "文件",
+      "pinyin": "wén jìan",
+      "gloss": "document; file",
+      "count": 6132
+    },
+    {
+      "rank": 1000,
+      "hanzi": "敢",
+      "pinyin": "gǎn",
+      "gloss": "to dare; daring",
+      "count": 6118
+    }
+  ]
+}
