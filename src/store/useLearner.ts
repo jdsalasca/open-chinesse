@@ -17,12 +17,16 @@ import {
   type StoredCard,
 } from '../srs/scheduler';
 import { dayKey, streakDays, type ReviewRecord } from './metrics';
+import type { MissReason } from '../lib/miss';
 
 const LOG_LIMIT = 3000;
+
+export type Miss = { reason: MissReason; at: number };
 
 export type LearnerPayload = {
   cards: Record<string, StoredCard>;
   log: ReviewRecord[];
+  misses: Record<string, Miss>;
   lastEditAt: number;
   xp: number;
   stars: Record<string, number>;
@@ -32,6 +36,7 @@ export type LearnerPayload = {
 export type LearnerState = {
   cards: Record<string, StoredCard>;
   log: ReviewRecord[];
+  misses: Record<string, Miss>;
   createdAt: number;
   lastEditAt: number;
   xp: number;
@@ -42,6 +47,7 @@ export type LearnerState = {
   achievements: string[];
   introduceUnit: (unitId: string, now?: number) => void;
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
+  noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   refreshDay: (now?: number) => void;
   hydrate: (payload: string) => void;
@@ -64,6 +70,7 @@ const emptyState = () => {
   return {
     cards: {} as Record<string, StoredCard>,
     log: [] as ReviewRecord[],
+    misses: {} as Record<string, Miss>,
     createdAt: now,
     lastEditAt: now,
     xp: 0,
@@ -108,6 +115,11 @@ function gradeWord(store: Store, wordId: string, rating: Grade, now: number): vo
   });
 }
 
+function noteMiss(store: Store, wordId: string, reason: MissReason, now: number): void {
+  const { misses } = store.get();
+  store.set({ misses: { ...misses, [wordId]: { reason, at: now } }, lastEditAt: now });
+}
+
 function recordLesson(
   store: Store,
   unitId: string,
@@ -141,6 +153,7 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
   return {
     cards: asRecord<StoredCard>(parsed.cards),
     log: asArray<ReviewRecord>(parsed.log, []),
+    misses: asRecord<Miss>(parsed.misses),
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
@@ -163,6 +176,7 @@ export const useLearner = create<LearnerState>()(
         refreshDay: (now) => refreshDay(store, now),
         introduceUnit: (unitId, now = Date.now()) => introduceUnit(store, unitId, now),
         gradeWord: (wordId, rating, now = Date.now()) => gradeWord(store, wordId, rating, now),
+        noteMiss: (wordId, reason, now = Date.now()) => noteMiss(store, wordId, reason, now),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
           recordLesson(store, unitId, { correct, total }, now),
         hydrate: (payload) => hydrate(store, payload),
@@ -171,7 +185,7 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 3,
+      version: 4,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
@@ -183,11 +197,13 @@ export const useLearner = create<LearnerState>()(
           old.stars = {};
           old.achievements = [];
         }
+        if (version < 4) old.misses = {};
         return old as LearnerState;
       },
       partialize: (state) => ({
         cards: state.cards,
         log: state.log,
+        misses: state.misses,
         createdAt: state.createdAt,
         lastEditAt: state.lastEditAt,
         xp: state.xp,
@@ -211,6 +227,6 @@ export function completedUnits(cards: Record<string, StoredCard>): string[] {
 }
 
 export function exportPayload(): string {
-  const { cards, log, lastEditAt, xp, stars, achievements } = useLearner.getState();
-  return JSON.stringify({ cards, log, lastEditAt, xp, stars, achievements });
+  const { cards, log, misses, lastEditAt, xp, stars, achievements } = useLearner.getState();
+  return JSON.stringify({ cards, log, misses, lastEditAt, xp, stars, achievements });
 }

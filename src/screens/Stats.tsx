@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { navigate } from '../lib/router';
+import { reasonLabel } from '../lib/miss';
 import {
   accuracy,
   formatAccuracy,
   forecast,
   masteredCount,
+  missBreakdown,
   reviewsToday,
   streakDays,
 } from '../store/metrics';
@@ -18,6 +20,7 @@ const dayLabel = (key: string): string => {
 export function Stats() {
   const cards = useLearner((s) => s.cards);
   const log = useLearner((s) => s.log);
+  const misses = useLearner((s) => s.misses);
   const reset = useLearner((s) => s.reset);
   const [confirming, setConfirming] = useState(false);
 
@@ -26,6 +29,7 @@ export function Stats() {
   const peak = Math.max(1, ...days.map((d) => d.count));
   const total = Object.keys(cards).length;
   const learned = total === 0 ? '—' : `${masteredCount(cards)} / ${total}`;
+  const reasons = missBreakdown(misses);
 
   return (
     <div className="stats">
@@ -80,7 +84,30 @@ export function Stats() {
       </section>
 
       <section className="method method--stats" aria-labelledby="how-title">
-        <h2 id="how-title">Qué hay detrás</h2>
+        <h2 id="how-title">Por qué fallas</h2>
+        {reasons.length === 0 ? (
+          <p className="stats__lead">
+            Todavía no has anotado ningún motivo. Cuando falles una palabra en una lección, te
+            pregunto qué te confundió.
+          </p>
+        ) : (
+          <ul className="miss-list">
+            {reasons.map((item) => (
+              <li key={item.reason} className="miss-list__row">
+                <span>{reasonLabel(item.reason)}</span>
+                <strong>{item.count}</strong>
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="forecast__note">
+          El motivo no cambia el intervalo de FSRS: sirve para avisarte en el repaso y elegir qué
+          practicar.
+        </p>
+      </section>
+
+      <section className="method method--stats" aria-labelledby="how-title-2">
+        <h2 id="how-title-2">Qué hay detrás</h2>
         <ul className="method__list">
           <li>FSRS-6 con retención objetivo del 90%.</li>
           <li>Cuatro calificaciones con intervalo visible antes de elegir.</li>

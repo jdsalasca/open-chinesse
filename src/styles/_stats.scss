@@ -154,3 +154,27 @@
   gap: $space-3;
   align-items: center;
 }
+
+.miss-list {
+  display: grid;
+  gap: $space-1;
+  margin: 0 0 $space-3;
+  padding: 0;
+  list-style: none;
+}
+
+.miss-list__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background: $surface;
+}
+
+.miss-list__row strong {
+  font-family: $font-mono;
+  color: $mint-dark;
+}

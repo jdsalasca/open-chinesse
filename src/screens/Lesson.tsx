@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
+import { MissPicker } from '../components/MissPicker';
 import { OrderExercise } from '../components/OrderExercise';
 import { Pinyin } from '../components/Pinyin';
 import { Confetti } from '../components/ui/Confetti';
@@ -16,6 +17,7 @@ export function Lesson({ unitId }: { unitId: string }) {
   const unit = UNITS.find((u) => u.id === unitId);
   const introduceUnit = useLearner((s) => s.introduceUnit);
   const recordLesson = useLearner((s) => s.recordLesson);
+  const noteMiss = useLearner((s) => s.noteMiss);
   const recorded = useRef(false);
   const [phase, setPhase] = useState<'learn' | 'quiz' | 'done'>('learn');
   const [index, setIndex] = useState(0);
@@ -50,6 +52,7 @@ export function Lesson({ unitId }: { unitId: string }) {
   const questionWord = question ? ALL_WORDS.find((w) => w.id === question.wordId) : undefined;
 
   const finish = (correct: boolean) => {
+    if (!correct && quiz[index]?.mode === 'order') noteMiss(quiz[index].wordId, 'order');
     setAnswers((prev) => [...prev, correct]);
     setSelected(null);
     if (index + 1 < quiz.length) return setIndex(index + 1);
@@ -222,6 +225,12 @@ export function Lesson({ unitId }: { unitId: string }) {
                       ? 'Correcto.'
                       : `Era: ${questionWord.meaning}.`}
                   </p>
+                  {selected !== questionWord.meaning && (
+                    <MissPicker
+                      key={question.wordId}
+                      onPick={(reason) => noteMiss(questionWord.id, reason)}
+                    />
+                  )}
                   <button type="button" className="button button--primary" onClick={next} autoFocus>
                     {index + 1 === quiz.length ? 'Terminar' : 'Siguiente'}
                   </button>

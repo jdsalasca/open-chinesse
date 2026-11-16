@@ -4,6 +4,7 @@ import { CharacterLinks } from '../components/CharacterLinks';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
+import { reasonLabel } from '../lib/miss';
 import { navigate } from '../lib/router';
 import { speak } from '../lib/speech';
 import { matchesPinyin } from '../lib/tone';
@@ -24,6 +25,7 @@ const KEY_HINTS: Record<string, string> = { '1': '1', '2': '2', '3': '3', '4': '
 export function Review() {
   const cards = useLearner((s) => s.cards);
   const gradeWord = useLearner((s) => s.gradeWord);
+  const misses = useLearner((s) => s.misses);
 
   const [queue, setQueue] = useState<string[]>(
     () => buildQueue(useLearner.getState().cards, Date.now()).due,
@@ -37,6 +39,7 @@ export function Review() {
   const wordId = queue[cursor];
   const card = wordId ? cards[wordId] : undefined;
   const word = wordId ? WORDS_BY_ID.get(wordId) : undefined;
+  const miss = wordId ? misses[wordId] : undefined;
   const now = Date.now();
 
   useEffect(() => {
@@ -219,6 +222,12 @@ export function Review() {
               </p>
             )}
             <p className="flashcard__meaning">{word.meaning}</p>
+            {miss && (
+              <p className="review__miss">
+                La última vez falló por «{reasonLabel(miss.reason)}».
+                {miss.reason === 'sound' && ' Escúchala antes de calificar.'}
+              </p>
+            )}
             <div className="example">
               <div className="example__head">
                 <span className="example__label">En contexto</span>

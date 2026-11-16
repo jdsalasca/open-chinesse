@@ -266,3 +266,54 @@
   font-weight: 600;
   color: $jade;
 }
+
+// Autoexplicación tras un fallo --------------------------------------------
+.miss {
+  display: grid;
+  gap: $space-2;
+  margin-top: $space-3;
+  padding-top: $space-3;
+  border-top: 1px dashed $line-strong;
+  text-align: left;
+}
+
+.miss__question {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.miss__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.miss__option,
+.miss__skip {
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+  color: $ink;
+  font-size: 0.85rem;
+  cursor: pointer;
+  @include focus-ring;
+}
+
+.miss__option:hover,
+.miss__skip:hover {
+  border-color: $mint;
+  background: $mint-soft;
+  color: $mint-dark;
+}
+
+.miss__skip {
+  color: $muted;
+}
+
+.miss__done {
+  margin-top: $space-3;
+  font-size: 0.85rem;
+  color: $teal;
+}

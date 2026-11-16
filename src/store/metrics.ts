@@ -83,3 +83,17 @@ export function nextDueAt(cards: Record<string, StoredCard>, now: number): numbe
     .filter((time) => time > now);
   return future.length > 0 ? Math.min(...future) : null;
 }
+
+/** Cuenta los motivos de fallo registrados, de más a menos frecuente. */
+export function missBreakdown(misses: Record<string, { reason: string }>): {
+  reason: string;
+  count: number;
+}[] {
+  const counts = new Map<string, number>();
+  for (const miss of Object.values(misses)) {
+    counts.set(miss.reason, (counts.get(miss.reason) ?? 0) + 1);
+  }
+  return [...counts.entries()]
+    .map(([reason, count]) => ({ reason, count }))
+    .sort((a, b) => b.count - a.count);
+}
