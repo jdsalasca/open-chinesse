@@ -6,7 +6,7 @@ import { BottomNav } from './components/BottomNav';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
-import { ComingSoon } from './screens/ComingSoon';
+import { Stories } from './screens/Stories';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -33,12 +33,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   login: () => <Login />,
   profile: () => <Profile />,
   practice: () => <Practice />,
-  stories: () => (
-    <ComingSoon
-      title="Historias"
-      description="Cuentos cortos en chino con el vocabulario que ya viste, para leer sin traducir."
-    />
-  ),
+  stories: () => <Stories />,
   immersion: () => <Immersion />,
   tones: () => <Tones />,
 };

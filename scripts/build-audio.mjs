@@ -53,9 +53,21 @@ for (const char of Object.keys(characters)) {
   jobs.push({ kind: 'chars', id: `u${(char.codePointAt(0) ?? 0).toString(16)}`, text: char });
 }
 
+// Un mp3 por línea de historia o conversación.
+const storiesSource = readFileSync(join(DATA, 'stories.ts'), 'utf8');
+for (const block of storiesSource.split(/^  \{/m).slice(1)) {
+  const storyId = block.match(/id: '([^']+)'/)?.[1];
+  if (!storyId) continue;
+  [...block.matchAll(/say\('([^']+)'/g)].forEach((match, index) => {
+    const line = String(index + 1).padStart(2, '0');
+    jobs.push({ kind: 'stories', id: `${storyId}-${line}`, text: match[1] });
+  });
+}
+
 mkdirSync(join(OUT, 'words'), { recursive: true });
 mkdirSync(join(OUT, 'examples'), { recursive: true });
 mkdirSync(join(OUT, 'chars'), { recursive: true });
+mkdirSync(join(OUT, 'stories'), { recursive: true });
 mkdirSync(TMP, { recursive: true });
 
 const isDone = (job) => {

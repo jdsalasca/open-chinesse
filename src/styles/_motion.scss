@@ -1,0 +1,102 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Movimiento compartido: breve, respeta «reducir movimiento».
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main > * {
+  animation: fade-up 260ms $ease;
+}
+
+.progress span,
+.level-switch__bar span,
+.mini-bar span {
+  transition: width 420ms $ease;
+}
+
+.button,
+.grade,
+.option,
+.chip,
+.piece__tile {
+  transition:
+    transform $motion $ease,
+    background $motion $ease,
+    border-color $motion $ease,
+    color $motion $ease,
+    box-shadow $motion $ease;
+}
+
+.button:active,
+.grade:active,
+.option:active,
+.chip:active {
+  transform: scale(0.98);
+}
+
+.summary__stars svg {
+  animation: pop 320ms $ease;
+}
+
+.summary__stars svg:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.summary__stars svg:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.level-switch__bar {
+  display: block;
+  height: 4px;
+  margin-top: $space-2;
+  border-radius: $radius-pill;
+  background: $line;
+  overflow: hidden;
+}
+
+.level-switch__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, $teal, $mint);
+}
+
+@include reduced-motion {
+  .main > *,
+  .summary__stars svg {
+    animation: none;
+  }
+
+  .progress span,
+  .level-switch__bar span,
+  .mini-bar span,
+  .button,
+  .grade,
+  .option,
+  .chip,
+  .piece__tile {
+    transition: none;
+  }
+}

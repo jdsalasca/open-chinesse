@@ -208,6 +208,9 @@ export function Home() {
                   <span className="level-switch__meta">
                     {LEVEL_TITLES[item]} · {learned}/{total}
                   </span>
+                  <span className="level-switch__bar" aria-hidden="true">
+                    <span style={{ width: `${total > 0 ? (learned / total) * 100 : 0}%` }} />
+                  </span>
                 </button>
               );
             })}

@@ -1,0 +1,209 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.stories,
+.story-reader {
+  display: grid;
+  gap: $space-4;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.stories__head,
+.story-reader__title {
+  display: grid;
+  gap: $space-2;
+}
+
+.stories__lead,
+.story-reader__note,
+.stories__note {
+  margin: 0;
+  color: $muted;
+}
+
+.stories__grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.story-card {
+  @include surface($radius-lg, $shadow-md);
+  display: grid;
+  gap: $space-2;
+  padding: $space-4;
+  text-align: left;
+  cursor: pointer;
+  @include focus-ring;
+  transition:
+    transform $motion $ease,
+    box-shadow $motion $ease;
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: $shadow-lg;
+}
+
+.story-card__meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $mint-dark;
+  font-weight: 700;
+}
+
+.story-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.story-card__note {
+  color: $muted;
+  font-size: 0.9rem;
+}
+
+.story-card__cta {
+  color: $mint-dark;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.story-reader__back {
+  justify-self: start;
+}
+
+.story-lines {
+  display: grid;
+  gap: $space-4;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: line;
+}
+
+.story-line {
+  display: grid;
+  gap: $space-1;
+  padding-bottom: $space-3;
+  border-bottom: 1px dashed $line;
+}
+
+.story-line:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.story-line__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.story-line__hanzi {
+  margin: 0;
+  @include hanzi(1.5rem);
+  line-height: 1.5;
+}
+
+.story-line__word {
+  appearance: none;
+  padding: 0 2px;
+  border: 0;
+  border-radius: $radius-sm;
+  background: none;
+  color: $ink;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background $motion $ease,
+    color $motion $ease;
+  @include focus-ring;
+}
+
+.story-line__word:hover,
+.story-line__word.is-picked {
+  background: $mint-soft;
+  color: $mint-dark;
+}
+
+.story-line__pinyin {
+  font-size: 0.9rem;
+  color: $teal;
+}
+
+.story-line__translation {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.gloss {
+  position: sticky;
+  bottom: $space-4;
+  display: grid;
+  gap: $space-1;
+  padding: $space-3 $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  box-shadow: $shadow-lg;
+  animation: rise 180ms $ease;
+}
+
+.gloss__head {
+  margin: 0;
+  @include hanzi(1.4rem);
+}
+
+.gloss__pinyin {
+  color: $teal;
+  font-size: 0.95rem;
+}
+
+.gloss__meaning {
+  margin: 0;
+  font-weight: 600;
+}
+
+.gloss__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+}
+
+.story-reader__hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@include reduced-motion {
+  .story-card,
+  .story-line__word,
+  .gloss {
+    transition: none;
+    animation: none;
+  }
+}
+
+// En móvil la barra inferior no debe tapar la glosa.
+@media (max-width: 719px) {
+  .gloss {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+}
