@@ -172,5 +172,17 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [ ] Notas de uso en palabras que se confunden (二/两, 几/多少, 的/得).
 - [ ] Escenarios con voz propia del aprendiz (grabación o evaluación).
 
+### C2 — Origen en capas y ayudas
+
+- [x] La ficha abre centrada; cada pieza encadena una capa a la derecha con
+      offsets de Fibonacci (34, 55, 89, 144, 233 px), hasta seis.
+- [x] Paneles anteriores en segundo plano, migas de pan, «Atrás» y salto a
+      cualquier capa.
+- [x] Comparación didáctica entre fichas: relación (radical, componente, familia
+      fonética), lecturas y una nota de qué mirar.
+- [x] Todas las piezas abren su ficha; «+ dentro» solo despliega.
+- [x] Ayudas conmutables de pinyin y traducción en las situaciones.
+- [ ] Recuperación inversa y dictado (propuestas de terra).
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

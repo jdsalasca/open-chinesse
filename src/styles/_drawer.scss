@@ -2,41 +2,83 @@
 @use 'mixins' as *;
 
 .drawer {
+  --fan: 1;
+
   position: fixed;
   inset: 0;
   z-index: 60;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  place-items: center;
+  padding: 5vh $space-4;
+
+  @media (max-width: 1200px) {
+    --fan: 0.55;
+  }
 }
 
 .drawer__scrim {
   position: absolute;
   inset: 0;
   border: 0;
-  background: rgb(31 36 48 / 38%);
+  background: rgb(6 36 28 / 46%);
   cursor: pointer;
   animation: fade-in 180ms $ease;
 }
 
 .drawer__panel {
-  position: relative;
+  position: absolute;
+  top: 8vh;
+  left: 50%;
   display: flex;
   flex-direction: column;
-  width: min(520px, 100%);
-  height: 100%;
+  width: min(560px, calc(100vw - 32px));
+  height: min(82vh, 780px);
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 24px;
   background: $paper;
-  box-shadow: $shadow-lg;
-  animation: slide-in 240ms $ease;
+  box-shadow:
+    0 40px 90px -40px rgb(6 36 28 / 55%),
+    0 0 0 1px rgb(255 255 255 / 55%) inset;
+  transform: translateX(calc(-50% + var(--layer-x, 0px) * var(--fan)))
+    translateY(calc(var(--layer-y, 0px) * var(--fan))) scale(var(--layer-scale, 1));
+  transform-origin: top center;
+  transition:
+    transform 260ms $ease,
+    opacity 260ms $ease;
+  animation: drawer-fade 220ms $ease;
+  outline: none;
+
+  &.is-active {
+    box-shadow:
+      0 50px 100px -40px rgb(6 36 28 / 65%),
+      0 0 0 1px rgb(255 255 255 / 60%) inset;
+  }
+
+  &:not(.is-active) {
+    opacity: 0.78;
+    filter: saturate(0.72);
+    pointer-events: none;
+  }
 }
 
 .drawer__head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: $space-3;
+  gap: $space-2 $space-3;
   padding: $space-3 $space-4;
   border-bottom: 1px solid $line;
   background: $surface;
+}
+
+.drawer__head-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+  min-width: 0;
 }
 
 .drawer__pager {
@@ -55,12 +97,13 @@
   background: $surface;
   color: $ink;
   cursor: pointer;
-  @include focus-ring;
-}
 
-.drawer__btn:hover {
-  border-color: $mint;
-  color: $mint-dark;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $mint;
+    color: $mint-dark;
+  }
 }
 
 .drawer__count {
@@ -69,17 +112,82 @@
   color: $muted;
 }
 
-.drawer__actions {
+.drawer__crumb {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: $space-3;
+  gap: 2px;
+}
+
+.drawer__crumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.drawer__crumb-sep {
+  color: $line-strong;
   font-size: 0.85rem;
 }
 
+.drawer__crumb-btn {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 5px;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  background: transparent;
+  color: $ink-soft;
+  font-family: $font-hanzi;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  @include focus-ring;
+
+  &:hover {
+    background: $paper-deep;
+  }
+
+  &.is-current {
+    background: $forest;
+    color: #fff;
+  }
+}
+
+.drawer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+  margin-left: auto;
+}
+
+.drawer__action {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: $muted;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include focus-ring;
+
+  &:hover {
+    color: $ink;
+  }
+}
+
 .drawer__body {
+  flex: 1;
   overflow-y: auto;
   padding: $space-4;
   padding-bottom: calc(#{$space-6} + env(safe-area-inset-bottom));
+  scroll-behavior: smooth;
 }
 
 .drawer__body .character__head {
@@ -90,27 +198,91 @@
   font-size: clamp(3rem, 10vw, 4.5rem);
 }
 
-@keyframes slide-in {
+.drawer__compare {
+  display: grid;
+  gap: 4px;
+  margin-bottom: $space-3;
+  padding: $space-3 $space-4;
+  border: 1px solid rgb(0 168 107 / 22%);
+  border-radius: $radius;
+  background: $mint-soft;
+}
+
+.drawer__relation {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $mint-dark;
+}
+
+.drawer__pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: $space-2;
+  margin: 0;
+  @include hanzi(1.4rem);
+
+  span {
+    color: $ink;
+  }
+
+  small {
+    font-family: $font-ui;
+    font-size: 0.82rem;
+    color: $teal;
+  }
+}
+
+.drawer__note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: $ink-soft;
+}
+
+@keyframes drawer-fade {
   from {
-    transform: translateX(24px);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
     opacity: 1;
   }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 899px) {
   .drawer {
     align-items: flex-end;
+    padding: 0;
   }
 
   .drawer__panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: min(88vh, 100%);
+    height: min(92vh, 100%);
     border-radius: $radius-lg $radius-lg 0 0;
+    transform: none;
     animation: sheet-in 240ms $ease;
+
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+
+  .drawer__head {
+    padding: $space-3;
+  }
+
+  .drawer__head-left.has-trail {
+    width: 100%;
+  }
+
+  .drawer__actions {
+    justify-content: flex-end;
+    gap: $space-2;
   }
 }
 
@@ -127,7 +299,10 @@
 
 @include reduced-motion {
   .drawer__scrim,
-  .drawer__panel {
+  .drawer__panel,
+  .drawer__body {
     animation: none;
+    transition: none;
+    scroll-behavior: auto;
   }
 }

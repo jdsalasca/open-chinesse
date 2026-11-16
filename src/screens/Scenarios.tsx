@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { PageHeader } from '../components/PageHeader';
 import { SessionHeader } from '../components/SessionHeader';
@@ -15,15 +15,27 @@ import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
 type ChoiceStep = Extract<ScenarioStep, { kind: 'choice' }>;
+type Aids = { pinyin: boolean; translation: boolean };
+
+function BubbleText({ line, aids }: { line: ScenarioLine; aids: Aids }) {
+  return (
+    <>
+      {aids.pinyin && <p className="bubble__pinyin">{line.pinyin}</p>}
+      {aids.translation && <p className="bubble__translation">{line.translation}</p>}
+    </>
+  );
+}
 
 function Bubble({
   line,
   audioId,
   mine = false,
+  aids,
 }: {
   line: ScenarioLine;
   audioId?: string;
   mine?: boolean;
+  aids: Aids;
 }) {
   return (
     <div className={`bubble${mine ? ' bubble--mine' : ''}`}>
@@ -40,8 +52,7 @@ function Bubble({
           />
         )}
       </div>
-      <p className="bubble__pinyin">{line.pinyin}</p>
-      <p className="bubble__translation">{line.translation}</p>
+      <BubbleText line={line} aids={aids} />
     </div>
   );
 }
@@ -80,12 +91,14 @@ function OptionButton({
   picked,
   wrong,
   onPick,
+  aids,
 }: {
   option: ScenarioOption;
   index: number;
   picked: number | null;
   wrong: number[];
   onPick: (index: number, correct: boolean) => void;
+  aids: Aids;
 }) {
   const chosen = picked === index;
   const missed = wrong.includes(index);
@@ -99,8 +112,8 @@ function OptionButton({
       <span className="choice__hanzi" lang="zh-Hans">
         {option.hanzi}
       </span>
-      <span className="choice__pinyin">{option.pinyin}</span>
-      <span className="choice__meaning">{option.translation}</span>
+      {aids.pinyin && <span className="choice__pinyin">{option.pinyin}</span>}
+      {aids.translation && <span className="choice__meaning">{option.translation}</span>}
     </button>
   );
 }
@@ -139,6 +152,36 @@ function ChoiceResult({
   );
 }
 
+function ChoiceOptions({
+  step,
+  picked,
+  wrong,
+  onPick,
+  aids,
+}: {
+  step: ChoiceStep;
+  picked: number | null;
+  wrong: number[];
+  onPick: (index: number, correct: boolean) => void;
+  aids: Aids;
+}) {
+  return (
+    <div className="choice__options">
+      {step.options.map((option, index) => (
+        <OptionButton
+          key={option.hanzi}
+          option={option}
+          index={index}
+          picked={picked}
+          wrong={wrong}
+          onPick={onPick}
+          aids={aids}
+        />
+      ))}
+    </div>
+  );
+}
+
 function Choice({
   step,
   audioId,
@@ -147,6 +190,7 @@ function Choice({
   last,
   onPick,
   onNext,
+  aids,
 }: {
   step: ChoiceStep;
   audioId: string;
@@ -155,23 +199,13 @@ function Choice({
   last: boolean;
   onPick: (index: number, correct: boolean) => void;
   onNext: () => void;
+  aids: Aids;
 }) {
   return (
     <div className="choice">
-      <Bubble line={step.prompt} audioId={audioId} />
+      <Bubble line={step.prompt} audioId={audioId} aids={aids} />
       <p className="choice__prompt">Elige tu respuesta</p>
-      <div className="choice__options">
-        {step.options.map((option, index) => (
-          <OptionButton
-            key={option.hanzi}
-            option={option}
-            index={index}
-            picked={picked}
-            wrong={wrong}
-            onPick={onPick}
-          />
-        ))}
-      </div>
+      <ChoiceOptions step={step} picked={picked} wrong={wrong} onPick={onPick} aids={aids} />
       <ChoiceResult step={step} picked={picked} wrong={wrong} last={last} onNext={onNext} />
     </div>
   );
@@ -182,15 +216,17 @@ function LineStep({
   audioId,
   last,
   onNext,
+  aids,
 }: {
   line: ScenarioLine;
   audioId: string;
   last: boolean;
   onNext: () => void;
+  aids: Aids;
 }) {
   return (
     <>
-      <Bubble line={line} audioId={audioId} />
+      <Bubble line={line} audioId={audioId} aids={aids} />
       <div className="chat__advance">
         <button type="button" className="button button--primary" onClick={onNext} autoFocus>
           {last ? 'Ver resumen' : 'Continuar'}
@@ -204,19 +240,21 @@ function HistoryStep({
   scenario,
   step,
   answer,
+  aids,
 }: {
   scenario: Scenario;
   step: ScenarioStep;
   answer?: number;
+  aids: Aids;
 }) {
   if (step.kind === 'line') {
-    return <Bubble line={step.line} audioId={`${scenario.id}-${step.line.id}`} />;
+    return <Bubble line={step.line} audioId={`${scenario.id}-${step.line.id}`} aids={aids} />;
   }
   return (
     <>
-      <Bubble line={step.prompt} audioId={`${scenario.id}-${step.prompt.id}`} />
+      <Bubble line={step.prompt} audioId={`${scenario.id}-${step.prompt.id}`} aids={aids} />
       {answer !== undefined && (
-        <Bubble line={{ id: 'answer', speaker: 'yo', ...step.options[answer] }} mine />
+        <Bubble line={{ id: 'answer', speaker: 'yo', ...step.options[answer] }} mine aids={aids} />
       )}
     </>
   );
@@ -226,10 +264,12 @@ function History({
   scenario,
   index,
   answers,
+  aids,
 }: {
   scenario: Scenario;
   index: number;
   answers: number[];
+  aids: Aids;
 }) {
   return (
     <>
@@ -239,6 +279,7 @@ function History({
           scenario={scenario}
           step={step}
           answer={answers[stepIndex]}
+          aids={aids}
         />
       ))}
     </>
@@ -305,9 +346,120 @@ function useScenarioPlay(scenario: Scenario) {
   return { index, answers, picked, wrong, endRef, step, pick, next, reset };
 }
 
+function AidsBar({ aids, onToggle }: { aids: Aids; onToggle: (key: keyof Aids) => void }) {
+  return (
+    <div className="scenario__tools" role="group" aria-label="Ayudas de lectura">
+      <span className="scenario__tools-label">Ayudas</span>
+      <button
+        type="button"
+        className={`scenario__tool${aids.pinyin ? ' is-on' : ''}`}
+        aria-pressed={aids.pinyin}
+        onClick={() => onToggle('pinyin')}
+      >
+        Pinyin
+      </button>
+      <button
+        type="button"
+        className={`scenario__tool${aids.translation ? ' is-on' : ''}`}
+        aria-pressed={aids.translation}
+        onClick={() => onToggle('translation')}
+      >
+        Traducción
+      </button>
+    </div>
+  );
+}
+
+function CurrentStep({
+  scenario,
+  index,
+  step,
+  picked,
+  wrong,
+  aids,
+  onPick,
+  onNext,
+}: {
+  scenario: Scenario;
+  index: number;
+  step: ScenarioStep;
+  picked: number | null;
+  wrong: number[];
+  aids: Aids;
+  onPick: (index: number, correct: boolean) => void;
+  onNext: () => void;
+}) {
+  const last = index + 1 === scenario.steps.length;
+  if (step.kind === 'line') {
+    return (
+      <LineStep
+        line={step.line}
+        audioId={`${scenario.id}-${step.line.id}`}
+        last={last}
+        onNext={onNext}
+        aids={aids}
+      />
+    );
+  }
+  return (
+    <Choice
+      step={step}
+      audioId={`${scenario.id}-${step.prompt.id}`}
+      picked={picked}
+      wrong={wrong}
+      last={last}
+      onPick={onPick}
+      onNext={onNext}
+      aids={aids}
+    />
+  );
+}
+
+function ScenarioChat({
+  scenario,
+  index,
+  answers,
+  step,
+  picked,
+  wrong,
+  aids,
+  onPick,
+  onNext,
+  endRef,
+}: {
+  scenario: Scenario;
+  index: number;
+  answers: number[];
+  step: ScenarioStep;
+  picked: number | null;
+  wrong: number[];
+  aids: Aids;
+  onPick: (index: number, correct: boolean) => void;
+  onNext: () => void;
+  endRef: RefObject<HTMLDivElement | null>;
+}) {
+  return (
+    <div className="chat">
+      <History scenario={scenario} index={index} answers={answers} aids={aids} />
+      <CurrentStep
+        scenario={scenario}
+        index={index}
+        step={step}
+        picked={picked}
+        wrong={wrong}
+        aids={aids}
+        onPick={onPick}
+        onNext={onNext}
+      />
+      <div ref={endRef} />
+    </div>
+  );
+}
+
 function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
   const { index, answers, picked, wrong, endRef, step, pick, next, reset } =
     useScenarioPlay(scenario);
+  const [aids, setAids] = useState<Aids>({ pinyin: true, translation: true });
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -322,29 +474,22 @@ function ScenarioPlayer({ scenario }: { scenario: Scenario }) {
         count={`${index + 1} / ${scenario.steps.length}`}
         onExit={() => navigate('/situaciones')}
       />
-      <p className="scenario__goal">{scenario.goal}</p>
-      <div className="chat">
-        <History scenario={scenario} index={index} answers={answers} />
-        {step.kind === 'line' ? (
-          <LineStep
-            line={step.line}
-            audioId={`${scenario.id}-${step.line.id}`}
-            last={index + 1 === scenario.steps.length}
-            onNext={next}
-          />
-        ) : (
-          <Choice
-            step={step}
-            audioId={`${scenario.id}-${step.prompt.id}`}
-            picked={picked}
-            wrong={wrong}
-            last={index + 1 === scenario.steps.length}
-            onPick={pick}
-            onNext={next}
-          />
-        )}
-        <div ref={endRef} />
+      <div className="scenario__meta">
+        <p className="scenario__goal">{scenario.goal}</p>
+        <AidsBar aids={aids} onToggle={(key) => setAids({ ...aids, [key]: !aids[key] })} />
       </div>
+      <ScenarioChat
+        scenario={scenario}
+        index={index}
+        answers={answers}
+        step={step}
+        picked={picked}
+        wrong={wrong}
+        aids={aids}
+        onPick={pick}
+        onNext={next}
+        endRef={endRef}
+      />
     </div>
   );
 }

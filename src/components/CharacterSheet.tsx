@@ -56,29 +56,6 @@ function History({ data }: { data: CharacterSheetData }) {
   );
 }
 
-function ToggleTile({
-  char,
-  open,
-  onToggle,
-}: {
-  char: string;
-  open: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      className="piece__tile is-expandable"
-      aria-expanded={open}
-      aria-label={`${open ? 'Contraer' : 'Desplegar'} ${char}`}
-      onClick={onToggle}
-      lang="zh-Hans"
-    >
-      {char}
-    </button>
-  );
-}
-
 function CharTile({ char, onOpen }: { char: string; onOpen?: (char: string) => void }) {
   if (onOpen) {
     return (
@@ -120,17 +97,14 @@ function Piece({ node, onOpen }: { node: SheetNode; onOpen?: (char: string) => v
   return (
     <li className="ids__item ids__item--char">
       <div className="piece">
-        {expandable ? (
-          <ToggleTile char={node.char} open={open} onToggle={() => setOpen(!open)} />
-        ) : (
-          <CharTile char={node.char} onOpen={onOpen} />
-        )}
+        <CharTile char={node.char} onOpen={onOpen} />
         <span className="piece__label">{node.label ?? '—'}</span>
         {expandable && (
           <button
             type="button"
             className="piece__inside"
             onClick={() => setOpen(!open)}
+            aria-expanded={open}
             aria-label={`${open ? 'Contraer' : 'Desplegar'} ${node.char}`}
           >
             {open ? '− dentro' : '+ dentro'}
@@ -167,7 +141,7 @@ function Composition({
     <Card>
       <h2 className="character__title">Cómo se compone</h2>
       <p className="character__note">
-        Las piezas con «+ dentro» se abren aquí; las demás llevan a su ficha.
+        Toca un carácter para abrir su ficha; «+ dentro» muestra sus piezas.
       </p>
       {data.pieces.length > 0 ? (
         <Tree nodes={data.pieces} onOpen={onOpen} />
