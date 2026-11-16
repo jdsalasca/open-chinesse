@@ -1,0 +1,20 @@
+services:
+  app:
+    image: eclipse-temurin:25-jre
+    container_name: open-chinesse
+    restart: unless-stopped
+    working_dir: /app
+    command: ["java", "-Xms192m", "-Xmx448m", "-jar", "/app/app.jar"]
+    environment:
+      SERVER_PORT: "8091"
+      OPEN_CHINESE_DB: /data/open-chinesse
+      OPEN_CHINESE_BASE_URL: ${OPEN_CHINESE_BASE_URL:-https://open-chinesse.eridu.top}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+    volumes:
+      - ./app.jar:/app/app.jar:ro
+      - ./data:/data
+    ports:
+      - "127.0.0.1:8091:8091"

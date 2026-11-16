@@ -25,3 +25,6 @@ dist-ssr
 
 # Capturas locales de QA
 .screens/
+
+# Dataset temporal de vocabulario
+.tmp/
