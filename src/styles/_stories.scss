@@ -74,6 +74,25 @@
   justify-self: start;
 }
 
+.story-listen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+}
+
+.story-listen .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.story-listen__meta {
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  color: $muted;
+}
+
 .story-lines {
   display: grid;
   gap: $space-4;
@@ -93,6 +112,13 @@
 .story-line:last-child {
   border-bottom: 0;
   padding-bottom: 0;
+}
+
+.story-line.is-active {
+  border-bottom-color: transparent;
+  border-radius: $radius;
+  background: $mint-soft;
+  box-shadow: 0 0 0 $space-2 $mint-soft;
 }
 
 .story-line__head {
@@ -126,7 +152,8 @@
 }
 
 .story-line__word:hover,
-.story-line__word.is-picked {
+.story-line__word.is-picked,
+.story-line__word.is-preview {
   background: $mint-soft;
   color: $mint-dark;
   outline: 2px solid $mint;

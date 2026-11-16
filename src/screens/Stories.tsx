@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
 import { Card } from '../components/ui/Card';
+import { Icon } from '../components/ui/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { WORDS_BY_ID, type Word } from '../data/curriculum';
 import { STORIES, type Line, type Story } from '../data/stories';
@@ -17,6 +18,35 @@ for (const word of WORDS_BY_ID.values()) {
 }
 
 type Pick = { chunk: string; word?: Word };
+
+function lineAudio(storyId: string, index: number): string {
+  return audioUrl('stories', `${storyId}-${String(index + 1).padStart(2, '0')}`);
+}
+
+function startLine(params: {
+  box: RefObject<HTMLAudioElement | null>;
+  story: Story;
+  index: number;
+  onEnded: () => void;
+  onError: () => void;
+}): void {
+  const { box, story, index, onEnded, onError } = params;
+  box.current?.pause();
+  const audio = new Audio(lineAudio(story.id, index));
+  audio.onended = onEnded;
+  audio.onerror = onError;
+  box.current = audio;
+  void audio.play().catch(onError);
+}
+
+function useFollowLine(current: number): void {
+  useEffect(() => {
+    if (current < 0) return;
+    document
+      .getElementById(`story-line-${current}`)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [current]);
+}
 
 function StoryCard({ story, onOpen }: { story: Story; onOpen: () => void }) {
   const [zh, es] = story.title.split(' · ');
@@ -35,41 +65,112 @@ function StoryCard({ story, onOpen }: { story: Story; onOpen: () => void }) {
   );
 }
 
-function LineView({
+function WordButtons({
+  line,
+  picked,
+  previewed,
+  onPick,
+  onPreview,
+}: {
+  line: Line;
+  picked: string | null;
+  previewed: string | null;
+  onPick: (pick: Pick) => void;
+  onPreview: (pick: Pick | null) => void;
+}) {
+  const chunks = withKeys(segment(line.hanzi), (chunk) => chunk);
+  const pick = (chunk: string): Pick => ({ chunk, word: BY_HANZI.get(chunk) });
+  return (
+    <p className="story-line__hanzi" lang="zh-Hans">
+      {chunks.map(({ item: chunk, key }) => (
+        <button
+          key={key}
+          type="button"
+          className={`story-line__word${picked === chunk ? ' is-picked' : ''}${previewed === chunk ? ' is-preview' : ''}`}
+          onClick={() => onPick(pick(chunk))}
+          onMouseEnter={() => onPreview(pick(chunk))}
+          onMouseLeave={() => onPreview(null)}
+          onFocus={() => onPreview(pick(chunk))}
+          onBlur={() => onPreview(null)}
+          lang="zh-Hans"
+        >
+          {chunk}
+        </button>
+      ))}
+    </p>
+  );
+}
+
+function LineHead({
   line,
   audioId,
-  onPick,
   picked,
+  previewed,
+  listening,
+  onPick,
+  onPreview,
 }: {
   line: Line;
   audioId: string;
-  onPick: (pick: Pick) => void;
   picked: string | null;
+  previewed: string | null;
+  listening: boolean;
+  onPick: (pick: Pick) => void;
+  onPreview: (pick: Pick | null) => void;
 }) {
-  const chunks = withKeys(segment(line.hanzi), (chunk) => chunk);
   return (
-    <li className="story-line">
-      <div className="story-line__head">
-        <p className="story-line__hanzi" lang="zh-Hans">
-          {chunks.map(({ item: chunk, key }) => (
-            <button
-              key={key}
-              type="button"
-              className={`story-line__word${picked === chunk ? ' is-picked' : ''}`}
-              onClick={() => onPick({ chunk, word: BY_HANZI.get(chunk) })}
-              lang="zh-Hans"
-            >
-              {chunk}
-            </button>
-          ))}
-        </p>
+    <div className="story-line__head">
+      <WordButtons
+        line={line}
+        picked={picked}
+        previewed={previewed}
+        onPick={onPick}
+        onPreview={onPreview}
+      />
+      {!listening && (
         <AudioButton
           text={line.hanzi}
           label="la frase"
           src={audioUrl('stories', audioId)}
           compact
         />
-      </div>
+      )}
+    </div>
+  );
+}
+
+function LineView({
+  line,
+  index,
+  audioId,
+  onPick,
+  onPreview,
+  picked,
+  previewed,
+  active,
+  listening,
+}: {
+  line: Line;
+  index: number;
+  audioId: string;
+  onPick: (pick: Pick) => void;
+  onPreview: (pick: Pick | null) => void;
+  picked: string | null;
+  previewed: string | null;
+  active: boolean;
+  listening: boolean;
+}) {
+  return (
+    <li className={`story-line${active ? ' is-active' : ''}`} id={`story-line-${index}`}>
+      <LineHead
+        line={line}
+        audioId={audioId}
+        picked={picked}
+        previewed={previewed}
+        listening={listening}
+        onPick={onPick}
+        onPreview={onPreview}
+      />
       <Pinyin pinyin={line.pinyin} className="story-line__pinyin" />
       <p className="story-line__translation">{line.translation}</p>
     </li>
@@ -106,7 +207,7 @@ function GlossWord({
   );
 }
 
-function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
+function Gloss({ pick, pinned, onClose }: { pick: Pick; pinned: boolean; onClose: () => void }) {
   const openChar = useCharacterView((state) => state.open);
   const base = pick.chunk.replace(/[，。！？、：；]+$/u, '') || pick.chunk;
   const word = pick.word ?? BY_HANZI.get(base);
@@ -121,15 +222,160 @@ function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
       ) : (
         <p className="gloss__meaning">Esta pieza no es una palabra suelta del curso.</p>
       )}
-      <button type="button" className="link" onClick={onClose}>
-        Cerrar
-      </button>
+      {pinned && (
+        <button type="button" className="link" onClick={onClose}>
+          Cerrar
+        </button>
+      )}
     </div>
+  );
+}
+
+function ListenBar({
+  playing,
+  current,
+  total,
+  onToggle,
+  onStop,
+}: {
+  playing: boolean;
+  current: number;
+  total: number;
+  onToggle: () => void;
+  onStop: () => void;
+}) {
+  return (
+    <div className="story-listen">
+      <button
+        type="button"
+        className="button button--primary"
+        onClick={onToggle}
+        aria-pressed={playing}
+      >
+        <Icon name="speaker" size={16} />
+        {playing ? 'Pausar' : current >= 0 ? 'Seguir' : 'Escuchar la historia'}
+      </button>
+      {current >= 0 && (
+        <span className="story-listen__meta">
+          {playing ? 'Línea' : 'Pausado en'} {current + 1} de {total}
+        </span>
+      )}
+      {current >= 0 && (
+        <button type="button" className="link" onClick={onStop}>
+          Detener
+        </button>
+      )}
+    </div>
+  );
+}
+
+function usePlayback(
+  story: Story,
+  audioRef: RefObject<HTMLAudioElement | null>,
+  setPlaying: (playing: boolean) => void,
+  setCurrent: (index: number) => void,
+) {
+  function playFrom(index: number) {
+    setPlaying(true);
+    startLine({
+      box: audioRef,
+      story,
+      index,
+      onEnded: () => advance(index),
+      onError: () => setPlaying(false),
+    });
+  }
+
+  function advance(index: number) {
+    if (index + 1 < story.lines.length) {
+      setCurrent(index + 1);
+      playFrom(index + 1);
+    } else {
+      setPlaying(false);
+      setCurrent(-1);
+    }
+  }
+
+  return playFrom;
+}
+
+function useStoryAudio(story: Story) {
+  const [playing, setPlaying] = useState(false);
+  const [current, setCurrent] = useState(-1);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const playFrom = usePlayback(story, audioRef, setPlaying, setCurrent);
+
+  useEffect(() => () => audioRef.current?.pause(), []);
+
+  const stop = () => {
+    audioRef.current?.pause();
+    audioRef.current = null;
+    setPlaying(false);
+    setCurrent(-1);
+  };
+
+  const toggle = () => {
+    if (playing) {
+      audioRef.current?.pause();
+      return setPlaying(false);
+    }
+    if (current < 0) {
+      setCurrent(0);
+      return playFrom(0);
+    }
+    const audio = audioRef.current;
+    if (!audio) return playFrom(current);
+    setPlaying(true);
+    void audio.play().catch(() => setPlaying(false));
+  };
+
+  return { playing, current, toggle, stop };
+}
+
+function StoryLines({
+  story,
+  pick,
+  preview,
+  audio,
+  onPick,
+  onPreview,
+}: {
+  story: Story;
+  pick: Pick | null;
+  preview: Pick | null;
+  audio: ReturnType<typeof useStoryAudio>;
+  onPick: (pick: Pick) => void;
+  onPreview: (pick: Pick | null) => void;
+}) {
+  return (
+    <Card>
+      <ol className="story-lines">
+        {withKeys(story.lines, (line) => line.hanzi).map(({ item: line, key }, index) => (
+          <LineView
+            key={key}
+            line={line}
+            index={index}
+            audioId={`${story.id}-${String(index + 1).padStart(2, '0')}`}
+            onPick={onPick}
+            onPreview={onPreview}
+            picked={pick?.chunk ?? null}
+            previewed={preview?.chunk ?? null}
+            active={audio.current === index}
+            listening={audio.playing}
+          />
+        ))}
+      </ol>
+    </Card>
   );
 }
 
 function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
   const [pick, setPick] = useState<Pick | null>(null);
+  const [preview, setPreview] = useState<Pick | null>(null);
+  const audio = useStoryAudio(story);
+  const shown = pick ?? preview;
+  useFollowLine(audio.current);
+
   return (
     <article className="story-reader">
       <button type="button" className="link story-reader__back" onClick={onBack}>
@@ -137,23 +383,27 @@ function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
       </button>
       <h1 className="story-reader__title">{story.title}</h1>
       <p className="story-reader__note">{story.note}</p>
-      <Card>
-        <ol className="story-lines">
-          {withKeys(story.lines, (line) => line.hanzi).map(({ item: line, key }, index) => (
-            <LineView
-              key={key}
-              line={line}
-              audioId={`${story.id}-${String(index + 1).padStart(2, '0')}`}
-              onPick={setPick}
-              picked={pick?.chunk ?? null}
-            />
-          ))}
-        </ol>
-      </Card>
-      {pick ? (
-        <Gloss pick={pick} onClose={() => setPick(null)} />
+      <ListenBar
+        playing={audio.playing}
+        current={audio.current}
+        total={story.lines.length}
+        onToggle={audio.toggle}
+        onStop={audio.stop}
+      />
+      <StoryLines
+        story={story}
+        pick={pick}
+        preview={preview}
+        audio={audio}
+        onPick={setPick}
+        onPreview={setPreview}
+      />
+      {shown ? (
+        <Gloss pick={shown} pinned={pick !== null} onClose={() => setPick(null)} />
       ) : (
-        <p className="story-reader__hint">Toca cualquier palabra para ver qué significa.</p>
+        <p className="story-reader__hint">
+          Pasa el cursor o toca cualquier palabra para ver su significado.
+        </p>
       )}
     </article>
   );
@@ -168,7 +418,7 @@ export function Stories({ storyId }: { storyId?: string }) {
       <PageHeader
         eyebrow="Historias"
         title="Chino que ya puedes leer"
-        lead="Textos cortos hechos solo con vocabulario del curso. Audio por frase y glosa al tocar cualquier palabra."
+        lead="Textos cortos hechos solo con vocabulario del curso. Escúchalos seguidos, con la línea iluminada, y pasa el cursor por cualquier palabra para ver qué significa."
       />
       <div className="stories__grid">
         {STORIES.map((item) => (

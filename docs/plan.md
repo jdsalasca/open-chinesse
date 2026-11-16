@@ -249,5 +249,16 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Plural corregido en la insignia de racha («1 día», no «1 días»).
 - [ ] Extraer el ancho dinámico de las barras a una variable CSS sin `style`.
 
+### C8 — Mecánicas de lectura
+
+- [x] Glosa al pasar el cursor o enfocar una palabra de una historia; el clic
+      la fija y permite cerrarla.
+- [x] Modo de escucha continua de la historia: play, pausa, seguir y detener,
+      con la línea activa iluminada y desplazamiento automático.
+- [x] Audio de las 45 líneas de historia regenerado: estaba truncado
+      (0,7–1,1 s por frase); ahora dura 1,55 s de media.
+- [x] Mapa de mecánicas pendientes en `docs/roadmap-mecanicas.md`, priorizado
+      por impacto y coste.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.
