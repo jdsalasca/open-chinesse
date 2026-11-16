@@ -1,0 +1,3092 @@
+{
+  "一": {
+    "ids": "一",
+    "radical": "一",
+    "strokes": 1
+  },
+  "七": {
+    "ids": "⿻㇀乚",
+    "radical": "一",
+    "strokes": 2
+  },
+  "万": {
+    "ids": "⿱一⿰丿𠃌",
+    "radical": "一",
+    "strokes": 3
+  },
+  "丈": {
+    "ids": "丈",
+    "radical": "一",
+    "strokes": 3
+  },
+  "三": {
+    "ids": "⿱一二",
+    "radical": "一",
+    "strokes": 3
+  },
+  "上": {
+    "ids": "⿱⺊一",
+    "radical": "一",
+    "strokes": 3
+  },
+  "下": {
+    "ids": "⿱一卜",
+    "radical": "一",
+    "strokes": 3
+  },
+  "不": {
+    "ids": "⿱一③",
+    "radical": "一",
+    "strokes": 4
+  },
+  "且": {
+    "ids": "且",
+    "radical": "一",
+    "strokes": 5
+  },
+  "世": {
+    "ids": "世",
+    "radical": "一",
+    "strokes": 5
+  },
+  "业": {
+    "ids": "⿱④一",
+    "radical": "一",
+    "strokes": 5
+  },
+  "东": {
+    "ids": "东",
+    "radical": "一",
+    "strokes": 5
+  },
+  "两": {
+    "ids": "⿱一⿻冂从",
+    "radical": "一",
+    "strokes": 7
+  },
+  "个": {
+    "ids": "⿱人丨",
+    "radical": "丨",
+    "strokes": 3
+  },
+  "中": {
+    "ids": "⿻口丨",
+    "radical": "丨",
+    "strokes": 4
+  },
+  "为": {
+    "ids": "为",
+    "radical": "丶",
+    "strokes": 4
+  },
+  "主": {
+    "ids": "⿱亠土",
+    "radical": "丶",
+    "strokes": 5
+  },
+  "举": {
+    "ids": "⿱兴⿻二丨",
+    "radical": "丶",
+    "strokes": 9
+  },
+  "久": {
+    "ids": "久",
+    "radical": "丿",
+    "strokes": 3
+  },
+  "么": {
+    "ids": "⿱丿厶",
+    "radical": "丿",
+    "strokes": 3
+  },
+  "乎": {
+    "ids": "乎",
+    "radical": "丿",
+    "strokes": 5
+  },
+  "乐": {
+    "ids": "乐",
+    "radical": "丿",
+    "strokes": 5
+  },
+  "九": {
+    "ids": "九",
+    "radical": "乙",
+    "strokes": 2
+  },
+  "也": {
+    "ids": "也",
+    "radical": "乙",
+    "strokes": 3
+  },
+  "习": {
+    "ids": "⿹𠃌冫",
+    "radical": "乙",
+    "strokes": 3
+  },
+  "书": {
+    "ids": "书",
+    "radical": "乙",
+    "strokes": 4
+  },
+  "买": {
+    "ids": "⿱乛头",
+    "radical": "乙",
+    "strokes": 6
+  },
+  "了": {
+    "ids": "⿱乛亅",
+    "radical": "亅",
+    "strokes": 2
+  },
+  "事": {
+    "ids": "事",
+    "radical": "亅",
+    "strokes": 8
+  },
+  "二": {
+    "ids": "⿱一一",
+    "radical": "二",
+    "strokes": 2
+  },
+  "于": {
+    "ids": "于",
+    "radical": "二",
+    "strokes": 3
+  },
+  "云": {
+    "ids": "⿱二厶",
+    "radical": "二",
+    "strokes": 4
+  },
+  "五": {
+    "ids": "⿱一𫝀",
+    "radical": "二",
+    "strokes": 4
+  },
+  "些": {
+    "ids": "⿱此二",
+    "radical": "二",
+    "strokes": 8
+  },
+  "京": {
+    "ids": "⿳亠口小",
+    "radical": "亠",
+    "strokes": 8
+  },
+  "亮": {
+    "ids": "⿱⿳亠口冖几",
+    "radical": "亠",
+    "strokes": 9
+  },
+  "人": {
+    "ids": "人",
+    "radical": "人",
+    "strokes": 2
+  },
+  "什": {
+    "ids": "⿰亻十",
+    "radical": "人",
+    "strokes": 4
+  },
+  "今": {
+    "ids": "⿱亽㇇",
+    "radical": "人",
+    "strokes": 4
+  },
+  "介": {
+    "ids": "⿱人⿰丿丨",
+    "radical": "人",
+    "strokes": 4
+  },
+  "从": {
+    "ids": "⿰人人",
+    "radical": "人",
+    "strokes": 4
+  },
+  "他": {
+    "ids": "⿰亻也",
+    "radical": "人",
+    "strokes": 5
+  },
+  "以": {
+    "ids": "以",
+    "radical": "人",
+    "strokes": 5
+  },
+  "们": {
+    "ids": "⿰亻门",
+    "radical": "人",
+    "strokes": 5
+  },
+  "件": {
+    "ids": "⿰亻牛",
+    "radical": "人",
+    "strokes": 6
+  },
+  "休": {
+    "ids": "⿰亻木",
+    "radical": "人",
+    "strokes": 6
+  },
+  "会": {
+    "ids": "⿱人云",
+    "radical": "人",
+    "strokes": 6
+  },
+  "伞": {
+    "ids": "⿱人⿻丷十",
+    "radical": "人",
+    "strokes": 6
+  },
+  "但": {
+    "ids": "⿰亻旦",
+    "radical": "人",
+    "strokes": 7
+  },
+  "位": {
+    "ids": "⿰亻立",
+    "radical": "人",
+    "strokes": 7
+  },
+  "低": {
+    "ids": "⿰亻氐",
+    "radical": "人",
+    "strokes": 7
+  },
+  "住": {
+    "ids": "⿰亻主",
+    "radical": "人",
+    "strokes": 7
+  },
+  "体": {
+    "ids": "⿰亻本",
+    "radical": "人",
+    "strokes": 7
+  },
+  "作": {
+    "ids": "⿰亻乍",
+    "radical": "人",
+    "strokes": 7
+  },
+  "你": {
+    "ids": "⿰亻尔",
+    "radical": "人",
+    "strokes": 7
+  },
+  "使": {
+    "ids": "⿰亻吏",
+    "radical": "人",
+    "strokes": 8
+  },
+  "便": {
+    "ids": "⿰亻更",
+    "radical": "人",
+    "strokes": 9
+  },
+  "信": {
+    "ids": "⿰亻言",
+    "radical": "人",
+    "strokes": 9
+  },
+  "候": {
+    "ids": "⿰⿰亻丨⿱ユ矢",
+    "radical": "人",
+    "strokes": 10
+  },
+  "借": {
+    "ids": "⿰亻昔",
+    "radical": "人",
+    "strokes": 10
+  },
+  "做": {
+    "ids": "⿰亻故",
+    "radical": "人",
+    "strokes": 11
+  },
+  "健": {
+    "ids": "⿰亻建",
+    "radical": "人",
+    "strokes": 10
+  },
+  "像": {
+    "ids": "⿰亻象",
+    "radical": "人",
+    "strokes": 13
+  },
+  "儿": {
+    "ids": "⿰丿乚",
+    "radical": "儿",
+    "strokes": 2
+  },
+  "元": {
+    "ids": "⿱一兀",
+    "radical": "儿",
+    "strokes": 4
+  },
+  "先": {
+    "ids": "⿱𠂒儿",
+    "radical": "儿",
+    "strokes": 6
+  },
+  "八": {
+    "ids": "八",
+    "radical": "八",
+    "strokes": 2
+  },
+  "公": {
+    "ids": "⿱八厶",
+    "radical": "八",
+    "strokes": 4
+  },
+  "六": {
+    "ids": "⿱亠八",
+    "radical": "八",
+    "strokes": 4
+  },
+  "共": {
+    "ids": "⿱龷八",
+    "radical": "八",
+    "strokes": 6
+  },
+  "关": {
+    "ids": "⿱丷天",
+    "radical": "八",
+    "strokes": 6
+  },
+  "兴": {
+    "ids": "⿳𭕄一八",
+    "radical": "八",
+    "strokes": 6
+  },
+  "其": {
+    "ids": "⿱⿱⑤一八",
+    "radical": "八",
+    "strokes": 8
+  },
+  "典": {
+    "ids": "⿱⑥八",
+    "radical": "八",
+    "strokes": 8
+  },
+  "再": {
+    "ids": "⿱一冉",
+    "radical": "冂",
+    "strokes": 6
+  },
+  "冒": {
+    "ids": "⿱冃目",
+    "radical": "冂",
+    "strokes": 9
+  },
+  "写": {
+    "ids": "⿱冖与",
+    "radical": "冖",
+    "strokes": 5
+  },
+  "冬": {
+    "ids": "⿱夂⺀",
+    "radical": "冫",
+    "strokes": 5
+  },
+  "冰": {
+    "ids": "⿰冫水",
+    "radical": "冫",
+    "strokes": 6
+  },
+  "决": {
+    "ids": "⿰冫夬",
+    "radical": "冫",
+    "strokes": 6
+  },
+  "冷": {
+    "ids": "⿰冫令",
+    "radical": "冫",
+    "strokes": 7
+  },
+  "净": {
+    "ids": "⿰冫争",
+    "radical": "冫",
+    "strokes": 8
+  },
+  "准": {
+    "ids": "⿰冫隹",
+    "radical": "冫",
+    "strokes": 10
+  },
+  "几": {
+    "ids": "几",
+    "radical": "几",
+    "strokes": 2
+  },
+  "出": {
+    "ids": "⿱屮凵",
+    "radical": "凵",
+    "strokes": 5
+  },
+  "分": {
+    "ids": "⿱八刀",
+    "radical": "刀",
+    "strokes": 4
+  },
+  "刚": {
+    "ids": "⿰冈刂",
+    "radical": "刀",
+    "strokes": 6
+  },
+  "别": {
+    "ids": "⿰另刂",
+    "radical": "刀",
+    "strokes": 7
+  },
+  "刮": {
+    "ids": "⿰舌刂",
+    "radical": "刀",
+    "strokes": 8
+  },
+  "到": {
+    "ids": "⿰至刂",
+    "radical": "刀",
+    "strokes": 8
+  },
+  "刷": {
+    "ids": "⿰𡰯刂",
+    "radical": "刀",
+    "strokes": 8
+  },
+  "刻": {
+    "ids": "⿰亥刂",
+    "radical": "刀",
+    "strokes": 8
+  },
+  "前": {
+    "ids": "⿱䒑刖",
+    "radical": "刀",
+    "strokes": 9
+  },
+  "力": {
+    "ids": "⿻丿𠃌",
+    "radical": "力",
+    "strokes": 2
+  },
+  "办": {
+    "ids": "⿻力八",
+    "radical": "力",
+    "strokes": 4
+  },
+  "加": {
+    "ids": "⿰力口",
+    "radical": "力",
+    "strokes": 5
+  },
+  "务": {
+    "ids": "⿱夂力",
+    "radical": "力",
+    "strokes": 6
+  },
+  "动": {
+    "ids": "⿰云力",
+    "radical": "力",
+    "strokes": 6
+  },
+  "助": {
+    "ids": "⿰且力",
+    "radical": "力",
+    "strokes": 7
+  },
+  "努": {
+    "ids": "⿱奴力",
+    "radical": "力",
+    "strokes": 7
+  },
+  "包": {
+    "ids": "⿹勹巳",
+    "radical": "勹",
+    "strokes": 5
+  },
+  "化": {
+    "ids": "⿰亻𠤎",
+    "radical": "匕",
+    "strokes": 4
+  },
+  "北": {
+    "ids": "⿰③匕",
+    "radical": "匕",
+    "strokes": 5
+  },
+  "医": {
+    "ids": "⿷匚矢",
+    "radical": "匸",
+    "strokes": 7
+  },
+  "十": {
+    "ids": "十",
+    "radical": "十",
+    "strokes": 2
+  },
+  "千": {
+    "ids": "⿱丿十",
+    "radical": "十",
+    "strokes": 3
+  },
+  "午": {
+    "ids": "⿱𠂉十",
+    "radical": "十",
+    "strokes": 4
+  },
+  "半": {
+    "ids": "⿱丷⿻二丨",
+    "radical": "十",
+    "strokes": 5
+  },
+  "单": {
+    "ids": "⿱丷⿻甲一",
+    "radical": "十",
+    "strokes": 8
+  },
+  "卖": {
+    "ids": "⿱十买",
+    "radical": "十",
+    "strokes": 8
+  },
+  "南": {
+    "ids": "⿱十⿵冂𢆉",
+    "radical": "十",
+    "strokes": 9
+  },
+  "历": {
+    "ids": "⿸厂力",
+    "radical": "厂",
+    "strokes": 4
+  },
+  "厨": {
+    "ids": "⿸厂𭔰",
+    "radical": "厂",
+    "strokes": 12
+  },
+  "去": {
+    "ids": "⿱土厶",
+    "radical": "厶",
+    "strokes": 5
+  },
+  "参": {
+    "ids": "⿳厶大彡",
+    "radical": "厶",
+    "strokes": 8
+  },
+  "又": {
+    "ids": "又",
+    "radical": "又",
+    "strokes": 2
+  },
+  "友": {
+    "ids": "⿸𠂇又",
+    "radical": "又",
+    "strokes": 4
+  },
+  "双": {
+    "ids": "⿰又又",
+    "radical": "又",
+    "strokes": 4
+  },
+  "发": {
+    "ids": "发",
+    "radical": "又",
+    "strokes": 5
+  },
+  "叔": {
+    "ids": "⿰尗又",
+    "radical": "又",
+    "strokes": 8
+  },
+  "变": {
+    "ids": "⿱亦又",
+    "radical": "又",
+    "strokes": 8
+  },
+  "口": {
+    "ids": "口",
+    "radical": "口",
+    "strokes": 3
+  },
+  "句": {
+    "ids": "⿹勹口",
+    "radical": "口",
+    "strokes": 5
+  },
+  "只": {
+    "ids": "⿱口八",
+    "radical": "口",
+    "strokes": 5
+  },
+  "叫": {
+    "ids": "⿰口丩",
+    "radical": "口",
+    "strokes": 5
+  },
+  "可": {
+    "ids": "⿹丁口",
+    "radical": "口",
+    "strokes": 5
+  },
+  "史": {
+    "ids": "史",
+    "radical": "口",
+    "strokes": 5
+  },
+  "右": {
+    "ids": "⿸𠂇口",
+    "radical": "口",
+    "strokes": 5
+  },
+  "号": {
+    "ids": "⿱口丂",
+    "radical": "口",
+    "strokes": 5
+  },
+  "司": {
+    "ids": "⿹𠃌𠮛",
+    "radical": "口",
+    "strokes": 5
+  },
+  "吃": {
+    "ids": "⿰口乞",
+    "radical": "口",
+    "strokes": 6
+  },
+  "同": {
+    "ids": "⿵𠔼口",
+    "radical": "口",
+    "strokes": 6
+  },
+  "名": {
+    "ids": "⿱夕口",
+    "radical": "口",
+    "strokes": 6
+  },
+  "后": {
+    "ids": "⿸𠂋口",
+    "radical": "口",
+    "strokes": 6
+  },
+  "向": {
+    "ids": "⿵⿱丿冂口",
+    "radical": "口",
+    "strokes": 6
+  },
+  "吗": {
+    "ids": "⿰口马",
+    "radical": "口",
+    "strokes": 6
+  },
+  "吧": {
+    "ids": "⿰口巴",
+    "radical": "口",
+    "strokes": 7
+  },
+  "听": {
+    "ids": "⿰口斤",
+    "radical": "口",
+    "strokes": 7
+  },
+  "告": {
+    "ids": "⿱𠂒口",
+    "radical": "口",
+    "strokes": 7
+  },
+  "员": {
+    "ids": "⿱口贝",
+    "radical": "口",
+    "strokes": 7
+  },
+  "呢": {
+    "ids": "⿰口尼",
+    "radical": "口",
+    "strokes": 8
+  },
+  "周": {
+    "ids": "⿵⺆𠮷",
+    "radical": "口",
+    "strokes": 8
+  },
+  "和": {
+    "ids": "⿰禾口",
+    "radical": "口",
+    "strokes": 8
+  },
+  "咖": {
+    "ids": "⿰口加",
+    "radical": "口",
+    "strokes": 8
+  },
+  "响": {
+    "ids": "⿰口向",
+    "radical": "口",
+    "strokes": 9
+  },
+  "哥": {
+    "ids": "⿱可可",
+    "radical": "口",
+    "strokes": 10
+  },
+  "哪": {
+    "ids": "⿰口那",
+    "radical": "口",
+    "strokes": 9
+  },
+  "哭": {
+    "ids": "⿱吅犬",
+    "radical": "口",
+    "strokes": 10
+  },
+  "唱": {
+    "ids": "⿰口昌",
+    "radical": "口",
+    "strokes": 11
+  },
+  "商": {
+    "ids": "⿱⿱亠丷冏",
+    "radical": "口",
+    "strokes": 11
+  },
+  "啊": {
+    "ids": "⿰口阿",
+    "radical": "口",
+    "strokes": 10
+  },
+  "啡": {
+    "ids": "⿰口非",
+    "radical": "口",
+    "strokes": 11
+  },
+  "啤": {
+    "ids": "⿰口卑",
+    "radical": "口",
+    "strokes": 11
+  },
+  "喂": {
+    "ids": "⿰口畏",
+    "radical": "口",
+    "strokes": 12
+  },
+  "喜": {
+    "ids": "⿱壴口",
+    "radical": "口",
+    "strokes": 12
+  },
+  "喝": {
+    "ids": "⿰口曷",
+    "radical": "口",
+    "strokes": 12
+  },
+  "四": {
+    "ids": "⿴囗儿",
+    "radical": "囗",
+    "strokes": 5
+  },
+  "回": {
+    "ids": "⿴囗口",
+    "radical": "囗",
+    "strokes": 6
+  },
+  "因": {
+    "ids": "⿴囗大",
+    "radical": "囗",
+    "strokes": 6
+  },
+  "园": {
+    "ids": "⿴囗元",
+    "radical": "囗",
+    "strokes": 7
+  },
+  "国": {
+    "ids": "⿴囗玉",
+    "radical": "囗",
+    "strokes": 8
+  },
+  "图": {
+    "ids": "⿴囗冬",
+    "radical": "囗",
+    "strokes": 8
+  },
+  "在": {
+    "ids": "⿸③土",
+    "radical": "土",
+    "strokes": 6
+  },
+  "地": {
+    "ids": "⿰土也",
+    "radical": "土",
+    "strokes": 6
+  },
+  "场": {
+    "ids": "⿰土𠃓",
+    "radical": "土",
+    "strokes": 6
+  },
+  "坏": {
+    "ids": "⿰土不",
+    "radical": "土",
+    "strokes": 7
+  },
+  "坐": {
+    "ids": "⿻土从",
+    "radical": "土",
+    "strokes": 7
+  },
+  "块": {
+    "ids": "⿰土夬",
+    "radical": "土",
+    "strokes": 7
+  },
+  "城": {
+    "ids": "⿰土成",
+    "radical": "土",
+    "strokes": 9
+  },
+  "境": {
+    "ids": "⿰土竟",
+    "radical": "土",
+    "strokes": 14
+  },
+  "声": {
+    "ids": "⿱士𠃜",
+    "radical": "士",
+    "strokes": 7
+  },
+  "备": {
+    "ids": "⿱夂田",
+    "radical": "夂",
+    "strokes": 8
+  },
+  "复": {
+    "ids": "⿳𠂉日夂",
+    "radical": "夊",
+    "strokes": 9
+  },
+  "夏": {
+    "ids": "⿱𦣻夂",
+    "radical": "夊",
+    "strokes": 10
+  },
+  "外": {
+    "ids": "⿰夕卜",
+    "radical": "夕",
+    "strokes": 5
+  },
+  "多": {
+    "ids": "⿱夕夕",
+    "radical": "夕",
+    "strokes": 6
+  },
+  "大": {
+    "ids": "⿻一人",
+    "radical": "大",
+    "strokes": 3
+  },
+  "天": {
+    "ids": "⿱一大",
+    "radical": "大",
+    "strokes": 4
+  },
+  "太": {
+    "ids": "⿵大丶",
+    "radical": "大",
+    "strokes": 4
+  },
+  "夫": {
+    "ids": "⿻二人",
+    "radical": "大",
+    "strokes": 4
+  },
+  "头": {
+    "ids": "头",
+    "radical": "大",
+    "strokes": 5
+  },
+  "奇": {
+    "ids": "⿱大可",
+    "radical": "大",
+    "strokes": 8
+  },
+  "女": {
+    "ids": "女",
+    "radical": "女",
+    "strokes": 3
+  },
+  "奶": {
+    "ids": "⿰女乃",
+    "radical": "女",
+    "strokes": 5
+  },
+  "她": {
+    "ids": "⿰女也",
+    "radical": "女",
+    "strokes": 6
+  },
+  "好": {
+    "ids": "⿰女子",
+    "radical": "女",
+    "strokes": 6
+  },
+  "如": {
+    "ids": "⿰女口",
+    "radical": "女",
+    "strokes": 6
+  },
+  "妈": {
+    "ids": "⿰女马",
+    "radical": "女",
+    "strokes": 6
+  },
+  "妹": {
+    "ids": "⿰女未",
+    "radical": "女",
+    "strokes": 8
+  },
+  "妻": {
+    "ids": "⿱⿻十⿻コ一女",
+    "radical": "女",
+    "strokes": 8
+  },
+  "始": {
+    "ids": "⿰女台",
+    "radical": "女",
+    "strokes": 8
+  },
+  "姐": {
+    "ids": "⿰女且",
+    "radical": "女",
+    "strokes": 8
+  },
+  "姓": {
+    "ids": "⿰女生",
+    "radical": "女",
+    "strokes": 8
+  },
+  "姨": {
+    "ids": "⿰女夷",
+    "radical": "女",
+    "strokes": 9
+  },
+  "婚": {
+    "ids": "⿰女昏",
+    "radical": "女",
+    "strokes": 11
+  },
+  "子": {
+    "ids": "子",
+    "radical": "子",
+    "strokes": 3
+  },
+  "字": {
+    "ids": "⿱宀子",
+    "radical": "子",
+    "strokes": 6
+  },
+  "季": {
+    "ids": "⿱禾子",
+    "radical": "子",
+    "strokes": 8
+  },
+  "学": {
+    "ids": "⿳𭕄冖子",
+    "radical": "子",
+    "strokes": 8
+  },
+  "孩": {
+    "ids": "⿰子亥",
+    "radical": "子",
+    "strokes": 9
+  },
+  "它": {
+    "ids": "⿱宀匕",
+    "radical": "宀",
+    "strokes": 5
+  },
+  "安": {
+    "ids": "⿱宀女",
+    "radical": "宀",
+    "strokes": 6
+  },
+  "完": {
+    "ids": "⿱宀元",
+    "radical": "宀",
+    "strokes": 7
+  },
+  "定": {
+    "ids": "⿱宀𤴓",
+    "radical": "宀",
+    "strokes": 8
+  },
+  "宜": {
+    "ids": "⿱宀且",
+    "radical": "宀",
+    "strokes": 8
+  },
+  "实": {
+    "ids": "⿱宀头",
+    "radical": "宀",
+    "strokes": 8
+  },
+  "客": {
+    "ids": "⿱宀各",
+    "radical": "宀",
+    "strokes": 9
+  },
+  "室": {
+    "ids": "⿱宀至",
+    "radical": "宀",
+    "strokes": 9
+  },
+  "害": {
+    "ids": "⿱𫲸口",
+    "radical": "宀",
+    "strokes": 10
+  },
+  "家": {
+    "ids": "⿱宀豕",
+    "radical": "宀",
+    "strokes": 10
+  },
+  "容": {
+    "ids": "⿱宀谷",
+    "radical": "宀",
+    "strokes": 10
+  },
+  "宾": {
+    "ids": "⿱宀兵",
+    "radical": "宀",
+    "strokes": 10
+  },
+  "对": {
+    "ids": "⿰又寸",
+    "radical": "寸",
+    "strokes": 5
+  },
+  "小": {
+    "ids": "小",
+    "radical": "小",
+    "strokes": 3
+  },
+  "少": {
+    "ids": "⿱小丿",
+    "radical": "小",
+    "strokes": 4
+  },
+  "就": {
+    "ids": "⿰京尤",
+    "radical": "尢",
+    "strokes": 12
+  },
+  "层": {
+    "ids": "⿸尸云",
+    "radical": "尸",
+    "strokes": 7
+  },
+  "居": {
+    "ids": "⿸尸古",
+    "radical": "尸",
+    "strokes": 8
+  },
+  "山": {
+    "ids": "山",
+    "radical": "山",
+    "strokes": 3
+  },
+  "岁": {
+    "ids": "⿱山夕",
+    "radical": "山",
+    "strokes": 6
+  },
+  "工": {
+    "ids": "工",
+    "radical": "工",
+    "strokes": 3
+  },
+  "左": {
+    "ids": "⿸𠂇工",
+    "radical": "工",
+    "strokes": 5
+  },
+  "差": {
+    "ids": "⿸羊工",
+    "radical": "工",
+    "strokes": 10
+  },
+  "己": {
+    "ids": "己",
+    "radical": "己",
+    "strokes": 3
+  },
+  "已": {
+    "ids": "已",
+    "radical": "己",
+    "strokes": 3
+  },
+  "市": {
+    "ids": "⿱亠巾",
+    "radical": "巾",
+    "strokes": 5
+  },
+  "师": {
+    "ids": "⿰⿰丨丿帀",
+    "radical": "巾",
+    "strokes": 6
+  },
+  "希": {
+    "ids": "⿱㐅布",
+    "radical": "巾",
+    "strokes": 7
+  },
+  "带": {
+    "ids": "⿳卅冖巾",
+    "radical": "巾",
+    "strokes": 9
+  },
+  "帮": {
+    "ids": "⿱邦巾",
+    "radical": "巾",
+    "strokes": 10
+  },
+  "常": {
+    "ids": "⿱𫩠巾",
+    "radical": "巾",
+    "strokes": 11
+  },
+  "帽": {
+    "ids": "⿰巾冒",
+    "radical": "巾",
+    "strokes": 12
+  },
+  "干": {
+    "ids": "干",
+    "radical": "干",
+    "strokes": 3
+  },
+  "平": {
+    "ids": "⿻干丷",
+    "radical": "干",
+    "strokes": 5
+  },
+  "年": {
+    "ids": "年",
+    "radical": "干",
+    "strokes": 6
+  },
+  "床": {
+    "ids": "⿸广木",
+    "radical": "广",
+    "strokes": 7
+  },
+  "应": {
+    "ids": "⿸广⿱𭕄一",
+    "radical": "广",
+    "strokes": 7
+  },
+  "店": {
+    "ids": "⿸广占",
+    "radical": "广",
+    "strokes": 8
+  },
+  "康": {
+    "ids": "⿸广隶",
+    "radical": "广",
+    "strokes": 11
+  },
+  "开": {
+    "ids": "⿱一廾",
+    "radical": "廾",
+    "strokes": 4
+  },
+  "弟": {
+    "ids": "⿱丷𢎨",
+    "radical": "弓",
+    "strokes": 7
+  },
+  "张": {
+    "ids": "⿰弓长",
+    "radical": "弓",
+    "strokes": 7
+  },
+  "当": {
+    "ids": "⿱⺌彐",
+    "radical": "彐",
+    "strokes": 6
+  },
+  "影": {
+    "ids": "⿰景彡",
+    "radical": "彡",
+    "strokes": 15
+  },
+  "很": {
+    "ids": "⿰彳艮",
+    "radical": "彳",
+    "strokes": 9
+  },
+  "得": {
+    "ids": "⿰彳㝵",
+    "radical": "彳",
+    "strokes": 11
+  },
+  "心": {
+    "ids": "心",
+    "radical": "心",
+    "strokes": 4
+  },
+  "必": {
+    "ids": "⿻心丿",
+    "radical": "心",
+    "strokes": 5
+  },
+  "忘": {
+    "ids": "⿱亡心",
+    "radical": "心",
+    "strokes": 7
+  },
+  "忙": {
+    "ids": "⿰忄亡",
+    "radical": "心",
+    "strokes": 6
+  },
+  "快": {
+    "ids": "⿰忄夬",
+    "radical": "心",
+    "strokes": 7
+  },
+  "怎": {
+    "ids": "⿱乍心",
+    "radical": "心",
+    "strokes": 9
+  },
+  "怕": {
+    "ids": "⿰忄白",
+    "radical": "心",
+    "strokes": 8
+  },
+  "思": {
+    "ids": "⿱田心",
+    "radical": "心",
+    "strokes": 9
+  },
+  "急": {
+    "ids": "⿱刍心",
+    "radical": "心",
+    "strokes": 9
+  },
+  "怪": {
+    "ids": "⿰忄圣",
+    "radical": "心",
+    "strokes": 8
+  },
+  "总": {
+    "ids": "⿱𠮦心",
+    "radical": "心",
+    "strokes": 9
+  },
+  "息": {
+    "ids": "⿱自心",
+    "radical": "心",
+    "strokes": 10
+  },
+  "您": {
+    "ids": "⿱你心",
+    "radical": "心",
+    "strokes": 11
+  },
+  "情": {
+    "ids": "⿰忄青",
+    "radical": "心",
+    "strokes": 11
+  },
+  "惯": {
+    "ids": "⿰忄贯",
+    "radical": "心",
+    "strokes": 11
+  },
+  "想": {
+    "ids": "⿱相心",
+    "radical": "心",
+    "strokes": 13
+  },
+  "意": {
+    "ids": "⿱音心",
+    "radical": "心",
+    "strokes": 13
+  },
+  "感": {
+    "ids": "⿱咸心",
+    "radical": "心",
+    "strokes": 13
+  },
+  "愿": {
+    "ids": "⿸原心",
+    "radical": "心",
+    "strokes": 14
+  },
+  "慢": {
+    "ids": "⿰忄曼",
+    "radical": "心",
+    "strokes": 14
+  },
+  "懂": {
+    "ids": "⿰忄董",
+    "radical": "心",
+    "strokes": 15
+  },
+  "戏": {
+    "ids": "⿰又戈",
+    "radical": "戈",
+    "strokes": 6
+  },
+  "成": {
+    "ids": "⿵戊𠃌",
+    "radical": "戈",
+    "strokes": 7
+  },
+  "我": {
+    "ids": "我",
+    "radical": "戈",
+    "strokes": 7
+  },
+  "或": {
+    "ids": "⿹戈⿱口一",
+    "radical": "戈",
+    "strokes": 8
+  },
+  "房": {
+    "ids": "⿸户方",
+    "radical": "戶",
+    "strokes": 8
+  },
+  "所": {
+    "ids": "⿰戶斤",
+    "radical": "戶",
+    "strokes": 8
+  },
+  "手": {
+    "ids": "手",
+    "radical": "手",
+    "strokes": 4
+  },
+  "才": {
+    "ids": "才",
+    "radical": "手",
+    "strokes": 3
+  },
+  "打": {
+    "ids": "⿰扌丁",
+    "radical": "手",
+    "strokes": 5
+  },
+  "扫": {
+    "ids": "⿰扌彐",
+    "radical": "手",
+    "strokes": 6
+  },
+  "找": {
+    "ids": "⿰扌戈",
+    "radical": "手",
+    "strokes": 7
+  },
+  "把": {
+    "ids": "⿰扌巴",
+    "radical": "手",
+    "strokes": 7
+  },
+  "护": {
+    "ids": "⿰扌户",
+    "radical": "手",
+    "strokes": 7
+  },
+  "报": {
+    "ids": "⿰扌𠬝",
+    "radical": "手",
+    "strokes": 7
+  },
+  "担": {
+    "ids": "⿰扌旦",
+    "radical": "手",
+    "strokes": 8
+  },
+  "择": {
+    "ids": "⿰扌𠬤",
+    "radical": "手",
+    "strokes": 8
+  },
+  "拿": {
+    "ids": "⿱合手",
+    "radical": "手",
+    "strokes": 10
+  },
+  "换": {
+    "ids": "⿰扌奂",
+    "radical": "手",
+    "strokes": 10
+  },
+  "据": {
+    "ids": "⿰扌居",
+    "radical": "手",
+    "strokes": 11
+  },
+  "接": {
+    "ids": "⿰扌妾",
+    "radical": "手",
+    "strokes": 11
+  },
+  "提": {
+    "ids": "⿰扌是",
+    "radical": "手",
+    "strokes": 12
+  },
+  "搬": {
+    "ids": "⿰扌般",
+    "radical": "手",
+    "strokes": 13
+  },
+  "放": {
+    "ids": "⿰方攵",
+    "radical": "攴",
+    "strokes": 8
+  },
+  "故": {
+    "ids": "⿰古攵",
+    "radical": "攴",
+    "strokes": 9
+  },
+  "教": {
+    "ids": "⿰孝攵",
+    "radical": "攴",
+    "strokes": 11
+  },
+  "敢": {
+    "ids": "⿰⿱乛耳攵",
+    "radical": "攴",
+    "strokes": 12
+  },
+  "数": {
+    "ids": "⿰娄攵",
+    "radical": "攴",
+    "strokes": 13
+  },
+  "文": {
+    "ids": "⿱亠乂",
+    "radical": "文",
+    "strokes": 4
+  },
+  "斤": {
+    "ids": "⿸𠂆丅",
+    "radical": "斤",
+    "strokes": 4
+  },
+  "新": {
+    "ids": "⿰亲斤",
+    "radical": "斤",
+    "strokes": 13
+  },
+  "方": {
+    "ids": "⿱亠⿰丿𠃌",
+    "radical": "方",
+    "strokes": 4
+  },
+  "旁": {
+    "ids": "⿱⿱⿱亠丷冖方",
+    "radical": "方",
+    "strokes": 10
+  },
+  "旅": {
+    "ids": "⿰方⿱𠂉④",
+    "radical": "方",
+    "strokes": 10
+  },
+  "日": {
+    "ids": "日",
+    "radical": "日",
+    "strokes": 4
+  },
+  "旧": {
+    "ids": "⿰丨日",
+    "radical": "日",
+    "strokes": 5
+  },
+  "早": {
+    "ids": "⿱日十",
+    "radical": "日",
+    "strokes": 6
+  },
+  "时": {
+    "ids": "⿰日寸",
+    "radical": "日",
+    "strokes": 7
+  },
+  "明": {
+    "ids": "⿰日月",
+    "radical": "日",
+    "strokes": 8
+  },
+  "易": {
+    "ids": "⿱日勿",
+    "radical": "日",
+    "strokes": 8
+  },
+  "星": {
+    "ids": "⿱日生",
+    "radical": "日",
+    "strokes": 9
+  },
+  "春": {
+    "ids": "⿱𡗗日",
+    "radical": "日",
+    "strokes": 9
+  },
+  "昨": {
+    "ids": "⿰日乍",
+    "radical": "日",
+    "strokes": 9
+  },
+  "是": {
+    "ids": "⿱日𤴓",
+    "radical": "日",
+    "strokes": 9
+  },
+  "晚": {
+    "ids": "⿰日免",
+    "radical": "日",
+    "strokes": 11
+  },
+  "普": {
+    "ids": "⿱並日",
+    "radical": "日",
+    "strokes": 12
+  },
+  "晴": {
+    "ids": "⿰日青",
+    "radical": "日",
+    "strokes": 12
+  },
+  "更": {
+    "ids": "⿱一⿻日乂",
+    "radical": "曰",
+    "strokes": 7
+  },
+  "最": {
+    "ids": "⿱日取",
+    "radical": "冂",
+    "strokes": 12
+  },
+  "月": {
+    "ids": "月",
+    "radical": "月",
+    "strokes": 4
+  },
+  "有": {
+    "ids": "⿸𠂇月",
+    "radical": "月",
+    "strokes": 6
+  },
+  "朋": {
+    "ids": "⿰月月",
+    "radical": "月",
+    "strokes": 8
+  },
+  "服": {
+    "ids": "⿰月𠬝",
+    "radical": "月",
+    "strokes": 8
+  },
+  "望": {
+    "ids": "⿱⿰亡月王",
+    "radical": "月",
+    "strokes": 11
+  },
+  "期": {
+    "ids": "⿰其月",
+    "radical": "月",
+    "strokes": 12
+  },
+  "末": {
+    "ids": "末",
+    "radical": "木",
+    "strokes": 5
+  },
+  "本": {
+    "ids": "本",
+    "radical": "木",
+    "strokes": 5
+  },
+  "朵": {
+    "ids": "⿱几木",
+    "radical": "木",
+    "strokes": 6
+  },
+  "机": {
+    "ids": "⿰木几",
+    "radical": "木",
+    "strokes": 6
+  },
+  "李": {
+    "ids": "⿱木子",
+    "radical": "木",
+    "strokes": 7
+  },
+  "束": {
+    "ids": "束",
+    "radical": "木",
+    "strokes": 7
+  },
+  "条": {
+    "ids": "⿱夂朩",
+    "radical": "木",
+    "strokes": 7
+  },
+  "来": {
+    "ids": "来",
+    "radical": "木",
+    "strokes": 7
+  },
+  "杯": {
+    "ids": "⿰木不",
+    "radical": "木",
+    "strokes": 8
+  },
+  "板": {
+    "ids": "⿰木反",
+    "radical": "木",
+    "strokes": 8
+  },
+  "极": {
+    "ids": "⿰木及",
+    "radical": "木",
+    "strokes": 7
+  },
+  "果": {
+    "ids": "⿻日木",
+    "radical": "木",
+    "strokes": 8
+  },
+  "查": {
+    "ids": "⿱木旦",
+    "radical": "木",
+    "strokes": 9
+  },
+  "树": {
+    "ids": "⿰木对",
+    "radical": "木",
+    "strokes": 9
+  },
+  "校": {
+    "ids": "⿰木交",
+    "radical": "木",
+    "strokes": 10
+  },
+  "样": {
+    "ids": "⿰木羊",
+    "radical": "木",
+    "strokes": 10
+  },
+  "根": {
+    "ids": "⿰木艮",
+    "radical": "木",
+    "strokes": 10
+  },
+  "桌": {
+    "ids": "⿱⺊杲",
+    "radical": "木",
+    "strokes": 10
+  },
+  "梯": {
+    "ids": "⿰木弟",
+    "radical": "木",
+    "strokes": 11
+  },
+  "检": {
+    "ids": "⿰木佥",
+    "radical": "木",
+    "strokes": 11
+  },
+  "椅": {
+    "ids": "⿰木奇",
+    "radical": "木",
+    "strokes": 12
+  },
+  "楚": {
+    "ids": "⿱林疋",
+    "radical": "木",
+    "strokes": 13
+  },
+  "楼": {
+    "ids": "⿰木娄",
+    "radical": "木",
+    "strokes": 13
+  },
+  "次": {
+    "ids": "⿰冫欠",
+    "radical": "欠",
+    "strokes": 6
+  },
+  "欢": {
+    "ids": "⿰又欠",
+    "radical": "欠",
+    "strokes": 6
+  },
+  "歌": {
+    "ids": "⿰哥欠",
+    "radical": "欠",
+    "strokes": 14
+  },
+  "正": {
+    "ids": "⿱一止",
+    "radical": "止",
+    "strokes": 5
+  },
+  "步": {
+    "ids": "⿱止𣥂",
+    "radical": "止",
+    "strokes": 7
+  },
+  "段": {
+    "ids": "⿰⑤殳",
+    "radical": "殳",
+    "strokes": 9
+  },
+  "每": {
+    "ids": "⿱𠂉母",
+    "radical": "毋",
+    "strokes": 7
+  },
+  "比": {
+    "ids": "比",
+    "radical": "比",
+    "strokes": 4
+  },
+  "气": {
+    "ids": "⿳𠂉一乁",
+    "radical": "气",
+    "strokes": 4
+  },
+  "水": {
+    "ids": "⿲㇇亅⿺乀丿",
+    "radical": "水",
+    "strokes": 4
+  },
+  "汁": {
+    "ids": "⿰氵十",
+    "radical": "水",
+    "strokes": 5
+  },
+  "求": {
+    "ids": "⿺⿻一氺丶",
+    "radical": "水",
+    "strokes": 7
+  },
+  "汉": {
+    "ids": "⿰氵又",
+    "radical": "水",
+    "strokes": 5
+  },
+  "汽": {
+    "ids": "⿰氵气",
+    "radical": "水",
+    "strokes": 7
+  },
+  "没": {
+    "ids": "⿰氵殳",
+    "radical": "水",
+    "strokes": 7
+  },
+  "河": {
+    "ids": "⿰氵可",
+    "radical": "水",
+    "strokes": 8
+  },
+  "法": {
+    "ids": "⿰氵去",
+    "radical": "水",
+    "strokes": 8
+  },
+  "注": {
+    "ids": "⿰氵主",
+    "radical": "水",
+    "strokes": 8
+  },
+  "泳": {
+    "ids": "⿰氵永",
+    "radical": "水",
+    "strokes": 8
+  },
+  "洗": {
+    "ids": "⿰氵先",
+    "radical": "水",
+    "strokes": 9
+  },
+  "清": {
+    "ids": "⿰氵青",
+    "radical": "水",
+    "strokes": 11
+  },
+  "渴": {
+    "ids": "⿰氵曷",
+    "radical": "水",
+    "strokes": 12
+  },
+  "游": {
+    "ids": "⿰氵斿",
+    "radical": "水",
+    "strokes": 12
+  },
+  "满": {
+    "ids": "⿰氵𬜯",
+    "radical": "水",
+    "strokes": 14
+  },
+  "漂": {
+    "ids": "⿰氵票",
+    "radical": "水",
+    "strokes": 14
+  },
+  "演": {
+    "ids": "⿰氵寅",
+    "radical": "水",
+    "strokes": 14
+  },
+  "澡": {
+    "ids": "⿰氵喿",
+    "radical": "水",
+    "strokes": 16
+  },
+  "火": {
+    "ids": "⿱八人",
+    "radical": "火",
+    "strokes": 4
+  },
+  "灯": {
+    "ids": "⿰火丁",
+    "radical": "火",
+    "strokes": 6
+  },
+  "点": {
+    "ids": "⿱占灬",
+    "radical": "火",
+    "strokes": 9
+  },
+  "炼": {
+    "ids": "⿰火𫠣",
+    "radical": "火",
+    "strokes": 9
+  },
+  "烧": {
+    "ids": "⿰火尧",
+    "radical": "火",
+    "strokes": 10
+  },
+  "热": {
+    "ids": "⿱执灬",
+    "radical": "火",
+    "strokes": 10
+  },
+  "然": {
+    "ids": "⿱⿰⿴𠂊冫犬灬",
+    "radical": "火",
+    "strokes": 12
+  },
+  "照": {
+    "ids": "⿱昭灬",
+    "radical": "火",
+    "strokes": 13
+  },
+  "熊": {
+    "ids": "⿱能灬",
+    "radical": "火",
+    "strokes": 14
+  },
+  "爬": {
+    "ids": "⿺爪巴",
+    "radical": "爪",
+    "strokes": 8
+  },
+  "爱": {
+    "ids": "⿱⿱爫冖友",
+    "radical": "爪",
+    "strokes": 10
+  },
+  "爷": {
+    "ids": "⿱父卩",
+    "radical": "父",
+    "strokes": 6
+  },
+  "爸": {
+    "ids": "⿱父巴",
+    "radical": "父",
+    "strokes": 8
+  },
+  "片": {
+    "ids": "片",
+    "radical": "片",
+    "strokes": 4
+  },
+  "牛": {
+    "ids": "牛",
+    "radical": "牛",
+    "strokes": 4
+  },
+  "物": {
+    "ids": "⿰牛勿",
+    "radical": "牛",
+    "strokes": 8
+  },
+  "特": {
+    "ids": "⿰牛寺",
+    "radical": "牛",
+    "strokes": 10
+  },
+  "狗": {
+    "ids": "⿰犭句",
+    "radical": "犬",
+    "strokes": 8
+  },
+  "猫": {
+    "ids": "⿰犭苗",
+    "radical": "犬",
+    "strokes": 12
+  },
+  "玩": {
+    "ids": "⿰王元",
+    "radical": "玉",
+    "strokes": 8
+  },
+  "环": {
+    "ids": "⿰王不",
+    "radical": "玉",
+    "strokes": 8
+  },
+  "现": {
+    "ids": "⿰王见",
+    "radical": "玉",
+    "strokes": 8
+  },
+  "班": {
+    "ids": "⿲王②王",
+    "radical": "玉",
+    "strokes": 10
+  },
+  "球": {
+    "ids": "⿰王求",
+    "radical": "玉",
+    "strokes": 11
+  },
+  "理": {
+    "ids": "⿰王里",
+    "radical": "玉",
+    "strokes": 11
+  },
+  "瓜": {
+    "ids": "瓜",
+    "radical": "瓜",
+    "strokes": 5
+  },
+  "甜": {
+    "ids": "⿰舌甘",
+    "radical": "甘",
+    "strokes": 11
+  },
+  "生": {
+    "ids": "生",
+    "radical": "生",
+    "strokes": 5
+  },
+  "用": {
+    "ids": "⿵冂⿻二丨",
+    "radical": "用",
+    "strokes": 5
+  },
+  "电": {
+    "ids": "⿻日乚",
+    "radical": "田",
+    "strokes": 5
+  },
+  "男": {
+    "ids": "⿱田力",
+    "radical": "田",
+    "strokes": 7
+  },
+  "画": {
+    "ids": "⿱一⿶凵田",
+    "radical": "田",
+    "strokes": 8
+  },
+  "界": {
+    "ids": "⿱田介",
+    "radical": "田",
+    "strokes": 9
+  },
+  "疼": {
+    "ids": "⿸疒冬",
+    "radical": "疒",
+    "strokes": 10
+  },
+  "病": {
+    "ids": "⿸疒丙",
+    "radical": "疒",
+    "strokes": 10
+  },
+  "瘦": {
+    "ids": "⿸疒叟",
+    "radical": "疒",
+    "strokes": 15
+  },
+  "白": {
+    "ids": "白",
+    "radical": "白",
+    "strokes": 5
+  },
+  "百": {
+    "ids": "⿱一白",
+    "radical": "白",
+    "strokes": 6
+  },
+  "的": {
+    "ids": "⿰白勺",
+    "radical": "白",
+    "strokes": 8
+  },
+  "盘": {
+    "ids": "⿱舟皿",
+    "radical": "皿",
+    "strokes": 11
+  },
+  "目": {
+    "ids": "目",
+    "radical": "目",
+    "strokes": 5
+  },
+  "直": {
+    "ids": "⿱十⿴且一",
+    "radical": "目",
+    "strokes": 8
+  },
+  "相": {
+    "ids": "⿰木目",
+    "radical": "目",
+    "strokes": 9
+  },
+  "看": {
+    "ids": "⿱龵目",
+    "radical": "目",
+    "strokes": 9
+  },
+  "真": {
+    "ids": "⿱十具",
+    "radical": "目",
+    "strokes": 10
+  },
+  "眼": {
+    "ids": "⿰目艮",
+    "radical": "目",
+    "strokes": 11
+  },
+  "着": {
+    "ids": "⿸羊目",
+    "radical": "目",
+    "strokes": 12
+  },
+  "睛": {
+    "ids": "⿰目青",
+    "radical": "目",
+    "strokes": 13
+  },
+  "睡": {
+    "ids": "⿰目垂",
+    "radical": "目",
+    "strokes": 13
+  },
+  "知": {
+    "ids": "⿰矢口",
+    "radical": "矢",
+    "strokes": 8
+  },
+  "短": {
+    "ids": "⿰矢豆",
+    "radical": "矢",
+    "strokes": 12
+  },
+  "矮": {
+    "ids": "⿰矢委",
+    "radical": "矢",
+    "strokes": 13
+  },
+  "碗": {
+    "ids": "⿰石宛",
+    "radical": "石",
+    "strokes": 13
+  },
+  "示": {
+    "ids": "示",
+    "radical": "示",
+    "strokes": 5
+  },
+  "礼": {
+    "ids": "⿰礻乚",
+    "radical": "示",
+    "strokes": 6
+  },
+  "祝": {
+    "ids": "⿰礻兄",
+    "radical": "示",
+    "strokes": 10
+  },
+  "票": {
+    "ids": "⿱覀示",
+    "radical": "示",
+    "strokes": 11
+  },
+  "离": {
+    "ids": "⿱㐫禸",
+    "radical": "禸",
+    "strokes": 11
+  },
+  "秋": {
+    "ids": "⿰禾火",
+    "radical": "禾",
+    "strokes": 9
+  },
+  "种": {
+    "ids": "⿰禾中",
+    "radical": "禾",
+    "strokes": 9
+  },
+  "租": {
+    "ids": "⿰禾且",
+    "radical": "禾",
+    "strokes": 10
+  },
+  "空": {
+    "ids": "⿱穴工",
+    "radical": "穴",
+    "strokes": 8
+  },
+  "穿": {
+    "ids": "⿱穴牙",
+    "radical": "穴",
+    "strokes": 9
+  },
+  "突": {
+    "ids": "⿱穴犬",
+    "radical": "穴",
+    "strokes": 9
+  },
+  "站": {
+    "ids": "⿰立占",
+    "radical": "立",
+    "strokes": 10
+  },
+  "笑": {
+    "ids": "⿱竹夭",
+    "radical": "竹",
+    "strokes": 10
+  },
+  "笔": {
+    "ids": "⿱竹毛",
+    "radical": "竹",
+    "strokes": 10
+  },
+  "第": {
+    "ids": "⿱竹𢎨",
+    "radical": "竹",
+    "strokes": 11
+  },
+  "答": {
+    "ids": "⿱竹合",
+    "radical": "竹",
+    "strokes": 12
+  },
+  "筷": {
+    "ids": "⿱竹快",
+    "radical": "竹",
+    "strokes": 13
+  },
+  "简": {
+    "ids": "⿱竹间",
+    "radical": "竹",
+    "strokes": 13
+  },
+  "算": {
+    "ids": "⿱竹𥃲",
+    "radical": "竹",
+    "strokes": 14
+  },
+  "箱": {
+    "ids": "⿱竹相",
+    "radical": "竹",
+    "strokes": 15
+  },
+  "篮": {
+    "ids": "⿱竹监",
+    "radical": "竹",
+    "strokes": 16
+  },
+  "米": {
+    "ids": "米",
+    "radical": "米",
+    "strokes": 6
+  },
+  "糕": {
+    "ids": "⿰米羔",
+    "radical": "米",
+    "strokes": 16
+  },
+  "糖": {
+    "ids": "⿰米唐",
+    "radical": "米",
+    "strokes": 16
+  },
+  "系": {
+    "ids": "⿱丿糸",
+    "radical": "糸",
+    "strokes": 7
+  },
+  "累": {
+    "ids": "⿱田糸",
+    "radical": "糸",
+    "strokes": 11
+  },
+  "红": {
+    "ids": "⿰纟工",
+    "radical": "糸",
+    "strokes": 6
+  },
+  "级": {
+    "ids": "⿰纟及",
+    "radical": "糸",
+    "strokes": 6
+  },
+  "纸": {
+    "ids": "⿰纟氏",
+    "radical": "糸",
+    "strokes": 7
+  },
+  "练": {
+    "ids": "⿰纟𫠣",
+    "radical": "糸",
+    "strokes": 8
+  },
+  "终": {
+    "ids": "⿰纟冬",
+    "radical": "糸",
+    "strokes": 8
+  },
+  "绍": {
+    "ids": "⿰纟召",
+    "radical": "糸",
+    "strokes": 8
+  },
+  "经": {
+    "ids": "⿰纟𢀖",
+    "radical": "糸",
+    "strokes": 8
+  },
+  "结": {
+    "ids": "⿰纟吉",
+    "radical": "糸",
+    "strokes": 9
+  },
+  "给": {
+    "ids": "⿰纟合",
+    "radical": "糸",
+    "strokes": 9
+  },
+  "绩": {
+    "ids": "⿰纟责",
+    "radical": "糸",
+    "strokes": 11
+  },
+  "绿": {
+    "ids": "⿰纟录",
+    "radical": "糸",
+    "strokes": 11
+  },
+  "网": {
+    "ids": "⿵冂⿰㐅㐅",
+    "radical": "网",
+    "strokes": 6
+  },
+  "羊": {
+    "ids": "⿱䒑⿻二丨",
+    "radical": "羊",
+    "strokes": 6
+  },
+  "老": {
+    "ids": "⿸耂匕",
+    "radical": "老",
+    "strokes": 6
+  },
+  "考": {
+    "ids": "⿸耂丂",
+    "radical": "老",
+    "strokes": 6
+  },
+  "者": {
+    "ids": "⿸耂日",
+    "radical": "老",
+    "strokes": 9
+  },
+  "而": {
+    "ids": "⿱一𦓐",
+    "radical": "而",
+    "strokes": 6
+  },
+  "耳": {
+    "ids": "耳",
+    "radical": "耳",
+    "strokes": 6
+  },
+  "聪": {
+    "ids": "⿰耳总",
+    "radical": "耳",
+    "strokes": 15
+  },
+  "肉": {
+    "ids": "肉",
+    "radical": "肉",
+    "strokes": 6
+  },
+  "育": {
+    "ids": "⿱𠫓月",
+    "radical": "肉",
+    "strokes": 8
+  },
+  "胖": {
+    "ids": "⿰月半",
+    "radical": "肉",
+    "strokes": 9
+  },
+  "能": {
+    "ids": "⿰䏍𫧇",
+    "radical": "肉",
+    "strokes": 10
+  },
+  "脑": {
+    "ids": "⿰月㐫",
+    "radical": "肉",
+    "strokes": 10
+  },
+  "脚": {
+    "ids": "⿰月却",
+    "radical": "肉",
+    "strokes": 11
+  },
+  "脸": {
+    "ids": "⿰月佥",
+    "radical": "肉",
+    "strokes": 11
+  },
+  "腿": {
+    "ids": "⿰月退",
+    "radical": "肉",
+    "strokes": 13
+  },
+  "自": {
+    "ids": "自",
+    "radical": "自",
+    "strokes": 6
+  },
+  "舒": {
+    "ids": "⿰舍予",
+    "radical": "舌",
+    "strokes": 12
+  },
+  "舞": {
+    "ids": "⿱⿳𠂉卌一舛",
+    "radical": "舛",
+    "strokes": 14
+  },
+  "般": {
+    "ids": "⿰舟殳",
+    "radical": "舟",
+    "strokes": 10
+  },
+  "船": {
+    "ids": "⿰舟⿱𠘧口",
+    "radical": "舟",
+    "strokes": 11
+  },
+  "色": {
+    "ids": "⿱𠂊巴",
+    "radical": "色",
+    "strokes": 6
+  },
+  "节": {
+    "ids": "⿱艹⿱𠃌丨",
+    "radical": "艸",
+    "strokes": 6
+  },
+  "花": {
+    "ids": "⿱艹化",
+    "radical": "艸",
+    "strokes": 8
+  },
+  "苹": {
+    "ids": "⿱艹平",
+    "radical": "艸",
+    "strokes": 9
+  },
+  "茶": {
+    "ids": "⿳艹人朩",
+    "radical": "艸",
+    "strokes": 10
+  },
+  "草": {
+    "ids": "⿱艹早",
+    "radical": "艸",
+    "strokes": 10
+  },
+  "药": {
+    "ids": "⿱艹约",
+    "radical": "艸",
+    "strokes": 9
+  },
+  "菜": {
+    "ids": "⿱艹采",
+    "radical": "艸",
+    "strokes": 12
+  },
+  "萄": {
+    "ids": "⿱艹匋",
+    "radical": "艸",
+    "strokes": 11
+  },
+  "葡": {
+    "ids": "⿱艹匍",
+    "radical": "艸",
+    "strokes": 13
+  },
+  "蓝": {
+    "ids": "⿱艹监",
+    "radical": "艸",
+    "strokes": 14
+  },
+  "蕉": {
+    "ids": "⿱艹焦",
+    "radical": "艸",
+    "strokes": 16
+  },
+  "虽": {
+    "ids": "⿱口虫",
+    "radical": "虫",
+    "strokes": 9
+  },
+  "蛋": {
+    "ids": "⿱疋虫",
+    "radical": "虫",
+    "strokes": 11
+  },
+  "行": {
+    "ids": "⿰彳亍",
+    "radical": "行",
+    "strokes": 6
+  },
+  "街": {
+    "ids": "⿲彳圭亍",
+    "radical": "行",
+    "strokes": 12
+  },
+  "衣": {
+    "ids": "⿱亠𧘇",
+    "radical": "衣",
+    "strokes": 6
+  },
+  "表": {
+    "ids": "⿱龶𧘇",
+    "radical": "衣",
+    "strokes": 8
+  },
+  "衫": {
+    "ids": "⿰衤彡",
+    "radical": "衣",
+    "strokes": 8
+  },
+  "衬": {
+    "ids": "⿰衤寸",
+    "radical": "衣",
+    "strokes": 8
+  },
+  "被": {
+    "ids": "⿰衤皮",
+    "radical": "衣",
+    "strokes": 11
+  },
+  "裙": {
+    "ids": "⿰衤君",
+    "radical": "衣",
+    "strokes": 12
+  },
+  "裤": {
+    "ids": "⿰衤库",
+    "radical": "衣",
+    "strokes": 12
+  },
+  "西": {
+    "ids": "⿱一𠁤",
+    "radical": "襾",
+    "strokes": 6
+  },
+  "要": {
+    "ids": "⿱覀女",
+    "radical": "襾",
+    "strokes": 9
+  },
+  "见": {
+    "ids": "见",
+    "radical": "見",
+    "strokes": 4
+  },
+  "视": {
+    "ids": "⿰礻见",
+    "radical": "示",
+    "strokes": 8
+  },
+  "觉": {
+    "ids": "⿳𭕄冖见",
+    "radical": "見",
+    "strokes": 9
+  },
+  "角": {
+    "ids": "角",
+    "radical": "角",
+    "strokes": 7
+  },
+  "解": {
+    "ids": "⿰角𭷔",
+    "radical": "角",
+    "strokes": 13
+  },
+  "认": {
+    "ids": "⿰讠人",
+    "radical": "言",
+    "strokes": 4
+  },
+  "让": {
+    "ids": "⿰讠上",
+    "radical": "言",
+    "strokes": 5
+  },
+  "议": {
+    "ids": "⿰讠义",
+    "radical": "言",
+    "strokes": 5
+  },
+  "记": {
+    "ids": "⿰讠己",
+    "radical": "言",
+    "strokes": 5
+  },
+  "讲": {
+    "ids": "⿰讠井",
+    "radical": "言",
+    "strokes": 6
+  },
+  "识": {
+    "ids": "⿰讠只",
+    "radical": "言",
+    "strokes": 7
+  },
+  "诉": {
+    "ids": "⿰讠斥",
+    "radical": "言",
+    "strokes": 7
+  },
+  "词": {
+    "ids": "⿰讠司",
+    "radical": "言",
+    "strokes": 7
+  },
+  "试": {
+    "ids": "⿰讠式",
+    "radical": "言",
+    "strokes": 8
+  },
+  "话": {
+    "ids": "⿰讠舌",
+    "radical": "言",
+    "strokes": 8
+  },
+  "该": {
+    "ids": "⿰讠亥",
+    "radical": "言",
+    "strokes": 8
+  },
+  "语": {
+    "ids": "⿰讠吾",
+    "radical": "言",
+    "strokes": 9
+  },
+  "说": {
+    "ids": "⿰讠兑",
+    "radical": "言",
+    "strokes": 9
+  },
+  "请": {
+    "ids": "⿰讠青",
+    "radical": "言",
+    "strokes": 10
+  },
+  "读": {
+    "ids": "⿰讠卖",
+    "radical": "言",
+    "strokes": 10
+  },
+  "课": {
+    "ids": "⿰讠果",
+    "radical": "言",
+    "strokes": 10
+  },
+  "谁": {
+    "ids": "⿰讠隹",
+    "radical": "言",
+    "strokes": 10
+  },
+  "调": {
+    "ids": "⿰讠周",
+    "radical": "言",
+    "strokes": 10
+  },
+  "谢": {
+    "ids": "⿰讠射",
+    "radical": "言",
+    "strokes": 12
+  },
+  "贵": {
+    "ids": "⿱𠀐贝",
+    "radical": "貝",
+    "strokes": 9
+  },
+  "赛": {
+    "ids": "⿱𡨄贝",
+    "radical": "貝",
+    "strokes": 14
+  },
+  "走": {
+    "ids": "⿱土龰",
+    "radical": "走",
+    "strokes": 7
+  },
+  "起": {
+    "ids": "⿺走巳",
+    "radical": "走",
+    "strokes": 10
+  },
+  "超": {
+    "ids": "⿺走召",
+    "radical": "走",
+    "strokes": 12
+  },
+  "越": {
+    "ids": "⿺走戉",
+    "radical": "走",
+    "strokes": 12
+  },
+  "趣": {
+    "ids": "⿺走取",
+    "radical": "走",
+    "strokes": 15
+  },
+  "跑": {
+    "ids": "⿰𧾷包",
+    "radical": "足",
+    "strokes": 12
+  },
+  "跟": {
+    "ids": "⿰𧾷艮",
+    "radical": "足",
+    "strokes": 13
+  },
+  "路": {
+    "ids": "⿰𧾷各",
+    "radical": "足",
+    "strokes": 13
+  },
+  "跳": {
+    "ids": "⿰𧾷兆",
+    "radical": "足",
+    "strokes": 13
+  },
+  "踢": {
+    "ids": "⿰𧾷易",
+    "radical": "足",
+    "strokes": 15
+  },
+  "身": {
+    "ids": "身",
+    "radical": "身",
+    "strokes": 7
+  },
+  "车": {
+    "ids": "车",
+    "radical": "車",
+    "strokes": 4
+  },
+  "轻": {
+    "ids": "⿰车𢀖",
+    "radical": "車",
+    "strokes": 9
+  },
+  "较": {
+    "ids": "⿰车交",
+    "radical": "車",
+    "strokes": 10
+  },
+  "辆": {
+    "ids": "⿰车两",
+    "radical": "車",
+    "strokes": 11
+  },
+  "边": {
+    "ids": "⿺辶力",
+    "radical": "辵",
+    "strokes": 6
+  },
+  "过": {
+    "ids": "⿺辶寸",
+    "radical": "辵",
+    "strokes": 7
+  },
+  "迎": {
+    "ids": "⿺辶卬",
+    "radical": "辵",
+    "strokes": 8
+  },
+  "运": {
+    "ids": "⿺辶云",
+    "radical": "辵",
+    "strokes": 7
+  },
+  "近": {
+    "ids": "⿺辶斤",
+    "radical": "辵",
+    "strokes": 8
+  },
+  "还": {
+    "ids": "⿺辶不",
+    "radical": "辵",
+    "strokes": 8
+  },
+  "这": {
+    "ids": "⿺辶文",
+    "radical": "辵",
+    "strokes": 8
+  },
+  "进": {
+    "ids": "⿺辶井",
+    "radical": "辵",
+    "strokes": 7
+  },
+  "远": {
+    "ids": "⿺辶元",
+    "radical": "辵",
+    "strokes": 7
+  },
+  "迟": {
+    "ids": "⿺辶尺",
+    "radical": "辵",
+    "strokes": 7
+  },
+  "送": {
+    "ids": "⿺辶关",
+    "radical": "辵",
+    "strokes": 10
+  },
+  "选": {
+    "ids": "⿺辶先",
+    "radical": "辵",
+    "strokes": 10
+  },
+  "通": {
+    "ids": "⿺辶甬",
+    "radical": "辵",
+    "strokes": 11
+  },
+  "遇": {
+    "ids": "⿺辶禺",
+    "radical": "辵",
+    "strokes": 13
+  },
+  "道": {
+    "ids": "⿺辶首",
+    "radical": "辵",
+    "strokes": 13
+  },
+  "那": {
+    "ids": "⿰⿻刀二阝",
+    "radical": "邑",
+    "strokes": 7
+  },
+  "邻": {
+    "ids": "⿰令阝",
+    "radical": "邑",
+    "strokes": 7
+  },
+  "都": {
+    "ids": "⿰者阝",
+    "radical": "邑",
+    "strokes": 12
+  },
+  "酒": {
+    "ids": "⿰氵酉",
+    "radical": "酉",
+    "strokes": 10
+  },
+  "里": {
+    "ids": "⿱⿻甲一一",
+    "radical": "里",
+    "strokes": 7
+  },
+  "重": {
+    "ids": "重",
+    "radical": "里",
+    "strokes": 9
+  },
+  "钟": {
+    "ids": "⿰钅中",
+    "radical": "金",
+    "strokes": 9
+  },
+  "钱": {
+    "ids": "⿰钅戋",
+    "radical": "金",
+    "strokes": 10
+  },
+  "铁": {
+    "ids": "⿰钅失",
+    "radical": "金",
+    "strokes": 10
+  },
+  "铅": {
+    "ids": "⿰钅⿱𠘧口",
+    "radical": "金",
+    "strokes": 10
+  },
+  "银": {
+    "ids": "⿰钅艮",
+    "radical": "金",
+    "strokes": 11
+  },
+  "错": {
+    "ids": "⿰钅昔",
+    "radical": "金",
+    "strokes": 13
+  },
+  "锻": {
+    "ids": "⿰钅段",
+    "radical": "金",
+    "strokes": 14
+  },
+  "镜": {
+    "ids": "⿰钅竟",
+    "radical": "金",
+    "strokes": 16
+  },
+  "长": {
+    "ids": "长",
+    "radical": "長",
+    "strokes": 4
+  },
+  "门": {
+    "ids": "门",
+    "radical": "門",
+    "strokes": 3
+  },
+  "问": {
+    "ids": "⿵门口",
+    "radical": "門",
+    "strokes": 6
+  },
+  "间": {
+    "ids": "⿵门日",
+    "radical": "門",
+    "strokes": 7
+  },
+  "闻": {
+    "ids": "⿵门耳",
+    "radical": "門",
+    "strokes": 9
+  },
+  "阳": {
+    "ids": "⿰阝日",
+    "radical": "阜",
+    "strokes": 6
+  },
+  "阴": {
+    "ids": "⿰阝月",
+    "radical": "阜",
+    "strokes": 7
+  },
+  "阿": {
+    "ids": "⿰阝可",
+    "radical": "阜",
+    "strokes": 8
+  },
+  "附": {
+    "ids": "⿰阝付",
+    "radical": "阜",
+    "strokes": 8
+  },
+  "院": {
+    "ids": "⿰阝完",
+    "radical": "阜",
+    "strokes": 9
+  },
+  "除": {
+    "ids": "⿰阝余",
+    "radical": "阜",
+    "strokes": 10
+  },
+  "难": {
+    "ids": "⿰又隹",
+    "radical": "隹",
+    "strokes": 10
+  },
+  "雨": {
+    "ids": "⿱一𠕒",
+    "radical": "雨",
+    "strokes": 8
+  },
+  "雪": {
+    "ids": "⿱雨彐",
+    "radical": "雨",
+    "strokes": 11
+  },
+  "零": {
+    "ids": "⿱雨令",
+    "radical": "雨",
+    "strokes": 13
+  },
+  "需": {
+    "ids": "⿱雨而",
+    "radical": "雨",
+    "strokes": 14
+  },
+  "静": {
+    "ids": "⿰青争",
+    "radical": "靑",
+    "strokes": 14
+  },
+  "非": {
+    "ids": "非",
+    "radical": "非",
+    "strokes": 8
+  },
+  "面": {
+    "ids": "⿱丆囬",
+    "radical": "面",
+    "strokes": 9
+  },
+  "鞋": {
+    "ids": "⿰革圭",
+    "radical": "革",
+    "strokes": 15
+  },
+  "音": {
+    "ids": "⿱立日",
+    "radical": "音",
+    "strokes": 9
+  },
+  "须": {
+    "ids": "⿰彡页",
+    "radical": "頁",
+    "strokes": 9
+  },
+  "顾": {
+    "ids": "⿰厄页",
+    "radical": "頁",
+    "strokes": 10
+  },
+  "题": {
+    "ids": "⿺是页",
+    "radical": "頁",
+    "strokes": 15
+  },
+  "颜": {
+    "ids": "⿰彦页",
+    "radical": "頁",
+    "strokes": 15
+  },
+  "飞": {
+    "ids": "飞",
+    "radical": "飛",
+    "strokes": 3
+  },
+  "饭": {
+    "ids": "⿰饣反",
+    "radical": "食",
+    "strokes": 7
+  },
+  "饱": {
+    "ids": "⿰饣包",
+    "radical": "食",
+    "strokes": 8
+  },
+  "饿": {
+    "ids": "⿰饣我",
+    "radical": "食",
+    "strokes": 10
+  },
+  "馆": {
+    "ids": "⿰饣官",
+    "radical": "食",
+    "strokes": 11
+  },
+  "香": {
+    "ids": "⿱禾日",
+    "radical": "香",
+    "strokes": 9
+  },
+  "马": {
+    "ids": "⿹②一",
+    "radical": "馬",
+    "strokes": 3
+  },
+  "骑": {
+    "ids": "⿰马奇",
+    "radical": "馬",
+    "strokes": 11
+  },
+  "高": {
+    "ids": "⿳亠口冋",
+    "radical": "高",
+    "strokes": 10
+  },
+  "鱼": {
+    "ids": "⿳𠂊田一",
+    "radical": "魚",
+    "strokes": 8
+  },
+  "鲜": {
+    "ids": "⿰鱼羊",
+    "radical": "魚",
+    "strokes": 14
+  },
+  "鸟": {
+    "ids": "⿹④一",
+    "radical": "鳥",
+    "strokes": 5
+  },
+  "鸡": {
+    "ids": "⿰又鸟",
+    "radical": "鳥",
+    "strokes": 7
+  },
+  "黄": {
+    "ids": "⿳龷由八",
+    "radical": "黃",
+    "strokes": 11
+  },
+  "黑": {
+    "ids": "⿱⑧灬",
+    "radical": "黑",
+    "strokes": 12
+  },
+  "鼻": {
+    "ids": "⿱自畀",
+    "radical": "鼻",
+    "strokes": 14
+  }
+}

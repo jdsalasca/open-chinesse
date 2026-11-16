@@ -21,6 +21,8 @@ Estado: hecho en `fa83fd8` (20 unidades de 15 palabras).
 
 ## R2 — Origen del carácter
 
+Estado: hecho (ver `docs/evidence/2026-11-16-caracteres.md`).
+
 - Dataset: descomposición ideográfica (IDS) de Unihan (`kIDS`) o CHISE.
   Generar `src/data/decomposition.json` con `carácter → [componentes]` solo para
   los caracteres del currículo.

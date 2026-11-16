@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
+import { CharacterLinks } from '../components/CharacterLinks';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { navigate } from '../lib/router';
@@ -230,6 +231,7 @@ export function Review() {
               </p>
               <p className="example__translation">{word.example.translation}</p>
             </div>
+            <CharacterLinks hanzi={word.hanzi} />
           </div>
         )}
       </article>

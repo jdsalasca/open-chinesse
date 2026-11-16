@@ -6,17 +6,32 @@ export type Route =
   | { name: 'review' }
   | { name: 'stats' }
   | { name: 'login' }
-  | { name: 'profile' };
+  | { name: 'profile' }
+  | { name: 'character'; char: string };
+
+function decode(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+const SIMPLE: Record<string, Route> = {
+  review: { name: 'review' },
+  stats: { name: 'stats' },
+  login: { name: 'login' },
+  perfil: { name: 'profile' },
+  profile: { name: 'profile' },
+};
 
 export function parseHash(hash: string): Route {
-  const path = hash.replace(/^#\/?/, '').split('?')[0];
-  const [head, param] = path.split('/');
+  const [head, param] = hash.replace(/^#\/?/, '').split('?')[0].split('/');
   if (head === 'lesson' && param) return { name: 'lesson', unitId: param };
-  if (head === 'review') return { name: 'review' };
-  if (head === 'stats') return { name: 'stats' };
-  if (head === 'login') return { name: 'login' };
-  if (head === 'perfil' || head === 'profile') return { name: 'profile' };
-  return { name: 'home' };
+  if ((head === 'caracter' || head === 'character') && param) {
+    return { name: 'character', char: decode(param) };
+  }
+  return SIMPLE[head] ?? { name: 'home' };
 }
 
 export function navigate(path: string): void {

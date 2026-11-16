@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { AccountLink } from './components/AccountLink';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
+import { Character } from './screens/Character';
 import { Lesson } from './screens/Lesson';
 import { Login } from './screens/Login';
 import { Profile } from './screens/Profile';
@@ -47,6 +48,8 @@ function RouteView({ route }: { route: Route }) {
   switch (route.name) {
     case 'lesson':
       return <Lesson key={route.unitId} unitId={route.unitId} />;
+    case 'character':
+      return <Character key={route.char} char={route.char} />;
     case 'review':
       return <Review />;
     case 'stats':

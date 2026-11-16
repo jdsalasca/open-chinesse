@@ -1,0 +1,194 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.character {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.character__back {
+  justify-self: start;
+}
+
+.character__head {
+  @include surface($radius-lg, $shadow-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  padding: $space-5;
+}
+
+.character__hanzi {
+  @include hanzi(clamp(4rem, 12vw, 6rem));
+  color: $ink;
+}
+
+.character__facts {
+  display: flex;
+  gap: $space-5;
+  margin: 0;
+  text-align: center;
+}
+
+.character__facts dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.character__facts dd {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.character__title {
+  margin: 0 0 $space-3;
+  font-size: 1rem;
+}
+
+.character__empty {
+  margin: 0;
+  color: $muted;
+}
+
+// Árbol IDS -----------------------------------------------------------------
+.ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ids__item--op {
+  display: grid;
+  gap: $space-2;
+  padding: $space-3;
+  border: 1px dashed $line-strong;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.ids__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.ids__char {
+  @include hanzi(1.9rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  height: 3rem;
+  padding: 0 $space-2;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background: $surface;
+  color: $ink;
+  text-decoration: none;
+  @include focus-ring;
+}
+
+a.ids__char:hover {
+  border-color: $mint;
+  color: $mint-dark;
+}
+
+// Lista de palabras ---------------------------------------------------------
+.character__words {
+  display: grid;
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.character__word {
+  display: grid;
+  gap: 2px;
+  padding: $space-2 0;
+  border-bottom: 1px solid $line;
+}
+
+.character__word:last-child {
+  border-bottom: 0;
+}
+
+.character__word-head {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  margin: 0;
+}
+
+.character__word-hanzi {
+  @include hanzi(1.6rem);
+  color: $ink;
+  text-decoration: none;
+  @include focus-ring;
+}
+
+.character__word-hanzi:hover {
+  color: $mint-dark;
+}
+
+.character__word-pinyin {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.character__word-meaning {
+  margin: 0;
+  font-weight: 600;
+}
+
+.character__word-unit {
+  margin: 0;
+  font-size: 0.8rem;
+  color: $muted;
+}
+
+// Chips de origen dentro de lección y repaso ---------------------------------
+.char-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-3;
+}
+
+.char-links__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.char-links__chip {
+  @include hanzi(1.1rem);
+  min-width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+  color: $ink;
+  cursor: pointer;
+  @include focus-ring;
+}
+
+.char-links__chip:hover {
+  border-color: $mint;
+  background: $mint-soft;
+}

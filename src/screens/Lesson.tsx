@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
+import { CharacterLinks } from '../components/CharacterLinks';
 import { Pinyin } from '../components/Pinyin';
 import { Confetti } from '../components/ui/Confetti';
 import { Icon } from '../components/ui/Icon';
@@ -104,6 +105,7 @@ export function Lesson({ unitId }: { unitId: string }) {
             </p>
             <p className="example__translation">{word.example.translation}</p>
           </div>
+          <CharacterLinks hanzi={word.hanzi} />
         </article>
 
         <div className="lesson__actions">
