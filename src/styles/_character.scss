@@ -4,7 +4,7 @@
 .character {
   display: grid;
   gap: $space-4;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -27,6 +27,18 @@
   color: $ink;
 }
 
+.character__reading {
+  margin: $space-1 0 0;
+  font-family: $font-mono;
+  font-size: 1.1rem;
+  color: $teal;
+}
+
+.character__meaning {
+  margin: $space-1 0 0;
+  font-weight: 600;
+}
+
 .character__facts {
   display: flex;
   gap: $space-5;
@@ -43,22 +55,92 @@
 }
 
 .character__facts dd {
+  display: grid;
+  gap: 2px;
   margin: 0;
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-.character__title {
-  margin: 0 0 $space-3;
-  font-size: 1rem;
-}
-
-.character__empty {
-  margin: 0;
+.character__facts small {
+  font-size: 0.72rem;
+  font-weight: 500;
   color: $muted;
 }
 
-// Árbol IDS -----------------------------------------------------------------
+.character__title {
+  margin: 0 0 $space-2;
+  font-size: 1rem;
+}
+
+.character__note,
+.character__empty {
+  margin: 0 0 $space-3;
+  color: $muted;
+  font-size: 0.88rem;
+}
+
+.character__subtitle {
+  margin: $space-4 0 $space-2;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.character__variant {
+  margin: $space-3 0 0;
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.character__variant span {
+  @include hanzi(1.3rem);
+  color: $ink;
+}
+
+// Historia --------------------------------------------------------------
+.formation__label {
+  display: inline-block;
+  margin: 0 0 $space-2;
+  padding: 2px $space-2;
+  border-radius: $radius-pill;
+  background: $mint-soft;
+  color: $mint-dark;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.formation__detail {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.shuowen {
+  margin: $space-4 0 0;
+  padding: $space-3 $space-4;
+  border-left: 3px solid $line-strong;
+  background: $paper;
+  border-radius: 0 $radius $radius 0;
+}
+
+.shuowen p {
+  margin: 0 0 $space-1;
+  font-family: $font-hanzi;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $ink-soft;
+}
+
+.shuowen footer {
+  font-size: 0.75rem;
+  color: $muted;
+}
+
+// Árbol IDS -------------------------------------------------------------
 .ids {
   display: flex;
   flex-wrap: wrap;
@@ -78,13 +160,19 @@
 }
 
 .ids__label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: $muted;
 }
 
-.ids__char {
+.piece {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+
+.piece__tile {
   @include hanzi(1.9rem);
   display: inline-flex;
   align-items: center;
@@ -96,16 +184,78 @@
   border-radius: $radius-sm;
   background: $surface;
   color: $ink;
-  text-decoration: none;
+  cursor: pointer;
   @include focus-ring;
 }
 
-a.ids__char:hover {
+.piece__tile.is-expandable:hover {
   border-color: $mint;
   color: $mint-dark;
 }
 
-// Lista de palabras ---------------------------------------------------------
+.piece__label {
+  max-width: 6.5rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+  color: $muted;
+}
+
+.piece__inside {
+  font-size: 0.65rem;
+  color: $teal;
+}
+
+.piece__children {
+  display: grid;
+  justify-items: center;
+  gap: $space-2;
+  margin-top: $space-2;
+  padding: $space-2;
+  border-radius: $radius;
+  background: $surface;
+}
+
+.piece__sheet {
+  font-size: 0.72rem;
+  color: $mint-dark;
+}
+
+// Chips -----------------------------------------------------------------
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  @include hanzi(1.3rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background: $surface;
+  color: $ink;
+  text-decoration: none;
+  @include focus-ring;
+}
+
+.chip:hover {
+  border-color: $mint;
+  color: $mint-dark;
+}
+
+.character__inside {
+  margin-top: $space-2;
+}
+
+// Lista de palabras -----------------------------------------------------
 .character__words {
   display: grid;
   gap: $space-2;
@@ -148,6 +298,13 @@ a.ids__char:hover {
   color: $muted;
 }
 
+.character__word-pos {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $teal;
+}
+
 .character__word-meaning {
   margin: 0;
   font-weight: 600;
@@ -159,7 +316,7 @@ a.ids__char:hover {
   color: $muted;
 }
 
-// Chips de origen dentro de lección y repaso ---------------------------------
+// Chips de origen dentro de lección y repaso -----------------------------
 .char-links {
   display: flex;
   flex-wrap: wrap;
@@ -191,4 +348,51 @@ a.ids__char:hover {
 .char-links__chip:hover {
   border-color: $mint;
   background: $mint-soft;
+}
+
+// Menú contextual -------------------------------------------------------
+.char-menu {
+  position: fixed;
+  z-index: 40;
+  display: grid;
+  gap: 2px;
+  min-width: 200px;
+  padding: $space-2;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $surface;
+  box-shadow: $shadow-lg;
+}
+
+.char-menu__head {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+  margin: 0 0 $space-1;
+  padding: 0 $space-2;
+}
+
+.char-menu__head span {
+  @include hanzi(1.4rem);
+}
+
+.char-menu__head small {
+  font-family: $font-mono;
+  color: $teal;
+}
+
+.char-menu button {
+  padding: $space-2;
+  border: 0;
+  border-radius: $radius-sm;
+  background: transparent;
+  color: $ink;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.char-menu button:hover {
+  background: $mint-soft;
+  color: $mint-dark;
 }

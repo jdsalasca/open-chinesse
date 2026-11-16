@@ -21,7 +21,9 @@ Estado: hecho en `fa83fd8` (20 unidades de 15 palabras).
 
 ## R2 — Origen del carácter
 
-Estado: hecho (ver `docs/evidence/2026-11-16-caracteres.md`).
+Estado: hecho (ver `docs/evidence/2026-11-16-caracteres.md`). Ampliado en
+`docs/evidence/2026-11-16-origen-v2.md`: formación, Shuowen, familia fonética,
+glosas de piezas y menú contextual.
 
 - Dataset: descomposición ideográfica (IDS) de Unihan (`kIDS`) o CHISE.
   Generar `src/data/decomposition.json` con `carácter → [componentes]` solo para

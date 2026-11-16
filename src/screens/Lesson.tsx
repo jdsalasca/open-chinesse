@@ -112,7 +112,9 @@ export function Lesson({ unitId }: { unitId: string }) {
           <button type="button" className="button button--primary" onClick={next} autoFocus>
             {index + 1 === unit.words.length ? 'Pasar a la práctica' : 'Siguiente'}
           </button>
-          <span className="hint">Enter para avanzar · el audio no es opcional</span>
+          <span className="hint">
+            Enter avanza · clic derecho: origen · el audio no es opcional
+          </span>
         </div>
       </div>
     );

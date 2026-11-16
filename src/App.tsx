@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
@@ -80,6 +81,7 @@ export default function App() {
       <main className="main" id="contenido">
         <RouteView route={route} />
       </main>
+      <CharacterMenu />
       <footer className="foot">
         <p>
           Progreso guardado en este navegador y, si entras con tu cuenta, sincronizado. Sin

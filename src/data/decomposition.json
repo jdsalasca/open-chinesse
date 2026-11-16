@@ -1,3092 +1,8204 @@
 {
+  "⺀": {
+    "ids": "⿱丶丶"
+  },
+  "⺆": {
+    "ids": "⺆"
+  },
+  "⺊": {
+    "ids": "⺊",
+    "type": "ideographic"
+  },
+  "⺌": {
+    "ids": "⺌",
+    "family": ["当"]
+  },
+  "㐅": {
+    "ids": "㐅",
+    "radical": "丿",
+    "strokes": 2,
+    "pinyin": "wǔ"
+  },
+  "㐫": {
+    "ids": "⿱亠凶",
+    "radical": "亠",
+    "strokes": 6,
+    "pinyin": "xiōng",
+    "type": "ideographic",
+    "semantic": ["亠"],
+    "phonetic": ["凶"],
+    "family": ["离", "脑"]
+  },
+  "㝵": {
+    "ids": "⿱旦寸",
+    "radical": "寸",
+    "strokes": 8,
+    "pinyin": "dé",
+    "type": "pictographic",
+    "semantic": ["寸"],
+    "phonetic": ["旦"],
+    "family": ["得"]
+  },
+  "䏍": {
+    "ids": "⿱厶⺼",
+    "radical": "肉",
+    "strokes": 6,
+    "pinyin": "yuàn"
+  },
+  "䒑": {
+    "ids": "⿱丷一",
+    "radical": "艸",
+    "strokes": 3,
+    "pinyin": "cǎo"
+  },
   "一": {
     "ids": "一",
     "radical": "一",
-    "strokes": 1
+    "strokes": 1,
+    "pinyin": "yī",
+    "type": "indicative",
+    "shuowen": "惟初太始，道立於一，造分天地，化成萬物。凡一之屬皆从一。",
+    "family": ["旦", "正", "𦣻"]
+  },
+  "丁": {
+    "ids": "⿱一亅",
+    "radical": "一",
+    "strokes": 2,
+    "pinyin": "dīng",
+    "type": "pictographic",
+    "shuowen": "夏時萬物皆丁實。象形。丁承丙，象人心。凡丁之屬皆从丁。",
+    "family": ["成", "打", "灯"]
+  },
+  "丂": {
+    "ids": "⿱一㇉",
+    "radical": "一",
+    "strokes": 2,
+    "pinyin": "kǎo",
+    "type": "pictographic",
+    "shuowen": "气欲舒出。纸上礙於一也。丂，古文以爲亏字，又以爲巧字。凡丂之屬皆从丂。",
+    "family": ["号", "考"]
   },
   "七": {
     "ids": "⿻㇀乚",
     "radical": "一",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "qī",
+    "type": "pictographic",
+    "shuowen": "陽之正也。从一，微陰从中衺出也。凡七之屬皆从七。"
+  },
+  "丅": {
+    "ids": "⿱一丨",
+    "radical": "一",
+    "strokes": 2,
+    "pinyin": "xià",
+    "type": "indicative",
+    "shuowen": "底也。指事。"
+  },
+  "丆": {
+    "ids": "⿱一丿",
+    "radical": "一",
+    "strokes": 2,
+    "pinyin": "hǎn"
   },
   "万": {
     "ids": "⿱一⿰丿𠃌",
     "radical": "一",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "wàn mò"
   },
   "丈": {
     "ids": "丈",
     "radical": "一",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "zhàng",
+    "type": "ideographic",
+    "shuowen": "十尺也。从又持十。"
   },
   "三": {
     "ids": "⿱一二",
     "radical": "一",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "sān",
+    "type": "ideographic",
+    "shuowen": "天地人之道也。从三數。凡三之屬皆从三。"
   },
   "上": {
     "ids": "⿱⺊一",
     "radical": "一",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "shàng",
+    "type": "indicative",
+    "family": ["尗", "让"]
   },
   "下": {
     "ids": "⿱一卜",
     "radical": "一",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "xià",
+    "type": "indicative"
   },
   "不": {
     "ids": "⿱一③",
     "radical": "一",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "bù",
+    "type": "pictographic",
+    "shuowen": "鳥飛上翔不下來也。从一，一猶天也。象形。凡不之屬皆从不。",
+    "family": ["坏", "杯", "环", "还"]
+  },
+  "与": {
+    "ids": "⿹②一",
+    "radical": "一",
+    "strokes": 3,
+    "pinyin": "yǔ",
+    "shuowen": "賜予也。一勺爲与。此与與同。"
   },
   "且": {
     "ids": "且",
     "radical": "一",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "qiě",
+    "type": "pictographic",
+    "shuowen": "薦也。从几，足有二橫，一其下地也。凡且之屬皆从且。",
+    "family": ["助", "姐", "宜", "查", "租"]
   },
   "世": {
     "ids": "世",
     "radical": "一",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "shì",
+    "type": "phonetic-loan",
+    "shuowen": "三十年爲一丗。从卅而曳長之。亦取其聲也。"
+  },
+  "丙": {
+    "ids": "⿱一内",
+    "radical": "一",
+    "strokes": 5,
+    "pinyin": "bǐng",
+    "type": "pictographic",
+    "shuowen": "位南方，萬物成，炳然。陰气初起，陽气將虧。从一入冂。一者，陽也。丙承乙，象人肩。凡丙之屬皆从丙。",
+    "family": ["更", "病"]
   },
   "业": {
     "ids": "⿱④一",
     "radical": "一",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "yè"
   },
   "东": {
     "ids": "东",
     "radical": "一",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "dōng",
+    "type": "pictographic"
   },
   "两": {
     "ids": "⿱一⿻冂从",
     "radical": "一",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "liǎng",
+    "type": "ideographic",
+    "family": ["辆"]
+  },
+  "並": {
+    "ids": "⿱䒑业",
+    "radical": "一",
+    "strokes": 8,
+    "pinyin": "bìng",
+    "type": "pictographic",
+    "family": ["普"]
+  },
+  "丨": {
+    "ids": "丨",
+    "radical": "丨",
+    "strokes": 1,
+    "pinyin": "gǔn",
+    "type": "pictographic",
+    "shuowen": "上下通也。引而上行讀若囟，引而下行讀若𨓆。凡丨之屬皆从丨。"
+  },
+  "丩": {
+    "ids": "丩",
+    "radical": "丨",
+    "strokes": 2,
+    "pinyin": "jiū",
+    "type": "pictographic",
+    "shuowen": "相糾繚也。一曰瓜瓠結丩起。象形。凡丩之屬皆从丩。",
+    "family": ["句", "叫"]
   },
   "个": {
     "ids": "⿱人丨",
     "radical": "丨",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "gè",
+    "type": "ideographic"
   },
   "中": {
     "ids": "⿻口丨",
     "radical": "丨",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "zhōng",
+    "type": "ideographic",
+    "shuowen": "内也。从口。丨，上下通。",
+    "family": ["种", "虫", "钟"]
+  },
+  "丶": {
+    "ids": "丶",
+    "radical": "丶",
+    "strokes": 1,
+    "pinyin": "zhǔ",
+    "type": "pictographic",
+    "shuowen": "有所絕止，丶而識之也。凡丶之屬皆从丶。",
+    "family": ["主", "太"]
+  },
+  "丷": {
+    "ids": "丷",
+    "radical": "丶",
+    "strokes": 2,
+    "pinyin": "bā"
   },
   "为": {
     "ids": "为",
     "radical": "丶",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "wèi",
+    "type": "pictographic"
   },
   "主": {
     "ids": "⿱亠土",
     "radical": "丶",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "zhǔ",
+    "type": "pictographic",
+    "phonetic": ["丶"],
+    "shuowen": "鐙中火主也。从纹，象形。从丶，丶亦聲。",
+    "family": ["住", "注"]
   },
   "举": {
     "ids": "⿱兴⿻二丨",
     "radical": "丶",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "jǔ",
+    "type": "ideographic",
+    "semantic": ["扌"],
+    "phonetic": ["舉"]
+  },
+  "丿": {
+    "ids": "丿",
+    "radical": "丿",
+    "strokes": 1,
+    "pinyin": "piě",
+    "type": "pictographic",
+    "shuowen": "右戾也。象左引之形。凡丿之屬皆从丿。",
+    "family": ["少", "系"]
+  },
+  "乀": {
+    "ids": "乀",
+    "radical": "丿",
+    "strokes": 1,
+    "pinyin": "fú",
+    "type": "ideographic",
+    "shuowen": "左戾也。从反丿。讀與弗同。",
+    "family": ["氏"]
+  },
+  "乁": {
+    "ids": "乁",
+    "radical": "丿",
+    "strokes": 1,
+    "pinyin": "yí",
+    "type": "ideographic",
+    "shuowen": "流也。从反𠂆。讀若移。凡乁之屬皆从乁。"
+  },
+  "乂": {
+    "ids": "⿻丿乀",
+    "radical": "丿",
+    "strokes": 2,
+    "pinyin": "yì",
+    "type": "ideographic",
+    "shuowen": "芟艸也。从丿从乀，相交。"
+  },
+  "乃": {
+    "ids": "⿹𠄎丿",
+    "radical": "丿",
+    "strokes": 2,
+    "pinyin": "nǎi",
+    "type": "pictographic",
+    "shuowen": "曳詞之難也。象气之出難。凡𠄎之屬皆从𠄎。",
+    "family": ["奶"]
   },
   "久": {
     "ids": "久",
     "radical": "丿",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "jiǔ",
+    "type": "pictographic",
+    "shuowen": "以後灸之，象人兩脛後有距也。《周禮》曰：“久諸牆以觀其橈。”凡久之屬皆从久。"
   },
   "么": {
     "ids": "⿱丿厶",
     "radical": "丿",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "me yāo"
+  },
+  "义": {
+    "ids": "⿶乂丶",
+    "radical": "丶",
+    "strokes": 3,
+    "pinyin": "yì",
+    "type": "phono-semantic",
+    "semantic": ["羊"],
+    "phonetic": ["我"],
+    "family": ["议"]
+  },
+  "乍": {
+    "ids": "乍",
+    "radical": "丿",
+    "strokes": 5,
+    "pinyin": "zhà",
+    "type": "pictographic",
+    "shuowen": "止也，一曰亡也。从亾从一。",
+    "family": ["作", "昨"]
   },
   "乎": {
     "ids": "乎",
     "radical": "丿",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "hū",
+    "type": "ideographic",
+    "phonetic": ["象"],
+    "shuowen": "語之餘也。从兮，象聲上越揚之形也。"
   },
   "乐": {
     "ids": "乐",
     "radical": "丿",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "lè",
+    "type": "pictographic"
+  },
+  "乚": {
+    "ids": "乚",
+    "radical": "乙",
+    "strokes": 1,
+    "pinyin": "yǐn",
+    "family": ["礼"]
+  },
+  "乛": {
+    "ids": "乛",
+    "radical": "乙",
+    "strokes": 1,
+    "pinyin": "yǐ"
   },
   "九": {
     "ids": "九",
     "radical": "乙",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "jiǔ",
+    "type": "pictographic",
+    "shuowen": "陽之變也。象其屈曲究盡之形。凡九之屬皆从九。",
+    "family": ["禸"]
+  },
+  "乞": {
+    "ids": "⿱𠂉乙",
+    "radical": "乙",
+    "strokes": 3,
+    "pinyin": "qǐ",
+    "family": ["吃"]
   },
   "也": {
     "ids": "也",
     "radical": "乙",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "yě",
+    "type": "pictographic",
+    "shuowen": "女陰也。象形。",
+    "family": ["他", "地", "她"]
   },
   "习": {
     "ids": "⿹𠃌冫",
     "radical": "乙",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "xí"
   },
   "书": {
     "ids": "书",
     "radical": "乙",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shū",
+    "type": "phono-semantic",
+    "semantic": ["聿"],
+    "phonetic": ["者"]
   },
   "买": {
     "ids": "⿱乛头",
     "radical": "乙",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "mǎi",
+    "type": "pictographic",
+    "family": ["卖"]
+  },
+  "亅": {
+    "ids": "亅",
+    "radical": "亅",
+    "strokes": 1,
+    "pinyin": "jué",
+    "type": "pictographic",
+    "shuowen": "鉤逆者謂之亅。象形。凡亅之屬皆从亅。读若橜。"
   },
   "了": {
     "ids": "⿱乛亅",
     "radical": "亅",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "le",
+    "type": "pictographic",
+    "shuowen": "尦也。从子無臂。象形。凡了之屬皆从了。"
+  },
+  "予": {
+    "ids": "⿱龴𠄐",
+    "radical": "亅",
+    "strokes": 4,
+    "pinyin": "yǔ",
+    "type": "phonetic-loan",
+    "shuowen": "推予也。象相予之形。凡予之屬皆从予。",
+    "family": ["舒"]
+  },
+  "争": {
+    "ids": "⿱𠂊⿻⿻コ一亅",
+    "radical": "亅",
+    "strokes": 6,
+    "pinyin": "zhēng",
+    "type": "pictographic",
+    "family": ["净", "静"]
   },
   "事": {
     "ids": "事",
     "radical": "亅",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shì",
+    "type": "pictographic",
+    "shuowen": "職也。从史，之省聲。"
   },
   "二": {
     "ids": "⿱一一",
     "radical": "二",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "èr",
+    "type": "ideographic",
+    "shuowen": "地之數也。从偶一。凡二之屬皆从二。",
+    "family": ["次"]
+  },
+  "亍": {
+    "ids": "⿱一丁",
+    "radical": "二",
+    "strokes": 3,
+    "pinyin": "chù",
+    "type": "ideographic",
+    "shuowen": "步止也。从反彳。讀若畜。"
   },
   "于": {
     "ids": "于",
     "radical": "二",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "yú"
   },
   "云": {
     "ids": "⿱二厶",
     "radical": "二",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "yún",
+    "type": "pictographic",
+    "family": ["会", "动", "层", "运"]
   },
   "五": {
     "ids": "⿱一𫝀",
     "radical": "二",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "wǔ",
+    "type": "ideographic",
+    "shuowen": "五行也。从二，陰陽在天地閒交午也。凡五之屬皆从五。",
+    "family": ["吾"]
+  },
+  "井": {
+    "ids": "井",
+    "radical": "二",
+    "strokes": 4,
+    "pinyin": "jǐng",
+    "type": "pictographic",
+    "shuowen": "八家一井，象構韓形。•，𦉥之象也。古者伯益初作井。凡井之屬皆从井。",
+    "family": ["讲", "进", "青"]
   },
   "些": {
     "ids": "⿱此二",
     "radical": "二",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "xiē",
+    "type": "ideographic",
+    "semantic": ["二"],
+    "phonetic": ["此"],
+    "shuowen": "語辭也。見《楚辭》。从此从二。其義未詳。"
+  },
+  "亠": {
+    "ids": "⿱丶一",
+    "radical": "亠",
+    "strokes": 2,
+    "pinyin": "tóu"
+  },
+  "亡": {
+    "ids": "⿱亠𠃊",
+    "radical": "亠",
+    "strokes": 3,
+    "pinyin": "wáng",
+    "type": "indicative",
+    "family": ["忘", "忙"]
+  },
+  "交": {
+    "ids": "⿱亠父",
+    "radical": "亠",
+    "strokes": 6,
+    "pinyin": "jiāo",
+    "type": "ideographic",
+    "semantic": ["亠"],
+    "phonetic": ["父"],
+    "shuowen": "交脛也。从大，象交形。凡交之屬皆从交。",
+    "family": ["校", "要", "较"]
+  },
+  "亥": {
+    "ids": "⿳亠𠂈人",
+    "radical": "亠",
+    "strokes": 6,
+    "pinyin": "hài",
+    "type": "pictographic",
+    "shuowen": "荄也。十月，微陽起，接盛陰。从二，二，古文上字。一人男，一人女也。从乙，象褢子咳咳之形。《春秋傳》曰：“亥有二首六身。”凡亥之屬皆从亥。",
+    "family": ["刻", "孩", "该"]
+  },
+  "亦": {
+    "ids": "⿱亠④",
+    "radical": "亠",
+    "strokes": 6,
+    "pinyin": "yì",
+    "type": "pictographic",
+    "semantic": ["亠"],
+    "phonetic": ["④"],
+    "shuowen": "人之臂亦也。从大，象兩亦之形。凡亦之屬皆从亦。"
   },
   "京": {
     "ids": "⿳亠口小",
     "radical": "亠",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jīng",
+    "type": "pictographic",
+    "shuowen": "人所爲絕高丘也。从高省，| 象高形。凡京之屬皆从京。",
+    "family": ["亮", "景"]
   },
   "亮": {
     "ids": "⿱⿳亠口冖几",
     "radical": "亠",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "liàng",
+    "type": "phono-semantic",
+    "semantic": ["人"],
+    "phonetic": ["京"]
+  },
+  "亲": {
+    "ids": "⿱立朩",
+    "radical": "亠",
+    "strokes": 9,
+    "pinyin": "qīn",
+    "type": "ideographic"
   },
   "人": {
     "ids": "人",
     "radical": "人",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "rén",
+    "type": "pictographic",
+    "shuowen": "天地之性最貴者也。此籒文。象臂脛之形。凡人之屬皆从人。",
+    "family": ["认"]
+  },
+  "亻": {
+    "ids": "亻",
+    "radical": "人",
+    "strokes": 2,
+    "pinyin": "rén",
+    "type": "ideographic",
+    "family": ["千"]
+  },
+  "亽": {
+    "ids": "⿱人丶",
+    "radical": "人",
+    "strokes": 3,
+    "pinyin": "jí"
   },
   "什": {
     "ids": "⿰亻十",
     "radical": "人",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shén",
+    "type": "ideographic",
+    "shuowen": "相什保也。从人、十。"
   },
   "今": {
     "ids": "⿱亽㇇",
     "radical": "人",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "jīn",
+    "type": "ideographic",
+    "shuowen": "是時也。从亼从绁。绁，古文及。"
   },
   "介": {
     "ids": "⿱人⿰丿丨",
     "radical": "人",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "jiè",
+    "type": "ideographic",
+    "shuowen": "畫也。从八从人。人各有介。",
+    "family": ["界"]
   },
   "从": {
     "ids": "⿰人人",
     "radical": "人",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "cóng",
+    "type": "ideographic",
+    "shuowen": "相聽也。从二人。凡从之屬皆从从。"
   },
   "他": {
     "ids": "⿰亻也",
     "radical": "人",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "tā",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["也"]
+  },
+  "付": {
+    "ids": "⿰亻寸",
+    "radical": "人",
+    "strokes": 5,
+    "pinyin": "fù",
+    "type": "ideographic",
+    "shuowen": "與也。从寸持物對人。",
+    "family": ["附"]
+  },
+  "令": {
+    "ids": "⿱亽龴",
+    "radical": "人",
+    "strokes": 5,
+    "pinyin": "lìng",
+    "type": "ideographic",
+    "shuowen": "發號也。从亼、卪。",
+    "family": ["冷", "邻", "零"]
   },
   "以": {
     "ids": "以",
     "radical": "人",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "yǐ",
+    "type": "pictographic",
+    "family": ["台"]
   },
   "们": {
     "ids": "⿰亻门",
     "radical": "人",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "men",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["门"]
   },
   "件": {
     "ids": "⿰亻牛",
     "radical": "人",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jiàn",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["牛"],
+    "shuowen": "分也。从人从牛。牛大物，故可分。"
   },
   "休": {
     "ids": "⿰亻木",
     "radical": "人",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xiū",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["木"],
+    "shuowen": "息止也。从人依木。"
   },
   "会": {
     "ids": "⿱人云",
     "radical": "人",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "huì",
+    "type": "ideographic",
+    "semantic": ["人"],
+    "phonetic": ["云"]
   },
   "伞": {
     "ids": "⿱人⿻丷十",
     "radical": "人",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "sǎn",
+    "type": "pictographic"
   },
   "但": {
     "ids": "⿰亻旦",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "dàn",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["旦"],
+    "shuowen": "裼也。从人旦聲。"
   },
   "位": {
     "ids": "⿰亻立",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "wèi",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["立"],
+    "shuowen": "列中庭之左右謂之位。从人、立。"
   },
   "低": {
     "ids": "⿰亻氐",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "dī",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["氐"],
+    "shuowen": "下也。从人、氐，氐亦聲。"
   },
   "住": {
     "ids": "⿰亻主",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zhù",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["主"]
   },
   "体": {
     "ids": "⿰亻本",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "tǐ",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["本"]
+  },
+  "余": {
+    "ids": "⿱亼朩",
+    "radical": "人",
+    "strokes": 7,
+    "pinyin": "yú",
+    "type": "pictographic",
+    "phonetic": ["舍"],
+    "shuowen": "語之舒也。从八，舍省聲。",
+    "family": ["舍", "茶", "除"]
   },
   "作": {
     "ids": "⿰亻乍",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zuò",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["乍"],
+    "shuowen": "起也。从人从乍。",
+    "family": ["怎"]
   },
   "你": {
     "ids": "⿰亻尔",
     "radical": "人",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "nǐ",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["尔"],
+    "family": ["您"]
+  },
+  "佥": {
+    "ids": "⿳亼𭕄一",
+    "radical": "人",
+    "strokes": 7,
+    "pinyin": "qiān",
+    "type": "pictographic",
+    "family": ["检", "脸"]
   },
   "使": {
     "ids": "⿰亻吏",
     "radical": "人",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shǐ",
+    "type": "ideographic",
+    "phonetic": ["吏"],
+    "shuowen": "伶也。从人吏聲。"
   },
   "便": {
     "ids": "⿰亻更",
     "radical": "人",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "biàn",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["更"],
+    "shuowen": "安也。人有不便，更之。从人、更。"
   },
   "信": {
     "ids": "⿰亻言",
     "radical": "人",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xìn",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["言"],
+    "shuowen": "誠也。从人从言。會意。"
   },
   "候": {
     "ids": "⿰⿰亻丨⿱ユ矢",
     "radical": "人",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "hòu",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["矦"]
   },
   "借": {
     "ids": "⿰亻昔",
     "radical": "人",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "jiè",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["昔"],
+    "shuowen": "假也。从人昔聲。"
   },
   "做": {
     "ids": "⿰亻故",
     "radical": "人",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "zuò",
+    "type": "ideographic",
+    "semantic": ["亻"],
+    "phonetic": ["故"]
   },
   "健": {
     "ids": "⿰亻建",
     "radical": "人",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "jiàn",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["建"],
+    "shuowen": "伉也。从人建聲。"
   },
   "像": {
     "ids": "⿰亻象",
     "radical": "人",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "xiàng",
+    "type": "phono-semantic",
+    "semantic": ["亻"],
+    "phonetic": ["象"],
+    "shuowen": "象也。从人从象，象亦聲。讀若養。"
   },
   "儿": {
     "ids": "⿰丿乚",
     "radical": "儿",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "ér",
+    "type": "pictographic",
+    "shuowen": "仁人也。古文奇字人也。象形。孔子曰：“在人下，故詰屈。”凡儿之屬皆从儿。",
+    "family": ["竟"]
+  },
+  "兀": {
+    "ids": "⿱一儿",
+    "radical": "儿",
+    "strokes": 3,
+    "pinyin": "wù",
+    "type": "ideographic",
+    "shuowen": "高而上平也。从一在人上。讀若敻。茂陵有兀桑里。"
   },
   "元": {
     "ids": "⿱一兀",
     "radical": "儿",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "yuán",
+    "type": "pictographic",
+    "shuowen": "始也。从一从兀。",
+    "family": ["园", "完", "玩", "远"]
+  },
+  "兄": {
+    "ids": "⿱口儿",
+    "radical": "儿",
+    "strokes": 5,
+    "pinyin": "xiōng",
+    "type": "ideographic",
+    "shuowen": "長也。从儿从口。凡兄之屬皆从兄。"
+  },
+  "兆": {
+    "ids": "兆",
+    "radical": "儿",
+    "strokes": 6,
+    "pinyin": "zhào",
+    "type": "pictographic",
+    "family": ["跳"]
   },
   "先": {
     "ids": "⿱𠂒儿",
     "radical": "儿",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xiān",
+    "type": "ideographic",
+    "semantic": ["儿"],
+    "phonetic": ["𠂒"],
+    "shuowen": "前進也。从儿从之。凡先之屬皆从先。",
+    "family": ["洗", "选"]
+  },
+  "免": {
+    "ids": "⿱𠂊⑤",
+    "radical": "儿",
+    "strokes": 7,
+    "pinyin": "miǎn",
+    "type": "pictographic",
+    "family": ["晚"]
+  },
+  "兑": {
+    "ids": "⿱丷兄",
+    "radical": "儿",
+    "strokes": 7,
+    "pinyin": "duì",
+    "type": "pictographic",
+    "family": ["说"]
   },
   "八": {
     "ids": "八",
     "radical": "八",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "bā",
+    "type": "pictographic",
+    "shuowen": "別也。象分別相背之形。凡八之屬皆从八。",
+    "family": ["穴"]
   },
   "公": {
     "ids": "⿱八厶",
     "radical": "八",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "gōng",
+    "type": "ideographic",
+    "shuowen": "平分也。从八从厶。(音司。)八猶背也。韓非曰：背厶爲公。",
+    "family": ["容", "船", "铅"]
   },
   "六": {
     "ids": "⿱亠八",
     "radical": "八",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "liù",
+    "type": "pictographic",
+    "shuowen": "《易》之數，陰變於六，正於八。从入从八。凡六之屬皆从六。"
   },
   "共": {
     "ids": "⿱龷八",
     "radical": "八",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "gòng",
+    "type": "ideographic",
+    "semantic": ["八"],
+    "phonetic": ["龷"],
+    "shuowen": "同也。从廿、廾。凡共之屬皆从共。"
   },
   "关": {
     "ids": "⿱丷天",
     "radical": "八",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "guān",
+    "family": ["送"]
   },
   "兴": {
     "ids": "⿳𭕄一八",
     "radical": "八",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xìng"
+  },
+  "兵": {
+    "ids": "⿱丘八",
+    "radical": "八",
+    "strokes": 7,
+    "pinyin": "bīng",
+    "type": "ideographic",
+    "semantic": ["八"],
+    "phonetic": ["丘"],
+    "shuowen": "械也。从廾持斤，并力之皃。",
+    "family": ["宾"]
   },
   "其": {
     "ids": "⿱⿱⑤一八",
     "radical": "八",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "qí",
+    "type": "pictographic",
+    "family": ["期"]
+  },
+  "具": {
+    "ids": "⿱⿴且一八",
+    "radical": "八",
+    "strokes": 8,
+    "pinyin": "jù",
+    "type": "ideographic",
+    "shuowen": "共置也。从廾，从貝省。古以貝爲貨。"
   },
   "典": {
     "ids": "⿱⑥八",
     "radical": "八",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "diǎn",
+    "type": "ideographic",
+    "semantic": ["八"],
+    "phonetic": ["⑥"],
+    "shuowen": "五帝之書也。从冊在丌上，尊閣之也。莊都說，典，大冊也。"
+  },
+  "冂": {
+    "ids": "冂",
+    "radical": "冂",
+    "strokes": 2,
+    "pinyin": "jiōng",
+    "type": "pictographic",
+    "shuowen": "邑外謂之郊，郊外謂之野，野外謂之林，林外謂之冂。象遠界也。凡冂之屬皆从冂。"
+  },
+  "冃": {
+    "ids": "⿵冂二",
+    "radical": "冂",
+    "strokes": 4,
+    "pinyin": "mào",
+    "type": "pictographic",
+    "shuowen": "小兒蠻夷頭衣也。从冂；二，其飾也。凡冃之屬皆从冃。",
+    "family": ["冒"]
+  },
+  "冈": {
+    "ids": "⿵冂㐅",
+    "radical": "冂",
+    "strokes": 4,
+    "pinyin": "gāng",
+    "type": "pictographic",
+    "family": ["刚"]
+  },
+  "冉": {
+    "ids": "冉",
+    "radical": "冂",
+    "strokes": 5,
+    "pinyin": "rǎn",
+    "type": "pictographic"
+  },
+  "冋": {
+    "ids": "⿵冂口",
+    "radical": "冂",
+    "strokes": 5,
+    "pinyin": "jiōng",
+    "type": "ideographic"
   },
   "再": {
     "ids": "⿱一冉",
     "radical": "冂",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "zài",
+    "type": "ideographic",
+    "shuowen": "一舉而二也。从冓省。"
+  },
+  "冏": {
+    "ids": "⿵冂㕣",
+    "radical": "冂",
+    "strokes": 7,
+    "pinyin": "jiǒng",
+    "type": "ideographic"
   },
   "冒": {
     "ids": "⿱冃目",
     "radical": "冂",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "mào",
+    "type": "phono-semantic",
+    "semantic": ["目"],
+    "phonetic": ["冃"],
+    "shuowen": "冡而前也。从冃从目。",
+    "family": ["帽", "曼"]
+  },
+  "冖": {
+    "ids": "冖",
+    "radical": "冖",
+    "strokes": 2,
+    "pinyin": "mì",
+    "type": "pictographic",
+    "shuowen": "覆也。从一下垂也。凡冖之屬皆从冖。"
   },
   "写": {
     "ids": "⿱冖与",
     "radical": "冖",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "xiě",
+    "type": "ideographic"
+  },
+  "冫": {
+    "ids": "冫",
+    "radical": "冫",
+    "strokes": 2,
+    "pinyin": "bīng"
   },
   "冬": {
     "ids": "⿱夂⺀",
     "radical": "冫",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "dōng",
+    "type": "ideographic",
+    "shuowen": "四時盡也。从仌从夂。夂，古文終字。",
+    "family": ["疼", "终"]
   },
   "冰": {
     "ids": "⿰冫水",
     "radical": "冫",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "bīng",
+    "type": "ideographic",
+    "semantic": ["冫"],
+    "phonetic": ["水"],
+    "shuowen": "水堅也。从仌从水。"
   },
   "决": {
     "ids": "⿰冫夬",
     "radical": "冫",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jué",
+    "type": "ideographic",
+    "semantic": ["冫"],
+    "phonetic": ["夬"]
   },
   "冷": {
     "ids": "⿰冫令",
     "radical": "冫",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "lěng",
+    "type": "phono-semantic",
+    "semantic": ["冫"],
+    "phonetic": ["令"],
+    "shuowen": "寒也。从仌令聲。"
   },
   "净": {
     "ids": "⿰冫争",
     "radical": "冫",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jìng",
+    "type": "phono-semantic",
+    "semantic": ["冫"],
+    "phonetic": ["争"]
   },
   "准": {
     "ids": "⿰冫隹",
     "radical": "冫",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zhǔn",
+    "type": "phono-semantic",
+    "semantic": ["冫"],
+    "phonetic": ["隹"]
   },
   "几": {
     "ids": "几",
     "radical": "几",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "jǐ",
+    "type": "pictographic",
+    "shuowen": "踞几也。象形。《周禮》五几：玉几、雕几、彤几、䰍几、素几。凡几之屬皆从几。",
+    "family": ["机", "殳"]
+  },
+  "凵": {
+    "ids": "凵",
+    "radical": "凵",
+    "strokes": 2,
+    "pinyin": "qiǎn",
+    "type": "pictographic",
+    "shuowen": "張口也。象形。凡凵之屬皆从凵。",
+    "family": ["去"]
   },
   "出": {
     "ids": "⿱屮凵",
     "radical": "凵",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "chū",
+    "type": "pictographic",
+    "shuowen": "進也。象艸木益滋，上出達也。凡出之屬皆从出。"
+  },
+  "刀": {
+    "ids": "⿹𠃌丿",
+    "radical": "刀",
+    "strokes": 2,
+    "pinyin": "dāo",
+    "type": "pictographic",
+    "shuowen": "兵也。象形。凡刀之屬皆从刀。",
+    "family": ["召", "𭷔"]
+  },
+  "刂": {
+    "ids": "刂",
+    "radical": "刀",
+    "strokes": 2,
+    "pinyin": "dāo",
+    "family": ["到"]
   },
   "分": {
     "ids": "⿱八刀",
     "radical": "刀",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "fēn",
+    "type": "ideographic",
+    "shuowen": "別也。从八从刀，刀以分別物也。"
+  },
+  "刍": {
+    "ids": "⿱𠂊彐",
+    "radical": "刀",
+    "strokes": 5,
+    "pinyin": "chú",
+    "type": "phono-semantic",
+    "semantic": ["⺈"],
+    "phonetic": ["彐"],
+    "family": ["急"]
+  },
+  "刖": {
+    "ids": "⿰月刂",
+    "radical": "刀",
+    "strokes": 6,
+    "pinyin": "yuè",
+    "type": "phono-semantic",
+    "semantic": ["刂"],
+    "phonetic": ["月"],
+    "shuowen": "絕也。从刀月聲。"
   },
   "刚": {
     "ids": "⿰冈刂",
     "radical": "刀",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "gāng",
+    "type": "phono-semantic",
+    "semantic": ["刂"],
+    "phonetic": ["冈"]
   },
   "别": {
     "ids": "⿰另刂",
     "radical": "刀",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "bié",
+    "type": "pictographic",
+    "semantic": ["刂"],
+    "phonetic": ["另"]
   },
   "刮": {
     "ids": "⿰舌刂",
     "radical": "刀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "guā",
+    "type": "phono-semantic",
+    "semantic": ["刂"],
+    "phonetic": ["舌"],
+    "shuowen": "掊把也。从刀𠯑聲。"
   },
   "到": {
     "ids": "⿰至刂",
     "radical": "刀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "dào",
+    "type": "phono-semantic",
+    "semantic": ["至"],
+    "phonetic": ["刂"],
+    "shuowen": "至也。从至刀聲。"
   },
   "刷": {
     "ids": "⿰𡰯刂",
     "radical": "刀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shuā",
+    "type": "ideographic",
+    "phonetic": ["㕞"],
+    "shuowen": "刮也。从刀，㕞省聲。《禮》：“布刷巾。”"
   },
   "刻": {
     "ids": "⿰亥刂",
     "radical": "刀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "kè",
+    "type": "phono-semantic",
+    "semantic": ["刂"],
+    "phonetic": ["亥"],
+    "shuowen": "鏤也。从刀亥聲。"
   },
   "前": {
     "ids": "⿱䒑刖",
     "radical": "刀",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "qián",
+    "type": "ideographic",
+    "shuowen": "不行而進謂之歬。从止在舟上。"
   },
   "力": {
     "ids": "⿻丿𠃌",
     "radical": "力",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "lì",
+    "type": "pictographic",
+    "shuowen": "筋也。象人筋之形。治功曰力，能圉大災。凡力之屬皆从力。",
+    "family": ["历", "男"]
   },
   "办": {
     "ids": "⿻力八",
     "radical": "力",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "bàn",
+    "type": "phono-semantic",
+    "semantic": ["力"],
+    "phonetic": ["辡"]
   },
   "加": {
     "ids": "⿰力口",
     "radical": "力",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "jiā",
+    "type": "ideographic",
+    "shuowen": "語相增加也。从力从口。",
+    "family": ["咖"]
   },
   "务": {
     "ids": "⿱夂力",
     "radical": "力",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "wù",
+    "type": "ideographic"
   },
   "动": {
     "ids": "⿰云力",
     "radical": "力",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "dòng",
+    "type": "ideographic",
+    "semantic": ["力"],
+    "phonetic": ["云"]
   },
   "助": {
     "ids": "⿰且力",
     "radical": "力",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zhù",
+    "type": "phono-semantic",
+    "semantic": ["力"],
+    "phonetic": ["且"],
+    "shuowen": "左也。从力且聲。"
   },
   "努": {
     "ids": "⿱奴力",
     "radical": "力",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "nǔ",
+    "type": "phono-semantic",
+    "semantic": ["力"],
+    "phonetic": ["奴"]
+  },
+  "勹": {
+    "ids": "勹",
+    "radical": "勹",
+    "strokes": 2,
+    "pinyin": "bāo",
+    "type": "pictographic",
+    "shuowen": "裹也。象人曲形，有所包裹。凡勹之屬皆从勹。",
+    "family": ["匋"]
+  },
+  "勺": {
+    "ids": "⿹勹丶",
+    "radical": "勹",
+    "strokes": 3,
+    "pinyin": "sháo",
+    "type": "indicative",
+    "shuowen": "挹取也。象形，中有實，與包同意。凡勺之屬皆从勺。",
+    "family": ["的", "约"]
+  },
+  "勿": {
+    "ids": "⿹勹⿱丿丿",
+    "radical": "勹",
+    "strokes": 4,
+    "pinyin": "wù",
+    "type": "pictographic",
+    "shuowen": "州里所建旗。象其柄，有三游。雜帛，幅半異。所以趣民，故遽，稱勿勿。凡勿之屬皆从勿。",
+    "family": ["易", "物"]
   },
   "包": {
     "ids": "⿹勹巳",
     "radical": "勹",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "bāo",
+    "type": "pictographic",
+    "shuowen": "象人褢妊，巳在中，象子未成形也。元气起於子。子，人所生也。男左行三十，女右行二十，俱立於巳，爲夫婦。褢妊於巳，巳爲子，十月而生。男起巳至寅，女起巳至申。故男秊始寅，女秊始申也。凡包之屬皆从包。",
+    "family": ["跑", "饱"]
+  },
+  "匋": {
+    "ids": "⿹勹缶",
+    "radical": "勹",
+    "strokes": 8,
+    "pinyin": "táo",
+    "type": "phono-semantic",
+    "semantic": ["缶"],
+    "phonetic": ["勹"],
+    "shuowen": "瓦器也。从缶，包省聲。古者昆吾作匋。案：《史篇》讀與缶同。",
+    "family": ["萄"]
+  },
+  "匍": {
+    "ids": "⿹勹甫",
+    "radical": "勹",
+    "strokes": 9,
+    "pinyin": "pú",
+    "type": "phono-semantic",
+    "semantic": ["勹"],
+    "phonetic": ["甫"],
+    "shuowen": "手行也。从勹甫聲。",
+    "family": ["葡"]
+  },
+  "匕": {
+    "ids": "⿺乚丿",
+    "radical": "匕",
+    "strokes": 2,
+    "pinyin": "bǐ",
+    "type": "pictographic",
+    "shuowen": "相與比敘也。从反人。匕，亦所以用比取飯，一名柶。凡匕之屬皆从匕。",
+    "family": ["尼"]
   },
   "化": {
     "ids": "⿰亻𠤎",
     "radical": "匕",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "huà",
+    "type": "pictographic",
+    "phonetic": ["𠤎"],
+    "shuowen": "教行也。从𠤎从人，𠤎亦聲。",
+    "family": ["花"]
   },
   "北": {
     "ids": "⿰③匕",
     "radical": "匕",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "běi",
+    "type": "pictographic",
+    "shuowen": "𦮃也。从二人相背。凡北之屬皆从北。"
+  },
+  "匚": {
+    "ids": "匚",
+    "radical": "匚",
+    "strokes": 2,
+    "pinyin": "fāng",
+    "type": "pictographic",
+    "shuowen": "受物之器。象形。凡匚之屬皆从匚。讀若方。"
   },
   "医": {
     "ids": "⿷匚矢",
     "radical": "匸",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yī",
+    "type": "ideographic",
+    "semantic": ["矢"],
+    "phonetic": ["匸"],
+    "shuowen": "盛弓弩矢器也。从匸从矢。《國語》曰：“兵不解医。”"
   },
   "十": {
     "ids": "十",
     "radical": "十",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "shí",
+    "type": "pictographic",
+    "shuowen": "數之具也。一爲東西，|爲南北，則四方中央備矣。凡十之屬皆从十。",
+    "family": ["汁"]
   },
   "千": {
     "ids": "⿱丿十",
     "radical": "十",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "qiān",
+    "type": "phono-semantic",
+    "semantic": ["一"],
+    "phonetic": ["亻"],
+    "shuowen": "十百也。从十从人。"
+  },
+  "卅": {
+    "ids": "⿻川一",
+    "radical": "十",
+    "strokes": 4,
+    "pinyin": "sà",
+    "type": "ideographic",
+    "shuowen": "三十并也。古文省。凡卅之屬皆从卅。"
   },
   "午": {
     "ids": "⿱𠂉十",
     "radical": "十",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "wǔ",
+    "type": "pictographic",
+    "shuowen": "啎也。五月，陰气午逆陽。冒地而出。此予矢同意。凡午之屬皆从午。"
   },
   "半": {
     "ids": "⿱丷⿻二丨",
     "radical": "十",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "bàn",
+    "type": "ideographic",
+    "shuowen": "物中分也。从八从牛。牛爲物大，可以分也。凡半之屬皆从半。",
+    "family": ["胖"]
+  },
+  "卌": {
+    "ids": "卌",
+    "radical": "十",
+    "strokes": 5,
+    "pinyin": "xì",
+    "type": "ideographic"
+  },
+  "卑": {
+    "ids": "⿱⿻白丿十",
+    "radical": "十",
+    "strokes": 8,
+    "pinyin": "bēi",
+    "type": "ideographic",
+    "shuowen": "賤也。執事也。从𠂇、甲。",
+    "family": ["啤"]
   },
   "单": {
     "ids": "⿱丷⿻甲一",
     "radical": "十",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "dān"
   },
   "卖": {
     "ids": "⿱十买",
     "radical": "十",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "mài",
+    "type": "phono-semantic",
+    "semantic": ["出"],
+    "phonetic": ["买"],
+    "family": ["读"]
   },
   "南": {
     "ids": "⿱十⿵冂𢆉",
     "radical": "十",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "nán",
+    "type": "pictographic",
+    "phonetic": ["𢆉"],
+    "shuowen": "艸木至南方，有枝任也。从𣎵𢆉聲。"
+  },
+  "卜": {
+    "ids": "卜",
+    "radical": "卜",
+    "strokes": 2,
+    "pinyin": "bo bǔ",
+    "type": "pictographic",
+    "shuowen": "灼剥龜也，象灸龜之形。一曰象龜兆之從橫也。凡卜之屬皆从卜。"
+  },
+  "占": {
+    "ids": "⿱⺊口",
+    "radical": "卜",
+    "strokes": 5,
+    "pinyin": "zhàn",
+    "type": "ideographic",
+    "shuowen": "視兆問也。从卜从口。",
+    "family": ["店", "点", "站"]
+  },
+  "卩": {
+    "ids": "卩",
+    "radical": "卩",
+    "strokes": 2,
+    "pinyin": "jié",
+    "type": "pictographic",
+    "shuowen": "瑞信也。守國者用玉卪，守都鄙者用角卪，使山邦者用虎卪，士邦者用人卪，澤邦者用龍卪，門關者用符卪，貨賄用璽卪，道路用旌卪。象相合之形。凡卪之屬皆从卪。"
+  },
+  "卬": {
+    "ids": "⿰②卩",
+    "radical": "卩",
+    "strokes": 4,
+    "pinyin": "áng",
+    "type": "ideographic",
+    "family": ["迎"]
+  },
+  "却": {
+    "ids": "⿰去卩",
+    "radical": "卩",
+    "strokes": 7,
+    "pinyin": "què",
+    "type": "phono-semantic",
+    "semantic": ["卩"],
+    "phonetic": ["去"],
+    "family": ["脚"]
+  },
+  "厂": {
+    "ids": "厂",
+    "radical": "厂",
+    "strokes": 2,
+    "pinyin": "chǎng",
+    "type": "pictographic",
+    "shuowen": "山石之厓巖，人可居。象形。凡厂之屬皆从厂。",
+    "family": ["厄", "彦"]
+  },
+  "厄": {
+    "ids": "⿸厂㔾",
+    "radical": "厂",
+    "strokes": 4,
+    "pinyin": "è",
+    "type": "phono-semantic",
+    "phonetic": ["厂"],
+    "shuowen": "科厄，木節也。从卪厂聲。賈侍中說，以爲厄，裹也。一曰厄，蓋也。"
   },
   "历": {
     "ids": "⿸厂力",
     "radical": "厂",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "lì",
+    "type": "phono-semantic",
+    "semantic": ["厤"],
+    "phonetic": ["力"]
+  },
+  "原": {
+    "ids": "⿸厂⿱白小",
+    "radical": "厂",
+    "strokes": 10,
+    "pinyin": "yuán",
+    "type": "ideographic",
+    "semantic": ["厂"],
+    "phonetic": ["泉"],
+    "family": ["愿"]
   },
   "厨": {
     "ids": "⿸厂𭔰",
     "radical": "厂",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "chú",
+    "type": "phono-semantic",
+    "semantic": ["厂"],
+    "phonetic": ["尌"]
+  },
+  "厶": {
+    "ids": "厶",
+    "radical": "厶",
+    "strokes": 2,
+    "pinyin": "sī",
+    "type": "indicative",
+    "shuowen": "姦衺也。韓非曰：“蒼頡作字，自營爲厶。”凡厶之屬皆从厶。"
   },
   "去": {
     "ids": "⿱土厶",
     "radical": "厶",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "qù",
+    "type": "phono-semantic",
+    "phonetic": ["凵"],
+    "shuowen": "人相違也。从大凵聲。凡去之屬皆从去。",
+    "family": ["却", "法"]
   },
   "参": {
     "ids": "⿳厶大彡",
     "radical": "厶",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "cān",
+    "type": "ideographic",
+    "phonetic": ["彡"]
   },
   "又": {
     "ids": "又",
     "radical": "又",
-    "strokes": 2
+    "strokes": 2,
+    "pinyin": "yòu",
+    "type": "pictographic",
+    "shuowen": "手也。象形。三指者，手之𠛱多略不過三也。凡又之屬皆从又。",
+    "family": ["戏", "欢", "难"]
+  },
+  "及": {
+    "ids": "及",
+    "radical": "又",
+    "strokes": 4,
+    "pinyin": "jí",
+    "type": "ideographic",
+    "shuowen": "逮也。从又从人。",
+    "family": ["极", "级"]
   },
   "友": {
     "ids": "⿸𠂇又",
     "radical": "又",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "yǒu",
+    "type": "ideographic",
+    "semantic": ["又"],
+    "phonetic": ["𠂇"],
+    "shuowen": "同𢖽爲友。从二又。相交友也。"
   },
   "双": {
     "ids": "⿰又又",
     "radical": "又",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shuāng",
+    "type": "pictographic"
+  },
+  "反": {
+    "ids": "⿸𠂆又",
+    "radical": "又",
+    "strokes": 4,
+    "pinyin": "fǎn",
+    "type": "ideographic",
+    "shuowen": "覆也。从又，厂反形。",
+    "family": ["板", "饭"]
   },
   "发": {
     "ids": "发",
     "radical": "又",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "fā"
   },
   "叔": {
     "ids": "⿰尗又",
     "radical": "又",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shū",
+    "type": "phono-semantic",
+    "semantic": ["又"],
+    "phonetic": ["朱"],
+    "shuowen": "拾也。从又尗聲。汝南名收芌爲叔。"
+  },
+  "取": {
+    "ids": "⿰耳又",
+    "radical": "又",
+    "strokes": 8,
+    "pinyin": "qǔ",
+    "type": "ideographic",
+    "shuowen": "捕取也。从又从耳。《周禮》：“獲者取左耳。”《司馬法》曰：“載獻聝。”聝者，耳也。",
+    "family": ["最", "趣"]
   },
   "变": {
     "ids": "⿱亦又",
     "radical": "又",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "biàn",
+    "type": "phono-semantic",
+    "semantic": ["夂"],
+    "phonetic": ["䜌"]
+  },
+  "叟": {
+    "ids": "⿱⿻臼丨又",
+    "radical": "又",
+    "strokes": 10,
+    "pinyin": "sǒu",
+    "type": "ideographic",
+    "family": ["瘦"]
   },
   "口": {
     "ids": "口",
     "radical": "口",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "kǒu",
+    "type": "pictographic",
+    "shuowen": "人所以言食也。象形。凡口之屬皆从口。",
+    "family": ["可", "虽"]
+  },
+  "古": {
+    "ids": "⿱十口",
+    "radical": "口",
+    "strokes": 5,
+    "pinyin": "gǔ",
+    "type": "ideographic",
+    "shuowen": "故也。从十、口。識前言者也。凡古之屬皆从古。",
+    "family": ["居", "故"]
   },
   "句": {
     "ids": "⿹勹口",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "jù",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["丩"],
+    "shuowen": "曲也。从口丩聲。凡句之屬皆从句。",
+    "family": ["狗"]
+  },
+  "另": {
+    "ids": "⿱口力",
+    "radical": "口",
+    "strokes": 5,
+    "pinyin": "lìng",
+    "family": ["别"]
   },
   "只": {
     "ids": "⿱口八",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "zhǐ",
+    "type": "pictographic",
+    "shuowen": "語巳詞也。从口，象气下引之形。凡只之屬皆从只。",
+    "family": ["识"]
   },
   "叫": {
     "ids": "⿰口丩",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "jiào",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["丩"],
+    "shuowen": "嘑也。从口丩聲。"
+  },
+  "召": {
+    "ids": "⿱刀口",
+    "radical": "口",
+    "strokes": 5,
+    "pinyin": "zhào",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["刀"],
+    "shuowen": "𧦝也。从口刀聲。",
+    "family": ["昭", "绍", "超"]
   },
   "可": {
     "ids": "⿹丁口",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "kě",
+    "type": "phono-semantic",
+    "semantic": ["丁"],
+    "phonetic": ["口"],
+    "shuowen": "𦘫也。从口丂，丂亦聲。凡可之屬皆从可。",
+    "family": ["奇", "河", "阿"]
+  },
+  "台": {
+    "ids": "⿱厶口",
+    "radical": "口",
+    "strokes": 5,
+    "pinyin": "tái",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["以"],
+    "shuowen": "說也。从口㠯聲。",
+    "family": ["始"]
   },
   "史": {
     "ids": "史",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "shǐ",
+    "type": "pictographic",
+    "shuowen": "記事者也。从又持中。中，正也。凡史之屬皆从史。",
+    "family": ["吏"]
   },
   "右": {
     "ids": "⿸𠂇口",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "yòu",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["𠂇"],
+    "shuowen": "手口相助也。从又从口。"
   },
   "号": {
     "ids": "⿱口丂",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "hào",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["丂"],
+    "shuowen": "痛聲也。从口在丂上。凡号之屬皆从号。"
   },
   "司": {
     "ids": "⿹𠃌𠮛",
     "radical": "口",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "sī",
+    "type": "ideographic",
+    "shuowen": "臣司事於外者。从反后。凡司之屬皆从司。",
+    "family": ["词"]
   },
   "吃": {
     "ids": "⿰口乞",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "chī",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["乞"],
+    "shuowen": "言蹇難也。从口气聲。"
+  },
+  "各": {
+    "ids": "⿱夂口",
+    "radical": "口",
+    "strokes": 6,
+    "pinyin": "gè",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["夂"],
+    "shuowen": "異辭也。从口、夊。夊者，有行而止之，不相聽也。",
+    "family": ["客", "路"]
+  },
+  "吅": {
+    "ids": "⿰口口",
+    "radical": "口",
+    "strokes": 6,
+    "pinyin": "xuān",
+    "type": "ideographic",
+    "shuowen": "驚嘑也。从二口。凡吅之屬皆从吅。讀若讙。"
+  },
+  "合": {
+    "ids": "⿱亼口",
+    "radical": "口",
+    "strokes": 6,
+    "pinyin": "hé",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["亼"],
+    "shuowen": "合口也。从亼从口。",
+    "family": ["拿", "答", "给"]
+  },
+  "吉": {
+    "ids": "⿱士口",
+    "radical": "口",
+    "strokes": 6,
+    "pinyin": "jí",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["士"],
+    "shuowen": "善也。从士、口。",
+    "family": ["结"]
   },
   "同": {
     "ids": "⿵𠔼口",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "tóng",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["𠔼"],
+    "shuowen": "合會也。从𠔼从口。"
   },
   "名": {
     "ids": "⿱夕口",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "míng",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["夕"],
+    "shuowen": "自命也。从口从夕。夕者，冥也。冥不相見，故以口自名。"
   },
   "后": {
     "ids": "⿸𠂋口",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "hòu",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["𠂋"],
+    "shuowen": "繼體君也。象人之形。施令以告四方，故厂之。从一、口。發號者，君后也。凡后之屬皆从后。"
+  },
+  "吏": {
+    "ids": "⿻一史",
+    "radical": "口",
+    "strokes": 6,
+    "pinyin": "lì",
+    "type": "pictographic",
+    "phonetic": ["史"],
+    "shuowen": "治人者也。从一从史，史亦聲。",
+    "family": ["使"]
   },
   "向": {
     "ids": "⿵⿱丿冂口",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xiàng",
+    "type": "ideographic",
+    "shuowen": "北出牖也。从宀从口。《詩》曰：“塞向墐戶。”",
+    "family": ["响"]
   },
   "吗": {
     "ids": "⿰口马",
     "radical": "口",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "ma",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["马"]
+  },
+  "君": {
+    "ids": "⿸尹口",
+    "radical": "口",
+    "strokes": 7,
+    "pinyin": "jūn",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["尹"],
+    "shuowen": "尊也。从尹。發號，故从口。",
+    "family": ["裙"]
   },
   "吧": {
     "ids": "⿰口巴",
     "radical": "口",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "ba",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["巴"]
   },
   "听": {
     "ids": "⿰口斤",
     "radical": "口",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "tīng",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["厅"],
+    "shuowen": "笑皃。从口斤聲。"
+  },
+  "吾": {
+    "ids": "⿱五口",
+    "radical": "口",
+    "strokes": 7,
+    "pinyin": "wú",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["五"],
+    "shuowen": "我，自稱也。从口五聲。",
+    "family": ["语"]
   },
   "告": {
     "ids": "⿱𠂒口",
     "radical": "口",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "gào",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["𠂒"],
+    "shuowen": "牛觸人，角箸橫木，所以告人也。从口从牛。《易》曰：“僮牛之告。”凡告之屬皆从告。"
   },
   "员": {
     "ids": "⿱口贝",
     "radical": "口",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yuán",
+    "type": "pictographic",
+    "semantic": ["口"],
+    "phonetic": ["贝"]
   },
   "呢": {
     "ids": "⿰口尼",
     "radical": "口",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "ne",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["尼"]
   },
   "周": {
     "ids": "⿵⺆𠮷",
     "radical": "口",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhōu",
+    "type": "ideographic",
+    "shuowen": "密也。从用、口。",
+    "family": ["调"]
   },
   "和": {
     "ids": "⿰禾口",
     "radical": "口",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "hé",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["禾"],
+    "shuowen": "相譍也。从口禾聲。"
   },
   "咖": {
     "ids": "⿰口加",
     "radical": "口",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "kā",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["加"]
+  },
+  "咸": {
+    "ids": "⿵戌口",
+    "radical": "口",
+    "strokes": 9,
+    "pinyin": "xián",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["戌"],
+    "shuowen": "皆也。悉也。从口从戌。戌，悉也。",
+    "family": ["感"]
   },
   "响": {
     "ids": "⿰口向",
     "radical": "口",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xiǎng",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["向"]
   },
   "哥": {
     "ids": "⿱可可",
     "radical": "口",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "gē",
+    "type": "ideographic",
+    "shuowen": "聲也。从二可。古文以爲謌字。",
+    "family": ["歌"]
   },
   "哪": {
     "ids": "⿰口那",
     "radical": "口",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "nǎ",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["那"]
   },
   "哭": {
     "ids": "⿱吅犬",
     "radical": "口",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "kū",
+    "type": "ideographic",
+    "phonetic": ["哀"],
+    "shuowen": "哀聲也。从吅，獄省聲。凡哭之屬皆从哭。"
+  },
+  "唐": {
+    "ids": "⿸广⿱肀口",
+    "radical": "口",
+    "strokes": 10,
+    "pinyin": "táng",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["庚"],
+    "shuowen": "大言也。从口庚聲。",
+    "family": ["糖"]
   },
   "唱": {
     "ids": "⿰口昌",
     "radical": "口",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "chàng",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["昌"],
+    "shuowen": "導也。从口昌聲。"
   },
   "商": {
     "ids": "⿱⿱亠丷冏",
     "radical": "口",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "shāng",
+    "type": "phono-semantic",
+    "semantic": ["冏"],
+    "phonetic": ["章"],
+    "shuowen": "从外知内也。从㕯，章省聲。"
   },
   "啊": {
     "ids": "⿰口阿",
     "radical": "口",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "ā",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["阿"]
   },
   "啡": {
     "ids": "⿰口非",
     "radical": "口",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "fēi",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["非"]
   },
   "啤": {
     "ids": "⿰口卑",
     "radical": "口",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "pí",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["卑"]
   },
   "喂": {
     "ids": "⿰口畏",
     "radical": "口",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "wèi",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["畏"]
   },
   "喜": {
     "ids": "⿱壴口",
     "radical": "口",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "xǐ",
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["壴"],
+    "shuowen": "樂也。从壴从口。凡喜之屬皆从喜。"
   },
   "喝": {
     "ids": "⿰口曷",
     "radical": "口",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "hē",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["曷"],
+    "shuowen": "㵣也。从口曷聲。"
+  },
+  "喿": {
+    "ids": "⿱品木",
+    "radical": "口",
+    "strokes": 13,
+    "pinyin": "zào",
+    "type": "ideographic",
+    "shuowen": "鳥羣鳴也。从品在木上。",
+    "family": ["澡"]
+  },
+  "囗": {
+    "ids": "囗",
+    "radical": "囗",
+    "strokes": 3,
+    "pinyin": "wéi",
+    "type": "pictographic",
+    "shuowen": "回也。象回帀之形。凡囗之屬皆从囗。"
   },
   "四": {
     "ids": "⿴囗儿",
     "radical": "囗",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "sì",
+    "type": "pictographic",
+    "shuowen": "陰𢿙也。象四分之形。凡四之屬皆从四。"
   },
   "回": {
     "ids": "⿴囗口",
     "radical": "囗",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "huí",
+    "type": "ideographic",
+    "shuowen": "轉也。从囗，中象回轉形。"
   },
   "因": {
     "ids": "⿴囗大",
     "radical": "囗",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yīn",
+    "type": "ideographic",
+    "shuowen": "就也。从囗、大。"
+  },
+  "囬": {
+    "ids": "⿴囗④",
+    "radical": "囗",
+    "strokes": 7,
+    "pinyin": "huí",
+    "type": "ideographic"
   },
   "园": {
     "ids": "⿴囗元",
     "radical": "囗",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yuán",
+    "type": "phono-semantic",
+    "semantic": ["囗"],
+    "phonetic": ["元"]
   },
   "国": {
     "ids": "⿴囗玉",
     "radical": "囗",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "guó",
+    "type": "ideographic"
   },
   "图": {
     "ids": "⿴囗冬",
     "radical": "囗",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "tú",
+    "type": "ideographic"
+  },
+  "土": {
+    "ids": "⿱十一",
+    "radical": "土",
+    "strokes": 3,
+    "pinyin": "tǔ",
+    "type": "pictographic",
+    "shuowen": "地之吐生物者也。二象地之下、地之中，物出形也。凡土之屬皆从土。",
+    "family": ["𠮷"]
+  },
+  "圣": {
+    "ids": "⿱又土",
+    "radical": "土",
+    "strokes": 5,
+    "pinyin": "shèng",
+    "type": "ideographic",
+    "shuowen": "汝潁之閒謂致力於地曰圣。从土从又。讀若兔窟。",
+    "family": ["怪"]
   },
   "在": {
     "ids": "⿸③土",
     "radical": "土",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "zài",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["才"],
+    "shuowen": "存也。从土才聲。"
+  },
+  "圭": {
+    "ids": "⿱土土",
+    "radical": "土",
+    "strokes": 6,
+    "pinyin": "guī",
+    "type": "ideographic",
+    "shuowen": "瑞玉也。上圜下方。公執桓圭，九寸；矦執信圭，伯執躬圭，皆七寸；子執穀璧，男執蒲璧，皆五寸。以封諸矦。从重土。楚爵有執圭。",
+    "family": ["街", "鞋"]
   },
   "地": {
     "ids": "⿰土也",
     "radical": "土",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "de dì",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["也"],
+    "shuowen": "元气初分，輕清陽爲天，重濁陰爲地。萬物所陳𠛱也。从土也聲。"
   },
   "场": {
     "ids": "⿰土𠃓",
     "radical": "土",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "chǎng",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["昜"]
   },
   "坏": {
     "ids": "⿰土不",
     "radical": "土",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "huài",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["不"],
+    "shuowen": "丘再成者也。一曰瓦未燒。从土不聲。"
   },
   "坐": {
     "ids": "⿻土从",
     "radical": "土",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zuò",
+    "type": "ideographic",
+    "shuowen": "止也。从土，从畱省。土，所止也。此與畱同意。"
   },
   "块": {
     "ids": "⿰土夬",
     "radical": "土",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "kuài",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["夬"]
+  },
+  "垂": {
+    "ids": "⿳丿⑥一",
+    "radical": "土",
+    "strokes": 8,
+    "pinyin": "chuí",
+    "type": "pictographic",
+    "phonetic": ["𠂹"],
+    "shuowen": "遠邊也。从土𠂹聲。",
+    "family": ["睡"]
   },
   "城": {
     "ids": "⿰土成",
     "radical": "土",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "chéng",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["成"],
+    "shuowen": "以盛民也。从土从成，成亦聲。"
   },
   "境": {
     "ids": "⿰土竟",
     "radical": "土",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "jìng",
+    "type": "phono-semantic",
+    "semantic": ["土"],
+    "phonetic": ["竟"],
+    "shuowen": "疆也。从土竟聲。經典通用竟。"
+  },
+  "士": {
+    "ids": "⿱十一",
+    "radical": "士",
+    "strokes": 3,
+    "pinyin": "shì",
+    "type": "pictographic",
+    "shuowen": "事也。數始於一，終於十。从一从十。孔子曰：“推十合一爲士。”凡士之屬皆从士。",
+    "family": ["吉"]
   },
   "声": {
     "ids": "⿱士𠃜",
     "radical": "士",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "shēng",
+    "type": "ideographic",
+    "semantic": ["士"],
+    "phonetic": ["𠃜"]
+  },
+  "壴": {
+    "ids": "⿱十豆",
+    "radical": "士",
+    "strokes": 9,
+    "pinyin": "zhù",
+    "type": "pictographic",
+    "shuowen": "陳樂立而上見也。从屮从豆。凡壴之屬皆从壴。",
+    "family": ["喜"]
+  },
+  "夂": {
+    "ids": "夂",
+    "radical": "夂",
+    "strokes": 3,
+    "pinyin": "zhǐ",
+    "type": "pictographic",
+    "shuowen": "从後至也。象人兩脛後有致之者。凡夂之屬皆从夂。讀若黹。",
+    "family": ["各"]
   },
   "备": {
     "ids": "⿱夂田",
     "radical": "夂",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "bèi",
+    "type": "pictographic",
+    "semantic": ["夂"],
+    "phonetic": ["田"]
   },
   "复": {
     "ids": "⿳𠂉日夂",
     "radical": "夊",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "fù",
+    "type": "ideographic"
   },
   "夏": {
     "ids": "⿱𦣻夂",
     "radical": "夊",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "xià",
+    "type": "ideographic",
+    "shuowen": "中國之人也。从夊从頁从𦥑。𦥑，兩手；夊，兩足也。"
+  },
+  "夕": {
+    "ids": "⿴𠂊丶",
+    "radical": "夕",
+    "strokes": 3,
+    "pinyin": "xī",
+    "type": "pictographic",
+    "shuowen": "莫也。从月半見。凡夕之屬皆从夕。",
+    "family": ["名", "岁"]
   },
   "外": {
     "ids": "⿰夕卜",
     "radical": "夕",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "wài",
+    "type": "phono-semantic",
+    "semantic": ["卜"],
+    "phonetic": ["月"],
+    "shuowen": "遠也。卜尚平旦，今夕卜，於事外矣。"
   },
   "多": {
     "ids": "⿱夕夕",
     "radical": "夕",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "duō",
+    "type": "ideographic",
+    "shuowen": "重也。从重夕。夕者，相繹也，故爲多。重夕爲多，重日爲曡。凡多之屬皆从多。"
   },
   "大": {
     "ids": "⿻一人",
     "radical": "大",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "dà",
+    "type": "pictographic",
+    "shuowen": "天大，地大，人亦大。故大象人形。古文大(他達切)也。凡大之屬皆从大。"
   },
   "天": {
     "ids": "⿱一大",
     "radical": "大",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "tiān",
+    "type": "pictographic",
+    "shuowen": "顚也。至高無上，从一、大。"
   },
   "太": {
     "ids": "⿵大丶",
     "radical": "大",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "tài",
+    "type": "pictographic",
+    "semantic": ["大"],
+    "phonetic": ["丶"]
   },
   "夫": {
     "ids": "⿻二人",
     "radical": "大",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "fū",
+    "type": "pictographic",
+    "shuowen": "丈夫也。从大，一以象簪也。周制以八寸爲尺，十尺爲丈。人長八尺，故曰丈夫。凡夫之屬皆从夫。"
+  },
+  "夬": {
+    "ids": "⿻𠃍大",
+    "radical": "大",
+    "strokes": 4,
+    "pinyin": "guài",
+    "type": "pictographic",
+    "shuowen": "分決也。从又，纡象決形。",
+    "family": ["决", "块", "快"]
+  },
+  "夭": {
+    "ids": "⿱丿大",
+    "radical": "大",
+    "strokes": 4,
+    "pinyin": "yāo",
+    "type": "pictographic",
+    "shuowen": "屈也。从大，象形。凡夭之屬皆从夭。",
+    "family": ["笑"]
+  },
+  "失": {
+    "ids": "⿰丿夫",
+    "radical": "大",
+    "strokes": 5,
+    "pinyin": "shī",
+    "type": "pictographic",
+    "phonetic": ["乙"],
+    "shuowen": "縱也。从手乙聲。",
+    "family": ["铁"]
   },
   "头": {
     "ids": "头",
     "radical": "大",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "tóu",
+    "type": "phono-semantic",
+    "semantic": ["大"],
+    "family": ["实"]
+  },
+  "夷": {
+    "ids": "⿻大弓",
+    "radical": "大",
+    "strokes": 6,
+    "pinyin": "yí",
+    "type": "ideographic",
+    "shuowen": "平也。从大从弓。東方之人也。",
+    "family": ["姨"]
+  },
+  "奂": {
+    "ids": "⿳𠂊冂大",
+    "radical": "大",
+    "strokes": 7,
+    "pinyin": "huàn",
+    "type": "ideographic",
+    "family": ["换"]
   },
   "奇": {
     "ids": "⿱大可",
     "radical": "大",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "qí",
+    "type": "phono-semantic",
+    "semantic": ["大"],
+    "phonetic": ["可"],
+    "shuowen": "異也。一曰不耦。从大从可。",
+    "family": ["椅", "骑"]
   },
   "女": {
     "ids": "女",
     "radical": "女",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "nǚ",
+    "type": "pictographic",
+    "shuowen": "婦人也。象形。王育說。凡女之屬皆从女。",
+    "family": ["如", "娄", "安"]
+  },
+  "奴": {
+    "ids": "⿰女又",
+    "radical": "女",
+    "strokes": 5,
+    "pinyin": "nú",
+    "type": "pictographic",
+    "shuowen": "奴、婢，皆古之辠人也。《周禮》曰：“其奴，男子入于辠隸，女子入于舂藁。”从女从又。",
+    "family": ["努"]
   },
   "奶": {
     "ids": "⿰女乃",
     "radical": "女",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "nǎi",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["乃"]
   },
   "她": {
     "ids": "⿰女也",
     "radical": "女",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "tā",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["也"]
   },
   "好": {
     "ids": "⿰女子",
     "radical": "女",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "hǎo",
+    "type": "ideographic",
+    "semantic": ["女"],
+    "phonetic": ["子"],
+    "shuowen": "美也。从女、子。"
   },
   "如": {
     "ids": "⿰女口",
     "radical": "女",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "rú",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["女"],
+    "shuowen": "从隨也。从女从口。"
   },
   "妈": {
     "ids": "⿰女马",
     "radical": "女",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "mā",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["马"]
   },
   "妹": {
     "ids": "⿰女未",
     "radical": "女",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "mèi",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["未"],
+    "shuowen": "女弟也。从女未聲。"
   },
   "妻": {
     "ids": "⿱⿻十⿻コ一女",
     "radical": "女",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "qī",
+    "type": "ideographic",
+    "shuowen": "婦與夫齊者也。从女从屮从又。又，持事，妻職也。"
+  },
+  "妾": {
+    "ids": "⿱立女",
+    "radical": "女",
+    "strokes": 8,
+    "pinyin": "qiè",
+    "type": "ideographic",
+    "semantic": ["女"],
+    "phonetic": ["立"],
+    "shuowen": "有辠女子，給事之得接於君者。从䇂从女。《春秋》云：“女爲人妾。”妾，不娉也。",
+    "family": ["接"]
   },
   "始": {
     "ids": "⿰女台",
     "radical": "女",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shǐ",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["台"],
+    "shuowen": "女之初也。从女台聲。"
   },
   "姐": {
     "ids": "⿰女且",
     "radical": "女",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jiě",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["且"],
+    "shuowen": "蜀謂母曰姐，淮南謂之社。从女且聲。"
   },
   "姓": {
     "ids": "⿰女生",
     "radical": "女",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "xìng",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["生"],
+    "shuowen": "人所生也。古之神聖母，感天而生子，故稱天子。从女从生，生亦聲。《春秋傳》曰：“天子因生以賜姓。”"
+  },
+  "委": {
+    "ids": "⿱禾女",
+    "radical": "女",
+    "strokes": 8,
+    "pinyin": "wěi",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["禾"],
+    "shuowen": "委隨也。从女从禾。",
+    "family": ["矮"]
   },
   "姨": {
     "ids": "⿰女夷",
     "radical": "女",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yí",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["夷"],
+    "shuowen": "妻之女弟同出爲姨。从女夷聲。"
+  },
+  "娄": {
+    "ids": "⿱米女",
+    "radical": "米",
+    "strokes": 9,
+    "pinyin": "lóu",
+    "type": "ideographic",
+    "semantic": ["米"],
+    "phonetic": ["女"],
+    "family": ["数", "楼"]
   },
   "婚": {
     "ids": "⿰女昏",
     "radical": "女",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "hūn",
+    "type": "phono-semantic",
+    "semantic": ["女"],
+    "phonetic": ["昏"],
+    "shuowen": "婦家也。《禮》：娶婦以昏時，婦人陰也，故曰婚。从女从昏，昏亦聲。"
   },
   "子": {
     "ids": "子",
     "radical": "子",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "zǐ",
+    "type": "pictographic",
+    "shuowen": "十一月，陽气動，萬物滋，人以爲偁。象形。凡子之屬皆从子。(李陽冰曰：“子在襁緥中，足併也。”)",
+    "family": ["好", "字", "李"]
   },
   "字": {
     "ids": "⿱宀子",
     "radical": "子",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "zì",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["子"],
+    "shuowen": "乳也。从子在宀下，子亦聲。"
+  },
+  "孝": {
+    "ids": "⿸耂子",
+    "radical": "子",
+    "strokes": 7,
+    "pinyin": "xiào",
+    "type": "ideographic",
+    "semantic": ["子"],
+    "phonetic": ["耂"],
+    "shuowen": "善事父母者。从老省，从子。子承老也。",
+    "family": ["教"]
   },
   "季": {
     "ids": "⿱禾子",
     "radical": "子",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jì",
+    "type": "ideographic",
+    "phonetic": ["稚"],
+    "shuowen": "少偁也。从子，从稚省，稚亦聲。"
   },
   "学": {
     "ids": "⿳𭕄冖子",
     "radical": "子",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "xué",
+    "type": "pictographic",
+    "family": ["觉"]
   },
   "孩": {
     "ids": "⿰子亥",
     "radical": "子",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "hái",
+    "type": "phono-semantic",
+    "semantic": ["子"],
+    "phonetic": ["亥"]
+  },
+  "宀": {
+    "ids": "宀",
+    "radical": "宀",
+    "strokes": 3,
+    "pinyin": "mián",
+    "type": "pictographic",
+    "shuowen": "交覆深屋也。象形。凡宀之屬皆从宀。"
   },
   "它": {
     "ids": "⿱宀匕",
     "radical": "宀",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "tā",
+    "type": "pictographic",
+    "shuowen": "虫也。从虫而長，象冤曲垂尾形。上古艸居患它，故相問無它乎。凡它之屬皆从它。"
   },
   "安": {
     "ids": "⿱宀女",
     "radical": "宀",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "ān",
+    "type": "ideographic",
+    "semantic": ["宀"],
+    "phonetic": ["女"],
+    "shuowen": "靜也。从女在宀下。"
   },
   "完": {
     "ids": "⿱宀元",
     "radical": "宀",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "wán",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["元"],
+    "shuowen": "全也。从宀元聲。古文以爲寬字。",
+    "family": ["院"]
+  },
+  "官": {
+    "ids": "⿱宀㠯",
+    "radical": "宀",
+    "strokes": 8,
+    "pinyin": "guān",
+    "type": "ideographic",
+    "semantic": ["宀"],
+    "phonetic": ["㠯"],
+    "shuowen": "吏，事君也。从宀从𠂤。𠂤猶眾也。此與師同意。",
+    "family": ["馆"]
   },
   "定": {
     "ids": "⿱宀𤴓",
     "radical": "宀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "dìng",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["正"],
+    "shuowen": "安也。从宀从正。"
+  },
+  "宛": {
+    "ids": "⿱宀夗",
+    "radical": "宀",
+    "strokes": 8,
+    "pinyin": "wǎn",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["夗"],
+    "shuowen": "屈草自覆也。从宀夗聲。",
+    "family": ["碗"]
   },
   "宜": {
     "ids": "⿱宀且",
     "radical": "宀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yí",
+    "type": "pictographic",
+    "semantic": ["宀"],
+    "phonetic": ["且"]
   },
   "实": {
     "ids": "⿱宀头",
     "radical": "宀",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shí",
+    "type": "ideographic",
+    "semantic": ["宀"],
+    "phonetic": ["头"]
   },
   "客": {
     "ids": "⿱宀各",
     "radical": "宀",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "kè",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["各"],
+    "shuowen": "寄也。从宀各聲。"
   },
   "室": {
     "ids": "⿱宀至",
     "radical": "宀",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "shì",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["至"],
+    "shuowen": "實也。从宀从至。至，所止也。"
   },
   "害": {
     "ids": "⿱𫲸口",
     "radical": "宀",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "hài",
+    "type": "phono-semantic",
+    "phonetic": ["丯"],
+    "shuowen": "傷也。从宀从口。宀、口，言从家起也。丯聲。"
   },
   "家": {
     "ids": "⿱宀豕",
     "radical": "宀",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "jiā",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["豕"],
+    "shuowen": "居也。从宀，豭省聲。"
   },
   "容": {
     "ids": "⿱宀谷",
     "radical": "宀",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "róng",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["公"],
+    "shuowen": "盛也。从宀、谷。"
   },
   "宾": {
     "ids": "⿱宀兵",
     "radical": "宀",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bīn",
+    "type": "phono-semantic",
+    "semantic": ["宀"],
+    "phonetic": ["兵"]
+  },
+  "寅": {
+    "ids": "⿱宀⿳一由八",
+    "radical": "宀",
+    "strokes": 11,
+    "pinyin": "yín",
+    "type": "pictographic",
+    "shuowen": "髕也。正月，陽气動，去黃泉，欲上出，陰尚彊，象宀不達，髕寅於下也。凡寅之屬皆从寅。",
+    "family": ["演"]
+  },
+  "寸": {
+    "ids": "寸",
+    "radical": "寸",
+    "strokes": 3,
+    "pinyin": "cùn",
+    "type": "ideographic",
+    "shuowen": "十分也。人手卻一寸，動𧖴，謂之寸口。从又从一。凡寸之屬皆从寸。",
+    "family": ["时", "衬"]
   },
   "对": {
     "ids": "⿰又寸",
     "radical": "寸",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "duì",
+    "type": "pictographic",
+    "family": ["树"]
+  },
+  "寺": {
+    "ids": "⿱土寸",
+    "radical": "寸",
+    "strokes": 6,
+    "pinyin": "sì",
+    "type": "phono-semantic",
+    "semantic": ["寸"],
+    "phonetic": ["止"],
+    "shuowen": "廷也。有法度者也。从寸之聲。",
+    "family": ["特"]
+  },
+  "射": {
+    "ids": "⿰身寸",
+    "radical": "寸",
+    "strokes": 10,
+    "pinyin": "shè",
+    "type": "pictographic",
+    "semantic": ["寸"],
+    "phonetic": ["身"],
+    "family": ["谢"]
   },
   "小": {
     "ids": "小",
     "radical": "小",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "xiǎo",
+    "type": "ideographic",
+    "shuowen": "物之微也。从八，丨見而分之。凡小之屬皆从小。"
   },
   "少": {
     "ids": "⿱小丿",
     "radical": "小",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shǎo",
+    "type": "pictographic",
+    "phonetic": ["丿"],
+    "shuowen": "不多也。从小丿聲。"
+  },
+  "尔": {
+    "ids": "⿱𠂊小",
+    "radical": "小",
+    "strokes": 5,
+    "pinyin": "ěr",
+    "family": ["你"]
+  },
+  "尗": {
+    "ids": "⿱上小",
+    "radical": "小",
+    "strokes": 6,
+    "pinyin": "shū",
+    "type": "ideographic",
+    "semantic": ["小"],
+    "phonetic": ["上"],
+    "shuowen": "豆也。象尗豆生之形也。凡尗之屬皆从尗。"
+  },
+  "尤": {
+    "ids": "⿺尢丶",
+    "radical": "尢",
+    "strokes": 4,
+    "pinyin": "yóu",
+    "type": "pictographic",
+    "phonetic": ["尢"],
+    "family": ["就"]
+  },
+  "尧": {
+    "ids": "⿱𭠍兀",
+    "radical": "尢",
+    "strokes": 6,
+    "pinyin": "yáo",
+    "type": "pictographic",
+    "family": ["烧"]
   },
   "就": {
     "ids": "⿰京尤",
     "radical": "尢",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "jiù",
+    "type": "phono-semantic",
+    "semantic": ["京"],
+    "phonetic": ["尤"],
+    "shuowen": "就，高也。从京从尤。尤，異於凡也。"
+  },
+  "尸": {
+    "ids": "尸",
+    "radical": "尸",
+    "strokes": 3,
+    "pinyin": "shī",
+    "type": "pictographic",
+    "shuowen": "陳也。象臥之形。凡尸之屬皆从尸。"
+  },
+  "尺": {
+    "ids": "尺",
+    "radical": "尸",
+    "strokes": 4,
+    "pinyin": "chǐ",
+    "type": "ideographic",
+    "shuowen": "十寸也。人手卻十分動脈爲寸口。十寸爲尺。尺，所以指尺䂓榘事也。从尸从乙。乙，所識也。周制，寸、尺、咫、尋、常、仞諸度量，皆以人之體爲法。凡尺之屬皆从尺。",
+    "family": ["迟"]
+  },
+  "尼": {
+    "ids": "⿸尸匕",
+    "radical": "尸",
+    "strokes": 5,
+    "pinyin": "ní",
+    "type": "phono-semantic",
+    "semantic": ["尸"],
+    "phonetic": ["匕"],
+    "shuowen": "從後近之。从尸匕聲。",
+    "family": ["呢"]
   },
   "层": {
     "ids": "⿸尸云",
     "radical": "尸",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "céng",
+    "type": "ideographic",
+    "semantic": ["尸"],
+    "phonetic": ["云"]
   },
   "居": {
     "ids": "⿸尸古",
     "radical": "尸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jū",
+    "type": "phono-semantic",
+    "semantic": ["户"],
+    "phonetic": ["古"],
+    "shuowen": "蹲也。从尸古者，居从古。",
+    "family": ["据"]
+  },
+  "屮": {
+    "ids": "⿻凵丨",
+    "radical": "屮",
+    "strokes": 3,
+    "pinyin": "chè",
+    "type": "pictographic",
+    "shuowen": "艸木初生也。象丨出形，有枝莖也。古文或以爲艸字。讀若徹。凡屮之屬皆从屮。尹彤說。"
   },
   "山": {
     "ids": "山",
     "radical": "山",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "shān",
+    "type": "pictographic",
+    "shuowen": "宣也。宣气𢿱，生萬物，有石而高。象形。凡山之屬皆从山。"
   },
   "岁": {
     "ids": "⿱山夕",
     "radical": "山",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "suì",
+    "type": "ideographic",
+    "semantic": ["山"],
+    "phonetic": ["夕"]
   },
   "工": {
     "ids": "工",
     "radical": "工",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "gōng",
+    "type": "pictographic",
+    "shuowen": "巧飾也。象人有規榘也。與巫同意。凡工之屬皆从工。",
+    "family": ["空", "红", "经"]
   },
   "左": {
     "ids": "⿸𠂇工",
     "radical": "工",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "zuǒ",
+    "type": "ideographic",
+    "semantic": ["工"],
+    "phonetic": ["𠂇"],
+    "shuowen": "手相左助也。从𠂇、工。凡左之屬皆从左。"
   },
   "差": {
     "ids": "⿸羊工",
     "radical": "工",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "chà chā",
+    "type": "ideographic",
+    "shuowen": "貳也。差不相值也。从左从𠂹。"
   },
   "己": {
     "ids": "己",
     "radical": "己",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "jǐ",
+    "type": "pictographic",
+    "shuowen": "中宮也。象萬物辟藏詘形也。己承戊，象人腹。凡己之屬皆从己。",
+    "family": ["记", "起"]
   },
   "已": {
     "ids": "已",
     "radical": "己",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "yǐ"
+  },
+  "巳": {
+    "ids": "巳",
+    "radical": "己",
+    "strokes": 3,
+    "pinyin": "sì",
+    "type": "pictographic",
+    "shuowen": "巳也。四月，陽气巳出，陰气巳藏，萬物見，成文章，故巳爲蛇，象形。凡巳之屬皆从巳。"
+  },
+  "巴": {
+    "ids": "巴",
+    "radical": "己",
+    "strokes": 4,
+    "pinyin": "bā",
+    "type": "pictographic",
+    "shuowen": "蟲也。或曰食象蛇。象形。凡巴之屬皆从巴。",
+    "family": ["吧", "把", "爬", "爸"]
+  },
+  "巾": {
+    "ids": "巾",
+    "radical": "巾",
+    "strokes": 3,
+    "pinyin": "jīn",
+    "type": "pictographic",
+    "shuowen": "佩巾也。从冂，丨象糸也。凡巾之屬皆从巾。",
+    "family": ["𡰯"]
+  },
+  "帀": {
+    "ids": "⿱一巾",
+    "radical": "巾",
+    "strokes": 4,
+    "pinyin": "zā",
+    "type": "ideographic",
+    "shuowen": "周也。从反之而帀也。凡帀之屬皆从帀。周盛說。"
   },
   "市": {
     "ids": "⿱亠巾",
     "radical": "巾",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "shì",
+    "type": "phono-semantic",
+    "semantic": ["兮"],
+    "phonetic": ["之"],
+    "shuowen": "買賣所之也。市有垣，从冂从绁，绁，古文及，象物相及也。之省聲。"
+  },
+  "布": {
+    "ids": "⿸𠂇巾",
+    "radical": "巾",
+    "strokes": 5,
+    "pinyin": "bù",
+    "type": "phono-semantic",
+    "semantic": ["巾"],
+    "phonetic": ["父"],
+    "shuowen": "枲織也。从巾父聲。"
   },
   "师": {
     "ids": "⿰⿰丨丿帀",
     "radical": "巾",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "shī",
+    "type": "ideographic"
   },
   "希": {
     "ids": "⿱㐅布",
     "radical": "巾",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "xī",
+    "type": "ideographic"
   },
   "带": {
     "ids": "⿳卅冖巾",
     "radical": "巾",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "dài",
+    "type": "ideographic"
   },
   "帮": {
     "ids": "⿱邦巾",
     "radical": "巾",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bāng",
+    "type": "phono-semantic",
+    "semantic": ["巾"],
+    "phonetic": ["邦"]
   },
   "常": {
     "ids": "⿱𫩠巾",
     "radical": "巾",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "cháng",
+    "type": "phono-semantic",
+    "semantic": ["巾"],
+    "phonetic": ["尚"],
+    "shuowen": "下帬也。从巾尚聲。"
   },
   "帽": {
     "ids": "⿰巾冒",
     "radical": "巾",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "mào",
+    "type": "phono-semantic",
+    "semantic": ["巾"],
+    "phonetic": ["冒"]
   },
   "干": {
     "ids": "干",
     "radical": "干",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "gàn",
+    "type": "pictographic",
+    "shuowen": "犯也。从反入，从一。凡干之屬皆从干。",
+    "family": ["舌"]
   },
   "平": {
     "ids": "⿻干丷",
     "radical": "干",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "píng",
+    "type": "phono-semantic",
+    "shuowen": "語平舒也。从亏从八。八，分也。爰禮說。",
+    "family": ["苹"]
   },
   "年": {
     "ids": "年",
     "radical": "干",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "nián",
+    "type": "pictographic"
+  },
+  "广": {
+    "ids": "广",
+    "radical": "广",
+    "strokes": 3,
+    "pinyin": "guǎng",
+    "type": "ideographic",
+    "shuowen": "因广爲屋，象對剌高屋之形。凡广之屬皆从广。讀若儼然之儼。",
+    "family": ["床"]
   },
   "床": {
     "ids": "⿸广木",
     "radical": "广",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "chuáng",
+    "type": "ideographic",
+    "semantic": ["木"],
+    "phonetic": ["广"]
+  },
+  "库": {
+    "ids": "⿸广车",
+    "radical": "广",
+    "strokes": 7,
+    "pinyin": "kù",
+    "type": "phono-semantic",
+    "semantic": ["广"],
+    "phonetic": ["车"],
+    "family": ["裤"]
   },
   "应": {
     "ids": "⿸广⿱𭕄一",
     "radical": "广",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yīng",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["䧹"]
   },
   "店": {
     "ids": "⿸广占",
     "radical": "广",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "diàn",
+    "type": "phono-semantic",
+    "semantic": ["广"],
+    "phonetic": ["占"]
   },
   "康": {
     "ids": "⿸广隶",
     "radical": "广",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "kāng",
+    "type": "ideographic",
+    "semantic": ["米"],
+    "phonetic": ["庚"]
+  },
+  "建": {
+    "ids": "⿺廴聿",
+    "radical": "廴",
+    "strokes": 9,
+    "pinyin": "jiàn",
+    "type": "ideographic",
+    "semantic": ["廴"],
+    "phonetic": ["聿"],
+    "shuowen": "立朝律也。从聿从廴。",
+    "family": ["健"]
+  },
+  "廾": {
+    "ids": "⿻一⿰丿丨",
+    "radical": "廾",
+    "strokes": 3,
+    "pinyin": "gǒng",
+    "type": "ideographic",
+    "family": ["𥃲"]
   },
   "开": {
     "ids": "⿱一廾",
     "radical": "廾",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "kāi",
+    "type": "pictographic"
+  },
+  "式": {
+    "ids": "⿹弋工",
+    "radical": "弋",
+    "strokes": 6,
+    "pinyin": "shì",
+    "type": "phono-semantic",
+    "semantic": ["工"],
+    "phonetic": ["弋"],
+    "shuowen": "法也。从工弋聲。",
+    "family": ["试"]
+  },
+  "弓": {
+    "ids": "弓",
+    "radical": "弓",
+    "strokes": 3,
+    "pinyin": "gōng",
+    "type": "pictographic",
+    "shuowen": "以近窮遠。象形。古者揮作弓。《周禮》六弓：王弓、弧弓以射甲革甚質；夾弓、庾弓以射干矦鳥獸；唐弓、大弓以授學射者。凡弓之屬皆从弓。"
   },
   "弟": {
     "ids": "⿱丷𢎨",
     "radical": "弓",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "dì",
+    "type": "pictographic",
+    "shuowen": "韋束之次弟也。从古字之象。凡弟之屬皆从弟。",
+    "family": ["梯", "第"]
   },
   "张": {
     "ids": "⿰弓长",
     "radical": "弓",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zhāng",
+    "type": "phono-semantic",
+    "semantic": ["弓"],
+    "phonetic": ["长"]
+  },
+  "彐": {
+    "ids": "彐",
+    "radical": "彐",
+    "strokes": 3,
+    "pinyin": "jì",
+    "family": ["刍", "扫"]
   },
   "当": {
     "ids": "⿱⺌彐",
     "radical": "彐",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "dāng",
+    "type": "ideographic",
+    "semantic": ["彐"],
+    "phonetic": ["⺌"]
+  },
+  "录": {
+    "ids": "⿱彐氺",
+    "radical": "彐",
+    "strokes": 8,
+    "pinyin": "lù",
+    "type": "pictographic",
+    "semantic": ["彐"],
+    "phonetic": ["氺"],
+    "family": ["绿"]
+  },
+  "彡": {
+    "ids": "彡",
+    "radical": "彡",
+    "strokes": 3,
+    "pinyin": "shān",
+    "type": "pictographic",
+    "shuowen": "毛飾畫文也。象形。凡彡之屬皆从彡。",
+    "family": ["参", "衫"]
+  },
+  "彦": {
+    "ids": "⿸产彡",
+    "radical": "彡",
+    "strokes": 9,
+    "pinyin": "yàn",
+    "type": "phono-semantic",
+    "semantic": ["弓"],
+    "phonetic": ["厂"],
+    "family": ["颜"]
   },
   "影": {
     "ids": "⿰景彡",
     "radical": "彡",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "yǐng",
+    "type": "phono-semantic",
+    "semantic": ["彡"],
+    "phonetic": ["景"]
+  },
+  "彳": {
+    "ids": "彳",
+    "radical": "彳",
+    "strokes": 3,
+    "pinyin": "chì",
+    "shuowen": "小步也。象人脛三屬相連也。凡彳之屬皆从彳。"
   },
   "很": {
     "ids": "⿰彳艮",
     "radical": "彳",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "hěn",
+    "type": "phono-semantic",
+    "semantic": ["彳"],
+    "phonetic": ["艮"],
+    "shuowen": "不聽从也。一曰行難也。一曰盭也。从彳𥃩聲。"
   },
   "得": {
     "ids": "⿰彳㝵",
     "radical": "彳",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "dé",
+    "type": "ideographic",
+    "phonetic": ["㝵"],
+    "shuowen": "行有所得也。从彳㝵聲。"
   },
   "心": {
     "ids": "心",
     "radical": "心",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "xīn",
+    "type": "pictographic",
+    "shuowen": "人心，土藏，在身之中。象形。博士說以爲火藏。凡心之屬皆从心。"
+  },
+  "忄": {
+    "ids": "忄",
+    "radical": "心",
+    "strokes": 3,
+    "pinyin": "xīn"
   },
   "必": {
     "ids": "⿻心丿",
     "radical": "心",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "bì",
+    "type": "pictographic",
+    "phonetic": ["弋"],
+    "shuowen": "分極也。从八、弋，弋亦聲。"
   },
   "忘": {
     "ids": "⿱亡心",
     "radical": "心",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "wàng",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["亡"],
+    "shuowen": "不識也。从心从亡，亡亦聲。"
   },
   "忙": {
     "ids": "⿰忄亡",
     "radical": "心",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "máng",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["亡"]
   },
   "快": {
     "ids": "⿰忄夬",
     "radical": "心",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "kuài",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["夬"],
+    "shuowen": "喜也。从心夬聲。",
+    "family": ["筷"]
   },
   "怎": {
     "ids": "⿱乍心",
     "radical": "心",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zěn",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["作"]
   },
   "怕": {
     "ids": "⿰忄白",
     "radical": "心",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "pà",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["白"],
+    "shuowen": "無爲也。从心白聲。"
   },
   "思": {
     "ids": "⿱田心",
     "radical": "心",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "sī",
+    "type": "ideographic",
+    "phonetic": ["囟"],
+    "shuowen": "容也。从心囟聲。凡思之屬皆从思。"
   },
   "急": {
     "ids": "⿱刍心",
     "radical": "心",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "jí",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["刍"],
+    "shuowen": "褊也。从心及聲。"
   },
   "怪": {
     "ids": "⿰忄圣",
     "radical": "心",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "guài",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["圣"],
+    "shuowen": "異也。从心圣聲。"
   },
   "总": {
     "ids": "⿱𠮦心",
     "radical": "心",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zǒng",
+    "type": "phono-semantic",
+    "semantic": ["糹"],
+    "phonetic": ["悤"],
+    "family": ["聪"]
   },
   "息": {
     "ids": "⿱自心",
     "radical": "心",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "xī",
+    "type": "ideographic",
+    "phonetic": ["自"],
+    "shuowen": "喘也。从心从自，自亦聲。"
   },
   "您": {
     "ids": "⿱你心",
     "radical": "心",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "nín",
+    "type": "ideographic",
+    "semantic": ["心"],
+    "phonetic": ["你"]
   },
   "情": {
     "ids": "⿰忄青",
     "radical": "心",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "qíng",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["青"],
+    "shuowen": "人之陰气有欲者。从心青聲。"
   },
   "惯": {
     "ids": "⿰忄贯",
     "radical": "心",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "guàn",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["贯"]
   },
   "想": {
     "ids": "⿱相心",
     "radical": "心",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "xiǎng",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["相"],
+    "shuowen": "冀思也。从心相聲。"
   },
   "意": {
     "ids": "⿱音心",
     "radical": "心",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "yì",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["音"],
+    "shuowen": "志也。从心察言而知意也。从心从音。"
   },
   "感": {
     "ids": "⿱咸心",
     "radical": "心",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "gǎn",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["咸"],
+    "shuowen": "動人心也。从心咸聲。"
   },
   "愿": {
     "ids": "⿸原心",
     "radical": "心",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "yuàn",
+    "type": "phono-semantic",
+    "semantic": ["心"],
+    "phonetic": ["原"],
+    "shuowen": "謹也。从心原聲。"
   },
   "慢": {
     "ids": "⿰忄曼",
     "radical": "心",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "màn",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["曼"],
+    "shuowen": "惰也。从心曼聲。一曰慢，不畏也。"
   },
   "懂": {
     "ids": "⿰忄董",
     "radical": "心",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "dǒng",
+    "type": "phono-semantic",
+    "semantic": ["忄"],
+    "phonetic": ["董"]
+  },
+  "戈": {
+    "ids": "⿻弋丿",
+    "radical": "戈",
+    "strokes": 4,
+    "pinyin": "gē",
+    "type": "pictographic",
+    "shuowen": "平頭𢧢也。从弋，一橫之。象形。凡戈之屬皆从戈。",
+    "family": ["找"]
+  },
+  "戉": {
+    "ids": "戉",
+    "radical": "戈",
+    "strokes": 5,
+    "pinyin": "yuè",
+    "type": "pictographic",
+    "phonetic": ["𠄌"],
+    "shuowen": "斧也。从戈𠄌聲。《司馬法》曰：“夏執玄戉，殷執白戚，周左杖黃戉，右秉白髦。”凡戉之屬皆从戉。”",
+    "family": ["越"]
+  },
+  "戊": {
+    "ids": "戊",
+    "radical": "戈",
+    "strokes": 5,
+    "pinyin": "wù",
+    "type": "pictographic",
+    "shuowen": "中宮也。象六甲五龍相拘絞也。戊承丁，象人脅。凡戊之屬皆从戊。"
+  },
+  "戋": {
+    "ids": "⿻戈一",
+    "radical": "戈",
+    "strokes": 5,
+    "pinyin": "jiān",
+    "type": "ideographic"
   },
   "戏": {
     "ids": "⿰又戈",
     "radical": "戈",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xì",
+    "type": "ideographic",
+    "semantic": ["戈"],
+    "phonetic": ["又"]
   },
   "成": {
     "ids": "⿵戊𠃌",
     "radical": "戈",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "chéng",
+    "type": "phono-semantic",
+    "semantic": ["戊"],
+    "phonetic": ["丁"],
+    "shuowen": "就也。从戊丁聲。",
+    "family": ["城"]
   },
   "我": {
     "ids": "我",
     "radical": "戈",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "wǒ",
+    "type": "pictographic",
+    "shuowen": "施身自謂也。或說我，頃頓也。从戈从𠄒。𠄒，或說古垂字。一曰古殺字。凡我之屬皆从我。",
+    "family": ["义", "饿"]
   },
   "或": {
     "ids": "⿹戈⿱口一",
     "radical": "戈",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "huò",
+    "type": "ideographic",
+    "shuowen": "邦也。从囗从戈，以守一。一，地也。"
+  },
+  "戶": {
+    "ids": "⿱丿尸",
+    "radical": "戶",
+    "strokes": 4,
+    "pinyin": "hù",
+    "type": "pictographic",
+    "shuowen": "護也。半門曰戶。象形。凡戶之屬皆从戶。",
+    "family": ["所"]
+  },
+  "户": {
+    "ids": "⿱丶尸",
+    "radical": "户",
+    "strokes": 4,
+    "pinyin": "hù",
+    "type": "pictographic",
+    "family": ["护"]
   },
   "房": {
     "ids": "⿸户方",
-    "radical": "戶",
-    "strokes": 8
+    "radical": "户",
+    "strokes": 8,
+    "pinyin": "fáng",
+    "type": "phono-semantic",
+    "semantic": ["戶"],
+    "phonetic": ["方"],
+    "shuowen": "室在㫄也。从戶方聲。"
   },
   "所": {
     "ids": "⿰戶斤",
-    "radical": "戶",
-    "strokes": 8
+    "radical": "户",
+    "strokes": 8,
+    "pinyin": "suǒ",
+    "type": "phono-semantic",
+    "semantic": ["斤"],
+    "phonetic": ["戶"],
+    "shuowen": "伐木聲也。从斤戶聲。《詩》曰：“伐木所所。”"
   },
   "手": {
     "ids": "手",
     "radical": "手",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shǒu",
+    "type": "pictographic",
+    "shuowen": "拳也。象形。凡手之屬皆从手。"
+  },
+  "扌": {
+    "ids": "扌",
+    "radical": "手",
+    "strokes": 3,
+    "pinyin": "shǒu",
+    "type": "pictographic"
   },
   "才": {
     "ids": "才",
     "radical": "手",
-    "strokes": 3
+    "strokes": 3,
+    "pinyin": "cái",
+    "type": "ideographic",
+    "shuowen": "艸木之初也。从丨上貫一，將生枝葉。一，地也。凡才之屬皆从才。",
+    "family": ["在"]
   },
   "打": {
     "ids": "⿰扌丁",
     "radical": "手",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "dǎ",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["丁"],
+    "shuowen": "擊也。从手丁聲。"
+  },
+  "执": {
+    "ids": "⿰扌丸",
+    "radical": "手",
+    "strokes": 6,
+    "pinyin": "zhí",
+    "type": "pictographic",
+    "semantic": ["扌"],
+    "phonetic": ["丸"],
+    "family": ["热"]
   },
   "扫": {
     "ids": "⿰扌彐",
     "radical": "手",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "sǎo",
+    "type": "ideographic",
+    "semantic": ["扌"],
+    "phonetic": ["彐"]
   },
   "找": {
     "ids": "⿰扌戈",
     "radical": "手",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zhǎo",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["戈"]
   },
   "把": {
     "ids": "⿰扌巴",
     "radical": "手",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "bǎ",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["巴"],
+    "shuowen": "握也。从手巴聲。"
   },
   "护": {
     "ids": "⿰扌户",
     "radical": "手",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "hù",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["户"]
   },
   "报": {
     "ids": "⿰扌𠬝",
     "radical": "手",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "bào",
+    "type": "pictographic",
+    "semantic": ["扌"],
+    "phonetic": ["𠬝"]
   },
   "担": {
     "ids": "⿰扌旦",
     "radical": "手",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "dān",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["旦"]
   },
   "择": {
     "ids": "⿰扌𠬤",
     "radical": "手",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zé",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["睪"]
   },
   "拿": {
     "ids": "⿱合手",
     "radical": "手",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "ná",
+    "type": "ideographic",
+    "semantic": ["手"],
+    "phonetic": ["合"]
   },
   "换": {
     "ids": "⿰扌奂",
     "radical": "手",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "huàn",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["奂"]
   },
   "据": {
     "ids": "⿰扌居",
     "radical": "手",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jù",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["居"],
+    "shuowen": "𢧢挶也。从手居聲。"
   },
   "接": {
     "ids": "⿰扌妾",
     "radical": "手",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jiē",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["妾"],
+    "shuowen": "交也。从手妾聲。"
   },
   "提": {
     "ids": "⿰扌是",
     "radical": "手",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "tí",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["是"],
+    "shuowen": "挈也。从手是聲。"
   },
   "搬": {
     "ids": "⿰扌般",
     "radical": "手",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "bān",
+    "type": "phono-semantic",
+    "semantic": ["扌"],
+    "phonetic": ["般"]
+  },
+  "攵": {
+    "ids": "攵",
+    "radical": "攴",
+    "strokes": 4,
+    "pinyin": "pū",
+    "type": "pictographic"
   },
   "放": {
     "ids": "⿰方攵",
     "radical": "攴",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "fàng",
+    "type": "phono-semantic",
+    "semantic": ["攵"],
+    "phonetic": ["方"],
+    "shuowen": "逐也。从攴方聲。凡放之屬皆从放。"
   },
   "故": {
     "ids": "⿰古攵",
     "radical": "攴",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "gù",
+    "type": "phono-semantic",
+    "semantic": ["攵"],
+    "phonetic": ["古"],
+    "shuowen": "使爲之也。从攴古聲。",
+    "family": ["做"]
   },
   "教": {
     "ids": "⿰孝攵",
     "radical": "攴",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jiào",
+    "type": "phono-semantic",
+    "semantic": ["攵"],
+    "phonetic": ["孝"],
+    "shuowen": "上所施下所效也。从攴从孝。凡教之屬皆从教。"
   },
   "敢": {
     "ids": "⿰⿱乛耳攵",
     "radical": "攴",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "gǎn",
+    "type": "ideographic",
+    "semantic": ["爭"],
+    "phonetic": ["甘"]
   },
   "数": {
     "ids": "⿰娄攵",
     "radical": "攴",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "shù",
+    "type": "phono-semantic",
+    "semantic": ["攵"],
+    "phonetic": ["娄"]
   },
   "文": {
     "ids": "⿱亠乂",
     "radical": "文",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "wén",
+    "type": "indicative",
+    "shuowen": "錯畫也。象交文。凡文之屬皆从文。",
+    "family": ["这"]
   },
   "斤": {
     "ids": "⿸𠂆丅",
     "radical": "斤",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "jīn",
+    "type": "pictographic",
+    "shuowen": "斫木也。象形。凡斤之屬皆从斤。",
+    "family": ["近"]
+  },
+  "斥": {
+    "ids": "⿻斤丶",
+    "radical": "斤",
+    "strokes": 5,
+    "pinyin": "chì",
+    "type": "ideographic",
+    "family": ["诉"]
   },
   "新": {
     "ids": "⿰亲斤",
     "radical": "斤",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "xīn",
+    "type": "phono-semantic",
+    "semantic": ["斤"],
+    "phonetic": ["辛"],
+    "shuowen": "取木也。从斤新聲。"
   },
   "方": {
     "ids": "⿱亠⿰丿𠃌",
     "radical": "方",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "fāng",
+    "shuowen": "併船也。象兩舟省、緫頭形。凡方之屬皆从方。",
+    "family": ["房", "放", "旁"]
+  },
+  "斿": {
+    "ids": "⿰方⿱𠂉子",
+    "radical": "方",
+    "strokes": 9,
+    "pinyin": "yóu",
+    "type": "ideographic",
+    "family": ["游"]
   },
   "旁": {
     "ids": "⿱⿱⿱亠丷冖方",
     "radical": "方",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "páng",
+    "type": "phono-semantic",
+    "semantic": ["立"],
+    "phonetic": ["方"],
+    "shuowen": "溥也。从二，闕；方聲。"
   },
   "旅": {
     "ids": "⿰方⿱𠂉④",
     "radical": "方",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "lǚ",
+    "type": "ideographic",
+    "shuowen": "軍之五百人爲旅。从㫃从从。从，俱也。"
   },
   "日": {
     "ids": "日",
     "radical": "日",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "rì",
+    "type": "pictographic",
+    "shuowen": "實也。太陽之精不虧。从囗一。象形。凡日之屬皆从日。"
+  },
+  "旦": {
+    "ids": "⿱日一",
+    "radical": "日",
+    "strokes": 5,
+    "pinyin": "dàn",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["一"],
+    "shuowen": "明也。从日見一上。一，地也。凡旦之屬皆从旦。",
+    "family": ["㝵", "但", "担"]
   },
   "旧": {
     "ids": "⿰丨日",
     "radical": "日",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "jiù",
+    "type": "ideographic"
   },
   "早": {
     "ids": "⿱日十",
     "radical": "日",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "zǎo",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["棗"],
+    "shuowen": "晨也。从日在甲上。",
+    "family": ["草"]
   },
   "时": {
     "ids": "⿰日寸",
     "radical": "日",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "shí",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["寸"]
+  },
+  "昌": {
+    "ids": "⿱日日",
+    "radical": "日",
+    "strokes": 8,
+    "pinyin": "chāng",
+    "type": "ideographic",
+    "shuowen": "美言也。从日从曰。一曰日光也。《詩》曰：“東方昌矣。”",
+    "family": ["唱"]
   },
   "明": {
     "ids": "⿰日月",
     "radical": "日",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "míng",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["月"]
+  },
+  "昏": {
+    "ids": "⿱氏日",
+    "radical": "日",
+    "strokes": 8,
+    "pinyin": "hūn",
+    "type": "ideographic",
+    "phonetic": ["民"],
+    "shuowen": "日冥也。从日氐省。氐者，下也。一曰民聲。",
+    "family": ["婚"]
   },
   "易": {
     "ids": "⿱日勿",
     "radical": "日",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yì",
+    "type": "pictographic",
+    "semantic": ["日"],
+    "phonetic": ["勿"],
+    "shuowen": "蜥易，蝘蜓，守宮也。象形。《祕書》說：日月爲易，象陰陽也。一曰从勿。凡易之屬皆从易。",
+    "family": ["踢"]
+  },
+  "昔": {
+    "ids": "⿱龷日",
+    "radical": "日",
+    "strokes": 8,
+    "pinyin": "xī",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["龷"],
+    "shuowen": "乾肉也。从殘肉，日以晞之。與俎同意。",
+    "family": ["借", "错"]
   },
   "星": {
     "ids": "⿱日生",
     "radical": "日",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xīng",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["生"]
   },
   "春": {
     "ids": "⿱𡗗日",
     "radical": "日",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "chūn",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["屯"]
   },
   "昨": {
     "ids": "⿰日乍",
     "radical": "日",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zuó",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["乍"],
+    "shuowen": "壘日也。从日乍聲。"
+  },
+  "昭": {
+    "ids": "⿰日召",
+    "radical": "日",
+    "strokes": 9,
+    "pinyin": "zhāo",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["召"],
+    "shuowen": "日明也。从日召聲。",
+    "family": ["照"]
   },
   "是": {
     "ids": "⿱日𤴓",
     "radical": "日",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "shì",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["𤴓"],
+    "shuowen": "直也。从日、正。凡是之屬皆从是。",
+    "family": ["提", "题"]
   },
   "晚": {
     "ids": "⿰日免",
     "radical": "日",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "wǎn",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["免"],
+    "shuowen": "莫也。从日免聲。"
   },
   "普": {
     "ids": "⿱並日",
     "radical": "日",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "pǔ",
+    "type": "ideographic",
+    "semantic": ["日"],
+    "phonetic": ["並"],
+    "shuowen": "日無色也。从日从並。"
+  },
+  "景": {
+    "ids": "⿱日京",
+    "radical": "日",
+    "strokes": 12,
+    "pinyin": "jǐng",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["京"],
+    "shuowen": "光也。从日京聲。",
+    "family": ["影"]
   },
   "晴": {
     "ids": "⿰日青",
     "radical": "日",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "qíng",
+    "type": "phono-semantic",
+    "semantic": ["日"],
+    "phonetic": ["青"]
   },
   "更": {
     "ids": "⿱一⿻日乂",
     "radical": "曰",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "gèng",
+    "type": "phono-semantic",
+    "semantic": ["攴"],
+    "phonetic": ["丙"],
+    "shuowen": "改也。从攴丙聲。",
+    "family": ["便"]
+  },
+  "曷": {
+    "ids": "⿱日匃",
+    "radical": "曰",
+    "strokes": 9,
+    "pinyin": "hé",
+    "type": "phono-semantic",
+    "semantic": ["曰"],
+    "phonetic": ["匃"],
+    "shuowen": "何也。从曰匃聲。",
+    "family": ["喝", "渴"]
+  },
+  "曼": {
+    "ids": "⿳日罒又",
+    "radical": "曰",
+    "strokes": 11,
+    "pinyin": "màn",
+    "type": "pictographic",
+    "phonetic": ["冒"],
+    "shuowen": "引也。从又冒聲。",
+    "family": ["慢"]
   },
   "最": {
     "ids": "⿱日取",
     "radical": "冂",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "zuì",
+    "type": "phono-semantic",
+    "semantic": ["冃"],
+    "phonetic": ["取"],
+    "shuowen": "犯而取也。从冃从取。"
   },
   "月": {
     "ids": "月",
     "radical": "月",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "yuè",
+    "type": "pictographic",
+    "shuowen": "闕也。大陰之精。象形。凡月之屬皆从月。",
+    "family": ["刖", "外", "明", "有"]
   },
   "有": {
     "ids": "⿸𠂇月",
     "radical": "月",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yǒu",
+    "type": "phono-semantic",
+    "phonetic": ["月"],
+    "shuowen": "不宜有也。《春秋傳》曰：“日月有食之。”从月又聲。凡有之屬皆从有。"
   },
   "朋": {
     "ids": "⿰月月",
     "radical": "月",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "péng",
+    "type": "pictographic"
   },
   "服": {
     "ids": "⿰月𠬝",
     "radical": "月",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "fú",
+    "type": "phono-semantic",
+    "phonetic": ["𠬝"],
+    "shuowen": "用也。一曰車右騑，所以舟旋。从舟𠬝聲。"
   },
   "望": {
     "ids": "⿱⿰亡月王",
     "radical": "月",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "wàng",
+    "type": "ideographic",
+    "phonetic": ["朢"],
+    "shuowen": "出亡在外，望其還也。从亾，朢省聲。"
   },
   "期": {
     "ids": "⿰其月",
     "radical": "月",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "qī",
+    "type": "phono-semantic",
+    "semantic": ["月"],
+    "phonetic": ["其"],
+    "shuowen": "會也。从月其聲。"
+  },
+  "木": {
+    "ids": "木",
+    "radical": "木",
+    "strokes": 4,
+    "pinyin": "mù",
+    "type": "pictographic",
+    "shuowen": "冒也。冒地而生。東方之行。从屮，下象其根。凡木之屬皆从木。",
+    "family": ["休", "相"]
+  },
+  "朩": {
+    "ids": "朩",
+    "radical": "木",
+    "strokes": 4,
+    "pinyin": "děng",
+    "type": "ideographic",
+    "shuowen": "分枲莖皮也。从屮，八象枲之皮莖也。凡朩之屬皆从朩。讀若髕。"
+  },
+  "未": {
+    "ids": "未",
+    "radical": "木",
+    "strokes": 5,
+    "pinyin": "wèi",
+    "type": "pictographic",
+    "shuowen": "味也。六月，滋味也。五行，木老於未。象木重枝葉也。凡未之屬皆从未。",
+    "family": ["妹"]
   },
   "末": {
     "ids": "末",
     "radical": "木",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "mò",
+    "type": "ideographic",
+    "shuowen": "木上曰末。从木，一在其上。"
   },
   "本": {
     "ids": "本",
     "radical": "木",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "běn",
+    "type": "ideographic",
+    "shuowen": "木下曰本。从木，一在其下。",
+    "family": ["体"]
   },
   "朵": {
     "ids": "⿱几木",
     "radical": "木",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "duǒ",
+    "type": "indicative"
   },
   "机": {
     "ids": "⿰木几",
     "radical": "木",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jī",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["几"],
+    "shuowen": "木也。从木几聲。"
   },
   "李": {
     "ids": "⿱木子",
     "radical": "木",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "lǐ",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["子"],
+    "shuowen": "果也。从木子聲。"
   },
   "束": {
     "ids": "束",
     "radical": "木",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "shù",
+    "type": "ideographic",
+    "shuowen": "縛也。从囗、木。凡束之屬皆从束。"
   },
   "条": {
     "ids": "⿱夂朩",
     "radical": "木",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "tiáo",
+    "type": "ideographic"
   },
   "来": {
     "ids": "来",
     "radical": "木",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "lái",
+    "type": "ideographic"
   },
   "杯": {
     "ids": "⿰木不",
     "radical": "木",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "bēi",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["不"]
+  },
+  "杲": {
+    "ids": "⿱日木",
+    "radical": "木",
+    "strokes": 8,
+    "pinyin": "gǎo",
+    "type": "ideographic",
+    "shuowen": "明也。从日在木上。"
   },
   "板": {
     "ids": "⿰木反",
     "radical": "木",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "bǎn",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["反"]
   },
   "极": {
     "ids": "⿰木及",
     "radical": "木",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "jí",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["及"],
+    "shuowen": "驢上負也。从木及聲。或讀若急。"
+  },
+  "林": {
+    "ids": "⿰木木",
+    "radical": "木",
+    "strokes": 8,
+    "pinyin": "lín",
+    "type": "ideographic",
+    "shuowen": "平土有叢木曰林。从二木。凡林之屬皆从林。"
   },
   "果": {
     "ids": "⿻日木",
     "radical": "木",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "guǒ",
+    "type": "pictographic",
+    "shuowen": "木實也。从木，象果形在木之上。",
+    "family": ["课"]
   },
   "查": {
     "ids": "⿱木旦",
     "radical": "木",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "chá",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["且"]
   },
   "树": {
     "ids": "⿰木对",
     "radical": "木",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "shù",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["对"]
   },
   "校": {
     "ids": "⿰木交",
     "radical": "木",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "xiào",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["交"],
+    "shuowen": "木囚也。从木交聲。"
   },
   "样": {
     "ids": "⿰木羊",
     "radical": "木",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "yàng",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["羊"]
   },
   "根": {
     "ids": "⿰木艮",
     "radical": "木",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "gēn",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["艮"],
+    "shuowen": "木株也。从木艮聲。"
   },
   "桌": {
     "ids": "⿱⺊杲",
     "radical": "木",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zhuō",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["卓"]
   },
   "梯": {
     "ids": "⿰木弟",
     "radical": "木",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "tī",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["弟"],
+    "shuowen": "木階也。从木弟聲。"
   },
   "检": {
     "ids": "⿰木佥",
     "radical": "木",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jiǎn",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["佥"]
   },
   "椅": {
     "ids": "⿰木奇",
     "radical": "木",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "yǐ",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["奇"],
+    "shuowen": "梓也。从木奇聲。"
   },
   "楚": {
     "ids": "⿱林疋",
     "radical": "木",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "chǔ",
+    "type": "phono-semantic",
+    "semantic": ["林"],
+    "phonetic": ["疋"],
+    "shuowen": "叢木。一名荊也。从林疋聲。"
   },
   "楼": {
     "ids": "⿰木娄",
     "radical": "木",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "lóu",
+    "type": "phono-semantic",
+    "semantic": ["木"],
+    "phonetic": ["娄"]
+  },
+  "欠": {
+    "ids": "欠",
+    "radical": "欠",
+    "strokes": 4,
+    "pinyin": "qiàn",
+    "type": "pictographic",
+    "shuowen": "張口气悟也。象气从人上出之形。凡欠之屬皆从欠。"
   },
   "次": {
     "ids": "⿰冫欠",
     "radical": "欠",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "cì",
+    "type": "ideographic",
+    "phonetic": ["二"],
+    "shuowen": "不前，不精也。从欠二聲。"
   },
   "欢": {
     "ids": "⿰又欠",
     "radical": "欠",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "huān",
+    "type": "ideographic",
+    "semantic": ["欠"],
+    "phonetic": ["又"]
   },
   "歌": {
     "ids": "⿰哥欠",
     "radical": "欠",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "gē",
+    "type": "phono-semantic",
+    "semantic": ["欠"],
+    "phonetic": ["哥"],
+    "shuowen": "詠也。从欠哥聲。"
+  },
+  "止": {
+    "ids": "止",
+    "radical": "止",
+    "strokes": 4,
+    "pinyin": "zhǐ",
+    "type": "pictographic",
+    "shuowen": "下基也。象艸木出有址，故以止爲足。凡止之屬皆从止。",
+    "family": ["寺", "此"]
   },
   "正": {
     "ids": "⿱一止",
     "radical": "止",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "zhèng",
+    "type": "ideographic",
+    "semantic": ["止"],
+    "phonetic": ["一"],
+    "shuowen": "是也。从止，一以止。凡正之屬皆从正。",
+    "family": ["定"]
+  },
+  "此": {
+    "ids": "⿰止匕",
+    "radical": "止",
+    "strokes": 6,
+    "pinyin": "cǐ",
+    "type": "ideographic",
+    "semantic": ["匕"],
+    "phonetic": ["止"],
+    "shuowen": "止也。从止从匕。匕，相比次也。凡此之屬皆从此。",
+    "family": ["些"]
   },
   "步": {
     "ids": "⿱止𣥂",
     "radical": "止",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "bù",
+    "type": "ideographic",
+    "semantic": ["止"],
+    "phonetic": ["𣥂"],
+    "shuowen": "行也。从止𣥂相背。凡步之屬皆从步。"
+  },
+  "殳": {
+    "ids": "⿱𠘧又",
+    "radical": "殳",
+    "strokes": 4,
+    "pinyin": "shū",
+    "type": "pictographic",
+    "phonetic": ["几"],
+    "shuowen": "以杸殊人也。《禮》：“殳以積竹，八觚，長丈二尺，建於兵車，車旅賁以先驅。”从又几聲。凡殳之屬皆从殳。",
+    "family": ["没"]
   },
   "段": {
     "ids": "⿰⑤殳",
     "radical": "殳",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "duàn",
+    "type": "phono-semantic",
+    "phonetic": ["耑"],
+    "shuowen": "椎物也。从殳，耑省聲。",
+    "family": ["锻"]
+  },
+  "母": {
+    "ids": "母",
+    "radical": "毋",
+    "strokes": 5,
+    "pinyin": "mǔ",
+    "type": "ideographic",
+    "shuowen": "牧也。从女，象褱子形。一曰象乳子也。",
+    "family": ["每"]
   },
   "每": {
     "ids": "⿱𠂉母",
     "radical": "毋",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "měi",
+    "type": "phono-semantic",
+    "phonetic": ["母"],
+    "shuowen": "艸盛上出也。从屮母聲。"
   },
   "比": {
     "ids": "比",
     "radical": "比",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "bǐ",
+    "type": "ideographic",
+    "shuowen": "密也。二人爲从，反从爲比。凡比之屬皆从比。"
+  },
+  "毛": {
+    "ids": "⿱丿⿻二乚",
+    "radical": "毛",
+    "strokes": 4,
+    "pinyin": "máo",
+    "type": "pictographic",
+    "shuowen": "眉髮之屬及獸毛也。象形。凡毛之屬皆从毛。",
+    "family": ["笔"]
+  },
+  "氏": {
+    "ids": "氏",
+    "radical": "氏",
+    "strokes": 4,
+    "pinyin": "shì",
+    "type": "pictographic",
+    "phonetic": ["乀"],
+    "shuowen": "巴蜀山名岸脅之㫄箸欲落𡐦者曰氏，氏崩，聞數百里。象形，乀聲。凡氏之屬皆从氏。楊雄賦：響若氏隤。",
+    "family": ["纸"]
+  },
+  "氐": {
+    "ids": "⿱氏丶",
+    "radical": "氏",
+    "strokes": 5,
+    "pinyin": "dī",
+    "type": "pictographic",
+    "semantic": ["氏"],
+    "shuowen": "至也。从氏下箸一。一，地也。凡氐之屬皆从氐。",
+    "family": ["低"]
   },
   "气": {
     "ids": "⿳𠂉一乁",
     "radical": "气",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "qì",
+    "type": "ideographic",
+    "shuowen": "雲气也。象形。凡气之屬皆从气。",
+    "family": ["汽"]
   },
   "水": {
     "ids": "⿲㇇亅⿺乀丿",
     "radical": "水",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "shuǐ",
+    "type": "pictographic",
+    "shuowen": "凖也。北方之行。象眾水並流，中有微陽之气也。凡水之屬皆从水。",
+    "family": ["冰"]
+  },
+  "氵": {
+    "ids": "氵",
+    "radical": "水",
+    "strokes": 3,
+    "pinyin": "shuǐ"
+  },
+  "永": {
+    "ids": "永",
+    "radical": "水",
+    "strokes": 5,
+    "pinyin": "yǒng",
+    "type": "pictographic",
+    "shuowen": "長也。象水坙理之長。《詩》曰：“江之永矣。”凡永之屬皆从永。",
+    "family": ["泳"]
+  },
+  "氺": {
+    "ids": "⿻亅⿱丷八",
+    "radical": "水",
+    "strokes": 5,
+    "pinyin": "shuǐ",
+    "type": "ideographic",
+    "family": ["录"]
   },
   "汁": {
     "ids": "⿰氵十",
     "radical": "水",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "zhī",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["十"],
+    "shuowen": "液也。从水十聲。"
   },
   "求": {
     "ids": "⿺⿻一氺丶",
     "radical": "水",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "qiú",
+    "type": "pictographic",
+    "family": ["球"]
   },
   "汉": {
     "ids": "⿰氵又",
     "radical": "水",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "hàn",
+    "type": "ideographic"
   },
   "汽": {
     "ids": "⿰氵气",
     "radical": "水",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "qì",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["气"]
   },
   "没": {
     "ids": "⿰氵殳",
     "radical": "水",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "méi",
+    "type": "pictographic",
+    "semantic": ["氵"],
+    "phonetic": ["殳"]
   },
   "河": {
     "ids": "⿰氵可",
     "radical": "水",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "hé",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["可"],
+    "shuowen": "水。出焞煌塞外昆侖山，發原注海。从水可聲。"
   },
   "法": {
     "ids": "⿰氵去",
     "radical": "水",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "fǎ",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["去"]
   },
   "注": {
     "ids": "⿰氵主",
     "radical": "水",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhù",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["主"],
+    "shuowen": "灌也。从水主聲。"
   },
   "泳": {
     "ids": "⿰氵永",
     "radical": "水",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yǒng",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["永"],
+    "shuowen": "潛行水中也。从水永聲。"
   },
   "洗": {
     "ids": "⿰氵先",
     "radical": "水",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xǐ",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["先"],
+    "shuowen": "洒足也。从水先聲。"
   },
   "清": {
     "ids": "⿰氵青",
     "radical": "水",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "qīng",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["青"],
+    "shuowen": "朖也。澂水之皃。从水青聲。"
   },
   "渴": {
     "ids": "⿰氵曷",
     "radical": "水",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "kě",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["曷"],
+    "shuowen": "盡也。从水曷聲。"
   },
   "游": {
     "ids": "⿰氵斿",
     "radical": "水",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "yóu",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["斿"],
+    "shuowen": "旌旗之流也。从㫃汓聲。"
   },
   "满": {
     "ids": "⿰氵𬜯",
     "radical": "水",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "mǎn",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["㒼"]
   },
   "漂": {
     "ids": "⿰氵票",
     "radical": "水",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "piào",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["票"],
+    "shuowen": "浮也。从水票聲。"
   },
   "演": {
     "ids": "⿰氵寅",
     "radical": "水",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "yǎn",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["寅"],
+    "shuowen": "長流也。一曰水名。从水寅聲。"
   },
   "澡": {
     "ids": "⿰氵喿",
     "radical": "水",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "zǎo",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["喿"],
+    "shuowen": "洒手也。从水喿聲。"
   },
   "火": {
     "ids": "⿱八人",
     "radical": "火",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "huǒ",
+    "type": "pictographic",
+    "shuowen": "燬也。南方之行，炎而上。象形。凡火之屬皆从火。"
+  },
+  "灬": {
+    "ids": "灬",
+    "radical": "火",
+    "strokes": 4,
+    "pinyin": "biāo",
+    "family": ["羔"]
   },
   "灯": {
     "ids": "⿰火丁",
     "radical": "火",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "dēng",
+    "type": "phono-semantic",
+    "semantic": ["火"],
+    "phonetic": ["丁"]
   },
   "点": {
     "ids": "⿱占灬",
     "radical": "火",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "diǎn",
+    "type": "phono-semantic",
+    "semantic": ["灬"],
+    "phonetic": ["占"]
   },
   "炼": {
     "ids": "⿰火𫠣",
     "radical": "火",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "liàn",
+    "type": "phono-semantic",
+    "semantic": ["火"],
+    "phonetic": ["柬"]
   },
   "烧": {
     "ids": "⿰火尧",
     "radical": "火",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "shāo",
+    "type": "phono-semantic",
+    "semantic": ["火"],
+    "phonetic": ["尧"]
   },
   "热": {
     "ids": "⿱执灬",
     "radical": "火",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "rè",
+    "type": "ideographic",
+    "semantic": ["灬"],
+    "phonetic": ["执"]
+  },
+  "焦": {
+    "ids": "⿱隹灬",
+    "radical": "火",
+    "strokes": 12,
+    "pinyin": "jiāo",
+    "type": "ideographic",
+    "semantic": ["灬"],
+    "phonetic": ["隹"],
+    "family": ["蕉"]
   },
   "然": {
     "ids": "⿱⿰⿴𠂊冫犬灬",
     "radical": "火",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "rán",
+    "type": "phono-semantic",
+    "semantic": ["灬"],
+    "phonetic": ["肰"],
+    "shuowen": "燒也。从火肰聲。"
   },
   "照": {
     "ids": "⿱昭灬",
     "radical": "火",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "zhào",
+    "type": "phono-semantic",
+    "semantic": ["灬"],
+    "phonetic": ["昭"],
+    "shuowen": "明也。从火昭聲。"
   },
   "熊": {
     "ids": "⿱能灬",
     "radical": "火",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "xióng",
+    "type": "phono-semantic",
+    "phonetic": ["炎"],
+    "shuowen": "獸似豕。山居，冬蟄。从能，炎省聲。凡熊之屬皆从熊。"
+  },
+  "爪": {
+    "ids": "爪",
+    "radical": "爪",
+    "strokes": 4,
+    "pinyin": "zhǎo",
+    "type": "pictographic",
+    "shuowen": "丮也。覆手曰爪。象形。凡爪之屬皆从爪。"
+  },
+  "爫": {
+    "ids": "⿱丿𭕄",
+    "radical": "爪",
+    "strokes": 4,
+    "pinyin": "zhǎo",
+    "type": "pictographic"
   },
   "爬": {
     "ids": "⿺爪巴",
     "radical": "爪",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "pá",
+    "type": "phono-semantic",
+    "semantic": ["爪"],
+    "phonetic": ["巴"]
   },
   "爱": {
     "ids": "⿱⿱爫冖友",
     "radical": "爪",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "ài",
+    "type": "phono-semantic",
+    "semantic": ["友"],
+    "phonetic": ["旡"]
+  },
+  "父": {
+    "ids": "⿱八乂",
+    "radical": "父",
+    "strokes": 4,
+    "pinyin": "fù",
+    "type": "ideographic",
+    "shuowen": "矩也。家長率教者。从又舉杖。",
+    "family": ["交", "布"]
   },
   "爷": {
     "ids": "⿱父卩",
     "radical": "父",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yé",
+    "type": "ideographic",
+    "semantic": ["父"],
+    "phonetic": ["耶"]
   },
   "爸": {
     "ids": "⿱父巴",
     "radical": "父",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "bà",
+    "type": "phono-semantic",
+    "semantic": ["父"],
+    "phonetic": ["巴"]
   },
   "片": {
     "ids": "片",
     "radical": "片",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "piàn",
+    "type": "pictographic",
+    "shuowen": "判木也。从半木。凡片之屬皆从片。"
+  },
+  "牙": {
+    "ids": "牙",
+    "radical": "牙",
+    "strokes": 4,
+    "pinyin": "yá",
+    "type": "pictographic",
+    "shuowen": "牡齒也。象上下相錯之形。凡牙之屬皆从牙。"
   },
   "牛": {
     "ids": "牛",
     "radical": "牛",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "niú",
+    "type": "pictographic",
+    "shuowen": "大牲也。牛，件也；件，事理也。象角頭三、封㞑之形。凡牛之屬皆从牛。",
+    "family": ["件"]
   },
   "物": {
     "ids": "⿰牛勿",
     "radical": "牛",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "wù",
+    "type": "phono-semantic",
+    "semantic": ["牛"],
+    "phonetic": ["勿"],
+    "shuowen": "萬物也。牛爲大物；天地之𢿙，起於牽牛，故从牛。勿聲。"
   },
   "特": {
     "ids": "⿰牛寺",
     "radical": "牛",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "tè",
+    "type": "phono-semantic",
+    "semantic": ["牛"],
+    "phonetic": ["寺"],
+    "shuowen": "朴特，牛父也。从牛寺聲。"
+  },
+  "犬": {
+    "ids": "犬",
+    "radical": "犬",
+    "strokes": 4,
+    "pinyin": "quǎn",
+    "type": "pictographic",
+    "shuowen": "狗之有縣蹏者也。象形。孔子曰：“視犬之字如畫狗也。”凡犬之屬皆从犬。"
+  },
+  "犭": {
+    "ids": "犭",
+    "radical": "犬",
+    "strokes": 3,
+    "pinyin": "quǎn",
+    "type": "pictographic"
   },
   "狗": {
     "ids": "⿰犭句",
     "radical": "犬",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "gǒu",
+    "type": "phono-semantic",
+    "semantic": ["犭"],
+    "phonetic": ["句"],
+    "shuowen": "孔子曰：“狗，叩也。叩气吠以守。”从犬句聲。"
   },
   "猫": {
     "ids": "⿰犭苗",
     "radical": "犬",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "māo",
+    "type": "phono-semantic",
+    "semantic": ["犭"],
+    "phonetic": ["苗"]
+  },
+  "玉": {
+    "ids": "⿷王丶",
+    "radical": "玉",
+    "strokes": 5,
+    "pinyin": "yù",
+    "type": "pictographic",
+    "shuowen": "石之美。有五德：潤澤以溫，仁之方也；䚡理自外，可以知中，義之方也；其聲舒揚，尃以遠聞，智之方也；不橈而折，勇之方也；銳廉而不技，絜之方也。象三玉之連。|，其貫也。凡玉之屬皆从玉。[陽冰曰：“三畫正均如貫玉也。”]"
+  },
+  "王": {
+    "ids": "⿱一土",
+    "radical": "玉",
+    "strokes": 4,
+    "pinyin": "wáng",
+    "type": "pictographic",
+    "shuowen": "天下所歸往也。董仲舒曰：“古之造文者，三畫而連其中謂之王。三者，天、地、人也，而參通之者王也。”孔子曰：“一貫三爲王。”凡王之屬皆从王。[李陽冰曰：“中畫近上。王者，則天之義。”]"
   },
   "玩": {
     "ids": "⿰王元",
     "radical": "玉",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "wán",
+    "type": "phono-semantic",
+    "semantic": ["𤣩"],
+    "phonetic": ["元"],
+    "shuowen": "弄也。从玉元聲。"
   },
   "环": {
     "ids": "⿰王不",
     "radical": "玉",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "huán",
+    "type": "phono-semantic",
+    "semantic": ["王"],
+    "phonetic": ["不"]
   },
   "现": {
     "ids": "⿰王见",
     "radical": "玉",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "xiàn",
+    "type": "ideographic"
   },
   "班": {
     "ids": "⿲王②王",
     "radical": "玉",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bān",
+    "type": "ideographic",
+    "shuowen": "分瑞玉。从𤤴从刀。"
   },
   "球": {
     "ids": "⿰王求",
     "radical": "玉",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "qiú",
+    "type": "phono-semantic",
+    "semantic": ["𤣩"],
+    "phonetic": ["求"],
+    "shuowen": "玉聲也。从玉求聲。"
   },
   "理": {
     "ids": "⿰王里",
     "radical": "玉",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "lǐ",
+    "type": "phono-semantic",
+    "semantic": ["𤣩"],
+    "phonetic": ["里"],
+    "shuowen": "治玉也。从玉里聲。"
   },
   "瓜": {
     "ids": "瓜",
     "radical": "瓜",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "guā",
+    "type": "pictographic",
+    "shuowen": "㼌也。象形。凡瓜之屬皆从瓜。"
+  },
+  "甘": {
+    "ids": "甘",
+    "radical": "甘",
+    "strokes": 5,
+    "pinyin": "gān",
+    "type": "ideographic",
+    "shuowen": "美也。从口含一。一，道也。凡甘之屬皆从甘。",
+    "family": ["敢"]
   },
   "甜": {
     "ids": "⿰舌甘",
     "radical": "甘",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "tián",
+    "type": "ideographic",
+    "semantic": ["甘"],
+    "phonetic": ["舌"]
   },
   "生": {
     "ids": "生",
     "radical": "生",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "shēng",
+    "type": "ideographic",
+    "shuowen": "進也。象艸木生出土上。凡生之屬皆从生。",
+    "family": ["姓", "星"]
   },
   "用": {
     "ids": "⿵冂⿻二丨",
     "radical": "用",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "yòng",
+    "type": "phono-semantic",
+    "shuowen": "可施行也。从卜从中。衞宏說。凡用之屬皆从用。",
+    "family": ["甬"]
+  },
+  "甬": {
+    "ids": "⿱龴用",
+    "radical": "用",
+    "strokes": 7,
+    "pinyin": "yǒng",
+    "type": "phono-semantic",
+    "phonetic": ["用"],
+    "shuowen": "艸木華甬甬然也。从𢎘用聲。",
+    "family": ["通"]
+  },
+  "田": {
+    "ids": "田",
+    "radical": "田",
+    "strokes": 5,
+    "pinyin": "tián",
+    "type": "pictographic",
+    "shuowen": "陳也。樹穀曰田。象四囗。十，阡陌之制也。凡田之屬皆从田。",
+    "family": ["备", "累"]
+  },
+  "由": {
+    "ids": "由",
+    "radical": "田",
+    "strokes": 5,
+    "pinyin": "yóu",
+    "type": "pictographic"
+  },
+  "甲": {
+    "ids": "甲",
+    "radical": "田",
+    "strokes": 5,
+    "pinyin": "jiǎ",
+    "type": "pictographic",
+    "shuowen": "東方之孟，陽气萌動，从木戴孚甲之象。一曰人頭宐爲甲，甲象人頭。凡甲之屬皆从甲。"
   },
   "电": {
     "ids": "⿻日乚",
     "radical": "田",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "diàn",
+    "type": "ideographic"
   },
   "男": {
     "ids": "⿱田力",
     "radical": "田",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "nán",
+    "type": "ideographic",
+    "semantic": ["田"],
+    "phonetic": ["力"],
+    "shuowen": "丈夫也。从田从力。言男用力於田也。凡男之屬皆从男。"
   },
   "画": {
     "ids": "⿱一⿶凵田",
     "radical": "田",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "huà",
+    "type": "pictographic"
+  },
+  "畀": {
+    "ids": "⿱田丌",
+    "radical": "田",
+    "strokes": 8,
+    "pinyin": "bì",
+    "type": "phono-semantic",
+    "semantic": ["田"],
+    "phonetic": ["丌"],
+    "shuowen": "相付與之。約在閣上也。从丌甶聲。",
+    "family": ["鼻"]
   },
   "界": {
     "ids": "⿱田介",
     "radical": "田",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "jiè",
+    "type": "phono-semantic",
+    "semantic": ["田"],
+    "phonetic": ["介"]
+  },
+  "畏": {
+    "ids": "⿳田一⿰𠄌⿺乀丿",
+    "radical": "田",
+    "strokes": 9,
+    "pinyin": "wèi",
+    "type": "pictographic",
+    "shuowen": "惡也。从甶，虎省。鬼頭而虎爪，可畏也。",
+    "family": ["喂"]
+  },
+  "疋": {
+    "ids": "疋",
+    "radical": "疋",
+    "strokes": 5,
+    "pinyin": "pǐ",
+    "type": "pictographic",
+    "shuowen": "足也。上象腓腸，下从止。《弟子職》曰：“問疋何止。”古文以爲《詩·大疋》字。亦以爲足字。或曰胥字。一曰疋，記也。凡疋之屬皆从疋。",
+    "family": ["楚"]
+  },
+  "疒": {
+    "ids": "疒",
+    "radical": "疒",
+    "strokes": 5,
+    "pinyin": "nè",
+    "type": "pictographic",
+    "shuowen": "倚也。人有疾病，象倚箸之形。凡疒之屬皆从疒。"
   },
   "疼": {
     "ids": "⿸疒冬",
     "radical": "疒",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "téng",
+    "type": "phono-semantic",
+    "semantic": ["疒"],
+    "phonetic": ["冬"]
   },
   "病": {
     "ids": "⿸疒丙",
     "radical": "疒",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bìng",
+    "type": "phono-semantic",
+    "semantic": ["疒"],
+    "phonetic": ["丙"],
+    "shuowen": "疾加也。从疒丙聲。"
   },
   "瘦": {
     "ids": "⿸疒叟",
     "radical": "疒",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "shòu",
+    "type": "phono-semantic",
+    "semantic": ["疒"],
+    "phonetic": ["叟"]
   },
   "白": {
     "ids": "白",
     "radical": "白",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "bái",
+    "type": "ideographic",
+    "shuowen": "西方色也。陰用事，物色白。从入合二。二，陰數。凡白之屬皆从白。",
+    "family": ["怕", "百"]
   },
   "百": {
     "ids": "⿱一白",
     "radical": "白",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "bǎi",
+    "type": "phono-semantic",
+    "semantic": ["一"],
+    "phonetic": ["白"],
+    "shuowen": "十十也。从一、𪞶。數，十百爲一貫。相章也。"
   },
   "的": {
     "ids": "⿰白勺",
     "radical": "白",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "de",
+    "type": "phono-semantic",
+    "semantic": ["白"],
+    "phonetic": ["勺"]
+  },
+  "皮": {
+    "ids": "皮",
+    "radical": "皮",
+    "strokes": 5,
+    "pinyin": "pí",
+    "type": "pictographic",
+    "phonetic": ["爲"],
+    "shuowen": "剥取獸革者謂之皮。从又，爲省聲。凡皮之屬皆从皮。",
+    "family": ["被"]
+  },
+  "皿": {
+    "ids": "皿",
+    "radical": "皿",
+    "strokes": 5,
+    "pinyin": "mǐn",
+    "type": "pictographic",
+    "shuowen": "飯食之用器也。象形。與豆同意。凡皿之屬皆从皿。讀若猛。"
+  },
+  "监": {
+    "ids": "⿱⿰〢⿱𠂉丶皿",
+    "radical": "皿",
+    "strokes": 10,
+    "pinyin": "jiān",
+    "type": "pictographic",
+    "family": ["篮", "蓝"]
   },
   "盘": {
     "ids": "⿱舟皿",
     "radical": "皿",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "pán",
+    "type": "ideographic",
+    "semantic": ["皿"],
+    "phonetic": ["般"]
   },
   "目": {
     "ids": "目",
     "radical": "目",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "mù",
+    "type": "pictographic",
+    "shuowen": "人眼。象形。重童子也。凡目之屬皆从目。"
   },
   "直": {
     "ids": "⿱十⿴且一",
     "radical": "目",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhí",
+    "type": "ideographic",
+    "shuowen": "正見也。从𠃊从十从目。"
   },
   "相": {
     "ids": "⿰木目",
     "radical": "目",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xiāng",
+    "type": "ideographic",
+    "semantic": ["目"],
+    "phonetic": ["木"],
+    "shuowen": "省視也。从目从木。《易》曰：“地可觀者，莫可觀於木。”《詩》曰：“相鼠有皮。”",
+    "family": ["想", "箱"]
   },
   "看": {
     "ids": "⿱龵目",
     "radical": "目",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "kàn",
+    "type": "ideographic",
+    "semantic": ["目"],
+    "phonetic": ["龵"],
+    "shuowen": "睎也。从手下目。"
   },
   "真": {
     "ids": "⿱十具",
     "radical": "目",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zhēn",
+    "type": "phono-semantic"
   },
   "眼": {
     "ids": "⿰目艮",
     "radical": "目",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "yǎn",
+    "type": "phono-semantic",
+    "semantic": ["目"],
+    "phonetic": ["艮"],
+    "shuowen": "目也。从目𥃩聲。"
   },
   "着": {
     "ids": "⿸羊目",
     "radical": "目",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "zhe",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["者"]
   },
   "睛": {
     "ids": "⿰目青",
     "radical": "目",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "jīng",
+    "type": "phono-semantic",
+    "semantic": ["目"],
+    "phonetic": ["青"]
   },
   "睡": {
     "ids": "⿰目垂",
     "radical": "目",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "shuì",
+    "type": "phono-semantic",
+    "semantic": ["目"],
+    "phonetic": ["垂"],
+    "shuowen": "坐寐也。从目、垂。"
+  },
+  "矢": {
+    "ids": "⿱𠂉大",
+    "radical": "矢",
+    "strokes": 5,
+    "pinyin": "shǐ",
+    "type": "pictographic",
+    "shuowen": "弓弩矢也。从入，象鏑栝羽之形。古者夷牟初作矢。凡矢之屬皆从矢。",
+    "family": ["知"]
   },
   "知": {
     "ids": "⿰矢口",
     "radical": "矢",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhī",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["矢"],
+    "shuowen": "詞也。从口从矢。"
   },
   "短": {
     "ids": "⿰矢豆",
     "radical": "矢",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "duǎn",
+    "type": "phono-semantic",
+    "semantic": ["矢"],
+    "phonetic": ["豆"],
+    "shuowen": "有所長短，以矢爲正。从矢豆聲。"
   },
   "矮": {
     "ids": "⿰矢委",
     "radical": "矢",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "ǎi",
+    "type": "phono-semantic",
+    "semantic": ["矢"],
+    "phonetic": ["委"],
+    "shuowen": "短人也。从矢委聲。"
+  },
+  "石": {
+    "ids": "⿸丆口",
+    "radical": "石",
+    "strokes": 5,
+    "pinyin": "shí",
+    "type": "pictographic",
+    "shuowen": "山石也。在厂之下；囗，象形。凡石之屬皆从石。"
   },
   "碗": {
     "ids": "⿰石宛",
     "radical": "石",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "wǎn",
+    "type": "phono-semantic",
+    "semantic": ["石"],
+    "phonetic": ["宛"]
   },
   "示": {
     "ids": "示",
     "radical": "示",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "shì",
+    "type": "pictographic",
+    "shuowen": "天垂象，見吉凶，所以示人也。从二。(二，古文上字。)三垂，日月星也。觀乎天文，以察時變。示，神事也。凡示之屬皆从示。"
+  },
+  "礻": {
+    "ids": "礻",
+    "radical": "示",
+    "strokes": 5,
+    "pinyin": "shì",
+    "family": ["视"]
   },
   "礼": {
     "ids": "⿰礻乚",
     "radical": "示",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "lǐ",
+    "type": "ideographic",
+    "semantic": ["礻"],
+    "phonetic": ["乚"]
   },
   "祝": {
     "ids": "⿰礻兄",
     "radical": "示",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zhù",
+    "type": "ideographic",
+    "shuowen": "祭主贊詞者。从示从人口。一曰从兌省。《易》曰：“兌爲口爲巫。”。"
   },
   "票": {
     "ids": "⿱覀示",
     "radical": "示",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "piào",
+    "type": "ideographic",
+    "semantic": ["示"],
+    "phonetic": ["覀"],
+    "family": ["漂"]
+  },
+  "禸": {
+    "ids": "⿻冂厶",
+    "radical": "禸",
+    "strokes": 4,
+    "pinyin": "róu",
+    "type": "pictographic",
+    "phonetic": ["九"],
+    "shuowen": "獸足蹂地也。象形，九聲。《尔疋》曰：“狐貍貛貉醜，其足𨆌，其迹厹。”凡厹之屬皆从厹。"
+  },
+  "禺": {
+    "ids": "禺",
+    "radical": "禸",
+    "strokes": 9,
+    "pinyin": "yú",
+    "type": "pictographic",
+    "shuowen": "母猴屬。頭似鬼。从甶从禸。",
+    "family": ["遇"]
   },
   "离": {
     "ids": "⿱㐫禸",
     "radical": "禸",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "lí",
+    "type": "pictographic",
+    "semantic": ["禸"],
+    "phonetic": ["㐫"],
+    "shuowen": "山神，獸也。从禽頭，从厹从屮。歐陽喬說：离，猛獸也。"
+  },
+  "禾": {
+    "ids": "⿱丿木",
+    "radical": "禾",
+    "strokes": 5,
+    "pinyin": "hé",
+    "type": "pictographic",
+    "shuowen": "嘉穀也。二月始生，八月而孰，得時之中，故謂之禾。禾，木也。木王而生，金王而死。从木，从𠂹省。𠂹象其穗。凡禾之屬皆从禾。",
+    "family": ["和", "委"]
   },
   "秋": {
     "ids": "⿰禾火",
     "radical": "禾",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "qiū",
+    "type": "phono-semantic",
+    "phonetic": ["𤒅"],
+    "shuowen": "禾穀孰也。从禾，𤒅省聲。"
   },
   "种": {
     "ids": "⿰禾中",
     "radical": "禾",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zhǒng",
+    "type": "phono-semantic",
+    "semantic": ["禾"],
+    "phonetic": ["中"]
   },
   "租": {
     "ids": "⿰禾且",
     "radical": "禾",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zū",
+    "type": "phono-semantic",
+    "semantic": ["禾"],
+    "phonetic": ["且"],
+    "shuowen": "田賦也。从禾且聲。"
+  },
+  "穴": {
+    "ids": "⿱宀八",
+    "radical": "穴",
+    "strokes": 5,
+    "pinyin": "xué",
+    "type": "pictographic",
+    "phonetic": ["八"],
+    "shuowen": "土室也。从宀八聲。凡穴之屬皆从穴。",
+    "family": ["穿"]
   },
   "空": {
     "ids": "⿱穴工",
     "radical": "穴",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "kōng",
+    "type": "phono-semantic",
+    "semantic": ["穴"],
+    "phonetic": ["工"],
+    "shuowen": "竅也。从穴工聲。"
   },
   "穿": {
     "ids": "⿱穴牙",
     "radical": "穴",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "chuān",
+    "type": "ideographic",
+    "semantic": ["牙"],
+    "phonetic": ["穴"],
+    "shuowen": "通也。从牙在穴中。"
   },
   "突": {
     "ids": "⿱穴犬",
     "radical": "穴",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "tū",
+    "type": "ideographic",
+    "shuowen": "犬从穴中暫出也。从犬在穴中。一曰滑也。"
+  },
+  "立": {
+    "ids": "⿱⿱亠丷一",
+    "radical": "立",
+    "strokes": 5,
+    "pinyin": "lì",
+    "type": "pictographic",
+    "shuowen": "住也。从大立一之上。凡立之屬皆从立。",
+    "family": ["位", "妾"]
   },
   "站": {
     "ids": "⿰立占",
     "radical": "立",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "zhàn",
+    "type": "phono-semantic",
+    "semantic": ["立"],
+    "phonetic": ["占"]
+  },
+  "竟": {
+    "ids": "⿱音儿",
+    "radical": "音",
+    "strokes": 11,
+    "pinyin": "jìng",
+    "type": "ideographic",
+    "semantic": ["音"],
+    "phonetic": ["儿"],
+    "shuowen": "樂曲盡爲竟。从音从人。",
+    "family": ["境", "镜"]
+  },
+  "竹": {
+    "ids": "⿰亇亇",
+    "radical": "竹",
+    "strokes": 6,
+    "pinyin": "zhú",
+    "type": "pictographic",
+    "shuowen": "冬生艸也。象形。下垂者，箁箬也。凡竹之屬皆从竹。"
   },
   "笑": {
     "ids": "⿱竹夭",
     "radical": "竹",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "xiào",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["夭"],
+    "shuowen": "此字本闕。"
   },
   "笔": {
     "ids": "⿱竹毛",
     "radical": "竹",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bǐ",
+    "type": "ideographic",
+    "semantic": ["竹"],
+    "phonetic": ["毛"]
   },
   "第": {
     "ids": "⿱竹𢎨",
     "radical": "竹",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "dì",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["弟"]
   },
   "答": {
     "ids": "⿱竹合",
     "radical": "竹",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "dá",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["合"]
   },
   "筷": {
     "ids": "⿱竹快",
     "radical": "竹",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "kuài",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["快"]
   },
   "简": {
     "ids": "⿱竹间",
     "radical": "竹",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "jiǎn",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["间"]
   },
   "算": {
     "ids": "⿱竹𥃲",
     "radical": "竹",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "suàn",
+    "type": "ideographic",
+    "semantic": ["竹"],
+    "phonetic": ["𥃲"],
+    "shuowen": "數也。从竹从具。讀若筭。"
   },
   "箱": {
     "ids": "⿱竹相",
     "radical": "竹",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "xiāng",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["相"],
+    "shuowen": "大車牝服也。从竹相聲。"
   },
   "篮": {
     "ids": "⿱竹监",
     "radical": "竹",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "lán",
+    "type": "phono-semantic",
+    "semantic": ["⺮"],
+    "phonetic": ["监"]
   },
   "米": {
     "ids": "米",
     "radical": "米",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "mǐ",
+    "type": "pictographic",
+    "shuowen": "粟實也。象禾實之形。凡米之屬皆从米。"
   },
   "糕": {
     "ids": "⿰米羔",
     "radical": "米",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "gāo",
+    "type": "phono-semantic",
+    "semantic": ["米"],
+    "phonetic": ["羔"]
   },
   "糖": {
     "ids": "⿰米唐",
     "radical": "米",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "táng",
+    "type": "phono-semantic",
+    "semantic": ["米"],
+    "phonetic": ["唐"],
+    "shuowen": "飴也。从米唐聲。"
+  },
+  "糸": {
+    "ids": "⿱幺小",
+    "radical": "糸",
+    "strokes": 6,
+    "pinyin": "mì",
+    "type": "pictographic",
+    "shuowen": "細絲也。象束絲之形。凡糸之屬皆从糸。讀若覛。"
   },
   "系": {
     "ids": "⿱丿糸",
     "radical": "糸",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "xì",
+    "type": "phono-semantic",
+    "semantic": ["糸"],
+    "phonetic": ["丿"],
+    "shuowen": "繋也。从糸丿聲。凡系之屬皆从系。"
   },
   "累": {
     "ids": "⿱田糸",
     "radical": "糸",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "lèi",
+    "type": "ideographic",
+    "semantic": ["糸"],
+    "phonetic": ["田"]
+  },
+  "纟": {
+    "ids": "纟",
+    "radical": "糸",
+    "strokes": 3,
+    "pinyin": "sī",
+    "type": "pictographic"
   },
   "红": {
     "ids": "⿰纟工",
     "radical": "糸",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "hóng",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["工"]
+  },
+  "约": {
+    "ids": "⿰纟勺",
+    "radical": "糸",
+    "strokes": 6,
+    "pinyin": "yuē",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["勺"],
+    "family": ["药"]
   },
   "级": {
     "ids": "⿰纟及",
     "radical": "糸",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jí",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["及"]
   },
   "纸": {
     "ids": "⿰纟氏",
     "radical": "糸",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zhǐ",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["氏"]
   },
   "练": {
     "ids": "⿰纟𫠣",
     "radical": "糸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "liàn",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["柬"]
   },
   "终": {
     "ids": "⿰纟冬",
     "radical": "糸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhōng",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["冬"],
+    "shuowen": "龜名。从龜夂聲。夂，古文終字。"
   },
   "绍": {
     "ids": "⿰纟召",
     "radical": "糸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shào",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["召"]
   },
   "经": {
     "ids": "⿰纟𢀖",
     "radical": "糸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jīng",
+    "type": "ideographic",
+    "semantic": ["纟"],
+    "phonetic": ["工"]
   },
   "结": {
     "ids": "⿰纟吉",
     "radical": "糸",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "jié",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["吉"]
   },
   "给": {
     "ids": "⿰纟合",
     "radical": "糸",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "gěi",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["合"]
   },
   "绩": {
     "ids": "⿰纟责",
     "radical": "糸",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jì",
+    "type": "phono-semantic",
+    "semantic": ["糹"],
+    "phonetic": ["责"]
   },
   "绿": {
     "ids": "⿰纟录",
     "radical": "糸",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "lǜ",
+    "type": "phono-semantic",
+    "semantic": ["纟"],
+    "phonetic": ["录"]
   },
   "网": {
     "ids": "⿵冂⿰㐅㐅",
     "radical": "网",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "wǎng",
+    "type": "pictographic",
+    "shuowen": "庖犧所結繩以漁。从冂，下象网交文。凡网之屬皆从网。(今經典變隸作䍏。)"
   },
   "羊": {
     "ids": "⿱䒑⿻二丨",
     "radical": "羊",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yáng",
+    "type": "pictographic",
+    "shuowen": "祥也。从𦫳，象頭角足尾之形。孔子曰：“牛羊之字以形舉也。”凡羊之屬皆从羊。",
+    "family": ["样", "鲜"]
+  },
+  "羔": {
+    "ids": "⿱𦍌灬",
+    "radical": "羊",
+    "strokes": 10,
+    "pinyin": "gāo",
+    "type": "phono-semantic",
+    "semantic": ["羊"],
+    "phonetic": ["灬"],
+    "shuowen": "羊子也。从羊，照省聲。",
+    "family": ["糕"]
   },
   "老": {
     "ids": "⿸耂匕",
     "radical": "老",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "lǎo",
+    "type": "pictographic",
+    "shuowen": "考也。七十曰老。从人、毛、匕。言須髮變白也。凡老之屬皆从老。"
+  },
+  "耂": {
+    "ids": "耂",
+    "radical": "老",
+    "strokes": 4,
+    "pinyin": "lǎo",
+    "type": "ideographic",
+    "family": ["孝"]
   },
   "考": {
     "ids": "⿸耂丂",
     "radical": "老",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "kǎo",
+    "type": "phono-semantic",
+    "semantic": ["耂"],
+    "phonetic": ["丂"],
+    "shuowen": "老也。从老省，丂聲。"
   },
   "者": {
     "ids": "⿸耂日",
     "radical": "老",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zhě",
+    "type": "pictographic",
+    "phonetic": ["纺"],
+    "shuowen": "別事詞也。从𪞶纺聲。纺，古文旅字。",
+    "family": ["书", "着", "都"]
   },
   "而": {
     "ids": "⿱一𦓐",
     "radical": "而",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "ér",
+    "type": "pictographic",
+    "shuowen": "頰毛也。象毛之形。《周禮》曰：“作其鱗之而。”凡而之屬皆从而。",
+    "family": ["需"]
   },
   "耳": {
     "ids": "耳",
     "radical": "耳",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "ěr",
+    "type": "pictographic",
+    "shuowen": "主聽也。象形。凡耳之屬皆从耳。"
   },
   "聪": {
     "ids": "⿰耳总",
     "radical": "耳",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "cōng",
+    "type": "phono-semantic",
+    "semantic": ["耳"],
+    "phonetic": ["总"]
   },
   "肉": {
     "ids": "肉",
     "radical": "肉",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "ròu",
+    "type": "pictographic",
+    "shuowen": "胾肉。象形。凡肉之屬皆从肉。"
   },
   "育": {
     "ids": "⿱𠫓月",
     "radical": "肉",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yù",
+    "type": "phono-semantic",
+    "semantic": ["子"],
+    "phonetic": ["⺼"],
+    "shuowen": "養子使作善也。从𠫓肉聲。《虞書》曰：“教育子。”"
   },
   "胖": {
     "ids": "⿰月半",
     "radical": "肉",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "pàng",
+    "type": "phono-semantic",
+    "semantic": ["⺼"],
+    "phonetic": ["半"],
+    "shuowen": "半體肉也。一曰廣肉。从半从肉，半亦聲。"
   },
   "能": {
     "ids": "⿰䏍𫧇",
     "radical": "肉",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "néng",
+    "type": "pictographic",
+    "phonetic": ["㠯"],
+    "shuowen": "熊屬。足似鹿。从肉㠯聲。能獸堅中，故稱賢能；而彊壯，稱能傑也。凡能之屬皆从能。"
   },
   "脑": {
     "ids": "⿰月㐫",
     "radical": "肉",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "nǎo",
+    "type": "ideographic",
+    "semantic": ["月"],
+    "phonetic": ["㐫"]
   },
   "脚": {
     "ids": "⿰月却",
     "radical": "肉",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "jiǎo",
+    "type": "phono-semantic",
+    "semantic": ["⺼"],
+    "phonetic": ["却"]
   },
   "脸": {
     "ids": "⿰月佥",
     "radical": "肉",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "liǎn",
+    "type": "phono-semantic",
+    "semantic": ["⺼"],
+    "phonetic": ["佥"]
   },
   "腿": {
     "ids": "⿰月退",
     "radical": "肉",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "tuǐ",
+    "type": "phono-semantic",
+    "semantic": ["⺼"],
+    "phonetic": ["退"]
   },
   "自": {
     "ids": "自",
     "radical": "自",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "zì",
+    "type": "pictographic",
+    "shuowen": "鼻也。象鼻形。凡自之屬皆从自。",
+    "family": ["息"]
+  },
+  "至": {
+    "ids": "⿱𠫔土",
+    "radical": "至",
+    "strokes": 6,
+    "pinyin": "zhì",
+    "type": "pictographic",
+    "shuowen": "鳥飛从高下至地也。从一，一猶地也。象形。不，上去；而至，下來也。凡至之屬皆从至。",
+    "family": ["室"]
+  },
+  "舌": {
+    "ids": "⿱千口",
+    "radical": "舌",
+    "strokes": 6,
+    "pinyin": "shé",
+    "type": "pictographic",
+    "phonetic": ["干"],
+    "shuowen": "在口，所以言也、別味也。从干从口，干亦聲。凡舌之屬皆从舌。",
+    "family": ["刮", "甜", "话"]
+  },
+  "舍": {
+    "ids": "⿱人舌",
+    "radical": "舌",
+    "strokes": 8,
+    "pinyin": "shě shè",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["余"],
+    "shuowen": "市居曰舍。从亼、屮，象屋也。口象築也。",
+    "family": ["余"]
   },
   "舒": {
     "ids": "⿰舍予",
     "radical": "舌",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "shū",
+    "type": "phono-semantic",
+    "semantic": ["舍"],
+    "phonetic": ["予"],
+    "shuowen": "伸也。从舍从予，予亦聲。一曰舒，緩也。"
+  },
+  "舛": {
+    "ids": "⿰夕㐄",
+    "radical": "舛",
+    "strokes": 6,
+    "pinyin": "chuǎn",
+    "type": "ideographic",
+    "shuowen": "對臥也。从夊𡕒相背。凡舛之屬皆从舛。"
   },
   "舞": {
     "ids": "⿱⿳𠂉卌一舛",
     "radical": "舛",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "wǔ",
+    "type": "phono-semantic",
+    "semantic": ["舛"],
+    "phonetic": ["無"],
+    "shuowen": "樂也。用足相背，从舛；無聲。"
+  },
+  "舟": {
+    "ids": "舟",
+    "radical": "舟",
+    "strokes": 6,
+    "pinyin": "zhōu",
+    "type": "pictographic",
+    "shuowen": "船也。古者，共鼓、貨狄，刳木爲舟，剡木爲楫，以濟不通。象形。凡舟之屬皆从舟。"
   },
   "般": {
     "ids": "⿰舟殳",
     "radical": "舟",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "bān",
+    "type": "ideographic",
+    "semantic": ["殳"],
+    "phonetic": ["凡"],
+    "shuowen": "辟也。象舟之旋，从舟。从殳，殳，所以旋也。",
+    "family": ["搬", "盘"]
   },
   "船": {
     "ids": "⿰舟⿱𠘧口",
     "radical": "舟",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "chuán",
+    "type": "phono-semantic",
+    "semantic": ["舟"],
+    "phonetic": ["公"],
+    "shuowen": "舟也。从舟，鉛省聲。"
+  },
+  "艮": {
+    "ids": "艮",
+    "radical": "艮",
+    "strokes": 6,
+    "pinyin": "gěn",
+    "type": "ideographic",
+    "shuowen": "很也。从匕、目。匕目，猶目相匕，不相下也。《易》曰：“𥃩其限。”匕目爲𥃩，𠤎目爲眞也。",
+    "family": ["很", "根", "眼", "跟", "退", "银"]
   },
   "色": {
     "ids": "⿱𠂊巴",
     "radical": "色",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "sè",
+    "type": "ideographic",
+    "shuowen": "顔气也。从人从卪。凡色之屬皆从色。"
+  },
+  "艹": {
+    "ids": "⿻十丨",
+    "radical": "艸",
+    "strokes": 4,
+    "pinyin": "cǎo",
+    "type": "pictographic"
   },
   "节": {
     "ids": "⿱艹⿱𠃌丨",
     "radical": "艸",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jié",
+    "type": "ideographic"
   },
   "花": {
     "ids": "⿱艹化",
     "radical": "艸",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "huā",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["化"]
+  },
+  "苗": {
+    "ids": "⿱艹田",
+    "radical": "艸",
+    "strokes": 9,
+    "pinyin": "miáo",
+    "type": "ideographic",
+    "shuowen": "艸生於田者。从艸从田。",
+    "family": ["猫"]
   },
   "苹": {
     "ids": "⿱艹平",
     "radical": "艸",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "píng",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["平"],
+    "shuowen": "蓱也。無根，浮水而生者。从艸平聲。"
   },
   "茶": {
     "ids": "⿳艹人朩",
     "radical": "艸",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "chá",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["余"]
   },
   "草": {
     "ids": "⿱艹早",
     "radical": "艸",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "cǎo",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["早"],
+    "shuowen": "草斗，櫟實也。一曰象斗子。从艸早聲。"
   },
   "药": {
     "ids": "⿱艹约",
     "radical": "艸",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yào",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["约"]
   },
   "菜": {
     "ids": "⿱艹采",
     "radical": "艸",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "cài",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["采"],
+    "shuowen": "艸之可食者。从艸采聲。"
   },
   "萄": {
     "ids": "⿱艹匋",
     "radical": "艸",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "táo",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["匋"],
+    "shuowen": "艸也。从艸匋聲。"
   },
   "葡": {
     "ids": "⿱艹匍",
     "radical": "艸",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "pú",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["匍"]
+  },
+  "董": {
+    "ids": "⿱艹重",
+    "radical": "艸",
+    "strokes": 13,
+    "pinyin": "dǒng",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["重"],
+    "family": ["懂"]
   },
   "蓝": {
     "ids": "⿱艹监",
     "radical": "艸",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "lán",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["监"]
   },
   "蕉": {
     "ids": "⿱艹焦",
     "radical": "艸",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "jiāo",
+    "type": "phono-semantic",
+    "semantic": ["艹"],
+    "phonetic": ["焦"],
+    "shuowen": "生枲也。从艸焦聲。"
+  },
+  "虫": {
+    "ids": "虫",
+    "radical": "虫",
+    "strokes": 6,
+    "pinyin": "chóng",
+    "type": "phono-semantic",
+    "phonetic": ["中"],
+    "shuowen": "一名蝮，博三寸，首大如擘指。象其臥形。物之微細，或行，或毛，或蠃，或介，或鱗，以虫爲象。凡虫之屬皆从虫。"
   },
   "虽": {
     "ids": "⿱口虫",
     "radical": "虫",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "suī",
+    "type": "pictographic",
+    "semantic": ["虫"],
+    "phonetic": ["口"]
   },
   "蛋": {
     "ids": "⿱疋虫",
     "radical": "虫",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "dàn",
+    "type": "phono-semantic",
+    "semantic": ["虫"],
+    "phonetic": ["延"]
   },
   "行": {
     "ids": "⿰彳亍",
     "radical": "行",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xíng",
+    "type": "ideographic",
+    "shuowen": "人之步趨也。从彳从亍。凡行之屬皆从行。"
   },
   "街": {
     "ids": "⿲彳圭亍",
     "radical": "行",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "jiē",
+    "type": "phono-semantic",
+    "semantic": ["行"],
+    "phonetic": ["圭"],
+    "shuowen": "四通道也。从行圭聲。"
   },
   "衣": {
     "ids": "⿱亠𧘇",
     "radical": "衣",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yī",
+    "type": "pictographic",
+    "shuowen": "依也。上曰衣，下曰裳。象覆二人之形。凡衣之屬皆从衣。"
+  },
+  "衤": {
+    "ids": "衤",
+    "radical": "衣",
+    "strokes": 6,
+    "pinyin": "yī"
   },
   "表": {
     "ids": "⿱龶𧘇",
     "radical": "衣",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "biǎo",
+    "type": "ideographic"
   },
   "衫": {
     "ids": "⿰衤彡",
     "radical": "衣",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shān",
+    "type": "phono-semantic",
+    "semantic": ["衤"],
+    "phonetic": ["彡"],
+    "shuowen": "衣也。从衣彡聲。"
   },
   "衬": {
     "ids": "⿰衤寸",
     "radical": "衣",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "chèn",
+    "type": "phono-semantic",
+    "semantic": ["衤"],
+    "phonetic": ["寸"]
   },
   "被": {
     "ids": "⿰衤皮",
     "radical": "衣",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "bèi",
+    "type": "phono-semantic",
+    "semantic": ["衤"],
+    "phonetic": ["皮"],
+    "shuowen": "𡪢衣，長一身有半。从衣皮聲。"
   },
   "裙": {
     "ids": "⿰衤君",
     "radical": "衣",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "qún",
+    "type": "phono-semantic",
+    "semantic": ["衤"],
+    "phonetic": ["君"]
   },
   "裤": {
     "ids": "⿰衤库",
     "radical": "衣",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "kù",
+    "type": "phono-semantic",
+    "semantic": ["衤"],
+    "phonetic": ["库"]
   },
   "西": {
     "ids": "⿱一𠁤",
     "radical": "襾",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "xī",
+    "type": "pictographic",
+    "shuowen": "鳥在巢上。象形。日在西方而鳥棲，故因以爲東西之西。凡西之屬皆从西。"
+  },
+  "覀": {
+    "ids": "⿱一⿻口⿰丨丨",
+    "radical": "襾",
+    "strokes": 6,
+    "pinyin": "xī",
+    "type": "ideographic",
+    "family": ["票"]
   },
   "要": {
     "ids": "⿱覀女",
     "radical": "襾",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yào",
+    "type": "pictographic",
+    "phonetic": ["交"],
+    "shuowen": "身中也。象人要自𦥑之形。从𦥑，交省聲。"
   },
   "见": {
     "ids": "见",
-    "radical": "見",
-    "strokes": 4
+    "radical": "见",
+    "strokes": 4,
+    "pinyin": "jiàn",
+    "type": "pictographic"
   },
   "视": {
     "ids": "⿰礻见",
     "radical": "示",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shì",
+    "type": "phono-semantic",
+    "semantic": ["见"],
+    "phonetic": ["礻"]
   },
   "觉": {
     "ids": "⿳𭕄冖见",
-    "radical": "見",
-    "strokes": 9
+    "radical": "见",
+    "strokes": 9,
+    "pinyin": "jué",
+    "type": "phono-semantic",
+    "semantic": ["见"],
+    "phonetic": ["学"]
   },
   "角": {
     "ids": "角",
     "radical": "角",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "jiǎo",
+    "type": "pictographic",
+    "shuowen": "獸角也。象形，角與刀、魚相似。凡角之屬皆从角。"
   },
   "解": {
     "ids": "⿰角𭷔",
     "radical": "角",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "jiě",
+    "type": "ideographic",
+    "semantic": ["角"],
+    "phonetic": ["𭷔"],
+    "shuowen": "判也。从刀判牛角。一曰解𢊁，獸也。"
+  },
+  "言": {
+    "ids": "言",
+    "radical": "言",
+    "strokes": 7,
+    "pinyin": "yán",
+    "type": "phono-semantic",
+    "phonetic": ["䇂"],
+    "shuowen": "直言曰言，論難曰語。从口䇂聲。凡言之屬皆从言。",
+    "family": ["信"]
+  },
+  "讠": {
+    "ids": "讠",
+    "radical": "言",
+    "strokes": 2,
+    "pinyin": "yán"
   },
   "认": {
     "ids": "⿰讠人",
     "radical": "言",
-    "strokes": 4
+    "strokes": 4,
+    "pinyin": "rèn",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["人"]
   },
   "让": {
     "ids": "⿰讠上",
     "radical": "言",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "ràng",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["上"]
   },
   "议": {
     "ids": "⿰讠义",
     "radical": "言",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "yì",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["义"]
   },
   "记": {
     "ids": "⿰讠己",
     "radical": "言",
-    "strokes": 5
+    "strokes": 5,
+    "pinyin": "jì",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["己"]
   },
   "讲": {
     "ids": "⿰讠井",
     "radical": "言",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "jiǎng",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["井"]
   },
   "识": {
     "ids": "⿰讠只",
     "radical": "言",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "shí shì",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["只"]
   },
   "诉": {
     "ids": "⿰讠斥",
     "radical": "言",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "sù",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["斥"]
   },
   "词": {
     "ids": "⿰讠司",
     "radical": "言",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "cí",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["司"]
   },
   "试": {
     "ids": "⿰讠式",
     "radical": "言",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "shì",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["式"]
   },
   "话": {
     "ids": "⿰讠舌",
     "radical": "言",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "huà",
+    "type": "phono-semantic",
+    "semantic": ["言"],
+    "phonetic": ["舌"]
   },
   "该": {
     "ids": "⿰讠亥",
     "radical": "言",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "gāi",
+    "type": "phono-semantic",
+    "semantic": ["言"],
+    "phonetic": ["亥"]
   },
   "语": {
     "ids": "⿰讠吾",
     "radical": "言",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yǔ",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["吾"]
   },
   "说": {
     "ids": "⿰讠兑",
     "radical": "言",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "shuō",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["兑"]
   },
   "请": {
     "ids": "⿰讠青",
     "radical": "言",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "qǐng",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["青"]
   },
   "读": {
     "ids": "⿰讠卖",
     "radical": "言",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "dú",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["卖"]
   },
   "课": {
     "ids": "⿰讠果",
     "radical": "言",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "kè",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["果"]
   },
   "谁": {
     "ids": "⿰讠隹",
     "radical": "言",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "shéi",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["隹"]
   },
   "调": {
     "ids": "⿰讠周",
     "radical": "言",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "diào",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["周"]
   },
   "谢": {
     "ids": "⿰讠射",
     "radical": "言",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "xiè",
+    "type": "phono-semantic",
+    "semantic": ["讠"],
+    "phonetic": ["射"]
+  },
+  "谷": {
+    "ids": "谷",
+    "radical": "谷",
+    "strokes": 7,
+    "pinyin": "gǔ",
+    "type": "ideographic",
+    "shuowen": "泉出通川爲谷。从水半見，出於口。凡谷之屬皆从谷。"
+  },
+  "豆": {
+    "ids": "豆",
+    "radical": "豆",
+    "strokes": 7,
+    "pinyin": "dòu",
+    "type": "pictographic",
+    "shuowen": "古食肉器也。从口，象形。凡豆之屬皆从豆。",
+    "family": ["短", "𭔰"]
+  },
+  "豕": {
+    "ids": "⿱一𧰨",
+    "radical": "豕",
+    "strokes": 7,
+    "pinyin": "shǐ",
+    "type": "pictographic",
+    "shuowen": "彘也。竭其尾，故謂之豕。象毛足而後有尾。讀與豨同。(桉：今丗字，誤以豕爲彘，以彘爲豕。何以明之？爲啄琢从豕，蟸从彘。皆取其聲，以是明之。)凡豕之屬皆从豕。",
+    "family": ["家"]
+  },
+  "象": {
+    "ids": "⿳𠂊𫩏𧰨",
+    "radical": "豕",
+    "strokes": 12,
+    "pinyin": "xiàng",
+    "type": "pictographic",
+    "semantic": ["豕"],
+    "shuowen": "長鼻牙，南越大獸，三秊一乳，象耳牙四足之形。凡象之屬皆从象。",
+    "family": ["乎", "像"]
+  },
+  "贝": {
+    "ids": "贝",
+    "radical": "贝",
+    "strokes": 4,
+    "pinyin": "bèi",
+    "type": "pictographic",
+    "family": ["员"]
+  },
+  "责": {
+    "ids": "⿱龶贝",
+    "radical": "贝",
+    "strokes": 8,
+    "pinyin": "zé",
+    "type": "phono-semantic",
+    "semantic": ["貝"],
+    "phonetic": ["朿"],
+    "family": ["绩"]
+  },
+  "贯": {
+    "ids": "⿱毌贝",
+    "radical": "贝",
+    "strokes": 8,
+    "pinyin": "guàn",
+    "type": "phono-semantic",
+    "semantic": ["贝"],
+    "phonetic": ["毌"],
+    "family": ["惯"]
   },
   "贵": {
     "ids": "⿱𠀐贝",
-    "radical": "貝",
-    "strokes": 9
+    "radical": "贝",
+    "strokes": 9,
+    "pinyin": "guì",
+    "type": "pictographic",
+    "semantic": ["贝"]
   },
   "赛": {
     "ids": "⿱𡨄贝",
-    "radical": "貝",
-    "strokes": 14
+    "radical": "贝",
+    "strokes": 14,
+    "pinyin": "sài",
+    "type": "phono-semantic",
+    "semantic": ["贝"],
+    "phonetic": ["塞"]
   },
   "走": {
     "ids": "⿱土龰",
     "radical": "走",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "zǒu",
+    "type": "ideographic",
+    "shuowen": "趨也。从夭、止。夭止者，屈也。凡走之屬皆从走。"
   },
   "起": {
     "ids": "⿺走巳",
     "radical": "走",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "qǐ",
+    "type": "phono-semantic",
+    "semantic": ["走"],
+    "phonetic": ["己"],
+    "shuowen": "能立也。从走巳聲。"
   },
   "超": {
     "ids": "⿺走召",
     "radical": "走",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "chāo",
+    "type": "phono-semantic",
+    "semantic": ["走"],
+    "phonetic": ["召"],
+    "shuowen": "跳也。从走召聲。"
   },
   "越": {
     "ids": "⿺走戉",
     "radical": "走",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "yuè",
+    "type": "phono-semantic",
+    "semantic": ["走"],
+    "phonetic": ["戉"],
+    "shuowen": "度也。从走戉聲。"
   },
   "趣": {
     "ids": "⿺走取",
     "radical": "走",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "qù",
+    "type": "phono-semantic",
+    "semantic": ["走"],
+    "phonetic": ["取"],
+    "shuowen": "疾也。从走取聲。"
   },
   "跑": {
     "ids": "⿰𧾷包",
     "radical": "足",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "pǎo",
+    "type": "phono-semantic",
+    "semantic": ["足"],
+    "phonetic": ["包"]
   },
   "跟": {
     "ids": "⿰𧾷艮",
     "radical": "足",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "gēn",
+    "type": "phono-semantic",
+    "semantic": ["足"],
+    "phonetic": ["艮"],
+    "shuowen": "足踵也。从足𥃩聲。"
   },
   "路": {
     "ids": "⿰𧾷各",
     "radical": "足",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "lù",
+    "type": "phono-semantic",
+    "semantic": ["足"],
+    "phonetic": ["各"],
+    "shuowen": "道也。从足从各。"
   },
   "跳": {
     "ids": "⿰𧾷兆",
     "radical": "足",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "tiào",
+    "type": "phono-semantic",
+    "semantic": ["足"],
+    "phonetic": ["兆"],
+    "shuowen": "蹶也。从足兆聲。一曰躍也。"
   },
   "踢": {
     "ids": "⿰𧾷易",
     "radical": "足",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "tī",
+    "type": "phono-semantic",
+    "semantic": ["足"],
+    "phonetic": ["易"]
   },
   "身": {
     "ids": "身",
     "radical": "身",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "shēn",
+    "type": "pictographic",
+    "phonetic": ["𠂆"],
+    "shuowen": "躳也。象人之身。从人𠂆聲。凡身之屬皆从身。",
+    "family": ["射"]
   },
   "车": {
     "ids": "车",
-    "radical": "車",
-    "strokes": 4
+    "radical": "车",
+    "strokes": 4,
+    "pinyin": "chē",
+    "type": "pictographic",
+    "family": ["库"]
   },
   "轻": {
     "ids": "⿰车𢀖",
-    "radical": "車",
-    "strokes": 9
+    "radical": "车",
+    "strokes": 9,
+    "pinyin": "qīng",
+    "type": "phono-semantic",
+    "semantic": ["车"],
+    "phonetic": ["巠"]
   },
   "较": {
     "ids": "⿰车交",
-    "radical": "車",
-    "strokes": 10
+    "radical": "车",
+    "strokes": 10,
+    "pinyin": "jiào",
+    "type": "phono-semantic",
+    "semantic": ["车"],
+    "phonetic": ["交"]
   },
   "辆": {
     "ids": "⿰车两",
-    "radical": "車",
-    "strokes": 11
+    "radical": "车",
+    "strokes": 11,
+    "pinyin": "liàng",
+    "type": "phono-semantic",
+    "semantic": ["车"],
+    "phonetic": ["两"]
+  },
+  "辶": {
+    "ids": "辶",
+    "radical": "辵",
+    "strokes": 4,
+    "pinyin": "chuò",
+    "type": "pictographic"
   },
   "边": {
     "ids": "⿺辶力",
     "radical": "辵",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "biān",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["臱"]
   },
   "过": {
     "ids": "⿺辶寸",
     "radical": "辵",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "guò",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["咼"]
   },
   "迎": {
     "ids": "⿺辶卬",
     "radical": "辵",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yíng",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["卬"],
+    "shuowen": "逢也。从辵卬聲。"
   },
   "运": {
     "ids": "⿺辶云",
     "radical": "辵",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yùn",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["云"]
   },
   "近": {
     "ids": "⿺辶斤",
     "radical": "辵",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "jìn",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["斤"],
+    "shuowen": "附也。从辵斤聲。"
   },
   "还": {
     "ids": "⿺辶不",
     "radical": "辵",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "hái",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["不"]
   },
   "这": {
     "ids": "⿺辶文",
     "radical": "辵",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "zhè",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["文"]
   },
   "进": {
     "ids": "⿺辶井",
     "radical": "辵",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "jìn",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["井"]
   },
   "远": {
     "ids": "⿺辶元",
     "radical": "辵",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yuǎn",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["元"]
   },
   "迟": {
     "ids": "⿺辶尺",
     "radical": "辵",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "chí",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["尺"]
+  },
+  "退": {
+    "ids": "⿺辶艮",
+    "radical": "辵",
+    "strokes": 10,
+    "pinyin": "tuì",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["艮"],
+    "family": ["腿"]
   },
   "送": {
     "ids": "⿺辶关",
     "radical": "辵",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "sòng",
+    "type": "ideographic",
+    "semantic": ["辶"],
+    "phonetic": ["关"],
+    "shuowen": "遣也。从辵，㑞省。"
   },
   "选": {
     "ids": "⿺辶先",
     "radical": "辵",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "xuǎn",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["先"]
   },
   "通": {
     "ids": "⿺辶甬",
     "radical": "辵",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "tōng",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["甬"],
+    "shuowen": "達也。从辵甬聲。"
   },
   "遇": {
     "ids": "⿺辶禺",
     "radical": "辵",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "yù",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["禺"],
+    "shuowen": "逢也。从辵禺聲。"
   },
   "道": {
     "ids": "⿺辶首",
     "radical": "辵",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "dào",
+    "type": "phono-semantic",
+    "semantic": ["辶"],
+    "phonetic": ["首"],
+    "shuowen": "所行道也。从辵从𩠐。一達謂之道。"
   },
   "那": {
     "ids": "⿰⿻刀二阝",
     "radical": "邑",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "nà",
+    "type": "phono-semantic",
+    "semantic": ["⻏"],
+    "phonetic": ["冄"],
+    "family": ["哪"]
+  },
+  "邦": {
+    "ids": "⿰丰阝",
+    "radical": "邑",
+    "strokes": 7,
+    "pinyin": "bāng",
+    "type": "phono-semantic",
+    "semantic": ["⻏"],
+    "phonetic": ["丰"],
+    "shuowen": "國也。从邑丰聲。",
+    "family": ["帮"]
   },
   "邻": {
     "ids": "⿰令阝",
     "radical": "邑",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "lín",
+    "type": "phono-semantic",
+    "semantic": ["阝"],
+    "phonetic": ["令"]
   },
   "都": {
     "ids": "⿰者阝",
     "radical": "邑",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "dōu dū",
+    "type": "phono-semantic",
+    "semantic": ["⻏"],
+    "phonetic": ["者"],
+    "shuowen": "有先君之舊宗廟曰都。从邑者聲。周禮：距國五百里爲都。"
+  },
+  "酉": {
+    "ids": "酉",
+    "radical": "酉",
+    "strokes": 7,
+    "pinyin": "yǒu",
+    "type": "pictographic",
+    "shuowen": "就也。八月黍成，可爲酎酒。象古文酉之形。凡酉之屬皆从酉。",
+    "family": ["酒"]
   },
   "酒": {
     "ids": "⿰氵酉",
     "radical": "酉",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "jiǔ",
+    "type": "phono-semantic",
+    "semantic": ["氵"],
+    "phonetic": ["酉"],
+    "shuowen": "就也，所以就人性之善惡。从水从酉，酉亦聲。一曰造也，吉凶所造也。 古者儀狄作酒醪，禹嘗之而美，遂䟽儀狄。杜康作秫酒。"
+  },
+  "采": {
+    "ids": "⿱爫木",
+    "radical": "釆",
+    "strokes": 8,
+    "pinyin": "cǎi",
+    "type": "ideographic",
+    "shuowen": "捋取也。从木从爪。",
+    "family": ["菜"]
   },
   "里": {
     "ids": "⿱⿻甲一一",
     "radical": "里",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "lǐ",
+    "type": "ideographic",
+    "shuowen": "居也。从田从土。凡里之屬皆从里。",
+    "family": ["理"]
   },
   "重": {
     "ids": "重",
     "radical": "里",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zhòng",
+    "type": "phono-semantic",
+    "phonetic": ["東"],
+    "shuowen": "厚也。从壬東聲。凡重之屬皆从重。",
+    "family": ["董"]
+  },
+  "钅": {
+    "ids": "钅",
+    "radical": "金",
+    "strokes": 5,
+    "pinyin": "jīn",
+    "type": "pictographic"
   },
   "钟": {
     "ids": "⿰钅中",
     "radical": "金",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "zhōng",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["中"]
   },
   "钱": {
     "ids": "⿰钅戋",
     "radical": "金",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "qián",
+    "type": "phono-semantic",
+    "semantic": ["金"],
+    "phonetic": ["戔"]
   },
   "铁": {
     "ids": "⿰钅失",
     "radical": "金",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "tiě",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["失"]
   },
   "铅": {
     "ids": "⿰钅⿱𠘧口",
     "radical": "金",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "qiān",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["公"]
   },
   "银": {
     "ids": "⿰钅艮",
     "radical": "金",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "yín",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["艮"]
   },
   "错": {
     "ids": "⿰钅昔",
     "radical": "金",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "cuò",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["昔"]
   },
   "锻": {
     "ids": "⿰钅段",
     "radical": "金",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "duàn",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["段"]
   },
   "镜": {
     "ids": "⿰钅竟",
     "radical": "金",
-    "strokes": 16
+    "strokes": 16,
+    "pinyin": "jìng",
+    "type": "phono-semantic",
+    "semantic": ["钅"],
+    "phonetic": ["竟"]
   },
   "长": {
     "ids": "长",
-    "radical": "長",
-    "strokes": 4
+    "radical": "长",
+    "strokes": 4,
+    "pinyin": "zhǎng",
+    "type": "ideographic",
+    "family": ["张"]
   },
   "门": {
     "ids": "门",
-    "radical": "門",
-    "strokes": 3
+    "radical": "门",
+    "strokes": 3,
+    "pinyin": "mén",
+    "type": "pictographic",
+    "family": ["们", "问", "闻"]
   },
   "问": {
     "ids": "⿵门口",
-    "radical": "門",
-    "strokes": 6
+    "radical": "门",
+    "strokes": 6,
+    "pinyin": "wèn",
+    "type": "phono-semantic",
+    "semantic": ["口"],
+    "phonetic": ["门"]
   },
   "间": {
     "ids": "⿵门日",
-    "radical": "門",
-    "strokes": 7
+    "radical": "门",
+    "strokes": 7,
+    "pinyin": "jiān",
+    "type": "pictographic",
+    "family": ["简"]
   },
   "闻": {
     "ids": "⿵门耳",
-    "radical": "門",
-    "strokes": 9
+    "radical": "门",
+    "strokes": 9,
+    "pinyin": "wén",
+    "type": "phono-semantic",
+    "semantic": ["耳"],
+    "phonetic": ["门"]
+  },
+  "阝": {
+    "ids": "阝",
+    "radical": "阜",
+    "strokes": 3,
+    "pinyin": "fù"
   },
   "阳": {
     "ids": "⿰阝日",
     "radical": "阜",
-    "strokes": 6
+    "strokes": 6,
+    "pinyin": "yáng",
+    "type": "ideographic"
   },
   "阴": {
     "ids": "⿰阝月",
     "radical": "阜",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "yīn",
+    "type": "ideographic"
   },
   "阿": {
     "ids": "⿰阝可",
     "radical": "阜",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "ā",
+    "type": "phono-semantic",
+    "semantic": ["阝"],
+    "phonetic": ["可"],
+    "shuowen": "大陵也。一曰曲𨸏也。从𨸏可聲。",
+    "family": ["啊"]
   },
   "附": {
     "ids": "⿰阝付",
     "radical": "阜",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "fù",
+    "type": "phono-semantic",
+    "semantic": ["阝"],
+    "phonetic": ["付"],
+    "shuowen": "附𡝤，小土山也。从𨸏付聲。《春秋傳》曰：“附𡝤無松栢。”"
   },
   "院": {
     "ids": "⿰阝完",
     "radical": "阜",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yuàn",
+    "type": "phono-semantic",
+    "semantic": ["阝"],
+    "phonetic": ["完"],
+    "shuowen": "堅也。从𨸏完聲。"
   },
   "除": {
     "ids": "⿰阝余",
     "radical": "阜",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "chú",
+    "type": "phono-semantic",
+    "semantic": ["阝"],
+    "phonetic": ["余"],
+    "shuowen": "殿陛也。从𨸏余聲。"
+  },
+  "隶": {
+    "ids": "隶",
+    "radical": "隶",
+    "strokes": 8,
+    "pinyin": "lì",
+    "type": "ideographic",
+    "shuowen": "及也。从又，从㞑省。又，持㞑者，从後及之也。凡隶之屬皆从隶。"
+  },
+  "隹": {
+    "ids": "隹",
+    "radical": "隹",
+    "strokes": 8,
+    "pinyin": "zhuī",
+    "type": "pictographic",
+    "shuowen": "鳥之短尾緫名也。象形。凡隹之屬皆从隹。",
+    "family": ["准", "焦", "谁"]
   },
   "难": {
     "ids": "⿰又隹",
     "radical": "隹",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "nán",
+    "type": "ideographic",
+    "semantic": ["隹"],
+    "phonetic": ["又"]
   },
   "雨": {
     "ids": "⿱一𠕒",
     "radical": "雨",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "yǔ",
+    "type": "pictographic",
+    "shuowen": "水从雲下也。一象天，冂象雲，水霝其閒也。凡雨之屬皆从雨。"
   },
   "雪": {
     "ids": "⿱雨彐",
     "radical": "雨",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "xuě",
+    "type": "phono-semantic",
+    "semantic": ["雨"],
+    "phonetic": ["彗"]
   },
   "零": {
     "ids": "⿱雨令",
     "radical": "雨",
-    "strokes": 13
+    "strokes": 13,
+    "pinyin": "líng",
+    "type": "phono-semantic",
+    "semantic": ["雨"],
+    "phonetic": ["令"],
+    "shuowen": "餘雨也。从雨令聲。"
   },
   "需": {
     "ids": "⿱雨而",
     "radical": "雨",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "xū",
+    "type": "ideographic",
+    "semantic": ["雨"],
+    "phonetic": ["而"],
+    "shuowen": "𩓣也。遇雨不進，止𩓣也。从雨而聲。《易》曰：“雲上於天，需。”"
+  },
+  "青": {
+    "ids": "⿱龶月",
+    "radical": "靑",
+    "strokes": 8,
+    "pinyin": "qīng",
+    "type": "phono-semantic",
+    "semantic": ["生"],
+    "phonetic": ["井"],
+    "shuowen": "東方色也。木生火，从生、丹。丹青之信言象然。凡青之屬皆从青。",
+    "family": ["情", "晴", "清", "睛", "请"]
   },
   "静": {
     "ids": "⿰青争",
     "radical": "靑",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "jìng",
+    "type": "phono-semantic",
+    "semantic": ["青"],
+    "phonetic": ["争"]
   },
   "非": {
     "ids": "非",
     "radical": "非",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "fēi",
+    "type": "ideographic",
+    "shuowen": "違也。从飛下翄，取其相背。凡非之屬皆从非。",
+    "family": ["啡"]
   },
   "面": {
     "ids": "⿱丆囬",
     "radical": "面",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "miàn",
+    "type": "pictographic",
+    "shuowen": "顔前也。从𦣻，象人面形。凡面之屬皆从面。"
+  },
+  "革": {
+    "ids": "革",
+    "radical": "革",
+    "strokes": 9,
+    "pinyin": "gé",
+    "type": "pictographic",
+    "shuowen": "獸皮治去其毛，革更之。象古文革之形。凡革之屬皆从革。"
   },
   "鞋": {
     "ids": "⿰革圭",
     "radical": "革",
-    "strokes": 15
+    "strokes": 15,
+    "pinyin": "xié",
+    "type": "phono-semantic",
+    "semantic": ["革"],
+    "phonetic": ["圭"]
   },
   "音": {
     "ids": "⿱立日",
     "radical": "音",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "yīn",
+    "type": "pictographic",
+    "shuowen": "聲也。生於心，有節於外，謂之音。宮商角徵羽，聲；絲竹金石匏土革木，音也。从言含一。凡音之屬皆从音。",
+    "family": ["意"]
+  },
+  "页": {
+    "ids": "页",
+    "radical": "页",
+    "strokes": 6,
+    "pinyin": "yè",
+    "type": "pictographic"
   },
   "须": {
     "ids": "⿰彡页",
-    "radical": "頁",
-    "strokes": 9
+    "radical": "页",
+    "strokes": 9,
+    "pinyin": "xū",
+    "type": "pictographic"
   },
   "顾": {
     "ids": "⿰厄页",
-    "radical": "頁",
-    "strokes": 10
+    "radical": "页",
+    "strokes": 10,
+    "pinyin": "gù",
+    "type": "phono-semantic",
+    "semantic": ["页"],
+    "phonetic": ["雇"]
   },
   "题": {
     "ids": "⿺是页",
-    "radical": "頁",
-    "strokes": 15
+    "radical": "页",
+    "strokes": 15,
+    "pinyin": "tí",
+    "type": "phono-semantic",
+    "semantic": ["頁"],
+    "phonetic": ["是"]
   },
   "颜": {
     "ids": "⿰彦页",
-    "radical": "頁",
-    "strokes": 15
+    "radical": "页",
+    "strokes": 15,
+    "pinyin": "yán",
+    "type": "phono-semantic",
+    "semantic": ["页"],
+    "phonetic": ["彦"]
   },
   "飞": {
     "ids": "飞",
-    "radical": "飛",
-    "strokes": 3
+    "radical": "飞",
+    "strokes": 3,
+    "pinyin": "fēi",
+    "type": "pictographic"
+  },
+  "饣": {
+    "ids": "饣",
+    "radical": "食",
+    "strokes": 3,
+    "pinyin": "shí"
   },
   "饭": {
     "ids": "⿰饣反",
     "radical": "食",
-    "strokes": 7
+    "strokes": 7,
+    "pinyin": "fàn",
+    "type": "phono-semantic",
+    "semantic": ["饣"],
+    "phonetic": ["反"]
   },
   "饱": {
     "ids": "⿰饣包",
     "radical": "食",
-    "strokes": 8
+    "strokes": 8,
+    "pinyin": "bǎo",
+    "type": "phono-semantic",
+    "semantic": ["饣"],
+    "phonetic": ["包"]
   },
   "饿": {
     "ids": "⿰饣我",
     "radical": "食",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "è",
+    "type": "phono-semantic",
+    "semantic": ["饣"],
+    "phonetic": ["我"]
   },
   "馆": {
     "ids": "⿰饣官",
     "radical": "食",
-    "strokes": 11
+    "strokes": 11,
+    "pinyin": "guǎn",
+    "type": "phono-semantic",
+    "semantic": ["饣"],
+    "phonetic": ["官"]
+  },
+  "首": {
+    "ids": "⿱䒑自",
+    "radical": "首",
+    "strokes": 9,
+    "pinyin": "shǒu",
+    "type": "pictographic",
+    "shuowen": "𦣻同。古文𦣻也。巛象髪，謂之鬊，鬊卽巛也。凡𩠐之屬皆从𩠐。",
+    "family": ["道"]
   },
   "香": {
     "ids": "⿱禾日",
     "radical": "香",
-    "strokes": 9
+    "strokes": 9,
+    "pinyin": "xiāng",
+    "type": "ideographic",
+    "shuowen": "芳也。从黍从甘。《春秋傳》曰：“黍稷馨香。”凡香之屬皆从香。"
   },
   "马": {
     "ids": "⿹②一",
-    "radical": "馬",
-    "strokes": 3
+    "radical": "马",
+    "strokes": 3,
+    "pinyin": "mǎ",
+    "type": "pictographic",
+    "family": ["吗", "妈"]
   },
   "骑": {
     "ids": "⿰马奇",
-    "radical": "馬",
-    "strokes": 11
+    "radical": "马",
+    "strokes": 11,
+    "pinyin": "qí",
+    "type": "phono-semantic",
+    "semantic": ["马"],
+    "phonetic": ["奇"]
   },
   "高": {
     "ids": "⿳亠口冋",
     "radical": "高",
-    "strokes": 10
+    "strokes": 10,
+    "pinyin": "gāo",
+    "type": "pictographic",
+    "shuowen": "崇也。象臺觀高之形。从冂、口。與倉、舍同意。凡高之屬皆从高。"
   },
   "鱼": {
     "ids": "⿳𠂊田一",
-    "radical": "魚",
-    "strokes": 8
+    "radical": "鱼",
+    "strokes": 8,
+    "pinyin": "yú",
+    "type": "pictographic"
   },
   "鲜": {
     "ids": "⿰鱼羊",
-    "radical": "魚",
-    "strokes": 14
+    "radical": "鱼",
+    "strokes": 14,
+    "pinyin": "xiān",
+    "type": "phono-semantic",
+    "semantic": ["鱼"],
+    "phonetic": ["羊"]
   },
   "鸟": {
     "ids": "⿹④一",
-    "radical": "鳥",
-    "strokes": 5
+    "radical": "鸟",
+    "strokes": 5,
+    "pinyin": "niǎo",
+    "type": "pictographic"
   },
   "鸡": {
     "ids": "⿰又鸟",
-    "radical": "鳥",
-    "strokes": 7
+    "radical": "鸟",
+    "strokes": 7,
+    "pinyin": "jī",
+    "type": "ideographic"
   },
   "黄": {
     "ids": "⿳龷由八",
-    "radical": "黃",
-    "strokes": 11
+    "radical": "黄",
+    "strokes": 11,
+    "pinyin": "huáng",
+    "type": "pictographic"
   },
   "黑": {
     "ids": "⿱⑧灬",
     "radical": "黑",
-    "strokes": 12
+    "strokes": 12,
+    "pinyin": "hēi",
+    "type": "ideographic",
+    "shuowen": "火所熏之色也。从炎，上出𡆧。𡆧，古窻字。凡黑之屬皆从黑。"
   },
   "鼻": {
     "ids": "⿱自畀",
     "radical": "鼻",
-    "strokes": 14
+    "strokes": 14,
+    "pinyin": "bí",
+    "type": "phono-semantic",
+    "semantic": ["自"],
+    "phonetic": ["畀"],
+    "shuowen": "引气自𢌿也。从自、𢌿。凡鼻之屬皆从鼻。"
+  },
+  "龰": {
+    "ids": "龰",
+    "radical": "止",
+    "strokes": 4,
+    "pinyin": "zǒu"
+  },
+  "龵": {
+    "ids": "龵",
+    "radical": "手",
+    "strokes": 4,
+    "pinyin": "shǒu",
+    "family": ["看"]
+  },
+  "龶": {
+    "ids": "龶",
+    "radical": "土",
+    "strokes": 4
+  },
+  "龷": {
+    "ids": "⿱卄一",
+    "radical": "艸",
+    "strokes": 4,
+    "family": ["共", "昔"]
+  },
+  "𠀐": {
+    "ids": "⿱中一",
+    "radical": "一",
+    "strokes": 5
+  },
+  "𠁤": {
+    "ids": "⿻儿口",
+    "radical": "囗",
+    "strokes": 5
+  },
+  "𠂆": {
+    "ids": "𠂆",
+    "radical": "丿",
+    "strokes": 2,
+    "pinyin": "yì",
+    "type": "pictographic",
+    "shuowen": "抴也。明也。象抴引之形。凡𠂆之屬皆从𠂆。虒字从此。",
+    "family": ["身"]
+  },
+  "𠂇": {
+    "ids": "𠂇",
+    "radical": "丿",
+    "strokes": 2,
+    "pinyin": "zuǒ",
+    "type": "pictographic",
+    "shuowen": "𠂇手也。象形。凡𠂇之屬皆从𠂇。",
+    "family": ["友", "右", "左"]
+  },
+  "𠂉": {
+    "ids": "𠂉",
+    "radical": "丿",
+    "strokes": 2
+  },
+  "𠂊": {
+    "ids": "𠂊",
+    "radical": "丿",
+    "strokes": 2
+  },
+  "𠂋": {
+    "ids": "⿸𠂆一",
+    "radical": "丿",
+    "strokes": 3,
+    "family": ["后"]
+  },
+  "𠂒": {
+    "ids": "𠂒",
+    "radical": "丿",
+    "strokes": 4,
+    "family": ["先", "告"]
+  },
+  "𠃌": {
+    "ids": "𠃌",
+    "radical": "乙",
+    "strokes": 1,
+    "pinyin": "gǔn"
+  },
+  "𠃓": {
+    "ids": "𠃓",
+    "radical": "乙",
+    "strokes": 3,
+    "pinyin": "yáng",
+    "type": "ideographic"
+  },
+  "𠃜": {
+    "ids": "𠃜",
+    "radical": "乙",
+    "strokes": 4,
+    "family": ["声"]
+  },
+  "𠔼": {
+    "ids": "⿵冂一",
+    "radical": "冂",
+    "strokes": 3,
+    "pinyin": "mǎo",
+    "type": "ideographic",
+    "shuowen": "重覆也。从冂、一。凡𠔼之屬皆从𠔼。讀若艸苺苺。",
+    "family": ["同"]
+  },
+  "𠕒": {
+    "ids": "⿻冂⿻丨⿱丷八",
+    "radical": "冂",
+    "strokes": 7
+  },
+  "𠘧": {
+    "ids": "𠘧",
+    "radical": "几",
+    "strokes": 2,
+    "pinyin": "shū",
+    "type": "pictographic",
+    "shuowen": "鳥之短羽飛𠘧𠘧也。象形。凡𠘧之屬皆从𠘧。讀若殊。"
+  },
+  "𠤎": {
+    "ids": "⿻乚丿",
+    "radical": "匕",
+    "strokes": 2,
+    "pinyin": "huà",
+    "type": "ideographic",
+    "shuowen": "變也。从到人。凡𠤎之屬皆从𠤎。",
+    "family": ["化"]
+  },
+  "𠫓": {
+    "ids": "⿻一厶",
+    "radical": "厶",
+    "strokes": 4,
+    "pinyin": "tū",
+    "type": "ideographic",
+    "shuowen": "不順忽出也。从到子。《易》曰：“突如其來如。”不孝子突出，不容於内也。凡𠫓之屬皆从𠫓。"
+  },
+  "𠬝": {
+    "ids": "⿸卩又",
+    "radical": "又",
+    "strokes": 4,
+    "pinyin": "fú",
+    "type": "ideographic",
+    "shuowen": "治也。从又从卪。卪，事之節也。",
+    "family": ["报", "服"]
+  },
+  "𠬤": {
+    "ids": "⿱又⿻二丨",
+    "radical": "又",
+    "strokes": 5,
+    "pinyin": "yì",
+    "type": "ideographic"
+  },
+  "𠮛": {
+    "ids": "⿱一口",
+    "radical": "口",
+    "strokes": 4
+  },
+  "𠮦": {
+    "ids": "⿱丷口",
+    "radical": "口",
+    "strokes": 5
+  },
+  "𠮷": {
+    "ids": "⿱土口",
+    "radical": "口",
+    "strokes": 6,
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["土"]
+  },
+  "𡗗": {
+    "ids": "⿻三人",
+    "radical": "大",
+    "strokes": 5,
+    "pinyin": "pěng"
+  },
+  "𡨄": {
+    "ids": "⿳宀𠀎八",
+    "radical": "宀",
+    "strokes": 10,
+    "pinyin": "xià"
+  },
+  "𡰯": {
+    "ids": "⿸尸巾",
+    "radical": "尸",
+    "strokes": 6,
+    "pinyin": "shǐ",
+    "type": "ideographic",
+    "semantic": ["尸"],
+    "phonetic": ["巾"]
+  },
+  "𢀖": {
+    "ids": "⿱ス工",
+    "radical": "工",
+    "strokes": 5,
+    "pinyin": "jīng"
+  },
+  "𢆉": {
+    "ids": "⿱丷干",
+    "radical": "干",
+    "strokes": 5,
+    "pinyin": "rěn",
+    "type": "ideographic",
+    "shuowen": "㨖也。从干。入一爲干，入二爲𢆉。讀若能。言稍甚也。",
+    "family": ["南"]
+  },
+  "𢎨": {
+    "ids": "⿹弔丿",
+    "radical": "弓",
+    "strokes": 5
+  },
+  "𣥂": {
+    "ids": "𣥂",
+    "radical": "止",
+    "strokes": 4,
+    "pinyin": "tà",
+    "type": "ideographic",
+    "shuowen": "蹈也。从反止。讀若撻。",
+    "family": ["步"]
+  },
+  "𤴓": {
+    "ids": "⿱一龰",
+    "radical": "疋",
+    "strokes": 5,
+    "pinyin": "yǎ",
+    "family": ["是"]
+  },
+  "𥃲": {
+    "ids": "⿱目廾",
+    "radical": "目",
+    "strokes": 8,
+    "type": "ideographic",
+    "semantic": ["目"],
+    "phonetic": ["廾"],
+    "family": ["算"]
+  },
+  "𦓐": {
+    "ids": "⿱丿𦉫",
+    "radical": "而",
+    "strokes": 5,
+    "pinyin": "jué"
+  },
+  "𦣻": {
+    "ids": "⿱一自",
+    "radical": "自",
+    "strokes": 7,
+    "pinyin": "shǒu",
+    "type": "pictographic",
+    "semantic": ["自"],
+    "phonetic": ["一"],
+    "shuowen": "頭也。象形。凡𦣻之屬皆从𦣻。"
+  },
+  "𧘇": {
+    "ids": "𧘇",
+    "radical": "衣",
+    "strokes": 4
+  },
+  "𧾷": {
+    "ids": "⿱口止",
+    "radical": "足",
+    "strokes": 7
+  },
+  "𫝀": {
+    "ids": "𫝀",
+    "radical": "一",
+    "strokes": 3
+  },
+  "𫠣": {
+    "ids": "𫠣",
+    "radical": "一",
+    "strokes": 5
+  },
+  "𫧇": {
+    "ids": "⿱匕匕",
+    "radical": "匕",
+    "strokes": 4
+  },
+  "𫩠": {
+    "ids": "⿱龸口",
+    "radical": "口",
+    "strokes": 8,
+    "type": "ideographic",
+    "semantic": ["口"],
+    "phonetic": ["龸"]
+  },
+  "𫲸": {
+    "ids": "⿱宀丰",
+    "radical": "宀",
+    "strokes": 7,
+    "pinyin": "fēng",
+    "type": "ideographic",
+    "semantic": ["宀"],
+    "phonetic": ["丰"]
+  },
+  "𬜯": {
+    "ids": "⿱艹两",
+    "radical": "艸",
+    "strokes": 11,
+    "pinyin": "liǎng"
+  },
+  "𭔰": {
+    "ids": "⿰豆寸",
+    "radical": "寸",
+    "strokes": 10,
+    "type": "ideographic",
+    "semantic": ["寸"],
+    "phonetic": ["豆"]
+  },
+  "𭕄": {
+    "ids": "𭕄",
+    "radical": "小",
+    "strokes": 3
+  },
+  "𭷔": {
+    "ids": "⿱刀牛",
+    "radical": "牛",
+    "strokes": 6,
+    "type": "ideographic",
+    "semantic": ["牛"],
+    "phonetic": ["刀"],
+    "family": ["解"]
   }
 }
