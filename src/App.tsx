@@ -3,6 +3,7 @@ import { SoundToggle } from './components/SoundToggle';
 import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
 import { BottomNav } from './components/BottomNav';
+import { CharacterDrawer } from './components/CharacterDrawer';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
@@ -100,6 +101,7 @@ export default function App() {
         <RouteView route={route} />
       </main>
       {section && <BottomNav current={section} />}
+      <CharacterDrawer />
       <CharacterMenu />
       <footer className="foot">
         <p>

@@ -7,6 +7,7 @@ import { STORIES, type Line, type Story } from '../data/stories';
 import { audioUrl } from '../lib/audio';
 import { segment } from '../lib/quiz';
 import { navigate } from '../lib/router';
+import { useCharacterView } from '../store/character-view';
 
 const BY_HANZI = new Map<string, Word>();
 for (const word of WORDS_BY_ID.values()) {
@@ -73,6 +74,8 @@ function LineView({
 }
 
 function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
+  const openChar = useCharacterView((state) => state.open);
+  const chars = [...pick.chunk];
   return (
     <div className="gloss" role="status">
       <p className="gloss__head" lang="zh-Hans">
@@ -89,15 +92,15 @@ function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
               src={audioUrl('words', pick.word.id)}
               compact
             />
-            {[...pick.chunk].map((char) => (
-              <a
+            {chars.map((char) => (
+              <button
                 key={char}
+                type="button"
                 className="link"
-                href={`#/caracter/${encodeURIComponent(char)}`}
-                onClick={onClose}
+                onClick={() => openChar(char, chars)}
               >
                 {char} →
-              </a>
+              </button>
             ))}
           </div>
         </>

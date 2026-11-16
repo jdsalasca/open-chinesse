@@ -77,7 +77,20 @@ function ToggleTile({
   );
 }
 
-function CharTile({ char }: { char: string }) {
+function CharTile({ char, onOpen }: { char: string; onOpen?: (char: string) => void }) {
+  if (onOpen) {
+    return (
+      <button
+        type="button"
+        className="piece__tile"
+        onClick={() => onOpen(char)}
+        aria-label={`Ver el carácter ${char}`}
+        lang="zh-Hans"
+      >
+        {char}
+      </button>
+    );
+  }
   return (
     <a
       className="piece__tile"
@@ -90,13 +103,13 @@ function CharTile({ char }: { char: string }) {
   );
 }
 
-function Piece({ node }: { node: SheetNode }) {
+function Piece({ node, onOpen }: { node: SheetNode; onOpen?: (char: string) => void }) {
   const [open, setOpen] = useState(false);
   if (node.kind === 'op') {
     return (
       <li className="ids__item ids__item--op">
         <span className="ids__label">{node.label}</span>
-        <Tree nodes={node.children} />
+        <Tree nodes={node.children} onOpen={onOpen} />
       </li>
     );
   }
@@ -108,7 +121,7 @@ function Piece({ node }: { node: SheetNode }) {
         {expandable ? (
           <ToggleTile char={node.char} open={open} onToggle={() => setOpen(!open)} />
         ) : (
-          <CharTile char={node.char} />
+          <CharTile char={node.char} onOpen={onOpen} />
         )}
         <span className="piece__label">{node.label ?? '—'}</span>
         {expandable && (
@@ -123,7 +136,7 @@ function Piece({ node }: { node: SheetNode }) {
         )}
         {open && (
           <div className="piece__children">
-            <Tree nodes={node.children} />
+            <Tree nodes={node.children} onOpen={onOpen} />
           </div>
         )}
       </div>
@@ -131,17 +144,23 @@ function Piece({ node }: { node: SheetNode }) {
   );
 }
 
-function Tree({ nodes }: { nodes: SheetNode[] }) {
+function Tree({ nodes, onOpen }: { nodes: SheetNode[]; onOpen?: (char: string) => void }) {
   return (
     <ul className="ids">
       {nodes.map((node, index) => (
-        <Piece key={`${node.kind}-${index}`} node={node} />
+        <Piece key={`${node.kind}-${index}`} node={node} onOpen={onOpen} />
       ))}
     </ul>
   );
 }
 
-function Composition({ data }: { data: CharacterSheetData }) {
+function Composition({
+  data,
+  onOpen,
+}: {
+  data: CharacterSheetData;
+  onOpen?: (char: string) => void;
+}) {
   return (
     <Card>
       <h2 className="character__title">Cómo se compone</h2>
@@ -149,7 +168,7 @@ function Composition({ data }: { data: CharacterSheetData }) {
         Las piezas con «+ dentro» se abren aquí; las demás llevan a su ficha.
       </p>
       {data.pieces.length > 0 ? (
-        <Tree nodes={data.pieces} />
+        <Tree nodes={data.pieces} onOpen={onOpen} />
       ) : (
         <p className="character__empty">No tenemos la descomposición de este carácter.</p>
       )}
@@ -285,7 +304,13 @@ function Examples({ data }: { data: CharacterSheetData }) {
   );
 }
 
-export function CharacterSheet({ data }: { data: CharacterSheetData }) {
+export function CharacterSheet({
+  data,
+  onOpenCharacter,
+}: {
+  data: CharacterSheetData;
+  onOpenCharacter?: (char: string) => void;
+}) {
   return (
     <>
       <header className="character__head">
@@ -302,7 +327,7 @@ export function CharacterSheet({ data }: { data: CharacterSheetData }) {
         <Facts data={data} />
       </header>
       <History data={data} />
-      <Composition data={data} />
+      <Composition data={data} onOpen={onOpenCharacter} />
       <Examples data={data} />
       <Words data={data} />
     </>

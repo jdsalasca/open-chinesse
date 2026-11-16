@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { readingOf } from '../data/characters';
-import { navigate } from '../lib/router';
+import { useCharacterView } from '../store/character-view';
 import { speak } from '../lib/speech';
 
 type Target = { char: string; x: number; y: number };
@@ -50,8 +50,9 @@ export function CharacterMenu() {
 }
 
 function Menu({ target, onClose }: { target: Target; onClose: () => void }) {
+  const openChar = useCharacterView((state) => state.open);
   const open = () => {
-    navigate(`/caracter/${encodeURIComponent(target.char)}`);
+    openChar(target.char, [target.char]);
     onClose();
   };
 

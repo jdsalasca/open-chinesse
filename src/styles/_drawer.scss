@@ -1,0 +1,133 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer__scrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(31 36 48 / 38%);
+  cursor: pointer;
+  animation: fade-in 180ms $ease;
+}
+
+.drawer__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(520px, 100%);
+  height: 100%;
+  background: $paper;
+  box-shadow: $shadow-lg;
+  animation: slide-in 240ms $ease;
+}
+
+.drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border-bottom: 1px solid $line;
+  background: $surface;
+}
+
+.drawer__pager {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.drawer__btn {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+  color: $ink;
+  cursor: pointer;
+  @include focus-ring;
+}
+
+.drawer__btn:hover {
+  border-color: $mint;
+  color: $mint-dark;
+}
+
+.drawer__count {
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  color: $muted;
+}
+
+.drawer__actions {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  font-size: 0.85rem;
+}
+
+.drawer__body {
+  overflow-y: auto;
+  padding: $space-4;
+  padding-bottom: calc(#{$space-6} + env(safe-area-inset-bottom));
+}
+
+.drawer__body .character__head {
+  box-shadow: none;
+}
+
+.drawer__body .character__hanzi {
+  font-size: clamp(3rem, 10vw, 4.5rem);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 719px) {
+  .drawer {
+    align-items: flex-end;
+  }
+
+  .drawer__panel {
+    width: 100%;
+    height: min(88vh, 100%);
+    border-radius: $radius-lg $radius-lg 0 0;
+    animation: sheet-in 240ms $ease;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@include reduced-motion {
+  .drawer__scrim,
+  .drawer__panel {
+    animation: none;
+  }
+}
