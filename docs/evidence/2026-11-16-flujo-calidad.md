@@ -98,9 +98,19 @@ pnpm build                                         ✓
 Capturas en `.screens/audit/` (ignoradas por git): `c5-home.png`,
 `c5-home-mobile.png`, `c5-review-mobile.png`, `c5-review-summary.png`.
 
+## Producción
+
+- Desplegados `403b0f8` y luego `6bb3b44` en
+  `https://open-chinesse.eridu.top`; health del contenedor OK.
+- `/` y `/api/health` responden 200; `/api/me` 401 es el comportamiento esperado
+  en modo invitado.
+- Lección `h1-01` en producción: Enter avanza de 1/11 a 2/11.
+- Único error de consola: el 401 de `/api/me` sin sesión.
+
 ## Pendiente
 
 - Dividir `Scenarios.tsx` (564 líneas) y `_home.scss` (728 líneas).
 - Llevar el ancho dinámico de las barras de progreso a una variable CSS sin
   `style` inline.
 - Unificar el tipo de `Miss` exportado para las props de Review.
+- Migración opcional para usuarios anteriores al esquema 3 (`stars` vacío).
