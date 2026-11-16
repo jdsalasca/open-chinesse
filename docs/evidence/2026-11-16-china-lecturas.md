@@ -57,6 +57,14 @@ pnpm build                           ✓
 Capturas en `.screens/audit/`: `c10-china-list.png`, `c10-china-reader.png`,
 `c10-china-quiz.png`, `c10-china-mobile.png`.
 
+## Producción
+
+- Desplegado `0cccdfe` en `https://open-chinesse.eridu.top`.
+- `/china`: tres lecturas; «一杯茶» con ocho líneas, ocho explicaciones, tres
+  opciones de respuesta y audio de 2,03 s; la retroalimentación cita la línea
+  correcta del texto.
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Pendiente
 
 - Sesión inmersiva mixta y reto del día.
