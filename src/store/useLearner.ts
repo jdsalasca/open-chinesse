@@ -30,6 +30,7 @@ export type LearnerPayload = {
   log: ReviewRecord[];
   misses: Record<string, Miss>;
   retention: Retention | null;
+  scenarios: string[];
   lastEditAt: number;
   xp: number;
   stars: Record<string, number>;
@@ -41,6 +42,7 @@ export type LearnerState = {
   log: ReviewRecord[];
   misses: Record<string, Miss>;
   retention: Retention | null;
+  scenarios: string[];
   createdAt: number;
   lastEditAt: number;
   xp: number;
@@ -54,6 +56,7 @@ export type LearnerState = {
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
   recordRetention: (score: number, now?: number) => void;
+  completeScenario: (id: string, now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
@@ -79,6 +82,7 @@ const emptyState = () => {
     log: [] as ReviewRecord[],
     misses: {} as Record<string, Miss>,
     retention: null as Retention | null,
+    scenarios: [] as string[],
     createdAt: now,
     lastEditAt: now,
     xp: 0,
@@ -186,6 +190,7 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
     log: asArray<ReviewRecord>(parsed.log, []),
     misses: asRecord<Miss>(parsed.misses),
     retention: asRetention(parsed.retention),
+    scenarios: asArray<string>(parsed.scenarios, []),
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
@@ -210,6 +215,14 @@ function applyV3Defaults(payload: Partial<LearnerState>, version: number): void 
   payload.achievements = [];
 }
 
+/** v4–v7: campos que se estrenaron después y no existían en esquemas viejos. */
+function applyContentDefaults(payload: Partial<LearnerState>, version: number): void {
+  if (version < 4) payload.misses = {};
+  if (version < 5) payload.onboarded = Object.keys(payload.cards ?? {}).length > 0;
+  if (version < 6) payload.retention = null;
+  if (version < 7) payload.scenarios = [];
+}
+
 export const useLearner = create<LearnerState>()(
   persist(
     (set, get) => {
@@ -225,6 +238,11 @@ export const useLearner = create<LearnerState>()(
           if (!retention) return;
           set({ retention: { ...retention, score, takenAt: now }, lastEditAt: now });
         },
+        completeScenario: (id, now = Date.now()) => {
+          const { scenarios } = get();
+          if (scenarios.includes(id)) return;
+          set({ scenarios: [...scenarios, id], lastEditAt: now });
+        },
         completeOnboarding: (goalXp, now = Date.now()) =>
           set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
@@ -235,14 +253,12 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 6,
+      version: 7,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
         applyV3Defaults(old, version);
-        if (version < 4) old.misses = {};
-        if (version < 5) old.onboarded = Object.keys(old.cards ?? {}).length > 0;
-        if (version < 6) old.retention = null;
+        applyContentDefaults(old, version);
         return old as LearnerState;
       },
       partialize: (state) => ({
@@ -250,6 +266,7 @@ export const useLearner = create<LearnerState>()(
         log: state.log,
         misses: state.misses,
         retention: state.retention,
+        scenarios: state.scenarios,
         createdAt: state.createdAt,
         lastEditAt: state.lastEditAt,
         xp: state.xp,
@@ -274,13 +291,14 @@ export function completedUnits(cards: Record<string, StoredCard>): string[] {
 }
 
 export function exportPayload(): string {
-  const { cards, log, misses, retention, lastEditAt, xp, stars, achievements } =
+  const { cards, log, misses, retention, scenarios, lastEditAt, xp, stars, achievements } =
     useLearner.getState();
   return JSON.stringify({
     cards,
     log,
     misses,
     retention,
+    scenarios,
     lastEditAt,
     xp,
     stars,

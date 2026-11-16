@@ -34,3 +34,6 @@ public/audio/
 
 # Fuentes crudas del dataset (se descargan con el script)
 investigation/core-1000-words/scripts/raw/
+
+# Snapshots temporales de Playwright MCP
+.playwright-mcp/

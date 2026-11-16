@@ -9,6 +9,8 @@ export type Route =
   | { name: 'profile' }
   | { name: 'practice' }
   | { name: 'stories'; storyId?: string }
+  | { name: 'scenarios' }
+  | { name: 'scenario'; scenarioId: string }
   | { name: 'immersion' }
   | { name: 'tones' }
   | { name: 'check' }
@@ -29,19 +31,24 @@ const SIMPLE: Record<string, Route> = {
   perfil: { name: 'profile' },
   profile: { name: 'profile' },
   practicar: { name: 'practice' },
+  situaciones: { name: 'scenarios' },
   historias: { name: 'stories' },
   inmersion: { name: 'immersion' },
   tonos: { name: 'tones' },
   prueba: { name: 'check' },
 };
 
+const PARAM: Record<string, (value: string) => Route> = {
+  lesson: (unitId) => ({ name: 'lesson', unitId }),
+  historias: (storyId) => ({ name: 'stories', storyId }),
+  situaciones: (scenarioId) => ({ name: 'scenario', scenarioId }),
+  caracter: (char) => ({ name: 'character', char: decode(char) }),
+  character: (char) => ({ name: 'character', char: decode(char) }),
+};
+
 export function parseHash(hash: string): Route {
   const [head, param] = hash.replace(/^#\/?/, '').split('?')[0].split('/');
-  if (head === 'lesson' && param) return { name: 'lesson', unitId: param };
-  if (head === 'historias') return { name: 'stories', storyId: param };
-  if ((head === 'caracter' || head === 'character') && param) {
-    return { name: 'character', char: decode(param) };
-  }
+  if (param && PARAM[head]) return PARAM[head](param);
   return SIMPLE[head] ?? { name: 'home' };
 }
 

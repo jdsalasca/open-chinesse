@@ -12,6 +12,7 @@ export type IconName =
   | 'book'
   | 'clock'
   | 'back'
+  | 'chat'
   | 'name';
 
 const PATHS: Record<IconName, string> = {
@@ -27,6 +28,7 @@ const PATHS: Record<IconName, string> = {
   book: 'M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 1-2-2V5Zm9-2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5V3Z',
   clock: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm0 4v5l3 2',
   back: 'M19 12H5m6-6-6 6 6 6',
+  chat: 'M4 5h16v11H9l-5 4V5Z',
   name: 'M12 4.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7ZM5 21a7 7 0 0 1 14 0',
 };
 

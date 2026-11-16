@@ -1,6 +1,6 @@
 const BASE = import.meta.env.BASE_URL;
 
-export function audioUrl(kind: 'words' | 'examples' | 'stories', id: string): string {
+export function audioUrl(kind: 'words' | 'examples' | 'stories' | 'scenarios', id: string): string {
   return `${BASE}audio/${kind}/${id}.mp3`;
 }
 

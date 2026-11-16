@@ -9,6 +9,7 @@ import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
 import { Stories } from './screens/Stories';
+import { Scenarios, ScenarioView } from './screens/Scenarios';
 import { Check } from './screens/Check';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
@@ -30,12 +31,15 @@ const SECTION: Partial<Record<Route['name'], string>> = {
   stats: 'progreso',
 };
 
+const FOCUS = new Set<Route['name']>(['lesson', 'review', 'tones', 'scenario']);
+
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   review: () => <Review />,
   stats: () => <Stats />,
   login: () => <Login />,
   profile: () => <Profile />,
   practice: () => <Practice />,
+  scenarios: () => <Scenarios />,
   immersion: () => <Immersion />,
   tones: () => <Tones />,
   check: () => <Check />,
@@ -80,6 +84,9 @@ function RouteView({ route }: { route: Route }) {
   if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
   if (route.name === 'character') return <Character key={route.char} char={route.char} />;
   if (route.name === 'stories') return <Stories storyId={route.storyId} />;
+  if (route.name === 'scenario') {
+    return <ScenarioView key={route.scenarioId} scenarioId={route.scenarioId} />;
+  }
   const view = VIEWS[route.name];
   return view ? view() : <Home />;
 }
@@ -93,7 +100,7 @@ export default function App() {
   }, [init]);
 
   const section = SECTION[route.name];
-  const focus = route.name === 'lesson' || route.name === 'review' || route.name === 'tones';
+  const focus = FOCUS.has(route.name);
 
   return (
     <div className={`app${focus ? ' app--focus' : ''}`}>

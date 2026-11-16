@@ -124,6 +124,24 @@ describe('prueba de retención', () => {
   });
 });
 
+describe('situaciones', () => {
+  it('marca una escena completada una sola vez', () => {
+    useLearner.getState().completeScenario('cafeteria', NOW);
+    expect(useLearner.getState().scenarios).toEqual(['cafeteria']);
+    useLearner.getState().completeScenario('cafeteria', NOW + 1000);
+    expect(useLearner.getState().scenarios).toEqual(['cafeteria']);
+    expect(useLearner.getState().lastEditAt).toBe(NOW);
+  });
+
+  it('viaja en el payload de sincronización', () => {
+    useLearner.getState().completeScenario('metro', NOW);
+    const payload = exportPayload();
+    useLearner.getState().reset();
+    useLearner.getState().hydrate(payload);
+    expect(useLearner.getState().scenarios).toEqual(['metro']);
+  });
+});
+
 describe('requeuesSoon', () => {
   it('re-encola pasos de aprendizaje cortos', () => {
     expect(requeuesSoon(newCard(NOW), NOW)).toBe(true);

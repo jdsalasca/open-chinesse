@@ -163,5 +163,14 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [ ] Revisión de contraste AA, foco visible y landmarks.
 - [ ] Metadatos, favicon y rendimiento de fuentes.
 
+### C1 — Contenido vivo
+
+- [x] Cuatro situaciones interactivas (HSK 1–3) con decisiones, feedback y audio.
+- [x] Progreso de situaciones persistido y sincronizado (esquema 7).
+- [x] Teclas 1–3 para elegir y auto-scroll del chat.
+- [x] Dos lecturas nuevas: restaurante (HSK 2) y día de lluvia (HSK 3).
+- [ ] Notas de uso en palabras que se confunden (二/两, 几/多少, 的/得).
+- [ ] Escenarios con voz propia del aprendiz (grabación o evaluación).
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

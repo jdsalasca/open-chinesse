@@ -42,4 +42,4 @@ pnpm format   # aplica prettier
 - `oxlint`: 0 errores, 18 advertencias (todas en pantallas).
 - `prettier --check`: limpio.
 - `tsc -b`: limpio.
-- 143 pruebas de frontend y 13 de backend.
+- 149 pruebas de frontend y 13 de backend.
