@@ -63,6 +63,16 @@ Capturas en `.screens/audit/`: `c9-practice.png`, `c9-practice-mobile.png`,
 `c9-dictation-mobile.png`, `c9-bedtime-list.png`, `c9-bedtime-reader.png`,
 `c9-bedtime-playing.png`, `c9-bedtime-mobile.png`.
 
+## Producción
+
+- Desplegado `c62a16b` en `https://open-chinesse.eridu.top`.
+- `/dormir`: tres tarjetas; «小猫和我» con ocho líneas, ocho explicaciones y
+  audio de 1,49 s; reproducción con línea activa y voz lenta.
+- `/historias/direcciones`: escucha continua y glosa al pasar siguen funcionando
+  tras extraer el reproductor.
+- `/dictado`: «ni hao» se acepta como 你好; sin errores de consola distintos del
+  401 esperado sin sesión.
+
 ## Pendiente
 
 - Historia de China en chino (HSK 3).
