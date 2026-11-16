@@ -1,16 +1,48 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
+import { BottomNav } from './components/BottomNav';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
+import { ComingSoon } from './screens/ComingSoon';
 import { Lesson } from './screens/Lesson';
 import { Login } from './screens/Login';
+import { Practice } from './screens/Practice';
 import { Profile } from './screens/Profile';
 import { Review } from './screens/Review';
 import { Stats } from './screens/Stats';
 import { useSession } from './store/session';
 import './styles/main.scss';
+
+const SECTION: Partial<Record<Route['name'], string>> = {
+  home: 'home',
+  practice: 'practicar',
+  stories: 'historias',
+  immersion: 'inmersion',
+  profile: 'perfil',
+  stats: 'progreso',
+};
+
+const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
+  review: () => <Review />,
+  stats: () => <Stats />,
+  login: () => <Login />,
+  profile: () => <Profile />,
+  practice: () => <Practice />,
+  stories: () => (
+    <ComingSoon
+      title="Historias"
+      description="Cuentos cortos en chino con el vocabulario que ya viste, para leer sin traducir."
+    />
+  ),
+  immersion: () => (
+    <ComingSoon
+      title="Inmersión"
+      description="Material real —noticias, vídeos, canciones— con apoyo para entenderlo sin ahogarte."
+    />
+  ),
+};
 
 function Header({ route }: { route: Route }) {
   const status = useSession((s) => s.status);
@@ -36,7 +68,9 @@ function Header({ route }: { route: Route }) {
         </a>
         <nav className="nav" aria-label="Principal">
           {link('/', 'Hoy', route.name === 'home')}
-          {link('/review', 'Repasar', route.name === 'review')}
+          {link('/practicar', 'Practicar', route.name === 'practice')}
+          {link('/historias', 'Historias', route.name === 'stories')}
+          {link('/inmersion', 'Inmersión', route.name === 'immersion')}
           {link('/stats', 'Progreso', route.name === 'stats')}
         </nav>
         {status !== 'loading' && <AccountLink />}
@@ -46,22 +80,10 @@ function Header({ route }: { route: Route }) {
 }
 
 function RouteView({ route }: { route: Route }) {
-  switch (route.name) {
-    case 'lesson':
-      return <Lesson key={route.unitId} unitId={route.unitId} />;
-    case 'character':
-      return <Character key={route.char} char={route.char} />;
-    case 'review':
-      return <Review />;
-    case 'stats':
-      return <Stats />;
-    case 'login':
-      return <Login />;
-    case 'profile':
-      return <Profile />;
-    default:
-      return <Home />;
-  }
+  if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
+  if (route.name === 'character') return <Character key={route.char} char={route.char} />;
+  const view = VIEWS[route.name];
+  return view ? view() : <Home />;
 }
 
 export default function App() {
@@ -72,6 +94,8 @@ export default function App() {
     void init();
   }, [init]);
 
+  const section = SECTION[route.name];
+
   return (
     <div className="app">
       <a className="skip-link" href="#contenido">
@@ -81,6 +105,7 @@ export default function App() {
       <main className="main" id="contenido">
         <RouteView route={route} />
       </main>
+      {section && <BottomNav current={section} />}
       <CharacterMenu />
       <footer className="foot">
         <p>

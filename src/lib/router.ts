@@ -7,6 +7,9 @@ export type Route =
   | { name: 'stats' }
   | { name: 'login' }
   | { name: 'profile' }
+  | { name: 'practice' }
+  | { name: 'stories' }
+  | { name: 'immersion' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -23,6 +26,9 @@ const SIMPLE: Record<string, Route> = {
   login: { name: 'login' },
   perfil: { name: 'profile' },
   profile: { name: 'profile' },
+  practicar: { name: 'practice' },
+  historias: { name: 'stories' },
+  inmersion: { name: 'immersion' },
 };
 
 export function parseHash(hash: string): Route {
@@ -41,7 +47,12 @@ export function navigate(path: string): void {
 export function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash));
   useEffect(() => {
-    const onChange = () => setRoute(parseHash(window.location.hash));
+    const onChange = () => {
+      const hash = window.location.hash;
+      // Los anclajes internos (#contenido) no son rutas: no cambian de pantalla.
+      if (hash && !hash.startsWith('#/')) return;
+      setRoute(parseHash(hash));
+    };
     window.addEventListener('hashchange', onChange);
     return () => window.removeEventListener('hashchange', onChange);
   }, []);

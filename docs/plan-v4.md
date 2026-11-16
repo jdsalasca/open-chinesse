@@ -43,7 +43,9 @@ Estado: hecho (ver `docs/evidence/2026-11-16-ordenar.md`).
 - Criterio: 6 preguntas por unidad sin chunks ambiguos; test de que el orden
   correcto es único.
 
-## R4 — Navegación inferior y secciones de curso
+## R4 - Navegación inferior y secciones de curso
+
+Estado: hecho (ver `docs/evidence/2026-11-16-navegacion.md`).
 
 - Barra fija en móvil: Aprender · Practicar · Historias · Inmersión · Yo.
 - «Practicar» agrupa: repaso, escucha, tonos.

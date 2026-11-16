@@ -163,3 +163,10 @@
     display: none;
   }
 }
+
+// En móvil la navegación vive en la barra inferior.
+@media (max-width: 719px) {
+  .nav {
+    display: none;
+  }
+}

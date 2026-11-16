@@ -10,7 +10,8 @@ export type IconName =
   | 'arrow'
   | 'sparkles'
   | 'book'
-  | 'clock';
+  | 'clock'
+  | 'name';
 
 const PATHS: Record<IconName, string> = {
   flame: 'M12 3c1 3-2 4-2 7a2 2 0 0 0 4 0c0-1 0-2 1-3 1 2 3 4 3 7a6 6 0 0 1-12 0c0-4 3-6 6-11Z',
@@ -24,6 +25,7 @@ const PATHS: Record<IconName, string> = {
   sparkles: 'M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2 2m8 8 2 2M18 6l-2 2M8 16l-2 2',
   book: 'M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 1-2-2V5Zm9-2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5V3Z',
   clock: 'M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm0 4v5l3 2',
+  name: 'M12 4.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7ZM5 21a7 7 0 0 1 14 0',
 };
 
 type Props = {

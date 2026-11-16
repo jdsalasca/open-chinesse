@@ -13,8 +13,18 @@ describe('rutas', () => {
     expect(parseHash('')).toEqual({ name: 'home' });
   });
 
+  it('reconoce las secciones nuevas', () => {
+    expect(parseHash('#/practicar')).toEqual({ name: 'practice' });
+    expect(parseHash('#/historias')).toEqual({ name: 'stories' });
+    expect(parseHash('#/inmersion')).toEqual({ name: 'immersion' });
+  });
+
   it('no se rompe con una ruta de carácter vacía', () => {
     expect(parseHash('#/caracter')).toEqual({ name: 'home' });
     expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'character', char: '%E0%A4%A' });
+  });
+
+  it('trata un anclaje interno como la portada si se carga de cero', () => {
+    expect(parseHash('#contenido')).toEqual({ name: 'home' });
   });
 });
