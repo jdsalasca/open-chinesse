@@ -53,6 +53,15 @@ const BASE_ACTIONS: Action[] = [
     cta: 'Escuchar',
   },
   {
+    href: '#/china',
+    tone: 'sky',
+    icon: 'book',
+    meta: 'Tres lecturas',
+    title: 'China en chino',
+    text: 'El té, la ciudad y la familia. Lecturas HSK 3 con audio, explicación y una pregunta.',
+    cta: 'Leer y escuchar',
+  },
+  {
     href: '#/prueba',
     tone: 'amber',
     icon: 'clock',

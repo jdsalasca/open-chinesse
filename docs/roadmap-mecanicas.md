@@ -26,21 +26,23 @@ solo para que tenga más pantallas.
 - **Cuentos para dormir** (`/dormir`): tres cuentos HSK 1–2, voz lenta
   (`length_scale 1.25`), panel oscuro, explicación por línea y reproducción
   continua.
+- **China en chino** (`/china`): tres lecturas HSK 3 con audio, explicación por
+  línea y una pregunta de comprensión.
 
 ## Brechas, en orden de impacto
 
-| #   | Mecánica                                                                     | Por qué                                                           | Coste | Depende de              |
-| --- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----- | ----------------------- |
-| 1   | **Dictado**: oír palabra o frase y escribir hanzi/pinyin                     | Cierra el ciclo oído → escritura; hoy solo se reconoce            | Medio | Audio existente         |
-| 2   | **Cuentos para dormir** (HSK 1–2, voz lenta, traducción y explicación)       | Lectura extensiva placentera y sin presión                        | Alto  | Contenido + audio lento |
-| 3   | **Historia de China en chino** (HSK 3, glosas y audio)                       | Cultura + lectura larga; da sentido al vocabulario                | Alto  | Contenido + audio       |
-| 4   | **Sesión inmersiva mixta** (10 min: repaso → escucha → lectura → producción) | Hoy las prácticas están aisladas; mezclar mejora transferencia    | Medio | Ya existe casi todo     |
-| 5   | **Actividad del día** (reto real: pide un café, preséntate)                  | Lleva la app al mundo; cierra con una escena o frase              | Bajo  | Situaciones             |
-| 6   | **Shadowing** (repetir en voz alta tras el audio)                            | Pronunciación y ritmo; sin micrófono al principio                 | Medio | Audio + pausas          |
-| 7   | **Comprensión auditiva con pregunta**                                        | Escuchar sin texto y comprobar; hoy el audio se apoya en el texto | Medio | Historias/situaciones   |
-| 8   | **Glosa universal al pasar el cursor** en ejemplos y escenarios              | Unifica la ayuda; hoy solo existe en Historias                    | Bajo  | Segmentador actual      |
-| 9   | **Segundo ejemplo por palabra**                                              | Más contexto y menos memorización de una sola frase               | Alto  | Contenido validado      |
-| 10  | **Modo oscuro y nocturno** para lecturas                                     | Coherente con cuentos para dormir                                 | Bajo  | Tokens SCSS             |
+| #   | Mecánica                                                                     | Por qué                                                           | Coste | Depende de              | Estado       |
+| --- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----- | ----------------------- | ------------ |
+| 1   | **Dictado**: oír palabra o frase y escribir hanzi/pinyin                     | Cierra el ciclo oído → escritura; hoy solo se reconoce            | Medio | Audio existente         | Hecho (C9)   |
+| 2   | **Cuentos para dormir** (HSK 1–2, voz lenta, traducción y explicación)       | Lectura extensiva placentera y sin presión                        | Alto  | Contenido + audio lento | Hecho (C9)   |
+| 3   | **Historia de China en chino** (HSK 3, glosas y audio)                       | Cultura + lectura larga; da sentido al vocabulario                | Alto  | Contenido + audio       | Hecho (C10)  |
+| 4   | **Sesión inmersiva mixta** (10 min: repaso → escucha → lectura → producción) | Hoy las prácticas están aisladas; mezclar mejora transferencia    | Medio | Ya existe casi todo     | Pendiente    |
+| 5   | **Actividad del día** (reto real: pide un café, preséntate)                  | Lleva la app al mundo; cierra con una escena o frase              | Bajo  | Situaciones             | Pendiente    |
+| 6   | **Shadowing** (repetir en voz alta tras el audio)                            | Pronunciación y ritmo; sin micrófono al principio                 | Medio | Audio + pausas          | Pendiente    |
+| 7   | **Comprensión auditiva con pregunta**                                        | Escuchar sin texto y comprobar; hoy el audio se apoya en el texto | Medio | Historias/situaciones   | Pendiente    |
+| 8   | **Glosa universal al pasar el cursor** en ejemplos y escenarios              | Unifica la ayuda; hoy solo existe en Historias                    | Bajo  | Segmentador actual      | Pendiente    |
+| 9   | **Segundo ejemplo por palabra**                                              | Más contexto y menos memorización de una sola frase               | Alto  | Contenido validado      | Pendiente    |
+| 10  | **Modo oscuro y nocturno** para lecturas                                     | Coherente con cuentos para dormir                                 | Bajo  | Tokens SCSS             | Parcial (C9) |
 
 ## Plan propuesto
 

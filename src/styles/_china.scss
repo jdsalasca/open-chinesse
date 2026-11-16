@@ -1,0 +1,155 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.china {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.china-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.china-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+}
+
+.china-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.china-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.china-card__note {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.china-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.china__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.china-reader {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.china-reader__back {
+  justify-self: start;
+}
+
+.china-reader__note {
+  margin: $space-2 0 0;
+  color: $muted;
+}
+
+.china-lines {
+  display: grid;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.china-line {
+  display: grid;
+  gap: $space-1;
+  padding: $space-4;
+  border-left: 2px solid $line;
+  border-radius: $radius;
+  transition: background $motion $ease;
+}
+
+.china-line.is-active {
+  border-left-color: $mint;
+  background: $mint-soft;
+}
+
+.china-line__hanzi {
+  margin: 0;
+  @include hanzi(1.6rem);
+  line-height: 1.5;
+}
+
+.china-line__pinyin {
+  margin: 0;
+  font-size: 0.95rem;
+  color: $teal;
+}
+
+.china-line__translation {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.china-line__explain {
+  margin: $space-1 0 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: $muted;
+}
+
+.china-quiz {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+}
+
+.china-quiz h2 {
+  font-size: 1.2rem;
+}
+
+.china-quiz__prompt {
+  margin: 0;
+  font-weight: 600;
+}
+
+.china-quiz__options {
+  display: grid;
+  gap: $space-2;
+}
+
+.china-quiz .option {
+  width: 100%;
+  text-align: left;
+}

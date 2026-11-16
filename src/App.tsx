@@ -14,6 +14,7 @@ import { Check } from './screens/Check';
 import { Cloze } from './screens/Cloze';
 import { Dictation } from './screens/Dictation';
 import { Bedtime } from './screens/Bedtime';
+import { China } from './screens/China';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -98,6 +99,7 @@ function RouteView({ route }: { route: Route }) {
   if (route.name === 'character') return <Character key={route.char} char={route.char} />;
   if (route.name === 'stories') return <Stories storyId={route.storyId} />;
   if (route.name === 'bedtime') return <Bedtime storyId={route.storyId} />;
+  if (route.name === 'china') return <China textId={route.textId} />;
   if (route.name === 'scenario') {
     return <ScenarioView key={route.scenarioId} scenarioId={route.scenarioId} />;
   }

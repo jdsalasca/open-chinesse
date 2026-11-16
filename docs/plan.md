@@ -274,5 +274,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       detener.
 - [x] Tarjetas de Dictado y Cuentos en Practicar.
 
+### C10 — Cultura china en chino
+
+- [x] Tres lecturas HSK 3: el té, una mañana en Pekín y una noche en familia.
+- [x] 24 líneas con hanzi, pinyin, traducción y explicación de gramática o
+      vocabulario.
+- [x] Audio propio con `length_scale 1.1`, reproductor con línea activa y
+      controles de pausa, seguir y detener.
+- [x] Una pregunta de comprensión por lectura, con respuesta razonada.
+- [x] Tarjeta «China en chino» en Practicar y test de nivel de vocabulario.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

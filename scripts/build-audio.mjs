@@ -22,6 +22,7 @@ import { join } from 'node:path';
 import { SCENARIOS } from '../src/data/scenarios.ts';
 import { STORIES } from '../src/data/stories.ts';
 import { BEDTIME_STORIES } from '../src/data/bedtime.ts';
+import { CHINA_TEXTS } from '../src/data/china.ts';
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const DATA = join(ROOT, 'src/data');
@@ -80,6 +81,19 @@ for (const story of BEDTIME_STORIES) {
       id: `sleep-${story.id}-${number}`,
       text: line.hanzi,
       lengthScale: 1.25,
+    });
+  });
+}
+
+// Lecturas de cultura: un poco más lentas que una historia normal.
+for (const text of CHINA_TEXTS) {
+  text.lines.forEach((line, index) => {
+    const number = String(index + 1).padStart(2, '0');
+    jobs.push({
+      kind: 'stories',
+      id: `china-${text.id}-${number}`,
+      text: line.hanzi,
+      lengthScale: 1.1,
     });
   });
 }
