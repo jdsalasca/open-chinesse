@@ -8,6 +8,7 @@ import { playCorrect, playWrong } from '../lib/sfx';
 import { makeToneQuiz, type ToneQuestion } from '../lib/tone-quiz';
 import { SessionNext } from '../components/SessionNext';
 import { SessionHeader } from '../components/SessionHeader';
+import { useLearner } from '../store/useLearner';
 
 function Summary({ score, total, onRetry }: { score: number; total: number; onRetry: () => void }) {
   return (
@@ -177,6 +178,7 @@ export function Tones() {
       index={index}
       total={quiz.length}
       onAnswer={(correct) => {
+        useLearner.getState().logActivity('tones', correct);
         if (correct) setScore(score + 1);
         setIndex(index + 1);
       }}

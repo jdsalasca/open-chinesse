@@ -1,8 +1,10 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Rating } from 'ts-fsrs';
 import { UNITS } from '../data/curriculum';
+import { makeMissions } from '../lib/missions';
 import { newCard } from '../srs/scheduler';
 import { completedUnits, exportPayload, requeuesSoon, useLearner } from './useLearner';
+import { dayKey } from './metrics';
 
 const NOW = new Date('2026-11-15T10:00:00Z').getTime();
 const UNIT = UNITS[0];
@@ -125,12 +127,15 @@ describe('prueba de retención', () => {
 });
 
 describe('situaciones', () => {
-  it('marca una escena completada una sola vez', () => {
+  it('marca una escena completada una sola vez y registra la actividad', () => {
     useLearner.getState().completeScenario('cafeteria', NOW);
     expect(useLearner.getState().scenarios).toEqual(['cafeteria']);
     useLearner.getState().completeScenario('cafeteria', NOW + 1000);
     expect(useLearner.getState().scenarios).toEqual(['cafeteria']);
-    expect(useLearner.getState().lastEditAt).toBe(NOW);
+    expect(useLearner.getState().lastEditAt).toBe(NOW + 1000);
+    expect(
+      useLearner.getState().activity.filter((entry) => entry.kind === 'scenario'),
+    ).toHaveLength(2);
   });
 
   it('viaja en el payload de sincronización', () => {
@@ -139,6 +144,40 @@ describe('situaciones', () => {
     useLearner.getState().reset();
     useLearner.getState().hydrate(payload);
     expect(useLearner.getState().scenarios).toEqual(['metro']);
+  });
+});
+
+describe('misiones diarias', () => {
+  const completeToday = () => {
+    const key = dayKey(NOW);
+    for (const mission of makeMissions(key)) {
+      for (let index = 0; index < mission.target; index += 1) {
+        useLearner.getState().logActivity(mission.kind, true, NOW);
+      }
+    }
+    return key;
+  };
+
+  it('reclama la recompensa solo con las tres misiones completas y una vez', () => {
+    useLearner.getState().logActivity('review', true, NOW);
+    useLearner.getState().claimMissions(NOW);
+    expect(useLearner.getState().missionsClaimed).toBeNull();
+
+    const key = completeToday();
+    const before = useLearner.getState().xp;
+    useLearner.getState().claimMissions(NOW);
+    expect(useLearner.getState().xp).toBe(before + 30);
+    expect(useLearner.getState().missionsClaimed).toBe(key);
+    useLearner.getState().claimMissions(NOW);
+    expect(useLearner.getState().xp).toBe(before + 30);
+  });
+
+  it('la actividad viaja en el payload', () => {
+    useLearner.getState().logActivity('review', true, NOW);
+    const payload = exportPayload();
+    useLearner.getState().reset();
+    useLearner.getState().hydrate(payload);
+    expect(useLearner.getState().activity).toHaveLength(1);
   });
 });
 

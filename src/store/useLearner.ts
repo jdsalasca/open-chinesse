@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { Rating } from 'ts-fsrs';
 import { UNITS } from '../data/curriculum';
 import {
   DAILY_GOAL,
@@ -18,8 +19,19 @@ import {
 } from '../srs/scheduler';
 import { dayKey, streakDays, type ReviewRecord } from './metrics';
 import type { MissReason } from '../lib/miss';
+import {
+  allMissionsDone,
+  makeMissions,
+  MISSION_REWARD,
+  type ActivityEntry,
+  type ActivityKind,
+} from '../lib/missions';
 
 const LOG_LIMIT = 3000;
+const ACTIVITY_LIMIT = 600;
+
+const appendActivity = (activity: ActivityEntry[], entry: ActivityEntry): ActivityEntry[] =>
+  [...activity, entry].slice(-ACTIVITY_LIMIT);
 
 export type Miss = { reason: MissReason; at: number };
 
@@ -31,6 +43,8 @@ export type LearnerPayload = {
   misses: Record<string, Miss>;
   retention: Retention | null;
   scenarios: string[];
+  activity: ActivityEntry[];
+  missionsClaimed: string | null;
   lastEditAt: number;
   xp: number;
   stars: Record<string, number>;
@@ -43,6 +57,8 @@ export type LearnerState = {
   misses: Record<string, Miss>;
   retention: Retention | null;
   scenarios: string[];
+  activity: ActivityEntry[];
+  missionsClaimed: string | null;
   createdAt: number;
   lastEditAt: number;
   xp: number;
@@ -57,6 +73,8 @@ export type LearnerState = {
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
   recordRetention: (score: number, now?: number) => void;
   completeScenario: (id: string, now?: number) => void;
+  logActivity: (kind: ActivityKind, correct?: boolean, now?: number) => void;
+  claimMissions: (now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
@@ -83,6 +101,8 @@ const emptyState = () => {
     misses: {} as Record<string, Miss>,
     retention: null as Retention | null,
     scenarios: [] as string[],
+    activity: [] as ActivityEntry[],
+    missionsClaimed: null as string | null,
     createdAt: now,
     lastEditAt: now,
     xp: 0,
@@ -132,6 +152,11 @@ function gradeWord(store: Store, wordId: string, rating: Grade, now: number): vo
     cards: { ...state.cards, [wordId]: review(card, rating, now) },
     log,
     retention,
+    activity: appendActivity(state.activity, {
+      kind: 'review',
+      at: now,
+      correct: rating !== Rating.Again,
+    }),
     xp: state.xp + gained,
     todayXp: state.todayXp + gained,
     lastEditAt: now,
@@ -166,6 +191,11 @@ function recordLesson(
     stars,
     xp,
     todayXp: state.todayXp + gained,
+    activity: appendActivity(state.activity, {
+      kind: 'lesson',
+      at: now,
+      correct: score.correct === score.total,
+    }),
     achievements: [...new Set([...state.achievements, ...unlocked])],
     lastEditAt: now,
   });
@@ -191,6 +221,8 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
     misses: asRecord<Miss>(parsed.misses),
     retention: asRetention(parsed.retention),
     scenarios: asArray<string>(parsed.scenarios, []),
+    activity: asArray<ActivityEntry>(parsed.activity, []),
+    missionsClaimed: typeof parsed.missionsClaimed === 'string' ? parsed.missionsClaimed : null,
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
@@ -221,6 +253,55 @@ function applyContentDefaults(payload: Partial<LearnerState>, version: number): 
   if (version < 5) payload.onboarded = Object.keys(payload.cards ?? {}).length > 0;
   if (version < 6) payload.retention = null;
   if (version < 7) payload.scenarios = [];
+  if (version < 8) {
+    payload.activity = [];
+    payload.missionsClaimed = null;
+  }
+}
+
+function completeScenario(store: Store, id: string, now: number): void {
+  const { scenarios, activity } = store.get();
+  const next = scenarios.includes(id) ? scenarios : [...scenarios, id];
+  store.set({
+    scenarios: next,
+    activity: appendActivity(activity, { kind: 'scenario', at: now }),
+    lastEditAt: now,
+  });
+}
+
+function logActivity(
+  store: Store,
+  kind: ActivityKind,
+  correct: boolean | undefined,
+  now: number,
+): void {
+  const entry: ActivityEntry =
+    correct === undefined ? { kind, at: now } : { kind, at: now, correct };
+  store.set({ activity: appendActivity(store.get().activity, entry), lastEditAt: now });
+}
+
+function claimMissions(store: Store, now: number): void {
+  refreshDay(store, now);
+  const state = store.get();
+  const key = dayKey(now);
+  if (state.missionsClaimed === key) return;
+  const missions = makeMissions(key);
+  if (!allMissionsDone(state.activity, missions, key)) return;
+  const xp = state.xp + MISSION_REWARD;
+  const unlocked = earnedAchievements({
+    units: Object.keys(state.stars).length,
+    learned: Object.keys(state.cards).length,
+    reviews: state.log.length,
+    streak: streakDays(state.log, now),
+    xp,
+  });
+  store.set({
+    xp,
+    todayXp: state.todayXp + MISSION_REWARD,
+    missionsClaimed: key,
+    achievements: [...new Set([...state.achievements, ...unlocked])],
+    lastEditAt: now,
+  });
 }
 
 export const useLearner = create<LearnerState>()(
@@ -238,11 +319,9 @@ export const useLearner = create<LearnerState>()(
           if (!retention) return;
           set({ retention: { ...retention, score, takenAt: now }, lastEditAt: now });
         },
-        completeScenario: (id, now = Date.now()) => {
-          const { scenarios } = get();
-          if (scenarios.includes(id)) return;
-          set({ scenarios: [...scenarios, id], lastEditAt: now });
-        },
+        completeScenario: (id, now = Date.now()) => completeScenario(store, id, now),
+        logActivity: (kind, correct, now = Date.now()) => logActivity(store, kind, correct, now),
+        claimMissions: (now = Date.now()) => claimMissions(store, now),
         completeOnboarding: (goalXp, now = Date.now()) =>
           set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
@@ -253,7 +332,7 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 7,
+      version: 8,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
@@ -267,6 +346,8 @@ export const useLearner = create<LearnerState>()(
         misses: state.misses,
         retention: state.retention,
         scenarios: state.scenarios,
+        activity: state.activity,
+        missionsClaimed: state.missionsClaimed,
         createdAt: state.createdAt,
         lastEditAt: state.lastEditAt,
         xp: state.xp,
@@ -291,14 +372,27 @@ export function completedUnits(cards: Record<string, StoredCard>): string[] {
 }
 
 export function exportPayload(): string {
-  const { cards, log, misses, retention, scenarios, lastEditAt, xp, stars, achievements } =
-    useLearner.getState();
+  const {
+    cards,
+    log,
+    misses,
+    retention,
+    scenarios,
+    activity,
+    missionsClaimed,
+    lastEditAt,
+    xp,
+    stars,
+    achievements,
+  } = useLearner.getState();
   return JSON.stringify({
     cards,
     log,
     misses,
     retention,
     scenarios,
+    activity,
+    missionsClaimed,
     lastEditAt,
     xp,
     stars,

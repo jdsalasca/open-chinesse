@@ -13,7 +13,8 @@ import {
   wordsForLevel,
   type Level,
 } from '../data/curriculum';
-import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
+import { levelFromXp, levelProgress } from '../gamification/xp';
+import { MissionsCard } from '../components/MissionsCard';
 import { HomePath } from './HomePath';
 import { Onboarding } from '../components/Onboarding';
 import { useDailySession } from '../store/daily-session';
@@ -29,7 +30,6 @@ export function Home() {
   const todayXp = useLearner((s) => s.todayXp);
   const dailyGoal = useLearner((s) => s.dailyGoal);
   const stars = useLearner((s) => s.stars);
-  const achievements = useLearner((s) => s.achievements);
   const onboarded = useLearner((s) => s.onboarded);
   const now = Date.now();
 
@@ -232,34 +232,7 @@ export function Home() {
             </div>
           </dl>
         </Card>
-        <Card className="achievements">
-          <div className="achievements__head">
-            <h2>Logros</h2>
-            <span className="achievements__count">
-              {achievements.length} / {ACHIEVEMENTS.length}
-            </span>
-          </div>
-          <ul className="achievement-grid">
-            {ACHIEVEMENTS.map((achievement) => {
-              const earned = achievements.includes(achievement.id);
-              return (
-                <li
-                  key={achievement.id}
-                  className={`achievement-tile${earned ? ' is-earned' : ' is-locked'}`}
-                >
-                  <span className="achievement__icon" aria-hidden="true">
-                    <Icon name={achievement.icon} size={16} />
-                  </span>
-                  <span className="achievement__text">
-                    <strong>{achievement.title}</strong>
-                    <small>{achievement.description}</small>
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-          <p className="achievements__hint">Sin comparaciones ni ligas: cada logro es tuyo.</p>
-        </Card>
+        <MissionsCard now={now} />
       </section>
 
       <section className="units" aria-labelledby="units-title">

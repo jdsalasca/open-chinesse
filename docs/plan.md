@@ -194,5 +194,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Solo palabras ya estudiadas; no altera FSRS.
 - [ ] Dictado, recuperación inversa y producción oral.
 
+### C4 — Misiones diarias
+
+- [x] Registro de actividad por tipo (repaso, lección, tonos, situación, contexto)
+      en el esquema 8, con límite de 600 entradas y sincronización.
+- [x] Tres misiones por día: repaso fijo y dos rotatorias según la fecha.
+- [x] Progreso real desde la actividad; «En contexto» solo cuenta aciertos.
+- [x] Recompensa de +30 XP una vez al día; el botón no se puede reclamar dos veces.
+- [x] Tarjeta en Home; los logros siguen en Perfil.
+- [ ] Racha de misiones y resumen semanal.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

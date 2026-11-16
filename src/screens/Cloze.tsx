@@ -280,6 +280,7 @@ export function Cloze() {
         index={index}
         total={questions.length}
         onDone={(correct) => {
+          useLearner.getState().logActivity('cloze', correct);
           if (correct) setScore(score + 1);
           setIndex(index + 1);
         }}
