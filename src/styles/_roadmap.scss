@@ -2,105 +2,98 @@
 @use 'mixins' as *;
 
 .roadmap {
-  position: relative;
   display: grid;
-  gap: $space-4;
-  margin: $space-5 0 0;
+  gap: $space-3;
+  margin: 0;
   padding: 0;
   list-style: none;
-}
 
-.roadmap::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 31px;
-  width: 4px;
-  border-radius: $radius-pill;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgb(0 184 107 / 28%) 0 14px,
-    transparent 14px 26px
-  );
-}
+  @include from($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.roadmap__step {
-  position: relative;
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  align-items: start;
-  gap: $space-4;
-  padding-left: 0;
-
-  &:nth-child(even) {
-    padding-left: 32px;
+  @include from($bp-md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-.roadmap__node {
-  position: relative;
-  z-index: 1;
+.roadmap__item {
+  display: flex;
+}
+
+.roadmap__card {
   display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 4px solid $surface;
-  background: linear-gradient(135deg, #eef3f8, #e3e9f0);
-  color: $muted;
-  font-family: $font-mono;
-  font-size: 1.05rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: $shadow-md;
+  grid-template-rows: auto 1fr auto auto;
+  gap: $space-3;
+  width: 100%;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  box-shadow: $shadow-sm;
+  color: inherit;
+  text-decoration: none;
   transition:
     transform $motion $ease,
-    background $motion $ease;
+    box-shadow $motion $ease,
+    border-color $motion $ease;
 
   @include focus-ring;
 
   &:hover {
     transform: translateY(-2px);
+    border-color: $line-strong;
+    box-shadow: $shadow-md;
+  }
+
+  .is-current & {
+    border-color: rgb(0 168 107 / 40%);
+    box-shadow:
+      0 0 0 3px rgb(0 184 107 / 10%),
+      $shadow-md;
+  }
+
+  .is-complete & {
+    background: linear-gradient(180deg, #fbfffd, $surface);
+  }
+
+  @include reduced-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
-.is-complete .roadmap__node {
-  background: linear-gradient(135deg, $teal, $mint);
-  color: #fff;
-}
-
-.is-current .roadmap__node {
-  background: linear-gradient(135deg, $mint, $teal);
-  color: #fff;
-  box-shadow:
-    0 0 0 6px rgb(0 184 107 / 16%),
-    $shadow-md;
-}
-
-.roadmap__card {
-  @include surface($radius);
-  padding: $space-4;
-  display: grid;
-  gap: $space-1;
-}
-
-.is-current .roadmap__card {
-  border-color: rgb(0 168 107 / 35%);
-  box-shadow:
-    0 0 0 3px rgb(0 184 107 / 10%),
-    $shadow-md;
-}
-
-.roadmap__head {
+.roadmap__top {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: $space-2;
 }
 
-.roadmap__title {
-  font-size: 1.02rem;
+.roadmap__index {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: $paper-deep;
+  color: $muted;
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  .is-complete & {
+    background: $mint-dark;
+    color: #fff;
+  }
+
+  .is-current & {
+    background: $mint-soft;
+    color: $mint-dark;
+  }
 }
 
 .roadmap__stars {
@@ -109,14 +102,25 @@
   color: $amber;
 }
 
+.roadmap__body {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+
+.roadmap__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $ink;
+}
+
 .roadmap__subtitle {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: $muted;
 }
 
 .roadmap__bar {
   height: 5px;
-  margin-top: $space-2;
   border-radius: $radius-pill;
   background: $paper-deep;
   overflow: hidden;
@@ -130,31 +134,19 @@
 }
 
 .roadmap__meta {
-  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+  font-size: 0.76rem;
   color: $muted;
 }
 
-.roadmap__cta {
-  justify-self: start;
-  margin-top: $space-2;
-}
-
-@media (max-width: 560px) {
-  .roadmap::before {
-    left: 25px;
-  }
-
-  .roadmap__step {
-    grid-template-columns: 52px minmax(0, 1fr);
-
-    &:nth-child(even) {
-      padding-left: 0;
-    }
-  }
-
-  .roadmap__node {
-    width: 52px;
-    height: 52px;
-    font-size: 0.92rem;
-  }
+.roadmap__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: $mint-dark;
+  white-space: nowrap;
 }

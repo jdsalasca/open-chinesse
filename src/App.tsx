@@ -64,7 +64,7 @@ function Header({ route }: { route: Route }) {
           </span>
         </a>
         <nav className="nav" aria-label="Principal">
-          {link('/', 'Hoy', route.name === 'home')}
+          {link('/', 'Aprender', route.name === 'home')}
           {link('/practicar', 'Practicar', route.name === 'practice')}
           {link('/historias', 'Historias', route.name === 'stories')}
           {link('/inmersion', 'Inmersión', route.name === 'immersion')}

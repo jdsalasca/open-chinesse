@@ -124,3 +124,40 @@ Sin backend. Progreso en `localStorage` con versión de esquema y migración.
 - FSRS-6 sin optimización por usuario usa parámetros por defecto. Aceptable hasta
   tener historial propio (>= 1000 repasos).
 - Contenido escrito a mano: revisar tonos y traducciones en R5 con hablante nativo.
+
+## Rondas de madurez de producto (noviembre 2026)
+
+Objetivo: que la app se lea como producto y no como prototipo. Criterio común: en
+cinco segundos se entiende qué toca hacer, la jerarquía se sostiene en escritorio y
+móvil, y ninguna pantalla parece una lista de base de datos.
+
+### P1 — Identidad y portada
+
+- [x] Portada oscura de marca con una sola acción primaria y el progreso como
+      contexto, no como tabla.
+- [x] «Tu sesión de hoy» como tablero de tres pasos con meta visible.
+- [x] Progreso y logros en un panel único con anillo, nivel e insignias.
+- [x] Ruta como rejilla de unidades clicable; se elimina la lista infinita.
+- [x] Cabecera y navegación con estado activo consistente; pie más sobrio.
+- [x] Copy honesto: audio sintético, FSRS sin promesas de memoria perfecta.
+
+### P2 — Sesión (Lección, Repaso, Tonos)
+
+- [ ] Modo foco: sin navegación global durante una sesión, con salida explícita.
+- [ ] Progreso segmentado y contador; acciones ancladas y teclas visibles.
+- [ ] Feedback de acierto/error y cierre de sesión con siguiente paso claro.
+
+### P3 — Biblioteca (Practicar, Historias, Inmersión, Progreso, Perfil)
+
+- [ ] Tarjetas de sección con icono, descripción corta y CTA.
+- [ ] Lector de historias con tipografía y audio por línea.
+- [ ] Estados vacíos y de carga con la misma voz visual.
+
+### P4 — Pulido
+
+- [ ] Iconografía y motion coherentes; `prefers-reduced-motion` en todo.
+- [ ] Revisión de contraste AA, foco visible y landmarks.
+- [ ] Metadatos, favicon y rendimiento de fuentes.
+
+Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
+`.screens/`, despliegue y push a `develop` y `main`.

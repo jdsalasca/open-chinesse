@@ -1,26 +1,42 @@
 @use 'tokens' as *;
 @use 'mixins' as *;
 
-.hero {
+.home {
   display: grid;
   gap: $space-6;
-  align-items: center;
-  padding: $space-5;
-  border-radius: 28px;
-  border: 1px solid rgb(0 168 107 / 14%);
-  background:
-    radial-gradient(420px 220px at 90% 0%, rgb(0 169 157 / 16%), transparent 70%),
-    linear-gradient(135deg, #eafff5 0%, #eef8ff 100%);
-  box-shadow: $shadow-md;
+}
 
-  @include from($bp-sm) {
-    padding: $space-6;
-  }
+// Portada ---------------------------------------------------------------------
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: $space-6 $space-5 $space-5;
+  border-radius: 28px;
+  background:
+    radial-gradient(900px 420px at 88% -20%, rgb(0 184 107 / 32%), transparent 62%),
+    radial-gradient(600px 300px at -10% 120%, rgb(0 169 157 / 20%), transparent 60%),
+    linear-gradient(135deg, $forest-deep 0%, $forest 58%, #0c4436 100%);
+  color: #fff;
+  box-shadow: 0 34px 70px -34px rgb(6 36 28 / 60%);
 
   @include from($bp-md) {
-    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-    gap: $space-7;
+    padding: $space-7 $space-7 $space-5;
   }
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $mint-bright;
 }
 
 .hero__title {
@@ -29,150 +45,256 @@
   flex-wrap: wrap;
   gap: $space-4;
   margin-top: $space-3;
-  font-size: clamp(2.6rem, 6vw, 3.9rem);
-
-  [lang='zh-Hans'] {
-    @include hanzi(clamp(3.4rem, 8vw, 5rem));
-    color: $mint-dark;
-  }
 }
 
-.hero__title-note {
-  font-size: 0.38em;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+.hero__hanzi {
+  @include hanzi(clamp(3.2rem, 9vw, 4.8rem));
+  color: #fff;
+}
+
+.hero__note {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: $muted;
+  color: rgb(255 255 255 / 55%);
 }
 
 .hero__lead {
-  margin-top: $space-4;
-  max-width: 54ch;
-  font-size: 1.08rem;
-  color: $ink-soft;
+  margin-top: $space-3;
+  max-width: 52ch;
+  font-size: 1.02rem;
+  color: rgb(255 255 255 / 76%);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: $space-3;
   margin-top: $space-5;
 }
 
+.hero__cta,
+.hero__ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border-radius: $radius-pill;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+
+  @include focus-ring;
+
+  @include reduced-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.hero__cta {
+  border: 1px solid transparent;
+  background: $mint-bright;
+  color: $forest-deep;
+  box-shadow: 0 16px 32px -18px rgb(92 227 154 / 80%);
+
+  &:hover {
+    background: #7cf0b0;
+    transform: translateY(-1px);
+  }
+}
+
+.hero__ghost {
+  border: 1px solid rgb(255 255 255 / 26%);
+  background: transparent;
+  color: #fff;
+
+  &:hover {
+    background: rgb(255 255 255 / 8%);
+    border-color: rgb(255 255 255 / 46%);
+  }
+
+  &.hero__cta {
+    border-color: transparent;
+    background: $mint-bright;
+    color: $forest-deep;
+  }
+}
+
 .hero__calm {
-  padding: $space-3 $space-4;
-  background: $surface;
-  border: 1px solid $line;
-  border-radius: $radius;
-  color: $ink-soft;
+  font-size: 0.95rem;
+  color: rgb(255 255 255 / 72%);
+}
+
+.hero__watermark {
+  position: absolute;
+  top: -16%;
+  right: -3%;
+  font-family: $font-hanzi;
+  font-size: clamp(15rem, 32vw, 23rem);
+  line-height: 1;
+  color: rgb(255 255 255 / 4%);
+  pointer-events: none;
+  user-select: none;
+
+  @media (max-width: 719px) {
+    display: none;
+  }
 }
 
 .hero__stats {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin: 0;
-  background: $line;
-  border: 1px solid $line;
-  border-radius: $radius-lg;
-  overflow: hidden;
-  box-shadow: $shadow-md;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: $space-5 0 0;
+  padding-top: $space-4;
+  border-top: 1px solid rgb(255 255 255 / 12%);
 
   > div {
-    padding: $space-4;
-    background: rgb(255 255 255 / 88%);
+    padding: 0 $space-4;
+    border-left: 1px solid rgb(255 255 255 / 10%);
+  }
+
+  > div:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 
   dt {
-    font-size: 0.74rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: $muted;
+    color: rgb(255 255 255 / 55%);
   }
 
   dd {
-    margin: $space-1 0 0;
-    font-size: 2rem;
+    margin: 2px 0 0;
+    font-size: 1.9rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
   }
 
   small {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    color: $muted;
+    color: rgb(255 255 255 / 55%);
   }
 }
 
-// Panel de gamificación ------------------------------------------------------
-.panel-grid {
+// Sesión de hoy ---------------------------------------------------------------
+.session {
   display: grid;
   gap: $space-4;
-  margin-top: $space-5;
-
-  @include from($bp-md) {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  }
+  padding: $space-5;
+  @include surface($radius-lg, $shadow-md);
 }
 
-.daily {
-  display: grid;
-  gap: $space-4;
-}
-
-.daily__head {
+.session__head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: $space-3;
 }
 
-.daily__goal {
-  margin-top: $space-1;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: $ink;
+.session__title {
+  margin-top: 2px;
+  font-size: 1.35rem;
 }
 
-.daily__body {
-  display: flex;
-  align-items: center;
-  gap: $space-5;
-  flex-wrap: wrap;
+.session__goal {
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $mint-dark;
+  white-space: nowrap;
+
+  span {
+    font-weight: 600;
+    color: $muted;
+  }
 }
 
-.daily__level {
-  flex: 1;
-  min-width: 150px;
+.session__steps {
   display: grid;
   gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-.daily__level-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: $ink;
+.session__step {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+
+  &.is-next {
+    border-color: rgb(0 168 107 / 28%);
+    background: $mint-soft;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.95rem;
+  }
+
+  div > span {
+    font-size: 0.82rem;
+    color: $muted;
+  }
+
+  > div {
+    min-width: 0;
+  }
 }
 
-.daily__level-meta {
-  font-size: 0.82rem;
-  color: $muted;
-}
-
-.daily__total {
-  font-size: 0.82rem;
-  font-weight: 600;
+.session__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid $line;
+  background: $surface;
   color: $mint-dark;
 }
 
-.mini-bar {
+.session__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-4;
+}
+
+.session__meter {
+  flex: 1;
+  min-width: 120px;
   height: 8px;
   border-radius: $radius-pill;
-  background: rgb(255 255 255 / 70%);
+  background: $paper-deep;
   overflow: hidden;
-  border: 1px solid rgb(0 168 107 / 14%);
 
   span {
     display: block;
@@ -183,14 +305,98 @@
   }
 }
 
+// Progreso y logros -----------------------------------------------------------
+.panel-grid {
+  display: grid;
+  gap: $space-4;
+
+  @include from($bp-md) {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+}
+
+.progress-card {
+  display: grid;
+  gap: $space-4;
+}
+
+.progress-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.progress-card__title {
+  margin-top: 2px;
+  font-size: 1.4rem;
+}
+
+.progress-card__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-5;
+}
+
+.progress-card__level {
+  flex: 1;
+  min-width: 150px;
+  display: grid;
+  gap: $space-2;
+}
+
+.progress-card__level-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $ink;
+}
+
+.progress-card__meta {
+  font-size: 0.82rem;
+  color: $muted;
+}
+
+.progress-card__total {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $mint-dark;
+}
+
+.progress-card__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-3;
+  margin: 0;
+  padding-top: $space-3;
+  border-top: 1px solid $line;
+
+  dt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  dd {
+    margin: 2px 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $muted;
+  }
+}
+
 .achievements {
   display: grid;
   gap: $space-3;
   align-content: start;
-
-  h2 {
-    font-size: 1.1rem;
-  }
 }
 
 .achievements__head {
@@ -198,6 +404,10 @@
   align-items: baseline;
   justify-content: space-between;
   gap: $space-2;
+
+  h2 {
+    font-size: 1.15rem;
+  }
 }
 
 .achievements__count {
@@ -206,14 +416,84 @@
   color: $muted;
 }
 
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (max-width: 380px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievement-tile {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  min-width: 0;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+  color: $muted;
+
+  &.is-earned {
+    border-color: rgb(232 160 8 / 28%);
+    background: $amber-soft;
+    color: $ink;
+  }
+}
+
+.achievement__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $line;
+  border-radius: 9px;
+  background: $surface;
+
+  .is-earned & {
+    border-color: rgb(232 160 8 / 35%);
+    background: #fff;
+    color: #8a6100;
+  }
+}
+
+.achievement__text {
+  display: grid;
+  min-width: 0;
+
+  strong,
+  small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    font-size: 0.82rem;
+  }
+
+  small {
+    font-size: 0.72rem;
+    color: $muted;
+  }
+}
+
 .achievements__hint {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: $muted;
 }
 
-// Ruta ----------------------------------------------------------------------
+// Ruta ------------------------------------------------------------------------
 .units {
-  margin-top: $space-7;
+  display: grid;
+  gap: $space-4;
 }
 
 .section-head {
@@ -222,16 +502,15 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: $space-3 $space-4;
-  margin-bottom: $space-4;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
-  p {
+  p:not(.eyebrow) {
+    margin-top: 2px;
+    font-size: 0.92rem;
     color: $muted;
-    font-size: 0.95rem;
-    margin-top: $space-1;
   }
 }
 
@@ -262,10 +541,14 @@
   }
 
   &.is-active {
-    background: $surface;
-    border-color: $line;
-    color: $ink;
+    border-color: $forest;
+    background: $forest;
+    color: #fff;
     box-shadow: $shadow-sm;
+
+    .level-switch__meta {
+      color: rgb(255 255 255 / 65%);
+    }
   }
 }
 
@@ -280,118 +563,78 @@
   color: $muted;
 }
 
-.unit-list {
-  display: grid;
-  gap: $space-3;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.unit {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: $space-4;
-  padding: $space-4;
-  @include surface($radius);
-  border-left: 3px solid transparent;
-  transition:
-    box-shadow $motion $ease,
-    transform $motion $ease;
-
-  &:hover {
-    box-shadow: $shadow-lg;
-    transform: translateY(-1px);
-  }
-
-  &.is-complete {
-    border-left-color: $teal;
-  }
-
-  @include reduced-motion {
-    transition: none;
-
-    &:hover {
-      transform: none;
-    }
-  }
-}
-
-.unit__index {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: $paper;
-  border: 1px solid $line;
-  font-family: $font-mono;
-  font-size: 0.9rem;
-  color: $muted;
-
-  .is-complete & {
-    background: $teal-soft;
-    border-color: rgb(0 169 157 / 35%);
-    color: #0a6b5f;
-  }
-}
-
-.unit__body {
-  min-width: 0;
-}
-
-.unit__title {
-  font-size: 1.08rem;
-}
-
-.unit__subtitle {
-  margin-top: 2px;
-  font-size: 0.92rem;
-  color: $muted;
-}
-
-.unit__progress {
-  height: 5px;
-  margin-top: $space-3;
+.mini-bar {
+  height: 8px;
   border-radius: $radius-pill;
   background: $paper-deep;
   overflow: hidden;
+  border: 1px solid rgb(0 168 107 / 14%);
 
   span {
     display: block;
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, $mint, $teal);
+    transition: width $motion $ease;
   }
 }
 
-.unit__meta {
-  margin-top: $space-1;
-  font-size: 0.82rem;
-  color: $muted;
-}
-
-.unit__side {
+// Método ----------------------------------------------------------------------
+.how {
   display: grid;
-  gap: $space-2;
-  justify-items: end;
+  gap: $space-4;
+  padding-top: $space-6;
+  border-top: 1px solid $line;
 }
 
-.unit__stars {
-  display: inline-flex;
+.how__head {
+  display: grid;
   gap: 2px;
-  color: $amber;
+
+  h2 {
+    font-size: 1.4rem;
+  }
 }
 
-.unit__cta {
-  padding: $space-2 $space-4;
-  font-size: 0.92rem;
+.how__grid {
+  display: grid;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include from($bp-md) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  li {
+    display: grid;
+    gap: $space-1;
+    padding: $space-4;
+    border: 1px solid $line;
+    border-radius: $radius;
+    background: $surface;
+    color: $mint-dark;
+  }
+
+  strong {
+    font-size: 0.9rem;
+    color: $ink;
+  }
+
+  span {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: $muted;
+  }
 }
 
-// Método --------------------------------------------------------------------
+// Compatibilidad: Stats usa este bloque como tarjeta informativa.
 .method {
-  margin-top: $space-7;
   padding: $space-5;
   background: $surface;
   border: 1px solid $line;
@@ -418,17 +661,23 @@
   }
 }
 
+@include reduced-motion {
+  .mini-bar span,
+  .session__meter span {
+    transition: none;
+  }
+}
+
 @media (max-width: 560px) {
-  .unit {
-    grid-template-columns: auto minmax(0, 1fr);
+  .hero__stats dd {
+    font-size: 1.5rem;
   }
 
-  .unit__side {
-    grid-column: 1 / -1;
-    justify-items: start;
+  .session__footer {
+    align-items: stretch;
   }
 
-  .daily__body {
-    justify-content: center;
+  .session__footer .button {
+    width: 100%;
   }
 }

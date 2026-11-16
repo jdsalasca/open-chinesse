@@ -5,8 +5,8 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgb(250 247 242 / 88%);
-  backdrop-filter: blur(10px);
+  background: rgb(255 255 255 / 84%);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid $line;
 }
 
@@ -41,9 +41,9 @@
   height: 38px;
   @include hanzi(1.05rem);
   color: #fff;
-  background: $accent;
+  background: $forest;
   border-radius: 12px;
-  box-shadow: $shadow-sm;
+  box-shadow: 0 8px 18px -12px rgb(6 36 28 / 70%);
 }
 
 .brand__name {
@@ -103,7 +103,7 @@
 .nav__link {
   padding: $space-2 $space-3;
   border-radius: $radius-pill;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   font-weight: 600;
   color: $muted;
   text-decoration: none;
@@ -114,10 +114,8 @@
   }
 
   &.is-active {
-    color: $ink;
-    background: $surface;
-    border: 1px solid $line;
-    box-shadow: $shadow-sm;
+    color: #fff;
+    background: $forest;
   }
 
   @include focus-ring;

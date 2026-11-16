@@ -17,12 +17,12 @@ function Welcome({ onNext }: { onNext: () => void }) {
         你好<span>hola</span>
       </h1>
       <p className="onboarding__lead">
-        Un curso gratuito de chino mandarín con audio real, historias cortas y repaso que se adapta
-        a tu memoria. Sin ligas, sin anuncios, sin castigos.
+        Un curso gratuito de chino mandarín con audio en cada palabra, historias cortas y repaso que
+        se adapta a tu memoria. Sin ligas, sin anuncios, sin castigos.
       </p>
       <ul className="onboarding__list">
         <li>601 palabras de HSK 1, 2 y 3, cada una con frase y voz.</li>
-        <li>Repaso espaciado FSRS: vuelve justo antes de que se te olvide.</li>
+        <li>Repaso espaciado FSRS: cada palabra vuelve cuando toca repasarla.</li>
         <li>Ficha de cada carácter: de dónde viene y cómo se construye.</li>
       </ul>
       <button type="button" className="button button--primary" onClick={onNext}>

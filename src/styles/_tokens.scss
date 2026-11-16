@@ -23,6 +23,11 @@ $line: #e3e9f0;
 $line-strong: #cfd8e3;
 $danger: #d93a4a;
 
+// Fondo oscuro de marca para la portada y acentos sobre él.
+$forest: #0b352a;
+$forest-deep: #06241c;
+$mint-bright: #5ce39a;
+
 // Alias de compatibilidad: el resto de parciales sigue compilando con la paleta nueva.
 $accent: $mint-dark;
 $accent-dark: $mint-dark;
@@ -75,4 +80,4 @@ $motion: 160ms;
 
 $bp-sm: 640px;
 $bp-md: 900px;
-$max-width: 1040px;
+$max-width: 1120px;

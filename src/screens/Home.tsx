@@ -51,6 +51,7 @@ export function Home() {
   const levelNumber = levelFromXp(xp);
   const lastLevel = LEVELS[LEVELS.length - 1];
   const courseRange = `${LEVEL_LABELS[LEVELS[0]]}–${LEVEL_LABELS[lastLevel]}`;
+  const goalRatio = dailyGoal === 0 ? 1 : Math.min(1, todayXp / dailyGoal);
 
   if (!onboarded && !started) {
     return <Onboarding />;
@@ -66,11 +67,13 @@ export function Home() {
   return (
     <div className="home">
       <section className="hero">
-        <div className="hero__text">
-          <p className="eyebrow">Chino mandarín · {courseRange}</p>
+        <div className="hero__copy">
+          <p className="hero__eyebrow">Chino mandarín · {courseRange}</p>
           <h1 className="hero__title">
-            <span lang="zh-Hans">你好</span>
-            <span className="hero__title-note">hola</span>
+            <span className="hero__hanzi" lang="zh-Hans">
+              你好
+            </span>
+            <span className="hero__note">hola</span>
           </h1>
           <p className="hero__lead">
             {started
@@ -79,18 +82,15 @@ export function Home() {
           </p>
           <div className="hero__actions">
             {queue.total > 0 && (
-              <button
-                type="button"
-                className="button button--primary"
-                onClick={() => navigate('/review')}
-              >
+              <button type="button" className="hero__cta" onClick={startSession}>
                 Repasar {queue.total} {queue.total === 1 ? 'palabra' : 'palabras'}
+                <Icon name="arrow" size={18} />
               </button>
             )}
             {nextUnit && (
               <button
                 type="button"
-                className={`button ${queue.total > 0 ? 'button--ghost' : 'button--primary'}`}
+                className={`hero__ghost${queue.total > 0 ? '' : ' hero__cta'}`}
                 onClick={() => navigate(`/lesson/${nextUnit.id}`)}
               >
                 {started ? `Siguiente: ${nextUnit.title}` : 'Empezar la primera lección'}
@@ -105,6 +105,9 @@ export function Home() {
             )}
           </div>
         </div>
+        <span className="hero__watermark" lang="zh-Hans" aria-hidden="true">
+          学
+        </span>
         <dl className="hero__stats">
           <div>
             <dt>Racha</dt>
@@ -118,10 +121,6 @@ export function Home() {
             <dd>{queue.total}</dd>
           </div>
           <div>
-            <dt>Dominadas</dt>
-            <dd>{masteredCount(cards)}</dd>
-          </div>
-          <div>
             <dt>Estudiadas</dt>
             <dd>
               {learnedTotal}
@@ -133,49 +132,67 @@ export function Home() {
 
       <section className="session" aria-labelledby="session-title">
         <div className="session__head">
-          <h2 id="session-title" className="session__title">
-            Tu sesión de hoy
-          </h2>
-          <span className="hint">
-            {todayXp} / {dailyGoal} XP
+          <div>
+            <p className="eyebrow">Tu sesión de hoy</p>
+            <h2 id="session-title" className="session__title">
+              Tres pasos, cero prisa
+            </h2>
+          </div>
+          <span className="session__goal">
+            {todayXp} <span>/ {dailyGoal} XP</span>
           </span>
         </div>
         <ol className="session__steps">
-          <li className="session__step">
-            <strong>Repaso</strong>
-            <span>{queue.total > 0 ? `${queue.total} palabras pendientes` : 'al día'}</span>
+          <li className={`session__step${queue.total > 0 ? ' is-next' : ''}`}>
+            <span className="session__icon" aria-hidden="true">
+              <Icon name="target" size={18} />
+            </span>
+            <div>
+              <strong>Repaso</strong>
+              <span>{queue.total > 0 ? `${queue.total} palabras pendientes` : 'al día'}</span>
+            </div>
+          </li>
+          <li className={`session__step${queue.total === 0 && nextUnit ? ' is-next' : ''}`}>
+            <span className="session__icon" aria-hidden="true">
+              <Icon name="book" size={18} />
+            </span>
+            <div>
+              <strong>Lección</strong>
+              <span>{nextUnit ? nextUnit.title : 'nivel completo'}</span>
+            </div>
           </li>
           <li className="session__step">
-            <strong>Lección</strong>
-            <span>{nextUnit ? nextUnit.title : 'nivel completo'}</span>
-          </li>
-          <li className="session__step">
-            <strong>Tonos</strong>
-            <span>diez palabras de oído</span>
+            <span className="session__icon" aria-hidden="true">
+              <Icon name="speaker" size={18} />
+            </span>
+            <div>
+              <strong>Tonos</strong>
+              <span>diez palabras de oído</span>
+            </div>
           </li>
         </ol>
-        <button
-          type="button"
-          className="button button--primary session__cta"
-          onClick={startSession}
-        >
-          {queue.total > 0
-            ? `Repasar ${queue.total}`
-            : nextUnit
-              ? 'Empezar la lección'
-              : 'Entrenar tonos'}
-        </button>
+        <div className="session__footer">
+          <div className="session__meter" aria-hidden="true">
+            <span style={{ width: `${Math.round(goalRatio * 100)}%` }} />
+          </div>
+          <button type="button" className="button button--primary" onClick={startSession}>
+            {queue.total > 0
+              ? `Empezar · ${queue.total} ${queue.total === 1 ? 'repaso' : 'repasos'}`
+              : nextUnit
+                ? 'Empezar la lección'
+                : 'Entrenar tonos'}
+          </button>
+        </div>
       </section>
 
-      <section className="panel-grid" aria-label="Tu progreso de hoy">
-        {' '}
-        <Card tone="mint" className="daily">
-          <div className="daily__head">
+      <section className="panel-grid" aria-label="Tu progreso">
+        <Card className="progress-card">
+          <div className="progress-card__head">
             <div>
               <p className="eyebrow">Meta de hoy</p>
-              <p className="daily__goal">
+              <h2 className="progress-card__title">
                 {todayXp} de {dailyGoal} XP
-              </p>
+              </h2>
             </div>
             <Badge
               tone={todayXp >= dailyGoal ? 'mint' : 'amber'}
@@ -184,24 +201,36 @@ export function Home() {
               {todayXp >= dailyGoal ? 'Meta cumplida' : `${streak} días`}
             </Badge>
           </div>
-          <div className="daily__body">
+          <div className="progress-card__body">
             <ProgressRing
               value={todayXp}
               max={Math.max(dailyGoal, todayXp)}
               label="XP de hoy"
               caption="XP hoy"
             />
-            <div className="daily__level">
-              <p className="daily__level-name">Nivel {levelNumber}</p>
+            <div className="progress-card__level">
+              <p className="progress-card__level-name">Nivel {levelNumber}</p>
               <div className="mini-bar" aria-hidden="true">
                 <span style={{ width: `${Math.round(progress.ratio * 100)}%` }} />
               </div>
-              <p className="daily__level-meta">
+              <p className="progress-card__meta">
                 {progress.current} / {progress.needed} XP para el nivel {levelNumber + 1}
               </p>
-              <p className="daily__total">{xp} XP en total</p>
+              <p className="progress-card__total">{xp} XP en total</p>
             </div>
           </div>
+          <dl className="progress-card__stats">
+            <div>
+              <dt>Dominadas</dt>
+              <dd>{masteredCount(cards)}</dd>
+            </div>
+            <div>
+              <dt>Estudiadas</dt>
+              <dd>
+                {learnedTotal} <span>/ {TOTAL_WORDS}</span>
+              </dd>
+            </div>
+          </dl>
         </Card>
         <Card className="achievements">
           <div className="achievements__head">
@@ -210,17 +239,21 @@ export function Home() {
               {achievements.length} / {ACHIEVEMENTS.length}
             </span>
           </div>
-          <ul className="achievement-row">
+          <ul className="achievement-grid">
             {ACHIEVEMENTS.map((achievement) => {
               const earned = achievements.includes(achievement.id);
               return (
                 <li
                   key={achievement.id}
-                  className={`achievement${earned ? ' is-earned' : ''}`}
-                  title={achievement.description}
+                  className={`achievement-tile${earned ? ' is-earned' : ' is-locked'}`}
                 >
-                  <Icon name={earned ? achievement.icon : 'target'} size={14} />
-                  {achievement.title}
+                  <span className="achievement__icon" aria-hidden="true">
+                    <Icon name={achievement.icon} size={16} />
+                  </span>
+                  <span className="achievement__text">
+                    <strong>{achievement.title}</strong>
+                    <small>{achievement.description}</small>
+                  </span>
                 </li>
               );
             })}
@@ -232,6 +265,7 @@ export function Home() {
       <section className="units" aria-labelledby="units-title">
         <div className="section-head">
           <div>
+            <p className="eyebrow">Curso</p>
             <h2 id="units-title">Tu ruta</h2>
             <p>
               {TOTAL_WORDS} palabras en {UNITS.length} unidades: de {LEVEL_LABELS[LEVELS[0]]} a{' '}
@@ -257,9 +291,6 @@ export function Home() {
                   <span className="level-switch__meta">
                     {LEVEL_TITLES[item]} · {learned}/{total}
                   </span>
-                  <span className="level-switch__bar" aria-hidden="true">
-                    <span style={{ width: `${total > 0 ? (learned / total) * 100 : 0}%` }} />
-                  </span>
                 </button>
               );
             })}
@@ -269,23 +300,31 @@ export function Home() {
         <HomePath units={levelUnits} cards={cards} stars={stars} done={done} />
       </section>
 
-      <section className="method" aria-labelledby="method-title">
-        <h2 id="method-title">Cómo está diseñado</h2>
-        <ul className="method__list">
+      <section className="how" aria-labelledby="method-title">
+        <div className="how__head">
+          <p className="eyebrow">Método</p>
+          <h2 id="method-title">Cómo funciona</h2>
+        </div>
+        <ul className="how__grid">
           <li>
-            <strong>Recuperación activa.</strong> Primero intentas recordar; la respuesta aparece
-            después.
+            <Icon name="target" size={18} />
+            <strong>Recuperación activa</strong>
+            <span>Primero intentas recordar; la respuesta aparece después.</span>
           </li>
           <li>
-            <strong>Repaso espaciado FSRS.</strong> Cada palabra vuelve cuando toca repasarla, no
-            cuando ya la has olvidado.
+            <Icon name="clock" size={18} />
+            <strong>Repaso espaciado</strong>
+            <span>Cada palabra vuelve cuando toca repasarla, no cuando ya la has olvidado.</span>
           </li>
           <li>
-            <strong>Audio en todo.</strong> El tono es parte de la palabra, no un adorno.
+            <Icon name="speaker" size={18} />
+            <strong>Audio en todo</strong>
+            <span>El tono es parte de la palabra, no un adorno.</span>
           </li>
           <li>
-            <strong>Sin presión.</strong> La racha informa, no castiga. No hay ligas ni
-            notificaciones.
+            <Icon name="check" size={18} />
+            <strong>Sin presión</strong>
+            <span>La racha informa, no castiga. No hay ligas ni notificaciones.</span>
           </li>
         </ul>
       </section>
