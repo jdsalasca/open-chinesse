@@ -15,6 +15,7 @@ import {
 } from '../data/curriculum';
 import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
 import { HomePath } from './HomePath';
+import { Onboarding } from '../components/Onboarding';
 import { navigate } from '../lib/router';
 import { buildQueue } from '../srs/queue';
 import { masteredCount, streakDays } from '../store/metrics';
@@ -28,6 +29,7 @@ export function Home() {
   const dailyGoal = useLearner((s) => s.dailyGoal);
   const stars = useLearner((s) => s.stars);
   const achievements = useLearner((s) => s.achievements);
+  const onboarded = useLearner((s) => s.onboarded);
   const now = Date.now();
 
   const done = completedUnits(cards);
@@ -47,6 +49,16 @@ export function Home() {
   const levelNumber = levelFromXp(xp);
   const lastLevel = LEVELS[LEVELS.length - 1];
   const courseRange = `${LEVEL_LABELS[LEVELS[0]]}–${LEVEL_LABELS[lastLevel]}`;
+
+  if (!onboarded && !started) {
+    return <Onboarding />;
+  }
+
+  const startSession = () => {
+    if (queue.total > 0) return navigate('/review');
+    if (nextUnit) return navigate(`/lesson/${nextUnit.id}`);
+    navigate('/tonos');
+  };
 
   return (
     <div className="home">
@@ -116,7 +128,44 @@ export function Home() {
         </dl>
       </section>
 
+      <section className="session" aria-labelledby="session-title">
+        <div className="session__head">
+          <h2 id="session-title" className="session__title">
+            Tu sesión de hoy
+          </h2>
+          <span className="hint">
+            {todayXp} / {dailyGoal} XP
+          </span>
+        </div>
+        <ol className="session__steps">
+          <li className="session__step">
+            <strong>Repaso</strong>
+            <span>{queue.total > 0 ? `${queue.total} palabras pendientes` : 'al día'}</span>
+          </li>
+          <li className="session__step">
+            <strong>Lección</strong>
+            <span>{nextUnit ? nextUnit.title : 'nivel completo'}</span>
+          </li>
+          <li className="session__step">
+            <strong>Tonos</strong>
+            <span>diez palabras de oído</span>
+          </li>
+        </ol>
+        <button
+          type="button"
+          className="button button--primary session__cta"
+          onClick={startSession}
+        >
+          {queue.total > 0
+            ? `Repasar ${queue.total}`
+            : nextUnit
+              ? 'Empezar la lección'
+              : 'Entrenar tonos'}
+        </button>
+      </section>
+
       <section className="panel-grid" aria-label="Tu progreso de hoy">
+        {' '}
         <Card tone="mint" className="daily">
           <div className="daily__head">
             <div>
@@ -151,7 +200,6 @@ export function Home() {
             </div>
           </div>
         </Card>
-
         <Card className="achievements">
           <div className="achievements__head">
             <h2>Logros</h2>

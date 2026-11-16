@@ -43,12 +43,14 @@ export type LearnerState = {
   todayKey: string;
   todayXp: number;
   dailyGoal: number;
+  onboarded: boolean;
   stars: Record<string, number>;
   achievements: string[];
   introduceUnit: (unitId: string, now?: number) => void;
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
+  completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
   hydrate: (payload: string) => void;
   reset: () => void;
@@ -77,6 +79,7 @@ const emptyState = () => {
     todayKey: dayKey(now),
     todayXp: 0,
     dailyGoal: DAILY_GOAL,
+    onboarded: false,
     stars: {} as Record<string, number>,
     achievements: [] as string[],
   };
@@ -177,6 +180,8 @@ export const useLearner = create<LearnerState>()(
         introduceUnit: (unitId, now = Date.now()) => introduceUnit(store, unitId, now),
         gradeWord: (wordId, rating, now = Date.now()) => gradeWord(store, wordId, rating, now),
         noteMiss: (wordId, reason, now = Date.now()) => noteMiss(store, wordId, reason, now),
+        completeOnboarding: (goalXp, now = Date.now()) =>
+          set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
           recordLesson(store, unitId, { correct, total }, now),
         hydrate: (payload) => hydrate(store, payload),
@@ -185,7 +190,7 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 4,
+      version: 5,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
@@ -198,6 +203,7 @@ export const useLearner = create<LearnerState>()(
           old.achievements = [];
         }
         if (version < 4) old.misses = {};
+        if (version < 5) old.onboarded = Object.keys(old.cards ?? {}).length > 0;
         return old as LearnerState;
       },
       partialize: (state) => ({
@@ -210,6 +216,7 @@ export const useLearner = create<LearnerState>()(
         todayKey: state.todayKey,
         todayXp: state.todayXp,
         dailyGoal: state.dailyGoal,
+        onboarded: state.onboarded,
         stars: state.stars,
         achievements: state.achievements,
       }),

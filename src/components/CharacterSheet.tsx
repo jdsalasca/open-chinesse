@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import type { CharacterSheetData, SheetNode, SheetWord } from '../data/character-sheet';
 import { audioUrl, charAudioUrl } from '../lib/audio';
+import { makeCharacterQuiz } from '../lib/character-quiz';
+import { playCorrect, playWrong } from '../lib/sfx';
 import { AudioButton } from './AudioButton';
 import { Pinyin } from './Pinyin';
 import { Card } from './ui/Card';
@@ -304,6 +306,47 @@ function Examples({ data }: { data: CharacterSheetData }) {
   );
 }
 
+function Check({ data }: { data: CharacterSheetData }) {
+  const [picked, setPicked] = useState<string | null>(null);
+  const quiz = makeCharacterQuiz(data);
+  if (!quiz) return null;
+  const correct = picked === quiz.answer;
+
+  const choose = (option: string) => {
+    if (picked) return;
+    setPicked(option);
+    if (option === quiz.answer) playCorrect();
+    else playWrong();
+  };
+
+  return (
+    <Card>
+      <h2 className="character__title">Comprueba que lo entiendes</h2>
+      <p className="character__note">{quiz.prompt}</p>
+      <div className="quiz__options">
+        {quiz.options.map((option) => (
+          <button
+            key={option}
+            type="button"
+            className={`option${picked ? (option === quiz.answer ? ' is-correct' : option === picked ? ' is-wrong' : ' is-muted') : ''}`}
+            onClick={() => choose(option)}
+            disabled={picked !== null}
+            lang="zh-Hans"
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+      {picked && (
+        <p className="character__note">
+          {correct ? 'Correcto. ' : 'Casi. '}
+          {quiz.explain}
+        </p>
+      )}
+    </Card>
+  );
+}
+
 export function CharacterSheet({
   data,
   onOpenCharacter,
@@ -329,6 +372,7 @@ export function CharacterSheet({
       <History data={data} />
       <Composition data={data} onOpen={onOpenCharacter} />
       <Examples data={data} />
+      <Check data={data} />
       <Words data={data} />
     </>
   );
