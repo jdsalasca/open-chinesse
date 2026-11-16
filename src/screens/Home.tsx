@@ -14,6 +14,7 @@ import {
   type Level,
 } from '../data/curriculum';
 import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
+import { HomePath } from './HomePath';
 import { navigate } from '../lib/router';
 import { buildQueue } from '../srs/queue';
 import { masteredCount, streakDays } from '../store/metrics';
@@ -211,47 +212,7 @@ export function Home() {
           </div>
         </div>
 
-        <ol className="unit-list">
-          {levelUnits.map((unit) => {
-            const learned = unit.words.filter((w) => cards[w.id]).length;
-            const complete = learned === unit.words.length;
-            const earned = stars[unit.id] ?? 0;
-            return (
-              <li key={unit.id} className={`unit${complete ? ' is-complete' : ''}`}>
-                <span className="unit__index" aria-hidden="true">
-                  {String(unit.index).padStart(2, '0')}
-                </span>
-                <div className="unit__body">
-                  <h3 className="unit__title">{unit.title}</h3>
-                  <p className="unit__subtitle">{unit.subtitle}</p>
-                  <div className="unit__progress" aria-hidden="true">
-                    <span style={{ width: `${(learned / unit.words.length) * 100}%` }} />
-                  </div>
-                  <p className="unit__meta">
-                    {learned} de {unit.words.length} palabras
-                    {complete ? ' · completada' : ''}
-                  </p>
-                </div>
-                <div className="unit__side">
-                  {earned > 0 && (
-                    <span className="unit__stars" aria-label={`${earned} de 3 estrellas`}>
-                      {[1, 2, 3].map((star) => (
-                        <Icon key={star} name="star" size={14} filled={star <= earned} />
-                      ))}
-                    </span>
-                  )}
-                  <button
-                    type="button"
-                    className="button button--ghost unit__cta"
-                    onClick={() => navigate(`/lesson/${unit.id}`)}
-                  >
-                    {complete ? 'Repetir' : learned > 0 ? 'Continuar' : 'Estudiar'}
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+        <HomePath units={levelUnits} cards={cards} stars={stars} done={done} />
       </section>
 
       <section className="method" aria-labelledby="method-title">

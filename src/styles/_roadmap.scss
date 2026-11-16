@@ -1,0 +1,160 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.roadmap {
+  position: relative;
+  display: grid;
+  gap: $space-4;
+  margin: $space-5 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 31px;
+  width: 4px;
+  border-radius: $radius-pill;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(0 184 107 / 28%) 0 14px,
+    transparent 14px 26px
+  );
+}
+
+.roadmap__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: start;
+  gap: $space-4;
+  padding-left: 0;
+
+  &:nth-child(even) {
+    padding-left: 32px;
+  }
+}
+
+.roadmap__node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid $surface;
+  background: linear-gradient(135deg, #eef3f8, #e3e9f0);
+  color: $muted;
+  font-family: $font-mono;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: $shadow-md;
+  transition:
+    transform $motion $ease,
+    background $motion $ease;
+
+  @include focus-ring;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.is-complete .roadmap__node {
+  background: linear-gradient(135deg, $teal, $mint);
+  color: #fff;
+}
+
+.is-current .roadmap__node {
+  background: linear-gradient(135deg, $mint, $teal);
+  color: #fff;
+  box-shadow:
+    0 0 0 6px rgb(0 184 107 / 16%),
+    $shadow-md;
+}
+
+.roadmap__card {
+  @include surface($radius);
+  padding: $space-4;
+  display: grid;
+  gap: $space-1;
+}
+
+.is-current .roadmap__card {
+  border-color: rgb(0 168 107 / 35%);
+  box-shadow:
+    0 0 0 3px rgb(0 184 107 / 10%),
+    $shadow-md;
+}
+
+.roadmap__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-2;
+}
+
+.roadmap__title {
+  font-size: 1.02rem;
+}
+
+.roadmap__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: $amber;
+}
+
+.roadmap__subtitle {
+  font-size: 0.88rem;
+  color: $muted;
+}
+
+.roadmap__bar {
+  height: 5px;
+  margin-top: $space-2;
+  border-radius: $radius-pill;
+  background: $paper-deep;
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $mint, $teal);
+  }
+}
+
+.roadmap__meta {
+  font-size: 0.78rem;
+  color: $muted;
+}
+
+.roadmap__cta {
+  justify-self: start;
+  margin-top: $space-2;
+}
+
+@media (max-width: 560px) {
+  .roadmap::before {
+    left: 25px;
+  }
+
+  .roadmap__step {
+    grid-template-columns: 52px minmax(0, 1fr);
+
+    &:nth-child(even) {
+      padding-left: 0;
+    }
+  }
+
+  .roadmap__node {
+    width: 52px;
+    height: 52px;
+    font-size: 0.92rem;
+  }
+}
