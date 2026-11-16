@@ -1,0 +1,166 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.bedtime {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.bedtime-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.bedtime-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+}
+
+.bedtime-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.bedtime-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bedtime-card__note {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.bedtime-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.bedtime__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.bedtime-reader {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: $space-6;
+  border-radius: $radius-lg;
+  background:
+    radial-gradient(520px 260px at 85% -10%, rgb(127 214 168 / 12%), transparent 65%), #0e1c18;
+  color: #e8efe9;
+}
+
+.bedtime-reader__back {
+  justify-self: start;
+  color: #8fd3b6;
+}
+
+.bedtime-reader__head h1 {
+  margin-top: $space-1;
+  color: #f2f7f3;
+}
+
+.bedtime-reader .eyebrow {
+  color: #8fd3b6;
+}
+
+.bedtime-reader__note {
+  margin: $space-2 0 0;
+  color: #b7c9bf;
+}
+
+.bedtime-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+}
+
+.bedtime-controls__meta {
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  color: #a9c4b6;
+}
+
+.bedtime-controls .link {
+  color: #8fd3b6;
+}
+
+.bedtime-lines {
+  display: grid;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bedtime-line {
+  display: grid;
+  gap: $space-1;
+  padding: $space-4;
+  border-left: 2px solid rgb(255 255 255 / 10%);
+  border-radius: $radius;
+  transition: background $motion $ease;
+}
+
+.bedtime-line.is-active {
+  border-left-color: #7fd6a8;
+  background: rgb(255 255 255 / 6%);
+}
+
+.bedtime-line__hanzi {
+  margin: 0;
+  @include hanzi(1.7rem);
+  line-height: 1.5;
+  color: #f4f8f5;
+}
+
+.bedtime-line__pinyin {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #8fd3b6;
+}
+
+.bedtime-line__translation {
+  margin: 0;
+  color: #d3ded7;
+}
+
+.bedtime-line__explain {
+  margin: $space-1 0 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #a9c4b6;
+}
+
+@media (max-width: 560px) {
+  .bedtime-reader {
+    padding: $space-4;
+  }
+}

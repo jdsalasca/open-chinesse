@@ -19,6 +19,14 @@ solo para que tenga más pantallas.
 | Ficha de carácter                   | `CharacterDrawer` | Radicales y componentes                |
 | Misiones y racha                    | Home              | Hábito                                 |
 
+## Hecho en C9
+
+- **Dictado** (`/dictado`): diez palabras ya estudiadas, audio, respuesta en
+  hanzi o pinyin (con o sin tonos), corrección y resumen. Cuenta como actividad.
+- **Cuentos para dormir** (`/dormir`): tres cuentos HSK 1–2, voz lenta
+  (`length_scale 1.25`), panel oscuro, explicación por línea y reproducción
+  continua.
+
 ## Brechas, en orden de impacto
 
 | #   | Mecánica                                                                     | Por qué                                                           | Coste | Depende de              |
@@ -36,11 +44,8 @@ solo para que tenga más pantallas.
 
 ## Plan propuesto
 
-1. **Ronda D1 — Dictado**: pantalla `/dictado`, audio de palabras ya estudiadas,
-   respuesta en pinyin o hanzi, 10 por tanda y repaso de fallos. Sin tocar FSRS.
-2. **Ronda D2 — Cuentos para dormir**: tres cuentos HSK 1–2 escritos solo con
-   vocabulario del curso, audio lento, modo noche, explicación línea a línea y
-   reproducción continua con pausas.
+1. **Ronda D1 — Dictado** — hecho en C9.
+2. **Ronda D2 — Cuentos para dormir** — hecho en C9.
 3. **Ronda D3 — Historia de China**: tres lecturas HSK 3 (mitos, inventos, vida
    cotidiana), glosa al pasar el cursor, audio y una pregunta de comprensión.
 4. **Ronda D4 — Sesión inmersiva y reto diario**: mezcla guiada de repaso,

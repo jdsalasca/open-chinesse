@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
 import { Card } from '../components/ui/Card';
@@ -10,6 +10,7 @@ import { audioUrl } from '../lib/audio';
 import { withKeys } from '../lib/keys';
 import { segment } from '../lib/quiz';
 import { navigate } from '../lib/router';
+import { useFollowLine, useStoryAudio } from '../lib/story-audio';
 import { useCharacterView } from '../store/character-view';
 
 const BY_HANZI = new Map<string, Word>();
@@ -18,35 +19,6 @@ for (const word of WORDS_BY_ID.values()) {
 }
 
 type Pick = { chunk: string; word?: Word };
-
-function lineAudio(storyId: string, index: number): string {
-  return audioUrl('stories', `${storyId}-${String(index + 1).padStart(2, '0')}`);
-}
-
-function startLine(params: {
-  box: RefObject<HTMLAudioElement | null>;
-  story: Story;
-  index: number;
-  onEnded: () => void;
-  onError: () => void;
-}): void {
-  const { box, story, index, onEnded, onError } = params;
-  box.current?.pause();
-  const audio = new Audio(lineAudio(story.id, index));
-  audio.onended = onEnded;
-  audio.onerror = onError;
-  box.current = audio;
-  void audio.play().catch(onError);
-}
-
-function useFollowLine(current: number): void {
-  useEffect(() => {
-    if (current < 0) return;
-    document
-      .getElementById(`story-line-${current}`)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, [current]);
-}
 
 function StoryCard({ story, onOpen }: { story: Story; onOpen: () => void }) {
   const [zh, es] = story.title.split(' · ');
@@ -269,69 +241,6 @@ function ListenBar({
   );
 }
 
-function usePlayback(
-  story: Story,
-  audioRef: RefObject<HTMLAudioElement | null>,
-  setPlaying: (playing: boolean) => void,
-  setCurrent: (index: number) => void,
-) {
-  function playFrom(index: number) {
-    setPlaying(true);
-    startLine({
-      box: audioRef,
-      story,
-      index,
-      onEnded: () => advance(index),
-      onError: () => setPlaying(false),
-    });
-  }
-
-  function advance(index: number) {
-    if (index + 1 < story.lines.length) {
-      setCurrent(index + 1);
-      playFrom(index + 1);
-    } else {
-      setPlaying(false);
-      setCurrent(-1);
-    }
-  }
-
-  return playFrom;
-}
-
-function useStoryAudio(story: Story) {
-  const [playing, setPlaying] = useState(false);
-  const [current, setCurrent] = useState(-1);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const playFrom = usePlayback(story, audioRef, setPlaying, setCurrent);
-
-  useEffect(() => () => audioRef.current?.pause(), []);
-
-  const stop = () => {
-    audioRef.current?.pause();
-    audioRef.current = null;
-    setPlaying(false);
-    setCurrent(-1);
-  };
-
-  const toggle = () => {
-    if (playing) {
-      audioRef.current?.pause();
-      return setPlaying(false);
-    }
-    if (current < 0) {
-      setCurrent(0);
-      return playFrom(0);
-    }
-    const audio = audioRef.current;
-    if (!audio) return playFrom(current);
-    setPlaying(true);
-    void audio.play().catch(() => setPlaying(false));
-  };
-
-  return { playing, current, toggle, stop };
-}
-
 function StoryLines({
   story,
   pick,
@@ -372,7 +281,7 @@ function StoryLines({
 function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
   const [pick, setPick] = useState<Pick | null>(null);
   const [preview, setPreview] = useState<Pick | null>(null);
-  const audio = useStoryAudio(story);
+  const audio = useStoryAudio(story.id, story.lines.length);
   const shown = pick ?? preview;
   useFollowLine(audio.current);
 

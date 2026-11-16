@@ -15,6 +15,8 @@ export type Route =
   | { name: 'tones' }
   | { name: 'check' }
   | { name: 'cloze' }
+  | { name: 'dictation' }
+  | { name: 'bedtime'; storyId?: string }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -38,12 +40,15 @@ const SIMPLE: Record<string, Route> = {
   tonos: { name: 'tones' },
   prueba: { name: 'check' },
   contexto: { name: 'cloze' },
+  dictado: { name: 'dictation' },
+  dormir: { name: 'bedtime' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {
   lesson: (unitId) => ({ name: 'lesson', unitId }),
   historias: (storyId) => ({ name: 'stories', storyId }),
   situaciones: (scenarioId) => ({ name: 'scenario', scenarioId }),
+  dormir: (storyId) => ({ name: 'bedtime', storyId }),
   caracter: (char) => ({ name: 'character', char: decode(char) }),
   character: (char) => ({ name: 'character', char: decode(char) }),
 };

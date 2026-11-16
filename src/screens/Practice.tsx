@@ -26,6 +26,15 @@ const BASE_ACTIONS: Action[] = [
     cta: 'Entrenar el oído',
   },
   {
+    href: '#/dictado',
+    tone: 'violet',
+    icon: 'name',
+    meta: 'Diez palabras',
+    title: 'Dictado',
+    text: 'Escucha una palabra y escríbela en hanzi o pinyin. El oído también se entrena escribiendo.',
+    cta: 'Escuchar y escribir',
+  },
+  {
     href: '#/contexto',
     tone: 'teal',
     icon: 'book',
@@ -33,6 +42,15 @@ const BASE_ACTIONS: Action[] = [
     title: 'En contexto',
     text: 'Completa frases reales con la palabra que falta. Vale pinyin con tonos o el carácter.',
     cta: 'Practicar',
+  },
+  {
+    href: '#/dormir',
+    tone: 'violet',
+    icon: 'sparkles',
+    meta: 'Tres cuentos',
+    title: 'Cuentos para dormir',
+    text: 'Historias cortas con voz lenta, traducción y una explicación de cada línea. Sin prisa.',
+    cta: 'Escuchar',
   },
   {
     href: '#/prueba',
@@ -84,7 +102,7 @@ export function Practice() {
       <PageHeader
         eyebrow="Practicar"
         title="Entrena lo que ya viste"
-        lead="Cinco formas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
+        lead="Formas distintas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
       />
       <div className="practice__grid">
         {actions(pending, scenes.length).map((action) => (

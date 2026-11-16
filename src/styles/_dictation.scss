@@ -1,0 +1,32 @@
+@use 'tokens' as *;
+
+.dictation {
+  display: grid;
+  gap: $space-4;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.dictation__card {
+  display: grid;
+  justify-items: center;
+  gap: $space-4;
+  padding: $space-6 $space-4;
+  text-align: center;
+}
+
+.dictation__lead {
+  margin: 0;
+  color: $muted;
+}
+
+.dictation .typed {
+  width: 100%;
+  text-align: left;
+}
+
+.dictation__answer {
+  display: grid;
+  justify-items: center;
+  gap: $space-3;
+}

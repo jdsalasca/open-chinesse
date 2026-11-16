@@ -12,6 +12,8 @@ import { Stories } from './screens/Stories';
 import { Scenarios, ScenarioView } from './screens/Scenarios';
 import { Check } from './screens/Check';
 import { Cloze } from './screens/Cloze';
+import { Dictation } from './screens/Dictation';
+import { Bedtime } from './screens/Bedtime';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -33,7 +35,14 @@ const SECTION: Partial<Record<Route['name'], string>> = {
   stats: 'progreso',
 };
 
-const FOCUS = new Set<Route['name']>(['lesson', 'review', 'tones', 'scenario', 'cloze']);
+const FOCUS = new Set<Route['name']>([
+  'lesson',
+  'review',
+  'tones',
+  'scenario',
+  'cloze',
+  'dictation',
+]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   review: () => <Review />,
@@ -46,6 +55,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   tones: () => <Tones />,
   check: () => <Check />,
   cloze: () => <Cloze />,
+  dictation: () => <Dictation />,
 };
 
 function Header({ route }: { route: Route }) {
@@ -87,6 +97,7 @@ function RouteView({ route }: { route: Route }) {
   if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
   if (route.name === 'character') return <Character key={route.char} char={route.char} />;
   if (route.name === 'stories') return <Stories storyId={route.storyId} />;
+  if (route.name === 'bedtime') return <Bedtime storyId={route.storyId} />;
   if (route.name === 'scenario') {
     return <ScenarioView key={route.scenarioId} scenarioId={route.scenarioId} />;
   }

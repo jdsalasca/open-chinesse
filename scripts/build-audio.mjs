@@ -21,6 +21,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { SCENARIOS } from '../src/data/scenarios.ts';
 import { STORIES } from '../src/data/stories.ts';
+import { BEDTIME_STORIES } from '../src/data/bedtime.ts';
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const DATA = join(ROOT, 'src/data');
@@ -68,6 +69,19 @@ for (const scenario of SCENARIOS) {
     const line = step.kind === 'line' ? step.line : step.prompt;
     jobs.push({ kind: 'scenarios', id: `${scenario.id}-${line.id}`, text: line.hanzi });
   }
+}
+
+// Cuentos para dormir: misma carpeta, voz más lenta.
+for (const story of BEDTIME_STORIES) {
+  story.lines.forEach((line, index) => {
+    const number = String(index + 1).padStart(2, '0');
+    jobs.push({
+      kind: 'stories',
+      id: `sleep-${story.id}-${number}`,
+      text: line.hanzi,
+      lengthScale: 1.25,
+    });
+  });
 }
 
 mkdirSync(join(OUT, 'words'), { recursive: true });

@@ -260,5 +260,19 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Mapa de mecánicas pendientes en `docs/roadmap-mecanicas.md`, priorizado
       por impacto y coste.
 
+### C9 — Dictado y cuentos para dormir
+
+- [x] Ruta `/dictado` con diez palabras ya estudiadas, audio real y respuesta
+      en hanzi o pinyin, con o sin tonos.
+- [x] Corrección con feedback, resumen, «Otra tanda» y estado vacío; la
+      actividad queda registrada para el resumen semanal.
+- [x] Tres cuentos HSK 1–2 en `/dormir` con pinyin, traducción y explicación
+      detallada de cada línea.
+- [x] Voz lenta (`length_scale 1.25`) para los 24 audios nuevos y reproductor
+      extraído a `lib/story-audio.ts`, compartido con Historias.
+- [x] Panel nocturno, línea activa iluminada y controles de pausa, seguir y
+      detener.
+- [x] Tarjetas de Dictado y Cuentos en Practicar.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.
