@@ -370,16 +370,7 @@ function AidsBar({ aids, onToggle }: { aids: Aids; onToggle: (key: keyof Aids) =
   );
 }
 
-function CurrentStep({
-  scenario,
-  index,
-  step,
-  picked,
-  wrong,
-  aids,
-  onPick,
-  onNext,
-}: {
+type StepProps = {
   scenario: Scenario;
   index: number;
   step: ScenarioStep;
@@ -388,7 +379,9 @@ function CurrentStep({
   aids: Aids;
   onPick: (index: number, correct: boolean) => void;
   onNext: () => void;
-}) {
+};
+
+function CurrentStep({ scenario, index, step, picked, wrong, aids, onPick, onNext }: StepProps) {
   const last = index + 1 === scenario.steps.length;
   if (step.kind === 'line') {
     return (

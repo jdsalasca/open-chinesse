@@ -74,37 +74,53 @@ function LineView({
   );
 }
 
+function GlossWord({
+  word,
+  chars,
+  onOpen,
+}: {
+  word: Word;
+  chars: string[];
+  onOpen: (char: string) => void;
+}) {
+  return (
+    <>
+      <Pinyin pinyin={word.pinyin} className="gloss__pinyin" />
+      <p className="gloss__meaning">{word.meaning}</p>
+      <div className="gloss__actions">
+        <AudioButton
+          text={word.hanzi}
+          label={word.hanzi}
+          src={audioUrl('words', word.id)}
+          compact
+        />
+        {chars.map((char, index) => (
+          <button
+            key={`${char}-${index}`}
+            type="button"
+            className="link"
+            onClick={() => onOpen(char)}
+          >
+            {char} →
+          </button>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
   const openChar = useCharacterView((state) => state.open);
-  const chars = [...pick.chunk];
+  const base = pick.chunk.replace(/[，。！？、：；]+$/u, '') || pick.chunk;
+  const word = pick.word ?? BY_HANZI.get(base);
+  const chars = [...new Set([...base])];
   return (
     <div className="gloss" role="status">
       <p className="gloss__head" lang="zh-Hans">
-        {pick.chunk}
+        {base}
       </p>
-      {pick.word ? (
-        <>
-          <Pinyin pinyin={pick.word.pinyin} className="gloss__pinyin" />
-          <p className="gloss__meaning">{pick.word.meaning}</p>
-          <div className="gloss__actions">
-            <AudioButton
-              text={pick.word.hanzi}
-              label={pick.word.hanzi}
-              src={audioUrl('words', pick.word.id)}
-              compact
-            />
-            {chars.map((char) => (
-              <button
-                key={char}
-                type="button"
-                className="link"
-                onClick={() => openChar(char, chars)}
-              >
-                {char} →
-              </button>
-            ))}
-          </div>
-        </>
+      {word ? (
+        <GlossWord word={word} chars={chars} onOpen={(char) => openChar(char, chars)} />
       ) : (
         <p className="gloss__meaning">Esta pieza no es una palabra suelta del curso.</p>
       )}

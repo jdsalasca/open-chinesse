@@ -55,6 +55,15 @@ saltaban: había 33 líneas de historia y solo 26 MP3. Ahora el script importa
 `STORIES` y genera una pista por cada línea real (45 en total). El mismo mecanismo
 se usa para las situaciones.
 
+## Glosa de palabras con puntuación
+
+El segmentador de historias adjunta la puntuación a la palabra («谢谢！»), así que
+la glosa no encontraba la entrada del curso y decía «no es una palabra». Ahora se
+quita la puntuación final antes de buscar, se deduplican los botones de carácter
+y se conserva el texto completo en la cabecera. Verificado con 谢谢: aparece
+«gracias», el pinyin, el audio y un solo botón 谢, sin warnings de claves
+duplicadas en React.
+
 ## Evidencia
 
 ```text
