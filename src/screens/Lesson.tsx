@@ -10,6 +10,7 @@ import { ALL_WORDS, LEVEL_LABELS, UNITS } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
 import { makeQuiz } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
+import { playComplete, playCorrect, playWrong } from '../lib/sfx';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
@@ -35,6 +36,12 @@ export function Lesson({ unitId }: { unitId: string }) {
     recorded.current = true;
     recordLesson(unit.id, answers.filter(Boolean).length, Math.max(answers.length, 1));
   }, [phase, unit, answers, recordLesson]);
+
+  useEffect(() => {
+    if (phase !== 'done') return;
+    const correct = answers.filter(Boolean).length;
+    if (starsForScore(correct, Math.max(answers.length, 1)) === 3) playComplete();
+  }, [phase, answers]);
 
   if (!unit) {
     return (
@@ -74,6 +81,8 @@ export function Lesson({ unitId }: { unitId: string }) {
   const choose = (option: string) => {
     if (selected !== null) return;
     setSelected(option);
+    if (option === questionWord?.meaning) playCorrect();
+    else playWrong();
   };
 
   if (phase === 'learn') {

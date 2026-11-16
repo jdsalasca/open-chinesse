@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { playCorrect, playWrong } from '../lib/sfx';
 
 type Props = {
   chunks: string[];
@@ -59,6 +60,14 @@ function OrderResult({
   );
 }
 
+function CheckButton({ ready, onCheck }: { ready: boolean; onCheck: () => void }) {
+  return (
+    <button type="button" className="button button--primary" disabled={!ready} onClick={onCheck}>
+      Comprobar
+    </button>
+  );
+}
+
 export function OrderExercise({ chunks, sentence, translation, last, onNext }: Props) {
   const [placed, setPlaced] = useState<string[]>([]);
   const [result, setResult] = useState<boolean | null>(null);
@@ -76,6 +85,13 @@ export function OrderExercise({ chunks, sentence, translation, last, onNext }: P
     );
   }
 
+  const check = () => {
+    const correct = placed.join('') === sentence;
+    setResult(correct);
+    if (correct) playCorrect();
+    else playWrong();
+  };
+
   return (
     <div className="order">
       <p className="order__hint">Ordena: «{translation}»</p>
@@ -88,14 +104,7 @@ export function OrderExercise({ chunks, sentence, translation, last, onNext }: P
           <OrderPiece key={chunk} chunk={chunk} onPick={() => setPlaced([...placed, chunk])} />
         ))}
       </div>
-      <button
-        type="button"
-        className="button button--primary"
-        disabled={placed.length !== chunks.length}
-        onClick={() => setResult(placed.join('') === sentence)}
-      >
-        Comprobar
-      </button>
+      <CheckButton ready={placed.length === chunks.length} onCheck={check} />
     </div>
   );
 }

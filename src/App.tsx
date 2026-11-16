@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react';
+import { SoundToggle } from './components/SoundToggle';
 import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
 import { BottomNav } from './components/BottomNav';
@@ -6,6 +7,7 @@ import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
 import { ComingSoon } from './screens/ComingSoon';
+import { Immersion } from './screens/Immersion';
 import { Lesson } from './screens/Lesson';
 import { Login } from './screens/Login';
 import { Practice } from './screens/Practice';
@@ -36,12 +38,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
       description="Cuentos cortos en chino con el vocabulario que ya viste, para leer sin traducir."
     />
   ),
-  immersion: () => (
-    <ComingSoon
-      title="Inmersión"
-      description="Material real —noticias, vídeos, canciones— con apoyo para entenderlo sin ahogarte."
-    />
-  ),
+  immersion: () => <Immersion />,
 };
 
 function Header({ route }: { route: Route }) {
@@ -115,6 +112,7 @@ export default function App() {
         <button type="button" className="link" onClick={() => navigate('/stats')}>
           Ver progreso
         </button>
+        <SoundToggle />
       </footer>
     </div>
   );
