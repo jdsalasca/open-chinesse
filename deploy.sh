@@ -21,21 +21,29 @@ echo "    $JAR ($(du -h "$JAR" | cut -f1))"
 
 echo "==> Copiando a $TARGET"
 ssh "$HOST" "mkdir -p '$DIR/data'"
-scp -q "$JAR" "$HOST:$DIR/app.jar"
+# Se copia aparte y se renombra: reemplazar el jar en caliente rompe la JVM.
+scp -q "$JAR" "$HOST:$DIR/app.jar.new"
 scp -q deploy/docker-compose.yml deploy/.env.example "$HOST:$DIR/"
 ssh "$HOST" "test -f '$DIR/.env' || cp '$DIR/.env.example' '$DIR/.env'"
 
-echo "==> Reiniciando contenedor"
-ssh "$HOST" "cd '$DIR' && sudo docker compose up -d --remove-orphans"
+echo "==> Recreando contenedor"
+ssh "$HOST" "cd '$DIR' && mv -f app.jar.new app.jar && sudo docker compose up -d --force-recreate --remove-orphans"
 
 echo "==> Esperando health"
+healthy=0
 for _ in $(seq 1 30); do
-  if ssh "$HOST" "curl -fsS http://127.0.0.1:8091/actuator/health >/dev/null 2>&1"; then
+  if ssh "$HOST" "curl -fsS -m 5 http://127.0.0.1:8091/actuator/health >/dev/null 2>&1"; then
     echo "    backend OK"
+    healthy=1
     break
   fi
   sleep 2
 done
+
+if [ "$healthy" -ne 1 ]; then
+  echo "    backend NO responde"
+  exit 1
+fi
 
 echo "==> Verificación pública"
 curl -s -o /dev/null -w "  /            %{http_code}\n" https://open-chinesse.eridu.top/

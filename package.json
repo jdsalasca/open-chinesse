@@ -12,10 +12,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:server": "tsc -b && vite build --outDir backend/src/main/resources/static --emptyOutDir",
-    "lint": "oxlint",
+    "lint": "oxlint --max-warnings=12 && prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -33,6 +34,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "jsdom": "^31.0.1",
     "oxlint": "^1.90.0",
+    "prettier": "^3.10.1",
     "sass": "^1.108.2",
     "typescript": "~7.0.2",
     "vite": "^8.3.6",

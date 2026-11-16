@@ -28,3 +28,6 @@ dist-ssr
 
 # Dataset temporal de vocabulario
 .tmp/
+
+# Fuentes crudas del dataset (se descargan con el script)
+investigation/core-1000-words/scripts/raw/

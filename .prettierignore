@@ -1,0 +1,10 @@
+node_modules
+dist
+.screens
+backend/target
+backend/data
+backend/src/main/resources/static
+investigation/core-1000-words/scripts/raw
+investigation/core-1000-words/data
+resources
+pnpm-lock.yaml

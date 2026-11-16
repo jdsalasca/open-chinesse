@@ -3,6 +3,25 @@
   "plugins": ["react", "typescript", "oxc"],
   "rules": {
     "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
+    "react/only-export-components": ["warn", { "allowConstantExport": true }],
+    "max-lines-per-function": [
+      "error",
+      { "max": 40, "skipBlankLines": true, "skipComments": true }
+    ],
+    "max-params": ["error", 4],
+    "max-depth": ["error", 3],
+    "complexity": ["error", 8]
+  },
+  "overrides": [
+    {
+      "files": ["src/screens/**/*.tsx"],
+      "rules": {
+        "max-lines-per-function": [
+          "warn",
+          { "max": 40, "skipBlankLines": true, "skipComments": true }
+        ],
+        "complexity": ["warn", 8]
+      }
+    }
+  ]
 }
