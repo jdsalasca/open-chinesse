@@ -150,8 +150,11 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 
 ### P3 — Biblioteca (Practicar, Historias, Inmersión, Progreso, Perfil)
 
-- [ ] Tarjetas de sección con icono, descripción corta y CTA.
-- [ ] Lector de historias con tipografía y audio por línea.
+- [x] Practicar como rejilla de cuatro acciones con icono, estado y CTA.
+- [x] Cabecera de página común en Practicar e Historias.
+- [x] Perfil coherente: «Estudiadas» reales, 601 palabras y logros con el mismo
+      lenguaje visual que la portada.
+- [ ] Terminar de unificar Inmersión, Progreso y el lector de historias.
 - [ ] Estados vacíos y de carga con la misma voz visual.
 
 ### P4 — Pulido

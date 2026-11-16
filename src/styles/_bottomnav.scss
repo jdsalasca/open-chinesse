@@ -43,52 +43,6 @@
   }
 }
 
-.practice {
-  max-width: 720px;
-  margin: 0 auto;
-  display: grid;
-  gap: $space-4;
-  padding-bottom: $space-6;
-}
-
-.practice__lead {
-  color: $muted;
-  margin: 0;
-}
-
-.practice__card {
-  @include surface($radius-lg, $shadow-md);
-  display: grid;
-  gap: $space-2;
-  padding: $space-4;
-  color: $ink;
-  text-decoration: none;
-  @include focus-ring;
-
-  &:hover {
-    border-color: $mint;
-  }
-}
-
-.practice__cta {
-  color: $mint-dark;
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-
-.soon {
-  max-width: 640px;
-  margin: 0 auto;
-  display: grid;
-  gap: $space-3;
-  justify-items: start;
-}
-
-.soon__note {
-  color: $muted;
-  font-size: 0.85rem;
-}
-
 // La barra fija no debe tapar el pie en móvil.
 @media (max-width: 719px) {
   .app {

@@ -1,4 +1,6 @@
 import { ACHIEVEMENTS, levelFromXp, levelProgress } from '../gamification/xp';
+import { Icon } from '../components/ui/Icon';
+import { TOTAL_WORDS } from '../data/curriculum';
 import { navigate } from '../lib/router';
 import {
   accuracy,
@@ -21,7 +23,7 @@ export function Profile() {
   const now = Date.now();
   const level = levelFromXp(xp);
   const progress = levelProgress(xp);
-  const learned = Object.keys(cards).length;
+  const studied = new Set(log.map((entry) => entry.wordId)).size;
 
   if (!user) {
     return (
@@ -77,9 +79,9 @@ export function Profile() {
           <small>días seguidos</small>
         </div>
         <div className="stat">
-          <dt>Aprendidas</dt>
-          <dd>{learned}</dd>
-          <small>de 301 palabras</small>
+          <dt>Estudiadas</dt>
+          <dd>{studied}</dd>
+          <small>de {TOTAL_WORDS} palabras</small>
         </div>
         <div className="stat">
           <dt>Dominadas</dt>
@@ -105,15 +107,24 @@ export function Profile() {
 
       <section className="card">
         <h2>Logros</h2>
-        <ul className="achievement-row">
-          {ACHIEVEMENTS.map((achievement) => (
-            <li
-              key={achievement.id}
-              className={`achievement${achievements.includes(achievement.id) ? ' is-earned' : ''}`}
-            >
-              {achievement.title}
-            </li>
-          ))}
+        <ul className="achievement-grid">
+          {ACHIEVEMENTS.map((achievement) => {
+            const earned = achievements.includes(achievement.id);
+            return (
+              <li
+                key={achievement.id}
+                className={`achievement-tile${earned ? ' is-earned' : ' is-locked'}`}
+              >
+                <span className="achievement__icon" aria-hidden="true">
+                  <Icon name={achievement.icon} size={16} />
+                </span>
+                <span className="achievement__text">
+                  <strong>{achievement.title}</strong>
+                  <small>{achievement.description}</small>
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 

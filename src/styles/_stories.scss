@@ -9,13 +9,11 @@
   margin: 0 auto;
 }
 
-.stories__head,
 .story-reader__title {
   display: grid;
   gap: $space-2;
 }
 
-.stories__lead,
 .story-reader__note,
 .stories__note {
   margin: 0;

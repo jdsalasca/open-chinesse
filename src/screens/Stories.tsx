@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
 import { Card } from '../components/ui/Card';
+import { PageHeader } from '../components/PageHeader';
 import { WORDS_BY_ID, type Word } from '../data/curriculum';
 import { STORIES, type Line, type Story } from '../data/stories';
 import { audioUrl } from '../lib/audio';
@@ -151,14 +152,11 @@ export function Stories({ storyId }: { storyId?: string }) {
 
   return (
     <section className="stories">
-      <header className="stories__head">
-        <p className="eyebrow">Historias</p>
-        <h1>Chino que ya puedes leer</h1>
-        <p className="stories__lead">
-          Textos cortos hechos solo con vocabulario del curso. Audio por frase y glosa al tocar
-          cualquier palabra.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow="Historias"
+        title="Chino que ya puedes leer"
+        lead="Textos cortos hechos solo con vocabulario del curso. Audio por frase y glosa al tocar cualquier palabra."
+      />
       <div className="stories__grid">
         {STORIES.map((item) => (
           <StoryCard key={item.id} story={item} onOpen={() => navigate(`/historias/${item.id}`)} />
