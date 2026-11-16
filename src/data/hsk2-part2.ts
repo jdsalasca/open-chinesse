@@ -736,8 +736,8 @@ export const HSK2_PART2: Unit[] = [
         pinyin: 'shìqing',
         meaning: 'asunto, cosa',
         example: {
-          hanzi: '这件事很重要。',
-          pinyin: 'Zhè jiàn shì hěn zhòngyào.',
+          hanzi: '这件事情很重要。',
+          pinyin: 'Zhè jiàn shìqing hěn zhòngyào.',
           translation: 'Este asunto es importante.',
         },
       },
