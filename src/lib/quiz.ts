@@ -1,6 +1,6 @@
 import { ALL_WORDS, type Unit } from '../data/curriculum';
 
-export type Question = { wordId: string; options: string[] };
+export type Question = { wordId: string; options: string[]; mode: 'recognize' | 'listen' };
 
 function lcg(seed: number) {
   let state = seed % 2147483647;
@@ -25,7 +25,7 @@ export function makeQuiz(unit: Unit): Question[] {
   const random = lcg(unit.index * 7919);
   return shuffle(unit.words, random)
     .slice(0, 6)
-    .map((word) => {
+    .map((word, index) => {
       const pool = shuffle(
         ALL_WORDS.filter((w) => w.id !== word.id && w.meaning !== word.meaning),
         random,
@@ -35,6 +35,10 @@ export function makeQuiz(unit: Unit): Question[] {
         if (options.length === 4) break;
         if (!options.includes(candidate.meaning)) options.push(candidate.meaning);
       }
-      return { wordId: word.id, options: shuffle(options, random) };
+      return {
+        wordId: word.id,
+        options: shuffle(options, random),
+        mode: index % 2 === 1 ? 'listen' : 'recognize',
+      };
     });
 }

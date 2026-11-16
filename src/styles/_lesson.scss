@@ -181,3 +181,17 @@
   justify-content: center;
   margin-top: $space-3;
 }
+.quiz__prompt-audio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  margin: $space-3 0;
+  color: $muted;
+}
+
+.quiz__dots {
+  letter-spacing: 0.4em;
+  font-size: 1.6rem;
+  color: $line-strong;
+}

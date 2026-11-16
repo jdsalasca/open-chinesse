@@ -131,14 +131,27 @@ export function Lesson({ unitId }: { unitId: string }) {
 
         <section className="quiz" aria-live="polite">
           <div className="quiz__prompt">
-            <span className="quiz__prompt-label">¿Qué significa?</span>
-            <div className="quiz__hanzi" lang="zh-Hans">
-              {questionWord.hanzi}
-            </div>
-            <div className="quiz__audio">
-              <AudioButton text={questionWord.hanzi} label={questionWord.hanzi} />
-              <Pinyin pinyin={questionWord.pinyin} />
-            </div>
+            <span className="quiz__prompt-label">
+              {question.mode === 'listen' ? 'Escucha y elige' : '¿Qué significa?'}
+            </span>
+            {question.mode === 'listen' ? (
+              <div className="quiz__prompt-audio">
+                <AudioButton text={questionWord.hanzi} label="la palabra" />
+                <span className="quiz__dots" aria-hidden="true">
+                  ••••
+                </span>
+              </div>
+            ) : (
+              <>
+                <div className="quiz__hanzi" lang="zh-Hans">
+                  {questionWord.hanzi}
+                </div>
+                <div className="quiz__audio">
+                  <AudioButton text={questionWord.hanzi} label={questionWord.hanzi} />
+                  <Pinyin pinyin={questionWord.pinyin} />
+                </div>
+              </>
+            )}
           </div>
           <div className="quiz__options" role="group" aria-label="Opciones">
             {question.options.map((option) => {
