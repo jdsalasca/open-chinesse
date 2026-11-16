@@ -207,5 +207,27 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Tarjeta en Home; los logros siguen en Perfil.
 - [ ] Rachas de misión con recompensa por hitos (3, 7, 30 días).
 
+### C5 — Flujo y contrato de calidad
+
+- [x] El repaso muestra «Sesión terminada» al agotar la cola, con el número de
+      repasos; «Estás al día» queda solo para una cola que empieza vacía.
+- [x] Una unidad se marca completada al registrar la lección (`stars`), no al
+      abrirla; `completedUnits` desaparece.
+- [x] El XP de hoy se refresca al cargar la app y al volver a la pestaña.
+- [x] El teclado del repaso no intercepta botones ni enlaces; los controles
+      nativos conservan Enter y espacio.
+- [x] `autoFocus` eliminado en toda la app: `useEnterKey` avanza y el foco de
+      los campos es programático (`useFocusOnMount`, `useRef`).
+- [x] Sin keys por índice: `withKeys` da identidad estable a pinyin, piezas,
+      migas, lecturas y enlaces de carácter.
+- [x] La ficha de carácter atrapa el foco, cierra con Escape y lo devuelve al
+      control de origen.
+- [x] Home, Review, Lesson, Stats, Profile y Login divididos en componentes:
+      ≤40 líneas por función, complejidad ≤8, archivos de pantalla <400 líneas.
+- [x] ESLint externo de `teachers`, Stylelint y Prettier limpios; Oxlint sin
+      errores (9 advertencias de pureza de `Date.now`, preexistentes).
+- [ ] Dividir `Scenarios.tsx` (564 líneas) y `_home.scss` (728 líneas).
+- [ ] Extraer el ancho dinámico de las barras a una variable CSS sin `style`.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

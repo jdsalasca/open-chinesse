@@ -2,6 +2,7 @@ import { useEffect, type CSSProperties } from 'react';
 import { CharacterSheet } from './CharacterSheet';
 import { getCharacterSheetData, type CharacterSheetData } from '../data/character-sheet';
 import { describeRelation } from '../lib/character-relation';
+import { withKeys } from '../lib/keys';
 import { useCharacterView, type CharacterLayer, type DrillMeta } from '../store/character-view';
 
 /** Offsets de Fibonacci: centro, +34, +55, +89, +144 y +233 px. */
@@ -53,8 +54,8 @@ function Breadcrumb({
 }) {
   return (
     <div className="drawer__crumb" aria-label="Recorrido del origen">
-      {chars.map((char, index) => (
-        <span key={`${char}-${index}`} className="drawer__crumb-item">
+      {withKeys(chars, (char) => char).map(({ item: char, key }, index) => (
+        <span key={key} className="drawer__crumb-item">
           {index > 0 && (
             <span className="drawer__crumb-sep" aria-hidden="true">
               ›
@@ -248,6 +249,48 @@ function useDrawerEffects(layers: CharacterLayer[], close: () => void) {
   }, [layers.length, activeChar]);
 }
 
+function trapTab(event: KeyboardEvent, panel: HTMLElement) {
+  const items = [
+    ...panel.querySelectorAll<HTMLElement>(
+      'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])',
+    ),
+  ].filter((item) => !item.closest('[inert]'));
+  if (items.length === 0) {
+    event.preventDefault();
+    panel.focus();
+    return;
+  }
+  const first = items[0];
+  const last = items[items.length - 1];
+  const active = document.activeElement;
+  const atStart = active === first || active === panel;
+  if (event.shiftKey && atStart) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && active === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function useDialogFocus(open: boolean) {
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const panel = document.querySelector<HTMLElement>('.drawer__panel.is-active');
+      if (!panel) return;
+      trapTab(event, panel);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      previous?.focus();
+    };
+  }, [open]);
+}
+
 /** Fichas encadenadas: centro, derecha y siguientes con offsets de Fibonacci. */
 export function CharacterDrawer() {
   const layers = useCharacterView((state) => state.layers);
@@ -258,6 +301,7 @@ export function CharacterDrawer() {
   const jump = useCharacterView((state) => state.jump);
   const active = layers.length - 1;
 
+  useDialogFocus(layers.length > 0);
   useDrawerEffects(layers, close);
 
   if (layers.length === 0) return null;
@@ -270,9 +314,9 @@ export function CharacterDrawer() {
         aria-label="Cerrar la ficha"
         onClick={close}
       />
-      {layers.map((layer, index) => (
+      {withKeys(layers, (layer) => layer.char).map(({ item: layer, key }, index) => (
         <LayerPanel
-          key={`${layer.char}-${index}`}
+          key={key}
           layer={layer}
           index={index}
           active={index === active}

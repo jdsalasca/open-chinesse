@@ -3,7 +3,7 @@ import { Rating } from 'ts-fsrs';
 import { UNITS } from '../data/curriculum';
 import { makeMissions } from '../lib/missions';
 import { newCard } from '../srs/scheduler';
-import { completedUnits, exportPayload, requeuesSoon, useLearner } from './useLearner';
+import { exportPayload, requeuesSoon, useLearner } from './useLearner';
 import { dayKey } from './metrics';
 
 const NOW = new Date('2026-11-15T10:00:00Z').getTime();
@@ -15,10 +15,10 @@ beforeEach(() => {
 });
 
 describe('introduceUnit', () => {
-  it('crea una tarjeta por palabra', () => {
+  it('crea una tarjeta por palabra sin marcar la unidad como completada', () => {
     useLearner.getState().introduceUnit(UNIT.id, NOW);
     expect(Object.keys(useLearner.getState().cards)).toHaveLength(UNIT.words.length);
-    expect(completedUnits(useLearner.getState().cards)).toContain(UNIT.id);
+    expect(useLearner.getState().stars[UNIT.id]).toBeUndefined();
   });
 
   it('no duplica ni reinicia tarjetas existentes', () => {
@@ -33,6 +33,17 @@ describe('introduceUnit', () => {
   it('ignora unidades inexistentes', () => {
     useLearner.getState().introduceUnit('nope', NOW);
     expect(useLearner.getState().cards).toEqual({});
+  });
+});
+
+describe('recordLesson', () => {
+  it('marca la unidad completada solo al terminar la lección', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    expect(useLearner.getState().stars[UNIT.id]).toBeUndefined();
+
+    useLearner.getState().recordLesson(UNIT.id, 6, 6, NOW);
+    expect(useLearner.getState().stars[UNIT.id]).toBe(3);
+    expect(useLearner.getState().activity.some((entry) => entry.kind === 'lesson')).toBe(true);
   });
 });
 

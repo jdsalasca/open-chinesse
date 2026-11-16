@@ -12,6 +12,7 @@ import {
   type ClozeResult,
 } from '../lib/cloze';
 import { navigate } from '../lib/router';
+import { useEnterKey, useFocusOnMount } from '../lib/hooks';
 import { useLearner } from '../store/useLearner';
 
 const VERDICTS: Record<ClozeResult, string> = {
@@ -107,6 +108,7 @@ function ClozeForm({
   onCheck: (result: ClozeResult, typed: string) => void;
 }) {
   const [typed, setTyped] = useState('');
+  const inputRef = useFocusOnMount<HTMLInputElement>();
   return (
     <form
       className="typed"
@@ -121,6 +123,7 @@ function ClozeForm({
       <div className="typed__row">
         <input
           id="cloze-input"
+          ref={inputRef}
           className="typed__input"
           value={typed}
           onChange={(event) => setTyped(event.target.value)}
@@ -128,7 +131,6 @@ function ClozeForm({
           autoComplete="off"
           autoCapitalize="off"
           spellCheck={false}
-          autoFocus
         />
         <button type="submit" className="button button--primary" disabled={!typed.trim()}>
           Comprobar
@@ -182,6 +184,7 @@ function AfterAnswer({
   onNext: () => void;
 }) {
   const correct = isClozeCorrect(result);
+  useEnterKey(onNext);
   return (
     <>
       <div className={`cloze__result${correct ? ' is-ok' : ' is-bad'}`}>
@@ -194,10 +197,29 @@ function AfterAnswer({
       </div>
       <Feedback question={question} />
       <div className="chat__advance">
-        <button type="button" className="button button--primary" onClick={onNext} autoFocus>
+        <button type="button" className="button button--primary" onClick={onNext}>
           {last ? 'Ver resultado' : 'Siguiente'}
         </button>
       </div>
+    </>
+  );
+}
+
+function PendingAnswer({
+  question,
+  onResult,
+}: {
+  question: ClozeQuestion;
+  onResult: (result: ClozeResult, typed: string) => void;
+}) {
+  return (
+    <>
+      <Sentence prompt={question.prompt} />
+      <BeforeAnswer
+        question={question}
+        onCheck={(outcome, value) => onResult(outcome, value)}
+        onReveal={() => onResult('mal', '')}
+      />
     </>
   );
 }
@@ -220,17 +242,12 @@ function Question({
     <Card className="cloze__card">
       <p className="eyebrow">Completa la frase</p>
       <p className="cloze__translation">{question.translation}</p>
-      {result === null && <Sentence prompt={question.prompt} />}
       {result === null ? (
-        <BeforeAnswer
+        <PendingAnswer
           question={question}
-          onCheck={(outcome, value) => {
+          onResult={(outcome, value) => {
             setResult(outcome);
             setTyped(value);
-          }}
-          onReveal={() => {
-            setResult('mal');
-            setTyped('');
           }}
         />
       ) : (

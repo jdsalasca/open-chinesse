@@ -1,67 +1,89 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
+import { ExampleBlock } from '../components/ExampleBlock';
 import { MissPicker } from '../components/MissPicker';
 import { OrderExercise } from '../components/OrderExercise';
 import { Pinyin } from '../components/Pinyin';
 import { Confetti } from '../components/ui/Confetti';
 import { Icon } from '../components/ui/Icon';
-import { ALL_WORDS, LEVEL_LABELS, UNITS } from '../data/curriculum';
+import { ALL_WORDS, LEVEL_LABELS, UNITS, type Unit, type Word } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
-import { makeQuiz } from '../lib/quiz';
+import { makeQuiz, type Question } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
 import { playComplete, playCorrect, playWrong } from '../lib/sfx';
 import { SessionNext } from '../components/SessionNext';
 import { SessionHeader } from '../components/SessionHeader';
 import { useDailySession } from '../store/daily-session';
+import { useEnterKey } from '../lib/hooks';
 import { navigate } from '../lib/router';
+import type { MissReason } from '../lib/miss';
 import { useLearner } from '../store/useLearner';
 
-export function Lesson({ unitId }: { unitId: string }) {
-  const unit = UNITS.find((u) => u.id === unitId);
-  const introduceUnit = useLearner((s) => s.introduceUnit);
-  const recordLesson = useLearner((s) => s.recordLesson);
-  const noteMiss = useLearner((s) => s.noteMiss);
-  const recorded = useRef(false);
-  const [phase, setPhase] = useState<'learn' | 'quiz' | 'done'>('learn');
+type Phase = 'learn' | 'quiz' | 'done';
+
+type LessonProgress = {
+  phase: Phase;
+  setPhase: (phase: Phase) => void;
+  index: number;
+  setIndex: (index: number) => void;
+  answers: boolean[];
+  setAnswers: Dispatch<SetStateAction<boolean[]>>;
+  selected: string | null;
+  setSelected: (selected: string | null) => void;
+};
+
+function useLessonQuiz(unit: Unit | undefined): Question[] {
+  const [variant] = useState(() => Math.floor(Date.now() / 86400000));
+  return useMemo(() => (unit ? makeQuiz(unit, variant) : []), [unit, variant]);
+}
+
+function useLessonProgress(): LessonProgress {
+  const [phase, setPhase] = useState<Phase>('learn');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
+  return { phase, setPhase, index, setIndex, answers, setAnswers, selected, setSelected };
+}
 
-  const [variant] = useState(() => Math.floor(Date.now() / 86400000));
-  const quiz = useMemo(() => (unit ? makeQuiz(unit, variant) : []), [unit, variant]);
-
+function useIntroduceUnit(unit: Unit | undefined, introduceUnit: (unitId: string) => void): void {
   useEffect(() => {
     if (unit) introduceUnit(unit.id);
   }, [unit, introduceUnit]);
+}
 
+function useLessonRecord(
+  unit: Unit | undefined,
+  phase: Phase,
+  answers: boolean[],
+  recordLesson: (unitId: string, correct: number, total: number) => void,
+): void {
+  const recorded = useRef(false);
   useEffect(() => {
     if (phase !== 'done' || !unit || recorded.current) return;
     recorded.current = true;
     recordLesson(unit.id, answers.filter(Boolean).length, Math.max(answers.length, 1));
   }, [phase, unit, answers, recordLesson]);
+}
 
+function useLessonFinish(phase: Phase, answers: boolean[]): void {
   useEffect(() => {
     if (phase !== 'done') return;
     const correct = answers.filter(Boolean).length;
     if (starsForScore(correct, Math.max(answers.length, 1)) === 3) playComplete();
     useDailySession.getState().finish('lesson');
   }, [phase, answers]);
+}
 
-  if (!unit) {
-    return (
-      <section className="panel">
-        <h1>Unidad no encontrada</h1>
-        <button type="button" className="button button--primary" onClick={() => navigate('/')}>
-          Volver al inicio
-        </button>
-      </section>
-    );
-  }
-
-  const word = unit.words[index];
-  const question = quiz[index];
-  const questionWord = question ? ALL_WORDS.find((w) => w.id === question.wordId) : undefined;
+function useLessonActions(params: {
+  unit?: Unit;
+  quiz: Question[];
+  progress: LessonProgress;
+  questionWord?: Word;
+  noteMiss: (wordId: string, reason: MissReason) => void;
+}) {
+  const { unit, quiz, progress, questionWord, noteMiss } = params;
+  const { phase, setPhase, index, setIndex, selected, setSelected, setAnswers } = progress;
 
   const finish = (correct: boolean) => {
     if (!correct && quiz[index]?.mode === 'order') noteMiss(quiz[index].wordId, 'order');
@@ -72,15 +94,13 @@ export function Lesson({ unitId }: { unitId: string }) {
   };
 
   const next = () => {
+    if (!unit) return;
     if (phase === 'learn') {
       if (index + 1 < unit.words.length) return setIndex(index + 1);
       setIndex(0);
       return setPhase('quiz');
     }
-    if (phase === 'quiz') {
-      if (selected === null) return;
-      finish(selected === questionWord?.meaning);
-    }
+    if (phase === 'quiz' && selected !== null) finish(selected === questionWord?.meaning);
   };
 
   const choose = (option: string) => {
@@ -90,172 +110,300 @@ export function Lesson({ unitId }: { unitId: string }) {
     else playWrong();
   };
 
-  if (phase === 'learn') {
+  const orderMode = phase === 'quiz' && quiz[index]?.mode === 'order';
+  useEnterKey(next, phase !== 'done' && !orderMode);
+  return { next, choose, finish };
+}
+
+function LessonHeader({ label, count, ratio }: { label: string; count: string; ratio: number }) {
+  return (
+    <>
+      <SessionHeader label={label} count={count} onExit={() => navigate('/')} />
+      <div className="progress" aria-hidden="true">
+        <span style={{ width: `${ratio * 100}%` }} />
+      </div>
+    </>
+  );
+}
+
+function Flashcard({ word }: { word: Word }) {
+  return (
+    <article className="flashcard" aria-live="polite">
+      <div className="flashcard__hanzi" lang="zh-Hans">
+        {word.hanzi}
+      </div>
+      <div className="flashcard__row">
+        <Pinyin pinyin={word.pinyin} className="flashcard__pinyin" showToneNumber />
+        <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
+      </div>
+      <p className="flashcard__meaning">{word.meaning}</p>
+      <ExampleBlock word={word} />
+      <CharacterLinks hanzi={word.hanzi} />
+    </article>
+  );
+}
+
+function LearnPhase({ unit, index, next }: { unit: Unit; index: number; next: () => void }) {
+  const word = unit.words[index];
+  const last = index + 1 === unit.words.length;
+  return (
+    <div className="lesson">
+      <LessonHeader
+        label={`${LEVEL_LABELS[unit.level]} · ${unit.title}`}
+        count={`${index + 1} / ${unit.words.length}`}
+        ratio={(index + 1) / unit.words.length}
+      />
+      <Flashcard word={word} />
+      <div className="lesson__actions">
+        <button type="button" className="button button--primary" onClick={next}>
+          {last ? 'Pasar a la práctica' : 'Siguiente'}
+        </button>
+        <span className="hint">Enter avanza · clic derecho: origen · el audio no es opcional</span>
+      </div>
+    </div>
+  );
+}
+
+function QuizPrompt({ question, word }: { question: Question; word: Word }) {
+  if (question.mode === 'order') {
     return (
-      <div className="lesson">
-        <SessionHeader
-          label={`${LEVEL_LABELS[unit.level]} · ${unit.title}`}
-          count={`${index + 1} / ${unit.words.length}`}
-          onExit={() => navigate('/')}
-        />
-        <div className="progress" aria-hidden="true">
-          <span style={{ width: `${((index + 1) / unit.words.length) * 100}%` }} />
-        </div>
-
-        <article className="flashcard" aria-live="polite">
-          <div className="flashcard__hanzi" lang="zh-Hans">
-            {word.hanzi}
-          </div>
-          <div className="flashcard__row">
-            <Pinyin pinyin={word.pinyin} className="flashcard__pinyin" showToneNumber />
-            <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
-          </div>
-          <p className="flashcard__meaning">{word.meaning}</p>
-          <div className="example">
-            <div className="example__head">
-              <span className="example__label">En contexto</span>
-              <AudioButton
-                text={word.example.hanzi}
-                label="la frase de ejemplo"
-                src={audioUrl('examples', word.id)}
-                compact
-              />
-            </div>
-            <p className="example__hanzi" lang="zh-Hans">
-              {word.example.hanzi}
-            </p>
-            <p className="example__pinyin">
-              <Pinyin pinyin={word.example.pinyin} />
-            </p>
-            <p className="example__translation">{word.example.translation}</p>
-          </div>
-          <CharacterLinks hanzi={word.hanzi} />
-        </article>
-
-        <div className="lesson__actions">
-          <button type="button" className="button button--primary" onClick={next} autoFocus>
-            {index + 1 === unit.words.length ? 'Pasar a la práctica' : 'Siguiente'}
-          </button>
-          <span className="hint">
-            Enter avanza · clic derecho: origen · el audio no es opcional
+      <div className="quiz__prompt">
+        <span className="quiz__prompt-label">Ordena la frase</span>
+      </div>
+    );
+  }
+  return (
+    <div className="quiz__prompt">
+      <span className="quiz__prompt-label">
+        {question.mode === 'listen' ? 'Escucha y elige' : '¿Qué significa?'}
+      </span>
+      {question.mode === 'listen' ? (
+        <div className="quiz__prompt-audio">
+          <AudioButton text={word.hanzi} label="la palabra" src={audioUrl('words', word.id)} />
+          <span className="quiz__dots" aria-hidden="true">
+            ••••
           </span>
         </div>
-      </div>
-    );
-  }
+      ) : (
+        <>
+          <div className="quiz__hanzi" lang="zh-Hans">
+            {word.hanzi}
+          </div>
+          <div className="quiz__audio">
+            <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
+            <Pinyin pinyin={word.pinyin} />
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
-  if (phase === 'quiz' && question && questionWord) {
-    return (
-      <div className="lesson">
-        <SessionHeader
-          label={`Práctica · ${LEVEL_LABELS[unit.level]}`}
-          count={`${index + 1} / ${quiz.length}`}
-          onExit={() => navigate('/')}
+function QuizOptions({
+  options,
+  meaning,
+  selected,
+  onPick,
+}: {
+  options: string[];
+  meaning: string;
+  selected: string | null;
+  onPick: (option: string) => void;
+}) {
+  return (
+    <div className="quiz__options" role="group" aria-label="Opciones">
+      {options.map((option) => {
+        const state =
+          selected === null
+            ? ''
+            : option === meaning
+              ? ' is-correct'
+              : option === selected
+                ? ' is-wrong'
+                : ' is-muted';
+        return (
+          <button
+            key={option}
+            type="button"
+            className={`option${state}`}
+            onClick={() => onPick(option)}
+            disabled={selected !== null}
+          >
+            {option}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function QuizFeedback({
+  word,
+  selected,
+  onNext,
+  onMiss,
+  last,
+}: {
+  word: Word;
+  selected: string | null;
+  onNext: () => void;
+  onMiss: (reason: MissReason) => void;
+  last: boolean;
+}) {
+  const correct = selected === word.meaning;
+  return (
+    <div className="quiz__feedback">
+      <p>{correct ? 'Correcto.' : `Era: ${word.meaning}.`}</p>
+      {!correct && <MissPicker key={word.id} onPick={onMiss} />}
+      <button type="button" className="button button--primary" onClick={onNext}>
+        {last ? 'Terminar' : 'Siguiente'}
+      </button>
+    </div>
+  );
+}
+
+function OrderStage({
+  question,
+  word,
+  last,
+  onFinish,
+}: {
+  question: Question;
+  word: Word;
+  last: boolean;
+  onFinish: (correct: boolean) => void;
+}) {
+  return (
+    <>
+      <QuizPrompt question={question} word={word} />
+      <OrderExercise
+        key={question.wordId}
+        chunks={question.options}
+        sentence={word.example.hanzi}
+        translation={word.example.translation}
+        last={last}
+        onNext={onFinish}
+      />
+    </>
+  );
+}
+
+function ChoiceStage({
+  question,
+  word,
+  selected,
+  last,
+  onSelect,
+  onNext,
+  onMiss,
+}: {
+  question: Question;
+  word: Word;
+  selected: string | null;
+  last: boolean;
+  onSelect: (option: string) => void;
+  onNext: () => void;
+  onMiss: (reason: MissReason) => void;
+}) {
+  return (
+    <>
+      <QuizPrompt question={question} word={word} />
+      <QuizOptions
+        options={question.options}
+        meaning={word.meaning}
+        selected={selected}
+        onPick={onSelect}
+      />
+      {selected !== null && (
+        <QuizFeedback word={word} selected={selected} onNext={onNext} onMiss={onMiss} last={last} />
+      )}
+    </>
+  );
+}
+
+function QuizStage({
+  question,
+  word,
+  selected,
+  last,
+  onSelect,
+  onNext,
+  onMiss,
+  onFinish,
+}: {
+  question: Question;
+  word: Word;
+  selected: string | null;
+  last: boolean;
+  onSelect: (option: string) => void;
+  onNext: () => void;
+  onMiss: (reason: MissReason) => void;
+  onFinish: (correct: boolean) => void;
+}) {
+  if (question.mode === 'order') {
+    return <OrderStage question={question} word={word} last={last} onFinish={onFinish} />;
+  }
+  return (
+    <ChoiceStage
+      question={question}
+      word={word}
+      selected={selected}
+      last={last}
+      onSelect={onSelect}
+      onNext={onNext}
+      onMiss={onMiss}
+    />
+  );
+}
+
+type QuizPhaseProps = {
+  unit: Unit;
+  quiz: Question[];
+  index: number;
+  question: Question;
+  questionWord: Word;
+  selected: string | null;
+  onSelect: (option: string) => void;
+  onNext: () => void;
+  onFinish: (correct: boolean) => void;
+};
+
+function QuizPhase({ unit, quiz, index, question, questionWord, ...stage }: QuizPhaseProps) {
+  const last = index + 1 === quiz.length;
+  const noteMiss = useLearner((s) => s.noteMiss);
+  return (
+    <div className="lesson">
+      <LessonHeader
+        label={`Práctica · ${LEVEL_LABELS[unit.level]}`}
+        count={`${index + 1} / ${quiz.length}`}
+        ratio={(index + 1) / quiz.length}
+      />
+      <section className="quiz" aria-live="polite">
+        <QuizStage
+          question={question}
+          word={questionWord}
+          last={last}
+          onMiss={(reason) => noteMiss(questionWord.id, reason)}
+          {...stage}
         />
-        <div className="progress" aria-hidden="true">
-          <span style={{ width: `${((index + 1) / quiz.length) * 100}%` }} />
-        </div>
+      </section>
+    </div>
+  );
+}
 
-        <section className="quiz" aria-live="polite">
-          {question.mode === 'order' ? (
-            <>
-              <div className="quiz__prompt">
-                <span className="quiz__prompt-label">Ordena la frase</span>
-              </div>
-              <OrderExercise
-                key={question.wordId}
-                chunks={question.options}
-                sentence={questionWord.example.hanzi}
-                translation={questionWord.example.translation}
-                last={index + 1 === quiz.length}
-                onNext={finish}
-              />
-            </>
-          ) : (
-            <>
-              <div className="quiz__prompt">
-                <span className="quiz__prompt-label">
-                  {question.mode === 'listen' ? 'Escucha y elige' : '¿Qué significa?'}
-                </span>
-                {question.mode === 'listen' ? (
-                  <div className="quiz__prompt-audio">
-                    <AudioButton
-                      text={questionWord.hanzi}
-                      label="la palabra"
-                      src={audioUrl('words', questionWord.id)}
-                    />
-                    <span className="quiz__dots" aria-hidden="true">
-                      ••••
-                    </span>
-                  </div>
-                ) : (
-                  <>
-                    <div className="quiz__hanzi" lang="zh-Hans">
-                      {questionWord.hanzi}
-                    </div>
-                    <div className="quiz__audio">
-                      <AudioButton
-                        text={questionWord.hanzi}
-                        label={questionWord.hanzi}
-                        src={audioUrl('words', questionWord.id)}
-                      />
-                      <Pinyin pinyin={questionWord.pinyin} />
-                    </div>
-                  </>
-                )}
-              </div>
-              <div className="quiz__options" role="group" aria-label="Opciones">
-                {question.options.map((option) => {
-                  const isRight = option === questionWord.meaning;
-                  const state =
-                    selected === null
-                      ? ''
-                      : isRight
-                        ? ' is-correct'
-                        : option === selected
-                          ? ' is-wrong'
-                          : ' is-muted';
-                  return (
-                    <button
-                      key={option}
-                      type="button"
-                      className={`option${state}`}
-                      onClick={() => choose(option)}
-                      disabled={selected !== null}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-              {selected !== null && (
-                <div className="quiz__feedback">
-                  <p>
-                    {selected === questionWord.meaning
-                      ? 'Correcto.'
-                      : `Era: ${questionWord.meaning}.`}
-                  </p>
-                  {selected !== questionWord.meaning && (
-                    <MissPicker
-                      key={question.wordId}
-                      onPick={(reason) => noteMiss(questionWord.id, reason)}
-                    />
-                  )}
-                  <button type="button" className="button button--primary" onClick={next} autoFocus>
-                    {index + 1 === quiz.length ? 'Terminar' : 'Siguiente'}
-                  </button>
-                </div>
-              )}
-            </>
-          )}
-        </section>
-      </div>
-    );
-  }
+function SummaryStars({ stars }: { stars: number }) {
+  return (
+    <div className="summary__stars" aria-label={`${stars} de 3 estrellas`}>
+      {[1, 2, 3].map((star) => (
+        <Icon key={star} name="star" size={30} filled={star <= stars} />
+      ))}
+    </div>
+  );
+}
 
+function LessonSummary({ unit, answers }: { unit: Unit; answers: boolean[] }) {
   const correct = answers.filter(Boolean).length;
   const stars = starsForScore(correct, Math.max(answers.length, 1));
-  const earnedXp = xpForLesson(correct);
   return (
     <div className="lesson">
       <section className="summary" aria-live="polite">
@@ -263,15 +411,11 @@ export function Lesson({ unitId }: { unitId: string }) {
         <p className="eyebrow">
           {LEVEL_LABELS[unit.level]} · {unit.title}
         </p>
-        <div className="summary__stars" aria-label={`${stars} de 3 estrellas`}>
-          {[1, 2, 3].map((star) => (
-            <Icon key={star} name="star" size={30} filled={star <= stars} />
-          ))}
-        </div>
+        <SummaryStars stars={stars} />
         <h1 className="summary__title">
           {correct} de {answers.length} correctas
         </h1>
-        <p className="summary__xp">+{earnedXp} XP</p>
+        <p className="summary__xp">+{xpForLesson(correct)} XP</p>
         <p className="summary__text">
           {correct === answers.length
             ? 'Reconociste todas. El repaso volverá a traerlas cuando toque.'
@@ -293,4 +437,57 @@ export function Lesson({ unitId }: { unitId: string }) {
       </section>
     </div>
   );
+}
+
+function LessonMissing() {
+  return (
+    <section className="panel">
+      <h1>Unidad no encontrada</h1>
+      <button type="button" className="button button--primary" onClick={() => navigate('/')}>
+        Volver al inicio
+      </button>
+    </section>
+  );
+}
+
+export function Lesson({ unitId }: { unitId: string }) {
+  const unit = UNITS.find((u) => u.id === unitId);
+  const introduceUnit = useLearner((s) => s.introduceUnit);
+  const recordLesson = useLearner((s) => s.recordLesson);
+  const noteMiss = useLearner((s) => s.noteMiss);
+  const quiz = useLessonQuiz(unit);
+  const progress = useLessonProgress();
+  useIntroduceUnit(unit, introduceUnit);
+  useLessonRecord(unit, progress.phase, progress.answers, recordLesson);
+  useLessonFinish(progress.phase, progress.answers);
+  const question = quiz[progress.index];
+  const questionWord = question ? ALL_WORDS.find((w) => w.id === question.wordId) : undefined;
+  const { next, choose, finish } = useLessonActions({
+    unit,
+    quiz,
+    progress,
+    questionWord,
+    noteMiss,
+  });
+
+  if (!unit || !unit.words[progress.index]) return <LessonMissing />;
+  if (progress.phase === 'learn') {
+    return <LearnPhase unit={unit} index={progress.index} next={next} />;
+  }
+  if (progress.phase === 'quiz' && question && questionWord) {
+    return (
+      <QuizPhase
+        unit={unit}
+        quiz={quiz}
+        index={progress.index}
+        question={question}
+        questionWord={questionWord}
+        selected={progress.selected}
+        onSelect={choose}
+        onNext={next}
+        onFinish={finish}
+      />
+    );
+  }
+  return <LessonSummary unit={unit} answers={progress.answers} />;
 }

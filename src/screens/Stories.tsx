@@ -6,6 +6,7 @@ import { PageHeader } from '../components/PageHeader';
 import { WORDS_BY_ID, type Word } from '../data/curriculum';
 import { STORIES, type Line, type Story } from '../data/stories';
 import { audioUrl } from '../lib/audio';
+import { withKeys } from '../lib/keys';
 import { segment } from '../lib/quiz';
 import { navigate } from '../lib/router';
 import { useCharacterView } from '../store/character-view';
@@ -45,13 +46,14 @@ function LineView({
   onPick: (pick: Pick) => void;
   picked: string | null;
 }) {
+  const chunks = withKeys(segment(line.hanzi), (chunk) => chunk);
   return (
     <li className="story-line">
       <div className="story-line__head">
         <p className="story-line__hanzi" lang="zh-Hans">
-          {segment(line.hanzi).map((chunk, index) => (
+          {chunks.map(({ item: chunk, key }) => (
             <button
-              key={`${chunk}-${index}`}
+              key={key}
               type="button"
               className={`story-line__word${picked === chunk ? ' is-picked' : ''}`}
               onClick={() => onPick({ chunk, word: BY_HANZI.get(chunk) })}
@@ -94,13 +96,8 @@ function GlossWord({
           src={audioUrl('words', word.id)}
           compact
         />
-        {chars.map((char, index) => (
-          <button
-            key={`${char}-${index}`}
-            type="button"
-            className="link"
-            onClick={() => onOpen(char)}
-          >
+        {withKeys(chars, (char) => char).map(({ item: char, key }) => (
+          <button key={key} type="button" className="link" onClick={() => onOpen(char)}>
             {char} →
           </button>
         ))}
@@ -142,9 +139,9 @@ function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
       <p className="story-reader__note">{story.note}</p>
       <Card>
         <ol className="story-lines">
-          {story.lines.map((line, index) => (
+          {withKeys(story.lines, (line) => line.hanzi).map(({ item: line, key }, index) => (
             <LineView
-              key={`${story.id}-${index}`}
+              key={key}
               line={line}
               audioId={`${story.id}-${String(index + 1).padStart(2, '0')}`}
               onPick={setPick}

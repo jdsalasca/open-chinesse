@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { CharacterSheetData, SheetNode, SheetWord } from '../data/character-sheet';
 import { audioUrl, charAudioUrl } from '../lib/audio';
 import { makeCharacterQuiz } from '../lib/character-quiz';
+import { withKeys } from '../lib/keys';
 import { playCorrect, playWrong } from '../lib/sfx';
 import { AudioButton } from './AudioButton';
 import { Pinyin } from './Pinyin';
@@ -121,10 +122,13 @@ function Piece({ node, onOpen }: { node: SheetNode; onOpen?: (char: string) => v
 }
 
 function Tree({ nodes, onOpen }: { nodes: SheetNode[]; onOpen?: (char: string) => void }) {
+  const pieces = withKeys(nodes, (node) =>
+    node.kind === 'char' ? `${node.char}:${node.label ?? ''}` : `op:${node.label}`,
+  );
   return (
     <ul className="ids">
-      {nodes.map((node, index) => (
-        <Piece key={`${node.kind}-${index}`} node={node} onOpen={onOpen} />
+      {pieces.map(({ item: node, key }) => (
+        <Piece key={key} node={node} onOpen={onOpen} />
       ))}
     </ul>
   );

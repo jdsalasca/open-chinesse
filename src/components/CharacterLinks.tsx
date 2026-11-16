@@ -1,3 +1,4 @@
+import { withKeys } from '../lib/keys';
 import { useCharacterView } from '../store/character-view';
 
 export function CharacterLinks({ hanzi }: { hanzi: string }) {
@@ -6,9 +7,9 @@ export function CharacterLinks({ hanzi }: { hanzi: string }) {
   return (
     <div className="char-links">
       <span className="char-links__label">Origen</span>
-      {chars.map((char) => (
+      {withKeys(chars, (char) => char).map(({ item: char, key }) => (
         <button
-          key={char}
+          key={key}
           type="button"
           className="char-links__chip"
           onClick={() => open(char, chars)}

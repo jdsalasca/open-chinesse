@@ -3,6 +3,7 @@ import { Card } from '../components/ui/Card';
 import { SessionHeader } from '../components/SessionHeader';
 import { WORDS_BY_ID } from '../data/curriculum';
 import { makeCheck, isDue, optionState } from '../lib/check';
+import { useEnterKey } from '../lib/hooks';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
@@ -62,6 +63,44 @@ function Bar({ index, total }: { index: number; total: number }) {
   );
 }
 
+type CheckQuestion = ReturnType<typeof makeCheck>[number];
+
+function QuestionCard({
+  question,
+  index,
+  total,
+  picked,
+  onPick,
+  onNext,
+}: {
+  question: CheckQuestion;
+  index: number;
+  total: number;
+  picked: string | null;
+  onPick: (option: string) => void;
+  onNext: () => void;
+}) {
+  return (
+    <Card className="check__card">
+      <p className="check__hanzi" lang="zh-Hans">
+        {WORDS_BY_ID.get(question.wordId)?.hanzi}
+      </p>
+      <p className="check__lead">¿Qué significa?</p>
+      <OptionList
+        options={question.options}
+        answer={question.answer}
+        picked={picked}
+        onPick={onPick}
+      />
+      {picked && (
+        <button type="button" className="button button--primary" onClick={onNext}>
+          {index + 1 === total ? 'Ver resultado' : 'Siguiente'}
+        </button>
+      )}
+    </Card>
+  );
+}
+
 function RetentionQuiz({
   wordIds,
   onFinish,
@@ -74,31 +113,27 @@ function RetentionQuiz({
   const [score, setScore] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const question = questions[index];
-  const { options, answer } = question;
   const pick = (option: string) => {
     setPicked(option);
-    if (option === answer) setScore(score + 1);
+    if (option === question.answer) setScore(score + 1);
   };
   const next = () => {
     if (index + 1 >= questions.length) return onFinish(score);
     setPicked(null);
     setIndex(index + 1);
   };
+  useEnterKey(next, picked !== null);
   return (
     <div className="check">
       <Bar index={index} total={questions.length} />
-      <Card className="check__card">
-        <p className="check__hanzi" lang="zh-Hans">
-          {WORDS_BY_ID.get(question.wordId)?.hanzi}
-        </p>
-        <p className="check__lead">¿Qué significa?</p>
-        <OptionList options={options} answer={answer} picked={picked} onPick={pick} />
-        {picked && (
-          <button type="button" className="button button--primary" onClick={next} autoFocus>
-            {index + 1 === questions.length ? 'Ver resultado' : 'Siguiente'}
-          </button>
-        )}
-      </Card>
+      <QuestionCard
+        question={question}
+        index={index}
+        total={questions.length}
+        picked={picked}
+        onPick={pick}
+        onNext={next}
+      />
     </div>
   );
 }

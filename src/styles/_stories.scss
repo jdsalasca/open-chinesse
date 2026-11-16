@@ -53,8 +53,10 @@
 }
 
 .story-card__title {
-  font-size: 1.1rem;
+  font-family: $font-hanzi;
+  font-size: 1.35rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .story-card__note {
@@ -115,6 +117,8 @@
   color: $ink;
   font: inherit;
   cursor: pointer;
+  text-decoration: underline dotted $line-strong;
+  text-underline-offset: 3px;
   transition:
     background $motion $ease,
     color $motion $ease;
@@ -125,6 +129,8 @@
 .story-line__word.is-picked {
   background: $mint-soft;
   color: $mint-dark;
+  outline: 2px solid $mint;
+  outline-offset: 1px;
 }
 
 .story-line__pinyin {
@@ -206,24 +212,8 @@
   }
 }
 
-.story-card__title {
-  font-family: $font-hanzi;
-  font-size: 1.35rem;
-  line-height: 1.2;
-}
-
 .story-card__subtitle {
   font-size: 0.95rem;
   font-weight: 600;
   color: $ink-soft;
-}
-
-.story-line__word {
-  text-decoration: underline dotted $line-strong;
-  text-underline-offset: 3px;
-}
-
-.story-line__word.is-picked {
-  outline: 2px solid $mint;
-  outline-offset: 1px;
 }

@@ -22,12 +22,10 @@ pnpm format   # aplica prettier
 
 ## Desviación documentada
 
-1. **`max-lines-per-function` es advertencia en `src/screens/**`.** Los componentes
-   de pantalla son árboles JSX declarativos; partirlos para cumplir 40 líneas
-   produce más archivos sin mejorar la lectura. La regla sigue siendo **error** en
-   `src/gamification`, `src/lib`, `src/srs` y `src/store`, donde el tamaño sí indica
-   un problema de diseño. Deuda: `Home` (250), `Review` (235), `Lesson` (197),
-   `Stats` (107).
+1. **`max-lines-per-function` es advertencia en `src/screens/**`.** Tras la ronda
+   C5 las pantallas cumplen ≤40 líneas y complejidad ≤8 (ESLint externo limpio);
+   la regla queda como red de seguridad para que no vuelvan a crecer. La regla
+   sigue siendo **error** en `src/gamification`, `src/lib`, `src/srs` y `src/store`.
 2. **Comillas simples.** El `prettierrc` de `teachers/typescript-teacher` usa
    comillas dobles; aquí se mantienen simples por convención del repo. La anchura
    (100) y el resto de reglas son idénticas.
@@ -39,7 +37,9 @@ pnpm format   # aplica prettier
 
 ## Estado actual
 
-- `oxlint`: 0 errores, 19 advertencias (todas en pantallas).
+- `oxlint`: 0 errores, 9 advertencias (pureza de `Date.now` en pantallas).
 - `prettier --check`: limpio.
 - `tsc -b`: limpio.
-- 170 pruebas de frontend y 13 de backend.
+- ESLint externo de `teachers` sobre `src`: 0 errores.
+- Stylelint de `teachers` sobre `src/**/*.scss`: limpio.
+- 176 pruebas de frontend y 13 de backend.

@@ -9,6 +9,7 @@ import { makeToneQuiz, type ToneQuestion } from '../lib/tone-quiz';
 import { SessionNext } from '../components/SessionNext';
 import { SessionHeader } from '../components/SessionHeader';
 import { useLearner } from '../store/useLearner';
+import { useEnterKey } from '../lib/hooks';
 
 function Summary({ score, total, onRetry }: { score: number; total: number; onRetry: () => void }) {
   return (
@@ -85,12 +86,13 @@ function Feedback({
   last: boolean;
   onNext: () => void;
 }) {
+  useEnterKey(onNext);
   return (
     <div className="tones__feedback">
       <p>
         <span lang="zh-Hans">{word.hanzi}</span> · {word.pinyin} · {word.meaning}
       </p>
-      <button type="button" className="button button--primary" onClick={onNext} autoFocus>
+      <button type="button" className="button button--primary" onClick={onNext}>
         {last ? 'Ver resultado' : 'Siguiente'}
       </button>
     </div>

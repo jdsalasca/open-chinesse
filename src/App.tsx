@@ -21,6 +21,7 @@ import { Profile } from './screens/Profile';
 import { Review } from './screens/Review';
 import { Stats } from './screens/Stats';
 import { useSession } from './store/session';
+import { useLearner } from './store/useLearner';
 import './styles/main.scss';
 
 const SECTION: Partial<Record<Route['name'], string>> = {
@@ -93,6 +94,16 @@ function RouteView({ route }: { route: Route }) {
   return view ? view() : <Home />;
 }
 
+function useDayRefresh() {
+  const refreshDay = useLearner((s) => s.refreshDay);
+  useEffect(() => {
+    const refresh = () => refreshDay();
+    refresh();
+    document.addEventListener('visibilitychange', refresh);
+    return () => document.removeEventListener('visibilitychange', refresh);
+  }, [refreshDay]);
+}
+
 export default function App() {
   const route = useRoute();
   const init = useSession((s) => s.init);
@@ -100,6 +111,8 @@ export default function App() {
   useEffect(() => {
     void init();
   }, [init]);
+
+  useDayRefresh();
 
   const section = SECTION[route.name];
   const focus = FOCUS.has(route.name);

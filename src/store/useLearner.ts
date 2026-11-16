@@ -373,10 +373,6 @@ export function requeuesSoon(card: StoredCard, now = Date.now()): boolean {
   return dueAt(card) - now <= SESSION_REQUEUE_MS;
 }
 
-export function completedUnits(cards: Record<string, StoredCard>): string[] {
-  return UNITS.filter((unit) => unit.words.every((w) => cards[w.id])).map((u) => u.id);
-}
-
 export function exportPayload(): string {
   const {
     cards,

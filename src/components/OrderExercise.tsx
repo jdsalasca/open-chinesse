@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEnterKey } from '../lib/hooks';
 import { playCorrect, playWrong } from '../lib/sfx';
 
 type Props = {
@@ -44,6 +45,7 @@ function OrderResult({
   last: boolean;
   onNext: () => void;
 }) {
+  useEnterKey(onNext);
   return (
     <div className="order">
       <p className="order__sentence" lang="zh-Hans">
@@ -53,7 +55,7 @@ function OrderResult({
       <p className={`order__result${correct ? '' : ' is-wrong'}`}>
         {correct ? 'Correcto.' : 'El orden era otro.'}
       </p>
-      <button type="button" className="button button--primary" onClick={onNext} autoFocus>
+      <button type="button" className="button button--primary" onClick={onNext}>
         {last ? 'Terminar' : 'Siguiente'}
       </button>
     </div>

@@ -12,6 +12,7 @@ import {
 } from '../data/scenarios';
 import { audioUrl } from '../lib/audio';
 import { navigate } from '../lib/router';
+import { useEnterKey } from '../lib/hooks';
 import { useLearner } from '../store/useLearner';
 
 type ChoiceStep = Extract<ScenarioStep, { kind: 'choice' }>;
@@ -132,6 +133,7 @@ function ChoiceResult({
   onNext: () => void;
 }) {
   const lastWrong = wrong.length > 0 ? wrong[wrong.length - 1] : null;
+  useEnterKey(onNext, picked !== null);
   return (
     <>
       {picked !== null && (
@@ -143,7 +145,7 @@ function ChoiceResult({
       {picked === null && <p className="choice__hint">Teclas 1–3 para elegir</p>}
       {picked !== null && (
         <div className="chat__advance">
-          <button type="button" className="button button--primary" onClick={onNext} autoFocus>
+          <button type="button" className="button button--primary" onClick={onNext}>
             {last ? 'Ver resumen' : 'Continuar'}
           </button>
         </div>
@@ -224,11 +226,12 @@ function LineStep({
   onNext: () => void;
   aids: Aids;
 }) {
+  useEnterKey(onNext);
   return (
     <>
       <Bubble line={line} audioId={audioId} aids={aids} />
       <div className="chat__advance">
-        <button type="button" className="button button--primary" onClick={onNext} autoFocus>
+        <button type="button" className="button button--primary" onClick={onNext}>
           {last ? 'Ver resumen' : 'Continuar'}
         </button>
       </div>
