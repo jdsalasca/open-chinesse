@@ -11,6 +11,7 @@ import {
   streakDays,
 } from '../store/metrics';
 import { useLearner } from '../store/useLearner';
+import { WeeklyRecap } from '../components/WeeklyRecap';
 
 const dayLabel = (key: string): string => {
   const [y, m, d] = key.split('-').map(Number);
@@ -40,6 +41,8 @@ export function Stats() {
           Datos calculados solo con tu historial local. Nada se envía a ningún servidor.
         </p>
       </header>
+
+      <WeeklyRecap now={now} />
 
       <dl className="stat-grid">
         <div className="stat">

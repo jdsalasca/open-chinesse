@@ -201,8 +201,11 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Tres misiones por día: repaso fijo y dos rotatorias según la fecha.
 - [x] Progreso real desde la actividad; «En contexto» solo cuenta aciertos.
 - [x] Recompensa de +30 XP una vez al día; el botón no se puede reclamar dos veces.
+- [x] Racha de misiones persistida (`missionDays`) y visible en Home.
+- [x] Resumen semanal en Progreso: siete días de actividad, aciertos y racha.
+- [x] Confeti y sonido al reclamar la recompensa.
 - [x] Tarjeta en Home; los logros siguen en Perfil.
-- [ ] Racha de misiones y resumen semanal.
+- [ ] Rachas de misión con recompensa por hitos (3, 7, 30 días).
 
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

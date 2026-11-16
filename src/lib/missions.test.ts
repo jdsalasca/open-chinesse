@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { dayKey } from '../store/metrics';
-import { allMissionsDone, makeMissions, missionProgress } from './missions';
-
+import {
+  allMissionsDone,
+  makeMissions,
+  missionProgress,
+  missionStreak,
+  weekActivity,
+} from './missions';
 const NOW = new Date(2026, 10, 15, 10, 0, 0).getTime();
 const KEY = dayKey(NOW);
 const YESTERDAY = NOW - 86_400_000;
@@ -58,5 +63,27 @@ describe('progreso de misiones', () => {
       })),
     );
     expect(allMissionsDone(activity, missions, KEY)).toBe(true);
+  });
+});
+
+describe('racha y resumen semanal', () => {
+  it('cuenta días consecutivos y acepta hoy pendiente', () => {
+    const days = ['2026-11-15', '2026-11-14', '2026-11-13'];
+    expect(missionStreak(days, '2026-11-16')).toBe(3);
+    expect(missionStreak([...days, '2026-11-16'], '2026-11-16')).toBe(4);
+    expect(missionStreak(['2026-11-14', '2026-11-16'], '2026-11-16')).toBe(1);
+  });
+
+  it('la semana trae siete días, incluidos los vacíos', () => {
+    const activity = [
+      { kind: 'review' as const, at: NOW, correct: true },
+      { kind: 'tones' as const, at: NOW, correct: false },
+      { kind: 'lesson' as const, at: YESTERDAY, correct: true },
+    ];
+    const week = weekActivity(activity, KEY);
+    expect(week).toHaveLength(7);
+    expect(week.at(-1)).toMatchObject({ key: KEY, count: 2, correct: 1 });
+    expect(week.at(-2)).toMatchObject({ key: dayKey(YESTERDAY), count: 1, correct: 1 });
+    expect(week.some((day) => day.count === 0)).toBe(true);
   });
 });

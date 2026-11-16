@@ -161,13 +161,13 @@ describe('misiones diarias', () => {
   it('reclama la recompensa solo con las tres misiones completas y una vez', () => {
     useLearner.getState().logActivity('review', true, NOW);
     useLearner.getState().claimMissions(NOW);
-    expect(useLearner.getState().missionsClaimed).toBeNull();
+    expect(useLearner.getState().missionDays).toEqual([]);
 
     const key = completeToday();
     const before = useLearner.getState().xp;
     useLearner.getState().claimMissions(NOW);
     expect(useLearner.getState().xp).toBe(before + 30);
-    expect(useLearner.getState().missionsClaimed).toBe(key);
+    expect(useLearner.getState().missionDays).toEqual([key]);
     useLearner.getState().claimMissions(NOW);
     expect(useLearner.getState().xp).toBe(before + 30);
   });

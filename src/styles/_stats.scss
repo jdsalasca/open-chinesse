@@ -178,3 +178,89 @@
   font-family: $font-mono;
   color: $mint-dark;
 }
+
+// Resumen semanal -------------------------------------------------------------
+.weekly {
+  display: grid;
+  gap: $space-3;
+}
+
+.weekly__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-2;
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+.weekly__streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
+  border-radius: $radius-pill;
+  background: $amber-soft;
+  color: #8a6100;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.weekly__bars {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  height: 120px;
+  align-items: end;
+}
+
+.weekly__day {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 4px;
+  height: 100%;
+  text-align: center;
+}
+
+.weekly__bar {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  border-radius: 6px;
+  background: $paper-deep;
+  overflow: hidden;
+
+  span {
+    width: 100%;
+    border-radius: 6px;
+    background: linear-gradient(180deg, $mint, $teal);
+    transition: height $motion $ease;
+  }
+}
+
+.weekly__day.is-today .weekly__bar {
+  outline: 2px solid rgb(0 184 107 / 35%);
+  outline-offset: 1px;
+}
+
+.weekly__label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.weekly__count {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: $ink-soft;
+}
+
+.weekly__summary {
+  font-size: 0.8rem;
+  color: $muted;
+}

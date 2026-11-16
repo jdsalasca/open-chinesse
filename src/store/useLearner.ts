@@ -44,7 +44,7 @@ export type LearnerPayload = {
   retention: Retention | null;
   scenarios: string[];
   activity: ActivityEntry[];
-  missionsClaimed: string | null;
+  missionDays: string[];
   lastEditAt: number;
   xp: number;
   stars: Record<string, number>;
@@ -58,7 +58,7 @@ export type LearnerState = {
   retention: Retention | null;
   scenarios: string[];
   activity: ActivityEntry[];
-  missionsClaimed: string | null;
+  missionDays: string[];
   createdAt: number;
   lastEditAt: number;
   xp: number;
@@ -102,7 +102,7 @@ const emptyState = () => {
     retention: null as Retention | null,
     scenarios: [] as string[],
     activity: [] as ActivityEntry[],
-    missionsClaimed: null as string | null,
+    missionDays: [] as string[],
     createdAt: now,
     lastEditAt: now,
     xp: 0,
@@ -222,7 +222,7 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
     retention: asRetention(parsed.retention),
     scenarios: asArray<string>(parsed.scenarios, []),
     activity: asArray<ActivityEntry>(parsed.activity, []),
-    missionsClaimed: typeof parsed.missionsClaimed === 'string' ? parsed.missionsClaimed : null,
+    missionDays: asArray<string>(parsed.missionDays, []),
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
@@ -253,9 +253,14 @@ function applyContentDefaults(payload: Partial<LearnerState>, version: number): 
   if (version < 5) payload.onboarded = Object.keys(payload.cards ?? {}).length > 0;
   if (version < 6) payload.retention = null;
   if (version < 7) payload.scenarios = [];
-  if (version < 8) {
-    payload.activity = [];
-    payload.missionsClaimed = null;
+}
+
+/** v8–v9: actividad diaria y días con las misiones reclamadas. */
+function applyActivityDefaults(payload: Partial<LearnerState>, version: number): void {
+  if (version < 8) payload.activity = [];
+  if (version < 9) {
+    const legacy = (payload as { missionsClaimed?: string | null }).missionsClaimed;
+    payload.missionDays = legacy ? [legacy] : [];
   }
 }
 
@@ -284,7 +289,7 @@ function claimMissions(store: Store, now: number): void {
   refreshDay(store, now);
   const state = store.get();
   const key = dayKey(now);
-  if (state.missionsClaimed === key) return;
+  if (state.missionDays.includes(key)) return;
   const missions = makeMissions(key);
   if (!allMissionsDone(state.activity, missions, key)) return;
   const xp = state.xp + MISSION_REWARD;
@@ -298,7 +303,7 @@ function claimMissions(store: Store, now: number): void {
   store.set({
     xp,
     todayXp: state.todayXp + MISSION_REWARD,
-    missionsClaimed: key,
+    missionDays: [...state.missionDays, key].slice(-400),
     achievements: [...new Set([...state.achievements, ...unlocked])],
     lastEditAt: now,
   });
@@ -332,12 +337,13 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 8,
+      version: 9,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
         applyV3Defaults(old, version);
         applyContentDefaults(old, version);
+        applyActivityDefaults(old, version);
         return old as LearnerState;
       },
       partialize: (state) => ({
@@ -347,7 +353,7 @@ export const useLearner = create<LearnerState>()(
         retention: state.retention,
         scenarios: state.scenarios,
         activity: state.activity,
-        missionsClaimed: state.missionsClaimed,
+        missionDays: state.missionDays,
         createdAt: state.createdAt,
         lastEditAt: state.lastEditAt,
         xp: state.xp,
@@ -379,7 +385,7 @@ export function exportPayload(): string {
     retention,
     scenarios,
     activity,
-    missionsClaimed,
+    missionDays,
     lastEditAt,
     xp,
     stars,
@@ -392,7 +398,7 @@ export function exportPayload(): string {
     retention,
     scenarios,
     activity,
-    missionsClaimed,
+    missionDays,
     lastEditAt,
     xp,
     stars,

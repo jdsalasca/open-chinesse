@@ -394,6 +394,8 @@
 }
 
 .missions {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: $space-3;
   align-content: start;
@@ -414,6 +416,25 @@
   font-family: $font-mono;
   font-size: 0.8rem;
   color: $muted;
+}
+
+.missions__head-meta {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.missions__streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  border-radius: $radius-pill;
+  background: $amber-soft;
+  color: #8a6100;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .missions__list {
@@ -502,6 +523,7 @@
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, $mint, $teal);
+    transition: width $motion $ease;
   }
 }
 

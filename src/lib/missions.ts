@@ -107,3 +107,53 @@ export function allMissionsDone(
 ): boolean {
   return missions.every((mission) => missionProgress(activity, mission, dateKey) >= mission.target);
 }
+
+const WEEKDAYS = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+
+function shiftDay(key: string, delta: number): string {
+  const [year, month, day] = key.split('-').map(Number);
+  const date = new Date(year, month - 1, day + delta);
+  return dayKey(date.getTime());
+}
+
+function weekdayLabel(key: string): string {
+  const [year, month, day] = key.split('-').map(Number);
+  return WEEKDAYS[new Date(year, month - 1, day).getDay()];
+}
+
+/** Días consecutivos con las tres misiones reclamadas; hoy puede estar pendiente. */
+export function missionStreak(days: string[], todayKey: string): number {
+  const claimed = new Set(days);
+  let cursor = claimed.has(todayKey) ? todayKey : shiftDay(todayKey, -1);
+  let streak = 0;
+  while (claimed.has(cursor)) {
+    streak += 1;
+    cursor = shiftDay(cursor, -1);
+  }
+  return streak;
+}
+
+export type DayActivity = {
+  key: string;
+  label: string;
+  count: number;
+  correct: number;
+};
+
+/** Actividad de los últimos días, del más antiguo a hoy, con días vacíos incluidos. */
+export function weekActivity(
+  activity: ActivityEntry[],
+  todayKey: string,
+  length = 7,
+): DayActivity[] {
+  return Array.from({ length }, (_, index) => {
+    const key = shiftDay(todayKey, index - length + 1);
+    const entries = activity.filter((entry) => dayKey(entry.at) === key);
+    return {
+      key,
+      label: weekdayLabel(key),
+      count: entries.length,
+      correct: entries.filter((entry) => entry.correct === true).length,
+    };
+  });
+}
