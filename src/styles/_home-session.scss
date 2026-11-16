@@ -1,0 +1,105 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Sesión de hoy ---------------------------------------------------------------
+.session {
+  display: grid;
+  gap: $space-4;
+  padding: $space-5;
+  @include surface($radius-lg, $shadow-md);
+}
+
+.session__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.session__title {
+  margin-top: 2px;
+  font-size: 1.35rem;
+}
+
+.session__goal {
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $mint-dark;
+  white-space: nowrap;
+
+  span {
+    font-weight: 600;
+    color: $muted;
+  }
+}
+
+.session__steps {
+  display: grid;
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.session__item {
+  display: flex;
+}
+
+.session__step {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  padding: $space-3 $space-4;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $surface;
+  }
+
+  &.is-next {
+    border-color: rgb(0 168 107 / 28%);
+    background: $mint-soft;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.95rem;
+  }
+
+  div > span {
+    font-size: 0.82rem;
+    color: $muted;
+  }
+
+  > div {
+    min-width: 0;
+  }
+}
+
+.session__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid $line;
+  background: $surface;
+  color: $mint-dark;
+}

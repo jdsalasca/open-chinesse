@@ -1,0 +1,71 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (max-width: 380px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievement-tile {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  min-width: 0;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+  color: $muted;
+
+  &.is-earned {
+    border-color: rgb(232 160 8 / 28%);
+    background: $amber-soft;
+    color: $ink;
+  }
+}
+
+.achievement__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $line;
+  border-radius: 9px;
+  background: $surface;
+
+  .is-earned & {
+    border-color: rgb(232 160 8 / 35%);
+    background: #fff;
+    color: #8a6100;
+  }
+}
+
+.achievement__text {
+  display: grid;
+  min-width: 0;
+
+  strong,
+  small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  strong {
+    font-size: 0.82rem;
+  }
+
+  small {
+    font-size: 0.72rem;
+    color: $muted;
+  }
+}

@@ -255,3 +255,31 @@
   font-size: 0.8rem;
   color: $muted;
 }
+
+// Compatibilidad: Stats usa este bloque como tarjeta informativa.
+.method {
+  padding: $space-5;
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+.method__list {
+  display: grid;
+  gap: $space-2;
+  margin: $space-3 0 0;
+  padding-left: 1.1rem;
+  color: $ink-soft;
+
+  li::marker {
+    color: $mint;
+  }
+
+  strong {
+    color: $ink;
+  }
+}

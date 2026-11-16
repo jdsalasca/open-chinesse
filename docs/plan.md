@@ -226,8 +226,6 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       ≤40 líneas por función, complejidad ≤8, archivos de pantalla <400 líneas.
 - [x] ESLint externo de `teachers`, Stylelint y Prettier limpios; Oxlint sin
       errores (9 advertencias de pureza de `Date.now`, preexistentes).
-- [ ] Dividir `Scenarios.tsx` (564 líneas) y `_home.scss` (728 líneas).
-- [ ] Extraer el ancho dinámico de las barras a una variable CSS sin `style`.
 
 ### C6 — Producto: situaciones y biblioteca
 
@@ -241,6 +239,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Progreso con la cabecera común y estado vacío del pronóstico semanal.
 - [x] Opciones de tonos más grandes: las marcas de tono dejan de perderse.
 - [x] Audio verificado en las 23 líneas de las cuatro situaciones.
+
+### C7 — Deuda: módulos pequeños
+
+- [x] `Scenarios.tsx` dividido: lista de 88 líneas, reproductor de 298 y
+      componentes de burbuja, elección y resumen en `components/scenario/`.
+- [x] `_home.scss` dividido en parciales (portada, sesión, progreso, misiones,
+      logros y ruta); el mayor queda en 202 líneas.
+- [x] Plural corregido en la insignia de racha («1 día», no «1 días»).
+- [ ] Extraer el ancho dinámico de las barras a una variable CSS sin `style`.
 
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

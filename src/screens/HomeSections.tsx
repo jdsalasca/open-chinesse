@@ -134,7 +134,7 @@ function ProgressCard({ home }: { home: HomeData }) {
           </h2>
         </div>
         <Badge tone={goalMet ? 'mint' : 'amber'} icon={<Icon name="flame" size={14} />}>
-          {goalMet ? 'Meta cumplida' : `${home.streak} días`}
+          {goalMet ? 'Meta cumplida' : `${home.streak} ${home.streak === 1 ? 'día' : 'días'}`}
         </Badge>
       </div>
       <div className="progress-card__body">

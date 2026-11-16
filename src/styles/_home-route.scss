@@ -1,0 +1,97 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Ruta ------------------------------------------------------------------------
+.units {
+  display: grid;
+  gap: $space-4;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: $space-3 $space-4;
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p:not(.eyebrow) {
+    margin-top: 2px;
+    font-size: 0.92rem;
+    color: $muted;
+  }
+}
+
+.level-switch {
+  display: flex;
+  gap: $space-1;
+  padding: $space-1;
+  background: $paper-deep;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+}
+
+.level-switch__tab {
+  display: grid;
+  gap: 1px;
+  padding: $space-2 $space-4;
+  border: 1px solid transparent;
+  border-radius: $radius;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: $muted;
+
+  @include focus-ring;
+
+  &:hover {
+    color: $ink;
+  }
+
+  &.is-active {
+    border-color: $forest;
+    background: $forest;
+    color: #fff;
+    box-shadow: $shadow-sm;
+
+    .level-switch__meta {
+      color: rgb(255 255 255 / 65%);
+    }
+  }
+}
+
+.level-switch__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.level-switch__meta {
+  font-size: 0.75rem;
+  color: $muted;
+}
+
+.mini-bar {
+  height: 8px;
+  border-radius: $radius-pill;
+  background: $paper-deep;
+  overflow: hidden;
+  border: 1px solid rgb(0 168 107 / 14%);
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $mint, $teal);
+    transition: width $motion $ease;
+  }
+}
+
+@include reduced-motion {
+  .mini-bar span {
+    transition: none;
+  }
+}
