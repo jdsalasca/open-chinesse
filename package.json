@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:server": "tsc -b && vite build --outDir backend/src/main/resources/static --emptyOutDir",
     "lint": "oxlint",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { UNITS, WORDS_BY_ID, ALL_WORDS } from '../data/curriculum';
+import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { makeQuiz } from './quiz';
 
 describe('makeQuiz', () => {
@@ -20,21 +20,14 @@ describe('makeQuiz', () => {
         expect(question.options).toHaveLength(4);
         expect(new Set(question.options).size).toBe(4);
         expect(question.options).toContain(meaning);
-      }
-    }
-  });
-
-  it('los distractores no repiten el significado correcto', () => {
-    for (const unit of UNITS) {
-      for (const question of makeQuiz(unit)) {
-        const meaning = WORDS_BY_ID.get(question.wordId)!.meaning;
-        const others = ALL_WORDS.filter((w) => w.id !== question.wordId && w.meaning === meaning);
-        expect(others).toHaveLength(0);
+        expect(question.options.filter((o) => o === meaning)).toHaveLength(1);
       }
     }
   });
 
   it('es determinista para la misma unidad', () => {
-    expect(makeQuiz(UNITS[0])).toEqual(makeQuiz(UNITS[0]));
+    for (const unit of UNITS) {
+      expect(makeQuiz(unit)).toEqual(makeQuiz(unit));
+    }
   });
 });

@@ -1,8 +1,17 @@
-import { UNITS } from '../data/curriculum';
+import { useState } from 'react';
+import {
+  LEVELS,
+  LEVEL_LABELS,
+  LEVEL_TITLES,
+  TOTAL_WORDS,
+  UNITS,
+  unitsForLevel,
+  wordsForLevel,
+  type Level,
+} from '../data/curriculum';
 import { navigate } from '../lib/router';
 import { buildQueue } from '../srs/queue';
-import { reviewsToday, streakDays } from '../store/metrics';
-import { masteredCount } from '../store/metrics';
+import { masteredCount, streakDays } from '../store/metrics';
 import { completedUnits, useLearner } from '../store/useLearner';
 
 export function Home() {
@@ -10,17 +19,27 @@ export function Home() {
   const log = useLearner((s) => s.log);
   const now = Date.now();
 
+  const done = completedUnits(cards);
+  const [level, setLevel] = useState<Level>(() => {
+    const pending = UNITS.find((u) => !done.includes(u.id));
+    return pending?.level ?? 2;
+  });
+
   const queue = buildQueue(cards, now);
   const streak = streakDays(log, now);
-  const done = completedUnits(cards);
-  const nextUnit = UNITS.find((u) => !done.includes(u.id));
+  const levelUnits = unitsForLevel(level);
+  const nextUnit = levelUnits.find((u) => !done.includes(u.id));
   const started = Object.keys(cards).length > 0;
+  const learnedTotal = UNITS.filter((u) => done.includes(u.id)).reduce(
+    (total, unit) => total + unit.words.length,
+    0,
+  );
 
   return (
     <div className="home">
       <section className="hero">
         <div className="hero__text">
-          <p className="eyebrow">Chino mandarín · HSK 1</p>
+          <p className="eyebrow">Chino mandarín · HSK 1 y HSK 2</p>
           <h1 className="hero__title">
             <span lang="zh-Hans">你好</span>
             <span className="hero__title-note">hola</span>
@@ -28,7 +47,7 @@ export function Home() {
           <p className="hero__lead">
             {started
               ? 'Repasa lo que ya viste o sigue con la siguiente unidad. Cinco minutos cuentan.'
-              : 'Empieza por los saludos. Cada palabra viene con audio, pinyin y una frase real.'}
+              : `Empieza por los saludos. ${TOTAL_WORDS} palabras con audio, pinyin y una frase real.`}
           </p>
           <div className="hero__actions">
             {queue.total > 0 && (
@@ -47,7 +66,9 @@ export function Home() {
             )}
             {!nextUnit && queue.total === 0 && (
               <p className="hero__calm">
-                Terminaste las seis unidades y no hay repasos pendientes. Vuelve mañana.
+                {level === 2
+                  ? 'Terminaste HSK 1 y HSK 2 sin repasos pendientes. Vuelve mañana.'
+                  : 'Esta parte está al día. Cambia de nivel para seguir avanzando.'}
               </p>
             )}
           </div>
@@ -69,19 +90,51 @@ export function Home() {
             <dd>{masteredCount(cards)}</dd>
           </div>
           <div>
-            <dt>Repasos hoy</dt>
-            <dd>{reviewsToday(log, now)}</dd>
+            <dt>Aprendidas</dt>
+            <dd>
+              {learnedTotal}
+              <small> / {TOTAL_WORDS}</small>
+            </dd>
           </div>
         </dl>
       </section>
 
       <section className="units" aria-labelledby="units-title">
         <div className="section-head">
-          <h2 id="units-title">Tu ruta</h2>
-          <p>Seis unidades, doce palabras cada una. Sin orden obligatorio.</p>
+          <div>
+            <h2 id="units-title">Tu ruta</h2>
+            <p>
+              {unitsForLevel(1).length} unidades de HSK 1 y {unitsForLevel(2).length} de HSK 2.
+              Sin orden obligatorio.
+            </p>
+          </div>
+          <div className="level-switch" role="tablist" aria-label="Nivel">
+            {LEVELS.map((item) => {
+              const total = wordsForLevel(item);
+              const learned = unitsForLevel(item)
+                .filter((u) => done.includes(u.id))
+                .reduce((sum, unit) => sum + unit.words.length, 0);
+              return (
+                <button
+                  key={item}
+                  type="button"
+                  role="tab"
+                  aria-selected={level === item}
+                  className={`level-switch__tab${level === item ? ' is-active' : ''}`}
+                  onClick={() => setLevel(item)}
+                >
+                  <span className="level-switch__name">{LEVEL_LABELS[item]}</span>
+                  <span className="level-switch__meta">
+                    {LEVEL_TITLES[item]} · {learned}/{total}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
+
         <ol className="unit-list">
-          {UNITS.map((unit) => {
+          {levelUnits.map((unit) => {
             const learned = unit.words.filter((w) => cards[w.id]).length;
             const complete = learned === unit.words.length;
             return (

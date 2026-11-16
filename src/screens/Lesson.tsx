@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
-import { ALL_WORDS, UNITS } from '../data/curriculum';
+import { ALL_WORDS, LEVEL_LABELS, UNITS } from '../data/curriculum';
 import { makeQuiz } from '../lib/quiz';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
@@ -60,7 +60,7 @@ export function Lesson({ unitId }: { unitId: string }) {
     return (
       <div className="lesson">
         <div className="lesson__bar">
-          <span className="lesson__label">Unidad {unit.index} · {unit.title}</span>
+          <span className="lesson__label">{LEVEL_LABELS[unit.level]} · {unit.title}</span>
           <span className="lesson__count">
             {index + 1} / {unit.words.length}
           </span>
@@ -107,7 +107,7 @@ export function Lesson({ unitId }: { unitId: string }) {
     return (
       <div className="lesson">
         <div className="lesson__bar">
-          <span className="lesson__label">Práctica · Unidad {unit.index}</span>
+          <span className="lesson__label">Práctica · {LEVEL_LABELS[unit.level]}</span>
           <span className="lesson__count">
             {index + 1} / {quiz.length}
           </span>
@@ -168,7 +168,7 @@ export function Lesson({ unitId }: { unitId: string }) {
   return (
     <div className="lesson">
       <section className="summary" aria-live="polite">
-        <p className="eyebrow">Unidad {unit.index} completada</p>
+        <p className="eyebrow">{LEVEL_LABELS[unit.level]} · {unit.title}</p>
         <h1 className="summary__title">
           {correct} de {answers.length} correctas
         </h1>

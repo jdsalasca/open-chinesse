@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { Rating } from 'ts-fsrs';
 import { UNITS } from '../data/curriculum';
 import { newCard } from '../srs/scheduler';
-import { completedUnits, requeuesSoon, useLearner } from './useLearner';
+import { completedUnits, exportPayload, requeuesSoon, useLearner } from './useLearner';
 
 const NOW = new Date('2026-11-15T10:00:00Z').getTime();
 const UNIT = UNITS[0];
@@ -59,8 +59,37 @@ describe('persistencia', () => {
   });
 });
 
-describe('requeuesSoon', () => {
-  it('re-encola pasos de aprendizaje cortos', () => {
+describe('sincronización', () => {
+  it('exporta e hidrata el mismo progreso', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    useLearner.getState().gradeWord(UNIT.words[0].id, Rating.Good, NOW);
+    const payload = exportPayload();
+    useLearner.getState().reset();
+    expect(Object.keys(useLearner.getState().cards)).toHaveLength(0);
+
+    useLearner.getState().hydrate(payload);
+    const restored = useLearner.getState();
+    expect(Object.keys(restored.cards)).toHaveLength(UNIT.words.length);
+    expect(restored.log).toHaveLength(1);
+    expect(restored.cards[UNIT.words[0].id].reps).toBe(1);
+    expect(restored.lastEditAt).toBe(NOW);
+  });
+
+  it('ignora un payload inválido sin borrar lo local', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    useLearner.getState().hydrate('{"no":"cards"}');
+    expect(Object.keys(useLearner.getState().cards)).toHaveLength(UNIT.words.length);
+  });
+
+  it('marca lastEditAt en cada cambio', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    expect(useLearner.getState().lastEditAt).toBe(NOW);
+    useLearner.getState().gradeWord(UNIT.words[0].id, Rating.Good, NOW + 1000);
+    expect(useLearner.getState().lastEditAt).toBe(NOW + 1000);
+  });
+});
+
+describe('requeuesSoon', () => {  it('re-encola pasos de aprendizaje cortos', () => {
     expect(requeuesSoon(newCard(NOW), NOW)).toBe(true);
   });
 

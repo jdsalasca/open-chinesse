@@ -62,6 +62,44 @@
   gap: $space-1;
 }
 
+.account {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.account__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid $line-strong;
+  object-fit: cover;
+}
+
+.account__avatar--empty {
+  display: grid;
+  place-items: center;
+  background: $paper-deep;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: $ink-soft;
+}
+
+.account__name {
+  max-width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: $ink-soft;
+}
+
+.account__login {
+  padding: $space-2 $space-3;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
 .nav__link {
   padding: $space-2 $space-3;
   border-radius: $radius-pill;
@@ -108,5 +146,20 @@
   .nav__link {
     padding: $space-2;
     font-size: 0.9rem;
+  }
+
+  .chrome__inner {
+    flex-wrap: wrap;
+    row-gap: $space-2;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .account__name {
+    display: none;
   }
 }

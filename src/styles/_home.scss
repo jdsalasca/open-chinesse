@@ -103,9 +103,9 @@
 .section-head {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: $space-2 $space-4;
+  gap: $space-3 $space-4;
   margin-bottom: $space-4;
 
   h2 {
@@ -115,7 +115,53 @@
   p {
     color: $muted;
     font-size: 0.95rem;
+    margin-top: $space-1;
   }
+}
+
+.level-switch {
+  display: flex;
+  gap: $space-1;
+  padding: $space-1;
+  background: $paper-deep;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+}
+
+.level-switch__tab {
+  display: grid;
+  gap: 1px;
+  padding: $space-2 $space-4;
+  border: 1px solid transparent;
+  border-radius: $radius;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: $muted;
+
+  @include focus-ring;
+
+  &:hover {
+    color: $ink;
+  }
+
+  &.is-active {
+    background: $surface;
+    border-color: $line;
+    color: $ink;
+    box-shadow: $shadow-sm;
+  }
+}
+
+.level-switch__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.level-switch__meta {
+  font-size: 0.75rem;
+  color: $muted;
 }
 
 .unit-list {
