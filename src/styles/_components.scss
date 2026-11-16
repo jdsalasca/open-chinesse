@@ -1,0 +1,268 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+// Botones -------------------------------------------------------------------
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-5;
+  border-radius: $radius-pill;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+
+  @include focus-ring;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @include reduced-motion {
+    transition: none;
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+.button--primary {
+  background: $accent;
+  color: #fff;
+  box-shadow: 0 10px 24px -14px rgb(195 63 44 / 90%);
+
+  &:hover {
+    background: $accent-dark;
+  }
+}
+
+.button--ghost {
+  background: $surface;
+  border-color: $line-strong;
+  color: $ink-soft;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent-dark;
+  }
+}
+
+.button--danger {
+  background: $danger;
+  color: #fff;
+
+  &:hover {
+    background: #8d1f17;
+  }
+}
+
+// Pinyin --------------------------------------------------------------------
+.pinyin {
+  font-family: $font-ui;
+  letter-spacing: 0.01em;
+}
+
+.pinyin__token {
+  margin-right: 0.28em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.pinyin__tone {
+  font-size: 0.55em;
+  font-weight: 700;
+  margin-left: 1px;
+}
+
+.tone-1 {
+  color: $tone-1;
+}
+.tone-2 {
+  color: $tone-2;
+}
+.tone-3 {
+  color: $tone-3;
+}
+.tone-4 {
+  color: $tone-4;
+}
+.tone-5 {
+  color: $tone-5;
+}
+
+// Audio ---------------------------------------------------------------------
+.audio-button {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $line-strong;
+  background: $surface;
+  color: $accent;
+  cursor: pointer;
+
+  @include focus-ring;
+
+  &:hover {
+    background: $accent-soft;
+    border-color: $accent;
+  }
+
+  &.is-playing {
+    background: $accent;
+    color: #fff;
+  }
+}
+
+.audio-button--compact {
+  width: 30px;
+  height: 30px;
+}
+
+// Progreso ------------------------------------------------------------------
+.progress {
+  height: 6px;
+  border-radius: $radius-pill;
+  background: $paper-deep;
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, $accent, $gold);
+    border-radius: inherit;
+    transition: width 240ms ease;
+  }
+}
+
+// Tarjeta -------------------------------------------------------------------
+.flashcard {
+  @include surface($radius-lg, $shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  padding: $space-6 $space-4;
+  text-align: center;
+
+  @include from($bp-sm) {
+    padding: $space-7 $space-6;
+  }
+}
+
+.flashcard__hanzi {
+  @include hanzi(clamp(4.2rem, 13vw, 6.4rem));
+  color: $ink;
+}
+
+.flashcard__row {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.flashcard__pinyin {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.flashcard__pinyin--hidden,
+.flashcard__meaning--hidden {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $muted;
+}
+
+.flashcard__meaning {
+  font-size: 1.15rem;
+  color: $ink-soft;
+}
+
+// Ejemplo -------------------------------------------------------------------
+.example {
+  width: 100%;
+  max-width: 520px;
+  margin-top: $space-2;
+  padding: $space-4;
+  background: $paper;
+  border: 1px dashed $line-strong;
+  border-radius: $radius;
+  text-align: left;
+}
+
+.example__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-2;
+}
+
+.example__label {
+  @include eyebrow;
+  font-size: 0.7rem;
+}
+
+.example__hanzi {
+  @include hanzi(1.5rem);
+  color: $ink;
+}
+
+.example__pinyin {
+  margin-top: $space-1;
+  font-size: 0.98rem;
+}
+
+.example__translation {
+  margin-top: $space-1;
+  color: $muted;
+  font-size: 0.95rem;
+}
+
+// Panel genérico ------------------------------------------------------------
+.panel {
+  @include surface($radius-lg);
+  padding: $space-6;
+  display: grid;
+  gap: $space-4;
+  justify-items: start;
+}
+
+.empty {
+  @include surface($radius-lg, $shadow-md);
+  padding: $space-7 $space-5;
+  display: grid;
+  gap: $space-4;
+  justify-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+
+  p {
+    max-width: 52ch;
+    color: $muted;
+  }
+}
+
+.empty__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  justify-content: center;
+}
+
+.empty__when {
+  font-weight: 600;
+  color: $jade;
+}

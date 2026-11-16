@@ -1,0 +1,49 @@
+// Paleta y escala. Nada de valores sueltos en los parciales.
+$ink: #1b1a17;
+$ink-soft: #3d3932;
+$muted: #6f6860;
+$paper: #faf7f2;
+$paper-deep: #f1e9dd;
+$surface: #fffdf9;
+$line: #e4dbcd;
+$line-strong: #cfc3b1;
+
+$accent: #c33f2c;
+$accent-dark: #9d2c1c;
+$accent-soft: #f6e2dd;
+$jade: #2f6b5a;
+$gold: #b7791f;
+$blue: #2b5d8a;
+$danger: #a4271d;
+
+$tone-1: #c33f2c;
+$tone-2: #8f5a0c;
+$tone-3: #2f6b5a;
+$tone-4: #2b5d8a;
+$tone-5: #6f675e;
+
+$radius-sm: 8px;
+$radius: 14px;
+$radius-lg: 24px;
+$radius-pill: 999px;
+
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 3rem;
+$space-8: 4rem;
+
+$font-ui: 'Source Sans 3', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-hanzi: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+$font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+$shadow-sm: 0 1px 2px rgb(27 26 23 / 6%);
+$shadow-md: 0 1px 2px rgb(27 26 23 / 5%), 0 12px 32px -18px rgb(27 26 23 / 35%);
+$shadow-lg: 0 2px 4px rgb(27 26 23 / 4%), 0 24px 60px -32px rgb(27 26 23 / 40%);
+
+$bp-sm: 640px;
+$bp-md: 900px;
+$max-width: 1040px;

@@ -1,0 +1,154 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.review {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.flashcard--review {
+  gap: $space-3;
+}
+
+.typed {
+  display: grid;
+  gap: $space-2;
+  width: 100%;
+  max-width: 440px;
+  margin-top: $space-2;
+  text-align: left;
+}
+
+.typed__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.typed__row {
+  display: flex;
+  gap: $space-2;
+
+  .button {
+    padding-inline: $space-4;
+  }
+}
+
+.typed__input {
+  flex: 1;
+  min-width: 0;
+  padding: $space-3 $space-4;
+  border: 1px solid $line-strong;
+  border-radius: $radius;
+  background: $surface;
+  font: inherit;
+  font-size: 1.05rem;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    box-shadow: 0 0 0 3px rgb(195 63 44 / 18%);
+  }
+}
+
+.typed__result {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.typed__result--ok {
+  color: $jade;
+}
+
+.typed__result--bad {
+  color: $accent-dark;
+}
+
+.answer {
+  display: grid;
+  gap: $space-3;
+  justify-items: center;
+  width: 100%;
+}
+
+.review__actions {
+  display: grid;
+  gap: $space-2;
+  justify-items: center;
+}
+
+.review__grades {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-2;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.grade {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: $space-3;
+  border: 1px solid $line-strong;
+  border-top: 3px solid $line-strong;
+  border-radius: $radius;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: $shadow-sm;
+
+  @include focus-ring;
+
+  &:hover {
+    background: $paper;
+  }
+}
+
+.grade__label {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.grade__interval {
+  font-size: 0.8rem;
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+}
+
+.grade__key {
+  position: absolute;
+  top: $space-2;
+  right: $space-3;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $line-strong;
+}
+
+.grade--1 {
+  border-top-color: $accent;
+}
+.grade--2 {
+  border-top-color: $gold;
+}
+.grade--3 {
+  border-top-color: $jade;
+}
+.grade--4 {
+  border-top-color: $blue;
+}
+
+.review__grades .hint {
+  grid-column: 1 / -1;
+  margin-top: $space-1;
+  text-align: center;
+}

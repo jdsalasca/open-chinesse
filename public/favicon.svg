@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#c33f2c" />
+  <text
+    x="32"
+    y="45"
+    text-anchor="middle"
+    font-family="Noto Sans SC, Microsoft YaHei, sans-serif"
+    font-size="34"
+    fill="#fffdf9"
+  >你</text>
+</svg>

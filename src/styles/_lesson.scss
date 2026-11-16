@@ -1,0 +1,162 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.lesson {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lesson__bar,
+.review__bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.lesson__label,
+.review__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.lesson__count {
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.lesson__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+  margin-top: $space-2;
+}
+
+// Quiz ----------------------------------------------------------------------
+.quiz {
+  @include surface($radius-lg, $shadow-lg);
+  display: grid;
+  gap: $space-5;
+  padding: $space-6 $space-4;
+  text-align: center;
+
+  @include from($bp-sm) {
+    padding: $space-7 $space-6;
+  }
+}
+
+.quiz__prompt-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.quiz__hanzi {
+  @include hanzi(clamp(3.2rem, 9vw, 4.6rem));
+  margin-top: $space-2;
+}
+
+.quiz__audio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  margin-top: $space-2;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.quiz__options {
+  display: grid;
+  gap: $space-2;
+
+  @include from($bp-sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.option {
+  padding: $space-3 $space-4;
+  border: 1px solid $line-strong;
+  border-radius: $radius;
+  background: $surface;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+
+  @include focus-ring;
+
+  &:hover:not(:disabled) {
+    border-color: $accent;
+    background: $accent-soft;
+  }
+
+  &.is-correct {
+    border-color: $jade;
+    background: rgb(47 107 90 / 12%);
+    color: #255647;
+    font-weight: 600;
+  }
+
+  &.is-wrong {
+    border-color: $accent;
+    background: $accent-soft;
+    color: $accent-dark;
+    font-weight: 600;
+  }
+
+  &.is-muted {
+    opacity: 0.55;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.quiz__feedback {
+  display: grid;
+  gap: $space-3;
+  justify-items: center;
+  color: $ink-soft;
+}
+
+// Resumen -------------------------------------------------------------------
+.summary {
+  @include surface($radius-lg, $shadow-lg);
+  padding: $space-7 $space-5;
+  display: grid;
+  gap: $space-3;
+  justify-items: center;
+  text-align: center;
+}
+
+.summary__title {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+}
+
+.summary__text {
+  max-width: 46ch;
+  color: $muted;
+}
+
+.summary__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  justify-content: center;
+  margin-top: $space-3;
+}
