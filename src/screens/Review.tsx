@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
 import { SessionNext } from '../components/SessionNext';
+import { SessionHeader } from '../components/SessionHeader';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
@@ -161,14 +162,11 @@ export function Review() {
 
   return (
     <div className="review">
-      <div className="review__bar">
-        <span className="review__label">
-          Repaso · {done + 1} de {queue.length}
-        </span>
-        <button type="button" className="link" onClick={() => navigate('/')}>
-          Salir
-        </button>
-      </div>
+      <SessionHeader
+        label="Repaso"
+        count={`${done + 1} de ${queue.length}`}
+        onExit={() => navigate('/')}
+      />
       <div className="progress" aria-hidden="true">
         <span style={{ width: `${(done / Math.max(queue.length, 1)) * 100}%` }} />
       </div>

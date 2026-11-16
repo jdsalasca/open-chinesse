@@ -12,6 +12,7 @@ import { makeQuiz } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
 import { playComplete, playCorrect, playWrong } from '../lib/sfx';
 import { SessionNext } from '../components/SessionNext';
+import { SessionHeader } from '../components/SessionHeader';
 import { useDailySession } from '../store/daily-session';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
@@ -92,14 +93,11 @@ export function Lesson({ unitId }: { unitId: string }) {
   if (phase === 'learn') {
     return (
       <div className="lesson">
-        <div className="lesson__bar">
-          <span className="lesson__label">
-            {LEVEL_LABELS[unit.level]} · {unit.title}
-          </span>
-          <span className="lesson__count">
-            {index + 1} / {unit.words.length}
-          </span>
-        </div>
+        <SessionHeader
+          label={`${LEVEL_LABELS[unit.level]} · ${unit.title}`}
+          count={`${index + 1} / ${unit.words.length}`}
+          onExit={() => navigate('/')}
+        />
         <div className="progress" aria-hidden="true">
           <span style={{ width: `${((index + 1) / unit.words.length) * 100}%` }} />
         </div>
@@ -149,12 +147,11 @@ export function Lesson({ unitId }: { unitId: string }) {
   if (phase === 'quiz' && question && questionWord) {
     return (
       <div className="lesson">
-        <div className="lesson__bar">
-          <span className="lesson__label">Práctica · {LEVEL_LABELS[unit.level]}</span>
-          <span className="lesson__count">
-            {index + 1} / {quiz.length}
-          </span>
-        </div>
+        <SessionHeader
+          label={`Práctica · ${LEVEL_LABELS[unit.level]}`}
+          count={`${index + 1} / ${quiz.length}`}
+          onExit={() => navigate('/')}
+        />
         <div className="progress" aria-hidden="true">
           <span style={{ width: `${((index + 1) / quiz.length) * 100}%` }} />
         </div>

@@ -8,6 +8,11 @@ type Props = {
   done: string[];
 };
 
+function actionLabel(complete: boolean, started: boolean): string {
+  if (complete) return 'Repetir';
+  return started ? 'Continuar' : 'Estudiar';
+}
+
 /** Rejilla de unidades: cada tarjeta entera abre la lección. */
 export function HomePath({ units, cards, stars, done }: Props) {
   return (
@@ -48,8 +53,7 @@ export function HomePath({ units, cards, stars, done }: Props) {
                   {learned} de {unit.words.length} palabras · {label}
                 </span>
                 <span className="roadmap__go" aria-hidden="true">
-                  {complete ? 'Repetir' : started ? 'Continuar' : 'Estudiar'}{' '}
-                  <Icon name="arrow" size={14} />
+                  {actionLabel(complete, started)} <Icon name="arrow" size={14} />
                 </span>
               </span>
             </a>

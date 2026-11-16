@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Card } from '../components/ui/Card';
+import { SessionHeader } from '../components/SessionHeader';
 import { WORDS_BY_ID } from '../data/curriculum';
 import { makeCheck, isDue, optionState } from '../lib/check';
 import { navigate } from '../lib/router';
@@ -53,12 +54,11 @@ function OptionList({
 
 function Bar({ index, total }: { index: number; total: number }) {
   return (
-    <div className="lesson__bar">
-      <span className="lesson__label">Prueba de retención · sin pistas</span>
-      <span className="lesson__count">
-        {index + 1} / {total}
-      </span>
-    </div>
+    <SessionHeader
+      label="Prueba de retención · sin pistas"
+      count={`${index + 1} / ${total}`}
+      onExit={() => navigate('/practicar')}
+    />
   );
 }
 

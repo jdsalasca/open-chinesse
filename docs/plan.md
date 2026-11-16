@@ -143,8 +143,9 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 
 ### P2 — Sesión (Lección, Repaso, Tonos)
 
-- [ ] Modo foco: sin navegación global durante una sesión, con salida explícita.
-- [ ] Progreso segmentado y contador; acciones ancladas y teclas visibles.
+- [x] Modo foco: sin navegación global durante una sesión, con salida explícita.
+- [x] Cabecera de sesión común: salir, contexto y contador.
+- [ ] Progreso segmentado y acciones ancladas; teclas visibles en todo momento.
 - [ ] Feedback de acierto/error y cierre de sesión con siguiente paso claro.
 
 ### P3 — Biblioteca (Practicar, Historias, Inmersión, Progreso, Perfil)

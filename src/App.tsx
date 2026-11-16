@@ -93,30 +93,33 @@ export default function App() {
   }, [init]);
 
   const section = SECTION[route.name];
+  const focus = route.name === 'lesson' || route.name === 'review' || route.name === 'tones';
 
   return (
-    <div className="app">
+    <div className={`app${focus ? ' app--focus' : ''}`}>
       <a className="skip-link" href="#contenido">
         Ir al contenido
       </a>
-      <Header route={route} />
+      {!focus && <Header route={route} />}
       <main className="main" id="contenido">
         <SessionBar />
         <RouteView route={route} />
       </main>
-      {section && <BottomNav current={section} />}
+      {!focus && section && <BottomNav current={section} />}
       <CharacterDrawer />
       <CharacterMenu />
-      <footer className="foot">
-        <p>
-          Progreso guardado en este navegador y, si entras con tu cuenta, sincronizado. Sin
-          notificaciones ni rachas punitivas.
-        </p>
-        <button type="button" className="link" onClick={() => navigate('/stats')}>
-          Ver progreso
-        </button>
-        <SoundToggle />
-      </footer>
+      {!focus && (
+        <footer className="foot">
+          <p>
+            Progreso guardado en este navegador y, si entras con tu cuenta, sincronizado. Sin
+            notificaciones ni rachas punitivas.
+          </p>
+          <button type="button" className="link" onClick={() => navigate('/stats')}>
+            Ver progreso
+          </button>
+          <SoundToggle />
+        </footer>
+      )}
     </div>
   );
 }

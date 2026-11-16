@@ -7,6 +7,7 @@ import { navigate } from '../lib/router';
 import { playCorrect, playWrong } from '../lib/sfx';
 import { makeToneQuiz, type ToneQuestion } from '../lib/tone-quiz';
 import { SessionNext } from '../components/SessionNext';
+import { SessionHeader } from '../components/SessionHeader';
 
 function Summary({ score, total, onRetry }: { score: number; total: number; onRetry: () => void }) {
   return (
@@ -97,12 +98,11 @@ function Feedback({
 
 function Bar({ index, total }: { index: number; total: number }) {
   return (
-    <div className="lesson__bar">
-      <span className="lesson__label">Tonos · escucha y elige</span>
-      <span className="lesson__count">
-        {index + 1} / {total}
-      </span>
-    </div>
+    <SessionHeader
+      label="Tonos · escucha y elige"
+      count={`${index + 1} / ${total}`}
+      onExit={() => navigate('/practicar')}
+    />
   );
 }
 
