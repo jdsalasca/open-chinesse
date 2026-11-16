@@ -44,6 +44,23 @@ Y dos detalles de credibilidad:
   «No lo sé»; ahora dice «Fallaste por…».
 - `CharacterLinks` usaba `key={char}` y avisaba por caracteres repetidos (谢谢).
 
+### Revisión de terra sobre el commit
+
+Terra señaló dos bugs reales, ya corregidos y verificados en navegador:
+
+- **Repaso consecutivo:** el estado de la pregunta se reiniciaba solo al cambiar
+  `wordId`; si una tarjeta se reencolaba y volvía a ser la siguiente (misma
+  palabra, distinto cursor), seguía revelada y se podía calificar sin responder.
+  Ahora el reinicio depende del cursor (`useReviewTyping(queue.cursor)`).
+- **Atajos con la ficha abierta:** Enter avanzaba la lección y las teclas 1–4
+  calificaban el repaso por detrás del diálogo. `useEnterKey` y el teclado del
+  repaso ignoran eventos mientras exista `[aria-modal="true"]`.
+
+Queda como limitación conocida, sin tocar migraciones: un usuario con datos
+anteriores al esquema 3 tiene `stars` vacío y verá sus unidades como pendientes.
+La app lleva en producción desde el esquema 9; se documenta en vez de reescribir
+progreso ajeno.
+
 ## Evidencia
 
 ```text
@@ -67,6 +84,11 @@ pnpm build                                         ✓
   exactamente uno; 11 avances entran a la práctica; el ejercicio de ordenar
   queda correcto y avanza con clic y con Enter; el resumen registra 1 de 6 y
   +25 XP.
+- Repaso reencolado: al calificar «Otra vez» una tarjeta que vuelve en la misma
+  sesión, la siguiente pregunta se muestra sin revelar, con el campo vacío y
+  enfocado (antes conservaba la respuesta).
+- Ficha abierta: Enter no avanza la lección y las teclas 1–4 no califican por
+  detrás; al cerrar, los atajos vuelven a funcionar.
 - Ficha de carácter: al abrir, el foco está en `.drawer__panel.is-active`; 14
   Tab consecutivos permanecen dentro del panel; Escape cierra y devuelve el
   foco al botón «Ver el origen del carácter 你».

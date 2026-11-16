@@ -12,6 +12,7 @@ export function useEnterKey(action: () => void, enabled = true): void {
     if (!enabled) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== 'Enter' || event.defaultPrevented) return;
+      if (document.querySelector('[aria-modal="true"]')) return;
       const tag = (event.target as HTMLElement | null)?.tagName ?? '';
       if (TYPING_TAGS.has(tag) || NATIVE_ENTER_TAGS.has(tag)) return;
       event.preventDefault();

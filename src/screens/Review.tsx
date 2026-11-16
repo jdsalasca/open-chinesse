@@ -54,7 +54,7 @@ function useReviewQueue() {
   return { queue, cursor, current, grade };
 }
 
-function useReviewTyping(wordId?: string) {
+function useReviewTyping(step: number) {
   const [revealed, setRevealed] = useState(false);
   const [typed, setTyped] = useState('');
   const [typedState, setTypedState] = useState<PinyinCheck | null>(null);
@@ -64,11 +64,11 @@ function useReviewTyping(wordId?: string) {
     setRevealed(false);
     setTyped('');
     setTypedState(null);
-  }, [wordId]);
+  }, [step]);
 
   useEffect(() => {
     if (!revealed) inputRef.current?.focus({ preventScroll: true });
-  }, [wordId, revealed]);
+  }, [step, revealed]);
 
   return { revealed, setRevealed, typed, setTyped, typedState, setTypedState, inputRef };
 }
@@ -121,7 +121,10 @@ function handleReviewKey(event: KeyboardEvent, keys: ReviewKeys): void {
 
 function useReviewKeyboard(keys: ReviewKeys): void {
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => handleReviewKey(event, keys);
+    const onKey = (event: KeyboardEvent) => {
+      if (document.querySelector('[aria-modal="true"]')) return;
+      handleReviewKey(event, keys);
+    };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
@@ -469,7 +472,7 @@ export function Review() {
   const queue = useReviewQueue();
   const wordId = queue.current;
   const word = wordId ? WORDS_BY_ID.get(wordId) : undefined;
-  const typing = useReviewTyping(wordId);
+  const typing = useReviewTyping(queue.cursor);
   const stage = reviewStage(queue.queue.length, queue.cursor);
   const card = wordId ? cards[wordId] : undefined;
 
