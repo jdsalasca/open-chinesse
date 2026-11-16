@@ -26,7 +26,11 @@ export const STORIES: Story[] = [
     minutes: 2,
     note: 'Rutina diaria con vocabulario de HSK 1.',
     lines: [
-      say('我早上七点起床。', 'Wǒ zǎoshang qī diǎn qǐchuáng.', 'Me levanto a las siete.'),
+      say(
+        '我早上七点起床。',
+        'Wǒ zǎoshang qī diǎn qǐchuáng.',
+        'Me levanto a las siete de la mañana.',
+      ),
       say('我喝茶，吃面包。', 'Wǒ hē chá, chī miànbāo.', 'Bebo té y como pan.'),
       say('我去学校。', 'Wǒ qù xuéxiào.', 'Voy a la escuela.'),
       say('学校很大。', 'Xuéxiào hěn dà.', 'La escuela es grande.'),
@@ -47,12 +51,12 @@ export const STORIES: Story[] = [
     minutes: 3,
     note: 'Una salida tranquila; repasa tiempo, familia y comida.',
     lines: [
-      say('周末天气很好。', 'Zhōumò tiānqì hěn hǎo.', 'El fin de semana hace buen tiempo.'),
-      say('我和妹妹去公园。', 'Wǒ hé mèimei qù gōngyuán.', 'Voy al parque con mi hermana menor.'),
-      say('公园里有很多花。', 'Gōngyuán lǐ yǒu hěn duō huā.', 'En el parque hay muchas flores.'),
-      say('妹妹要喝水。', 'Mèimei yào hē shuǐ.', 'Mi hermana quiere beber agua.'),
+      say('周末天气很好。', 'Zhōumò tiānqì hěn hǎo.', 'El fin de semana hizo buen tiempo.'),
+      say('我和妹妹去公园。', 'Wǒ hé mèimei qù gōngyuán.', 'Fui al parque con mi hermana menor.'),
+      say('公园里有很多花。', 'Gōngyuán lǐ yǒu hěn duō huā.', 'En el parque había muchas flores.'),
+      say('妹妹要喝水。', 'Mèimei yào hē shuǐ.', 'Mi hermana quería beber agua.'),
       say('我们坐在树下。', 'Wǒmen zuò zài shù xià.', 'Nos sentamos bajo el árbol.'),
-      say('下午下雨了。', 'Xiàwǔ xià yǔ le.', 'Por la tarde llovió.'),
+      say('下午下雨了。', 'Xiàwǔ xià yǔ le.', 'Por la tarde empezó a llover.'),
       say(
         '我们回家，妈妈做了面条。',
         'Wǒmen huí jiā, māma zuò le miàntiáo.',
@@ -88,7 +92,7 @@ export const STORIES: Story[] = [
       say(
         '我买了一个礼物给妹妹。',
         'Wǒ mǎi le yí gè lǐwù gěi mèimei.',
-        'Compré un regalo para mi hermana.',
+        'Compré un regalo para mi hermana menor.',
       ),
       say('下次我想再去。', 'Xià cì wǒ xiǎng zài qù.', 'La próxima vez quiero volver.'),
     ],
@@ -125,7 +129,7 @@ export const STORIES: Story[] = [
       say(
         '一直走，前面右转。',
         'Yìzhí zǒu, qiánmiàn yòu zhuǎn.',
-        'Sigue recto y gira a la derecha.',
+        'Sigue recto y, más adelante, gira a la derecha.',
       ),
       say('远吗？', 'Yuǎn ma?', '¿Está lejos?'),
       say('不远，走五分钟。', 'Bù yuǎn, zǒu wǔ fēnzhōng.', 'No, cinco minutos andando.'),

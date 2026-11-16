@@ -8,7 +8,7 @@ export type Route =
   | { name: 'login' }
   | { name: 'profile' }
   | { name: 'practice' }
-  | { name: 'stories' }
+  | { name: 'stories'; storyId?: string }
   | { name: 'immersion' }
   | { name: 'tones' }
   | { name: 'character'; char: string };
@@ -36,6 +36,7 @@ const SIMPLE: Record<string, Route> = {
 export function parseHash(hash: string): Route {
   const [head, param] = hash.replace(/^#\/?/, '').split('?')[0].split('/');
   if (head === 'lesson' && param) return { name: 'lesson', unitId: param };
+  if (head === 'historias') return { name: 'stories', storyId: param };
   if ((head === 'caracter' || head === 'character') && param) {
     return { name: 'character', char: decode(param) };
   }

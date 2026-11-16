@@ -41,10 +41,8 @@ export function Home() {
   const levelUnits = unitsForLevel(level);
   const nextUnit = levelUnits.find((u) => !done.includes(u.id));
   const started = Object.keys(cards).length > 0;
-  const learnedTotal = UNITS.filter((u) => done.includes(u.id)).reduce(
-    (total, unit) => total + unit.words.length,
-    0,
-  );
+  const learnedTotal = Object.keys(cards).length;
+  const allDone = done.length === UNITS.length;
   const progress = levelProgress(xp);
   const levelNumber = levelFromXp(xp);
   const lastLevel = LEVELS[LEVELS.length - 1];
@@ -85,7 +83,7 @@ export function Home() {
             )}
             {!nextUnit && queue.total === 0 && (
               <p className="hero__calm">
-                {level === lastLevel
+                {allDone
                   ? `Terminaste ${courseRange} sin repasos pendientes. Vuelve mañana.`
                   : 'Esta parte está al día. Cambia de nivel para seguir avanzando.'}
               </p>
@@ -193,8 +191,8 @@ export function Home() {
             {LEVELS.map((item) => {
               const total = wordsForLevel(item);
               const learned = unitsForLevel(item)
-                .filter((u) => done.includes(u.id))
-                .reduce((sum, unit) => sum + unit.words.length, 0);
+                .flatMap((unit) => unit.words)
+                .filter((word) => cards[word.id]).length;
               return (
                 <button
                   key={item}

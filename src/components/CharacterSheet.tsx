@@ -258,6 +258,33 @@ function Words({ data }: { data: CharacterSheetData }) {
   );
 }
 
+function Examples({ data }: { data: CharacterSheetData }) {
+  if (data.examples.length === 0) return null;
+  return (
+    <Card>
+      <h2 className="character__title">Ejemplos con {data.char}</h2>
+      <p className="character__note">Frases del curso donde aparece. Suena cada una.</p>
+      <ul className="character__examples">
+        {data.examples.map((example) => (
+          <li key={example.wordId} className="character__example">
+            <p className="character__example-hanzi" lang="zh-Hans">
+              {example.hanzi}
+            </p>
+            <Pinyin pinyin={example.pinyin} className="character__example-pinyin" />
+            <p className="character__example-translation">{example.translation}</p>
+            <AudioButton
+              text={example.hanzi}
+              label="la frase de ejemplo"
+              src={audioUrl('examples', example.wordId)}
+              compact
+            />
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
+
 export function CharacterSheet({ data }: { data: CharacterSheetData }) {
   return (
     <>
@@ -276,6 +303,7 @@ export function CharacterSheet({ data }: { data: CharacterSheetData }) {
       </header>
       <History data={data} />
       <Composition data={data} />
+      <Examples data={data} />
       <Words data={data} />
     </>
   );

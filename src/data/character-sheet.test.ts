@@ -41,6 +41,12 @@ describe('piezas y palabras de la ficha', () => {
     expect(positions['好']).toBe('por sí sola');
   });
 
+  it('trae frases de ejemplo con el carácter', () => {
+    const data = getCharacterSheetData('好');
+    expect(data.examples.length).toBeGreaterThan(0);
+    for (const example of data.examples) expect(example.hanzi).toContain('好');
+  });
+
   it('cachea el resultado para no recalcular al navegar', () => {
     expect(getCharacterSheetData('明')).toBe(getCharacterSheetData('明'));
   });

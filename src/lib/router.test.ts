@@ -15,7 +15,8 @@ describe('rutas', () => {
 
   it('reconoce las secciones nuevas', () => {
     expect(parseHash('#/practicar')).toEqual({ name: 'practice' });
-    expect(parseHash('#/historias')).toEqual({ name: 'stories' });
+    expect(parseHash('#/historias')).toEqual({ name: 'stories', storyId: undefined });
+    expect(parseHash('#/historias/parque')).toEqual({ name: 'stories', storyId: 'parque' });
     expect(parseHash('#/inmersion')).toEqual({ name: 'immersion' });
     expect(parseHash('#/tonos')).toEqual({ name: 'tones' });
   });

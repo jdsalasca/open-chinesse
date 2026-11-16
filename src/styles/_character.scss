@@ -419,3 +419,41 @@
   background: $mint-soft;
   color: $mint-dark;
 }
+
+// Ejemplos ----------------------------------------------------------------
+.character__examples {
+  display: grid;
+  gap: $space-3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.character__example {
+  display: grid;
+  gap: $space-1;
+  justify-items: start;
+  padding-bottom: $space-3;
+  border-bottom: 1px dashed $line;
+}
+
+.character__example:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.character__example-hanzi {
+  margin: 0;
+  @include hanzi(1.25rem);
+}
+
+.character__example-pinyin {
+  font-size: 0.88rem;
+  color: $teal;
+}
+
+.character__example-translation {
+  margin: 0;
+  font-size: 0.88rem;
+  color: $muted;
+}

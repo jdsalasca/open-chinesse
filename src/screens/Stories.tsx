@@ -16,12 +16,16 @@ for (const word of WORDS_BY_ID.values()) {
 type Pick = { chunk: string; word?: Word };
 
 function StoryCard({ story, onOpen }: { story: Story; onOpen: () => void }) {
+  const [zh, es] = story.title.split(' · ');
   return (
     <button type="button" className="story-card" onClick={onOpen}>
       <span className="story-card__meta">
         {story.kind} · HSK {story.level} · {story.minutes} min
       </span>
-      <span className="story-card__title">{story.title}</span>
+      <span className="story-card__title" lang="zh-Hans">
+        {zh}
+      </span>
+      <span className="story-card__subtitle">{es ?? ''}</span>
       <span className="story-card__note">{story.note}</span>
       <span className="story-card__cta">Leer →</span>
     </button>
@@ -85,9 +89,16 @@ function Gloss({ pick, onClose }: { pick: Pick; onClose: () => void }) {
               src={audioUrl('words', pick.word.id)}
               compact
             />
-            <a className="link" href={`#/caracter/${encodeURIComponent(pick.chunk[0])}`}>
-              Ver el carácter {pick.chunk[0]} →
-            </a>
+            {[...pick.chunk].map((char) => (
+              <a
+                key={char}
+                className="link"
+                href={`#/caracter/${encodeURIComponent(char)}`}
+                onClick={onClose}
+              >
+                {char} →
+              </a>
+            ))}
           </div>
         </>
       ) : (
@@ -131,10 +142,9 @@ function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
   );
 }
 
-export function Stories() {
-  const [openId, setOpenId] = useState<string | null>(null);
-  const story = STORIES.find((item) => item.id === openId);
-  if (story) return <Reader story={story} onBack={() => setOpenId(null)} />;
+export function Stories({ storyId }: { storyId?: string }) {
+  const story = STORIES.find((item) => item.id === storyId);
+  if (story) return <Reader story={story} onBack={() => navigate('/historias')} />;
 
   return (
     <section className="stories">
@@ -148,7 +158,7 @@ export function Stories() {
       </header>
       <div className="stories__grid">
         {STORIES.map((item) => (
-          <StoryCard key={item.id} story={item} onOpen={() => setOpenId(item.id)} />
+          <StoryCard key={item.id} story={item} onOpen={() => navigate(`/historias/${item.id}`)} />
         ))}
       </div>
       <p className="stories__note">

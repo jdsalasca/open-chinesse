@@ -33,7 +33,6 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   login: () => <Login />,
   profile: () => <Profile />,
   practice: () => <Practice />,
-  stories: () => <Stories />,
   immersion: () => <Immersion />,
   tones: () => <Tones />,
 };
@@ -76,6 +75,7 @@ function Header({ route }: { route: Route }) {
 function RouteView({ route }: { route: Route }) {
   if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
   if (route.name === 'character') return <Character key={route.char} char={route.char} />;
+  if (route.name === 'stories') return <Stories storyId={route.storyId} />;
   const view = VIEWS[route.name];
   return view ? view() : <Home />;
 }

@@ -28,6 +28,13 @@ export type SheetWord = {
   unitTitle?: string;
 };
 
+export type SheetExample = {
+  wordId: string;
+  hanzi: string;
+  pinyin: string;
+  translation: string;
+};
+
 export type CharacterSheetData = {
   char: string;
   reading?: string;
@@ -41,6 +48,7 @@ export type CharacterSheetData = {
   traditional?: string;
   pieces: SheetNode[];
   words: SheetWord[];
+  examples: SheetExample[];
   inside: string[];
   family: string[];
 };
@@ -141,6 +149,10 @@ export function getCharacterSheetData(char: string): CharacterSheetData {
     formation: formationOf(char),
     pieces: toSheet(componentTree(char), 0),
     words: words.map((word) => toSheetWord(word, char)),
+    examples: words
+      .filter((word) => word.example.hanzi.includes(char))
+      .slice(0, 3)
+      .map((word) => ({ wordId: word.id, ...word.example })),
     inside: charactersUsing(char).slice(0, 12),
   };
   CACHE.set(char, data);
