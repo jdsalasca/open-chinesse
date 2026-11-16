@@ -5,12 +5,12 @@ Objetivo: curso completo HSK 1 (150) + HSK 2 (150), login OAuth2 y despliegue en
 
 ## Alcance
 
-| Pieza | Entregable |
-|---|---|
-| Contenido | 300 palabras, 30 unidades (15 por nivel), pinyin con tonos, significado en español, frase de ejemplo traducida |
-| Frontend | Selector HSK 1 / HSK 2, login, sincronización de progreso |
-| Backend | Spring Boot 4.1.2 · Java 25 · H2 archivo · Flyway · OAuth2 (Google + GitHub) |
-| Despliegue | Docker en `atopnuc@192.168.1.100:~/sitios/open-chinesse`, túnel propio `open-chinesse` |
+| Pieza      | Entregable                                                                                                     |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| Contenido  | 300 palabras, 30 unidades (15 por nivel), pinyin con tonos, significado en español, frase de ejemplo traducida |
+| Frontend   | Selector HSK 1 / HSK 2, login, sincronización de progreso                                                      |
+| Backend    | Spring Boot 4.1.2 · Java 25 · H2 archivo · Flyway · OAuth2 (Google + GitHub)                                   |
+| Despliegue | Docker en `atopnuc@192.168.1.100:~/sitios/open-chinesse`, túnel propio `open-chinesse`                         |
 
 ## Decisiones
 
@@ -26,23 +26,27 @@ Objetivo: curso completo HSK 1 (150) + HSK 2 (150), login OAuth2 y despliegue en
 ## Rondas
 
 ### R1 — Contenido HSK 1 + 2
+
 - [x] 30 unidades de 10 palabras con ejemplos.
 - [x] Cursos separados por nivel en la UI.
 - [x] Test: 300 palabras, ids únicos, pinyin con tono válido, 4 opciones por pregunta.
 
 ### R2 — Backend
+
 - [x] Spring Boot 4.1.2 / Java 25 con checkstyle + spotless.
 - [x] `GET /api/me`, `GET/PUT /api/progress`, `GET /api/auth/providers`, `GET /api/csrf`.
 - [x] Flyway V1 (`app_user`, `learner_progress`), H2 archivo persistente.
 - [x] Tests de controlador y de arranque con y sin OAuth.
 
 ### R3 — Integración
+
 - [x] Vite proxy `/api` a `localhost:8090`.
 - [x] `useSession` + UI de login/logout.
 - [x] Sync: hidratar al entrar, empujar con debounce, gana el más reciente.
 - [x] Build del SPA copiado a `backend/src/main/resources/static`.
 
 ### R4 — Despliegue
+
 - [x] `docker compose` en `~/sitios/open-chinesse` con volumen para H2.
 - [x] Túnel `open-chinesse` + DNS `open-chinesse.eridu.top`.
 - [x] Verificación: 200 en `/`, 401 en `/api/me` sin sesión, health del backend.

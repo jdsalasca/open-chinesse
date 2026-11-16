@@ -4,14 +4,14 @@ Sitio: **https://open-chinesse.eridu.top**
 
 ## Infraestructura
 
-| Pieza | Valor |
-|---|---|
-| Servidor | `atopnuc@192.168.1.100` · `/home/atopnuc/sitios/open-chinesse` |
-| Proceso | Docker `open-chinesse` (Temurin 25 JRE, `-Xms192m -Xmx448m`) |
-| Puerto local | `127.0.0.1:8091` (el 8090 lo ocupa `oh-server.py`) |
-| Túnel | `open-chinesse` · `f909162f-f8d2-4e39-ba9c-05118b14b354` |
-| Servicio | `cloudflared-open-chinesse.service` (systemd, propio; no toca `topnuc`) |
-| Base de datos | H2 archivo en `~/sitios/open-chinesse/data` |
+| Pieza         | Valor                                                                   |
+| ------------- | ----------------------------------------------------------------------- |
+| Servidor      | `atopnuc@192.168.1.100` · `/home/atopnuc/sitios/open-chinesse`          |
+| Proceso       | Docker `open-chinesse` (Temurin 25 JRE, `-Xms192m -Xmx448m`)            |
+| Puerto local  | `127.0.0.1:8091` (el 8090 lo ocupa `oh-server.py`)                      |
+| Túnel         | `open-chinesse` · `f909162f-f8d2-4e39-ba9c-05118b14b354`                |
+| Servicio      | `cloudflared-open-chinesse.service` (systemd, propio; no toca `topnuc`) |
+| Base de datos | H2 archivo en `~/sitios/open-chinesse/data`                             |
 
 El túnel y el servicio son nuevos y aislados: `hotel.eridu.top` y `library.eridu.top`
 siguen servidos por `topnuc`, que no se modificó.

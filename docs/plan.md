@@ -22,15 +22,15 @@ Que una persona sin conocimiento de chino pueda, en una sesión de 10 minutos:
 
 ## Técnicas incorporadas (y por qué)
 
-| Técnica | Decisión en el producto | Evidencia |
-|---|---|---|
-| Práctica de recuperación | Repaso = recall con feedback, nunca relectura | Roediger & Karpicke 2006; Rowland 2014 (g=0.50); Adesope 2017 |
-| Repetición espaciada FSRS | `ts-fsrs` FSRS-6, retención objetivo 90% | Benchmark SRS: 350M repasos, superioridad 99.6% vs SM-2 |
-| Producción escrita (pinyin) | Tarjetas maduras exigen teclear el pinyin | Guan et al. 2011 (escritura alfabética fortalece ortografía→fonología) |
-| Input comprensible | Cada palabra nueva aparece en una frase | Krashen 1985; crítica: Liu 2015, Lichtman 2021 |
-| Entrenamiento perceptual de tonos | Audio en cada tarjeta + pinyin coloreado por tono | Wang et al. 1999 (+21%); HVPT meta 2025 (g=0.92/0.67) |
-| Interleaving | La cola de repaso mezcla unidades | Rowland 2014 (heterogeneidad); práctica distribuida |
-| Gamificación sobria | Racha informativa, sin castigo ni leaderboard | Barasch & Silverman; ACM L@S 2022 (gamification misuse) |
+| Técnica                           | Decisión en el producto                           | Evidencia                                                              |
+| --------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------- |
+| Práctica de recuperación          | Repaso = recall con feedback, nunca relectura     | Roediger & Karpicke 2006; Rowland 2014 (g=0.50); Adesope 2017          |
+| Repetición espaciada FSRS         | `ts-fsrs` FSRS-6, retención objetivo 90%          | Benchmark SRS: 350M repasos, superioridad 99.6% vs SM-2                |
+| Producción escrita (pinyin)       | Tarjetas maduras exigen teclear el pinyin         | Guan et al. 2011 (escritura alfabética fortalece ortografía→fonología) |
+| Input comprensible                | Cada palabra nueva aparece en una frase           | Krashen 1985; crítica: Liu 2015, Lichtman 2021                         |
+| Entrenamiento perceptual de tonos | Audio en cada tarjeta + pinyin coloreado por tono | Wang et al. 1999 (+21%); HVPT meta 2025 (g=0.92/0.67)                  |
+| Interleaving                      | La cola de repaso mezcla unidades                 | Rowland 2014 (heterogeneidad); práctica distribuida                    |
+| Gamificación sobria               | Racha informativa, sin castigo ni leaderboard     | Barasch & Silverman; ACM L@S 2022 (gamification misuse)                |
 
 ## Arquitectura
 
@@ -50,21 +50,25 @@ Sin backend. Progreso en `localStorage` con versión de esquema y migración.
 ## Rondas
 
 ### R0 — Andamiaje y evidencia
+
 - [x] Scaffold Vite 8 + React 19 + TS + SCSS + Vitest
 - [x] `resources/investigation-education/` con papers y conclusiones
 - [x] `docs/plan.md`
 
 ### R1 — Dominio (datos + SRS)
+
 - [x] Contenido: 6 unidades × 12 palabras con pinyin, significado, frase y traducción.
 - [x] Adaptador FSRS: crear tarjeta, previsualizar 4 calificaciones, calificar, serializar.
 - [x] Cola de repaso: vencidas + nuevas, orden, re-encolado de pasos de aprendizaje.
 - [x] Tests: serialización, intervalos crecientes, fallo reduce intervalo, cola.
 
 ### R2 — Estado del aprendiz
+
 - [x] Store con persistencia, racha sin castigo, estadísticas.
 - [x] Tests: racha, precisión, pronóstico 7 días, próxima fecha de repaso.
 
 ### R3 — Interfaz
+
 - [x] Home con CTA de repaso/lección y progreso por unidad.
 - [x] Lección: presentación → quiz de recuperación → resumen.
 - [x] Repaso: tarjeta → audio → (pinyin en tarjetas maduras) → revelar → 4 botones.
@@ -72,11 +76,13 @@ Sin backend. Progreso en `localStorage` con versión de esquema y migración.
 - [x] SCSS con tokens; accesibilidad: foco visible, contraste AA, teclado.
 
 ### R4 — Cierre
+
 - [x] `pnpm test`, `pnpm build`, `pnpm lint` verdes.
 - [x] Captura visual de cada pantalla revisada (`docs/screenshots/`).
 - [x] README, repo remoto `open-chinesse`, rama `develop`.
 
 ### R5 — Backlog (fuera de v0.1)
+
 - [ ] Escritura de trazos con `hanzi-writer` (ver doc 05: aporta forma→significado).
 - [ ] Audio pregrabado multihablante con `edge-tts` (HVPT real).
 - [ ] PWA offline + instalación.

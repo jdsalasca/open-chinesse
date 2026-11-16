@@ -40,13 +40,13 @@ create table learner_progress (
 
 ## API (JSON, misma origen que el SPA)
 
-| Método | Ruta | Respuesta |
-|---|---|---|
-| GET | `/api/auth/providers` | `{ "providers": ["google","github"] }` (público) |
-| GET | `/api/csrf` | `{ "token": "...", "headerName": "X-XSRF-TOKEN" }` |
-| GET | `/api/me` | `200 { id, displayName, email, pictureUrl }` · `401` sin sesión |
-| GET | `/api/progress` | `200 { revision, updatedAt, payload }` · `404` si no existe |
-| PUT | `/api/progress` | body `{ payload: string, updatedAt: ISO-8601 }` → `200 { revision, updatedAt }` |
+| Método | Ruta                  | Respuesta                                                                       |
+| ------ | --------------------- | ------------------------------------------------------------------------------- |
+| GET    | `/api/auth/providers` | `{ "providers": ["google","github"] }` (público)                                |
+| GET    | `/api/csrf`           | `{ "token": "...", "headerName": "X-XSRF-TOKEN" }`                              |
+| GET    | `/api/me`             | `200 { id, displayName, email, pictureUrl }` · `401` sin sesión                 |
+| GET    | `/api/progress`       | `200 { revision, updatedAt, payload }` · `404` si no existe                     |
+| PUT    | `/api/progress`       | body `{ payload: string, updatedAt: ISO-8601 }` → `200 { revision, updatedAt }` |
 
 Reglas:
 
