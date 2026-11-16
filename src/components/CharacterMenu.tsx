@@ -81,7 +81,7 @@ function Menu({ target, onClose }: { target: Target; onClose: () => void }) {
         }}
       >
         Escuchar
-      </button>
+      </button>{' '}
     </div>
   );
 }

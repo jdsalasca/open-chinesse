@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
-import { hasChineseVoice, onVoicesReady, speak } from '../lib/speech';
+import { useEffect, useRef, useState } from 'react';
+import { speak } from '../lib/speech';
 
 type Props = {
   text: string;
   label: string;
+  /** MP3 ya generado; si falta o falla se usa la voz del navegador. */
+  src?: string;
   compact?: boolean;
 };
 
@@ -29,30 +31,69 @@ function SpeakerGlyph({ size }: { size: number }) {
   );
 }
 
-/** Botón de audio con degradación silenciosa si el sistema no tiene voz china. */
-export function AudioButton({ text, label, compact = false }: Props) {
-  const [available, setAvailable] = useState(true);
-  const [playing, setPlaying] = useState(false);
+/** Carga el MP3 y devuelve una función de reproducción con caída a la voz. */
+function useClip(src: string | undefined, onStart: () => void, onStop: () => void) {
+  const ref = useRef<HTMLAudioElement | null>(null);
+  const handlers = useRef({ onStart, onStop });
 
   useEffect(() => {
-    const check = () => setAvailable(hasChineseVoice());
-    check();
-    return onVoicesReady(check);
-  }, []);
+    handlers.current = { onStart, onStop };
+  });
 
-  const play = () => {
-    speak(text);
-    setPlaying(true);
-    window.setTimeout(() => setPlaying(false), 600);
+  useEffect(() => {
+    if (!src) return;
+    const audio = new Audio(src);
+    audio.preload = 'none';
+    const stop = () => handlers.current.onStop();
+    audio.addEventListener('ended', stop);
+    audio.addEventListener('pause', stop);
+    audio.addEventListener('error', stop);
+    ref.current = audio;
+    return () => {
+      audio.pause();
+      audio.removeEventListener('ended', stop);
+      audio.removeEventListener('pause', stop);
+      audio.removeEventListener('error', stop);
+      ref.current = null;
+    };
+  }, [src]);
+
+  return (fallback: () => void) => {
+    const audio = ref.current;
+    if (!audio) return fallback();
+    audio.currentTime = 0;
+    audio.play().then(
+      () => handlers.current.onStart(),
+      () => {
+        handlers.current.onStop();
+        fallback();
+      },
+    );
   };
+}
+
+/** Botón de audio: usa el MP3 si existe y cae a la voz del sistema. */
+export function AudioButton({ text, label, src, compact = false }: Props) {
+  const [playing, setPlaying] = useState(false);
+  const play = useClip(
+    src,
+    () => setPlaying(true),
+    () => setPlaying(false),
+  );
+
+  const fallback = () =>
+    speak(text, 0.85, {
+      onStart: () => setPlaying(true),
+      onEnd: () => setPlaying(false),
+    });
 
   return (
     <button
       type="button"
       className={`audio-button${compact ? ' audio-button--compact' : ''}${playing ? ' is-playing' : ''}`}
-      onClick={play}
+      onClick={() => play(fallback)}
       aria-label={`Escuchar ${label}`}
-      title={available ? `Escuchar ${label}` : 'Sin voz china instalada: se usa la voz por defecto'}
+      title={`Escuchar ${label}`}
     >
       <SpeakerGlyph size={compact ? 18 : 20} />
     </button>

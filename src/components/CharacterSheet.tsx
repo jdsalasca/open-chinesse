@@ -1,0 +1,282 @@
+import { useState } from 'react';
+import type { CharacterSheetData, SheetNode, SheetWord } from '../data/character-sheet';
+import { audioUrl, charAudioUrl } from '../lib/audio';
+import { AudioButton } from './AudioButton';
+import { Pinyin } from './Pinyin';
+import { Card } from './ui/Card';
+
+function Facts({ data }: { data: CharacterSheetData }) {
+  return (
+    <dl className="character__facts">
+      <div>
+        <dt>Radical</dt>
+        <dd>
+          <span lang="zh-Hans">{data.radical ?? '—'}</span>
+          {data.radicalGloss && <small>{data.radicalGloss}</small>}
+        </dd>
+      </div>
+      <div>
+        <dt>Trazos</dt>
+        <dd>{data.strokes ?? '—'}</dd>
+      </div>
+      <div>
+        <dt>Nivel</dt>
+        <dd>{data.level > 0 ? `HSK ${data.level}` : '—'}</dd>
+      </div>
+    </dl>
+  );
+}
+
+function History({ data }: { data: CharacterSheetData }) {
+  return (
+    <Card>
+      <h2 className="character__title">De dónde viene</h2>
+      {data.formation ? (
+        <>
+          <p className="formation__label">{data.formation.label}</p>
+          <p className="formation__detail">{data.formation.detail}</p>
+        </>
+      ) : (
+        <p className="character__empty">La fuente no clasifica este carácter.</p>
+      )}
+      {data.shuowen && (
+        <blockquote className="shuowen">
+          <p lang="zh-Hant">{data.shuowen}</p>
+          <footer>Shuowen Jiezi, hacia el año 100 — describía la escritura de sello.</footer>
+        </blockquote>
+      )}
+      {data.traditional && (
+        <p className="character__variant">
+          Forma tradicional: <span lang="zh-Hant">{data.traditional}</span>
+        </p>
+      )}
+    </Card>
+  );
+}
+
+function ToggleTile({
+  char,
+  open,
+  onToggle,
+}: {
+  char: string;
+  open: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className="piece__tile is-expandable"
+      aria-expanded={open}
+      aria-label={`${open ? 'Contraer' : 'Desplegar'} ${char}`}
+      onClick={onToggle}
+      lang="zh-Hans"
+    >
+      {char}
+    </button>
+  );
+}
+
+function CharTile({ char }: { char: string }) {
+  return (
+    <a
+      className="piece__tile"
+      href={`#/caracter/${encodeURIComponent(char)}`}
+      aria-label={`Ver el carácter ${char}`}
+      lang="zh-Hans"
+    >
+      {char}
+    </a>
+  );
+}
+
+function Piece({ node }: { node: SheetNode }) {
+  const [open, setOpen] = useState(false);
+  if (node.kind === 'op') {
+    return (
+      <li className="ids__item ids__item--op">
+        <span className="ids__label">{node.label}</span>
+        <Tree nodes={node.children} />
+      </li>
+    );
+  }
+
+  const expandable = node.children.length > 0;
+  return (
+    <li className="ids__item ids__item--char">
+      <div className="piece">
+        {expandable ? (
+          <ToggleTile char={node.char} open={open} onToggle={() => setOpen(!open)} />
+        ) : (
+          <CharTile char={node.char} />
+        )}
+        <span className="piece__label">{node.label ?? '—'}</span>
+        {expandable && (
+          <button
+            type="button"
+            className="piece__inside"
+            onClick={() => setOpen(!open)}
+            aria-label={`${open ? 'Contraer' : 'Desplegar'} ${node.char}`}
+          >
+            {open ? '− dentro' : '+ dentro'}
+          </button>
+        )}
+        {open && (
+          <div className="piece__children">
+            <Tree nodes={node.children} />
+          </div>
+        )}
+      </div>
+    </li>
+  );
+}
+
+function Tree({ nodes }: { nodes: SheetNode[] }) {
+  return (
+    <ul className="ids">
+      {nodes.map((node, index) => (
+        <Piece key={`${node.kind}-${index}`} node={node} />
+      ))}
+    </ul>
+  );
+}
+
+function Composition({ data }: { data: CharacterSheetData }) {
+  return (
+    <Card>
+      <h2 className="character__title">Cómo se compone</h2>
+      <p className="character__note">
+        Las piezas con «+ dentro» se abren aquí; las demás llevan a su ficha.
+      </p>
+      {data.pieces.length > 0 ? (
+        <Tree nodes={data.pieces} />
+      ) : (
+        <p className="character__empty">No tenemos la descomposición de este carácter.</p>
+      )}
+    </Card>
+  );
+}
+
+function WordRow({ word }: { word: SheetWord }) {
+  const body = (
+    <>
+      <p className="character__word-head">
+        <span className="character__word-hanzi" lang="zh-Hans">
+          {word.hanzi}
+        </span>
+        <Pinyin pinyin={word.pinyin} className="character__word-pinyin" />
+        <span className="character__word-pos">{word.position}</span>
+        <AudioButton
+          text={word.hanzi}
+          label={word.hanzi}
+          src={audioUrl('words', word.id)}
+          compact
+        />
+      </p>
+      <p className="character__word-meaning">{word.meaning}</p>
+      {word.unitTitle && <p className="character__word-unit">{word.unitTitle}</p>}
+    </>
+  );
+
+  return (
+    <li className="character__word">
+      {word.unitId ? (
+        <a
+          className="character__word-link"
+          href={`#/lesson/${word.unitId}`}
+          aria-label={word.hanzi}
+        >
+          {body}
+        </a>
+      ) : (
+        body
+      )}
+    </li>
+  );
+}
+
+function WordList({ words }: { words: SheetWord[] }) {
+  if (words.length === 0) {
+    return <p className="character__empty">No forma ninguna palabra del curso por sí solo.</p>;
+  }
+  return (
+    <ul className="character__words">
+      {words.map((word) => (
+        <WordRow key={word.id} word={word} />
+      ))}
+    </ul>
+  );
+}
+
+function InsideList({ inside }: { inside: string[] }) {
+  if (inside.length === 0) return null;
+  return (
+    <div className="character__inside">
+      <p className="character__subtitle">Está dentro de {inside.length} caracteres</p>
+      <ul className="chips">
+        {inside.map((other) => (
+          <li key={other}>
+            <a className="chip" href={`#/caracter/${encodeURIComponent(other)}`} lang="zh-Hans">
+              {other}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FamilyCard({ char, family }: { char: string; family: string[] }) {
+  if (family.length === 0) return null;
+  return (
+    <Card>
+      <h2 className="character__title">Familia del sonido</h2>
+      <p className="character__note">Caracteres que usan {char} como pista de pronunciación.</p>
+      <ul className="chips">
+        {family.map((other) => (
+          <li key={other}>
+            <a className="chip" href={`#/caracter/${encodeURIComponent(other)}`} lang="zh-Hans">
+              {other}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
+
+function Words({ data }: { data: CharacterSheetData }) {
+  return (
+    <>
+      <Card>
+        <h2 className="character__title">En el curso</h2>
+        <WordList words={data.words} />
+        <InsideList inside={data.inside} />
+      </Card>
+      <FamilyCard char={data.char} family={data.family} />
+    </>
+  );
+}
+
+export function CharacterSheet({ data }: { data: CharacterSheetData }) {
+  return (
+    <>
+      <header className="character__head">
+        <div>
+          <h1 className="character__hanzi" lang="zh-Hans">
+            {data.char}
+          </h1>
+          <div className="character__speak">
+            <AudioButton text={data.char} label={data.char} src={charAudioUrl(data.char)} compact />
+            {data.reading && <span className="character__reading">{data.reading}</span>}
+          </div>
+          {data.meaning && <p className="character__meaning">{data.meaning}</p>}
+        </div>
+        <Facts data={data} />
+      </header>
+      <History data={data} />
+      <Composition data={data} />
+      <Words data={data} />
+    </>
+  );
+}

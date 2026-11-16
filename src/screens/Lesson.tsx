@@ -8,6 +8,7 @@ import { Icon } from '../components/ui/Icon';
 import { ALL_WORDS, LEVEL_LABELS, UNITS } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
 import { makeQuiz } from '../lib/quiz';
+import { audioUrl } from '../lib/audio';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
@@ -93,13 +94,18 @@ export function Lesson({ unitId }: { unitId: string }) {
           </div>
           <div className="flashcard__row">
             <Pinyin pinyin={word.pinyin} className="flashcard__pinyin" showToneNumber />
-            <AudioButton text={word.hanzi} label={word.hanzi} />
+            <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
           </div>
           <p className="flashcard__meaning">{word.meaning}</p>
           <div className="example">
             <div className="example__head">
               <span className="example__label">En contexto</span>
-              <AudioButton text={word.example.hanzi} label="la frase de ejemplo" compact />
+              <AudioButton
+                text={word.example.hanzi}
+                label="la frase de ejemplo"
+                src={audioUrl('examples', word.id)}
+                compact
+              />
             </div>
             <p className="example__hanzi" lang="zh-Hans">
               {word.example.hanzi}
@@ -160,7 +166,11 @@ export function Lesson({ unitId }: { unitId: string }) {
                 </span>
                 {question.mode === 'listen' ? (
                   <div className="quiz__prompt-audio">
-                    <AudioButton text={questionWord.hanzi} label="la palabra" />
+                    <AudioButton
+                      text={questionWord.hanzi}
+                      label="la palabra"
+                      src={audioUrl('words', questionWord.id)}
+                    />
                     <span className="quiz__dots" aria-hidden="true">
                       ••••
                     </span>
@@ -171,7 +181,11 @@ export function Lesson({ unitId }: { unitId: string }) {
                       {questionWord.hanzi}
                     </div>
                     <div className="quiz__audio">
-                      <AudioButton text={questionWord.hanzi} label={questionWord.hanzi} />
+                      <AudioButton
+                        text={questionWord.hanzi}
+                        label={questionWord.hanzi}
+                        src={audioUrl('words', questionWord.id)}
+                      />
                       <Pinyin pinyin={questionWord.pinyin} />
                     </div>
                   </>

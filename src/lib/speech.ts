@@ -17,14 +17,24 @@ export function hasChineseVoice(): boolean {
   return cachedVoice !== null;
 }
 
-export function speak(text: string, rate = 0.85): void {
+export function speak(
+  text: string,
+  rate = 0.85,
+  handlers: { onStart?: () => void; onEnd?: () => void } = {},
+): void {
   const synth = globalThis.speechSynthesis;
-  if (!synth) return;
+  if (!synth) {
+    handlers.onEnd?.();
+    return;
+  }
   if (cachedVoice === undefined) cachedVoice = pickChineseVoice();
   synth.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'zh-CN';
   utterance.rate = rate;
+  utterance.onstart = () => handlers.onStart?.();
+  utterance.onend = () => handlers.onEnd?.();
+  utterance.onerror = () => handlers.onEnd?.();
   if (cachedVoice) utterance.voice = cachedVoice;
   synth.speak(utterance);
 }
@@ -34,6 +44,7 @@ export function onVoicesReady(callback: () => void): () => void {
   const synth = globalThis.speechSynthesis;
   if (!synth) return () => {};
   if (synth.getVoices().length > 0) {
+    cachedVoice = pickChineseVoice();
     callback();
     return () => {};
   }

@@ -10,6 +10,9 @@ DIR="${TARGET#*:}"
 
 cd "$ROOT"
 
+echo "==> Audio del curso (Piper; se salta lo que ya existe)"
+node scripts/build-audio.mjs || echo "    sin Piper: se usara la voz del navegador"
+
 echo "==> Build del SPA dentro del backend"
 pnpm build:server
 

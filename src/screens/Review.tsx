@@ -3,6 +3,7 @@ import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
 import { Pinyin } from '../components/Pinyin';
 import { UNITS, WORDS_BY_ID } from '../data/curriculum';
+import { audioUrl } from '../lib/audio';
 import { navigate } from '../lib/router';
 import { speak } from '../lib/speech';
 import { matchesPinyin } from '../lib/tone';
@@ -177,7 +178,7 @@ export function Review() {
               {production ? 'Escribe el pinyin' : 'Recuerda el significado'}
             </span>
           )}
-          <AudioButton text={word.hanzi} label={word.hanzi} />
+          <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
         </div>
 
         {!revealed && production && (
@@ -221,7 +222,12 @@ export function Review() {
             <div className="example">
               <div className="example__head">
                 <span className="example__label">En contexto</span>
-                <AudioButton text={word.example.hanzi} label="la frase de ejemplo" compact />
+                <AudioButton
+                  text={word.example.hanzi}
+                  label="la frase de ejemplo"
+                  src={audioUrl('examples', word.id)}
+                  compact
+                />
               </div>
               <p className="example__hanzi" lang="zh-Hans">
                 {word.example.hanzi}

@@ -29,5 +29,8 @@ dist-ssr
 # Dataset temporal de vocabulario
 .tmp/
 
+# Audio generado con Piper (scripts/build-audio.mjs)
+public/audio/
+
 # Fuentes crudas del dataset (se descargan con el script)
 investigation/core-1000-words/scripts/raw/
