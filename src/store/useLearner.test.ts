@@ -89,6 +89,41 @@ describe('sincronización', () => {
   });
 });
 
+describe('prueba de retención', () => {
+  it('se programa a los diez repasos y guarda el resultado', () => {
+    const id = UNIT.words[0].id;
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    for (let step = 0; step < 10; step += 1) {
+      useLearner.getState().gradeWord(id, Rating.Good, NOW + step);
+    }
+    const scheduled = useLearner.getState().retention;
+    expect(scheduled?.wordIds).toEqual([id]);
+    expect(scheduled?.dueAt).toBe(NOW + 9 + 7 * 86_400_000);
+
+    useLearner.getState().recordRetention(1, NOW + 10);
+    expect(useLearner.getState().retention).toMatchObject({ score: 1, takenAt: NOW + 10 });
+  });
+
+  it('viaja en el payload de sincronización', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    for (let step = 0; step < 10; step += 1) {
+      useLearner.getState().gradeWord(UNIT.words[0].id, Rating.Good, NOW + step);
+    }
+    useLearner.getState().recordRetention(1, NOW + 20);
+    const payload = exportPayload();
+
+    useLearner.getState().reset();
+    useLearner.getState().hydrate(payload);
+    expect(useLearner.getState().retention).toMatchObject({ score: 1, takenAt: NOW + 20 });
+  });
+
+  it('un payload viejo sin prueba hidrata a null', () => {
+    useLearner.getState().introduceUnit(UNIT.id, NOW);
+    useLearner.getState().hydrate(JSON.stringify({ cards: {}, log: [] }));
+    expect(useLearner.getState().retention).toBeNull();
+  });
+});
+
 describe('requeuesSoon', () => {
   it('re-encola pasos de aprendizaje cortos', () => {
     expect(requeuesSoon(newCard(NOW), NOW)).toBe(true);

@@ -13,6 +13,13 @@ export function Practice() {
         <p>Dentro de cada unidad, la práctica te hace reconocer la palabra solo de oído.</p>
         <span className="practice__cta">Ver unidades →</span>
       </a>
+      <a className="practice__card" href="#/prueba">
+        <h2>Prueba de retención</h2>
+        <p>
+          Diez palabras sin pistas, siete días después. Mide lo que recuerdas, no lo que repites.
+        </p>
+        <span className="practice__cta">Ver la prueba →</span>
+      </a>
       <a className="practice__card" href="#/tonos">
         <h2>Tonos</h2>
         <p>Escucha la palabra y elige el pinyin con sus tonos. Diez por tanda.</p>

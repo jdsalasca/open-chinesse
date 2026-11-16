@@ -277,7 +277,7 @@ export function Lesson({ unitId }: { unitId: string }) {
         <p className="summary__xp">+{earnedXp} XP</p>
         <p className="summary__text">
           {correct === answers.length
-            ? 'Reconociste todas. Ahora el repaso espaciado hará el resto.'
+            ? 'Reconociste todas. El repaso volverá a traerlas cuando toque.'
             : 'El error es parte del proceso: esas palabras volverán antes.'}
         </p>
         <div className="summary__actions">

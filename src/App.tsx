@@ -9,6 +9,7 @@ import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
 import { Character } from './screens/Character';
 import { Stories } from './screens/Stories';
+import { Check } from './screens/Check';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -37,6 +38,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   practice: () => <Practice />,
   immersion: () => <Immersion />,
   tones: () => <Tones />,
+  check: () => <Check />,
 };
 
 function Header({ route }: { route: Route }) {

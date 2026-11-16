@@ -23,10 +23,13 @@ const LOG_LIMIT = 3000;
 
 export type Miss = { reason: MissReason; at: number };
 
+export type Retention = { wordIds: string[]; dueAt: number; score?: number; takenAt?: number };
+
 export type LearnerPayload = {
   cards: Record<string, StoredCard>;
   log: ReviewRecord[];
   misses: Record<string, Miss>;
+  retention: Retention | null;
   lastEditAt: number;
   xp: number;
   stars: Record<string, number>;
@@ -37,6 +40,7 @@ export type LearnerState = {
   cards: Record<string, StoredCard>;
   log: ReviewRecord[];
   misses: Record<string, Miss>;
+  retention: Retention | null;
   createdAt: number;
   lastEditAt: number;
   xp: number;
@@ -49,6 +53,7 @@ export type LearnerState = {
   introduceUnit: (unitId: string, now?: number) => void;
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
+  recordRetention: (score: number, now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
@@ -73,6 +78,7 @@ const emptyState = () => {
     cards: {} as Record<string, StoredCard>,
     log: [] as ReviewRecord[],
     misses: {} as Record<string, Miss>,
+    retention: null as Retention | null,
     createdAt: now,
     lastEditAt: now,
     xp: 0,
@@ -109,9 +115,19 @@ function gradeWord(store: Store, wordId: string, rating: Grade, now: number): vo
   const card = state.cards[wordId];
   if (!card) return;
   const gained = xpForGrade(rating);
+  const log = [...state.log, { wordId, rating, at: now }].slice(-LOG_LIMIT);
+  const retention =
+    state.retention ??
+    (log.length >= 10
+      ? {
+          wordIds: [...new Set(log.map((entry) => entry.wordId))].slice(0, 10),
+          dueAt: now + 7 * 24 * 60 * 60 * 1000,
+        }
+      : null);
   store.set({
     cards: { ...state.cards, [wordId]: review(card, rating, now) },
-    log: [...state.log, { wordId, rating, at: now }].slice(-LOG_LIMIT),
+    log,
+    retention,
     xp: state.xp + gained,
     todayXp: state.todayXp + gained,
     lastEditAt: now,
@@ -151,12 +167,25 @@ function recordLesson(
   });
 }
 
+function asRetention(value: unknown): Retention | null {
+  if (!value || typeof value !== 'object') return null;
+  const item = value as Partial<Retention>;
+  if (!Array.isArray(item.wordIds) || typeof item.dueAt !== 'number') return null;
+  return {
+    wordIds: item.wordIds.filter((id): id is string => typeof id === 'string').slice(0, 10),
+    dueAt: item.dueAt,
+    ...(typeof item.score === 'number' ? { score: item.score } : {}),
+    ...(typeof item.takenAt === 'number' ? { takenAt: item.takenAt } : {}),
+  };
+}
+
 function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPayload> | null {
   if (!parsed.cards) return null;
   return {
     cards: asRecord<StoredCard>(parsed.cards),
     log: asArray<ReviewRecord>(parsed.log, []),
     misses: asRecord<Miss>(parsed.misses),
+    retention: asRetention(parsed.retention),
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
@@ -170,6 +199,17 @@ function hydrate(store: Store, payload: string): void {
   store.set(normalized as Partial<LearnerState>);
 }
 
+/** v3 estrenó el sistema de XP y estrellas: lo anterior no era comparable. */
+function applyV3Defaults(payload: Partial<LearnerState>, version: number): void {
+  if (version >= 3) return;
+  payload.xp = 0;
+  payload.todayKey = dayKey(Date.now());
+  payload.todayXp = 0;
+  payload.dailyGoal = DAILY_GOAL;
+  payload.stars = {};
+  payload.achievements = [];
+}
+
 export const useLearner = create<LearnerState>()(
   persist(
     (set, get) => {
@@ -180,6 +220,11 @@ export const useLearner = create<LearnerState>()(
         introduceUnit: (unitId, now = Date.now()) => introduceUnit(store, unitId, now),
         gradeWord: (wordId, rating, now = Date.now()) => gradeWord(store, wordId, rating, now),
         noteMiss: (wordId, reason, now = Date.now()) => noteMiss(store, wordId, reason, now),
+        recordRetention: (score, now = Date.now()) => {
+          const { retention } = get();
+          if (!retention) return;
+          set({ retention: { ...retention, score, takenAt: now }, lastEditAt: now });
+        },
         completeOnboarding: (goalXp, now = Date.now()) =>
           set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
@@ -190,26 +235,21 @@ export const useLearner = create<LearnerState>()(
     },
     {
       name: 'open-chinesse',
-      version: 5,
+      version: 6,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
-        if (version < 3) {
-          old.xp = 0;
-          old.todayKey = dayKey(Date.now());
-          old.todayXp = 0;
-          old.dailyGoal = DAILY_GOAL;
-          old.stars = {};
-          old.achievements = [];
-        }
+        applyV3Defaults(old, version);
         if (version < 4) old.misses = {};
         if (version < 5) old.onboarded = Object.keys(old.cards ?? {}).length > 0;
+        if (version < 6) old.retention = null;
         return old as LearnerState;
       },
       partialize: (state) => ({
         cards: state.cards,
         log: state.log,
         misses: state.misses,
+        retention: state.retention,
         createdAt: state.createdAt,
         lastEditAt: state.lastEditAt,
         xp: state.xp,
@@ -234,6 +274,16 @@ export function completedUnits(cards: Record<string, StoredCard>): string[] {
 }
 
 export function exportPayload(): string {
-  const { cards, log, misses, lastEditAt, xp, stars, achievements } = useLearner.getState();
-  return JSON.stringify({ cards, log, misses, lastEditAt, xp, stars, achievements });
+  const { cards, log, misses, retention, lastEditAt, xp, stars, achievements } =
+    useLearner.getState();
+  return JSON.stringify({
+    cards,
+    log,
+    misses,
+    retention,
+    lastEditAt,
+    xp,
+    stars,
+    achievements,
+  });
 }

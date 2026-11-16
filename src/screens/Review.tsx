@@ -79,7 +79,7 @@ export function Review() {
       }
       if (!revealed && (event.key === ' ' || event.key === 'Enter')) {
         event.preventDefault();
-        reveal();
+        if (typed.trim()) submitTyped();
         return;
       }
       if (revealed && KEY_HINTS[event.key]) {

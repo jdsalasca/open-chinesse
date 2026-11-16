@@ -277,8 +277,8 @@ export function Home() {
             después.
           </li>
           <li>
-            <strong>Repaso espaciado FSRS.</strong> Cada palabra vuelve justo antes de que la
-            olvides.
+            <strong>Repaso espaciado FSRS.</strong> Cada palabra vuelve cuando toca repasarla, no
+            cuando ya la has olvidado.
           </li>
           <li>
             <strong>Audio en todo.</strong> El tono es parte de la palabra, no un adorno.
