@@ -80,6 +80,22 @@ Tests nuevos:
 Capturas en `.screens/audit/`: `c26-practice.png`,
 `c26-practice-mobile.png`, `c26-recorder.png`, `c26-recorder-ready.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/practicar`: 18 tarjetas, seis filtros y etiquetas de destreza; 0 px de
+  desbordamiento.
+- Filtrar «Oído» en producción deja Tonos, Cuentos para dormir y Comprensión
+  auditiva.
+- `/#/certificado/9` cae en «Un examen al cerrar cada nivel».
+- `/#/caracter/%E0%A4%A` cae en la portada.
+- Grabadora sin permiso: aviso y «Reintentar micrófono» visibles.
+- 390×844 en producción: 0 px de desbordamiento y seis filtros.
+
+Captura de producción: `.screens/audit/c26-prod-mobile.png`.
+
 ## Límites
 
 - Los filtros son de cliente; no cambian el orden ni el progreso.
