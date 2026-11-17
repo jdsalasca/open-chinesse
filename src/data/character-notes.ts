@@ -270,11 +270,11 @@ export const STORY_NOTES: Record<string, { idea?: string; mnemonic?: string; sou
     sound: '勺 (sháo) daba el sonido; hoy se lee de.',
   },
   是: {
-    idea: 'Sol (日) sobre 正 (correcto): lo que es claro y correcto. De ahí, ser y sí.',
-    mnemonic: 'Sol + correcto → ser.',
+    idea: 'Sol (日) sobre una base recta: lo que es claro y correcto. De ahí, ser y sí.',
+    mnemonic: 'Sol + base recta → ser.',
   },
   有: {
-    idea: 'Una mano (又) sosteniendo carne (月): lo que se tiene.',
+    idea: 'Una mano que sostiene carne (月): lo que se tiene.',
     mnemonic: 'Mano + carne → tener.',
   },
   在: {
