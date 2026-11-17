@@ -262,18 +262,24 @@ function failLabel(count: number): string {
   return count === 1 ? 'Repasar el fallo' : `Repasar los ${count} fallos`;
 }
 
-function summaryLead(check: boolean): string {
-  return check
-    ? 'Guardado como tu primera prueba. No cambia tu repaso de palabras: mide si la distinción se mantiene sin práctica inmediata.'
-    : 'Repaso programado en 3 días y prueba diferida en 7. Los fallos quedan anotados para repetirlos.';
+function summaryLead(check: boolean, checked: boolean): string {
+  if (check) {
+    return 'Guardado como tu primera prueba. No cambia tu repaso de palabras: mide si la distinción se mantiene sin práctica inmediata.';
+  }
+  if (checked) {
+    return 'Práctica completada. Tu primera prueba ya está guardada; los fallos quedan anotados para repetirlos.';
+  }
+  return 'Repaso programado en 3 días y prueba diferida en 7. Los fallos quedan anotados para repetirlos.';
 }
 
 function Summary({
   result,
+  checked,
   onDone,
   onReview,
 }: {
   result: Result;
+  checked: boolean;
   onDone: () => void;
   onReview: () => void;
 }) {
@@ -288,7 +294,7 @@ function Summary({
       <h1>
         {result.score} de {result.total}
       </h1>
-      <p className="scenario-done__lead">{summaryLead(check)}</p>
+      <p className="scenario-done__lead">{summaryLead(check, checked)}</p>
       <div className="scenario-done__actions">
         {review && (
           <button type="button" className="button button--primary" onClick={onReview}>
@@ -412,6 +418,7 @@ function TopicSession({ topic, mode, items, onExit, onMode }: TopicSessionProps)
   const savePractice = useLearner((state) => state.saveGrammarPractice);
   const saveCheck = useLearner((state) => state.saveGrammarCheck);
   const logActivity = useLearner((state) => state.logActivity);
+  const checked = useLearner((state) => Boolean(state.grammar[topic.id]?.check));
   const [result, setResult] = useState<Result | null>(null);
   const finish = (answers: boolean[]) => {
     const failed = items.filter((_, index) => !answers[index]).map((item) => item.id);
@@ -424,6 +431,7 @@ function TopicSession({ topic, mode, items, onExit, onMode }: TopicSessionProps)
     return (
       <Summary
         result={result}
+        checked={checked}
         onDone={onExit}
         onReview={() => {
           setResult(null);

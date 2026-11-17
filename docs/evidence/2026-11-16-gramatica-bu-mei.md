@@ -84,5 +84,7 @@ Capturas en `.screens/audit/`: `c16-grammar-intro.png`,
   existe; falta la vista.
 - No hay aviso cuando la prueba está disponible; el alumno la ve al entrar al
   tema.
+- Tras la prueba no hay un calendario indefinido de gramática: el tema queda
+  como consulta y la práctica se puede repetir a mano.
 - La prueba es de un solo intento y las explicaciones son deliberadamente
   breves.
