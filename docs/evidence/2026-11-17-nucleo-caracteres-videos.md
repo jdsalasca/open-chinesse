@@ -70,6 +70,17 @@ Capturas en `.screens/audit/`: `c18-character-story.png`,
 `c18-character-you.png`, `c18-character-fire.png`,
 `c18-character-videos.png`, `c18-character-mobile.png`.
 
+## Producción
+
+- Desplegado `2addd3b` en `https://open-chinesse.eridu.top`.
+- 好: historia mujer + hijo, memoria y roles de significado.
+- 你: leyenda verde/azul, 亻 significado y 尔 sonido; «尔 (ěr) → nǐ».
+- 火: sentido «fuego», historia de llamas, sin piezas falsas.
+- 是: «Sol sobre una base recta… ser y sí».
+- Inmersión: 22 tarjetas (18 de chino + 4 de caracteres); filtros 9/5/4.
+- Móvil 390: 0 px de desbordamiento; sin errores de consola distintos del
+  401 esperado sin sesión.
+
 ## Límites
 
 - La historia de los 618 caracteres se **genera** con datos y plantillas; las
