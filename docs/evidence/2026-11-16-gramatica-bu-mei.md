@@ -74,6 +74,20 @@ Capturas en `.screens/audit/`: `c16-grammar-intro.png`,
 `c16-grammar-question.png`, `c16-grammar-summary.png`,
 `c16-grammar-mobile.png`.
 
+## Producción
+
+- Desplegado `4570370` en `https://open-chinesse.eridu.top`.
+- `/gramatica`: un tema, cuatro reglas y tres contrastes; sin prueba antes de
+  tiempo.
+- Práctica real: 6 de 7, feedback específico y repaso del fallo en 1 de 1.
+- Prueba forzada moviendo `checkAt`: 4 de 5, guardada como primera prueba; el
+  botón desaparece y el resultado persiste tras recargar.
+- Repetir la práctica después de la prueba conserva el resultado y muestra
+  «Práctica completada. Tu primera prueba ya está guardada».
+- Practicar: 14 tarjetas, incluida «Gramática en contraste».
+- Móvil 390×844 sin desbordamiento y sin errores de consola distintos del 401
+  esperado sin sesión.
+
 ## Límites
 
 - Solo hay un tema (不/没); 了/过, 的/得 y clasificadores quedan para después.
