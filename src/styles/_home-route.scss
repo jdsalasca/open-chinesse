@@ -27,6 +27,7 @@
 
 .level-switch {
   display: flex;
+  flex-wrap: wrap;
   gap: $space-1;
   padding: $space-1;
   background: $paper-deep;
@@ -36,6 +37,8 @@
 
 .level-switch__tab {
   display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
   gap: 1px;
   padding: $space-2 $space-4;
   border: 1px solid transparent;

@@ -6,6 +6,10 @@
   gap: $space-4;
   max-width: 980px;
   margin: 0 auto;
+
+  > * {
+    min-width: 0;
+  }
 }
 
 .immersion__note {
