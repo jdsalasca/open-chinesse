@@ -132,6 +132,15 @@ const BASE_ACTIONS: Action[] = [
     cta: 'Investigar la escena',
   },
   {
+    href: '#/piezas',
+    tone: 'violet',
+    icon: 'sparkles',
+    meta: '8 caracteres',
+    title: 'Laboratorio de piezas',
+    text: 'Clasifica cada componente como significado o sonido y mira el carácter por dentro.',
+    cta: 'Entrar al laboratorio',
+  },
+  {
     href: '#/prueba',
     tone: 'amber',
     icon: 'clock',

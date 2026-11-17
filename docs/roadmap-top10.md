@@ -165,6 +165,11 @@ Terra y la auditoría coinciden:
 - **¿Qué pasó en la escena?** (`/escena`): ocho micro-lecturas por tanda,
   elección de resumen y de la línea que lo justifica, con doble puntuación.
 
+## Hecho en C22
+
+- **Laboratorio de piezas** (`/piezas`): clasifica cada componente como
+  significado o sonido, con feedback y enlace a la ficha.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

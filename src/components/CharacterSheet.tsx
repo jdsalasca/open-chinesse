@@ -189,6 +189,11 @@ function CompositionTree({
         Toca un carácter para abrir su ficha; «+ dentro» muestra sus piezas.
       </p>
       <Tree nodes={data.pieces} onOpen={onOpen} />
+      {data.hasRoles && (
+        <a className="link" href="#/piezas">
+          Practica estas piezas en el laboratorio →
+        </a>
+      )}
     </Card>
   );
 }

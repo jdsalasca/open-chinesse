@@ -1,0 +1,121 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.pieces {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.pieces__card {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+}
+
+.pieces__head {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.pieces__hanzi {
+  @include hanzi(3.2rem);
+  line-height: 1;
+}
+
+.pieces__reading {
+  margin: 0;
+  font-family: $font-mono;
+  color: $teal;
+}
+
+.pieces__meaning {
+  margin: 0;
+  font-weight: 600;
+}
+
+.pieces__prompt {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.pieces__components {
+  display: grid;
+  gap: $space-2;
+}
+
+.pieces__component {
+  display: grid;
+  gap: $space-2;
+  padding: $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.pieces__component.is-correct {
+  border-color: $mint;
+  background: $mint-soft;
+}
+
+.pieces__component.is-wrong {
+  border-color: $danger;
+  background: $pink-soft;
+}
+
+.pieces__piece {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2;
+}
+
+.pieces__char {
+  @include hanzi(1.5rem);
+}
+
+.pieces__label {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.pieces__roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.pieces__role {
+  padding: $space-1 $space-3;
+  border: 1px solid $line-strong;
+  border-radius: $radius-pill;
+  background: $surface;
+  font: inherit;
+  font-size: 0.85rem;
+  color: $ink-soft;
+  cursor: pointer;
+  @include focus-ring;
+
+  &:hover:not(:disabled) {
+    border-color: $mint;
+    color: $mint-dark;
+  }
+
+  &.is-active {
+    border-color: $mint-dark;
+    background: $mint-soft;
+    color: $mint-dark;
+    font-weight: 700;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.pieces__result {
+  margin: 0;
+  font-size: 0.8rem;
+  color: $muted;
+}

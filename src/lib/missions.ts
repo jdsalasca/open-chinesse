@@ -15,7 +15,8 @@ export type ActivityKind =
   | 'close'
   | 'transform'
   | 'detective'
-  | 'scene';
+  | 'scene'
+  | 'pieces';
 
 export type ActivityEntry = {
   kind: ActivityKind;

@@ -404,5 +404,12 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       cita de la línea.
 - [x] Opciones de resumen barajadas; test de posición.
 
+### C22 — Laboratorio de piezas
+
+- [x] Ocho caracteres por tanda con al menos dos piezas clasificables.
+- [x] Clasificación táctil significado/sonido, comprobación y feedback por pieza.
+- [x] Enlace desde cada ficha con roles y tarjeta en Practicar.
+- [x] Actividad `pieces` y resumen final.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.
