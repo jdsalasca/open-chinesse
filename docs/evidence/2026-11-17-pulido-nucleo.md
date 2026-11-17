@@ -77,6 +77,25 @@ pnpm build                         ✓
 Capturas en `.screens/audit/`: `c23-lesson-before.png`,
 `c23-lesson-after.png`, `c23-lesson-feedback.png`, `c23-grammar-worked.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/lesson/h1-01`: antes de revelar no hay significado y aparecen «Mostrar
+  significado» y «No lo recuerdo»; tras revelar, «hola» y el ejemplo
+  «你好，我叫安娜。».
+- Quiz de la misma lección: elegir «cerveza» para 不 muestra
+  «Elegiste cerveza / Respuesta no», el ejemplo «我不是老师。» con audio y el
+  selector de motivo.
+- `/#/gramatica/bu-mei`: ejemplo resuelto «他昨天没去北京。» con pinyin,
+  traducción y pista de 没, antes de las 4 reglas y los 3 contrastes.
+- Móvil 390 en producción: 0 px de desbordamiento en lección, gramática e
+  inicio.
+
+Capturas de producción en `.screens/audit/`: `c23-prod-feedback.png`,
+`c23-prod-grammar.png`, `c23-prod-mobile.png`.
+
 ## Base de investigación
 
 - **Roediger y Karpicke (2006)**: la práctica de recuperación mejora la
