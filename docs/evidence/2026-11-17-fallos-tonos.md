@@ -49,6 +49,15 @@ pnpm build                           ✓
 Capturas en `.screens/audit/`: `c12-fallos-mobile.png`,
 `c12-dictation-strict.png`.
 
+## Producción
+
+- Desplegado `a5bcf46` en `https://open-chinesse.eridu.top`.
+- `/fallos` con dos fallos: primera pregunta de escucha, cuatro opciones y
+  contador 1/2.
+- Practicar: diez tarjetas y «Tus fallos · 2 palabras».
+- `/dictado`: «Exigir tonos» activo; `ni hao` falla con el aviso de tonos.
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Límites
 
 - Solo se guarda el último motivo por palabra; no hay historial de intentos.
