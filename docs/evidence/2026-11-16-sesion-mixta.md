@@ -48,6 +48,15 @@ pnpm build                           ✓
 Capturas en `.screens/audit/`: `c11-home-challenge.png`, `c11-mixed.png`,
 `c11-mixed-summary.png`, `c11-mixed-mobile.png`.
 
+## Producción
+
+- Desplegado `b9ee872` en `https://open-chinesse.eridu.top`.
+- Home con «Reto de hoy · Pide un café» y enlace a la cafetería.
+- Practicar con nueve tarjetas, incluida «Sesión mixta».
+- `/mixta`: tanda de 10, primera pregunta de significado con cuatro opciones;
+  los cuatro tipos se verificaron en local.
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Pendiente
 
 - Shadowing y comprensión auditiva con pregunta.
