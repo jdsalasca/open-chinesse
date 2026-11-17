@@ -443,12 +443,19 @@
   background: $surface;
   color: $ink;
   cursor: pointer;
+  transition:
+    transform $motion $ease,
+    background $motion $ease,
+    border-color $motion $ease,
+    box-shadow $motion $ease;
   @include focus-ring;
 }
 
 .char-links__chip:hover {
   border-color: $mint;
   background: $mint-soft;
+  transform: translateY(-1px);
+  box-shadow: $shadow-sm;
 }
 
 // Menú contextual -------------------------------------------------------

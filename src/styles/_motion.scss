@@ -78,6 +78,19 @@
   animation-delay: 160ms;
 }
 
+@keyframes audio-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(0 184 107 / 30%);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(0 184 107 / 0%);
+  }
+}
+
+.audio-button.is-playing {
+  animation: audio-pulse 1.2s $ease infinite;
+}
+
 .level-switch__bar {
   display: block;
   height: 4px;
@@ -100,7 +113,9 @@
   .quiz__feedback,
   .choice__feedback,
   .flashcard__recall,
-  .grammar-worked {
+  .grammar-worked,
+  .option__mark,
+  .audio-button.is-playing {
     animation: none;
   }
 
@@ -115,7 +130,8 @@
   .grade,
   .option,
   .chip,
-  .piece__tile {
+  .piece__tile,
+  .lesson-progress__seg {
     transition: none;
   }
 }

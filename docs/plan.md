@@ -430,5 +430,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       que merecen otra mirada.
 - [x] Plan de lección determinista y tests de respuesta correcta.
 
+### C25 — Estética de la lección
+
+- [x] Progreso segmentado por rondas, tarjeta con marca de agua y divisor
+      editorial.
+- [x] Ejemplo con la palabra objetivo resaltada.
+- [x] Etiquetas de modo con icono y color, opciones con check/equis y feedback
+      en banner.
+- [x] Resumen con anillo de aciertos y palabras pendientes en tarjetas.
+- [x] Pulso del audio, hover elevado y `prefers-reduced-motion`.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

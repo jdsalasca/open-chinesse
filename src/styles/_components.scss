@@ -153,9 +153,13 @@
 // Tarjeta -------------------------------------------------------------------
 .flashcard {
   @include surface($radius-lg, $shadow-lg);
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: $space-5;
   padding: $space-5 $space-4;
+  background:
+    radial-gradient(420px 200px at 100% 0%, rgb(0 184 107 / 8%), transparent 70%), $surface;
   text-align: center;
 
   @include from($bp-sm) {
@@ -164,10 +168,34 @@
     padding: $space-6;
     text-align: left;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, $mint, $teal, $amber);
+  }
+}
+
+.flashcard__ghost {
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.3em;
+  z-index: 0;
+  font-family: $font-hanzi;
+  font-size: clamp(7rem, 22vw, 12rem);
+  line-height: 1;
+  color: $ink;
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
 }
 
 .flashcard__word,
 .flashcard__context {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: $space-3;
   align-content: center;
@@ -175,6 +203,13 @@
 
 .flashcard__word {
   justify-items: center;
+}
+
+.flashcard__context {
+  @include from($bp-sm) {
+    padding-left: $space-5;
+    border-left: 1px solid $line;
+  }
 }
 
 .flashcard__step {
@@ -278,6 +313,13 @@
 .example__hanzi {
   @include hanzi(1.5rem);
   color: $ink;
+}
+
+.example__target {
+  background: linear-gradient(transparent 58%, rgb(0 184 107 / 22%) 58%);
+  color: inherit;
+  padding: 0 0.08em;
+  border-radius: 2px;
 }
 
 .example__pinyin {

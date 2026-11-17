@@ -1,4 +1,12 @@
-import { useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type Dispatch,
+  type ReactNode,
+  type SetStateAction,
+} from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { CharacterLinks } from '../components/CharacterLinks';
 import { ExampleBlock } from '../components/ExampleBlock';
@@ -6,7 +14,8 @@ import { MissPicker } from '../components/MissPicker';
 import { OrderExercise } from '../components/OrderExercise';
 import { Pinyin } from '../components/Pinyin';
 import { Confetti } from '../components/ui/Confetti';
-import { Icon } from '../components/ui/Icon';
+import { Icon, type IconName } from '../components/ui/Icon';
+import { ProgressRing } from '../components/ui/ProgressRing';
 import { ALL_WORDS, LEVEL_LABELS, UNITS, type Unit, type Word } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
 import { LESSON_CHUNK, makeLessonPlan, type LessonStep } from '../lib/lesson';
@@ -132,23 +141,34 @@ function useLessonActions({ plan, progress, noteMiss }: LessonActionsParams) {
   return { next, choose, finish };
 }
 
+function LessonProgress({ round, total }: { round: number; total: number }) {
+  return (
+    <div className="lesson-progress" aria-hidden="true">
+      {Array.from({ length: total }, (_, index) => {
+        const state = index + 1 < round ? ' is-done' : index + 1 === round ? ' is-current' : '';
+        return <span key={index} className={`lesson-progress__seg${state}`} />;
+      })}
+    </div>
+  );
+}
+
 function LessonHeader({
   label,
   count,
-  ratio,
+  round,
+  totalRounds,
   goal,
 }: {
   label: string;
   count: string;
-  ratio: number;
+  round: number;
+  totalRounds: number;
   goal?: string;
 }) {
   return (
     <>
       <SessionHeader label={label} count={count} onExit={() => navigate('/')} />
-      <div className="progress" aria-hidden="true">
-        <span style={{ width: `${ratio * 100}%` }} />
-      </div>
+      <LessonProgress round={round} total={totalRounds} />
       {goal && <p className="lesson__goal">{goal}</p>}
     </>
   );
@@ -208,6 +228,9 @@ function Flashcard({
 }) {
   return (
     <article className="flashcard" aria-live="polite">
+      <span className="flashcard__ghost" aria-hidden="true" lang="zh-Hans">
+        {word.hanzi}
+      </span>
       <FlashcardWord
         word={word}
         round={round}
@@ -264,12 +287,23 @@ function LearnActions({
   );
 }
 
-function LearnHeader({ unit, wordIndex, ratio }: { unit: Unit; wordIndex: number; ratio: number }) {
+function LearnHeader({
+  unit,
+  wordIndex,
+  round,
+  totalRounds,
+}: {
+  unit: Unit;
+  wordIndex: number;
+  round: number;
+  totalRounds: number;
+}) {
   return (
     <LessonHeader
       label={`${LEVEL_LABELS[unit.level]} · ${unit.title}`}
       count={`${wordIndex + 1} / ${unit.words.length}`}
-      ratio={ratio}
+      round={round}
+      totalRounds={totalRounds}
       goal={`Objetivo: ${unit.subtitle}`}
     />
   );
@@ -285,7 +319,6 @@ function roundOf(totalWords: number, wordIndex: number) {
 function LearnPhase({
   unit,
   wordId,
-  ratio,
   revealed,
   nextKind,
   onReveal,
@@ -293,7 +326,6 @@ function LearnPhase({
 }: {
   unit: Unit;
   wordId: string;
-  ratio: number;
   revealed: boolean;
   nextKind: LessonStep['kind'] | undefined;
   onReveal: () => void;
@@ -305,7 +337,7 @@ function LearnPhase({
   const { round, total: totalRounds } = roundOf(unit.words.length, wordIndex);
   return (
     <div className="lesson">
-      <LearnHeader unit={unit} wordIndex={wordIndex} ratio={ratio} />
+      <LearnHeader unit={unit} wordIndex={wordIndex} round={round} totalRounds={totalRounds} />
       <Flashcard
         word={word}
         revealed={revealed}
@@ -329,10 +361,21 @@ function GapSentence({ prompt }: { prompt: string }) {
   );
 }
 
+function PromptLabel({ icon, children }: { icon: IconName; children: ReactNode }) {
+  return (
+    <span className="quiz__prompt-label">
+      <span className="quiz__prompt-icon" aria-hidden="true">
+        <Icon name={icon} size={14} />
+      </span>
+      {children}
+    </span>
+  );
+}
+
 function GapPrompt({ question }: { question: Question }) {
   return (
     <div className="quiz__prompt">
-      <span className="quiz__prompt-label">Completa la frase</span>
+      <PromptLabel icon="chat">Completa la frase</PromptLabel>
       <p className="quiz__sentence" lang="zh-Hans">
         <GapSentence prompt={question.prompt ?? ''} />
       </p>
@@ -342,9 +385,10 @@ function GapPrompt({ question }: { question: Question }) {
 }
 
 function AudioPrompt({ label, word, note }: { label: string; word: Word; note?: string }) {
+  const icon: IconName = note ? 'sparkles' : 'speaker';
   return (
     <div className="quiz__prompt">
-      <span className="quiz__prompt-label">{label}</span>
+      <PromptLabel icon={icon}>{label}</PromptLabel>
       <div className="quiz__prompt-audio">
         <AudioButton text={word.hanzi} label="la palabra" src={audioUrl('words', word.id)} />
         <span className="quiz__dots" aria-hidden="true">
@@ -359,7 +403,7 @@ function AudioPrompt({ label, word, note }: { label: string; word: Word; note?: 
 function MeaningPrompt({ word }: { word: Word }) {
   return (
     <div className="quiz__prompt">
-      <span className="quiz__prompt-label">¿Qué significa?</span>
+      <PromptLabel icon="book">¿Qué significa?</PromptLabel>
       <div className="quiz__hanzi" lang="zh-Hans">
         {word.hanzi}
       </div>
@@ -375,7 +419,7 @@ function QuizPrompt({ question, word }: { question: Question; word: Word }) {
   if (question.mode === 'order') {
     return (
       <div className="quiz__prompt">
-        <span className="quiz__prompt-label">Ordena la frase</span>
+        <PromptLabel icon="arrow">Ordena la frase</PromptLabel>
       </div>
     );
   }
@@ -398,39 +442,58 @@ function OptionText({ option, mode }: { option: string; mode: Question['mode'] }
   return <span lang={mode === 'gap' ? 'zh-Hans' : undefined}>{option}</span>;
 }
 
-function QuizOptions({
-  options,
-  answer,
-  mode,
-  selected,
-  onPick,
-}: {
+type OptionState = { className: string; mark: 'correct' | 'wrong' | null };
+
+function optionState(option: string, answer: string, selected: string | null): OptionState {
+  if (selected === null) return { className: '', mark: null };
+  if (option === answer) return { className: ' is-correct', mark: 'correct' };
+  if (option === selected) return { className: ' is-wrong', mark: 'wrong' };
+  return { className: ' is-muted', mark: null };
+}
+
+function OptionMark({ mark }: { mark: OptionState['mark'] }) {
+  if (mark === 'correct') {
+    return (
+      <span className="option__mark is-correct" aria-hidden="true">
+        <Icon name="check" size={15} />
+      </span>
+    );
+  }
+  if (mark === 'wrong') {
+    return (
+      <span className="option__mark is-wrong" aria-hidden="true">
+        ×
+      </span>
+    );
+  }
+  return null;
+}
+
+type QuizOptionsProps = {
   options: string[];
   answer: string;
   mode: Question['mode'];
   selected: string | null;
   onPick: (option: string) => void;
-}) {
+};
+
+function QuizOptions({ options, answer, mode, selected, onPick }: QuizOptionsProps) {
   return (
     <div className="quiz__options" role="group" aria-label="Opciones">
       {options.map((option) => {
-        const state =
-          selected === null
-            ? ''
-            : option === answer
-              ? ' is-correct'
-              : option === selected
-                ? ' is-wrong'
-                : ' is-muted';
+        const state = optionState(option, answer, selected);
         return (
           <button
             key={option}
             type="button"
-            className={`option${state}`}
+            className={`option${state.className}`}
             onClick={() => onPick(option)}
             disabled={selected !== null}
           >
-            <OptionText option={option} mode={mode} />
+            <span className="option__label">
+              <OptionText option={option} mode={mode} />
+            </span>
+            <OptionMark mark={state.mark} />
           </button>
         );
       })}
@@ -500,9 +563,12 @@ function QuizFeedback({
   const correct = selected === question.answer;
   return (
     <div className="quiz__feedback">
-      <p className="quiz__verdict" role="status">
-        {verdictFor(question, word, correct)}
-      </p>
+      <div className={`quiz__result${correct ? ' is-correct' : ' is-wrong'}`} role="status">
+        <span className="quiz__result-icon" aria-hidden="true">
+          {correct ? <Icon name="check" size={16} /> : '×'}
+        </span>
+        <p className="quiz__verdict">{verdictFor(question, word, correct)}</p>
+      </div>
       <QuizContrast selected={selected} answer={question.answer} mode={question.mode} />
       <ExampleBlock word={word} />
       {question.mode === 'tone' && (
@@ -618,31 +684,40 @@ function QuizStage({
   );
 }
 
-function QuizPhase({
-  question,
-  word,
-  number,
-  total,
-  ratio,
-  label,
-  ...stage
-}: {
+type QuizPhaseProps = {
   question: Question;
   word: Word;
   number: number;
   total: number;
-  ratio: number;
+  round: number;
+  totalRounds: number;
   label: string;
   selected: string | null;
   onSelect: (option: string) => void;
   onNext: () => void;
   onFinish: (correct: boolean) => void;
-}) {
+};
+
+function QuizPhase({
+  question,
+  word,
+  number,
+  total,
+  round,
+  totalRounds,
+  label,
+  ...stage
+}: QuizPhaseProps) {
   const noteMiss = useLearner((s) => s.noteMiss);
   return (
     <div className="lesson">
-      <LessonHeader label={label} count={`${number} / ${total}`} ratio={ratio} />
-      <section className="quiz" aria-live="polite">
+      <LessonHeader
+        label={label}
+        count={`${number} / ${total}`}
+        round={round}
+        totalRounds={totalRounds}
+      />
+      <section className="quiz" aria-live="polite" data-mode={question.mode}>
         <QuizStage
           question={question}
           word={word}
@@ -695,6 +770,33 @@ function MissedWords({ answers }: { answers: LessonAnswer[] }) {
   );
 }
 
+function SummaryScore({
+  correct,
+  total,
+  stars,
+}: {
+  correct: number;
+  total: number;
+  stars: number;
+}) {
+  return (
+    <div className="summary__score">
+      <ProgressRing
+        value={correct}
+        max={total}
+        label="Aciertos"
+        caption={`de ${total}`}
+        size={132}
+        stroke={11}
+      />
+      <div className="summary__score-copy">
+        <h1 className="summary__title">Lección completada</h1>
+        <SummaryStars stars={stars} />
+      </div>
+    </div>
+  );
+}
+
 function LessonSummary({ unit, answers }: { unit: Unit; answers: LessonAnswer[] }) {
   const correct = answers.filter((answer) => answer.correct).length;
   const stars = starsForScore(correct, Math.max(answers.length, 1));
@@ -705,10 +807,7 @@ function LessonSummary({ unit, answers }: { unit: Unit; answers: LessonAnswer[] 
         <p className="eyebrow">
           {LEVEL_LABELS[unit.level]} · {unit.title}
         </p>
-        <SummaryStars stars={stars} />
-        <h1 className="summary__title">
-          {correct} de {answers.length} correctas
-        </h1>
+        <SummaryScore correct={correct} total={answers.length} stars={stars} />
         <p className="summary__xp">+{xpForLesson(correct)} XP</p>
         <p className="summary__text">
           {correct === answers.length
@@ -759,7 +858,6 @@ function LearnStage({ unit, plan, progress, next }: StageProps) {
     <LearnPhase
       unit={unit}
       wordId={step.wordId}
-      ratio={(progress.index + 1) / plan.length}
       revealed={progress.revealed}
       nextKind={plan[progress.index + 1]?.kind}
       onReveal={() => progress.setRevealed(true)}
@@ -768,32 +866,49 @@ function LearnStage({ unit, plan, progress, next }: StageProps) {
   );
 }
 
-function QuestionStage({
-  unit,
-  plan,
-  progress,
-  next,
-  choose,
-  finish,
-}: StageProps & { choose: (option: string) => void; finish: (correct: boolean) => void }) {
+type QuestionStageProps = StageProps & {
+  choose: (option: string) => void;
+  finish: (correct: boolean) => void;
+};
+
+type QuestionMeta = {
+  word: Word;
+  total: number;
+  number: number;
+  round: number;
+  totalRounds: number;
+};
+
+function questionMeta(
+  unit: Unit,
+  plan: LessonStep[],
+  index: number,
+  question: Question,
+): QuestionMeta | null {
+  const word = ALL_WORDS.find((candidate) => candidate.id === question.wordId);
+  if (!word) return null;
+  const total = plan.filter((item) => item.kind === 'question').length;
+  const number = plan.slice(0, index + 1).filter((item) => item.kind === 'question').length;
+  const wordIndex = unit.words.findIndex((candidate) => candidate.id === word.id);
+  const { total: totalRounds } = roundOf(unit.words.length, Math.max(wordIndex, 0));
+  const round =
+    question.mode === 'order'
+      ? totalRounds + 1
+      : Math.floor(Math.max(wordIndex, 0) / LESSON_CHUNK) + 1;
+  return { word, total, number, round, totalRounds };
+}
+
+function QuestionStage({ unit, plan, progress, next, choose, finish }: QuestionStageProps) {
   const step = plan[progress.index];
   if (!step || step.kind !== 'question') return null;
-  const question = step.question;
-  const word = ALL_WORDS.find((candidate) => candidate.id === question.wordId);
-  if (!word) return <LessonMissing />;
-  const total = plan.filter((item) => item.kind === 'question').length;
-  const number = plan
-    .slice(0, progress.index + 1)
-    .filter((item) => item.kind === 'question').length;
+  const meta = questionMeta(unit, plan, progress.index, step.question);
+  if (!meta) return <LessonMissing />;
   return (
     <QuizPhase
-      question={question}
-      word={word}
-      number={number}
-      total={total}
-      ratio={(progress.index + 1) / plan.length}
+      question={step.question}
+      {...meta}
       label={
-        question.mode === 'order'
+        step.question.mode === 'order'
           ? `Aplica · ${LEVEL_LABELS[unit.level]}`
           : `Comprueba · ${LEVEL_LABELS[unit.level]}`
       }

@@ -3,6 +3,18 @@ import { Pinyin } from './Pinyin';
 import { audioUrl } from '../lib/audio';
 import type { Word } from '../data/curriculum';
 
+function Highlighted({ text, word }: { text: string; word: string }) {
+  const index = text.indexOf(word);
+  if (index < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, index)}
+      <mark className="example__target">{word}</mark>
+      {text.slice(index + word.length)}
+    </>
+  );
+}
+
 export function ExampleBlock({ word }: { word: Word }) {
   return (
     <div className="example">
@@ -16,7 +28,7 @@ export function ExampleBlock({ word }: { word: Word }) {
         />
       </div>
       <p className="example__hanzi" lang="zh-Hans">
-        {word.example.hanzi}
+        <Highlighted text={word.example.hanzi} word={word.hanzi} />
       </p>
       <p className="example__pinyin">
         <Pinyin pinyin={word.example.pinyin} />

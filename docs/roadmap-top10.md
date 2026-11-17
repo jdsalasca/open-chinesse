@@ -182,7 +182,14 @@ Terra y la auditoría coinciden:
   (significado, escucha, tono, hueco y ordenar), barra de acción sticky y
   resumen con las palabras que merecen otra mirada.
 
-## Siguiente ronda propuesta (C25)
+## Hecho en C25
+
+- **Estética de la lección**: progreso segmentado por rondas, tarjeta con marca
+  de agua y divisor editorial, palabra resaltada en el ejemplo, etiquetas de
+  modo con icono y color, opciones con check/equis, feedback en banner y
+  resumen con anillo de aciertos.
+
+## Siguiente ronda propuesta (C26)
 
 - **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
   con otra consigna, y distinguirla en el resumen.
