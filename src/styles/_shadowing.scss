@@ -136,12 +136,19 @@
 }
 
 .shadowing__warn {
+  display: grid;
+  gap: $space-2;
+  justify-items: start;
   margin: 0;
   padding: $space-3;
   border-radius: $radius;
   background: $amber-soft;
   color: #8a6100;
   font-size: 0.9rem;
+
+  p {
+    margin: 0;
+  }
 }
 
 .shadowing__hint {

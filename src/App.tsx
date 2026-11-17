@@ -4,6 +4,7 @@ import { CharacterMenu } from './components/CharacterMenu';
 import { AccountLink } from './components/AccountLink';
 import { BottomNav } from './components/BottomNav';
 import { CharacterDrawer } from './components/CharacterDrawer';
+import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { SessionBar } from './components/SessionBar';
 import { navigate, useRoute, type Route } from './lib/router';
 import { Home } from './screens/Home';
@@ -187,7 +188,9 @@ export default function App() {
       {!focus && <Header route={route} />}
       <main className="main" id="contenido">
         <SessionBar />
-        <RouteView route={route} />
+        <AppErrorBoundary key={JSON.stringify(route)}>
+          <RouteView route={route} />
+        </AppErrorBoundary>
       </main>
       {!focus && section && <BottomNav current={section} />}
       <CharacterDrawer />

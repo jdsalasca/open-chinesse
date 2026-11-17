@@ -22,6 +22,79 @@
   }
 }
 
+.practice__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.practice__filter {
+  padding: 7px 14px;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+  color: $muted;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background $motion $ease,
+    border-color $motion $ease,
+    color $motion $ease;
+
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    color: $ink;
+  }
+
+  &.is-active {
+    border-color: $ink;
+    background: $ink;
+    color: #fff;
+  }
+}
+
+.practice__skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.practice__skill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $mint;
+}
+
+.practice__skill--oido .practice__skill-dot {
+  background: $sky;
+}
+
+.practice__skill--habla .practice__skill-dot {
+  background: $mint;
+}
+
+.practice__skill--lectura .practice__skill-dot {
+  background: $teal;
+}
+
+.practice__skill--escritura .practice__skill-dot {
+  background: $amber;
+}
+
+.practice__skill--memoria .practice__skill-dot {
+  background: $violet;
+}
+
 .practice__card {
   position: relative;
   display: grid;

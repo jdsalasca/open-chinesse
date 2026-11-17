@@ -39,7 +39,14 @@ describe('rutas', () => {
 
   it('no se rompe con una ruta de carácter vacía', () => {
     expect(parseHash('#/caracter')).toEqual({ name: 'home' });
-    expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'character', char: '%E0%A4%A' });
+    expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'home' });
+  });
+
+  it('normaliza niveles de jefe y certificado', () => {
+    expect(parseHash('#/jefes/2')).toEqual({ name: 'boss', level: 2 });
+    expect(parseHash('#/jefes/9')).toEqual({ name: 'boss', level: undefined });
+    expect(parseHash('#/certificado/3')).toEqual({ name: 'certificate', level: 3 });
+    expect(parseHash('#/certificado/9')).toEqual({ name: 'boss' });
   });
 
   it('trata un anclaje interno como la portada si se carga de cero', () => {

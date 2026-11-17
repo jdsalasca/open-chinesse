@@ -46,9 +46,12 @@ function Recorder({ recorder }: { recorder: ReturnType<typeof useRecorder> }) {
   }
   if (recorder.state === 'denied') {
     return (
-      <p className="shadowing__warn">
-        No hay permiso para el micrófono. Puedes seguir escuchando el modelo.
-      </p>
+      <div className="shadowing__warn">
+        <p>No hay permiso para el micrófono. Puedes seguir escuchando el modelo.</p>
+        <button type="button" className="button button--ghost" onClick={recorder.start}>
+          Reintentar micrófono
+        </button>
+      </div>
     );
   }
   return (
@@ -164,8 +167,8 @@ function Reader({ text, onBack }: { text: ShadowingText; onBack: () => void }) {
         <Sentence line={line} audioId={audioId} />
         <Recorder recorder={recorder} />
         <p className="shadowing__hint">
-          La grabación se queda en este navegador y se borra al cambiar de frase. Sin nota: compara
-          tonos y ritmo.
+          La grabación se queda en este navegador y se borra al cambiar de frase. Máximo 10
+          segundos. Sin nota: compara tonos y ritmo.
         </p>
       </Card>
       <Nav index={index} last={last} onPrev={() => go(-1)} onNext={() => go(1)} />

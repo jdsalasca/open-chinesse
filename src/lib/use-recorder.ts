@@ -27,8 +27,10 @@ class VoiceRecorder {
     onState: (state: RecorderState) => void,
   ): Promise<void> {
     if (!canRecord()) return onState('unsupported');
+    if (this.recorder?.state === 'recording') return;
+    let media: MediaStream | null = null;
     try {
-      const media = await navigator.mediaDevices.getUserMedia({ audio: true });
+      media = await navigator.mediaDevices.getUserMedia({ audio: true });
       this.stream = media;
       const recorder = new MediaRecorder(media);
       this.chunks = [];
@@ -37,6 +39,8 @@ class VoiceRecorder {
         if (event.data.size > 0) this.chunks.push(event.data);
       };
       recorder.onstop = () => {
+        if (this.timer) window.clearTimeout(this.timer);
+        this.timer = null;
         stopStream(media);
         if (this.discard) return;
         const blob = new Blob(this.chunks, { type: recorder.mimeType || 'audio/webm' });
@@ -50,6 +54,8 @@ class VoiceRecorder {
       onState('recording');
       this.timer = window.setTimeout(() => recorder.stop(), 10_000);
     } catch {
+      stopStream(media);
+      this.stream = null;
       onState('denied');
     }
   }

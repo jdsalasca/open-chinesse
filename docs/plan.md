@@ -440,5 +440,13 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Resumen con anillo de aciertos y palabras pendientes en tarjetas.
 - [x] Pulso del audio, hover elevado y `prefers-reduced-motion`.
 
+### C26 — Habilidades estables
+
+- [x] Cinco destrezas visibles: oído, habla, lectura, escritura y memoria.
+- [x] Filtros por destreza y etiqueta en cada una de las 18 actividades.
+- [x] Boundary de pantalla con salida amable.
+- [x] Rutas de jefe/certificado normalizadas y carácter inválido controlado.
+- [x] Grabadora con limpieza de stream, reintento y límite de 10 segundos.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

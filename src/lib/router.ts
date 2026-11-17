@@ -69,19 +69,34 @@ const SIMPLE: Record<string, Route> = {
   piezas: { name: 'pieces' },
 };
 
+const HAN = /^\p{Script=Han}$/u;
+
+function levelParam(value: string): 1 | 2 | 3 | undefined {
+  const level = Number(value);
+  return level === 1 || level === 2 || level === 3 ? level : undefined;
+}
+
+function charParam(value: string): Route {
+  const char = decode(value);
+  return HAN.test(char) ? { name: 'character', char } : { name: 'home' };
+}
+
 const PARAM: Record<string, (value: string) => Route> = {
   lesson: (unitId) => ({ name: 'lesson', unitId }),
   historias: (storyId) => ({ name: 'stories', storyId }),
   situaciones: (scenarioId) => ({ name: 'scenario', scenarioId }),
   dormir: (storyId) => ({ name: 'bedtime', storyId }),
   china: (textId) => ({ name: 'china', textId }),
-  jefes: (level) => ({ name: 'boss', level: Number(level) as 1 | 2 | 3 }),
-  certificado: (level) => ({ name: 'certificate', level: Number(level) as 1 | 2 | 3 }),
+  jefes: (level) => ({ name: 'boss', level: levelParam(level) }),
+  certificado: (level) => {
+    const parsed = levelParam(level);
+    return parsed ? { name: 'certificate', level: parsed } : { name: 'boss' };
+  },
   escucha: (exerciseId) => ({ name: 'listening', exerciseId }),
   repite: (textId) => ({ name: 'shadowing', textId }),
   gramatica: (topicId) => ({ name: 'grammar', topicId }),
-  caracter: (char) => ({ name: 'character', char: decode(char) }),
-  character: (char) => ({ name: 'character', char: decode(char) }),
+  caracter: charParam,
+  character: charParam,
 };
 
 export function parseHash(hash: string): Route {

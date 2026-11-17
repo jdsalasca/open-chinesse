@@ -4,6 +4,7 @@ import { Icon, type IconName } from '../components/ui/Icon';
 import { SCENARIOS } from '../data/scenarios';
 import { GRAMMAR_TOPICS } from '../data/grammar';
 import { listeningExercises } from '../lib/listening';
+import { SKILLS, skillLabel, type Skill } from '../lib/practice';
 import { shadowingTexts } from '../lib/shadowing';
 import { buildQueue } from '../srs/queue';
 import { useLearner } from '../store/useLearner';
@@ -12,21 +13,25 @@ type Action = {
   href: string;
   tone: 'mint' | 'violet' | 'amber' | 'sky' | 'teal' | 'rose';
   icon: IconName;
+  skill: Skill;
   meta: string;
   title: string;
   text: string;
   cta: string;
 };
 
+type Filter = Skill | 'todas';
+
 const LISTENING_COUNT = listeningExercises().length;
 const SHADOWING_COUNT = shadowingTexts().length;
 const GRAMMAR_TOPICS_COUNT = GRAMMAR_TOPICS.length;
 
-const BASE_ACTIONS: Action[] = [
+export const BASE_ACTIONS: Action[] = [
   {
     href: '#/tonos',
     tone: 'violet',
     icon: 'speaker',
+    skill: 'oido',
     meta: 'Diez por tanda',
     title: 'Tonos',
     text: 'Escucha la palabra y elige el pinyin con sus tonos. La diferencia está en la marca.',
@@ -36,6 +41,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/dictado',
     tone: 'violet',
     icon: 'name',
+    skill: 'escritura',
     meta: 'Diez palabras',
     title: 'Dictado',
     text: 'Escucha una palabra y escríbela en hanzi o pinyin. El oído también se entrena escribiendo.',
@@ -45,6 +51,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/contexto',
     tone: 'teal',
     icon: 'book',
+    skill: 'lectura',
     meta: 'Seis frases',
     title: 'En contexto',
     text: 'Completa frases reales con la palabra que falta. Vale pinyin con tonos o el carácter.',
@@ -54,6 +61,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/dormir',
     tone: 'violet',
     icon: 'sparkles',
+    skill: 'oido',
     meta: 'Tres cuentos',
     title: 'Cuentos para dormir',
     text: 'Historias cortas con voz lenta, traducción y una explicación de cada línea. Sin prisa.',
@@ -63,6 +71,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/china',
     tone: 'sky',
     icon: 'book',
+    skill: 'lectura',
     meta: 'Tres lecturas',
     title: 'China en chino',
     text: 'El té, la ciudad y la familia. Lecturas HSK 3 con audio, explicación y una pregunta.',
@@ -72,6 +81,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/mixta',
     tone: 'rose',
     icon: 'star',
+    skill: 'memoria',
     meta: 'Diez preguntas',
     title: 'Sesión mixta',
     text: 'Significado, escucha, contexto y tonos en la misma tanda. Mezclar entrena la memoria.',
@@ -81,6 +91,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/escucha',
     tone: 'teal',
     icon: 'speaker',
+    skill: 'oido',
     meta: `${LISTENING_COUNT} audios`,
     title: 'Comprensión auditiva',
     text: 'Escucha una historia sin texto, responde y después revela la transcripción.',
@@ -90,6 +101,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/repite',
     tone: 'mint',
     icon: 'speaker',
+    skill: 'habla',
     meta: `${SHADOWING_COUNT} textos`,
     title: 'Repite en voz alta',
     text: 'Escucha el modelo, graba tu voz y compara tonos y ritmo. Sin nota automática.',
@@ -99,6 +111,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/gramatica',
     tone: 'violet',
     icon: 'book',
+    skill: 'lectura',
     meta: `${GRAMMAR_TOPICS_COUNT} tema · 12 frases`,
     title: 'Gramática en contraste',
     text: '不 y 没: reglas, ejemplos y una prueba diferida a los 7 días.',
@@ -108,6 +121,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/intencion',
     tone: 'amber',
     icon: 'sparkles',
+    skill: 'escritura',
     meta: '10 frases',
     title: 'Cambia la intención',
     text: 'Parte de una frase y transfórmala para decir otra cosa: tiempo, negación o persona.',
@@ -117,6 +131,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/detective',
     tone: 'rose',
     icon: 'target',
+    skill: 'lectura',
     meta: '10 pares',
     title: 'Detective de confusables',
     text: 'Distingue caracteres que se parecen y descubre qué pieza cambia el significado.',
@@ -126,6 +141,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/escena',
     tone: 'teal',
     icon: 'book',
+    skill: 'lectura',
     meta: '8 escenas',
     title: '¿Qué pasó en la escena?',
     text: 'Lee o escucha, elige qué pasó y señala la frase que lo justifica.',
@@ -135,6 +151,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/piezas',
     tone: 'violet',
     icon: 'sparkles',
+    skill: 'lectura',
     meta: '8 caracteres',
     title: 'Laboratorio de piezas',
     text: 'Clasifica cada componente como significado o sonido y mira el carácter por dentro.',
@@ -144,6 +161,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/prueba',
     tone: 'amber',
     icon: 'clock',
+    skill: 'memoria',
     meta: 'A siete días',
     title: 'Prueba de retención',
     text: 'Hasta diez palabras sin pistas. Mide lo que recuerdas, no lo que repites.',
@@ -153,6 +171,7 @@ const BASE_ACTIONS: Action[] = [
     href: '#/situaciones',
     tone: 'sky',
     icon: 'chat',
+    skill: 'habla',
     meta: `${SCENARIOS.length} escenas`,
     title: 'Situaciones',
     text: 'Pide, compra y pregunta cómo llegar en diálogos con una decisión en cada paso.',
@@ -166,6 +185,7 @@ function actions(pending: number, scenesDone: number, errors: number, certs: num
       href: '#/review',
       tone: 'mint',
       icon: 'target',
+      skill: 'memoria',
       meta: pending > 0 ? `${pending} pendientes` : 'Al día',
       title: 'Repaso espaciado',
       text: 'Las tarjetas que tocan hoy, con notas de 1 a 4.',
@@ -175,6 +195,7 @@ function actions(pending: number, scenesDone: number, errors: number, certs: num
       href: '#/fallos',
       tone: 'amber',
       icon: 'target',
+      skill: 'memoria',
       meta: errors > 0 ? `${errors} palabras` : 'Sin fallos',
       title: 'Tus fallos',
       text: 'Vuelve a las palabras que fallaste, con el formato que pide cada error.',
@@ -184,6 +205,7 @@ function actions(pending: number, scenesDone: number, errors: number, certs: num
       href: '#/jefes',
       tone: 'sky',
       icon: 'trophy',
+      skill: 'memoria',
       meta: `${certs} de 3`,
       title: 'Jefes de nivel',
       text: 'Un examen de 15 preguntas al cerrar cada nivel. Con el 80%, certificado de práctica.',
@@ -211,26 +233,67 @@ function usePracticeData() {
   };
 }
 
+const FILTERS: { id: Filter; label: string }[] = [{ id: 'todas', label: 'Todas' }, ...SKILLS];
+
+function SkillBadge({ skill }: { skill: Skill }) {
+  return (
+    <span className={`practice__skill practice__skill--${skill}`}>
+      <span className="practice__skill-dot" aria-hidden="true" />
+      {skillLabel(skill)}
+    </span>
+  );
+}
+
+function PracticeFilters({
+  filter,
+  onFilter,
+}: {
+  filter: Filter;
+  onFilter: (filter: Filter) => void;
+}) {
+  return (
+    <div className="practice__filters" role="group" aria-label="Filtrar por habilidad">
+      {FILTERS.map((item) => (
+        <button
+          key={item.id}
+          type="button"
+          className={`practice__filter${filter === item.id ? ' is-active' : ''}`}
+          aria-pressed={filter === item.id}
+          onClick={() => onFilter(item.id)}
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export function Practice() {
   const data = usePracticeData();
+  const [filter, setFilter] = useState<Filter>('todas');
+  const all = actions(data.pending, data.scenes, data.errors, data.certs);
+  const visible = filter === 'todas' ? all : all.filter((action) => action.skill === filter);
 
   return (
     <section className="practice">
       <PageHeader
         eyebrow="Practicar"
         title="Entrena lo que ya viste"
-        lead="Formas distintas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
+        lead="Formas distintas de mover el conocimiento de la memoria a corto plazo a la de largo plazo. Filtra por destreza."
       />
+      <PracticeFilters filter={filter} onFilter={setFilter} />
       <div className="practice__grid">
-        {actions(data.pending, data.scenes, data.errors, data.certs).map((action) => (
+        {visible.map((action) => (
           <a
             key={action.href}
             className={`practice__card practice__card--${action.tone}`}
             href={action.href}
+            data-skill={action.skill}
           >
             <span className="practice__icon" aria-hidden="true">
               <Icon name={action.icon} size={20} />
             </span>
+            <SkillBadge skill={action.skill} />
             <span className="practice__meta">{action.meta}</span>
             <h2 className="practice__title">{action.title}</h2>
             <p className="practice__text">{action.text}</p>

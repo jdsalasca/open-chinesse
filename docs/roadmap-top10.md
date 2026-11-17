@@ -189,7 +189,13 @@ Terra y la auditoría coinciden:
   modo con icono y color, opciones con check/equis, feedback en banner y
   resumen con anillo de aciertos.
 
-## Siguiente ronda propuesta (C26)
+## Hecho en C26
+
+- **Habilidades estables**: cinco destrezas visibles (oído, habla, lectura,
+  escritura y memoria), filtros en Practicar, boundary de pantalla, rutas
+  inválidas normalizadas y grabadora con reintento y limpieza de stream.
+
+## Siguiente ronda propuesta (C27)
 
 - **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
   con otra consigna, y distinguirla en el resumen.
