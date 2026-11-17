@@ -65,6 +65,18 @@ node scripts/build-audio.mjs      55 nuevos, 0 fallos
 Capturas en `.screens/audit/`: `c17-micro-story.png`,
 `c17-micro-listening.png`, `c17-micro-mobile.png`.
 
+## Producción
+
+- Desplegado `a02d005` en `https://open-chinesse.eridu.top`.
+- Historias: 22 tarjetas, 15 micro-lecturas; «你好！» con 3 líneas y audio que
+  reproduce y resalta la línea activa.
+- Escucha: 21 audios en orden de unidad; «你好！» sin transcripción antes de
+  responder, acierto de 再见 y transcripción de 3 líneas.
+- Repite: 25 textos; «你好！» abre en 1/3 con modelo y «Grabar mi voz».
+- Practicar: 14 tarjetas; «21 audios» y «25 textos».
+- Móvil 390×844 sin desbordamiento y sin errores de consola distintos del 401
+  esperado sin sesión.
+
 ## Límites
 
 - El vocabulario es HSK 1, pero **no es estrictamente acumulativo por unidad**:
