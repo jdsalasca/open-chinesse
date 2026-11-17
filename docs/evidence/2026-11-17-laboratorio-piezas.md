@@ -53,6 +53,16 @@ pnpm build                         ✓
 Capturas en `.screens/audit/`: `c22-pieces.png`, `c22-pieces-checked.png`,
 `c22-pieces-summary.png`.
 
+## Producción
+
+- Desplegado `7ef293f` en `https://open-chinesse.eridu.top`.
+- 钟: piezas 钅/中, comprobar deshabilitado al inicio, asignación correcta y
+  feedback «Todas bien. 钅 → significado; 中 → sonido…».
+- Enlace «Practica estas piezas en el laboratorio» en la ficha de 你.
+- Practicar: 18 tarjetas, incluida «Laboratorio de piezas».
+- Móvil 390: 0 px de desbordamiento y sin errores de consola distintos del 401
+  esperado sin sesión.
+
 ## Límites
 
 - Solo entran caracteres con al menos dos piezas etiquetadas; los pictogramas
