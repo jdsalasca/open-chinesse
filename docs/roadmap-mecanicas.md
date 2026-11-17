@@ -1,7 +1,8 @@
 # Mecánicas de aprendizaje — mapa y prioridades
 
 Revisión de lo que ya existe y de lo que falta para que la app enseñe mejor, no
-solo para que tenga más pantallas.
+solo para que tenga más pantallas. La priorización nueva, contrastada con terra,
+está en [roadmap-top10.md](./roadmap-top10.md).
 
 ## Lo que ya hay
 
