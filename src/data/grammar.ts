@@ -15,6 +15,14 @@ export type GrammarRule = { title: string; text: string; examples: Example[] };
 
 export type GrammarContrast = { wrong: string; right: string; why: string };
 
+export type GrammarWorked = {
+  hanzi: string;
+  pinyin: string;
+  translation: string;
+  answer: string;
+  explain: string;
+};
+
 export type GrammarTopic = {
   id: string;
   level: 1 | 2 | 3;
@@ -23,6 +31,7 @@ export type GrammarTopic = {
   summary: string;
   rules: GrammarRule[];
   contrasts: GrammarContrast[];
+  worked?: GrammarWorked;
   practice: GrammarItem[];
   check: GrammarItem[];
 };
@@ -86,6 +95,13 @@ const BU_MEI: GrammarTopic = {
       why: 'Mañana expresa un plan → 不.',
     },
   ],
+  worked: {
+    hanzi: '他昨天没去北京。',
+    pinyin: 'Tā zuótiān méi qù Běijīng.',
+    translation: 'Ayer no fue a Pekín.',
+    answer: '没',
+    explain: 'La acción no ocurrió ayer: la pista 昨天 pide 没, no 不.',
+  },
   practice: [
     {
       id: 'bu-mei-p1',

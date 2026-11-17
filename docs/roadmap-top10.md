@@ -170,6 +170,12 @@ Terra y la auditoría coinciden:
 - **Laboratorio de piezas** (`/piezas`): clasifica cada componente como
   significado o sonido, con feedback y enlace a la ficha.
 
+## Hecho en C23
+
+- **Pulido del núcleo**: recuperación antes de revelar en la lección, feedback
+  con contraste y ejemplo, ejemplo resuelto de 不/没 y movimiento sobrio con
+  `prefers-reduced-motion`.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

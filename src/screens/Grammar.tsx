@@ -100,6 +100,23 @@ function Contrasts({ topic }: { topic: GrammarTopic }) {
   );
 }
 
+function WorkedExample({ worked }: { worked?: GrammarTopic['worked'] }) {
+  if (!worked) return null;
+  return (
+    <Card className="grammar-worked">
+      <p className="eyebrow">Ejemplo resuelto</p>
+      <p className="grammar-worked__hanzi" lang="zh-Hans">
+        {worked.hanzi}
+      </p>
+      <p className="grammar-worked__pinyin">{worked.pinyin}</p>
+      <p className="grammar-worked__translation">{worked.translation}</p>
+      <p className="grammar-worked__why">
+        <strong>{worked.answer}</strong> {worked.explain}
+      </p>
+    </Card>
+  );
+}
+
 function Options({
   item,
   picked,
@@ -393,6 +410,7 @@ function Intro({
       <p className="grammar__summary">{topic.summary}</p>
       <Rules topic={topic} />
       <Contrasts topic={topic} />
+      <WorkedExample worked={topic.worked} />
       <ProgressPanel
         progress={progress}
         stage={stage}

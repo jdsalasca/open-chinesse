@@ -16,6 +16,13 @@ describe('contenido de gramática', () => {
     expect(topic!.check.every((item) => !topic!.practice.some((p) => p.id === item.id))).toBe(true);
   });
 
+  it('incluye un ejemplo resuelto antes de practicar', () => {
+    const worked = grammarTopic('bu-mei')?.worked;
+    expect(worked?.answer).toBe('没');
+    expect(worked?.hanzi).toBe('他昨天没去北京。');
+    expect(worked?.explain.trim()).not.toBe('');
+  });
+
   it('cada ítem tiene una sola respuesta y explica el porqué', () => {
     expect(GRAMMAR_TOPICS.length).toBeGreaterThanOrEqual(1);
     for (const topic of GRAMMAR_TOPICS) {

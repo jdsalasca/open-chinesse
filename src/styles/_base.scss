@@ -71,6 +71,7 @@ button {
   margin: 0 auto;
   padding: $space-6 $space-4 $space-8;
   flex: 1;
+  background: radial-gradient(1000px 420px at 50% -180px, rgb(0 184 107 / 7%), transparent 70%);
 
   @include from($bp-sm) {
     padding: $space-7 $space-5 $space-8;

@@ -31,6 +31,8 @@ type LessonProgress = {
   setAnswers: Dispatch<SetStateAction<boolean[]>>;
   selected: string | null;
   setSelected: (selected: string | null) => void;
+  revealed: boolean;
+  setRevealed: (revealed: boolean) => void;
 };
 
 function useLessonQuiz(unit: Unit | undefined): Question[] {
@@ -43,7 +45,19 @@ function useLessonProgress(): LessonProgress {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
-  return { phase, setPhase, index, setIndex, answers, setAnswers, selected, setSelected };
+  const [revealed, setRevealed] = useState(false);
+  return {
+    phase,
+    setPhase,
+    index,
+    setIndex,
+    answers,
+    setAnswers,
+    selected,
+    setSelected,
+    revealed,
+    setRevealed,
+  };
 }
 
 function useIntroduceUnit(unit: Unit | undefined, introduceUnit: (unitId: string) => void): void {
@@ -75,15 +89,47 @@ function useLessonFinish(phase: Phase, answers: boolean[]): void {
   }, [phase, answers]);
 }
 
-function useLessonActions(params: {
+function advanceLearn(params: {
+  unit: Unit;
+  index: number;
+  revealed: boolean;
+  setRevealed: (revealed: boolean) => void;
+  setIndex: (index: number) => void;
+  setPhase: (phase: Phase) => void;
+}): void {
+  const { unit, index, revealed, setRevealed, setIndex, setPhase } = params;
+  if (!revealed) return setRevealed(true);
+  if (index + 1 < unit.words.length) {
+    setRevealed(false);
+    setIndex(index + 1);
+    return;
+  }
+  setRevealed(false);
+  setIndex(0);
+  setPhase('quiz');
+}
+
+type LessonActionsParams = {
   unit?: Unit;
   quiz: Question[];
   progress: LessonProgress;
   questionWord?: Word;
   noteMiss: (wordId: string, reason: MissReason) => void;
-}) {
+};
+
+function useLessonActions(params: LessonActionsParams) {
   const { unit, quiz, progress, questionWord, noteMiss } = params;
-  const { phase, setPhase, index, setIndex, selected, setSelected, setAnswers } = progress;
+  const {
+    phase,
+    setPhase,
+    index,
+    setIndex,
+    selected,
+    setSelected,
+    setAnswers,
+    revealed,
+    setRevealed,
+  } = progress;
 
   const finish = (correct: boolean) => {
     if (!correct && quiz[index]?.mode === 'order') noteMiss(quiz[index].wordId, 'order');
@@ -96,9 +142,7 @@ function useLessonActions(params: {
   const next = () => {
     if (!unit) return;
     if (phase === 'learn') {
-      if (index + 1 < unit.words.length) return setIndex(index + 1);
-      setIndex(0);
-      return setPhase('quiz');
+      return advanceLearn({ unit, index, revealed, setRevealed, setIndex, setPhase });
     }
     if (phase === 'quiz' && selected !== null) finish(selected === questionWord?.meaning);
   };
@@ -126,7 +170,7 @@ function LessonHeader({ label, count, ratio }: { label: string; count: string; r
   );
 }
 
-function Flashcard({ word }: { word: Word }) {
+function Flashcard({ word, revealed }: { word: Word; revealed: boolean }) {
   return (
     <article className="flashcard" aria-live="polite">
       <div className="flashcard__hanzi" lang="zh-Hans">
@@ -136,14 +180,72 @@ function Flashcard({ word }: { word: Word }) {
         <Pinyin pinyin={word.pinyin} className="flashcard__pinyin" showToneNumber />
         <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
       </div>
-      <p className="flashcard__meaning">{word.meaning}</p>
-      <ExampleBlock word={word} />
-      <CharacterLinks hanzi={word.hanzi} />
+      {revealed ? (
+        <>
+          <p className="flashcard__meaning">{word.meaning}</p>
+          <ExampleBlock word={word} />
+          <CharacterLinks hanzi={word.hanzi} />
+        </>
+      ) : (
+        <div className="flashcard__recall">
+          <p className="flashcard__prompt">¿Qué significa? Intenta recordarlo antes de mirar.</p>
+          <p className="flashcard__hint">Si es la primera vez, no pasa nada: mira y sigue.</p>
+        </div>
+      )}
     </article>
   );
 }
 
-function LearnPhase({ unit, index, next }: { unit: Unit; index: number; next: () => void }) {
+function LearnActions({
+  revealed,
+  last,
+  onReveal,
+  next,
+}: {
+  revealed: boolean;
+  last: boolean;
+  onReveal: () => void;
+  next: () => void;
+}) {
+  return (
+    <div className="lesson__actions">
+      {revealed && (
+        <button type="button" className="button button--primary" onClick={next}>
+          {last ? 'Pasar a la práctica' : 'Siguiente'}
+        </button>
+      )}
+      {!revealed && (
+        <>
+          <button type="button" className="button button--primary" onClick={onReveal}>
+            Mostrar significado
+          </button>
+          <button type="button" className="link" onClick={onReveal}>
+            No lo recuerdo
+          </button>
+        </>
+      )}
+      <span className="hint">
+        {revealed
+          ? 'Lee el ejemplo y sigue cuando quieras.'
+          : 'Intenta recordar; Enter también revela.'}
+      </span>
+    </div>
+  );
+}
+
+function LearnPhase({
+  unit,
+  index,
+  revealed,
+  onReveal,
+  next,
+}: {
+  unit: Unit;
+  index: number;
+  revealed: boolean;
+  onReveal: () => void;
+  next: () => void;
+}) {
   const word = unit.words[index];
   const last = index + 1 === unit.words.length;
   return (
@@ -153,13 +255,8 @@ function LearnPhase({ unit, index, next }: { unit: Unit; index: number; next: ()
         count={`${index + 1} / ${unit.words.length}`}
         ratio={(index + 1) / unit.words.length}
       />
-      <Flashcard word={word} />
-      <div className="lesson__actions">
-        <button type="button" className="button button--primary" onClick={next}>
-          {last ? 'Pasar a la práctica' : 'Siguiente'}
-        </button>
-        <span className="hint">Enter avanza · clic derecho: origen · el audio no es opcional</span>
-      </div>
+      <Flashcard word={word} revealed={revealed} />
+      <LearnActions revealed={revealed} last={last} onReveal={onReveal} next={next} />
     </div>
   );
 }
@@ -237,6 +334,24 @@ function QuizOptions({
   );
 }
 
+function QuizContrast({ word, selected }: { word: Word; selected: string | null }) {
+  const correct = selected === word.meaning;
+  return (
+    <div className="quiz__contrast">
+      {!correct && (
+        <div className="quiz__contrast-row is-wrong">
+          <span>Elegiste</span>
+          <strong>{selected}</strong>
+        </div>
+      )}
+      <div className="quiz__contrast-row is-correct">
+        <span>{correct ? 'Correcto' : 'Respuesta'}</span>
+        <strong>{word.meaning}</strong>
+      </div>
+    </div>
+  );
+}
+
 function QuizFeedback({
   word,
   selected,
@@ -253,7 +368,11 @@ function QuizFeedback({
   const correct = selected === word.meaning;
   return (
     <div className="quiz__feedback">
-      <p>{correct ? 'Correcto.' : `Era: ${word.meaning}.`}</p>
+      <p className="quiz__verdict" role="status">
+        {correct ? `Correcto: ${word.hanzi} significa ${word.meaning}.` : `Era ${word.meaning}.`}
+      </p>
+      <QuizContrast word={word} selected={selected} />
+      <ExampleBlock word={word} />
       {!correct && <MissPicker key={word.id} onPick={onMiss} />}
       <button type="button" className="button button--primary" onClick={onNext}>
         {last ? 'Terminar' : 'Siguiente'}
@@ -450,6 +569,57 @@ function LessonMissing() {
   );
 }
 
+type LessonStageProps = {
+  unit?: Unit;
+  quiz: Question[];
+  progress: LessonProgress;
+  question?: Question;
+  questionWord?: Word;
+  next: () => void;
+  choose: (option: string) => void;
+  finish: (correct: boolean) => void;
+};
+
+function LessonStage({
+  unit,
+  quiz,
+  progress,
+  question,
+  questionWord,
+  next,
+  choose,
+  finish,
+}: LessonStageProps) {
+  if (!unit || !unit.words[progress.index]) return <LessonMissing />;
+  if (progress.phase === 'learn') {
+    return (
+      <LearnPhase
+        unit={unit}
+        index={progress.index}
+        revealed={progress.revealed}
+        onReveal={() => progress.setRevealed(true)}
+        next={next}
+      />
+    );
+  }
+  if (progress.phase === 'quiz' && question && questionWord) {
+    return (
+      <QuizPhase
+        unit={unit}
+        quiz={quiz}
+        index={progress.index}
+        question={question}
+        questionWord={questionWord}
+        selected={progress.selected}
+        onSelect={choose}
+        onNext={next}
+        onFinish={finish}
+      />
+    );
+  }
+  return <LessonSummary unit={unit} answers={progress.answers} />;
+}
+
 export function Lesson({ unitId }: { unitId: string }) {
   const unit = UNITS.find((u) => u.id === unitId);
   const introduceUnit = useLearner((s) => s.introduceUnit);
@@ -469,25 +639,16 @@ export function Lesson({ unitId }: { unitId: string }) {
     questionWord,
     noteMiss,
   });
-
-  if (!unit || !unit.words[progress.index]) return <LessonMissing />;
-  if (progress.phase === 'learn') {
-    return <LearnPhase unit={unit} index={progress.index} next={next} />;
-  }
-  if (progress.phase === 'quiz' && question && questionWord) {
-    return (
-      <QuizPhase
-        unit={unit}
-        quiz={quiz}
-        index={progress.index}
-        question={question}
-        questionWord={questionWord}
-        selected={progress.selected}
-        onSelect={choose}
-        onNext={next}
-        onFinish={finish}
-      />
-    );
-  }
-  return <LessonSummary unit={unit} answers={progress.answers} />;
+  return (
+    <LessonStage
+      unit={unit}
+      quiz={quiz}
+      progress={progress}
+      question={question}
+      questionWord={questionWord}
+      next={next}
+      choose={choose}
+      finish={finish}
+    />
+  );
 }

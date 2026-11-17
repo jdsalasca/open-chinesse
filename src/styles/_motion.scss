@@ -26,7 +26,18 @@
 }
 
 .main > * {
-  animation: fade-up 260ms $ease;
+  animation: fade-up 180ms $ease;
+}
+
+.quiz__feedback,
+.choice__feedback,
+.flashcard__recall,
+.grammar-worked {
+  animation: fade-up 160ms $ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
 }
 
 .progress span,
@@ -85,8 +96,16 @@
 
 @include reduced-motion {
   .main > *,
-  .summary__stars svg {
+  .summary__stars svg,
+  .quiz__feedback,
+  .choice__feedback,
+  .flashcard__recall,
+  .grammar-worked {
     animation: none;
+  }
+
+  .button:hover {
+    transform: none;
   }
 
   .progress span,

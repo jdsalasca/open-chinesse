@@ -188,6 +188,37 @@
   color: $muted;
 }
 
+.grammar-worked {
+  display: grid;
+  gap: $space-2;
+  padding: $space-4;
+  border: 1px solid rgb(0 168 107 / 18%);
+  border-radius: $radius-lg;
+  background: $mint-soft;
+}
+
+.grammar-worked__hanzi {
+  margin: 0;
+  @include hanzi(1.4rem);
+  line-height: 1.5;
+}
+
+.grammar-worked__pinyin {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $teal;
+}
+
+.grammar-worked__translation,
+.grammar-worked__why {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.grammar-worked__why strong {
+  color: $mint-dark;
+}
+
 .grammar-panel {
   display: grid;
   gap: $space-3;

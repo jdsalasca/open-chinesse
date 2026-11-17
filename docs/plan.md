@@ -411,5 +411,14 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Enlace desde cada ficha con roles y tarjeta en Practicar.
 - [x] Actividad `pieces` y resumen final.
 
+### C23 — Pulido didáctico y visual del núcleo
+
+- [x] Lección con recuperación antes de revelar: «Mostrar significado» y «No lo
+      recuerdo»; el significado y el ejemplo aparecen después.
+- [x] Feedback de quiz con contraste elegido/respuesta y frase de ejemplo.
+- [x] Ejemplo resuelto de 不/没 antes de la práctica.
+- [x] Movimiento 180 ms, fade de feedback, hover discreto, halo de fondo y
+      `prefers-reduced-motion`.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.
