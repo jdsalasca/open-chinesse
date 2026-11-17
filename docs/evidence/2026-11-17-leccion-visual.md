@@ -95,6 +95,24 @@ Capturas en `.screens/audit/`: `c25-learn.png`, `c25-revealed.png`,
 `c25-tone.png`, `c25-feedback.png`, `c25-summary.png`, `c25-mobile.png`,
 `c25-mobile-quiz.png`, `c25-mobile-feedback.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/lesson/h1-05`: 5 segmentos de ronda, primero activo, marca de agua 爸爸,
+  línea de acento menta-teal-ámbar y barra de acción sticky.
+- Al revelar: la palabra 爸爸 aparece resaltada dentro de «我爸爸是医生。».
+- Pregunta de tono: etiqueta violeta con icono, cuatro opciones de pinyin y
+  segmentos de ronda visibles.
+- Respuesta incorrecta: banner rosa, dos marcas de opción (equis y check) y
+  veredicto «Era māma: mamá.».
+- 390×844 en producción: 0 px de desbordamiento, 6 segmentos, tarjeta de 343 px
+  y acción inferior a 711 px de 844.
+
+Capturas de producción: `.screens/audit/c25-prod-learn.png` y
+`.screens/audit/c25-prod-mobile.png`.
+
 ## Límites
 
 - Es una ronda visual: no cambia el plan didáctico ni el número de respuestas.
