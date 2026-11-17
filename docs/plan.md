@@ -330,5 +330,14 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Reproductor con pausa, seguir y detener; el audio se corta al responder.
 - [x] Tarjeta «Comprensión auditiva» en Practicar.
 
+### C15 — Repite en voz alta
+
+- [x] Ruta `/repite` con diez textos y audio por frase.
+- [x] Grabación local con `MediaRecorder`; se borra al cambiar de frase o salir.
+- [x] Comparación con el modelo: escuchar el audio, grabar, escuchar la
+      grabación y ajustar tonos/ritmo. Sin nota automática.
+- [x] Estados de permiso denegado y navegador sin soporte.
+- [x] Tarjeta «Repite en voz alta» en Practicar.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

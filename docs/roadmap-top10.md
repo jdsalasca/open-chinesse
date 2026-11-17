@@ -119,13 +119,17 @@ Terra y la auditoría coinciden:
 - **Comprensión auditiva** (`/escucha`): seis audios sin texto, una pregunta y
   transcripción revelable.
 
+## Hecho en C15
+
+- **Repite en voz alta** (`/repite`): diez textos con audio por frase, grabación
+  local y comparación con el modelo. Sin nota automática.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.
-2. **D2 — Escucha autónoma:** modo sin texto para historias y China, con dos
-   preguntas por texto y transcripción revelable.
-3. **D3 — Voz:** shadowing con grabación local, comparación con el modelo y
-   checklist de tonos/ritmo; sin puntuación automática.
+2. **D2 — Escucha autónoma** — hecho en C14.
+3. **D3 — Voz** — hecho en C15: shadowing con grabación local y comparación con
+   el modelo; sin puntuación automática.
 
 Después: gramática en contraste, transferencia, sentence mining, caracteres y
 diagnóstico.

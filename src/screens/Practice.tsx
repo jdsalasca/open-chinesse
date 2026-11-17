@@ -3,6 +3,7 @@ import { PageHeader } from '../components/PageHeader';
 import { Icon, type IconName } from '../components/ui/Icon';
 import { SCENARIOS } from '../data/scenarios';
 import { listeningExercises } from '../lib/listening';
+import { shadowingTexts } from '../lib/shadowing';
 import { buildQueue } from '../srs/queue';
 import { useLearner } from '../store/useLearner';
 
@@ -17,6 +18,7 @@ type Action = {
 };
 
 const LISTENING_COUNT = listeningExercises().length;
+const SHADOWING_COUNT = shadowingTexts().length;
 
 const BASE_ACTIONS: Action[] = [
   {
@@ -81,6 +83,15 @@ const BASE_ACTIONS: Action[] = [
     title: 'Comprensión auditiva',
     text: 'Escucha una historia sin texto, responde y después revela la transcripción.',
     cta: 'Entrenar el oído',
+  },
+  {
+    href: '#/repite',
+    tone: 'mint',
+    icon: 'speaker',
+    meta: `${SHADOWING_COUNT} textos`,
+    title: 'Repite en voz alta',
+    text: 'Escucha el modelo, graba tu voz y compara tonos y ritmo. Sin nota automática.',
+    cta: 'Escuchar y grabar',
   },
   {
     href: '#/prueba',

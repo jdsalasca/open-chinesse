@@ -1,0 +1,158 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.shadowing-list {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.shadowing-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.shadowing-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+}
+
+.shadowing-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.shadowing-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.shadowing-card__note {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.shadowing-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.shadowing-list__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.shadowing {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.shadowing__back {
+  justify-self: start;
+}
+
+.shadowing__card {
+  display: grid;
+  gap: $space-3;
+  justify-items: center;
+  padding: $space-6 $space-5;
+  text-align: center;
+}
+
+.shadowing__hanzi {
+  margin: 0;
+  @include hanzi(2rem);
+  line-height: 1.5;
+}
+
+.shadowing__pinyin {
+  font-size: 1rem;
+}
+
+.shadowing__translation {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.shadowing__explain {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 0.86rem;
+  color: $muted;
+}
+
+.shadowing__model {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $paper;
+}
+
+.shadowing__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.shadowing__record {
+  display: grid;
+  justify-items: center;
+  gap: $space-3;
+  width: 100%;
+}
+
+.shadowing__audio {
+  width: 100%;
+  max-width: 420px;
+}
+
+.shadowing__warn {
+  margin: 0;
+  padding: $space-3;
+  border-radius: $radius;
+  background: $amber-soft;
+  color: #8a6100;
+  font-size: 0.9rem;
+}
+
+.shadowing__hint {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 0.78rem;
+  color: $muted;
+}
+
+.shadowing__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-3;
+}

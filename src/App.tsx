@@ -19,6 +19,7 @@ import { Mixed } from './screens/Mixed';
 import { Boss } from './screens/Boss';
 import { CertificateView } from './screens/CertificateView';
 import { Listening } from './screens/Listening';
+import { Shadowing } from './screens/Shadowing';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -51,6 +52,7 @@ const FOCUS = new Set<Route['name']>([
   'errors',
   'boss',
   'listening',
+  'shadowing',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -115,6 +117,7 @@ function readingView(route: Route): ReactNode | null {
   if (route.name === 'bedtime') return <Bedtime storyId={route.storyId} />;
   if (route.name === 'china') return <China textId={route.textId} />;
   if (route.name === 'listening') return <Listening exerciseId={route.exerciseId} />;
+  if (route.name === 'shadowing') return <Shadowing textId={route.textId} />;
   return null;
 }
 

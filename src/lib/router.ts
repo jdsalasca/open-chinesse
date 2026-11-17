@@ -23,6 +23,7 @@ export type Route =
   | { name: 'boss'; level?: 1 | 2 | 3 }
   | { name: 'certificate'; level: 1 | 2 | 3 }
   | { name: 'listening'; exerciseId?: string }
+  | { name: 'shadowing'; textId?: string }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -53,6 +54,7 @@ const SIMPLE: Record<string, Route> = {
   fallos: { name: 'errors' },
   jefes: { name: 'boss' },
   escucha: { name: 'listening' },
+  repite: { name: 'shadowing' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {
@@ -64,6 +66,7 @@ const PARAM: Record<string, (value: string) => Route> = {
   jefes: (level) => ({ name: 'boss', level: Number(level) as 1 | 2 | 3 }),
   certificado: (level) => ({ name: 'certificate', level: Number(level) as 1 | 2 | 3 }),
   escucha: (exerciseId) => ({ name: 'listening', exerciseId }),
+  repite: (textId) => ({ name: 'shadowing', textId }),
   caracter: (char) => ({ name: 'character', char: decode(char) }),
   character: (char) => ({ name: 'character', char: decode(char) }),
 };
