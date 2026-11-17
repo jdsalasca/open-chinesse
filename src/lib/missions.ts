@@ -2,12 +2,14 @@ import type { IconName } from '../components/ui/Icon';
 import { dayKey } from '../store/metrics';
 
 export type ActivityKind =
-  'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation' | 'mixed';
+  'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation' | 'mixed' | 'errors';
 
 export type ActivityEntry = {
   kind: ActivityKind;
   at: number;
   correct?: boolean;
+  /** Palabra concreta de la actividad, cuando la pantalla la conoce. */
+  wordId?: string;
 };
 
 export type Mission = {

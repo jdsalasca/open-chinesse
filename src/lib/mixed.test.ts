@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { makeMixed } from './mixed';
+import { makeErrorSession, makeMixed } from './mixed';
 
 const IDS = Array.from(
   { length: 10 },
@@ -30,5 +30,34 @@ describe('sesión mixta', () => {
 
   it('es reproducible con la misma semilla', () => {
     expect(makeMixed(IDS, 9, 10)).toEqual(makeMixed(IDS, 9, 10));
+  });
+});
+
+describe('sesión de fallos', () => {
+  it('elige el formato según el motivo del fallo', () => {
+    const questions = makeErrorSession(
+      {
+        'h1-01-w01': { reason: 'sound', at: 1 },
+        'h1-01-w02': { reason: 'tone', at: 2 },
+        'h1-01-w03': { reason: 'meaning', at: 3 },
+      },
+      5,
+    );
+    expect(questions.map((question) => question.kind)).toEqual(['meaning', 'tone', 'listen']);
+  });
+
+  it('ordena por fallo más reciente y respeta el límite', () => {
+    const questions = makeErrorSession(
+      {
+        'h1-01-w01': { reason: 'meaning', at: 1 },
+        'h1-01-w02': { reason: 'sound', at: 9 },
+        'h1-01-w03': { reason: 'tone', at: 5 },
+      },
+      5,
+      2,
+    );
+    expect(questions).toHaveLength(2);
+    expect(questions[0].id).toContain('h1-01-w02');
+    expect(questions[1].id).toContain('h1-01-w03');
   });
 });

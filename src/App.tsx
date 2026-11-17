@@ -45,6 +45,7 @@ const FOCUS = new Set<Route['name']>([
   'cloze',
   'dictation',
   'mixed',
+  'errors',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -60,6 +61,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   cloze: () => <Cloze />,
   dictation: () => <Dictation />,
   mixed: () => <Mixed />,
+  errors: () => <Mixed errors />,
 };
 
 function Header({ route }: { route: Route }) {

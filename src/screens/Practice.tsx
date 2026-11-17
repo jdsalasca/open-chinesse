@@ -90,7 +90,7 @@ const BASE_ACTIONS: Action[] = [
   },
 ];
 
-function actions(pending: number, scenesDone: number): Action[] {
+function actions(pending: number, scenesDone: number, errors: number): Action[] {
   return [
     {
       href: '#/review',
@@ -100,6 +100,15 @@ function actions(pending: number, scenesDone: number): Action[] {
       title: 'Repaso espaciado',
       text: 'Las tarjetas que tocan hoy, con notas de 1 a 4.',
       cta: 'Empezar',
+    },
+    {
+      href: '#/fallos',
+      tone: 'amber',
+      icon: 'target',
+      meta: errors > 0 ? `${errors} palabras` : 'Sin fallos',
+      title: 'Tus fallos',
+      text: 'Vuelve a las palabras que fallaste, con el formato que pide cada error.',
+      cta: 'Repasar fallos',
     },
     ...BASE_ACTIONS.map((action) =>
       action.href === '#/situaciones'
@@ -112,6 +121,7 @@ function actions(pending: number, scenesDone: number): Action[] {
 export function Practice() {
   const cards = useLearner((s) => s.cards);
   const scenes = useLearner((s) => s.scenarios);
+  const misses = useLearner((s) => s.misses);
   const [now] = useState(Date.now);
   const pending = buildQueue(cards, now).total;
 
@@ -123,7 +133,7 @@ export function Practice() {
         lead="Formas distintas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
       />
       <div className="practice__grid">
-        {actions(pending, scenes.length).map((action) => (
+        {actions(pending, scenes.length, Object.keys(misses).length).map((action) => (
           <a
             key={action.href}
             className={`practice__card practice__card--${action.tone}`}

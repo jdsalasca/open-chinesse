@@ -5,7 +5,8 @@ import { Icon } from '../components/ui/Icon';
 import { WORDS_BY_ID } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
 import { useEnterKey } from '../lib/hooks';
-import { makeMixed, type MixedKind, type MixedQuestion } from '../lib/mixed';
+import { makeMixed, makeErrorSession, type MixedKind, type MixedQuestion } from '../lib/mixed';
+import type { MissReason } from '../lib/miss';
 import { navigate } from '../lib/router';
 import { useLearner } from '../store/useLearner';
 
@@ -119,11 +120,13 @@ function Question({
   item,
   index,
   total,
+  label,
   onAnswer,
 }: {
   item: MixedQuestion;
   index: number;
   total: number;
+  label: string;
   onAnswer: (correct: boolean) => void;
 }) {
   const [picked, setPicked] = useState<string | null>(null);
@@ -131,7 +134,7 @@ function Question({
   return (
     <div className="lesson mixed">
       <SessionHeader
-        label="Sesión mixta"
+        label={label}
         count={`${index + 1} / ${total}`}
         onExit={() => navigate('/practicar')}
       />
@@ -154,33 +157,48 @@ function Question({
   );
 }
 
-function Empty() {
+function Empty({ errors }: { errors: boolean }) {
   return (
     <section className="empty">
-      <h1>Aún no hay palabras para mezclar</h1>
-      <p>Termina una unidad: la sesión mezcla palabras que ya hayas visto.</p>
+      <h1>{errors ? 'Todavía no hay fallos que repasar' : 'Aún no hay palabras para mezclar'}</h1>
+      <p>
+        {errors
+          ? 'Cuando falles una palabra en una práctica, aparecerá aquí con el formato que pida el motivo.'
+          : 'Termina una unidad: la sesión mezcla palabras que ya hayas visto.'}
+      </p>
       <div className="empty__actions">
         <button type="button" className="button button--primary" onClick={() => navigate('/')}>
-          Ir a las unidades
+          {errors ? 'Ir a practicar' : 'Ir a las unidades'}
         </button>
       </div>
     </section>
   );
 }
 
-function Summary({ score, total, onRetry }: { score: number; total: number; onRetry: () => void }) {
+function Summary({
+  score,
+  total,
+  errors,
+  onRetry,
+}: {
+  score: number;
+  total: number;
+  errors: boolean;
+  onRetry: () => void;
+}) {
   return (
     <section className="scenario-done">
       <span className="scenario-done__icon" aria-hidden="true">
         <Icon name="check" size={28} />
       </span>
-      <p className="eyebrow">Sesión mixta</p>
+      <p className="eyebrow">{errors ? 'Tus fallos' : 'Sesión mixta'}</p>
       <h1>
         {score} de {total}
       </h1>
       <p className="scenario-done__lead">
-        Significado, escucha, contexto y tonos en la misma tanda. Mezclar tipos de recuperación
-        entrena la memoria para la vida real.
+        {errors
+          ? 'Vuelves a las palabras que fallaste, con el formato que pide cada error. El repaso normal las sigue viendo.'
+          : 'Significado, escucha, contexto y tonos en la misma tanda. Mezclar tipos de recuperación entrena la memoria para la vida real.'}
       </p>
       <div className="scenario-done__actions">
         <button type="button" className="button button--primary" onClick={onRetry}>
@@ -198,20 +216,38 @@ function Summary({ score, total, onRetry }: { score: number; total: number; onRe
   );
 }
 
-export function Mixed() {
+function useSessionQuestions(
+  errors: boolean,
+  seed: number,
+  studied: string[],
+  misses: Record<string, { reason: MissReason; at: number }>,
+) {
+  return useMemo(
+    () => (errors ? makeErrorSession(misses, seed, 10) : makeMixed(studied, seed, 10)),
+    [errors, misses, seed, studied],
+  );
+}
+
+function useStudiedWords(): string[] {
   const log = useLearner((s) => s.log);
-  const studied = useMemo(() => [...new Set(log.map((entry) => entry.wordId))], [log]);
+  return useMemo(() => [...new Set(log.map((entry) => entry.wordId))], [log]);
+}
+
+export function Mixed({ errors = false }: { errors?: boolean }) {
+  const misses = useLearner((s) => s.misses);
+  const studied = useStudiedWords();
   const [seed, setSeed] = useState(() => Date.now() % 1_000_000);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const questions = useMemo(() => makeMixed(studied, seed, 10), [studied, seed]);
-
-  if (questions.length === 0) return <Empty />;
+  const questions = useSessionQuestions(errors, seed, studied, misses);
+  const label = errors ? 'Tus fallos' : 'Sesión mixta';
+  if (questions.length === 0) return <Empty errors={errors} />;
   if (index >= questions.length) {
     return (
       <Summary
         score={score}
         total={questions.length}
+        errors={errors}
         onRetry={() => {
           setSeed(Date.now() % 1_000_000);
           setIndex(0);
@@ -220,15 +256,17 @@ export function Mixed() {
       />
     );
   }
-
   return (
     <Question
       key={`${seed}-${index}`}
       item={questions[index]}
       index={index}
       total={questions.length}
+      label={label}
       onAnswer={(correct) => {
-        useLearner.getState().logActivity('mixed', correct);
+        useLearner
+          .getState()
+          .logActivity(errors ? 'errors' : 'mixed', correct, Date.now(), questions[index].wordId);
         if (correct) setScore(score + 1);
         setIndex(index + 1);
       }}

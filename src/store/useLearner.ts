@@ -73,7 +73,7 @@ export type LearnerState = {
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
   recordRetention: (score: number, now?: number) => void;
   completeScenario: (id: string, now?: number) => void;
-  logActivity: (kind: ActivityKind, correct?: boolean, now?: number) => void;
+  logActivity: (kind: ActivityKind, correct?: boolean, now?: number, wordId?: string) => void;
   claimMissions: (now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
@@ -278,10 +278,11 @@ function logActivity(
   store: Store,
   kind: ActivityKind,
   correct: boolean | undefined,
-  now: number,
+  options: { now: number; wordId?: string },
 ): void {
+  const { now, wordId } = options;
   const entry: ActivityEntry =
-    correct === undefined ? { kind, at: now } : { kind, at: now, correct };
+    correct === undefined ? { kind, at: now, wordId } : { kind, at: now, correct, wordId };
   store.set({ activity: appendActivity(store.get().activity, entry), lastEditAt: now });
 }
 
@@ -325,7 +326,8 @@ export const useLearner = create<LearnerState>()(
           set({ retention: { ...retention, score, takenAt: now }, lastEditAt: now });
         },
         completeScenario: (id, now = Date.now()) => completeScenario(store, id, now),
-        logActivity: (kind, correct, now = Date.now()) => logActivity(store, kind, correct, now),
+        logActivity: (kind, correct, now = Date.now(), wordId) =>
+          logActivity(store, kind, correct, { now, wordId }),
         claimMissions: (now = Date.now()) => claimMissions(store, now),
         completeOnboarding: (goalXp, now = Date.now()) =>
           set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),

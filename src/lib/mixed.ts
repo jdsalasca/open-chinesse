@@ -1,5 +1,6 @@
 import { ALL_WORDS, WORDS_BY_ID, type Word } from '../data/curriculum';
 import { blankSentence } from './cloze';
+import type { MissReason } from './miss';
 import { meaningOptions } from './quiz';
 import { lcg, shuffle } from './random';
 import { makeToneQuiz } from './tone-quiz';
@@ -8,6 +9,7 @@ export type MixedKind = 'meaning' | 'listen' | 'context' | 'tone';
 
 export type MixedQuestion = {
   id: string;
+  wordId: string;
   kind: MixedKind;
   /** Hanzi o frase con hueco; vacío cuando la pregunta es solo audio. */
   prompt: string;
@@ -49,6 +51,7 @@ function contextQuestion(word: Word, random: () => number): MixedQuestion | null
   if (!prompt) return null;
   return {
     id: `${word.id}-context`,
+    wordId: word.id,
     kind: 'context',
     prompt,
     translation: word.example.translation,
@@ -63,6 +66,7 @@ function toneQuestion(word: Word, seed: number): MixedQuestion | null {
   if (!tone) return null;
   return {
     id: `${word.id}-tone`,
+    wordId: word.id,
     kind: 'tone',
     prompt: '',
     audioWordId: word.id,
@@ -79,6 +83,7 @@ function choiceQuestion(
 ): MixedQuestion {
   return {
     id: `${word.id}-${kind}`,
+    wordId: word.id,
     kind,
     prompt: kind === 'meaning' ? word.hanzi : '',
     audioWordId: kind === 'listen' ? word.id : undefined,
@@ -123,4 +128,29 @@ export function makeMixed(wordIds: string[], seed = 1, limit = 10): MixedQuestio
     questions.push(buildQuestion(kind, word, random, seed + questions.length));
   }
   return questions;
+}
+
+const REASON_KIND: Record<MissReason, MixedKind> = {
+  sound: 'listen',
+  meaning: 'meaning',
+  order: 'context',
+  tone: 'tone',
+  unknown: 'meaning',
+};
+
+/** Sesión con las palabras falladas, con el formato que pide su motivo. */
+export function makeErrorSession(
+  misses: Record<string, { reason: MissReason; at: number }>,
+  seed = 1,
+  limit = 10,
+): MixedQuestion[] {
+  return Object.entries(misses)
+    .sort((a, b) => b[1].at - a[1].at)
+    .slice(0, limit)
+    .flatMap(([wordId, miss], index) => {
+      const word = WORDS_BY_ID.get(wordId);
+      if (!word) return [];
+      const kind = REASON_KIND[miss.reason] ?? 'meaning';
+      return [buildQuestion(kind, word, lcg(seed + index), seed + index)];
+    });
 }

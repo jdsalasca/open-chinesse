@@ -9,6 +9,7 @@ describe('motivo del fallo', () => {
   it('nombra los motivos en español', () => {
     expect(reasonLabel('sound')).toBe('No la reconocí de oído');
     expect(reasonLabel('order')).toBe('No supe ordenar la frase');
+    expect(reasonLabel('tone')).toBe('Confundí el tono');
     expect(reasonLabel('otro')).toBe('Sin motivo');
   });
 

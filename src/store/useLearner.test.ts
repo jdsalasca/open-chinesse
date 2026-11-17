@@ -202,3 +202,15 @@ describe('requeuesSoon', () => {
     expect(requeuesSoon(far, NOW)).toBe(false);
   });
 });
+
+describe('actividad', () => {
+  it('guarda la palabra concreta cuando la pantalla la conoce', () => {
+    useLearner.getState().logActivity('errors', true, NOW, UNIT.words[0].id);
+    expect(useLearner.getState().activity.at(-1)).toEqual({
+      kind: 'errors',
+      at: NOW,
+      correct: true,
+      wordId: UNIT.words[0].id,
+    });
+  });
+});

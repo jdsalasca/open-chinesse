@@ -297,5 +297,17 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       pantalla existente.
 - [x] Home considera «empezado» si hay historial aunque no queden tarjetas.
 
+### C12 — Fallos y tonos
+
+- [x] Ruta `/fallos`: sesión con las palabras falladas, ordenadas por fallo más
+      reciente y con el formato que pide el motivo (escucha, significado,
+      contexto o tonos).
+- [x] Motivo «Confundí el tono» añadido al selector de fallos.
+- [x] Tarjeta «Tus fallos» en Practicar con el número de palabras pendientes.
+- [x] Dictado con «Exigir tonos» activado por defecto: `ni hao` no cuenta como
+      acierto; se muestra `nǐ hǎo` o `ni3 hao3` y el motivo.
+- [x] La actividad guarda la palabra concreta (`wordId`) para poder medir el
+      acierto diferido de los fallos.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

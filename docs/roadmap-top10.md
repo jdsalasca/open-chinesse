@@ -98,10 +98,17 @@ Terra y la auditoría coinciden:
 - **HSK 4 antes de cerrar los ciclos anteriores:** más vocabulario no arregla la
   falta de producción oral, gramática y escucha autónoma.
 
+## Hecho en C12
+
+- **Cuaderno de errores** (`/fallos`): sesión con las palabras falladas, ordenadas
+  por fallo reciente y con el formato que pide el motivo.
+- **Dictado con tonos**: opción «Exigir tonos» activa por defecto; `ni hao` no
+  cuenta como acierto.
+- La actividad guarda `wordId` para medir el acierto diferido.
+
 ## Plan de tres rondas
 
-1. **D1 — Errores y tonos:** cuaderno de errores + modo de producción tonal en
-   repaso/dictado, con métrica de acierto diferido.
+1. **D1 — Errores y tonos** — hecho en C12.
 2. **D2 — Escucha autónoma:** modo sin texto para historias y China, con dos
    preguntas por texto y transcripción revelable.
 3. **D3 — Voz:** shadowing con grabación local, comparación con el modelo y

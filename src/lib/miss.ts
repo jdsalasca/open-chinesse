@@ -1,10 +1,11 @@
-export type MissReason = 'unknown' | 'meaning' | 'sound' | 'order';
+export type MissReason = 'unknown' | 'meaning' | 'sound' | 'order' | 'tone';
 
 export const MISS_REASONS: { id: MissReason; label: string }[] = [
   { id: 'unknown', label: 'No conocía la palabra' },
   { id: 'meaning', label: 'Confundí el significado' },
   { id: 'sound', label: 'No la reconocí de oído' },
   { id: 'order', label: 'No supe ordenar la frase' },
+  { id: 'tone', label: 'Confundí el tono' },
 ];
 
 export function reasonLabel(reason: string): string {
