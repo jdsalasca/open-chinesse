@@ -153,20 +153,41 @@
 // Tarjeta -------------------------------------------------------------------
 .flashcard {
   @include surface($radius-lg, $shadow-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $space-4;
-  padding: $space-6 $space-4;
+  display: grid;
+  gap: $space-5;
+  padding: $space-5 $space-4;
   text-align: center;
 
   @include from($bp-sm) {
-    padding: $space-7 $space-6;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    padding: $space-6;
+    text-align: left;
   }
 }
 
+.flashcard__word,
+.flashcard__context {
+  display: grid;
+  gap: $space-3;
+  align-content: center;
+}
+
+.flashcard__word {
+  justify-items: center;
+}
+
+.flashcard__step {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $teal;
+}
+
 .flashcard__hanzi {
-  @include hanzi(clamp(4.2rem, 13vw, 6.4rem));
+  @include hanzi(clamp(3.6rem, 11vw, 5.6rem));
   color: $ink;
 }
 
@@ -188,9 +209,17 @@
   color: $muted;
 }
 
+.flashcard__tone-note,
+.flashcard__speak {
+  margin: 0;
+  font-size: 0.8rem;
+  color: $muted;
+}
+
 .flashcard__meaning {
-  font-size: 1.15rem;
-  color: $ink-soft;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $ink;
 }
 
 .flashcard__recall {
@@ -199,6 +228,10 @@
   justify-items: center;
   max-width: 460px;
   animation: fade-up 160ms $ease;
+
+  @include from($bp-sm) {
+    justify-items: start;
+  }
 }
 
 .flashcard__prompt {
@@ -223,6 +256,11 @@
   border: 1px dashed $line-strong;
   border-radius: $radius;
   text-align: left;
+}
+
+.flashcard .example {
+  max-width: none;
+  margin-top: 0;
 }
 
 .example__head {

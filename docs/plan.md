@@ -420,5 +420,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Movimiento 180 ms, fade de feedback, hover discreto, halo de fondo y
       `prefers-reduced-motion`.
 
+### C24 — Lección activa
+
+- [x] Ciclo de dos palabras nuevas + dos comprobaciones, con ronda visible y
+      objetivo de la unidad.
+- [x] Cinco modos: significado, escucha, tono, frase con hueco y ordenar.
+- [x] Feedback específico por modo, contraste elegido/respuesta y ejemplo.
+- [x] Barra de acción sticky, tarjeta en dos columnas y resumen con palabras
+      que merecen otra mirada.
+- [x] Plan de lección determinista y tests de respuesta correcta.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

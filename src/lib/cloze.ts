@@ -18,6 +18,9 @@ export type ClozeResult = 'hanzi' | 'ok' | 'sin-tonos' | 'tonos' | 'mal' | 'vaci
 
 const HAN = /[\u4e00-\u9fff]/;
 
+/** Hueco visible que separa la palabra que falta en una frase. */
+export const CLOZE_BLANK = '＿＿';
+
 /**
  * Hueco de una palabra del ejemplo. Solo vale si la palabra aparece una vez y
  * como pieza completa según el vocabulario del curso: nunca dentro de un compuesto.
@@ -30,7 +33,11 @@ export function blankSentence(word: Word): string | null {
   if (hanzi.split(word.hanzi).length - 1 !== 1) return null;
   const chunk = chunks[index];
   const punctuation = chunk.match(/[，。！？、：；]+$/)?.[0] ?? '';
-  return [...chunks.slice(0, index), `＿＿${punctuation}`, ...chunks.slice(index + 1)].join('');
+  return [
+    ...chunks.slice(0, index),
+    `${CLOZE_BLANK}${punctuation}`,
+    ...chunks.slice(index + 1),
+  ].join('');
 }
 
 export function makeCloze(wordIds: string[], seed = 1, limit = 6): ClozeQuestion[] {

@@ -176,6 +176,12 @@ Terra y la auditoría coinciden:
   con contraste y ejemplo, ejemplo resuelto de 不/没 y movimiento sobrio con
   `prefers-reduced-motion`.
 
+## Hecho en C24
+
+- **Lección activa**: rondas de dos palabras + dos comprobaciones, cinco modos
+  (significado, escucha, tono, hueco y ordenar), barra de acción sticky y
+  resumen con las palabras que merecen otra mirada.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

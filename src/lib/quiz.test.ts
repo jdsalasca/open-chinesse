@@ -22,6 +22,7 @@ describe('makeQuiz', () => {
         expect(new Set(question.options).size).toBe(4);
         expect(question.options).toContain(meaning);
         expect(question.options.filter((o) => o === meaning)).toHaveLength(1);
+        expect(question.answer).toBe(meaning);
       }
     }
   });

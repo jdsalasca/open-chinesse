@@ -4,7 +4,13 @@ import { lcg, shuffle } from './random';
 export type Question = {
   wordId: string;
   options: string[];
-  mode: 'recognize' | 'listen' | 'order';
+  mode: 'recognize' | 'listen' | 'tone' | 'gap' | 'order';
+  /** Respuesta correcta. En ordenar la frase no se usa para corregir. */
+  answer: string;
+  /** Frase con hueco para las preguntas de completar. */
+  prompt?: string;
+  /** Traducción de apoyo para las preguntas de completar. */
+  translation?: string;
 };
 
 const DICTIONARY = new Set(ALL_WORDS.map((word) => word.hanzi));
@@ -70,12 +76,18 @@ export function makeQuiz(unit: Unit, variant = 0): Question[] {
   return picked.map((word, index) => {
     const chunks = orderable.includes(word) ? (canOrder(word.example.hanzi) ?? []) : [];
     if (chunks.length > 0) {
-      return { wordId: word.id, options: shuffle(chunks, random), mode: 'order' };
+      return {
+        wordId: word.id,
+        options: shuffle(chunks, random),
+        mode: 'order',
+        answer: word.example.hanzi,
+      };
     }
     return {
       wordId: word.id,
       options: meaningOptions(word, random),
       mode: index % 2 === 1 ? 'listen' : 'recognize',
+      answer: word.meaning,
     };
   });
 }
