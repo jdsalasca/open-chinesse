@@ -56,6 +56,16 @@ pnpm build                         ✓
 Capturas en `.screens/audit/`: `c21-scene.png`, `c21-scene-evidence.png`,
 `c21-scene-summary.png`.
 
+## Producción
+
+- Desplegado `90e8d70` en `https://open-chinesse.eridu.top`.
+- «你好！»: tres líneas con audio y sin pinyin/traducción antes de responder.
+- Resumen correcto, líneas seleccionables, evidencia correcta con cita, badge
+  «justifica» y pinyin/traducción revelados.
+- Practicar: 17 tarjetas, incluida «¿Qué pasó en la escena?».
+- Móvil 390: 0 px de desbordamiento y sin errores de consola distintos del 401
+  esperado sin sesión.
+
 ## Límites
 
 - Las preguntas son de comprensión **global o literal**; solo una requiere una
