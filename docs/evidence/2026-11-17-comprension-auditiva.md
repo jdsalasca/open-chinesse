@@ -49,6 +49,14 @@ pnpm build                           ✓
 Capturas en `.screens/audit/`: `c14-listening-list.png`,
 `c14-listening-reader.png`, `c14-listening-mobile.png`.
 
+## Producción
+
+- Desplegado `ec34517` en `https://open-chinesse.eridu.top`.
+- `/escucha`: seis audios; «En el restaurante» abre sin transcripción, reproduce
+  «Frase 1 de 6», acepta «Veinte yuanes» y revela las seis líneas.
+- Practicar: doce tarjetas, incluida «Comprensión auditiva».
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Límites
 
 - Una sola pregunta por audio; no mide comprensión detallada de cada línea.
