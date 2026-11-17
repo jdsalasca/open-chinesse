@@ -1,0 +1,257 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.grammar-list {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.grammar-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.grammar-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+}
+
+.grammar-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.grammar-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.grammar-card__subtitle {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.grammar-card__status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $violet;
+
+  &.is-check-ready {
+    color: $mint-dark;
+  }
+
+  &.is-checked {
+    color: $teal;
+  }
+}
+
+.grammar-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.grammar-list__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.grammar {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.grammar__back {
+  justify-self: start;
+}
+
+.grammar__title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.grammar__summary {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.grammar-rules {
+  display: grid;
+  gap: $space-3;
+}
+
+.grammar-rule {
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+
+  h2 {
+    margin: 0 0 $space-2;
+    font-size: 1.05rem;
+  }
+}
+
+.grammar-rule__text {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.grammar-rule__examples {
+  display: grid;
+  gap: $space-2;
+  margin: $space-3 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grammar-rule__examples li {
+  padding: $space-2 $space-3;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.grammar-example__hanzi {
+  margin: 0;
+  @include hanzi(1.2rem);
+  line-height: 1.5;
+}
+
+.grammar-example__pinyin {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $teal;
+}
+
+.grammar-example__translation {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.grammar-contrasts {
+  display: grid;
+  gap: $space-2;
+}
+
+.grammar-contrast {
+  padding: $space-3 $space-4;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.grammar-contrast__wrong,
+.grammar-contrast__right {
+  margin: 0;
+  @include hanzi(1.1rem);
+}
+
+.grammar-contrast__wrong {
+  color: $danger;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.grammar-contrast__right {
+  color: $mint-dark;
+  font-weight: 600;
+}
+
+.grammar-contrast__why {
+  margin: $space-2 0 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.grammar-panel {
+  display: grid;
+  gap: $space-3;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $violet-soft;
+}
+
+.grammar-panel__status {
+  margin: 0;
+  font-weight: 600;
+}
+
+.grammar-panel__check {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $ink-soft;
+}
+
+.grammar-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.grammar-item {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+  text-align: center;
+}
+
+.grammar-item__prompt {
+  margin: 0;
+  @include hanzi(1.7rem);
+  line-height: 1.6;
+}
+
+.grammar-item__pinyin {
+  margin: 0;
+  color: $teal;
+}
+
+.grammar-item__translation {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.grammar-item__options {
+  display: grid;
+  gap: $space-2;
+  width: 100%;
+}
+
+.grammar-item__options .option {
+  display: grid;
+  gap: $space-1;
+  width: 100%;
+  @include hanzi(1.2rem);
+}
+
+.grammar-option__pinyin {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $muted;
+}

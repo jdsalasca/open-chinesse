@@ -339,5 +339,17 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Estados de permiso denegado y navegador sin soporte.
 - [x] Tarjeta «Repite en voz alta» en Practicar.
 
+### C16 — Gramática en contraste: 不 / 没
+
+- [x] Tema `/gramatica/bu-mei` con cuatro reglas, tres contrastes y doce
+      frases: siete de práctica y cinco reservadas.
+- [x] Práctica con feedback que explica el porqué; los fallos quedan en el tema
+      y se pueden repasar aparte.
+- [x] Prueba diferida a los 7 días con las cinco frases reservadas; se guarda
+      solo el primer resultado.
+- [x] Repaso de la práctica a los 3 días, sin retrasar la prueba al repetir.
+- [x] Progreso compatible (esquema 11) y tarjeta «Gramática en contraste» en
+      Practicar.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

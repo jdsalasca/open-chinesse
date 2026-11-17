@@ -42,7 +42,8 @@ completo está resumido abajo; lo he ajustado con lo que el código ya permite.
 | 9   | **Diagnóstico periódico por destreza**: prueba mensual de escucha, lectura y producción en tareas nuevas                | Medir aprendizaje, no actividad   | Alto para medir | Medio      | Banco de preguntas por crear         |
 | 10  | **Variación de escucha**: varias voces y velocidades para las mismas frases                                             | Generalización auditiva           | Medio-alto      | Alto       | Requiere nuevos audios/voces         |
 
-Orden recomendado: **1 + 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10**.
+Orden recomendado: **5 (hecho en C16) → HSK 1 aplicado → 9 → 6 → 10 → 8**;
+sentence mining (7) después de la transferencia.
 
 ## Las tres primeras, en concreto
 
@@ -126,6 +127,12 @@ Terra y la auditoría coinciden:
 - **Repite en voz alta** (`/repite`): diez textos con audio por frase, grabación
   local y comparación con el modelo. Sin nota automática.
 
+## Hecho en C16
+
+- **Gramática en contraste** (`/gramatica`): 不 y 没 con reglas, contrastes,
+  siete frases de práctica y cinco reservadas para una prueba diferida a los 7
+  días. Se guarda el primer resultado.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.
@@ -133,5 +140,19 @@ Terra y la auditoría coinciden:
 3. **D3 — Voz** — hecho en C15: shadowing con grabación local y comparación con
    el modelo; sin puntuación automática.
 
-Después: gramática en contraste, transferencia, sentence mining, caracteres y
-diagnóstico.
+## Horizonte tras C16
+
+1. **Gramática en contraste** — 不/没 hecho en C16. Seguir con 了/过, 的/得 y
+   clasificadores.
+2. **HSK 1 aplicado** — 15 micro-lecturas, una por unidad, con vocabulario ya
+   conocido, audio y una pregunta. Alimenta Historias, Escucha y Repite.
+3. **Diagnóstico por destreza** — cinco ítems de escucha, lectura y gramática,
+   con perfil y recomendación.
+4. **Transferencia situacional** — resolver situaciones nuevas sin copiar el
+   ejemplo.
+5. **Escucha con variación** — piloto con segunda voz o velocidad.
+6. **Caracteres confundibles + escritura selectiva** — pares mínimos y escritura
+   autoevaluada.
+
+Sentence mining pasa después de la transferencia: guardar frases no demuestra
+saber usarlas.

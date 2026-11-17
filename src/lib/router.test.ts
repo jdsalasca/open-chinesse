@@ -21,6 +21,11 @@ describe('rutas', () => {
     expect(parseHash('#/tonos')).toEqual({ name: 'tones' });
   });
 
+  it('reconoce la gramática en contraste', () => {
+    expect(parseHash('#/gramatica')).toEqual({ name: 'grammar', topicId: undefined });
+    expect(parseHash('#/gramatica/bu-mei')).toEqual({ name: 'grammar', topicId: 'bu-mei' });
+  });
+
   it('no se rompe con una ruta de carácter vacía', () => {
     expect(parseHash('#/caracter')).toEqual({ name: 'home' });
     expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'character', char: '%E0%A4%A' });

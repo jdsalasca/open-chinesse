@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { Icon, type IconName } from '../components/ui/Icon';
 import { SCENARIOS } from '../data/scenarios';
+import { GRAMMAR_TOPICS } from '../data/grammar';
 import { listeningExercises } from '../lib/listening';
 import { shadowingTexts } from '../lib/shadowing';
 import { buildQueue } from '../srs/queue';
@@ -19,6 +20,7 @@ type Action = {
 
 const LISTENING_COUNT = listeningExercises().length;
 const SHADOWING_COUNT = shadowingTexts().length;
+const GRAMMAR_TOPICS_COUNT = GRAMMAR_TOPICS.length;
 
 const BASE_ACTIONS: Action[] = [
   {
@@ -92,6 +94,15 @@ const BASE_ACTIONS: Action[] = [
     title: 'Repite en voz alta',
     text: 'Escucha el modelo, graba tu voz y compara tonos y ritmo. Sin nota automática.',
     cta: 'Escuchar y grabar',
+  },
+  {
+    href: '#/gramatica',
+    tone: 'violet',
+    icon: 'book',
+    meta: `${GRAMMAR_TOPICS_COUNT} tema · 12 frases`,
+    title: 'Gramática en contraste',
+    text: '不 y 没: reglas, ejemplos y una prueba diferida a los 7 días.',
+    cta: 'Entender la diferencia',
   },
   {
     href: '#/prueba',

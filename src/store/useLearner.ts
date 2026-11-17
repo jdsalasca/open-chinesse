@@ -19,6 +19,7 @@ import {
 } from '../srs/scheduler';
 import { dayKey, streakDays, type ReviewRecord } from './metrics';
 import type { MissReason } from '../lib/miss';
+import { afterCheck, afterPractice, type GrammarProgress } from '../lib/grammar';
 import {
   allMissionsDone,
   makeMissions,
@@ -52,6 +53,7 @@ export type LearnerPayload = {
   stars: Record<string, number>;
   achievements: string[];
   certificates: Record<string, Certificate>;
+  grammar: Record<string, GrammarProgress>;
 };
 
 export type LearnerState = {
@@ -72,6 +74,7 @@ export type LearnerState = {
   stars: Record<string, number>;
   achievements: string[];
   certificates: Record<string, Certificate>;
+  grammar: Record<string, GrammarProgress>;
   introduceUnit: (unitId: string, now?: number) => void;
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
@@ -81,6 +84,8 @@ export type LearnerState = {
   claimMissions: (now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
   recordCertificate: (level: 1 | 2 | 3, score: number, total: number, now?: number) => void;
+  saveGrammarPractice: (topicId: string, failed: string[], now?: number) => void;
+  saveGrammarCheck: (topicId: string, score: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
   hydrate: (payload: string) => void;
@@ -118,6 +123,7 @@ const emptyState = () => {
     stars: {} as Record<string, number>,
     achievements: [] as string[],
     certificates: {} as Record<string, Certificate>,
+    grammar: {} as Record<string, GrammarProgress>,
   };
 };
 
@@ -172,6 +178,29 @@ function gradeWord(store: Store, wordId: string, rating: Grade, now: number): vo
 function noteMiss(store: Store, wordId: string, reason: MissReason, now: number): void {
   const { misses } = store.get();
   store.set({ misses: { ...misses, [wordId]: { reason, at: now } }, lastEditAt: now });
+}
+
+function saveGrammarPractice(store: Store, topicId: string, failed: string[], now: number): void {
+  const { grammar } = store.get();
+  store.set({
+    grammar: { ...grammar, [topicId]: afterPractice(grammar[topicId], failed, now) },
+    lastEditAt: now,
+  });
+}
+
+function saveGrammarCheck(
+  store: Store,
+  topicId: string,
+  score: { correct: number; total: number },
+  now: number,
+): void {
+  const { grammar } = store.get();
+  const progress = grammar[topicId];
+  if (!progress) return;
+  store.set({
+    grammar: { ...grammar, [topicId]: afterCheck(progress, score.correct, score.total, now) },
+    lastEditAt: now,
+  });
 }
 
 function recordLesson(
@@ -249,6 +278,7 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
     certificates: asRecord<Certificate>(parsed.certificates),
+    grammar: asRecord<GrammarProgress>(parsed.grammar),
     lastEditAt: asNumber(parsed.lastEditAt, Date.now()),
   };
 }
@@ -278,7 +308,7 @@ function applyContentDefaults(payload: Partial<LearnerState>, version: number): 
   if (version < 7) payload.scenarios = [];
 }
 
-/** v8–v9: actividad diaria y días con las misiones reclamadas. */
+/** v8-v11: actividad, misiones, certificados y gramática. */
 function applyActivityDefaults(payload: Partial<LearnerState>, version: number): void {
   if (version < 8) payload.activity = [];
   if (version < 9) {
@@ -286,6 +316,7 @@ function applyActivityDefaults(payload: Partial<LearnerState>, version: number):
     payload.missionDays = legacy ? [legacy] : [];
   }
   if (version < 10) payload.certificates = {};
+  if (version < 11) payload.grammar = {};
 }
 
 function completeScenario(store: Store, id: string, now: number): void {
@@ -359,13 +390,17 @@ export const useLearner = create<LearnerState>()(
           recordLesson(store, unitId, { correct, total }, now),
         recordCertificate: (level, score, total, now = Date.now()) =>
           recordCertificate(store, level, { score, total, now }),
+        saveGrammarPractice: (topicId, failed, now = Date.now()) =>
+          saveGrammarPractice(store, topicId, failed, now),
+        saveGrammarCheck: (topicId, score, total, now = Date.now()) =>
+          saveGrammarCheck(store, topicId, { correct: score, total }, now),
         hydrate: (payload) => hydrate(store, payload),
         reset: () => set(emptyState()),
       };
     },
     {
       name: 'open-chinesse',
-      version: 10,
+      version: 11,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
@@ -392,6 +427,7 @@ export const useLearner = create<LearnerState>()(
         stars: state.stars,
         achievements: state.achievements,
         certificates: state.certificates,
+        grammar: state.grammar,
       }),
     },
   ),
@@ -416,6 +452,7 @@ export function exportPayload(): string {
     stars,
     achievements,
     certificates,
+    grammar,
   } = useLearner.getState();
   return JSON.stringify({
     cards,
@@ -430,5 +467,6 @@ export function exportPayload(): string {
     stars,
     achievements,
     certificates,
+    grammar,
   });
 }

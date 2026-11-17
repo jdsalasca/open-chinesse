@@ -24,6 +24,7 @@ export type Route =
   | { name: 'certificate'; level: 1 | 2 | 3 }
   | { name: 'listening'; exerciseId?: string }
   | { name: 'shadowing'; textId?: string }
+  | { name: 'grammar'; topicId?: string }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -55,6 +56,7 @@ const SIMPLE: Record<string, Route> = {
   jefes: { name: 'boss' },
   escucha: { name: 'listening' },
   repite: { name: 'shadowing' },
+  gramatica: { name: 'grammar' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {
@@ -67,6 +69,7 @@ const PARAM: Record<string, (value: string) => Route> = {
   certificado: (level) => ({ name: 'certificate', level: Number(level) as 1 | 2 | 3 }),
   escucha: (exerciseId) => ({ name: 'listening', exerciseId }),
   repite: (textId) => ({ name: 'shadowing', textId }),
+  gramatica: (topicId) => ({ name: 'grammar', topicId }),
   caracter: (char) => ({ name: 'character', char: decode(char) }),
   character: (char) => ({ name: 'character', char: decode(char) }),
 };
