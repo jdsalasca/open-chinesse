@@ -77,6 +77,17 @@ pnpm build                         ✓
 Capturas en `.screens/audit/`: `c19-session-home.png`, `c19-close.png`,
 `c19-radical-family.png`, `c19-close-mobile.png`.
 
+## Producción
+
+- Desplegado `c9e3eb7` en `https://open-chinesse.eridu.top`.
+- Home: «Recupera, aprende, produce», pasos Repaso/Lección/Cierre y CTA único.
+- Cierre: carácter 好 con historia mujer + hijo y quiz de radical; frase con
+  audio y opciones; producción con dos palabras, modelo y autoevaluación.
+- Ficha de 你: familia del radical 亻 con 16 caracteres del curso.
+- Opción incorrecta en rosa.
+- Móvil 390: 0 px de desbordamiento; sin errores de consola distintos del 401
+  esperado sin sesión.
+
 ## Límites
 
 - El carácter y la frase del día se repiten mientras se esté en la misma
