@@ -37,6 +37,8 @@ export type Miss = { reason: MissReason; at: number };
 
 export type Retention = { wordIds: string[]; dueAt: number; score?: number; takenAt?: number };
 
+export type Certificate = { score: number; total: number; at: number };
+
 export type LearnerPayload = {
   cards: Record<string, StoredCard>;
   log: ReviewRecord[];
@@ -49,6 +51,7 @@ export type LearnerPayload = {
   xp: number;
   stars: Record<string, number>;
   achievements: string[];
+  certificates: Record<string, Certificate>;
 };
 
 export type LearnerState = {
@@ -68,6 +71,7 @@ export type LearnerState = {
   onboarded: boolean;
   stars: Record<string, number>;
   achievements: string[];
+  certificates: Record<string, Certificate>;
   introduceUnit: (unitId: string, now?: number) => void;
   gradeWord: (wordId: string, grade: Grade, now?: number) => void;
   noteMiss: (wordId: string, reason: MissReason, now?: number) => void;
@@ -76,6 +80,7 @@ export type LearnerState = {
   logActivity: (kind: ActivityKind, correct?: boolean, now?: number, wordId?: string) => void;
   claimMissions: (now?: number) => void;
   recordLesson: (unitId: string, correct: number, total: number, now?: number) => void;
+  recordCertificate: (level: 1 | 2 | 3, score: number, total: number, now?: number) => void;
   completeOnboarding: (goalXp: number, now?: number) => void;
   refreshDay: (now?: number) => void;
   hydrate: (payload: string) => void;
@@ -112,6 +117,7 @@ const emptyState = () => {
     onboarded: false,
     stars: {} as Record<string, number>,
     achievements: [] as string[],
+    certificates: {} as Record<string, Certificate>,
   };
 };
 
@@ -201,6 +207,22 @@ function recordLesson(
   });
 }
 
+function recordCertificate(
+  store: Store,
+  level: 1 | 2 | 3,
+  result: { score: number; total: number; now: number },
+): void {
+  const { score, total, now } = result;
+  const { certificates } = store.get();
+  const key = String(level);
+  const previous = certificates[key];
+  if (previous && previous.score >= score) return;
+  store.set({
+    certificates: { ...certificates, [key]: { score, total, at: now } },
+    lastEditAt: now,
+  });
+}
+
 function asRetention(value: unknown): Retention | null {
   if (!value || typeof value !== 'object') return null;
   const item = value as Partial<Retention>;
@@ -226,6 +248,7 @@ function normalizePayload(parsed: Partial<LearnerPayload>): Partial<LearnerPaylo
     xp: asNumber(parsed.xp, 0),
     stars: asRecord<number>(parsed.stars),
     achievements: asArray<string>(parsed.achievements, []),
+    certificates: asRecord<Certificate>(parsed.certificates),
     lastEditAt: asNumber(parsed.lastEditAt, Date.now()),
   };
 }
@@ -262,6 +285,7 @@ function applyActivityDefaults(payload: Partial<LearnerState>, version: number):
     const legacy = (payload as { missionsClaimed?: string | null }).missionsClaimed;
     payload.missionDays = legacy ? [legacy] : [];
   }
+  if (version < 10) payload.certificates = {};
 }
 
 function completeScenario(store: Store, id: string, now: number): void {
@@ -333,13 +357,15 @@ export const useLearner = create<LearnerState>()(
           set({ dailyGoal: goalXp, onboarded: true, lastEditAt: now }),
         recordLesson: (unitId, correct, total, now = Date.now()) =>
           recordLesson(store, unitId, { correct, total }, now),
+        recordCertificate: (level, score, total, now = Date.now()) =>
+          recordCertificate(store, level, { score, total, now }),
         hydrate: (payload) => hydrate(store, payload),
         reset: () => set(emptyState()),
       };
     },
     {
       name: 'open-chinesse',
-      version: 9,
+      version: 10,
       migrate: (persisted, version) => {
         const old = (persisted ?? {}) as Partial<LearnerState>;
         if (version < 2) old.lastEditAt = old.createdAt ?? Date.now();
@@ -365,6 +391,7 @@ export const useLearner = create<LearnerState>()(
         onboarded: state.onboarded,
         stars: state.stars,
         achievements: state.achievements,
+        certificates: state.certificates,
       }),
     },
   ),
@@ -388,6 +415,7 @@ export function exportPayload(): string {
     xp,
     stars,
     achievements,
+    certificates,
   } = useLearner.getState();
   return JSON.stringify({
     cards,
@@ -401,5 +429,6 @@ export function exportPayload(): string {
     xp,
     stars,
     achievements,
+    certificates,
   });
 }

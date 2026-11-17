@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
+import { BossResult } from '../components/BossResult';
 import { SessionHeader } from '../components/SessionHeader';
 import { Icon } from '../components/ui/Icon';
-import { WORDS_BY_ID } from '../data/curriculum';
+import { WORDS_BY_ID, type Level } from '../data/curriculum';
 import { audioUrl } from '../lib/audio';
+import { BOSS_QUESTIONS, bossWordIds, isBossPassed } from '../lib/boss';
 import { useEnterKey } from '../lib/hooks';
 import { makeMixed, makeErrorSession, type MixedKind, type MixedQuestion } from '../lib/mixed';
 import type { MissReason } from '../lib/miss';
@@ -216,16 +218,60 @@ function Summary({
   );
 }
 
-function useSessionQuestions(
-  errors: boolean,
-  seed: number,
-  studied: string[],
-  misses: Record<string, { reason: MissReason; at: number }>,
-) {
-  return useMemo(
-    () => (errors ? makeErrorSession(misses, seed, 10) : makeMixed(studied, seed, 10)),
-    [errors, misses, seed, studied],
-  );
+function useSessionQuestions(params: {
+  errors: boolean;
+  seed: number;
+  studied: string[];
+  misses: Record<string, { reason: MissReason; at: number }>;
+  bossLevel?: Level;
+}) {
+  const { errors, seed, studied, misses, bossLevel } = params;
+  return useMemo(() => {
+    if (bossLevel) return makeMixed(bossWordIds(bossLevel), seed, BOSS_QUESTIONS);
+    return errors ? makeErrorSession(misses, seed, 10) : makeMixed(studied, seed, 10);
+  }, [bossLevel, errors, misses, seed, studied]);
+}
+
+function useMixedRun(params: {
+  errors: boolean;
+  bossLevel?: Level;
+  studied: string[];
+  misses: Record<string, { reason: MissReason; at: number }>;
+}) {
+  const { errors, bossLevel, studied, misses } = params;
+  const [seed, setSeed] = useState(() => Date.now() % 1_000_000);
+  const [index, setIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const questions = useSessionQuestions({ errors, seed, studied, misses, bossLevel });
+
+  const retry = () => {
+    setSeed(Date.now() % 1_000_000);
+    setIndex(0);
+    setScore(0);
+  };
+
+  const answer = (correct: boolean) => {
+    const kind = bossLevel ? 'boss' : errors ? 'errors' : 'mixed';
+    useLearner.getState().logActivity(kind, correct, Date.now(), questions[index].wordId);
+    if (correct) setScore(score + 1);
+    setIndex(index + 1);
+  };
+
+  return { seed, index, score, questions, retry, answer };
+}
+
+function useBossResult(
+  bossLevel: Level | undefined,
+  finished: boolean,
+  score: number,
+  total: number,
+): boolean {
+  const record = useLearner((s) => s.recordCertificate);
+  const passed = bossLevel ? isBossPassed(score, total) : false;
+  useEffect(() => {
+    if (bossLevel && finished && passed) record(bossLevel, score, total);
+  }, [bossLevel, finished, passed, record, score, total]);
+  return passed;
 }
 
 function useStudiedWords(): string[] {
@@ -233,43 +279,76 @@ function useStudiedWords(): string[] {
   return useMemo(() => [...new Set(log.map((entry) => entry.wordId))], [log]);
 }
 
-export function Mixed({ errors = false }: { errors?: boolean }) {
+function useCertificate(level?: Level) {
+  return useLearner((s) => (level ? s.certificates[String(level)] : undefined));
+}
+
+function sessionLabel(errors: boolean, bossLevel?: Level): string {
+  if (bossLevel) return `Jefe HSK ${bossLevel}`;
+  return errors ? 'Tus fallos' : 'Sesión mixta';
+}
+
+function BossEnd({
+  level,
+  score,
+  total,
+  certificate,
+  passed,
+  onRetry,
+}: {
+  level: Level;
+  score: number;
+  total: number;
+  certificate?: { at: number };
+  passed: boolean;
+  onRetry: () => void;
+}) {
+  return (
+    <BossResult
+      level={level}
+      score={score}
+      total={total}
+      at={certificate?.at ?? Date.now()}
+      passed={passed}
+      onRetry={onRetry}
+    />
+  );
+}
+
+export function Mixed({ errors = false, bossLevel }: { errors?: boolean; bossLevel?: Level }) {
   const misses = useLearner((s) => s.misses);
   const studied = useStudiedWords();
-  const [seed, setSeed] = useState(() => Date.now() % 1_000_000);
-  const [index, setIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const questions = useSessionQuestions(errors, seed, studied, misses);
-  const label = errors ? 'Tus fallos' : 'Sesión mixta';
-  if (questions.length === 0) return <Empty errors={errors} />;
-  if (index >= questions.length) {
+  const certificate = useCertificate(bossLevel);
+  const run = useMixedRun({ errors, bossLevel, studied, misses });
+  const finished = run.index >= run.questions.length;
+  const passed = useBossResult(bossLevel, finished, run.score, run.questions.length);
+
+  if (run.questions.length === 0) return <Empty errors={errors} />;
+  if (finished) {
+    if (bossLevel) {
+      return (
+        <BossEnd
+          level={bossLevel}
+          score={run.score}
+          total={run.questions.length}
+          certificate={certificate}
+          passed={passed}
+          onRetry={run.retry}
+        />
+      );
+    }
     return (
-      <Summary
-        score={score}
-        total={questions.length}
-        errors={errors}
-        onRetry={() => {
-          setSeed(Date.now() % 1_000_000);
-          setIndex(0);
-          setScore(0);
-        }}
-      />
+      <Summary score={run.score} total={run.questions.length} errors={errors} onRetry={run.retry} />
     );
   }
   return (
     <Question
-      key={`${seed}-${index}`}
-      item={questions[index]}
-      index={index}
-      total={questions.length}
-      label={label}
-      onAnswer={(correct) => {
-        useLearner
-          .getState()
-          .logActivity(errors ? 'errors' : 'mixed', correct, Date.now(), questions[index].wordId);
-        if (correct) setScore(score + 1);
-        setIndex(index + 1);
-      }}
+      key={`${run.seed}-${run.index}`}
+      item={run.questions[run.index]}
+      index={run.index}
+      total={run.questions.length}
+      label={sessionLabel(errors, bossLevel)}
+      onAnswer={run.answer}
     />
   );
 }

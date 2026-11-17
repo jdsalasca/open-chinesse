@@ -106,6 +106,14 @@ Terra y la auditoría coinciden:
   cuenta como acierto.
 - La actividad guarda `wordId` para medir el acierto diferido.
 
+## Hecho en C13
+
+- **Jefes de nivel** (`/jefes`): examen de 15 preguntas al cerrar cada nivel, con
+  el 80% para aprobar.
+- **Certificado de práctica** con nombre, nivel, aciertos y fecha; se guarda el
+  mejor resultado y se puede volver a ver o imprimir.
+- El jefe se desbloquea con una estrella en todas las unidades del nivel.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

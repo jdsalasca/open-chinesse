@@ -90,7 +90,7 @@ const BASE_ACTIONS: Action[] = [
   },
 ];
 
-function actions(pending: number, scenesDone: number, errors: number): Action[] {
+function actions(pending: number, scenesDone: number, errors: number, certs: number): Action[] {
   return [
     {
       href: '#/review',
@@ -110,6 +110,15 @@ function actions(pending: number, scenesDone: number, errors: number): Action[] 
       text: 'Vuelve a las palabras que fallaste, con el formato que pide cada error.',
       cta: 'Repasar fallos',
     },
+    {
+      href: '#/jefes',
+      tone: 'sky',
+      icon: 'trophy',
+      meta: `${certs} de 3`,
+      title: 'Jefes de nivel',
+      text: 'Un examen de 15 preguntas al cerrar cada nivel. Con el 80%, certificado de práctica.',
+      cta: 'Ver jefes',
+    },
     ...BASE_ACTIONS.map((action) =>
       action.href === '#/situaciones'
         ? { ...action, meta: `${scenesDone} de ${SCENARIOS.length} hechas` }
@@ -118,12 +127,22 @@ function actions(pending: number, scenesDone: number, errors: number): Action[] 
   ];
 }
 
-export function Practice() {
+function usePracticeData() {
   const cards = useLearner((s) => s.cards);
   const scenes = useLearner((s) => s.scenarios);
   const misses = useLearner((s) => s.misses);
+  const certificates = useLearner((s) => s.certificates);
   const [now] = useState(Date.now);
-  const pending = buildQueue(cards, now).total;
+  return {
+    pending: buildQueue(cards, now).total,
+    scenes: scenes.length,
+    errors: Object.keys(misses).length,
+    certs: Object.keys(certificates).length,
+  };
+}
+
+export function Practice() {
+  const data = usePracticeData();
 
   return (
     <section className="practice">
@@ -133,7 +152,7 @@ export function Practice() {
         lead="Formas distintas de mover el conocimiento de la memoria a corto plazo a la de largo plazo."
       />
       <div className="practice__grid">
-        {actions(pending, scenes.length, Object.keys(misses).length).map((action) => (
+        {actions(data.pending, data.scenes, data.errors, data.certs).map((action) => (
           <a
             key={action.href}
             className={`practice__card practice__card--${action.tone}`}

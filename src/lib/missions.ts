@@ -2,7 +2,7 @@ import type { IconName } from '../components/ui/Icon';
 import { dayKey } from '../store/metrics';
 
 export type ActivityKind =
-  'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation' | 'mixed' | 'errors';
+  'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation' | 'mixed' | 'errors' | 'boss';
 
 export type ActivityEntry = {
   kind: ActivityKind;

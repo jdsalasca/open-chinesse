@@ -16,6 +16,8 @@ import { Dictation } from './screens/Dictation';
 import { Bedtime } from './screens/Bedtime';
 import { China } from './screens/China';
 import { Mixed } from './screens/Mixed';
+import { Boss } from './screens/Boss';
+import { CertificateView } from './screens/CertificateView';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -46,6 +48,7 @@ const FOCUS = new Set<Route['name']>([
   'dictation',
   'mixed',
   'errors',
+  'boss',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -99,7 +102,15 @@ function Header({ route }: { route: Route }) {
   );
 }
 
-function RouteView({ route }: { route: Route }) {
+function bossView(route: Route): ReactNode | null {
+  if (route.name === 'boss') return <Boss level={route.level} />;
+  if (route.name === 'certificate') return <CertificateView level={route.level} />;
+  return null;
+}
+
+function paramView(route: Route): ReactNode | null {
+  const boss = bossView(route);
+  if (boss) return boss;
   if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
   if (route.name === 'character') return <Character key={route.char} char={route.char} />;
   if (route.name === 'stories') return <Stories storyId={route.storyId} />;
@@ -108,8 +119,11 @@ function RouteView({ route }: { route: Route }) {
   if (route.name === 'scenario') {
     return <ScenarioView key={route.scenarioId} scenarioId={route.scenarioId} />;
   }
-  const view = VIEWS[route.name];
-  return view ? view() : <Home />;
+  return null;
+}
+
+function RouteView({ route }: { route: Route }) {
+  return paramView(route) ?? VIEWS[route.name]?.() ?? <Home />;
 }
 
 function useDayRefresh() {

@@ -309,5 +309,16 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] La actividad guarda la palabra concreta (`wordId`) para poder medir el
       acierto diferido de los fallos.
 
+### C13 — Jefes de nivel y certificado
+
+- [x] Ruta `/jefes` con los tres niveles; el jefe se abre al tener una estrella
+      en todas las unidades del nivel.
+- [x] Examen de 15 preguntas mezcladas, sin pistas; 80% para aprobar.
+- [x] Certificado de práctica con nombre, nivel, aciertos y fecha; se guarda el
+      mejor resultado y se puede volver a ver o imprimir en `/certificado/<nivel>`.
+- [x] Certificados incluidos en el estado persistido, la exportación y la
+      sincronización (esquema 10).
+- [x] Tarjeta «Jefes de nivel» en Practicar.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

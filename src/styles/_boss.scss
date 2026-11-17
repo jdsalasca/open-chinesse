@@ -1,0 +1,165 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.boss {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.boss-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.boss-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+
+  &.is-locked {
+    opacity: 0.6;
+  }
+}
+
+.boss-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  margin-top: $space-2;
+}
+
+.boss-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.boss-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.boss-card__status {
+  font-size: 0.9rem;
+  color: $mint-dark;
+  font-weight: 600;
+}
+
+.boss-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.boss__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.boss-result {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.certificate-page {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.certificate {
+  display: grid;
+  justify-items: center;
+  gap: $space-2;
+  padding: $space-7 $space-6;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background:
+    radial-gradient(520px 260px at 50% -20%, rgb(0 184 107 / 12%), transparent 65%), $surface;
+  box-shadow: $shadow-lg;
+  text-align: center;
+}
+
+.certificate__seal {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: $space-2;
+  border-radius: 50%;
+  background: $mint-soft;
+  color: $mint-dark;
+}
+
+.certificate__name {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.certificate__text {
+  margin: 0;
+  font-size: 1.05rem;
+  color: $ink-soft;
+}
+
+.certificate__score {
+  margin: 0;
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  color: $mint-dark;
+}
+
+.certificate__note {
+  max-width: 46ch;
+  margin: $space-2 0 0;
+  font-size: 0.78rem;
+  color: $muted;
+}
+
+.certificate__print {
+  margin-top: $space-3;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .certificate,
+  .certificate * {
+    visibility: visible;
+  }
+
+  .certificate {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .certificate__print {
+    display: none;
+  }
+}

@@ -214,3 +214,17 @@ describe('actividad', () => {
     });
   });
 });
+
+describe('certificados', () => {
+  it('guarda el mejor resultado por nivel', () => {
+    useLearner.getState().recordCertificate(1, 12, 15, NOW);
+    useLearner.getState().recordCertificate(1, 10, 15, NOW + 1);
+    expect(useLearner.getState().certificates['1']).toEqual({
+      score: 12,
+      total: 15,
+      at: NOW,
+    });
+    useLearner.getState().recordCertificate(1, 14, 15, NOW + 2);
+    expect(useLearner.getState().certificates['1']?.score).toBe(14);
+  });
+});
