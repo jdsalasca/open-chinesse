@@ -26,6 +26,10 @@ describe('rutas', () => {
     expect(parseHash('#/gramatica/bu-mei')).toEqual({ name: 'grammar', topicId: 'bu-mei' });
   });
 
+  it('reconoce el cierre de la sesión diaria', () => {
+    expect(parseHash('#/cierre')).toEqual({ name: 'close' });
+  });
+
   it('no se rompe con una ruta de carácter vacía', () => {
     expect(parseHash('#/caracter')).toEqual({ name: 'home' });
     expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'character', char: '%E0%A4%A' });

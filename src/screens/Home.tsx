@@ -2,15 +2,21 @@ import { Icon } from '../components/ui/Icon';
 import { Onboarding } from '../components/Onboarding';
 import { TOTAL_WORDS, type Unit } from '../data/curriculum';
 import { navigate } from '../lib/router';
-import { useDailySession } from '../store/daily-session';
+import { useDailySession, type SessionStep } from '../store/daily-session';
 import { ChallengeCard, ProgressSection, RouteSection, SessionSection } from './HomeSections';
 import { useHomeData, type HomeData } from './home-data';
 
 function startSession(home: HomeData): void {
-  useDailySession.getState().start();
+  const focusUnit = home.nextUnit ?? home.levelUnits.at(-1);
+  const steps: SessionStep[] = [
+    ...(home.queue.total > 0 ? (['review'] as const) : []),
+    ...(home.nextUnit ? (['lesson'] as const) : []),
+    'close',
+  ];
+  useDailySession.getState().start({ steps, unitId: focusUnit?.id });
   if (home.queue.total > 0) return navigate('/review');
   if (home.nextUnit) return navigate(`/lesson/${home.nextUnit.id}`);
-  navigate('/tonos');
+  navigate('/cierre');
 }
 
 function HeroTitle() {
@@ -129,7 +135,7 @@ export function Home() {
   return (
     <div className="home">
       <Hero home={home} />
-      <SessionSection home={home} />
+      <SessionSection home={home} onStart={() => startSession(home)} />
       <ChallengeCard now={home.now} />
       <ProgressSection home={home} />
       <RouteSection home={home} />

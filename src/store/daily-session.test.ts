@@ -1,28 +1,32 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { useDailySession } from './daily-session';
+import { SESSION_STEPS, useDailySession } from './daily-session';
+
+beforeEach(() => useDailySession.getState().end());
 
 describe('sesión diaria', () => {
-  beforeEach(() => useDailySession.getState().end());
-
-  it('empieza sin pasos hechos', () => {
-    useDailySession.getState().start();
-    expect(useDailySession.getState().active).toBe(true);
-    expect(useDailySession.getState().done).toEqual([]);
+  it('arranca con los tres pasos y la unidad de foco', () => {
+    useDailySession.getState().start({ unitId: 'h1-01' });
+    const state = useDailySession.getState();
+    expect(state.active).toBe(true);
+    expect(state.steps).toEqual(SESSION_STEPS);
+    expect(state.unitId).toBe('h1-01');
+    expect(state.done).toEqual([]);
   });
 
-  it('marca cada paso una sola vez', () => {
-    useDailySession.getState().start();
-    useDailySession.getState().finish('review');
-    useDailySession.getState().finish('review');
-    useDailySession.getState().finish('lesson');
-    expect(useDailySession.getState().done).toEqual(['review', 'lesson']);
+  it('permite saltar el repaso cuando no hay tarjetas', () => {
+    useDailySession.getState().start({ steps: ['lesson', 'close'], unitId: 'h1-02' });
+    expect(useDailySession.getState().steps).toEqual(['lesson', 'close']);
   });
 
-  it('terminar limpia la sesión', () => {
-    useDailySession.getState().start();
+  it('marca cada paso una sola vez y cierra la sesión', () => {
+    const store = useDailySession.getState();
+    store.start();
     useDailySession.getState().finish('review');
+    useDailySession.getState().finish('review');
+    expect(useDailySession.getState().done).toEqual(['review']);
     useDailySession.getState().end();
     expect(useDailySession.getState().active).toBe(false);
     expect(useDailySession.getState().done).toEqual([]);
+    expect(useDailySession.getState().unitId).toBeUndefined();
   });
 });

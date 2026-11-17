@@ -21,6 +21,7 @@ import { CertificateView } from './screens/CertificateView';
 import { Listening } from './screens/Listening';
 import { Shadowing } from './screens/Shadowing';
 import { Grammar } from './screens/Grammar';
+import { DailyClose } from './screens/DailyClose';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -55,6 +56,7 @@ const FOCUS = new Set<Route['name']>([
   'listening',
   'shadowing',
   'grammar',
+  'close',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -71,6 +73,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   dictation: () => <Dictation />,
   mixed: () => <Mixed />,
   errors: () => <Mixed errors />,
+  close: () => <DailyClose />,
 };
 
 function Header({ route }: { route: Route }) {

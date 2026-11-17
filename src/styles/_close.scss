@@ -1,0 +1,165 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.close {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.close__title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.close__lead {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.close__card {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+}
+
+.close__char-head {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.close__hanzi {
+  @include hanzi(3.6rem);
+  line-height: 1;
+}
+
+.close__reading {
+  margin: 0;
+  font-family: $font-mono;
+  color: $teal;
+}
+
+.close__meaning {
+  margin: 0;
+  font-weight: 600;
+}
+
+.close__story {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: $ink-soft;
+}
+
+.close__memory {
+  margin: 0;
+  padding: $space-2 $space-3;
+  border-radius: $radius;
+  background: $violet-soft;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.close__subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.close__prompt {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $ink-soft;
+}
+
+.close__mini {
+  display: grid;
+  gap: $space-2;
+}
+
+.close__audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+}
+
+.close__hint {
+  font-size: 0.82rem;
+  color: $muted;
+}
+
+.close__words {
+  display: grid;
+  gap: $space-2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.close__word {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.close__word-hanzi {
+  @include hanzi(1.3rem);
+}
+
+.close__word-pinyin {
+  font-size: 0.85rem;
+}
+
+.close__word-meaning {
+  font-size: 0.9rem;
+  color: $ink-soft;
+}
+
+.close__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.close__input {
+  width: 100%;
+  padding: $space-3;
+  border: 1px solid $line-strong;
+  border-radius: $radius;
+  background: $surface;
+  font: inherit;
+  resize: vertical;
+  @include focus-ring;
+}
+
+.close__self {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.close__done,
+.close__finish {
+  margin: 0;
+  padding: $space-3;
+  border-radius: $radius;
+  background: $mint-soft;
+  color: $mint-dark;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.close__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}

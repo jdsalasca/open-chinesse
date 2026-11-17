@@ -147,6 +147,12 @@ Terra y la auditoría coinciden:
 - **Inmersión**: 18 recursos en chino y 4 vídeos sobre la historia de los
   caracteres, verificados con `yt-dlp`.
 
+## Hecho en C19
+
+- **Sesión diaria**: recuperar → aprender → producir. CTA único, pasos reales y
+  cierre con carácter del día, mini-quiz, frase escuchada y frase propia.
+- **Ficha**: familia del radical con caracteres del curso.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

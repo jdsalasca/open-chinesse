@@ -11,7 +11,8 @@ export type ActivityKind =
   | 'mixed'
   | 'errors'
   | 'boss'
-  | 'grammar';
+  | 'grammar'
+  | 'close';
 
 export type ActivityEntry = {
   kind: ActivityKind;

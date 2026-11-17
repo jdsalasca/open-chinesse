@@ -1,16 +1,23 @@
 import { useEffect } from 'react';
-import { SESSION_STEPS, useDailySession, type SessionStep } from '../store/daily-session';
+import { useDailySession, type SessionStep } from '../store/daily-session';
 import { navigate } from '../lib/router';
 
 const NEXT_ROUTE: Record<SessionStep, string> = {
   review: '/review',
   lesson: '/',
-  tones: '/tonos',
+  close: '/cierre',
+};
+
+const LABEL: Record<SessionStep, string> = {
+  review: 'el repaso',
+  lesson: 'la lección',
+  close: 'el cierre',
 };
 
 /** Marca el paso y ofrece seguir con lo que falta de la sesión. */
 export function SessionNext({ from }: { from: SessionStep }) {
   const active = useDailySession((state) => state.active);
+  const steps = useDailySession((state) => state.steps);
   const done = useDailySession((state) => state.done);
   const finish = useDailySession((state) => state.finish);
   const end = useDailySession((state) => state.end);
@@ -20,7 +27,7 @@ export function SessionNext({ from }: { from: SessionStep }) {
   }, [active, from, finish]);
 
   if (!active) return null;
-  const next = SESSION_STEPS.find((step) => step !== from && !done.includes(step));
+  const next = steps.find((step) => step !== from && !done.includes(step));
 
   if (!next) {
     return (
@@ -43,7 +50,7 @@ export function SessionNext({ from }: { from: SessionStep }) {
       className="button button--primary"
       onClick={() => navigate(NEXT_ROUTE[next])}
     >
-      Seguir con {next === 'review' ? 'el repaso' : next === 'lesson' ? 'la lección' : 'los tonos'}
+      Seguir con {LABEL[next]}
     </button>
   );
 }

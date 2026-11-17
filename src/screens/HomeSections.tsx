@@ -67,7 +67,13 @@ function SessionSteps({ due, nextUnit }: { due: number; nextUnit?: HomeData['nex
         detail={nextUnit ? nextUnit.title : 'nivel completo'}
         next={due === 0 && Boolean(nextUnit)}
       />
-      <SessionStep href="#/tonos" icon="speaker" label="Tonos" detail="diez palabras de oído" />
+      <SessionStep
+        href="#/cierre"
+        icon="check"
+        label="Cierre"
+        detail="carácter, frase y tu frase"
+        next={due === 0 && !nextUnit}
+      />
     </ol>
   );
 }
@@ -89,14 +95,14 @@ export function ChallengeCard({ now }: { now: number }) {
   );
 }
 
-export function SessionSection({ home }: { home: HomeData }) {
+export function SessionSection({ home, onStart }: { home: HomeData; onStart: () => void }) {
   return (
     <section className="session" aria-labelledby="session-title">
       <div className="session__head">
         <div>
           <p className="eyebrow">Tu sesión de hoy</p>
           <h2 id="session-title" className="session__title">
-            Tres pasos, cero prisa
+            Recupera, aprende, produce
           </h2>
         </div>
         <span className="session__goal">
@@ -104,6 +110,9 @@ export function SessionSection({ home }: { home: HomeData }) {
         </span>
       </div>
       <SessionSteps due={home.queue.total} nextUnit={home.nextUnit} />
+      <button type="button" className="button button--primary" onClick={onStart}>
+        Empezar la sesión de hoy
+      </button>
     </section>
   );
 }

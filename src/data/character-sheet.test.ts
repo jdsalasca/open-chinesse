@@ -99,4 +99,8 @@ describe('historia y piezas con sentido', () => {
   it('lista confundibles que sí están en el curso', () => {
     expect(getCharacterSheetData('人').confusables).toContain('八');
   });
+
+  it('agrupa caracteres del curso por radical', () => {
+    expect(getCharacterSheetData('你').radicalFamily).toContain('他');
+  });
 });

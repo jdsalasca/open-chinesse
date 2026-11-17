@@ -144,9 +144,9 @@
   }
 
   &.is-wrong {
-    border-color: $accent;
-    background: $accent-soft;
-    color: $accent-dark;
+    border-color: $danger;
+    background: $pink-soft;
+    color: #a52a3c;
     font-weight: 600;
   }
 

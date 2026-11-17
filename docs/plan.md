@@ -372,5 +372,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Inmersión con 18 recursos en chino y 4 vídeos sobre la historia de los
       caracteres, verificados con `yt-dlp`.
 
+### C19 — Sesión diaria y familia del radical
+
+- [x] Sesión guiada en tres actos: recuperar, aprender y producir; sin repaso si
+      no hay tarjetas.
+- [x] Cierre diario con carácter, mini-quiz, frase escuchada y una frase propia
+      con modelo y autoevaluación.
+- [x] CTA «Empezar la sesión de hoy» y barra con los pasos reales.
+- [x] Familia del radical en la ficha, filtrada a caracteres del curso.
+- [x] Feedback de opción incorrecta en rosa, no en verde.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

@@ -328,6 +328,36 @@ function FamilyCard({ char, family }: { char: string; family: string[] }) {
   );
 }
 
+function RadicalFamilyCard({
+  radical,
+  gloss,
+  family,
+}: {
+  radical?: string;
+  gloss?: string;
+  family: string[];
+}) {
+  if (family.length === 0 || !radical) return null;
+  return (
+    <Card>
+      <h2 className="character__title">Familia del radical</h2>
+      <p className="character__note">
+        Comparten {radical}
+        {gloss ? ` (${gloss})` : ''}. El radical suele orientar el significado.
+      </p>
+      <ul className="chips">
+        {family.map((other) => (
+          <li key={other}>
+            <a className="chip" href={`#/caracter/${encodeURIComponent(other)}`} lang="zh-Hans">
+              {other}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
+
 function Words({ data }: { data: CharacterSheetData }) {
   return (
     <>
@@ -336,6 +366,11 @@ function Words({ data }: { data: CharacterSheetData }) {
         <WordList words={data.words} />
         <InsideList inside={data.inside} />
       </Card>
+      <RadicalFamilyCard
+        radical={data.radical}
+        gloss={data.radicalGloss}
+        family={data.radicalFamily}
+      />
       <FamilyCard char={data.char} family={data.family} />
     </>
   );

@@ -10,6 +10,7 @@ import {
   meaningOf,
   readingOf,
   wordsWith,
+  CHARACTERS,
   type CharInfo,
   type Formation,
   type FormationType,
@@ -64,6 +65,7 @@ export type CharacterSheetData = {
   pieces: SheetNode[];
   hasRoles: boolean;
   confusables: string[];
+  radicalFamily: string[];
   words: SheetWord[];
   examples: SheetExample[];
   inside: string[];
@@ -137,6 +139,20 @@ function levelOf(words: Word[]): number {
 }
 
 const CACHE = new Map<string, CharacterSheetData>();
+const COURSE_CHARS = new Set(
+  UNITS.flatMap((unit) => unit.words.flatMap((word) => [...word.hanzi])),
+);
+
+function radicalFamilyOf(char: string, info: CharInfo | undefined): string[] {
+  if (!info?.radical) return [];
+  return Object.entries(CHARACTERS)
+    .filter(
+      ([other, candidate]) =>
+        other !== char && candidate.radical === info.radical && COURSE_CHARS.has(other),
+    )
+    .map(([other]) => other)
+    .slice(0, 16);
+}
 
 function toSheetWord(word: Word, char: string): SheetWord {
   const unit = UNIT_BY_WORD.get(word.id);
@@ -200,6 +216,7 @@ export function getCharacterSheetData(char: string): CharacterSheetData {
     pieces,
     hasRoles: anyRole(pieces),
     confusables: confusablesFor(char),
+    radicalFamily: radicalFamilyOf(char, info),
     words: words.map((word) => toSheetWord(word, char)),
     examples: words
       .filter((word) => word.example.hanzi.includes(char))
