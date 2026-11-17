@@ -139,6 +139,14 @@ Terra y la auditoría coinciden:
   audio por línea y pregunta. Alimentan Escucha (21 audios) y Repite (25
   textos).
 
+## Hecho en C18
+
+- **Ficha de carácter**: historia y gancho para los 618 caracteres del curso,
+  piezas con rol, sentido propio, uso en palabra, confundibles y fuente
+  histórica plegada.
+- **Inmersión**: 18 recursos en chino y 4 vídeos sobre la historia de los
+  caracteres, verificados con `yt-dlp`.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.
@@ -157,8 +165,8 @@ Terra y la auditoría coinciden:
 4. **Transferencia situacional** — resolver situaciones nuevas sin copiar el
    ejemplo.
 5. **Escucha con variación** — piloto con segunda voz o velocidad.
-6. **Caracteres confundibles + escritura selectiva** — pares mínimos y escritura
-   autoevaluada.
+6. **Caracteres confundibles + escritura selectiva** — confundibles e historia
+   hechos en C18; falta la escritura y el orden de trazos.
 
 Sentence mining pasa después de la transferencia: guardar frases no demuestra
 saber usarlas.

@@ -1,5 +1,7 @@
 export type ResourceKind = 'canal' | 'video' | 'playlist';
 
+export type ResourceTopic = 'chino' | 'caracteres';
+
 export type Resource = {
   id: string;
   title: string;
@@ -9,6 +11,7 @@ export type Resource = {
   minutes: number;
   url: string;
   why: string;
+  topic?: ResourceTopic;
 };
 
 /**
@@ -115,5 +118,133 @@ export const RESOURCES: Resource[] = [
     minutes: 11,
     url: 'https://www.youtube.com/watch?v=J3NxpO4t_aQ',
     why: 'Practica comprensión auditiva con vocabulario graduado.',
+  },
+  {
+    id: 'mandarin-click-friends',
+    title: 'HSK 1: mis amigos',
+    channel: 'Mandarin Click',
+    level: 1,
+    kind: 'video',
+    minutes: 3,
+    url: 'https://www.youtube.com/watch?v=re6GOiJOYvE',
+    why: 'Historia visual con vocabulario HSK 1; escucha sin texto.',
+  },
+  {
+    id: 'mandarin-click-wang',
+    title: 'HSK 1: la señorita Wang',
+    channel: 'Mandarin Click',
+    level: 1,
+    kind: 'video',
+    minutes: 3,
+    url: 'https://www.youtube.com/watch?v=Xu5bkhIGqOY',
+    why: 'Una escena cotidiana con estructura sencilla y apoyo visual.',
+  },
+  {
+    id: 'jiayou-hsk1-vlog',
+    title: 'Vlog lento con solo HSK 1',
+    channel: 'jiayouchinese',
+    level: 1,
+    kind: 'video',
+    minutes: 11,
+    url: 'https://www.youtube.com/watch?v=QsIZAfU4ysw',
+    why: 'Chino lento y real usando únicamente vocabulario HSK 1.',
+  },
+  {
+    id: 'mandarin-click-doctor',
+    title: 'HSK 2: el doctor Wang',
+    channel: 'Mandarin Click',
+    level: 2,
+    kind: 'video',
+    minutes: 3,
+    url: 'https://www.youtube.com/watch?v=wzNw1VVtGBo',
+    why: 'Diálogo graduado para escuchar el vocabulario de HSK 2 en contexto.',
+  },
+  {
+    id: 'mandarin-click-birthday',
+    title: 'HSK 2: el cumpleaños de la esposa',
+    channel: 'Mandarin Click',
+    level: 2,
+    kind: 'video',
+    minutes: 4,
+    url: 'https://www.youtube.com/watch?v=hnV-IKdCvoU',
+    why: 'Historia corta con repetición útil para afianzar HSK 2.',
+  },
+  {
+    id: 'chilling-hsk12',
+    title: 'Escucha real HSK 1–2',
+    channel: 'Chilling Chinese',
+    level: 2,
+    kind: 'video',
+    minutes: 4,
+    url: 'https://www.youtube.com/watch?v=l5eMUEGHv5Y',
+    why: 'Situaciones reales a velocidad lenta para principiantes.',
+  },
+  {
+    id: 'mandarin-click-life',
+    title: 'HSK 3: mi vida',
+    channel: 'Mandarin Click',
+    level: 3,
+    kind: 'video',
+    minutes: 6,
+    url: 'https://www.youtube.com/watch?v=ETiCICpcmmc',
+    why: 'Relato personal graduado para escuchar HSK 3 completo.',
+  },
+  {
+    id: 'jiayou-apartment',
+    title: 'HSK 2–3: mi piso en Berlín',
+    channel: 'jiayouchinese',
+    level: 3,
+    kind: 'video',
+    minutes: 11,
+    url: 'https://www.youtube.com/watch?v=tlm3ecwchzY',
+    why: 'Vlog lento con descripciones y vocabulario de nivel intermedio.',
+  },
+];
+
+/** Vídeos sobre el origen y la lógica de los caracteres, no de escucha HSK. */
+export const CHARACTER_VIDEOS: Resource[] = [
+  {
+    id: 'ted-ed-characters',
+    title: 'Cómo funcionan los caracteres chinos',
+    channel: 'TED-Ed',
+    level: 1,
+    kind: 'video',
+    minutes: 5,
+    url: 'https://www.youtube.com/watch?v=U0EySK4T2aY',
+    why: 'Explica con animaciones la lógica de los caracteres; base para las fichas.',
+    topic: 'caracteres',
+  },
+  {
+    id: 'explore-evolution',
+    title: 'La evolución de los caracteres chinos',
+    channel: 'Explore Mode',
+    level: 2,
+    kind: 'video',
+    minutes: 10,
+    url: 'https://www.youtube.com/watch?v=GpUqqtE2qUo',
+    why: 'Del pictograma al carácter moderno: entiende por qué la forma cambió.',
+    topic: 'caracteres',
+  },
+  {
+    id: 'hanzi-evolution-radicals',
+    title: 'Radicales: las piezas escondidas',
+    channel: 'DracoChinese',
+    level: 3,
+    kind: 'video',
+    minutes: 9,
+    url: 'https://www.youtube.com/watch?v=J6lnxdlfO4A',
+    why: 'Muestra cómo los radicales organizan el significado de los caracteres.',
+    topic: 'caracteres',
+  },
+  {
+    id: 'uncle-hanzi-origin',
+    title: 'El origen de los caracteres con Uncle Hanzi',
+    channel: 'China Admissions',
+    level: 3,
+    kind: 'video',
+    minutes: 35,
+    url: 'https://www.youtube.com/watch?v=IfSGcKnk-_k',
+    why: 'Charla larga para entender la evolución histórica con ejemplos.',
+    topic: 'caracteres',
   },
 ];

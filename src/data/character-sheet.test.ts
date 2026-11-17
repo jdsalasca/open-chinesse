@@ -58,3 +58,45 @@ describe('piezas y palabras de la ficha', () => {
     expect(data.level).toBe(0);
   });
 });
+
+describe('historia y piezas con sentido', () => {
+  it('incluye una historia legible y un gancho de memoria', () => {
+    const data = getCharacterSheetData('好');
+    expect(data.story.idea).toMatch(/mujer/i);
+    expect(data.story.mnemonic).not.toBe('');
+  });
+
+  it('marca el papel de las piezas en un semántico-fonético', () => {
+    const data = getCharacterSheetData('你');
+    const all = (nodes: typeof data.pieces): (typeof nodes)[number][] =>
+      nodes.flatMap((node) => [node, ...all(node.children)]);
+    const chars = all(data.pieces);
+    const person = chars.find((node) => node.kind === 'char' && node.char === '亻');
+    const er = chars.find((node) => node.kind === 'char' && node.char === '尔');
+    expect(person && 'role' in person ? person.role : undefined).toBe('semantic');
+    expect(er && 'role' in er ? er.role : undefined).toBe('phonetic');
+    expect(data.hasRoles).toBe(true);
+  });
+
+  it('no inventa piezas para un pictograma', () => {
+    const data = getCharacterSheetData('火');
+    expect(data.pieces).toEqual([]);
+    expect(data.story.idea).toMatch(/fuego|llama/i);
+  });
+
+  it('da el uso en palabra cuando el carácter no va solo', () => {
+    const data = getCharacterSheetData('苹');
+    expect(data.usage?.hanzi).toBe('苹果');
+    expect(data.usage?.meaning).toBe('manzana');
+  });
+
+  it('da sentido propio y uso en palabra a un carácter dependiente', () => {
+    const data = getCharacterSheetData('明');
+    expect(data.meaning).toBe('claro, brillante');
+    expect(data.usage?.hanzi).toBe('明天');
+  });
+
+  it('lista confundibles que sí están en el curso', () => {
+    expect(getCharacterSheetData('人').confusables).toContain('八');
+  });
+});

@@ -30,29 +30,31 @@ function Facts({ data }: { data: CharacterSheetData }) {
   );
 }
 
-function History({ data }: { data: CharacterSheetData }) {
+function Story({ data }: { data: CharacterSheetData }) {
   return (
-    <Card>
-      <h2 className="character__title">De dónde viene</h2>
-      {data.formation ? (
-        <>
-          <p className="formation__label">{data.formation.label}</p>
-          <p className="formation__detail">{data.formation.detail}</p>
-        </>
-      ) : (
-        <p className="character__empty">La fuente no clasifica este carácter.</p>
-      )}
+    <Card className="character__story">
+      <h2 className="character__title">La historia de {data.char}</h2>
+      {data.formation && <p className="formation__label">{data.formation.label}</p>}
+      <p className="character__idea">{data.story.idea}</p>
+      <div className="character__memory">
+        <span>Para recordarlo</span>
+        <p>{data.story.mnemonic}</p>
+      </div>
+      {data.story.sound && <p className="character__sound">{data.story.sound}</p>}
       {data.shuowen && (
-        <blockquote className="shuowen">
+        <details className="shuowen">
+          <summary>Fuente histórica · Shuowen Jiezi (s. II)</summary>
           <p lang="zh-Hant">{data.shuowen}</p>
-          <footer>Shuowen Jiezi, hacia el año 100 — describía la escritura de sello.</footer>
-        </blockquote>
+        </details>
       )}
       {data.traditional && (
         <p className="character__variant">
           Forma tradicional: <span lang="zh-Hant">{data.traditional}</span>
         </p>
       )}
+      <a className="character__video-link" href="#/inmersion">
+        Vídeos sobre la historia de los caracteres →
+      </a>
     </Card>
   );
 }
@@ -83,6 +85,18 @@ function CharTile({ char, onOpen }: { char: string; onOpen?: (char: string) => v
   );
 }
 
+type CharNode = Extract<SheetNode, { kind: 'char' }>;
+
+function PieceLabel({ node }: { node: CharNode }) {
+  const role = node.role === 'phonetic' ? 'sonido' : node.role ? 'significado' : null;
+  return (
+    <span className={`piece__label${node.role ? ` is-${node.role}` : ''}`}>
+      {node.label ?? '—'}
+      {role && <small className="piece__role"> · {role}</small>}
+    </span>
+  );
+}
+
 function Piece({ node, onOpen }: { node: SheetNode; onOpen?: (char: string) => void }) {
   const [open, setOpen] = useState(false);
   if (node.kind === 'op') {
@@ -99,7 +113,7 @@ function Piece({ node, onOpen }: { node: SheetNode; onOpen?: (char: string) => v
     <li className="ids__item ids__item--char">
       <div className="piece">
         <CharTile char={node.char} onOpen={onOpen} />
-        <span className="piece__label">{node.label ?? '—'}</span>
+        <PieceLabel node={node} />
         {expandable && (
           <button
             type="button"
@@ -134,6 +148,51 @@ function Tree({ nodes, onOpen }: { nodes: SheetNode[]; onOpen?: (char: string) =
   );
 }
 
+function hasRole(nodes: SheetNode[], roles: string[]): boolean {
+  return nodes.some(
+    (node) =>
+      (node.kind === 'char' && Boolean(node.role) && roles.includes(node.role!)) ||
+      hasRole(node.children, roles),
+  );
+}
+
+function CompositionNote({ text }: { text: string }) {
+  return (
+    <Card>
+      <h2 className="character__title">Cómo se compone</h2>
+      <p className="character__note">{text}</p>
+    </Card>
+  );
+}
+
+function CompositionTree({
+  data,
+  onOpen,
+  meaning,
+  phonetic,
+}: {
+  data: CharacterSheetData;
+  onOpen?: (char: string) => void;
+  meaning: boolean;
+  phonetic: boolean;
+}) {
+  return (
+    <Card>
+      <h2 className="character__title">Cómo se compone</h2>
+      {(meaning || phonetic) && (
+        <p className="character__legend">
+          {meaning && <span className="is-semantic">Verde: significado</span>}
+          {phonetic && <span className="is-phonetic">Azul: sonido</span>}
+        </p>
+      )}
+      <p className="character__note">
+        Toca un carácter para abrir su ficha; «+ dentro» muestra sus piezas.
+      </p>
+      <Tree nodes={data.pieces} onOpen={onOpen} />
+    </Card>
+  );
+}
+
 function Composition({
   data,
   onOpen,
@@ -141,17 +200,42 @@ function Composition({
   data: CharacterSheetData;
   onOpen?: (char: string) => void;
 }) {
+  if (data.pieces.length === 0) {
+    return (
+      <CompositionNote
+        text={
+          data.formation?.label === 'Pictograma'
+            ? 'Es un pictograma: su forma antigua es la historia; no se analiza como suma de piezas.'
+            : 'No tenemos la descomposición de este carácter.'
+        }
+      />
+    );
+  }
+  return (
+    <CompositionTree
+      data={data}
+      onOpen={onOpen}
+      meaning={hasRole(data.pieces, ['semantic', 'meaning'])}
+      phonetic={hasRole(data.pieces, ['phonetic'])}
+    />
+  );
+}
+
+function Confusables({ data }: { data: CharacterSheetData }) {
+  if (data.confusables.length === 0) return null;
   return (
     <Card>
-      <h2 className="character__title">Cómo se compone</h2>
-      <p className="character__note">
-        Toca un carácter para abrir su ficha; «+ dentro» muestra sus piezas.
-      </p>
-      {data.pieces.length > 0 ? (
-        <Tree nodes={data.pieces} onOpen={onOpen} />
-      ) : (
-        <p className="character__empty">No tenemos la descomposición de este carácter.</p>
-      )}
+      <h2 className="character__title">No confundir</h2>
+      <p className="character__note">Se parecen. Abre cada uno y compara sus piezas.</p>
+      <ul className="chips">
+        {data.confusables.map((other) => (
+          <li key={other}>
+            <a className="chip" href={`#/caracter/${encodeURIComponent(other)}`} lang="zh-Hans">
+              {other}
+            </a>
+          </li>
+        ))}
+      </ul>
     </Card>
   );
 }
@@ -344,11 +428,17 @@ export function CharacterSheet({
             {data.reading && <span className="character__reading">{data.reading}</span>}
           </div>
           {data.meaning && <p className="character__meaning">{data.meaning}</p>}
+          {data.usage && (
+            <p className="character__usage">
+              En {data.usage.hanzi} ({data.usage.pinyin}): {data.usage.meaning}
+            </p>
+          )}
         </div>
         <Facts data={data} />
       </header>
-      <History data={data} />
+      <Story data={data} />
       <Composition data={data} onOpen={onOpenCharacter} />
+      <Confusables data={data} />
       <Examples data={data} />
       <Check data={data} />
       <Words data={data} />

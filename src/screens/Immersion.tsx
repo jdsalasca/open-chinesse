@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { Card } from '../components/ui/Card';
-import { RESOURCES, type Resource } from '../data/resources';
+import { RESOURCES, CHARACTER_VIDEOS, type Resource } from '../data/resources';
 
 const KIND_LABEL: Record<Resource['kind'], string> = {
   canal: 'Canal',
@@ -26,7 +26,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
     <Card tone={TONE[resource.level]} className="resource">
       <p className="resource__meta">
         <span className="resource__kind">{KIND_LABEL[resource.kind]}</span>
-        <span>HSK {resource.level}</span>
+        <span>{resource.topic === 'caracteres' ? 'Caracteres' : `HSK ${resource.level}`}</span>
         <span>~{resource.minutes} min</span>
       </p>
       <h3 className="resource__title">{resource.title}</h3>
@@ -65,6 +65,25 @@ function LevelFilter({ level, onChange }: { level: Filter; onChange: (level: Fil
   );
 }
 
+function CharacterVideos() {
+  return (
+    <section className="immersion__characters" aria-labelledby="character-videos">
+      <h2 id="character-videos" className="immersion__subtitle">
+        La historia de los caracteres
+      </h2>
+      <p className="immersion__intro">
+        Vídeos para entender de dónde vienen las formas que estudias y por qué las piezas significan
+        lo que significan.
+      </p>
+      <div className="resource-grid">
+        {CHARACTER_VIDEOS.map((resource) => (
+          <ResourceCard key={resource.id} resource={resource} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function Immersion() {
   const [level, setLevel] = useState<Filter>(0);
   const list = level === 0 ? RESOURCES : RESOURCES.filter((item) => item.level === level);
@@ -93,6 +112,8 @@ export function Immersion() {
         ¿Un enlace ya no funciona? Se quita en el siguiente despliegue. Nada se descarga ni se
         redistribuye.
       </p>
+
+      <CharacterVideos />
     </section>
   );
 }

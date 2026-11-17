@@ -360,5 +360,17 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Integradas en Historias, Comprensión auditiva (21 audios) y Repite en voz
       alta (25 textos) sin pantallas nuevas.
 
+### C18 — Núcleo: historia del carácter y vídeos
+
+- [x] Historia legible y gancho de memoria para los 618 caracteres del curso.
+- [x] 47 pictogramas HSK 1 con imagen concreta; notas curadas para partículas y
+      verbos opacos.
+- [x] Piezas con rol (significado/sonido), sentido propio del carácter y uso en
+      palabra.
+- [x] Confundibles por forma y fuente histórica plegada; pictogramas sin
+      descomposición engañosa.
+- [x] Inmersión con 18 recursos en chino y 4 vídeos sobre la historia de los
+      caracteres, verificados con `yt-dlp`.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

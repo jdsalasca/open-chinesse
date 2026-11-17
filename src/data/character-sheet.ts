@@ -1,5 +1,7 @@
 import type { IdsNode } from '../lib/ids';
 import { describeOp } from '../lib/ids';
+import { buildCharacterStory, confusablesFor, type CharacterStory } from '../lib/character-story';
+import { SENSES } from './character-notes';
 import {
   charactersUsing,
   charInfo,
@@ -10,12 +12,21 @@ import {
   wordsWith,
   type CharInfo,
   type Formation,
+  type FormationType,
 } from './characters';
 import { UNITS, type Word } from './curriculum';
 import { COMPRESSED, glossOf } from './glosses';
 
+export type PieceRole = 'semantic' | 'phonetic' | 'meaning';
+
 export type SheetNode =
-  | { kind: 'char'; char: string; label?: string; children: SheetNode[] }
+  | {
+      kind: 'char';
+      char: string;
+      label?: string;
+      role?: PieceRole;
+      children: SheetNode[];
+    }
   | { kind: 'op'; label: string; children: SheetNode[] };
 
 export type SheetWord = {
@@ -35,18 +46,24 @@ export type SheetExample = {
   translation: string;
 };
 
+export type SheetUsage = { hanzi: string; pinyin: string; meaning: string };
+
 export type CharacterSheetData = {
   char: string;
   reading?: string;
   meaning?: string;
+  usage?: SheetUsage;
   radical?: string;
   radicalGloss?: string;
   strokes?: number;
   level: number;
   formation?: Formation;
+  story: CharacterStory;
   shuowen?: string;
   traditional?: string;
   pieces: SheetNode[];
+  hasRoles: boolean;
+  confusables: string[];
   words: SheetWord[];
   examples: SheetExample[];
   inside: string[];
@@ -69,18 +86,45 @@ function positionIn(word: Word, char: string): string {
   return index === chars.length - 1 ? 'al final' : 'en medio';
 }
 
-function toSheet(nodes: IdsNode[], depth: number): SheetNode[] {
+const ROLE_RULES: Partial<
+  Record<FormationType, (semantic: boolean, phonetic: boolean) => PieceRole | undefined>
+> = {
+  'phono-semantic': (semantic, phonetic) =>
+    semantic ? 'semantic' : phonetic ? 'phonetic' : undefined,
+  ideographic: (semantic, phonetic) => (semantic || phonetic ? 'meaning' : undefined),
+};
+
+function roleOf(char: string, info: CharInfo | undefined): PieceRole | undefined {
+  if (!info) return undefined;
+  const semantic = Boolean(info.semantic?.includes(char));
+  const phonetic = Boolean(info.phonetic?.includes(char));
+  return info.type ? ROLE_RULES[info.type]?.(semantic, phonetic) : undefined;
+}
+
+function toSheet(nodes: IdsNode[], depth: number, info?: CharInfo): SheetNode[] {
   return nodes.map((node) => {
     if (node.kind === 'op') {
       return {
         kind: 'op',
         label: describeOp(node.op),
-        children: depth < 3 ? toSheet(node.parts, depth + 1) : [],
+        children: depth < 3 ? toSheet(node.parts, depth + 1, info) : [],
       };
     }
     const children = depth < 3 ? toSheet(componentTree(node.char), depth + 1) : [];
-    return { kind: 'char', char: node.char, label: labelOf(node.char), children };
+    return {
+      kind: 'char',
+      char: node.char,
+      label: labelOf(node.char),
+      role: roleOf(node.char, info),
+      children,
+    };
   });
+}
+
+function anyRole(nodes: SheetNode[]): boolean {
+  return nodes.some(
+    (node) => (node.kind === 'char' && Boolean(node.role)) || anyRole(node.children),
+  );
 }
 
 function levelOf(words: Word[]): number {
@@ -110,7 +154,7 @@ function toSheetWord(word: Word, char: string): SheetWord {
 function baseFrom(char: string, info: CharInfo | undefined) {
   return {
     reading: readingOf(char),
-    meaning: meaningOf(char),
+    meaning: meaningOf(char) ?? SENSES[char] ?? glossOf(char),
     radical: info?.radical,
     strokes: info?.strokes,
     shuowen: info?.shuowen,
@@ -139,15 +183,23 @@ export function getCharacterSheetData(char: string): CharacterSheetData {
 
   const info = charInfo(char);
   const words = wordsWith(char);
+  const usageWord = !meaningOf(char) ? words.find((word) => word.hanzi !== char) : undefined;
+  const pieces = info?.type === 'pictographic' ? [] : toSheet(componentTree(char), 0, info);
   const data: CharacterSheetData = {
     char,
     ...baseFrom(char, info),
+    usage: usageWord
+      ? { hanzi: usageWord.hanzi, pinyin: usageWord.pinyin, meaning: usageWord.meaning }
+      : undefined,
     radical: displayRadical(info),
     radicalGloss: radicalGlossOf(info),
     family: info?.family ?? [],
     level: levelOf(words),
     formation: formationOf(char),
-    pieces: toSheet(componentTree(char), 0),
+    story: buildCharacterStory(char),
+    pieces,
+    hasRoles: anyRole(pieces),
+    confusables: confusablesFor(char),
     words: words.map((word) => toSheetWord(word, char)),
     examples: words
       .filter((word) => word.example.hanzi.includes(char))

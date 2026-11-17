@@ -39,6 +39,12 @@
   font-weight: 600;
 }
 
+.character__usage {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: $muted;
+}
+
 .character__speak {
   display: flex;
   align-items: center;
@@ -120,10 +126,64 @@
   letter-spacing: 0.04em;
 }
 
-.formation__detail {
+.character__idea {
   margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.5;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  color: $ink-soft;
+}
+
+.character__memory {
+  display: grid;
+  gap: $space-1;
+  margin-top: $space-3;
+  padding: $space-3 $space-4;
+  border-radius: $radius;
+  background: $violet-soft;
+}
+
+.character__memory span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $violet;
+}
+
+.character__memory p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.character__sound {
+  margin: $space-3 0 0;
+  font-size: 0.9rem;
+  color: $teal;
+}
+
+.character__video-link {
+  display: inline-flex;
+  margin-top: $space-3;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.character__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin: 0 0 $space-2;
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  .is-semantic {
+    color: $mint-dark;
+  }
+
+  .is-phonetic {
+    color: $sky;
+  }
 }
 
 .shuowen {
@@ -134,17 +194,21 @@
   border-radius: 0 $radius $radius 0;
 }
 
+.shuowen summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
 .shuowen p {
-  margin: 0 0 $space-1;
+  margin: $space-2 0 0;
   font-family: $font-hanzi;
   font-size: 1rem;
   line-height: 1.6;
   color: $ink-soft;
-}
-
-.shuowen footer {
-  font-size: 0.75rem;
-  color: $muted;
 }
 
 // Árbol IDS -------------------------------------------------------------
@@ -207,6 +271,20 @@
   line-height: 1.2;
   text-align: center;
   color: $muted;
+}
+
+.piece__label.is-semantic,
+.piece__label.is-meaning {
+  color: $mint-dark;
+}
+
+.piece__label.is-phonetic {
+  color: $sky;
+}
+
+.piece__role {
+  font-size: 0.62rem;
+  font-weight: 500;
 }
 
 .piece__inside {
