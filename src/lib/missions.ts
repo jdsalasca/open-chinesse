@@ -12,7 +12,9 @@ export type ActivityKind =
   | 'errors'
   | 'boss'
   | 'grammar'
-  | 'close';
+  | 'close'
+  | 'transform'
+  | 'detective';
 
 export type ActivityEntry = {
   kind: ActivityKind;

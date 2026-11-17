@@ -1,0 +1,39 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.detective {
+  display: grid;
+  gap: $space-4;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.detective__card {
+  display: grid;
+  gap: $space-4;
+  justify-items: center;
+  padding: $space-5;
+  text-align: center;
+}
+
+.detective__prompt {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.detective__options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-3;
+  width: 100%;
+}
+
+.detective__char {
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+  @include hanzi(3.2rem);
+  line-height: 1;
+  text-align: center;
+}

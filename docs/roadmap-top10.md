@@ -153,6 +153,13 @@ Terra y la auditoría coinciden:
   cierre con carácter del día, mini-quiz, frase escuchada y frase propia.
 - **Ficha**: familia del radical con caracteres del curso.
 
+## Hecho en C20
+
+- **Cambia la intención** (`/intencion`): veinte transformaciones con una sola
+  respuesta correcta, opciones barajadas y feedback del cambio mínimo.
+- **Detective de confusables** (`/detective`): diez pares del curso, significado,
+  explicación y enlace a la ficha.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

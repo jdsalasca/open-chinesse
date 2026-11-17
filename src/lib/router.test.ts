@@ -30,6 +30,11 @@ describe('rutas', () => {
     expect(parseHash('#/cierre')).toEqual({ name: 'close' });
   });
 
+  it('reconoce las mecánicas nuevas', () => {
+    expect(parseHash('#/intencion')).toEqual({ name: 'transform' });
+    expect(parseHash('#/detective')).toEqual({ name: 'detective' });
+  });
+
   it('no se rompe con una ruta de carácter vacía', () => {
     expect(parseHash('#/caracter')).toEqual({ name: 'home' });
     expect(parseHash('#/caracter/%E0%A4%A')).toEqual({ name: 'character', char: '%E0%A4%A' });

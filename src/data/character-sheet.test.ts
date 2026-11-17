@@ -96,6 +96,11 @@ describe('historia y piezas con sentido', () => {
     expect(data.usage?.hanzi).toBe('明天');
   });
 
+  it('no confunde el sentido del radical con el del carácter', () => {
+    expect(getCharacterSheetData('自').meaning).toBe('uno mismo');
+    expect(getCharacterSheetData('儿').meaning).toBe('niño; hijo');
+  });
+
   it('lista confundibles que sí están en el curso', () => {
     expect(getCharacterSheetData('人').confusables).toContain('八');
   });

@@ -382,5 +382,17 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Familia del radical en la ficha, filtrada a caracteres del curso.
 - [x] Feedback de opción incorrecta en rosa, no en verde.
 
+### C20 — Detective de confusables y Cambia la intención
+
+- [x] Veinte transformaciones base → intención → respuesta, con una sola opción
+      correcta y explicación del cambio mínimo.
+- [x] Ronda de diez frases con opciones barajadas por ítem y feedback.
+- [x] Detective de confusables: diez pares del curso con significado, explicación
+      y enlace a la ficha.
+- [x] Opciones del detective barajadas; sentido propio corregido en 自, 儿 y
+      otros caracteres abstractos.
+- [x] Tarjetas en Practicar, rutas `/intencion` y `/detective`, actividad
+      registrada.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

@@ -366,6 +366,12 @@ export const STORY_NOTES: Record<string, { idea?: string; mnemonic?: string; sou
 export const SENSES: Record<string, string> = {
   明: 'claro, brillante',
   苹: 'manzana',
+  自: 'uno mismo',
+  而: 'y; pero',
+  示: 'mostrar',
+  方: 'dirección; lado',
+  儿: 'niño; hijo',
+  斤: 'medio kilo; peso',
   影: 'sombra',
   视: 'vista',
   店: 'tienda',

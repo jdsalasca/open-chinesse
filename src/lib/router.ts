@@ -26,6 +26,8 @@ export type Route =
   | { name: 'shadowing'; textId?: string }
   | { name: 'grammar'; topicId?: string }
   | { name: 'close' }
+  | { name: 'transform' }
+  | { name: 'detective' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -59,6 +61,8 @@ const SIMPLE: Record<string, Route> = {
   repite: { name: 'shadowing' },
   gramatica: { name: 'grammar' },
   cierre: { name: 'close' },
+  intencion: { name: 'transform' },
+  detective: { name: 'detective' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {
