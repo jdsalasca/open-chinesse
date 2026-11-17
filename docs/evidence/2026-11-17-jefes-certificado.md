@@ -52,6 +52,16 @@ pnpm build                           ✓
 Capturas en `.screens/audit/`: `c13-boss-list.png`, `c13-boss-certificate.png`,
 `c13-boss-passed.png`, `c13-certificate-page.png`, `c13-certificate-mobile.png`.
 
+## Producción
+
+- Desplegado `2f4d464` en `https://open-chinesse.eridu.top`.
+- `/jefes`: HSK 1 disponible; HSK 2 y 3 bloqueados con el botón deshabilitado.
+- Examen HSK 1: 15 preguntas, completado con 15/15; certificado emitido y
+  guardado en `certificates["1"]`.
+- `/certificado/1`: certificado visible con el nombre, nivel, aciertos y botón
+  de impresión.
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Límites
 
 - El examen usa los cuatro formatos de la sesión mixta; no incluye producción
