@@ -1,0 +1,172 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.listening-list {
+  display: grid;
+  gap: $space-4;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.listening-grid {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.listening-card {
+  display: grid;
+  gap: $space-2;
+  align-content: start;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color $motion $ease,
+    background $motion $ease;
+  @include focus-ring;
+
+  &:hover {
+    border-color: $line-strong;
+    background: $paper;
+  }
+}
+
+.listening-card__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.listening-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.listening-card__note {
+  font-size: 0.9rem;
+  color: $muted;
+}
+
+.listening-card__cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $mint-dark;
+}
+
+.listening-list__note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.listening {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.listening__back {
+  justify-self: start;
+}
+
+.listening__title {
+  margin: 0;
+}
+
+.listening__note {
+  margin: 0;
+  color: $muted;
+}
+
+.listening-player {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $paper;
+}
+
+.listening-player__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: $mint-soft;
+  color: $mint-dark;
+}
+
+.listening-quiz {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $surface;
+}
+
+.listening-quiz h2 {
+  font-size: 1.2rem;
+}
+
+.listening-quiz__options {
+  display: grid;
+  gap: $space-2;
+}
+
+.listening-quiz .option {
+  width: 100%;
+  text-align: left;
+}
+
+.listening-transcript {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+  border: 1px solid $line;
+  border-radius: $radius-lg;
+  background: $paper;
+}
+
+.listening-transcript h2 {
+  font-size: 1.2rem;
+}
+
+.listening-transcript ol {
+  display: grid;
+  gap: $space-3;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.listening-transcript__hanzi {
+  margin: 0;
+  @include hanzi(1.3rem);
+  line-height: 1.5;
+}
+
+.listening-transcript__pinyin {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $teal;
+}
+
+.listening-transcript__translation {
+  margin: 0;
+  color: $ink-soft;
+}
+
+.listening-transcript__explain {
+  margin: $space-1 0 0;
+  font-size: 0.84rem;
+  color: $muted;
+}

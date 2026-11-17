@@ -22,6 +22,7 @@ export type Route =
   | { name: 'errors' }
   | { name: 'boss'; level?: 1 | 2 | 3 }
   | { name: 'certificate'; level: 1 | 2 | 3 }
+  | { name: 'listening'; exerciseId?: string }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -51,6 +52,7 @@ const SIMPLE: Record<string, Route> = {
   mixta: { name: 'mixed' },
   fallos: { name: 'errors' },
   jefes: { name: 'boss' },
+  escucha: { name: 'listening' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {
@@ -61,6 +63,7 @@ const PARAM: Record<string, (value: string) => Route> = {
   china: (textId) => ({ name: 'china', textId }),
   jefes: (level) => ({ name: 'boss', level: Number(level) as 1 | 2 | 3 }),
   certificado: (level) => ({ name: 'certificate', level: Number(level) as 1 | 2 | 3 }),
+  escucha: (exerciseId) => ({ name: 'listening', exerciseId }),
   caracter: (char) => ({ name: 'character', char: decode(char) }),
   character: (char) => ({ name: 'character', char: decode(char) }),
 };

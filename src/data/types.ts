@@ -20,3 +20,9 @@ export type Unit = {
   subtitle: string;
   words: Word[];
 };
+
+export type ListeningQuestion = {
+  prompt: string;
+  options: { text: string; correct: boolean }[];
+  explain: string;
+};

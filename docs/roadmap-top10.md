@@ -114,6 +114,11 @@ Terra y la auditoría coinciden:
   mejor resultado y se puede volver a ver o imprimir.
 - El jefe se desbloquea con una estrella en todas las unidades del nivel.
 
+## Hecho en C14
+
+- **Comprensión auditiva** (`/escucha`): seis audios sin texto, una pregunta y
+  transcripción revelable.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

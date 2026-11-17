@@ -18,6 +18,7 @@ import { China } from './screens/China';
 import { Mixed } from './screens/Mixed';
 import { Boss } from './screens/Boss';
 import { CertificateView } from './screens/CertificateView';
+import { Listening } from './screens/Listening';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -49,6 +50,7 @@ const FOCUS = new Set<Route['name']>([
   'mixed',
   'errors',
   'boss',
+  'listening',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -108,14 +110,21 @@ function bossView(route: Route): ReactNode | null {
   return null;
 }
 
-function paramView(route: Route): ReactNode | null {
-  const boss = bossView(route);
-  if (boss) return boss;
-  if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
-  if (route.name === 'character') return <Character key={route.char} char={route.char} />;
+function readingView(route: Route): ReactNode | null {
   if (route.name === 'stories') return <Stories storyId={route.storyId} />;
   if (route.name === 'bedtime') return <Bedtime storyId={route.storyId} />;
   if (route.name === 'china') return <China textId={route.textId} />;
+  if (route.name === 'listening') return <Listening exerciseId={route.exerciseId} />;
+  return null;
+}
+
+function paramView(route: Route): ReactNode | null {
+  const boss = bossView(route);
+  if (boss) return boss;
+  const reading = readingView(route);
+  if (reading) return reading;
+  if (route.name === 'lesson') return <Lesson key={route.unitId} unitId={route.unitId} />;
+  if (route.name === 'character') return <Character key={route.char} char={route.char} />;
   if (route.name === 'scenario') {
     return <ScenarioView key={route.scenarioId} scenarioId={route.scenarioId} />;
   }

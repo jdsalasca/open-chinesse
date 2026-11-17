@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { Icon, type IconName } from '../components/ui/Icon';
 import { SCENARIOS } from '../data/scenarios';
+import { listeningExercises } from '../lib/listening';
 import { buildQueue } from '../srs/queue';
 import { useLearner } from '../store/useLearner';
 
@@ -14,6 +15,8 @@ type Action = {
   text: string;
   cta: string;
 };
+
+const LISTENING_COUNT = listeningExercises().length;
 
 const BASE_ACTIONS: Action[] = [
   {
@@ -69,6 +72,15 @@ const BASE_ACTIONS: Action[] = [
     title: 'Sesión mixta',
     text: 'Significado, escucha, contexto y tonos en la misma tanda. Mezclar entrena la memoria.',
     cta: 'Empezar la tanda',
+  },
+  {
+    href: '#/escucha',
+    tone: 'teal',
+    icon: 'speaker',
+    meta: `${LISTENING_COUNT} audios`,
+    title: 'Comprensión auditiva',
+    text: 'Escucha una historia sin texto, responde y después revela la transcripción.',
+    cta: 'Entrenar el oído',
   },
   {
     href: '#/prueba',

@@ -320,5 +320,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
       sincronización (esquema 10).
 - [x] Tarjeta «Jefes de nivel» en Practicar.
 
+### C14 — Comprensión auditiva
+
+- [x] Ruta `/escucha` con seis audios: tres historias y tres lecturas de China.
+- [x] Preguntas de comprensión añadidas a tres historias; las lecturas de China ya
+      tenían la suya.
+- [x] El texto permanece oculto hasta responder; después se revela la
+      transcripción con pinyin, traducción y explicaciones.
+- [x] Reproductor con pausa, seguir y detener; el audio se corta al responder.
+- [x] Tarjeta «Comprensión auditiva» en Practicar.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

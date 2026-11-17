@@ -1,3 +1,5 @@
+import type { ListeningQuestion } from '../data/types';
+
 export type Line = { hanzi: string; pinyin: string; translation: string };
 
 export type Story = {
@@ -8,6 +10,7 @@ export type Story = {
   minutes: number;
   note: string;
   lines: Line[];
+  question?: ListeningQuestion;
 };
 
 const say = (hanzi: string, pinyin: string, translation: string): Line => ({
@@ -42,6 +45,15 @@ export const STORIES: Story[] = [
       say('晚上我看书。', 'Wǎnshang wǒ kàn shū.', 'Por la noche leo.'),
       say('十点我睡觉。', 'Shí diǎn wǒ shuìjiào.', 'A las diez duermo.'),
     ],
+    question: {
+      prompt: '¿Qué hace por la tarde?',
+      options: [
+        { text: 'Juega al baloncesto con un amigo', correct: true },
+        { text: 'Va a la escuela', correct: false },
+        { text: 'Duerme en casa', correct: false },
+      ],
+      explain: 'La quinta línea dice 下午我和朋友打篮球.',
+    },
   },
   {
     id: 'parque',
@@ -132,6 +144,15 @@ export const STORIES: Story[] = [
       say('谢谢！', 'Xièxie!', '¡Gracias!'),
       say('不客气。', 'Bú kèqi.', 'De nada.'),
     ],
+    question: {
+      prompt: '¿Dónde está la estación de metro?',
+      options: [
+        { text: 'Justo delante, siguiendo recto', correct: true },
+        { text: 'Muy lejos, a una hora', correct: false },
+        { text: 'No hay estación de metro', correct: false },
+      ],
+      explain: 'La segunda línea dice 一直走，前面就是.',
+    },
   },
   {
     id: 'restaurante',
@@ -148,6 +169,15 @@ export const STORIES: Story[] = [
       say('好的，一共二十块。', 'Hǎo de, yígòng èrshí kuài.', 'Vale, son veinte yuanes en total.'),
       say('给你钱，谢谢！', 'Gěi nǐ qián, xièxie!', 'Aquí tienes, ¡gracias!'),
     ],
+    question: {
+      prompt: '¿Cuánto cuesta en total?',
+      options: [
+        { text: 'Veinte yuanes', correct: true },
+        { text: 'Diez yuanes', correct: false },
+        { text: 'Cincuenta yuanes', correct: false },
+      ],
+      explain: 'La quinta línea dice 一共二十块.',
+    },
   },
   {
     id: 'dia-de-lluvia',
