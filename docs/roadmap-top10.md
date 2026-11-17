@@ -182,6 +182,15 @@ Terra y la auditoría coinciden:
   (significado, escucha, tono, hueco y ordenar), barra de acción sticky y
   resumen con las palabras que merecen otra mirada.
 
+## Siguiente ronda propuesta (C25)
+
+- **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
+  con otra consigna, y distinguirla en el resumen.
+- **Resumen por capacidades**: primer intento, recuperadas después y
+  pendientes.
+- **Primera exposición directa**: mostrar significado y ejemplo desde el inicio
+  y reservar «intenta recordar» para el reencuentro.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

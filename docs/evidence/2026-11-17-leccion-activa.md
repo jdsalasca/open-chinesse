@@ -125,3 +125,45 @@ Captura de producción: `.screens/audit/c24-prod-mobile.png`.
 - No se tocó FSRS ni el algoritmo de repaso.
 - El resumen enlaza a `/review`, que muestra lo que toca repasar, no
   necesariamente las 10 palabras de la unidad.
+
+## Revisión de Terra (post-C24)
+
+Terra leyó el plan, la pantalla y los estilos. Su diagnóstico: C24 mejora la
+experiencia y elimina el paseo pasivo, pero **todavía no demuestra aprendizaje
+duradero**; sigue apoyado en reconocimiento con opciones y la primera
+comprobación llega muy cerca de la presentación.
+
+Prioridades que propone para la próxima ronda:
+
+1. **Reencuentro de fallos**: después de un error, volver a preguntar esa
+   palabra más tarde, con otra consigna (por ejemplo, de hanzi a audio), y
+   mostrar en el resumen «recuperada después» o «necesita otra mirada».
+2. **Resumen por capacidades**: separar primer intento, recuperadas después y
+   pendientes, en lugar de un único «X de 12».
+3. **Primera exposición directa**: mostrar significado y ejemplo desde el
+   inicio en palabras nuevas y reservar «intenta recordar» para el reencuentro;
+   «Mostrar significado» y «No lo recuerdo» hacen lo mismo.
+
+Su cambio firma sería **«Vuelve a intentarlo»** dentro del flujo actual: el
+error tiene una consecuencia útil en la misma lección, sin pantalla nueva.
+
+Qué simplificar, según Terra:
+
+- Reducir el feedback de acierto (veredicto + contraste + ejemplo es mucho para
+  un acierto).
+- Hacer opcional el origen de caracteres durante el primer contacto.
+- Dar menos protagonismo a estrellas y XP que al primer intento y a las
+  dificultades recuperadas.
+- Comprobar también los botones del feedback y de ordenar en ventanas bajas,
+  no solo la barra de la tarjeta.
+
+Métricas simples que propone: primer intento por modo, recuperación tras error,
+retención diferida al volver, finalización/abandono y transferencia en un reto
+contextual. Sin comparación controlada no prueban causalidad.
+
+Referencias que cita: Roediger y Karpicke (2006) para recuperación, Kang (2016)
+para espaciamiento y Butler (2010) para transferencia.
+
+Decisión para C24: se implementa el ciclo activo y la barra sticky; el
+reencuentro de fallos y el resumen por capacidades quedan como C25, porque
+cambian el estado de la lección y merecen su propia ronda con tests.
