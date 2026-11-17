@@ -190,8 +190,8 @@ export function Shadowing({ textId }: { textId?: string }) {
         ))}
       </div>
       <p className="shadowing-list__note">
-        Diez textos con audio por frase. Sin micrófono también puedes escuchar y repetir en voz
-        alta.
+        {TEXTS.length} textos con audio por frase. Sin micrófono también puedes escuchar y repetir
+        en voz alta.
       </p>
     </section>
   );

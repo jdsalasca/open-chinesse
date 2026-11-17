@@ -1,4 +1,5 @@
 import type { ListeningQuestion } from '../data/types';
+import { MICRO_STORIES } from './micro.ts';
 
 export type Line = { hanzi: string; pinyin: string; translation: string };
 
@@ -6,11 +7,12 @@ export type Story = {
   id: string;
   title: string;
   level: 1 | 2 | 3;
-  kind: 'historia' | 'conversación';
+  kind: 'historia' | 'conversación' | 'micro-lectura';
   minutes: number;
   note: string;
   lines: Line[];
   question?: ListeningQuestion;
+  unitId?: string;
 };
 
 const say = (hanzi: string, pinyin: string, translation: string): Line => ({
@@ -20,7 +22,7 @@ const say = (hanzi: string, pinyin: string, translation: string): Line => ({
 });
 
 /** Textos cortos con vocabulario del curso. Cada línea tiene audio propio. */
-export const STORIES: Story[] = [
+const BASE_STORIES: Story[] = [
   {
     id: 'mi-dia',
     title: '我的一天 · Mi día',
@@ -200,3 +202,6 @@ export const STORIES: Story[] = [
     ],
   },
 ];
+
+/** Las micro-lecturas HSK 1 van primero: una por unidad. */
+export const STORIES: Story[] = [...MICRO_STORIES, ...BASE_STORIES];

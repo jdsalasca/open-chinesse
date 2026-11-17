@@ -216,7 +216,7 @@ export function Listening({ exerciseId }: { exerciseId?: string }) {
         ))}
       </div>
       <p className="listening-list__note">
-        Seis audios con una pregunta cada uno. Sin texto hasta que responds.
+        {EXERCISES.length} audios con una pregunta cada uno. Sin texto hasta que respondes.
       </p>
     </section>
   );

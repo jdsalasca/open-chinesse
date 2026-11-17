@@ -8,6 +8,7 @@ describe('repite en voz alta', () => {
     expect(new Set(texts.map((text) => text.id)).size).toBe(texts.length);
     expect(texts.some((text) => text.id.startsWith('story-'))).toBe(true);
     expect(texts.some((text) => text.id.startsWith('china-'))).toBe(true);
+    expect(texts.filter((text) => text.level === 1).length).toBeGreaterThanOrEqual(15);
   });
 
   it('cada texto tiene líneas y prefijo de audio', () => {

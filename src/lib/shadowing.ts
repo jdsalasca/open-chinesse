@@ -28,5 +28,5 @@ export function shadowingTexts(): ShadowingText[] {
     prefix: `china-${text.id}`,
     lines: text.lines,
   }));
-  return [...stories, ...china].sort((a, b) => a.level - b.level || a.title.localeCompare(b.title));
+  return [...stories, ...china].sort((a, b) => a.level - b.level);
 }

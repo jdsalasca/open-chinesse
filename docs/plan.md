@@ -351,5 +351,14 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Progreso compatible (esquema 11) y tarjeta «Gramática en contraste» en
       Practicar.
 
+### C17 — Micro-lecturas HSK 1 por unidad
+
+- [x] Quince micro-lecturas, una por unidad de HSK 1, de 3–4 líneas.
+- [x] Cada texto usa solo vocabulario HSK 1 y al menos dos palabras de su unidad.
+- [x] Audio por línea (55 archivos nuevos) y una pregunta de comprensión con
+      explicación.
+- [x] Integradas en Historias, Comprensión auditiva (21 audios) y Repite en voz
+      alta (25 textos) sin pantallas nuevas.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

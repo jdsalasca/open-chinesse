@@ -42,7 +42,7 @@ completo está resumido abajo; lo he ajustado con lo que el código ya permite.
 | 9   | **Diagnóstico periódico por destreza**: prueba mensual de escucha, lectura y producción en tareas nuevas                | Medir aprendizaje, no actividad   | Alto para medir | Medio      | Banco de preguntas por crear         |
 | 10  | **Variación de escucha**: varias voces y velocidades para las mismas frases                                             | Generalización auditiva           | Medio-alto      | Alto       | Requiere nuevos audios/voces         |
 
-Orden recomendado: **5 (hecho en C16) → HSK 1 aplicado → 9 → 6 → 10 → 8**;
+Orden recomendado: **5 (C16) → HSK 1 aplicado (C17) → 9 → 6 → 10 → 8**;
 sentence mining (7) después de la transferencia.
 
 ## Las tres primeras, en concreto
@@ -133,6 +133,12 @@ Terra y la auditoría coinciden:
   siete frases de práctica y cinco reservadas para una prueba diferida a los 7
   días. Se guarda el primer resultado.
 
+## Hecho en C17
+
+- **Micro-lecturas HSK 1** (`/historias`): quince textos, uno por unidad, con
+  audio por línea y pregunta. Alimentan Escucha (21 audios) y Repite (25
+  textos).
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.
@@ -140,12 +146,12 @@ Terra y la auditoría coinciden:
 3. **D3 — Voz** — hecho en C15: shadowing con grabación local y comparación con
    el modelo; sin puntuación automática.
 
-## Horizonte tras C16
+## Horizonte tras C17
 
 1. **Gramática en contraste** — 不/没 hecho en C16. Seguir con 了/过, 的/得 y
    clasificadores.
-2. **HSK 1 aplicado** — 15 micro-lecturas, una por unidad, con vocabulario ya
-   conocido, audio y una pregunta. Alimenta Historias, Escucha y Repite.
+2. **HSK 1 aplicado** — hecho en C17: quince micro-lecturas, una por unidad,
+   con audio y pregunta.
 3. **Diagnóstico por destreza** — cinco ítems de escucha, lectura y gramática,
    con perfil y recomendación.
 4. **Transferencia situacional** — resolver situaciones nuevas sin copiar el

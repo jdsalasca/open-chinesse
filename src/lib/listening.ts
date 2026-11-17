@@ -43,5 +43,5 @@ export function listeningExercises(): ListeningExercise[] {
     lines: text.lines,
     question: text.question,
   }));
-  return [...stories, ...china].sort((a, b) => a.level - b.level || a.title.localeCompare(b.title));
+  return [...stories, ...china].sort((a, b) => a.level - b.level);
 }

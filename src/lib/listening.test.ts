@@ -8,6 +8,7 @@ describe('comprensión auditiva', () => {
     expect(new Set(exercises.map((exercise) => exercise.id)).size).toBe(exercises.length);
     expect(exercises.some((exercise) => exercise.id.startsWith('story-'))).toBe(true);
     expect(exercises.some((exercise) => exercise.id.startsWith('china-'))).toBe(true);
+    expect(exercises.filter((exercise) => exercise.level === 1).length).toBeGreaterThanOrEqual(15);
   });
 
   it('cada audio tiene líneas y una sola respuesta correcta', () => {
