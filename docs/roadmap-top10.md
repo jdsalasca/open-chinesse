@@ -7,14 +7,16 @@ aprendizaje real de mandarín A1–B1, no para sumar pantallas.
 ## Diagnóstico
 
 La app ya cubre **reconocer, escuchar palabras sueltas, leer con ayuda y
-producir escribiendo pinyin/hanzi**. Lo que falta es el ciclo completo:
+producir escribiendo pinyin/hanzi**. Al empezar estas rondas faltaba el ciclo
+completo:
 
 1. **El error no vuelve de forma deliberada.** Se guarda el último motivo por
    palabra (`misses`), pero no se usa para construir una sesión posterior.
+   _Cubierto en C12._
 2. **La escucha siempre tiene apoyo visual.** No hay una tarea de escuchar un
-   mensaje completo sin texto y comprobar qué se entendió.
+   mensaje completo sin texto y comprobar qué se entendió. _Cubierto en C14._
 3. **No hay producción oral.** Ni sombra, ni grabación, ni comparación con un
-   modelo.
+   modelo. _Cubierto en C15._
 4. **El tono no se produce.** El repaso acepta pinyin sin tonos; se entrena la
    percepción en Tonos, pero no la producción tonal.
 5. **La gramática se aprende implícita.** No hay contrastes explícitos
