@@ -14,7 +14,8 @@ export type ActivityKind =
   | 'grammar'
   | 'close'
   | 'transform'
-  | 'detective';
+  | 'detective'
+  | 'scene';
 
 export type ActivityEntry = {
   kind: ActivityKind;

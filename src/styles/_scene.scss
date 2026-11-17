@@ -1,0 +1,148 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.scene {
+  display: grid;
+  gap: $space-4;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.scene__story {
+  display: grid;
+  gap: $space-2;
+  padding: $space-5;
+}
+
+.scene__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.scene__note {
+  margin: 0;
+  color: $muted;
+  font-size: 0.9rem;
+}
+
+.scene__hint {
+  margin: 0;
+  font-size: 0.86rem;
+  color: $muted;
+}
+
+.scene__hint--actions {
+  color: $mint-dark;
+  font-weight: 600;
+}
+
+.scene__lines {
+  display: grid;
+  gap: $space-2;
+  margin: $space-2 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scene__line {
+  display: grid;
+  gap: $space-1;
+  padding: $space-3;
+  border: 1px solid $line;
+  border-radius: $radius;
+  background: $paper;
+}
+
+.scene__line.is-correct {
+  border-color: $mint;
+  background: $mint-soft;
+}
+
+.scene__line.is-wrong {
+  border-color: $danger;
+  background: $pink-soft;
+}
+
+.scene__line-head {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.scene__line-text {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  @include hanzi(1.2rem);
+  line-height: 1.5;
+  text-align: left;
+  color: $ink;
+  cursor: default;
+
+  @include focus-ring;
+}
+
+button.scene__line-text {
+  cursor: pointer;
+}
+
+button.scene__line-text:hover {
+  color: $mint-dark;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.scene__line-badge {
+  padding: 2px $space-2;
+  border-radius: $radius-pill;
+  background: $mint;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scene__line-pinyin {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $teal;
+}
+
+.scene__line-translation {
+  margin: 0;
+  font-size: 0.88rem;
+  color: $muted;
+}
+
+.scene__quiz {
+  display: grid;
+  gap: $space-3;
+  padding: $space-5;
+}
+
+.scene__quiz h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.scene__options {
+  display: grid;
+  gap: $space-2;
+}
+
+.scene__evidence {
+  display: grid;
+  gap: $space-3;
+  padding: $space-4;
+}
+
+.scene__quote {
+  margin: 0;
+  padding: $space-3;
+  border-radius: $radius;
+  background: $paper;
+  @include hanzi(1.25rem);
+}

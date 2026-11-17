@@ -28,6 +28,7 @@ export type Route =
   | { name: 'close' }
   | { name: 'transform' }
   | { name: 'detective' }
+  | { name: 'scene' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -63,6 +64,7 @@ const SIMPLE: Record<string, Route> = {
   cierre: { name: 'close' },
   intencion: { name: 'transform' },
   detective: { name: 'detective' },
+  escena: { name: 'scene' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {

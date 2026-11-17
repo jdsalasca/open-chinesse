@@ -394,5 +394,15 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Tarjetas en Practicar, rutas `/intencion` y `/detective`, actividad
       registrada.
 
+### C21 — ¿Qué pasó en la escena?
+
+- [x] Quince preguntas de comprensión global sobre micro-lecturas, cada una con
+      una línea de evidencia.
+- [x] Tanda de ocho: leer o escuchar sin traducción, elegir qué pasó y señalar
+      la frase que lo justifica.
+- [x] Doble puntuación (resumen y evidencia), revelado de pinyin/traducción y
+      cita de la línea.
+- [x] Opciones de resumen barajadas; test de posición.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

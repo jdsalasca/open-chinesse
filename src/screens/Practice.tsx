@@ -123,6 +123,15 @@ const BASE_ACTIONS: Action[] = [
     cta: 'Investigar',
   },
   {
+    href: '#/escena',
+    tone: 'teal',
+    icon: 'book',
+    meta: '8 escenas',
+    title: '¿Qué pasó en la escena?',
+    text: 'Lee o escucha, elige qué pasó y señala la frase que lo justifica.',
+    cta: 'Investigar la escena',
+  },
+  {
     href: '#/prueba',
     tone: 'amber',
     icon: 'clock',

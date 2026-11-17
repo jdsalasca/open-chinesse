@@ -160,6 +160,11 @@ Terra y la auditoría coinciden:
 - **Detective de confusables** (`/detective`): diez pares del curso, significado,
   explicación y enlace a la ficha.
 
+## Hecho en C21
+
+- **¿Qué pasó en la escena?** (`/escena`): ocho micro-lecturas por tanda,
+  elección de resumen y de la línea que lo justifica, con doble puntuación.
+
 ## Plan de tres rondas
 
 1. **D1 — Errores y tonos** — hecho en C12.

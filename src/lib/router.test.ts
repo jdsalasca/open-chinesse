@@ -33,6 +33,7 @@ describe('rutas', () => {
   it('reconoce las mecánicas nuevas', () => {
     expect(parseHash('#/intencion')).toEqual({ name: 'transform' });
     expect(parseHash('#/detective')).toEqual({ name: 'detective' });
+    expect(parseHash('#/escena')).toEqual({ name: 'scene' });
   });
 
   it('no se rompe con una ruta de carácter vacía', () => {
