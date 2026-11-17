@@ -1,0 +1,16 @@
+@use 'tokens' as *;
+@use 'mixins' as *;
+
+.mixed .quiz__sentence {
+  margin: 0;
+  @include hanzi(1.6rem);
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.mixed .quiz__prompt .hint {
+  max-width: 46ch;
+  margin: $space-2 auto 0;
+  text-align: center;
+}

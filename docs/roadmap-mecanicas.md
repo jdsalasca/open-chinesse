@@ -28,6 +28,10 @@ solo para que tenga más pantallas.
   continua.
 - **China en chino** (`/china`): tres lecturas HSK 3 con audio, explicación por
   línea y una pregunta de comprensión.
+- **Sesión mixta** (`/mixta`): diez preguntas intercaladas de significado,
+  escucha, contexto y tonos.
+- **Reto del día**: tarjeta en Home que rota cada día y enlaza a una situación,
+  lectura, cuento o dictado.
 
 ## Brechas, en orden de impacto
 
@@ -36,8 +40,8 @@ solo para que tenga más pantallas.
 | 1   | **Dictado**: oír palabra o frase y escribir hanzi/pinyin                     | Cierra el ciclo oído → escritura; hoy solo se reconoce            | Medio | Audio existente         | Hecho (C9)   |
 | 2   | **Cuentos para dormir** (HSK 1–2, voz lenta, traducción y explicación)       | Lectura extensiva placentera y sin presión                        | Alto  | Contenido + audio lento | Hecho (C9)   |
 | 3   | **Historia de China en chino** (HSK 3, glosas y audio)                       | Cultura + lectura larga; da sentido al vocabulario                | Alto  | Contenido + audio       | Hecho (C10)  |
-| 4   | **Sesión inmersiva mixta** (10 min: repaso → escucha → lectura → producción) | Hoy las prácticas están aisladas; mezclar mejora transferencia    | Medio | Ya existe casi todo     | Pendiente    |
-| 5   | **Actividad del día** (reto real: pide un café, preséntate)                  | Lleva la app al mundo; cierra con una escena o frase              | Bajo  | Situaciones             | Pendiente    |
+| 4   | **Sesión inmersiva mixta** (10 min: repaso → escucha → lectura → producción) | Hoy las prácticas están aisladas; mezclar mejora transferencia    | Medio | Ya existe casi todo     | Hecho (C11)  |
+| 5   | **Actividad del día** (reto real: pide un café, preséntate)                  | Lleva la app al mundo; cierra con una escena o frase              | Bajo  | Situaciones             | Hecho (C11)  |
 | 6   | **Shadowing** (repetir en voz alta tras el audio)                            | Pronunciación y ritmo; sin micrófono al principio                 | Medio | Audio + pausas          | Pendiente    |
 | 7   | **Comprensión auditiva con pregunta**                                        | Escuchar sin texto y comprobar; hoy el audio se apoya en el texto | Medio | Historias/situaciones   | Pendiente    |
 | 8   | **Glosa universal al pasar el cursor** en ejemplos y escenarios              | Unifica la ayuda; hoy solo existe en Historias                    | Bajo  | Segmentador actual      | Pendiente    |

@@ -134,6 +134,21 @@
   }
 }
 
+.practice__card--rose {
+  &::before {
+    background: $pink;
+  }
+
+  .practice__icon {
+    background: $pink-soft;
+    color: #a52a3c;
+  }
+
+  .practice__cta {
+    color: #a52a3c;
+  }
+}
+
 .practice__card--sky {
   &::before {
     background: $sky;

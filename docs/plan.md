@@ -284,5 +284,18 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Una pregunta de comprensión por lectura, con respuesta razonada.
 - [x] Tarjeta «China en chino» en Practicar y test de nivel de vocabulario.
 
+### C11 — Sesión mixta y reto del día
+
+- [x] Ruta `/mixta` con diez preguntas intercaladas: significado, escucha,
+      contexto y tonos.
+- [x] Tipos de opción única con cuatro alternativas, audio real en escucha y
+      tonos, y explicación tras responder.
+- [x] El generador reserva para «Completa la frase» palabras cuyo ejemplo admite
+      hueco, en vez de caer siempre en significado.
+- [x] Tarjeta «Sesión mixta» en Practicar y actividad registrada.
+- [x] Reto del día en Home: siete retos que rotan con la fecha y enlazan a una
+      pantalla existente.
+- [x] Home considera «empezado» si hay historial aunque no queden tarjetas.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

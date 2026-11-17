@@ -38,7 +38,7 @@ function longestWord(chars: string[], from: number): string {
   return chars[from];
 }
 
-function meaningOptions(word: Word, random: () => number): string[] {
+export function meaningOptions(word: Word, random: () => number): string[] {
   const pool = shuffle(
     ALL_WORDS.filter((candidate) => candidate.id !== word.id && candidate.meaning !== word.meaning),
     random,

@@ -18,6 +18,7 @@ export type Route =
   | { name: 'dictation' }
   | { name: 'bedtime'; storyId?: string }
   | { name: 'china'; textId?: string }
+  | { name: 'mixed' }
   | { name: 'character'; char: string };
 
 function decode(value: string): string {
@@ -44,6 +45,7 @@ const SIMPLE: Record<string, Route> = {
   dictado: { name: 'dictation' },
   dormir: { name: 'bedtime' },
   china: { name: 'china' },
+  mixta: { name: 'mixed' },
 };
 
 const PARAM: Record<string, (value: string) => Route> = {

@@ -1,7 +1,8 @@
 import type { IconName } from '../components/ui/Icon';
 import { dayKey } from '../store/metrics';
 
-export type ActivityKind = 'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation';
+export type ActivityKind =
+  'review' | 'lesson' | 'tones' | 'scenario' | 'cloze' | 'dictation' | 'mixed';
 
 export type ActivityEntry = {
   kind: ActivityKind;

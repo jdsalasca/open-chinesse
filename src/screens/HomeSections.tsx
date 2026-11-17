@@ -14,7 +14,8 @@ import {
   type Level,
 } from '../data/curriculum';
 import { levelFromXp, levelProgress } from '../gamification/xp';
-import { masteredCount } from '../store/metrics';
+import { challengeFor } from '../lib/challenge';
+import { dayKey, masteredCount } from '../store/metrics';
 import type { StoredCard } from '../srs/scheduler';
 import { HomePath } from './HomePath';
 import type { HomeData } from './home-data';
@@ -68,6 +69,23 @@ function SessionSteps({ due, nextUnit }: { due: number; nextUnit?: HomeData['nex
       />
       <SessionStep href="#/tonos" icon="speaker" label="Tonos" detail="diez palabras de oído" />
     </ol>
+  );
+}
+
+export function ChallengeCard({ now }: { now: number }) {
+  const challenge = challengeFor(dayKey(now));
+  return (
+    <a className="challenge" href={challenge.href}>
+      <span className="challenge__icon" aria-hidden="true">
+        <Icon name={challenge.icon} size={18} />
+      </span>
+      <span className="challenge__copy">
+        <span className="challenge__eyebrow">Reto de hoy</span>
+        <strong>{challenge.title}</strong>
+        <span>{challenge.detail}</span>
+      </span>
+      <Icon name="arrow" size={16} />
+    </a>
   );
 }
 

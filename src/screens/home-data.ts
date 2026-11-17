@@ -67,7 +67,7 @@ export function useHomeData(): HomeData {
     setLevel,
     levelUnits,
     nextUnit: levelUnits.find((unit) => !done.includes(unit.id)),
-    started: Object.keys(cards).length > 0,
+    started: Object.keys(cards).length > 0 || log.length > 0,
     reviewed,
     allDone: done.length === UNITS.length,
     range: `${LEVEL_LABELS[LEVELS[0]]}–${LEVEL_LABELS[LAST_LEVEL]}`,

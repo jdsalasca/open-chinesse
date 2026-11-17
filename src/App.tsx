@@ -15,6 +15,7 @@ import { Cloze } from './screens/Cloze';
 import { Dictation } from './screens/Dictation';
 import { Bedtime } from './screens/Bedtime';
 import { China } from './screens/China';
+import { Mixed } from './screens/Mixed';
 import { Immersion } from './screens/Immersion';
 import { Tones } from './screens/Tones';
 import { Lesson } from './screens/Lesson';
@@ -43,6 +44,7 @@ const FOCUS = new Set<Route['name']>([
   'scenario',
   'cloze',
   'dictation',
+  'mixed',
 ]);
 
 const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
@@ -57,6 +59,7 @@ const VIEWS: Partial<Record<Route['name'], () => ReactNode>> = {
   check: () => <Check />,
   cloze: () => <Cloze />,
   dictation: () => <Dictation />,
+  mixed: () => <Mixed />,
 };
 
 function Header({ route }: { route: Route }) {

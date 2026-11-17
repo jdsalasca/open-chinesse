@@ -7,7 +7,7 @@ import { useLearner } from '../store/useLearner';
 
 type Action = {
   href: string;
-  tone: 'mint' | 'violet' | 'amber' | 'sky' | 'teal';
+  tone: 'mint' | 'violet' | 'amber' | 'sky' | 'teal' | 'rose';
   icon: IconName;
   meta: string;
   title: string;
@@ -60,6 +60,15 @@ const BASE_ACTIONS: Action[] = [
     title: 'China en chino',
     text: 'El té, la ciudad y la familia. Lecturas HSK 3 con audio, explicación y una pregunta.',
     cta: 'Leer y escuchar',
+  },
+  {
+    href: '#/mixta',
+    tone: 'rose',
+    icon: 'star',
+    meta: 'Diez preguntas',
+    title: 'Sesión mixta',
+    text: 'Significado, escucha, contexto y tonos en la misma tanda. Mezclar entrena la memoria.',
+    cta: 'Empezar la tanda',
   },
   {
     href: '#/prueba',

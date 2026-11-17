@@ -3,7 +3,7 @@ import { Onboarding } from '../components/Onboarding';
 import { TOTAL_WORDS, type Unit } from '../data/curriculum';
 import { navigate } from '../lib/router';
 import { useDailySession } from '../store/daily-session';
-import { ProgressSection, RouteSection, SessionSection } from './HomeSections';
+import { ChallengeCard, ProgressSection, RouteSection, SessionSection } from './HomeSections';
 import { useHomeData, type HomeData } from './home-data';
 
 function startSession(home: HomeData): void {
@@ -130,6 +130,7 @@ export function Home() {
     <div className="home">
       <Hero home={home} />
       <SessionSection home={home} />
+      <ChallengeCard now={home.now} />
       <ProgressSection home={home} />
       <RouteSection home={home} />
     </div>
