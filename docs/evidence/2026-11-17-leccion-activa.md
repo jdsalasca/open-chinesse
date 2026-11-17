@@ -84,6 +84,23 @@ Capturas en `.screens/audit/`: `c24-learn.png`, `c24-revealed.png`,
 `c24-tone.png`, `c24-gap.png`, `c24-feedback.png`, `c24-summary.png`,
 `c24-short.png`, `c24-mobile.png`, `c24-mobile-feedback.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/lesson/h1-05`: «Ronda 1 de 5 · Primer contacto», objetivo «Quién vive en
+  casa», tarjeta en dos columnas y barra de acción sticky.
+- Primera comprobación: «Escucha y elige el pinyin», cuatro opciones de tono.
+- Respuesta incorrecta: «Era māma: mamá», contraste con el pinyin en su tamaño
+  y color normales, ejemplo «妈妈做饭。».
+- Segunda comprobación: «Completa la frase», hueco visible de 56 px,
+  traducción y opciones de la unidad.
+- 390×844 en producción: 0 px de desbordamiento, tarjeta apilada y barra
+  sticky con el botón a 710 px de 844.
+
+Captura de producción: `.screens/audit/c24-prod-mobile.png`.
+
 ## Base didáctica
 
 - **Roediger y Karpicke (2006)**: recuperar produce mejor retención que releer.
