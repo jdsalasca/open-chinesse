@@ -76,6 +76,17 @@ pnpm build                         ✓
 Capturas en `.screens/audit/`: `c20-transform.png`,
 `c20-transform-summary.png`, `c20-detective.png`.
 
+## Producción
+
+- Desplegado `4724cb6` en `https://open-chinesse.eridu.top`.
+- Cambia la intención: base 我今天喝茶, intención «beberé té mañana», opciones
+  barajadas y feedback «Solo cambia el tiempo: 今天 → 明天».
+- Detective: «¿Cuál significa uno mismo?», 目/自, feedback con el radical y
+  enlace a la ficha.
+- Practicar: 16 tarjetas, incluidas las dos nuevas.
+- Móvil 390: 0 px de desbordamiento en ambas.
+- Sin errores de consola distintos del 401 esperado sin sesión.
+
 ## Límites
 
 - Cambia la intención es **opción múltiple**, no producción libre; el alumno
