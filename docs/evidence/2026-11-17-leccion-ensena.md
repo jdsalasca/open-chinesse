@@ -93,6 +93,22 @@ Tests nuevos o ajustados:
 Capturas en `.screens/audit/`: `c27-learn.png`, `c27-pinyin.png`,
 `c27-first-check.png`, `c27-mobile.png`, `c27-mobile-feedback.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/lesson/h1-08`: 中国 muestra «China» y «中国很大。» desde el inicio, sin
+  «Mostrar significado»; barra fija de 656 a 760 px en una ventana de 760.
+- 北京 (palabra 2) muestra «Pekín», «北京是中国的首都。» y los tokens
+  `Běi³` (tono 3) y `jīng¹` (tono 1), cada uno con su color.
+- 中国 muestra `Zhōng¹` (tono 1) y `guó²` (tono 2).
+- La primera comprobación es «¿Qué significa?» (reconocimiento).
+- 390×844: 0 px de desbordamiento, barra fija de 740 a 844 y, tras responder,
+  el botón del feedback queda entre 783 y 834.
+
+Captura de producción: `.screens/audit/c27-prod-mobile.png`.
+
 ## Base didáctica
 
 - **Sweller et al. (2020)**: antes de recuperar, el alumno necesita una carga
