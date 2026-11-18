@@ -79,6 +79,23 @@ Capturas en `.screens/audit/`: `c28-review.png`, `c28-review-mobile.png`,
 `c28-part2.png`, `c28-story.png`, `c28-bedtime.png`,
 `c28-story-mobile.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- `/#/lesson/h1-08`: «Parte 1 de 3 · Primer contacto», tres segmentos y tres
+  palabras antes del repaso.
+- Repaso: «Repaso de lo aprendido», caracteres 中国, 北京 y 医院, sin
+  significados, y «Empezar el repaso».
+- `/#/historias/micro-h1-01`: 0.75× aplica `playbackRate = 0.75`, la barra de
+  avance aparece y la línea 1 se marca.
+- 390×844: 0 px de desbordamiento; la tarjeta de repaso y su botón quedan
+  dentro de la pantalla; el control de velocidad sigue visible.
+
+Capturas de producción: `.screens/audit/c28-prod-review.png` y
+`.screens/audit/c28-prod-mobile.png`.
+
 ## Límites
 
 - Las tres partes viven en la misma ruta de lección; no son tres rutas
