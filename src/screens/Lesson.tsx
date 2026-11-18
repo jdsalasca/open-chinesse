@@ -19,6 +19,7 @@ import { ProgressRing } from '../components/ui/ProgressRing';
 import { ALL_WORDS, LEVEL_LABELS, UNITS, type Unit, type Word } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
 import { LESSON_PARTS, makeLessonPlan, type LessonStep } from '../lib/lesson';
+import { clearLessonPart, loadLessonPart, saveLessonPart } from '../lib/lesson-progress';
 import { CLOZE_BLANK } from '../lib/cloze';
 import type { Question } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
@@ -945,9 +946,23 @@ export function Lesson({ unitId }: { unitId: string }) {
   const introduceUnit = useLearner((s) => s.introduceUnit);
   const recordLesson = useLearner((s) => s.recordLesson);
   const noteMiss = useLearner((s) => s.noteMiss);
-  const plan = useLessonPlan(unit);
+  const [startPart] = useState(() => loadLessonPart(unitId));
+  const fullPlan = useLessonPlan(unit);
+  const plan = useMemo(
+    () => fullPlan.filter((step) => step.part >= startPart),
+    [fullPlan, startPart],
+  );
   const progress = useLessonProgress();
+  const currentPart = plan[progress.index]?.part ?? LESSON_PARTS;
   const done = Boolean(unit) && plan.length > 0 && progress.index >= plan.length;
+  useEffect(() => {
+    if (!unit) return;
+    if (progress.index >= plan.length) {
+      clearLessonPart(unit.id);
+      return;
+    }
+    if (currentPart > 1) saveLessonPart(unit.id, currentPart);
+  }, [unit, currentPart, progress.index, plan.length]);
   useIntroduceUnit(unit, introduceUnit);
   useLessonRecord(unit, done, progress.answers, recordLesson);
   useLessonFinish(done, progress.answers);

@@ -464,5 +464,13 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Control de velocidad 0.75×/1×/1.25× en Historias y Cuentos.
 - [x] Barra de avance por líneas y velocidad aplicada en caliente.
 
+### C29 — Persistencia de la parte de lección
+
+- [x] Guardar la parte actual por unidad en `localStorage`.
+- [x] Retomar la lección en esa parte al recargar o volver.
+- [x] Limpiar el progreso al completar la última parte.
+- [x] Mostrar «Continuar: … · parte X/3» en la portada.
+- [x] Tests y QA de guardado, reanudación y limpieza.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

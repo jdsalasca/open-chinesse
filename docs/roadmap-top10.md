@@ -208,14 +208,19 @@ Terra y la auditoría coinciden:
 - **Historias con velocidad**: 0.75×, 1× y 1.25× en Historias y Cuentos para
   dormir, con barra de avance.
 
-## Siguiente ronda propuesta (C29)
+## Hecho en C29
 
+- **Persistencia de la parte**: la lección recuerda en qué parte se quedó el
+  alumno, retoma ahí y la portada muestra «Continuar · parte X/3».
+
+## Siguiente ronda propuesta (C30)
+
+- **Comunidad**: definir la primera pieza social (foro, grupos de estudio o
+  compartir progreso) antes de construirla.
 - **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
   con otra consigna, y distinguirla en el resumen.
-- **Resumen por capacidades**: primer intento, recuperadas después y
-  pendientes.
-- **Persistencia de la parte**: recordar en qué tramo de la lección se quedó
-  el alumno.
+- **Persistencia del paso exacto**: recordar también la tarjeta o pregunta
+  dentro de la parte.
 
 ## Plan de tres rondas
 

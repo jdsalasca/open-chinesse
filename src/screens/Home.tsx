@@ -1,6 +1,7 @@
 import { Icon } from '../components/ui/Icon';
 import { Onboarding } from '../components/Onboarding';
 import { TOTAL_WORDS, type Unit } from '../data/curriculum';
+import { loadLessonPart } from '../lib/lesson-progress';
 import { navigate } from '../lib/router';
 import { useDailySession, type SessionStep } from '../store/daily-session';
 import { ChallengeCard, ProgressSection, RouteSection, SessionSection } from './HomeSections';
@@ -73,13 +74,19 @@ function NextUnitButton({
   primary: boolean;
   started: boolean;
 }) {
+  const part = loadLessonPart(unit.id);
+  const label = !started
+    ? 'Empezar la primera lección'
+    : part > 1
+      ? `Continuar: ${unit.title} · parte ${part}/3`
+      : `Siguiente: ${unit.title}`;
   return (
     <button
       type="button"
       className={`hero__ghost${primary ? ' hero__cta' : ''}`}
       onClick={() => navigate(`/lesson/${unit.id}`)}
     >
-      {started ? `Siguiente: ${unit.title}` : 'Empezar la primera lección'}
+      {label}
     </button>
   );
 }
