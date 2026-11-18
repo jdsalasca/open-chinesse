@@ -40,8 +40,6 @@ type LessonProgress = {
   setAnswers: Dispatch<SetStateAction<LessonAnswer[]>>;
   selected: string | null;
   setSelected: (selected: string | null) => void;
-  revealed: boolean;
-  setRevealed: (revealed: boolean) => void;
 };
 
 function useLessonPlan(unit: Unit | undefined): LessonStep[] {
@@ -53,7 +51,6 @@ function useLessonProgress(): LessonProgress {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<LessonAnswer[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
-  const [revealed, setRevealed] = useState(false);
   return {
     index,
     setIndex,
@@ -61,8 +58,6 @@ function useLessonProgress(): LessonProgress {
     setAnswers,
     selected,
     setSelected,
-    revealed,
-    setRevealed,
   };
 }
 
@@ -106,7 +101,7 @@ type LessonActionsParams = {
 };
 
 function useLessonActions({ plan, progress, noteMiss }: LessonActionsParams) {
-  const { index, setIndex, setAnswers, selected, setSelected, revealed, setRevealed } = progress;
+  const { index, setIndex, setAnswers, selected, setSelected } = progress;
   const step = plan[index];
 
   const finish = (correct: boolean) => {
@@ -114,15 +109,12 @@ function useLessonActions({ plan, progress, noteMiss }: LessonActionsParams) {
     if (!correct && step.question.mode === 'order') noteMiss(step.question.wordId, 'order');
     setAnswers((prev) => [...prev, { wordId: step.question.wordId, correct }]);
     setSelected(null);
-    setRevealed(false);
     setIndex(index + 1);
   };
 
   const next = () => {
     if (!step) return;
     if (step.kind === 'learn') {
-      if (!revealed) return setRevealed(true);
-      setRevealed(false);
       setSelected(null);
       return setIndex(index + 1);
     }
@@ -197,31 +189,26 @@ function FlashcardWord({
         <Pinyin pinyin={word.pinyin} className="flashcard__pinyin" showToneNumber />
         <AudioButton text={word.hanzi} label={word.hanzi} src={audioUrl('words', word.id)} />
       </div>
-      {showToneNote && <p className="flashcard__tone-note">El color del pinyin marca el tono.</p>}
+      {showToneNote && (
+        <p className="flashcard__tone-note">
+          Tonos: <span className="tone-1">1 alto</span> · <span className="tone-2">2 sube</span> ·{' '}
+          <span className="tone-3">3 baja-sube</span> · <span className="tone-4">4 cae</span> ·{' '}
+          <span className="tone-5">5 neutro</span>
+        </p>
+      )}
       <p className="flashcard__speak">Escucha y repite en voz alta.</p>
       <CharacterLinks hanzi={word.hanzi} />
     </div>
   );
 }
 
-function RecallPrompt() {
-  return (
-    <div className="flashcard__recall">
-      <p className="flashcard__prompt">¿Qué significa? Intenta recordarlo antes de mirar.</p>
-      <p className="flashcard__hint">Si es la primera vez, no pasa nada: mira y sigue.</p>
-    </div>
-  );
-}
-
 function Flashcard({
   word,
-  revealed,
   round,
   totalRounds,
   showToneNote,
 }: {
   word: Word;
-  revealed: boolean;
   round: number;
   totalRounds: number;
   showToneNote: boolean;
@@ -238,51 +225,26 @@ function Flashcard({
         showToneNote={showToneNote}
       />
       <div className="flashcard__context">
-        {revealed ? (
-          <>
-            <p className="flashcard__meaning">{word.meaning}</p>
-            <ExampleBlock word={word} />
-          </>
-        ) : (
-          <RecallPrompt />
-        )}
+        <p className="flashcard__meaning">{word.meaning}</p>
+        <ExampleBlock word={word} />
       </div>
     </article>
   );
 }
 
 function LearnActions({
-  revealed,
   nextKind,
-  onReveal,
   next,
 }: {
-  revealed: boolean;
   nextKind: LessonStep['kind'] | undefined;
-  onReveal: () => void;
   next: () => void;
 }) {
   return (
     <div className="lesson__actions">
-      {revealed ? (
-        <button type="button" className="button button--primary" onClick={next}>
-          {nextKind === 'question' ? 'Comprobar lo aprendido' : 'Siguiente palabra'}
-        </button>
-      ) : (
-        <>
-          <button type="button" className="button button--primary" onClick={onReveal}>
-            Mostrar significado
-          </button>
-          <button type="button" className="link" onClick={onReveal}>
-            No lo recuerdo
-          </button>
-        </>
-      )}
-      <span className="hint">
-        {revealed
-          ? 'Lee el ejemplo y sigue cuando quieras.'
-          : 'Intenta recordar; Enter también revela.'}
-      </span>
+      <button type="button" className="button button--primary" onClick={next}>
+        {nextKind === 'question' ? 'Comprobar lo aprendido' : 'Siguiente palabra'}
+      </button>
+      <span className="hint">Lee el ejemplo y sigue cuando quieras.</span>
     </div>
   );
 }
@@ -319,16 +281,12 @@ function roundOf(totalWords: number, wordIndex: number) {
 function LearnPhase({
   unit,
   wordId,
-  revealed,
   nextKind,
-  onReveal,
   next,
 }: {
   unit: Unit;
   wordId: string;
-  revealed: boolean;
   nextKind: LessonStep['kind'] | undefined;
-  onReveal: () => void;
   next: () => void;
 }) {
   const wordIndex = unit.words.findIndex((word) => word.id === wordId);
@@ -340,12 +298,11 @@ function LearnPhase({
       <LearnHeader unit={unit} wordIndex={wordIndex} round={round} totalRounds={totalRounds} />
       <Flashcard
         word={word}
-        revealed={revealed}
         round={round}
         totalRounds={totalRounds}
         showToneNote={wordIndex === 0}
       />
-      <LearnActions revealed={revealed} nextKind={nextKind} onReveal={onReveal} next={next} />
+      <LearnActions nextKind={nextKind} next={next} />
     </div>
   );
 }
@@ -561,8 +518,12 @@ function QuizFeedback({
   last: boolean;
 }) {
   const correct = selected === question.answer;
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    ref.current?.scrollIntoView({ block: 'nearest' });
+  }, []);
   return (
-    <div className="quiz__feedback">
+    <div className="quiz__feedback" ref={ref}>
       <div className={`quiz__result${correct ? ' is-correct' : ' is-wrong'}`} role="status">
         <span className="quiz__result-icon" aria-hidden="true">
           {correct ? <Icon name="check" size={16} /> : '×'}
@@ -858,9 +819,7 @@ function LearnStage({ unit, plan, progress, next }: StageProps) {
     <LearnPhase
       unit={unit}
       wordId={step.wordId}
-      revealed={progress.revealed}
       nextKind={plan[progress.index + 1]?.kind}
-      onReveal={() => progress.setRevealed(true)}
       next={next}
     />
   );

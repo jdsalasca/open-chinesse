@@ -35,4 +35,10 @@ describe('checkPinyin', () => {
   it('rechaza sílabas distintas', () => {
     expect(checkPinyin('wo hen hao', 'nǐ hǎo')).toBe('mal');
   });
+
+  it('compara los tonos de palabras sin espacios', () => {
+    expect(checkPinyin('bei3 jing1', 'Běijīng')).toBe('ok');
+    expect(checkPinyin('bei3 jing2', 'Běijīng')).toBe('tonos');
+    expect(checkPinyin('bei jing', 'Běijīng')).toBe('sin-tonos');
+  });
 });

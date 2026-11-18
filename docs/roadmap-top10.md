@@ -195,14 +195,19 @@ Terra y la auditoría coinciden:
   escritura y memoria), filtros en Practicar, boundary de pantalla, rutas
   inválidas normalizadas y grabadora con reintento y limpieza de stream.
 
-## Siguiente ronda propuesta (C27)
+## Hecho en C27
+
+- **La lección enseña antes de preguntar**: primera exposición con significado
+  y ejemplo, acción fija, dificultad progresiva y pinyin separado por sílabas
+  con su tono real.
+
+## Siguiente ronda propuesta (C28)
 
 - **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
   con otra consigna, y distinguirla en el resumen.
 - **Resumen por capacidades**: primer intento, recuperadas después y
   pendientes.
-- **Primera exposición directa**: mostrar significado y ejemplo desde el inicio
-  y reservar «intenta recordar» para el reencuentro.
+- **Primera exposición directa**: ya hecha en C27.
 
 ## Plan de tres rondas
 

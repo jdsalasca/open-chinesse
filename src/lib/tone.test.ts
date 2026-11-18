@@ -25,6 +25,27 @@ describe('pinyinTokens', () => {
   });
 });
 
+describe('pinyinTokens sin espacios', () => {
+  it('separa cada sílaba y le asigna su tono', () => {
+    expect(pinyinTokens('Běijīng')).toEqual([
+      { text: 'Běi', tone: 3 },
+      { text: 'jīng', tone: 1 },
+    ]);
+    expect(pinyinTokens('Zhōngguó')).toEqual([
+      { text: 'Zhōng', tone: 1 },
+      { text: 'guó', tone: 2 },
+    ]);
+    expect(pinyinTokens('bàba')).toEqual([
+      { text: 'bà', tone: 4 },
+      { text: 'ba', tone: 5 },
+    ]);
+    expect(pinyinTokens('xièxie')).toEqual([
+      { text: 'xiè', tone: 4 },
+      { text: 'xie', tone: 5 },
+    ]);
+  });
+});
+
 describe('stripTones', () => {
   it('quita marcas, espacios y mayúsculas', () => {
     expect(stripTones('Zhōngguó')).toBe('zhongguo');

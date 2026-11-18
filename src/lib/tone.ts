@@ -36,12 +36,173 @@ export function toneOf(token: string): Tone {
   return 5;
 }
 
-/** Separa el pinyin en tokens (grupos separados por espacio). */
+const INITIALS = [
+  '',
+  'b',
+  'p',
+  'm',
+  'f',
+  'd',
+  't',
+  'n',
+  'l',
+  'g',
+  'k',
+  'h',
+  'j',
+  'q',
+  'x',
+  'zh',
+  'ch',
+  'sh',
+  'r',
+  'z',
+  'c',
+  's',
+  'y',
+  'w',
+];
+
+const FINALS = [
+  'a',
+  'o',
+  'e',
+  'i',
+  'u',
+  'ü',
+  'ai',
+  'ei',
+  'ui',
+  'ao',
+  'ou',
+  'iu',
+  'ie',
+  'üe',
+  'er',
+  'an',
+  'en',
+  'in',
+  'un',
+  'ün',
+  'ang',
+  'eng',
+  'ing',
+  'ong',
+  'ia',
+  'iao',
+  'ian',
+  'iang',
+  'iong',
+  'ua',
+  'uo',
+  'uai',
+  'uan',
+  'uang',
+  'ueng',
+  'üan',
+];
+
+const SYLLABLES = new Set<string>();
+for (const initial of INITIALS) {
+  for (const final of FINALS) SYLLABLES.add(initial + final);
+}
+for (const final of ['a', 'o', 'e', 'ai', 'ei', 'ao', 'ou', 'an', 'en', 'ang', 'eng', 'er']) {
+  SYLLABLES.add(final);
+}
+for (const syllable of [
+  'yi',
+  'ya',
+  'ye',
+  'yao',
+  'you',
+  'yan',
+  'yin',
+  'yang',
+  'ying',
+  'yong',
+  'yu',
+  'yue',
+  'yuan',
+  'yun',
+  'wu',
+  'wa',
+  'wo',
+  'wai',
+  'wei',
+  'wan',
+  'wen',
+  'wang',
+  'weng',
+  'ju',
+  'jue',
+  'juan',
+  'jun',
+  'qu',
+  'que',
+  'quan',
+  'qun',
+  'xu',
+  'xue',
+  'xuan',
+  'xun',
+]) {
+  SYLLABLES.add(syllable);
+}
+
+const TONE_MARK = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i;
+
+/** Divide una palabra sin espacios en sílabas pinyin válidas. */
+function splitSyllables(base: string): string[] {
+  const memo = new Map<number, string[] | null>();
+  const solve = (index: number): string[] | null => {
+    if (index === base.length) return [];
+    const cached = memo.get(index);
+    if (cached !== undefined) return cached;
+    for (let end = base.length; end > index; end -= 1) {
+      const part = base.slice(index, end);
+      if (!SYLLABLES.has(part)) continue;
+      const rest = solve(end);
+      if (rest) {
+        const result = [part, ...rest];
+        memo.set(index, result);
+        return result;
+      }
+    }
+    memo.set(index, null);
+    return null;
+  };
+  return solve(0) ?? [base];
+}
+
+function pushChunk(tokens: { text: string; tone: Tone }[], text: string): void {
+  if (!TONE_MARK.test(text)) {
+    tokens.push({ text, tone: toneOf(text) });
+    return;
+  }
+  const parts = splitSyllables(stripTones(text));
+  let offset = 0;
+  for (const part of parts) {
+    const piece = text.slice(offset, offset + part.length);
+    tokens.push({ text: piece, tone: toneOf(piece) });
+    offset += part.length;
+  }
+  if (offset < text.length) {
+    const tail = text.slice(offset);
+    const last = tokens.at(-1);
+    if (last) last.text += tail;
+    else tokens.push({ text: tail, tone: 5 });
+  }
+}
+
+/** Separa el pinyin en sílabas, aunque la palabra venga sin espacios. */
 export function pinyinTokens(pinyin: string): { text: string; tone: Tone }[] {
-  return pinyin
-    .trim()
-    .split(/\s+/)
-    .map((text) => ({ text, tone: toneOf(text) }));
+  const tokens: { text: string; tone: Tone }[] = [];
+  for (const raw of pinyin.trim().split(/\s+/)) {
+    for (const chunk of raw.split("'")) {
+      if (chunk) pushChunk(tokens, chunk.normalize('NFC'));
+    }
+  }
+  return tokens;
 }
 
 /** Pinyin sin marcas ni espacios, para comparar lo que teclea el usuario. */
@@ -95,21 +256,13 @@ export function withTone(syllable: string, tone: Tone): string {
 export function typedTones(typed: string): Tone[] | null {
   const digits = typed.match(/[1-5]/g);
   if (digits) return digits.map((digit) => Number(digit) as Tone);
-  const tones = typed
-    .trim()
-    .split(/[\s’']+/)
-    .filter(Boolean)
-    .map((token) => toneOf(token));
+  const tones = pinyinTokens(typed).map((token) => token.tone);
   return tones.length > 0 && tones.some((tone) => tone !== 5) ? tones : null;
 }
 
 /** Secuencia de tonos de un pinyin de referencia. */
 export function toneSequence(pinyin: string): Tone[] {
-  return pinyin
-    .trim()
-    .split(/[\s’']+/)
-    .filter(Boolean)
-    .map((token) => toneOf(token));
+  return pinyinTokens(pinyin).map((token) => token.tone);
 }
 
 export type PinyinCheck = 'ok' | 'sin-tonos' | 'tonos' | 'mal';

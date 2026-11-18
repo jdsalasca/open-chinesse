@@ -251,34 +251,20 @@
   color: $muted;
 }
 
+.flashcard__tone-note {
+  line-height: 1.7;
+
+  span {
+    display: inline-block;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
 .flashcard__meaning {
   font-size: 1.35rem;
   font-weight: 600;
   color: $ink;
-}
-
-.flashcard__recall {
-  display: grid;
-  gap: $space-2;
-  justify-items: center;
-  max-width: 460px;
-  animation: fade-up 160ms $ease;
-
-  @include from($bp-sm) {
-    justify-items: start;
-  }
-}
-
-.flashcard__prompt {
-  margin: 0;
-  font-weight: 600;
-  color: $ink-soft;
-}
-
-.flashcard__hint {
-  margin: 0;
-  font-size: 0.82rem;
-  color: $muted;
 }
 
 // Ejemplo -------------------------------------------------------------------

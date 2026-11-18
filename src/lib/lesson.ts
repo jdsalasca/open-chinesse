@@ -60,16 +60,29 @@ type CheckContext = {
   random: () => number;
 };
 
-function checkQuestion(word: Word, { unit, chunk, position, random }: CheckContext): Question {
-  const wantsTone = chunk % 2 === 0 && position === 0;
-  const wantsGap = chunk % 2 === 0 && position === 1;
-  const tone = wantsTone
-    ? toneQuestion(word, unit.index * 1000 + unit.words.indexOf(word) * 17 + 3)
-    : null;
-  if (tone) return tone;
-  const gap = wantsGap ? gapQuestion(word, unit, random) : null;
-  if (gap) return gap;
-  return meaningQuestion(word, position % 2 === 0 ? 'listen' : 'recognize', random);
+type CheckKind = 'recognize' | 'listen' | 'tone' | 'gap';
+
+const CHECK_SCHEDULE: CheckKind[][] = [
+  ['recognize', 'recognize'],
+  ['listen', 'recognize'],
+  ['listen', 'gap'],
+  ['tone', 'recognize'],
+  ['listen', 'gap'],
+];
+
+function checkQuestion(word: Word, context: CheckContext): Question {
+  const { unit, chunk, position, random } = context;
+  const kind = CHECK_SCHEDULE[chunk]?.[position] ?? 'recognize';
+  if (kind === 'tone') {
+    return (
+      toneQuestion(word, unit.index * 1000 + unit.words.indexOf(word) * 17 + 3) ??
+      meaningQuestion(word, 'listen', random)
+    );
+  }
+  if (kind === 'gap') {
+    return gapQuestion(word, unit, random) ?? meaningQuestion(word, 'recognize', random);
+  }
+  return meaningQuestion(word, kind, random);
 }
 
 /**

@@ -448,5 +448,13 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Rutas de jefe/certificado normalizadas y carácter inválido controlado.
 - [x] Grabadora con limpieza de stream, reintento y límite de 10 segundos.
 
+### C27 — La lección enseña antes de preguntar
+
+- [x] Primera exposición con significado y ejemplo, sin revelado previo.
+- [x] Acción principal fija y feedback con auto-scroll.
+- [x] Dificultad progresiva: reconocer antes que tono y hueco.
+- [x] Pinyin separado por sílabas con color y número de tono correctos.
+- [x] Comprobación de pinyin alineada con la separación por sílabas.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

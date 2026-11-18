@@ -45,6 +45,18 @@ describe('makeLessonPlan', () => {
     expect(modes).toContain('order');
   });
 
+  it('empieza reconociendo y deja tono y hueco para después', () => {
+    for (const unit of UNITS) {
+      const first = makeLessonPlan(unit)
+        .filter((step) => step.kind === 'question')
+        .slice(0, 2);
+      expect(first, unit.id).toHaveLength(2);
+      for (const step of first) {
+        expect(step.kind === 'question' && step.question.mode, unit.id).toBe('recognize');
+      }
+    }
+  });
+
   it('es determinista para la misma unidad', () => {
     for (const unit of UNITS) {
       expect(makeLessonPlan(unit)).toEqual(makeLessonPlan(unit));
