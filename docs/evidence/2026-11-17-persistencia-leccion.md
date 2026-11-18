@@ -61,6 +61,21 @@ pnpm build                      ✓
 Capturas en `.screens/audit/`: `c29-resume.png`, `c29-finish.png`,
 `c29-home-resume.png`.
 
+### Producción
+
+Despliegue con `./deploy.sh`: backend OK y verificación pública `/` 200,
+`/api/me` 401, `/api/health` 200.
+
+- Con la parte 2 guardada, `/#/lesson/h1-08` abre «Parte 2 de 3 · Primer
+  contacto», 商店, contador `4 / 10` y segmentos completado/actual/pendiente.
+- La portada muestra «Continuar: Primeras palabras · parte 2/3» cuando la
+  unidad pendiente tiene una parte guardada.
+- 390×844: 0 px de desbordamiento, misma parte 2 y barra de acción fija de 740
+  a 844.
+
+Capturas de producción: `.screens/audit/c29-prod-resume.png`,
+`.screens/audit/c29-prod-home.png` y `.screens/audit/c29-prod-mobile.png`.
+
 ## Límites
 
 - Se retoma al **inicio de la parte guardada**, no en el paso exacto. Si sales
