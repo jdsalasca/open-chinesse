@@ -108,6 +108,44 @@
   color: #a9c4b6;
 }
 
+.bedtime-controls .speed-control {
+  border-color: rgb(255 255 255 / 18%);
+  background: rgb(255 255 255 / 6%);
+}
+
+.bedtime-controls .speed-control__label {
+  color: #a9c4b6;
+}
+
+.bedtime-controls .speed-control__button {
+  color: #cfe6dc;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.is-active {
+    background: #8fd3b6;
+    color: #0b352a;
+  }
+}
+
+.bedtime-controls__progress {
+  flex-basis: 100%;
+  height: 4px;
+  border-radius: $radius-pill;
+  background: rgb(255 255 255 / 10%);
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #8fd3b6, #5ce39a);
+    transition: width $motion $ease;
+  }
+}
+
 .bedtime-controls .link {
   color: #8fd3b6;
 }

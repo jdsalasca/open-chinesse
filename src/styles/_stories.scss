@@ -93,6 +93,22 @@
   color: $muted;
 }
 
+.story-listen__progress {
+  flex-basis: 100%;
+  height: 4px;
+  border-radius: $radius-pill;
+  background: $paper-deep;
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, $mint, $teal);
+    transition: width $motion $ease;
+  }
+}
+
 .story-lines {
   display: grid;
   gap: $space-4;

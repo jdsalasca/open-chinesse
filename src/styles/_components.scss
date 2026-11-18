@@ -267,6 +267,48 @@
   color: $ink;
 }
 
+// Velocidad de audio ---------------------------------------------------------
+.speed-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid $line;
+  border-radius: $radius-pill;
+  background: $surface;
+}
+
+.speed-control__label {
+  padding: 0 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.speed-control__button {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: $radius-pill;
+  background: transparent;
+  color: $muted;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  @include focus-ring;
+
+  &:hover {
+    color: $ink;
+  }
+
+  &.is-active {
+    background: $mint-soft;
+    color: $mint-dark;
+  }
+}
+
 // Ejemplo -------------------------------------------------------------------
 .example {
   width: 100%;

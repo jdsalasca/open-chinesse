@@ -423,6 +423,73 @@
   }
 }
 
+// Repaso de parte -----------------------------------------------------------
+.review-card {
+  @include surface($radius-lg, $shadow-lg);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: $space-3;
+  justify-items: center;
+  padding: $space-7 $space-5;
+  background:
+    radial-gradient(520px 240px at 50% -120px, rgb(0 184 107 / 8%), transparent 70%), $surface;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, $mint, $teal, $amber);
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+  }
+}
+
+.review-card__badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: $mint-soft;
+  color: $mint-dark;
+  box-shadow: 0 0 0 8px rgb(0 184 107 / 6%);
+}
+
+.review-card__lead {
+  max-width: 48ch;
+  color: $muted;
+}
+
+.review-card__words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-2;
+  margin: $space-2 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: $space-1 $space-3;
+    border: 1px solid $line;
+    border-radius: $radius-pill;
+    background: $paper;
+  }
+}
+
+.review-card__hanzi {
+  @include hanzi(1.1rem);
+  color: $ink;
+}
+
 // Resumen -------------------------------------------------------------------
 .summary {
   @include surface($radius-lg, $shadow-lg);

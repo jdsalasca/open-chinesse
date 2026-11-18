@@ -57,6 +57,17 @@ describe('makeLessonPlan', () => {
     }
   });
 
+  it('cierra cada parte con un repaso de sus palabras', () => {
+    for (const unit of UNITS) {
+      const reviews = makeLessonPlan(unit).filter((step) => step.kind === 'review');
+      expect(
+        reviews.map((step) => step.part),
+        unit.id,
+      ).toEqual([1, 2, 3]);
+      for (const review of reviews) expect(review.wordIds.length).toBeGreaterThan(0);
+    }
+  });
+
   it('es determinista para la misma unidad', () => {
     for (const unit of UNITS) {
       expect(makeLessonPlan(unit)).toEqual(makeLessonPlan(unit));

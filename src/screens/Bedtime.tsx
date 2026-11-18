@@ -1,4 +1,5 @@
 import { PageHeader } from '../components/PageHeader';
+import { SpeedControl } from '../components/SpeedControl';
 import { Icon } from '../components/ui/Icon';
 import { BEDTIME_STORIES, type BedtimeLine, type BedtimeStory } from '../data/bedtime';
 import { navigate } from '../lib/router';
@@ -29,10 +30,16 @@ function Controls({ audio, total }: { audio: ReturnType<typeof useStoryAudio>; t
         <Icon name="speaker" size={16} />
         {audio.playing ? 'Pausar' : audio.current >= 0 ? 'Seguir' : 'Escuchar despacio'}
       </button>
+      <SpeedControl rate={audio.rate} onChange={audio.setRate} />
       {audio.current >= 0 && (
         <span className="bedtime-controls__meta">
           {audio.playing ? 'Línea' : 'Pausado en'} {audio.current + 1} de {total}
         </span>
+      )}
+      {audio.current >= 0 && (
+        <div className="bedtime-controls__progress" aria-hidden="true">
+          <span style={{ width: `${((audio.current + 1) / total) * 100}%` }} />
+        </div>
       )}
       {audio.current >= 0 && (
         <button type="button" className="link" onClick={audio.stop}>

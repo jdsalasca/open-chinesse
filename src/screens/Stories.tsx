@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AudioButton } from '../components/AudioButton';
 import { Pinyin } from '../components/Pinyin';
+import { SpeedControl } from '../components/SpeedControl';
 import { Card } from '../components/ui/Card';
 import { Icon } from '../components/ui/Icon';
 import { PageHeader } from '../components/PageHeader';
@@ -203,16 +204,42 @@ function Gloss({ pick, pinned, onClose }: { pick: Pick; pinned: boolean; onClose
   );
 }
 
+function ListenProgress({
+  playing,
+  current,
+  total,
+}: {
+  playing: boolean;
+  current: number;
+  total: number;
+}) {
+  if (current < 0) return null;
+  return (
+    <>
+      <span className="story-listen__meta">
+        {playing ? 'Línea' : 'Pausado en'} {current + 1} de {total}
+      </span>
+      <div className="story-listen__progress" aria-hidden="true">
+        <span style={{ width: `${((current + 1) / total) * 100}%` }} />
+      </div>
+    </>
+  );
+}
+
 function ListenBar({
   playing,
   current,
   total,
+  rate,
+  onRate,
   onToggle,
   onStop,
 }: {
   playing: boolean;
   current: number;
   total: number;
+  rate: number;
+  onRate: (rate: number) => void;
   onToggle: () => void;
   onStop: () => void;
 }) {
@@ -227,11 +254,8 @@ function ListenBar({
         <Icon name="speaker" size={16} />
         {playing ? 'Pausar' : current >= 0 ? 'Seguir' : 'Escuchar la historia'}
       </button>
-      {current >= 0 && (
-        <span className="story-listen__meta">
-          {playing ? 'Línea' : 'Pausado en'} {current + 1} de {total}
-        </span>
-      )}
+      <SpeedControl rate={rate} onChange={onRate} />
+      <ListenProgress playing={playing} current={current} total={total} />
       {current >= 0 && (
         <button type="button" className="link" onClick={onStop}>
           Detener
@@ -296,6 +320,8 @@ function Reader({ story, onBack }: { story: Story; onBack: () => void }) {
         playing={audio.playing}
         current={audio.current}
         total={story.lines.length}
+        rate={audio.rate}
+        onRate={audio.setRate}
         onToggle={audio.toggle}
         onStop={audio.stop}
       />

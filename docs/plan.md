@@ -456,5 +456,13 @@ móvil, y ninguna pantalla parece una lista de base de datos.
 - [x] Pinyin separado por sílabas con color y número de tono correctos.
 - [x] Comprobación de pinyin alineada con la separación por sílabas.
 
+### C28 — Lección en tres partes e historias con velocidad
+
+- [x] Tres partes por lección con repaso intermedio y progreso de 3 segmentos.
+- [x] Repaso sin significados visibles, con las palabras de la parte.
+- [x] La última parte cierra con dos frases de ordenar.
+- [x] Control de velocidad 0.75×/1×/1.25× en Historias y Cuentos.
+- [x] Barra de avance por líneas y velocidad aplicada en caliente.
+
 Cada ronda cierra con `vitest`, `tsc -b`, `pnpm lint`, `pnpm build`, capturas en
 `.screens/`, despliegue y push a `develop` y `main`.

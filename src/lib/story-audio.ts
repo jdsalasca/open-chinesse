@@ -9,12 +9,14 @@ function startLine(params: {
   box: RefObject<HTMLAudioElement | null>;
   prefix: string;
   index: number;
+  rate: number;
   onEnded: () => void;
   onError: () => void;
 }): void {
-  const { box, prefix, index, onEnded, onError } = params;
+  const { box, prefix, index, rate, onEnded, onError } = params;
   box.current?.pause();
   const audio = new Audio(lineAudio(prefix, index));
+  audio.playbackRate = rate;
   audio.onended = onEnded;
   audio.onerror = onError;
   box.current = audio;
@@ -24,11 +26,12 @@ function startLine(params: {
 function usePlayback(params: {
   prefix: string;
   total: number;
+  rate: number;
   audioRef: RefObject<HTMLAudioElement | null>;
   setPlaying: (playing: boolean) => void;
   setCurrent: (index: number) => void;
 }) {
-  const { prefix, total, audioRef, setPlaying, setCurrent } = params;
+  const { prefix, total, rate, audioRef, setPlaying, setCurrent } = params;
 
   function playFrom(index: number) {
     setPlaying(true);
@@ -36,6 +39,7 @@ function usePlayback(params: {
       box: audioRef,
       prefix,
       index,
+      rate,
       onEnded: () => advance(index),
       onError: () => setPlaying(false),
     });
@@ -68,8 +72,9 @@ export function useFollowLine(current: number): void {
 export function useStoryAudio(prefix: string, total: number) {
   const [playing, setPlaying] = useState(false);
   const [current, setCurrent] = useState(-1);
+  const [rate, setRateState] = useState(1);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const playFrom = usePlayback({ prefix, total, audioRef, setPlaying, setCurrent });
+  const playFrom = usePlayback({ prefix, total, rate, audioRef, setPlaying, setCurrent });
 
   useEffect(() => () => audioRef.current?.pause(), []);
 
@@ -78,6 +83,11 @@ export function useStoryAudio(prefix: string, total: number) {
     audioRef.current = null;
     setPlaying(false);
     setCurrent(-1);
+  };
+
+  const setRate = (next: number) => {
+    setRateState(next);
+    if (audioRef.current) audioRef.current.playbackRate = next;
   };
 
   const toggle = () => {
@@ -95,5 +105,5 @@ export function useStoryAudio(prefix: string, total: number) {
     void audio.play().catch(() => setPlaying(false));
   };
 
-  return { playing, current, toggle, stop };
+  return { playing, current, toggle, stop, rate, setRate };
 }

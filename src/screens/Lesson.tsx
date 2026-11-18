@@ -18,7 +18,7 @@ import { Icon, type IconName } from '../components/ui/Icon';
 import { ProgressRing } from '../components/ui/ProgressRing';
 import { ALL_WORDS, LEVEL_LABELS, UNITS, type Unit, type Word } from '../data/curriculum';
 import { starsForScore, xpForLesson } from '../gamification/xp';
-import { LESSON_CHUNK, makeLessonPlan, type LessonStep } from '../lib/lesson';
+import { LESSON_PARTS, makeLessonPlan, type LessonStep } from '../lib/lesson';
 import { CLOZE_BLANK } from '../lib/cloze';
 import type { Question } from '../lib/quiz';
 import { audioUrl } from '../lib/audio';
@@ -114,7 +114,7 @@ function useLessonActions({ plan, progress, noteMiss }: LessonActionsParams) {
 
   const next = () => {
     if (!step) return;
-    if (step.kind === 'learn') {
+    if (step.kind === 'learn' || step.kind === 'review') {
       setSelected(null);
       return setIndex(index + 1);
     }
@@ -180,7 +180,7 @@ function FlashcardWord({
   return (
     <div className="flashcard__word">
       <p className="flashcard__step">
-        Ronda {round} de {totalRounds} · Primer contacto
+        Parte {round} de {totalRounds} · Primer contacto
       </p>
       <div className="flashcard__hanzi" lang="zh-Hans">
         {word.hanzi}
@@ -242,7 +242,11 @@ function LearnActions({
   return (
     <div className="lesson__actions">
       <button type="button" className="button button--primary" onClick={next}>
-        {nextKind === 'question' ? 'Comprobar lo aprendido' : 'Siguiente palabra'}
+        {nextKind === 'review'
+          ? 'Repasar la parte'
+          : nextKind === 'question'
+            ? 'Comprobar lo aprendido'
+            : 'Siguiente palabra'}
       </button>
       <span className="hint">Lee el ejemplo y sigue cuando quieras.</span>
     </div>
@@ -271,35 +275,29 @@ function LearnHeader({
   );
 }
 
-function roundOf(totalWords: number, wordIndex: number) {
-  return {
-    round: Math.floor(wordIndex / LESSON_CHUNK) + 1,
-    total: Math.ceil(totalWords / LESSON_CHUNK),
-  };
-}
-
 function LearnPhase({
   unit,
   wordId,
+  part,
   nextKind,
   next,
 }: {
   unit: Unit;
   wordId: string;
+  part: number;
   nextKind: LessonStep['kind'] | undefined;
   next: () => void;
 }) {
   const wordIndex = unit.words.findIndex((word) => word.id === wordId);
   const word = unit.words[wordIndex];
   if (!word) return <LessonMissing />;
-  const { round, total: totalRounds } = roundOf(unit.words.length, wordIndex);
   return (
     <div className="lesson">
-      <LearnHeader unit={unit} wordIndex={wordIndex} round={round} totalRounds={totalRounds} />
+      <LearnHeader unit={unit} wordIndex={wordIndex} round={part} totalRounds={LESSON_PARTS} />
       <Flashcard
         word={word}
-        round={round}
-        totalRounds={totalRounds}
+        round={part}
+        totalRounds={LESSON_PARTS}
         showToneNote={wordIndex === 0}
       />
       <LearnActions nextKind={nextKind} next={next} />
@@ -819,6 +817,7 @@ function LearnStage({ unit, plan, progress, next }: StageProps) {
     <LearnPhase
       unit={unit}
       wordId={step.wordId}
+      part={step.part}
       nextKind={plan[progress.index + 1]?.kind}
       next={next}
     />
@@ -830,52 +829,88 @@ type QuestionStageProps = StageProps & {
   finish: (correct: boolean) => void;
 };
 
-type QuestionMeta = {
-  word: Word;
-  total: number;
-  number: number;
-  round: number;
-  totalRounds: number;
-};
-
-function questionMeta(
-  unit: Unit,
-  plan: LessonStep[],
-  index: number,
-  question: Question,
-): QuestionMeta | null {
-  const word = ALL_WORDS.find((candidate) => candidate.id === question.wordId);
-  if (!word) return null;
-  const total = plan.filter((item) => item.kind === 'question').length;
-  const number = plan.slice(0, index + 1).filter((item) => item.kind === 'question').length;
-  const wordIndex = unit.words.findIndex((candidate) => candidate.id === word.id);
-  const { total: totalRounds } = roundOf(unit.words.length, Math.max(wordIndex, 0));
-  const round =
-    question.mode === 'order'
-      ? totalRounds + 1
-      : Math.floor(Math.max(wordIndex, 0) / LESSON_CHUNK) + 1;
-  return { word, total, number, round, totalRounds };
-}
-
 function QuestionStage({ unit, plan, progress, next, choose, finish }: QuestionStageProps) {
   const step = plan[progress.index];
   if (!step || step.kind !== 'question') return null;
-  const meta = questionMeta(unit, plan, progress.index, step.question);
-  if (!meta) return <LessonMissing />;
+  const word = ALL_WORDS.find((candidate) => candidate.id === step.question.wordId);
+  if (!word) return <LessonMissing />;
+  const total = plan.filter((item) => item.kind === 'question').length;
+  const number = plan
+    .slice(0, progress.index + 1)
+    .filter((item) => item.kind === 'question').length;
   return (
     <QuizPhase
       question={step.question}
-      {...meta}
+      word={word}
+      number={number}
+      total={total}
+      round={step.part}
+      totalRounds={LESSON_PARTS}
       label={
         step.question.mode === 'order'
           ? `Aplica · ${LEVEL_LABELS[unit.level]}`
-          : `Comprueba · ${LEVEL_LABELS[unit.level]}`
+          : `Repaso · Parte ${step.part}`
       }
       selected={progress.selected}
       onSelect={choose}
       onNext={next}
       onFinish={finish}
     />
+  );
+}
+
+function ReviewWords({ wordIds }: { wordIds: string[] }) {
+  const words = wordIds
+    .map((wordId) => ALL_WORDS.find((word) => word.id === wordId))
+    .filter((word): word is Word => Boolean(word));
+  return (
+    <ul className="review-card__words">
+      {words.map((word) => (
+        <li key={word.id}>
+          <span className="review-card__hanzi" lang="zh-Hans">
+            {word.hanzi}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ReviewPhase({
+  unit,
+  part,
+  wordIds,
+  next,
+}: {
+  unit: Unit;
+  part: number;
+  wordIds: string[];
+  next: () => void;
+}) {
+  return (
+    <div className="lesson">
+      <LessonHeader
+        label={`Parte ${part} de ${LESSON_PARTS} · ${unit.title}`}
+        count={`${part} / ${LESSON_PARTS}`}
+        round={part}
+        totalRounds={LESSON_PARTS}
+      />
+      <section className="review-card" aria-live="polite">
+        <span className="review-card__badge" aria-hidden="true">
+          <Icon name="check" size={22} />
+        </span>
+        <p className="eyebrow">Parte {part} completada</p>
+        <h1>Repaso de lo aprendido</h1>
+        <p className="review-card__lead">
+          Vas a recuperar estas palabras sin mirar el significado. Es el momento de comprobar qué se
+          quedó.
+        </p>
+        <ReviewWords wordIds={wordIds} />
+        <button type="button" className="button button--primary" onClick={next}>
+          Empezar el repaso
+        </button>
+      </section>
+    </div>
   );
 }
 
@@ -891,6 +926,8 @@ function LessonStage({
   if (!step) return <LessonSummary unit={unit} answers={progress.answers} />;
   if (step.kind === 'learn')
     return <LearnStage unit={unit} plan={plan} progress={progress} next={next} />;
+  if (step.kind === 'review')
+    return <ReviewPhase unit={unit} part={step.part} wordIds={step.wordIds} next={next} />;
   return (
     <QuestionStage
       unit={unit}

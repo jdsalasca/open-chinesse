@@ -201,13 +201,21 @@ Terra y la auditoría coinciden:
   y ejemplo, acción fija, dificultad progresiva y pinyin separado por sílabas
   con su tono real.
 
-## Siguiente ronda propuesta (C28)
+## Hecho en C28
+
+- **Lección en tres partes**: tres tramos con repaso intermedio, tarjeta de
+  repaso sin significados y progreso de tres segmentos.
+- **Historias con velocidad**: 0.75×, 1× y 1.25× en Historias y Cuentos para
+  dormir, con barra de avance.
+
+## Siguiente ronda propuesta (C29)
 
 - **Reencuentro de fallos**: volver a preguntar una palabra fallada más tarde,
   con otra consigna, y distinguirla en el resumen.
 - **Resumen por capacidades**: primer intento, recuperadas después y
   pendientes.
-- **Primera exposición directa**: ya hecha en C27.
+- **Persistencia de la parte**: recordar en qué tramo de la lección se quedó
+  el alumno.
 
 ## Plan de tres rondas
 
